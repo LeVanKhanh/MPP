@@ -1,10 +1,24 @@
- body {
+:root {
+    --bg-color: #fff;
+    --text-color: #222;
+    --link-color: #0074d9;
+}
+
+body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 20px;
-    color: #333;
+    color: var(--text-color);
+    background: var(--bg-color);
 }
 
-h1, h2, h3 {
-    color: #0073e6;
+a {
+    color: var(--link-color);
+}
+
+/* Dark theme overrides */
+body.dark-theme {
+    --bg-color: #181a1b;
+    --text-color: #eee;
+    --link-color: #66aaff;
 }

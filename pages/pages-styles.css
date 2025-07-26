@@ -1,0 +1,10 @@
+ body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #0073e6;
+}

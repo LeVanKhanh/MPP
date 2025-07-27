@@ -269,3 +269,45 @@ body.dark-theme .theme-toggle .slider::before {
 .expand-main:hover {
     background: #eee;
 }
+
+.sidebar {
+    position: relative;
+    width: 260px;
+    min-height: 100vh;
+    background: var(--nav-bg, #f4f4f4);
+    color: var(--nav-text, #333);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+    transition: width 0.3s;
+    z-index: 2000;
+    overflow: auto; /* allow scrolling if needed */
+    padding-bottom: 3.5rem; /* Make room for the toggle button */
+}
+
+.sidebar.collapsed {
+    width: 15px;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    bottom: 9rem;
+    right: 1rem;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 0.5rem 0.7rem;
+    transition: background 0.2s;
+    z-index: 2100;
+    display: block;
+}
+
+.sidebar-toggle:hover {
+    background: #eee;
+}
+
+/* Optional: Hide menu text when collapsed */
+.sidebar.collapsed ul.menu {
+    display: none;
+}

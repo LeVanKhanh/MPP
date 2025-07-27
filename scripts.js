@@ -72,3 +72,19 @@ function setIframeTheme(theme){
         document.body.classList.remove('dark-theme');
     }
 })();
+
+document.addEventListener('DOMContentLoaded', function() {
+    const expandBtn = document.getElementById('expand-main');
+    const main = document.getElementById('main-content');
+    let expanded = false;
+
+    expandBtn.addEventListener('click', function() {
+        expanded = !expanded;
+        main.classList.toggle('expanded', expanded);
+        document.body.classList.toggle('expanded-main', expanded);
+        // Change icon
+        expandBtn.innerHTML = expanded
+            ? '<i class="fas fa-compress"></i>'
+            : '<i class="fas fa-expand"></i>';
+    });
+});

@@ -158,6 +158,32 @@ main {
     flex: 1;
     padding: 1rem;
     overflow: hidden; /* Prevent scroll in main content */
+    position: relative;
+    transition: all 0.3s;
+}
+
+main.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3000;
+    background: var(--bg-color, #fff);
+    margin: 0;
+    padding: 0;
+}
+
+main.expanded iframe {
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
+body.expanded-main .header-container,
+body.expanded-main nav,
+body.expanded-main .menu,
+body.expanded-main .sidebar {
+    display: none !important;
 }
 
 iframe {
@@ -224,4 +250,22 @@ body.dark-theme .theme-toggle .slider {
 body.dark-theme .theme-toggle .slider::before {
     transform: translateX(20px);
     background: #222;
+}
+
+.expand-main {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 3000;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 0.5rem 0.7rem;
+    transition: background 0.2s;
+}
+.expand-main:hover {
+    background: #eee;
 }

@@ -27,16 +27,38 @@ window.addEventListener('hashchange', loadRoute);
 // Load initial route
 window.addEventListener('DOMContentLoaded', loadRoute);
 
-// Toggle dark/light theme
-document.getElementById('theme-toggle').onclick = function() {
-    document.body.classList.toggle('dark-theme');
-    // Optional: Save preference
-    localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
-};
-
-// On page load, set theme from saved preference
-window.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem('theme') === 'dark') {
+// Theme toggle logic
+function setTheme(theme) {
+    if (theme === 'dark') {
         document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.remove('dark-theme');
+    }
+    // Save preference
+    localStorage.setItem('theme', theme);
+    setIframeTheme(theme);
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+    // Set theme from saved preference and notify iframe
+    const theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+    setTheme(theme);
+
+    // Attach theme toggle button event
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+        themeToggleBtn.onclick = function() {
+            const isDark = document.body.classList.toggle('dark-theme');
+            const theme = isDark ? 'dark' : 'light';
+            setTheme(theme);
+        };
     }
 });
+
+function setIframeTheme(theme){
+ // Tell the iframe to update its theme
+    const iframe = document.querySelector('iframe[name="content-frame"]');
+    if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage({ type: 'set-theme', theme }, '*');
+    }
+}

@@ -15,6 +15,7 @@ body {
     margin: 20px;
     color: var(--text-color);
     background: var(--bg-color);
+    text-align: justify;
 }
 
 a {
@@ -31,4 +32,8 @@ body.dark-theme {
     --nav-bg: #23272a;
     --nav-text: #eee;
     --menu-hover-bg: #333;
+}
+
+ul > li {
+    margin: 0.5rem 0; /* Add space between menu items */
 }

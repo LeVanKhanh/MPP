@@ -2,6 +2,11 @@
     --bg-color: #fff;
     --text-color: #222;
     --link-color: #0074d9;
+    --header-bg: #fff;
+    --header-text: #000;
+    --nav-bg: #f4f4f4;
+    --nav-text: #333;
+    --menu-hover-bg: #e0e0e0;
 }
 
 body {
@@ -21,4 +26,9 @@ body.dark-theme {
     --bg-color: #181a1b;
     --text-color: #eee;
     --link-color: #66aaff;
+    --header-bg: #23272a;
+    --header-text: #fff;
+    --nav-bg: #23272a;
+    --nav-text: #eee;
+    --menu-hover-bg: #333;
 }

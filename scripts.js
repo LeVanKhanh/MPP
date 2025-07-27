@@ -26,3 +26,17 @@ window.addEventListener('hashchange', loadRoute);
 
 // Load initial route
 window.addEventListener('DOMContentLoaded', loadRoute);
+
+// Toggle dark/light theme
+document.getElementById('theme-toggle').onclick = function() {
+    document.body.classList.toggle('dark-theme');
+    // Optional: Save preference
+    localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+};
+
+// On page load, set theme from saved preference
+window.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+    }
+});

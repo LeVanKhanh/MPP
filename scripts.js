@@ -1,4 +1,3 @@
-
 // JavaScript to toggle submenu visibility
 document.querySelectorAll('.has-submenu > a').forEach(menu => {
     menu.addEventListener('click', function (e) {
@@ -63,3 +62,13 @@ function setIframeTheme(theme){
         iframe.contentWindow.postMessage({ type: 'set-theme', theme }, '*');
     }
 }
+
+// Set theme from saved preference, default to dark
+(function() {
+    const theme = localStorage.getItem('theme') || 'dark';
+    if (theme === 'dark') {
+        document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.remove('dark-theme');
+    }
+})();

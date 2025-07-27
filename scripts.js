@@ -106,3 +106,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function loadRouteFromNav(route) {
+    const iframe = document.querySelector('iframe[name="content-frame"]');
+    if (iframe) {
+        iframe.src = route;
+    }
+}
+
+// Attach click event to all nav links with data-route
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('nav .menu a[data-route]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const route = this.getAttribute('data-route');
+            if (route) {
+                loadRouteFromNav(route);
+                // Optionally update the hash for bookmarking/back/forward
+                window.location.hash = this.getAttribute('href');
+            }
+        });
+    });
+
+    // On page load, load the route based on the current hash
+    function loadInitialRoute() {
+        const hash = window.location.hash;
+        const link = document.querySelector(`nav .menu a[href="${hash}"]`);
+        if (link && link.getAttribute('data-route')) {
+            loadRouteFromNav(link.getAttribute('data-route'));
+        }
+    }
+    window.addEventListener('hashchange', loadInitialRoute);
+    loadInitialRoute();
+});

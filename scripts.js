@@ -1,3 +1,4 @@
+
 // JavaScript to toggle submenu visibility
 document.querySelectorAll('.has-submenu > a').forEach(menu => {
     menu.addEventListener('click', function (e) {

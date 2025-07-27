@@ -10,7 +10,7 @@ document.querySelectorAll('.has-submenu > a').forEach(menu => {
 
 const routes = {
     '/home': 'pages/the-planet/about/about.html',
-    '/agile': 'pages/Reading/Agile.html',
+    '/agile': 'pages/Reading/Agile/Agile.html',
     '/leadership': 'subpage2.html',
     '/sharing': 'page3.html'
 };

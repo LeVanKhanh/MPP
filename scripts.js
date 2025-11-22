@@ -114,28 +114,43 @@ function loadRouteFromNav(route) {
     }
 }
 
-// Attach click event to all nav links with data-route
-document.addEventListener('DOMContentLoaded', function() {
+// Replace route object usage with data-route driven loader
+function loadRouteFromHash() {
+    const iframe = document.querySelector('iframe[name="content-frame"]');
+    if (!iframe) return;
+
+    const hash = window.location.hash || '#/home';
+    // Find link with matching href (exact match)
+    const link = document.querySelector(`nav .menu a[href="${hash}"]`);
+
+    if (link && link.dataset && link.dataset.route) {
+        iframe.src = link.dataset.route;
+        return;
+    }
+
+    // Fallback: first nav link with data-route or default about page
+    const firstRoute = document.querySelector('nav .menu a[data-route]');
+    iframe.src = firstRoute ? firstRoute.dataset.route : 'pages/the-planet/about/about.html';
+}
+
+// Attach click handlers to nav links that have data-route so they load iframe and update hash
+document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('nav .menu a[data-route]').forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
-            const route = this.getAttribute('data-route');
-            if (route) {
-                loadRouteFromNav(route);
-                // Optionally update the hash for bookmarking/back/forward
-                window.location.hash = this.getAttribute('href');
+            const route = this.dataset.route;
+            const href = this.getAttribute('href') || '';
+            const iframe = document.querySelector('iframe[name="content-frame"]');
+            if (route && iframe) {
+                iframe.src = route;
+                if (href) window.location.hash = href;
             }
         });
     });
 
-    // On page load, load the route based on the current hash
-    function loadInitialRoute() {
-        const hash = window.location.hash;
-        const link = document.querySelector(`nav .menu a[href="${hash}"]`);
-        if (link && link.getAttribute('data-route')) {
-            loadRouteFromNav(link.getAttribute('data-route'));
-        }
-    }
-    window.addEventListener('hashchange', loadInitialRoute);
-    loadInitialRoute();
+    // Load initial route based on current hash
+    loadRouteFromHash();
 });
+
+// Update iframe when user navigates browser history or manually changes hash
+window.addEventListener('hashchange', loadRouteFromHash);

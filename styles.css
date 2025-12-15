@@ -87,6 +87,34 @@ body.dark-theme .menu-header .menu-search-input {
     box-shadow: 0 0 0 2px rgba(0, 82, 163, 0.25);
 }
 
+.menu-header .sidebar-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color, #222);
+    padding: 0;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+    font-size: 1.1rem;
+}
+
+.menu-header .sidebar-toggle:hover {
+    background: var(--hover-bg, rgba(0,0,0,0.06));
+    transform: translateY(-1px);
+}
+
+.menu-header .sidebar-toggle:focus-visible {
+    outline: 2px solid var(--accent-color, #4e8df5);
+    outline-offset: 2px;
+}
+
+.menu-header .sidebar-toggle:active {
+    transform: scale(0.95);
+}
+
 .menu-header .menu-search-toggle {
     margin-left: auto;
     background: transparent;
@@ -116,10 +144,7 @@ body.dark-theme .menu-header .menu-search-input {
     outline-offset: 2px;
 }
 
-/* Hide header when sidebar is collapsed */
-.sidebar.collapsed .menu-header {
-    display: none;
-}
+/* Keep header visible even when sidebar is collapsed */
 html, body {
     height: 100%;
     margin: 0;
@@ -813,49 +838,6 @@ body.dark-theme {
 
 .sidebar.collapsed {
     width: 15px;
-}
-
-.sidebar-toggle {
-    position: absolute;
-    bottom: 9rem;
-    right: 1rem;
-    background: linear-gradient(135deg, var(--button-bg, #fff) 0%, var(--button-bg-alt, #f5f5f5) 100%);
-    border: 1px solid var(--button-border, #ddd);
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 2100;
-    color: var(--text-color);
-}
-
-.sidebar-toggle:hover {
-    background: linear-gradient(135deg, var(--button-hover-bg, #f5f5f5) 0%, var(--button-hover-bg-alt, #e0e0e0) 100%);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    transform: scale(1.08);
-}
-
-.sidebar-toggle:active {
-    transform: scale(0.95);
-}
-
-.sidebar-toggle i {
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.sidebar.collapsed .sidebar-toggle .left-icon {
-    display: none;
-}
-
-.sidebar.collapsed .sidebar-toggle .right-icon {
-    display: inline-block;
 }
 
 /* Optional: Hide menu text when collapsed */

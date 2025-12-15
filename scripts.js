@@ -25,21 +25,10 @@
         setTheme(saved);
     }
 
-    // Sidebar collapse toggle
+    // Sidebar collapse toggle (header button)
     if (sidebarToggle) {
-        const leftIcon = sidebarToggle.querySelector('.left-icon');
-        const rightIcon = sidebarToggle.querySelector('.right-icon');
         sidebarToggle.addEventListener('click', function () {
             sidebar.classList.toggle('collapsed');
-            if (leftIcon && rightIcon) {
-                if (sidebar.classList.contains('collapsed')) {
-                    leftIcon.style.display = 'none';
-                    rightIcon.style.display = 'inline-block';
-                } else {
-                    leftIcon.style.display = 'inline-block';
-                    rightIcon.style.display = 'none';
-                }
-            }
         });
     }
 

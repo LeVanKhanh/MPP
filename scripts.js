@@ -43,10 +43,9 @@
         });
     }
 
-    // Active link highlight
-    const navLinks = Array.from(document.querySelectorAll('nav .menu a[data-route]'));
     function highlightActive(hash) {
-        navLinks.forEach(l => l.classList.remove('active'));
+        const links = Array.from(document.querySelectorAll('nav .menu a[data-route]'));
+        links.forEach(l => l.classList.remove('active'));
         const current = document.querySelector(`nav .menu a[href="${hash}"]`);
         if (current) current.classList.add('active');
     }
@@ -81,7 +80,8 @@
 
     // Click handlers: ensure hash updates and route loads immediately
     function attachNavHandlers() {
-        navLinks.forEach(link => {
+        const links = Array.from(document.querySelectorAll('nav .menu a[data-route]'));
+        links.forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href') || '';
                 if (href.startsWith('#')) {
@@ -140,7 +140,6 @@
             menuHomeLi.style.display = 'none';
         }
         // Sidebar menu search toggle and filtering (header inline)
-        const sidebar = document.getElementById('sidebar');
         const searchContainer = sidebar ? sidebar.querySelector('.menu-header') : null;
         const searchToggle = document.getElementById('menu-search-toggle');
         const searchInput = document.getElementById('menu-search-input');

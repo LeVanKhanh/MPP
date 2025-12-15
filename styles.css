@@ -8,8 +8,10 @@
     background: var(--sidebar-bg, #f7f7f7);
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 100; /* ensure header stays above scrolling items */
     backdrop-filter: saturate(160%) blur(6px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding-top: 5px;
 }
 
 .menu-header .menu-home {
@@ -59,18 +61,17 @@
     pointer-events: auto;
 }
 
-.menu-header .menu-search-input::placeholder {
-    color: rgba(26, 26, 26, 0.70);
-}
+.menu-header .menu-search-input::placeholder { color: var(--placeholder-color); }
 /* Vendor-specific placeholder selectors for broader compatibility */
-.menu-header .menu-search-input::-webkit-input-placeholder { color: rgba(26, 26, 26, 0.70); }
-.menu-header .menu-search-input::-moz-placeholder { color: rgba(26, 26, 26, 0.70); }
-.menu-header .menu-search-input:-ms-input-placeholder { color: rgba(26, 26, 26, 0.70); }
-.menu-header .menu-search-input:-moz-placeholder { color: rgba(26, 26, 26, 0.70); }
+.menu-header .menu-search-input::-webkit-input-placeholder { color: var(--placeholder-color); }
+.menu-header .menu-search-input::-moz-placeholder { color: var(--placeholder-color); }
+.menu-header .menu-search-input:-ms-input-placeholder { color: var(--placeholder-color); }
+.menu-header .menu-search-input:-moz-placeholder { color: var(--placeholder-color); }
 
 body.dark-theme .menu-header {
     background: rgba(26, 31, 38, 0.85);
     border-bottom-color: rgba(255,255,255,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 body.dark-theme .menu-header .menu-search-input {
@@ -78,13 +79,7 @@ body.dark-theme .menu-header .menu-search-input {
     border-color: rgba(255,255,255,0.12);
     color: #e8e8e8;
 }
-body.dark-theme .menu-header .menu-search-input::placeholder {
-    color: rgba(232, 232, 232, 0.75);
-}
-body.dark-theme .menu-header .menu-search-input::-webkit-input-placeholder { color: rgba(232, 232, 232, 0.75); }
-body.dark-theme .menu-header .menu-search-input::-moz-placeholder { color: rgba(232, 232, 232, 0.75); }
-body.dark-theme .menu-header .menu-search-input:-ms-input-placeholder { color: rgba(232, 232, 232, 0.75); }
-body.dark-theme .menu-header .menu-search-input:-moz-placeholder { color: rgba(232, 232, 232, 0.75); }
+/* Dark theme uses the same var, overridden above */
 
 .menu-header .menu-search-input:focus-visible {
     outline: none;
@@ -493,6 +488,8 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    position: relative;
+    z-index: 1; /* keep below sticky header */
 }
 
 .menu > li {
@@ -664,6 +661,12 @@ iframe {
     --button-border: #d1d5db;
     --button-hover-bg: #f0f0f0;
     --button-hover-bg-alt: #e5e5e5;
+    /* Shared component variables */
+    --border-color: #e0e0e0;
+    --hover-bg: rgba(0,0,0,0.06);
+    --input-bg: #fff;
+    --accent-color: #4e8df5;
+    --placeholder-color: rgba(26, 26, 26, 0.70);
 }
 
 /* Toggle Switch Styles */
@@ -786,6 +789,12 @@ body.dark-theme {
     --button-border: #444;
     --button-hover-bg: #383838;
     --button-hover-bg-alt: #2d2d2d;
+    /* Dark theme component variables */
+    --border-color: rgba(255,255,255,0.12);
+    --hover-bg: rgba(255,255,255,0.06);
+    --input-bg: rgba(255,255,255,0.08);
+    --accent-color: #64b5f6;
+    --placeholder-color: rgba(232, 232, 232, 0.75);
 }
 
 .sidebar {
@@ -799,6 +808,7 @@ body.dark-theme {
     z-index: 2000;
     overflow: auto; /* allow scrolling if needed */
     padding-bottom: 3.5rem; /* Make room for the toggle button */
+    padding-top: 0;
 }
 
 .sidebar.collapsed {

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leadership</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+</head>
+<body>
+    <h1>Leadership</h1>
+
+
+    
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

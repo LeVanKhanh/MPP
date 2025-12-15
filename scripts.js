@@ -133,6 +133,107 @@
         initThemeToggle();
         initExpandMain();
         attachNavHandlers();
+        // Hide duplicate Home in menu (header provides Home)
+        const menuHomeLi = document.querySelector('nav .menu a[href="#/home"]')?.closest('li');
+        if (menuHomeLi) {
+            menuHomeLi.classList.add('is-duplicate-home');
+            menuHomeLi.style.display = 'none';
+        }
+        // Sidebar menu search toggle and filtering (header inline)
+        const sidebar = document.getElementById('sidebar');
+        const searchContainer = sidebar ? sidebar.querySelector('.menu-header') : null;
+        const searchToggle = document.getElementById('menu-search-toggle');
+        const searchInput = document.getElementById('menu-search-input');
+        const menuRoot = sidebar ? sidebar.querySelector('.menu') : null;
+        const headerHome = sidebar ? sidebar.querySelector('.menu-header .menu-home') : null;
+
+        if (searchContainer && searchToggle && searchInput && menuRoot) {
+            const showSearch = () => {
+                searchContainer.classList.add('active');
+                searchToggle.setAttribute('aria-expanded', 'true');
+                searchToggle.setAttribute('title', 'Close search');
+                // Use fa-times for broad Font Awesome compatibility
+                searchToggle.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i>';
+                searchInput.value = '';
+                // focus after layout update
+                setTimeout(() => searchInput.focus(), 0);
+                filterMenu('');
+            };
+
+            const hideSearch = () => {
+                searchContainer.classList.remove('active');
+                searchToggle.setAttribute('aria-expanded', 'false');
+                searchToggle.setAttribute('title', 'Search menu');
+                searchToggle.innerHTML = '<i class="fas fa-search" aria-hidden="true"></i>';
+                searchInput.blur();
+                searchInput.value = '';
+                filterMenu('');
+            };
+
+            const filterMenu = (query) => {
+                const q = (query || '').trim().toLowerCase();
+                const items = Array.from(menuRoot.querySelectorAll('li'));
+                if (!q) {
+                    items.forEach(li => {
+                        if (li.classList.contains('is-duplicate-home')) {
+                            li.style.display = 'none';
+                            return;
+                        }
+                        li.style.display = '';
+                        li.removeAttribute('data-match');
+                    });
+                    return;
+                }
+
+            items.forEach(li => {
+                if (li.classList.contains('is-duplicate-home')) {
+                    li.style.display = 'none';
+                    return;
+                }
+                const label = (li.querySelector('a')?.textContent || li.textContent || '').trim().toLowerCase();
+                const match = label.includes(q);
+                li.dataset.match = match ? '1' : '0';
+                li.style.display = match ? '' : 'none';
+            });
+
+                // Ensure parents are shown if any descendant matches
+                items.forEach(li => {
+                    const childVisible = Array.from(li.querySelectorAll('li')).some(child => child.style.display !== 'none');
+                    if (childVisible) li.style.display = '';
+                });
+            };
+
+            searchToggle.addEventListener('click', () => {
+                if (searchContainer.classList.contains('active')) {
+                    hideSearch();
+                } else {
+                    showSearch();
+                }
+            });
+
+            searchInput.addEventListener('input', (e) => {
+                filterMenu(e.target.value);
+            });
+
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    hideSearch();
+                }
+            });
+            // Header Home link routing
+            if (headerHome) {
+                headerHome.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = headerHome.getAttribute('href') || '#/home';
+                    if (window.location.hash !== href) {
+                        window.location.hash = href;
+                    } else {
+                        loadRouteFromHash();
+                    }
+                });
+            }
+        }
+        // Load route after wiring header
         loadRouteFromHash();
     });
 

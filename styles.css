@@ -1,3 +1,130 @@
+/* Sidebar menu header with inline Home + search */
+.menu-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+    background: var(--sidebar-bg, #f7f7f7);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    backdrop-filter: saturate(160%) blur(6px);
+}
+
+.menu-header .menu-home {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    color: var(--nav-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-radius: 6px;
+    margin: 0 4px;
+    transition: opacity 0.2s ease;
+}
+.menu-header.active .menu-home {
+    display: none;
+}
+
+.menu-header .menu-home i {
+    font-size: 1.1rem;
+    color: var(--link-color);
+}
+
+.menu-header .menu-home:hover {
+    background: var(--menu-hover-bg);
+}
+
+.menu-header .menu-search-input {
+    flex: 1;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color, #ddd);
+    background: var(--input-bg, #fff);
+    color: var(--text-color, #222);
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: relative;
+    z-index: 2;
+    transition: width 0.25s ease, opacity 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-header.active .menu-search-input {
+    width: 100%;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu-header .menu-search-input::placeholder {
+    color: rgba(26, 26, 26, 0.70);
+}
+/* Vendor-specific placeholder selectors for broader compatibility */
+.menu-header .menu-search-input::-webkit-input-placeholder { color: rgba(26, 26, 26, 0.70); }
+.menu-header .menu-search-input::-moz-placeholder { color: rgba(26, 26, 26, 0.70); }
+.menu-header .menu-search-input:-ms-input-placeholder { color: rgba(26, 26, 26, 0.70); }
+.menu-header .menu-search-input:-moz-placeholder { color: rgba(26, 26, 26, 0.70); }
+
+body.dark-theme .menu-header {
+    background: rgba(26, 31, 38, 0.85);
+    border-bottom-color: rgba(255,255,255,0.08);
+}
+
+body.dark-theme .menu-header .menu-search-input {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.12);
+    color: #e8e8e8;
+}
+body.dark-theme .menu-header .menu-search-input::placeholder {
+    color: rgba(232, 232, 232, 0.75);
+}
+body.dark-theme .menu-header .menu-search-input::-webkit-input-placeholder { color: rgba(232, 232, 232, 0.75); }
+body.dark-theme .menu-header .menu-search-input::-moz-placeholder { color: rgba(232, 232, 232, 0.75); }
+body.dark-theme .menu-header .menu-search-input:-ms-input-placeholder { color: rgba(232, 232, 232, 0.75); }
+body.dark-theme .menu-header .menu-search-input:-moz-placeholder { color: rgba(232, 232, 232, 0.75); }
+
+.menu-header .menu-search-input:focus-visible {
+    outline: none;
+    border-color: var(--link-color);
+    box-shadow: 0 0 0 2px rgba(0, 82, 163, 0.25);
+}
+
+.menu-header .menu-search-toggle {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color, #222);
+    padding: 6px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    position: relative;
+    z-index: 3; /* ensure visible above input */
+}
+
+/* Keep duplicate Home hidden even when filtering resets styles */
+.menu > li.is-duplicate-home { display: none; }
+
+.menu-header .menu-search-toggle:hover {
+    background: var(--hover-bg, rgba(0,0,0,0.06));
+    transform: translateY(-1px);
+}
+
+.menu-header .menu-search-toggle:focus-visible {
+    outline: 2px solid var(--accent-color, #4e8df5);
+    outline-offset: 2px;
+}
+
+/* Hide header when sidebar is collapsed */
+.sidebar.collapsed .menu-header {
+    display: none;
+}
 html, body {
     height: 100%;
     margin: 0;

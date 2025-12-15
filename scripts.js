@@ -125,6 +125,10 @@
 
     // Init on DOMContentLoaded
     window.addEventListener('DOMContentLoaded', () => {
+        // Initialize menu from main-menu.js
+        if (typeof initializeMenu === 'function') {
+            initializeMenu();
+        }
         initTheme();
         initThemeToggle();
         initExpandMain();

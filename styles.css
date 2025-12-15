@@ -249,44 +249,93 @@ nav {
 
 .menu {
     list-style: none;
-    padding: 0;
+    padding: 0.5rem 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .menu > li {
-    margin: 1rem 0; /* Add space between menu items */
+    position: relative;
 }
 
 .menu > li > a {
     display: flex;
     align-items: center;
-    gap: 0.75rem; /* Space between the icon and text */
+    gap: 0.75rem;
     color: var(--nav-text);
     text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem; /* Add padding for better spacing */
-    border-radius: 5px; /* Optional: Rounded corners for hover effect */
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu > li > a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(135deg, var(--link-color), var(--link-hover));
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu > li > a i {
-    font-size: 1rem; /* Smaller icon size */
-    color: #0073e6;
+    font-size: 1.1rem;
+    color: var(--link-color);
+    transition: transform 0.2s ease;
 }
 
 .menu > li > a:hover {
-    background-color: var(--menu-hover-bg); /* Optional: Add hover background */
-    text-decoration: none;
+    background-color: var(--menu-hover-bg);
+    padding-left: 1.25rem;
+}
+
+.menu > li > a:hover::before {
+    transform: scaleY(1);
+}
+
+.menu > li > a:hover i {
+    transform: translateX(2px);
+}
+
+.menu > li > a.active {
+    background-color: var(--menu-hover-bg);
+    color: var(--link-color);
+    font-weight: 600;
 }
 
 .submenu {
     list-style: none;
-    padding-left: 1.5rem;
-    margin: 0.5rem 0;
-    display: none; /* Initially hidden */
+    padding: 0.25rem 0 0.25rem 0.5rem;
+    margin: 0.25rem 0;
+    border-left: 2px solid var(--link-color);
+    margin-left: 0.75rem;
+    opacity: 1;
+    animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1) ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 500px;
+    }
 }
 
 .submenu.visible {
-    display: block; /* Show submenu when toggled */
+    display: block;
 }
 
 .toggle-icon {

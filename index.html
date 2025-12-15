@@ -138,13 +138,15 @@
                     </details>
                 </li>
             </ul>
-            <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
-                <i class="fas fa-chevron-left toggle-icon" aria-hidden="true"></i>
+            <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar" title="Toggle sidebar">
+                <i class="fas fa-chevron-left left-icon" aria-hidden="true"></i>
+                <i class="fas fa-chevron-right right-icon" style="display: none;" aria-hidden="true"></i>
             </button>
         </nav>
         <main id="main-content">
-            <button id="expand-main" class="expand-main" aria-label="Expand main">
-                <i class="fas fa-expand"></i>
+            <button id="expand-main" class="expand-main" aria-label="Toggle fullscreen" title="Toggle fullscreen">
+                <i class="fas fa-expand expand-icon"></i>
+                <i class="fas fa-compress compress-icon" style="display: none;"></i>
             </button>
             <iframe name="content-frame" src="pages/the-planet/about/about.html" style="width: 100%; height: 100%; border: none;"></iframe>
         </main>

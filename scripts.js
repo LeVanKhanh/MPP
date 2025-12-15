@@ -27,16 +27,17 @@
 
     // Sidebar collapse toggle
     if (sidebarToggle) {
-        const toggleIcon = sidebarToggle.querySelector('.toggle-icon');
+        const leftIcon = sidebarToggle.querySelector('.left-icon');
+        const rightIcon = sidebarToggle.querySelector('.right-icon');
         sidebarToggle.addEventListener('click', function () {
             sidebar.classList.toggle('collapsed');
-            if (toggleIcon) {
+            if (leftIcon && rightIcon) {
                 if (sidebar.classList.contains('collapsed')) {
-                    toggleIcon.classList.remove('fa-chevron-left');
-                    toggleIcon.classList.add('fa-chevron-right');
+                    leftIcon.style.display = 'none';
+                    rightIcon.style.display = 'inline-block';
                 } else {
-                    toggleIcon.classList.remove('fa-chevron-right');
-                    toggleIcon.classList.add('fa-chevron-left');
+                    leftIcon.style.display = 'inline-block';
+                    rightIcon.style.display = 'none';
                 }
             }
         });

@@ -321,17 +321,50 @@ body.dark-theme .theme-toggle .slider::before {
     bottom: 1rem;
     right: 1rem;
     z-index: 3000;
-    background: #fff;
-    border: none;
+    background: linear-gradient(135deg, var(--button-bg, #fff) 0%, var(--button-bg-alt, #f5f5f5) 100%);
+    border: 1px solid var(--button-border, #ddd);
     border-radius: 50%;
-    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 0.5rem 0.7rem;
-    transition: background 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-color);
 }
+
 .expand-main:hover {
-    background: #eee;
+    background: linear-gradient(135deg, var(--button-hover-bg, #f5f5f5) 0%, var(--button-hover-bg-alt, #e0e0e0) 100%);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.08);
+}
+
+.expand-main:active {
+    transform: scale(0.95);
+}
+
+.expand-main i {
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+body.expanded-main .expand-main .expand-icon {
+    display: none;
+}
+
+body.expanded-main .expand-main .compress-icon {
+    display: inline-block;
+}
+
+body.dark-theme {
+    --button-bg: #2a2a2a;
+    --button-bg-alt: #1f1f1f;
+    --button-border: #444;
+    --button-hover-bg: #383838;
+    --button-hover-bg-alt: #2d2d2d;
 }
 
 .sidebar {
@@ -355,20 +388,43 @@ body.dark-theme .theme-toggle .slider::before {
     position: absolute;
     bottom: 9rem;
     right: 1rem;
-    background: #fff;
-    border: none;
+    background: linear-gradient(135deg, var(--button-bg, #fff) 0%, var(--button-bg-alt, #f5f5f5) 100%);
+    border: 1px solid var(--button-border, #ddd);
     border-radius: 50%;
-    font-size: 1.2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 0.5rem 0.7rem;
-    transition: background 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2100;
-    display: block;
+    color: var(--text-color);
 }
 
 .sidebar-toggle:hover {
-    background: #eee;
+    background: linear-gradient(135deg, var(--button-hover-bg, #f5f5f5) 0%, var(--button-hover-bg-alt, #e0e0e0) 100%);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.08);
+}
+
+.sidebar-toggle:active {
+    transform: scale(0.95);
+}
+
+.sidebar-toggle i {
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-toggle .left-icon {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-toggle .right-icon {
+    display: inline-block;
 }
 
 /* Optional: Hide menu text when collapsed */

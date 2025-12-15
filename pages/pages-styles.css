@@ -383,46 +383,57 @@ pre code {
     }
 }
 
-/* Custom Scrollbar Styles */
-body::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+/* Custom Scrollbar Styles - matching sidebar menu style */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
 
-body::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-body::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, rgba(0, 82, 163, 0.4), rgba(0, 61, 122, 0.6));
-    border-radius: 5px;
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+    background: rgba(0, 82, 163, 0.3);
+    border-radius: 4px;
     transition: background 0.2s ease;
 }
 
-body::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, rgba(0, 82, 163, 0.6), rgba(0, 61, 122, 0.8));
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 82, 163, 0.5);
 }
 
-body.dark-theme::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
+body.dark-theme html::-webkit-scrollbar-thumb,
+body.dark-theme body::-webkit-scrollbar-thumb,
+body.dark-theme *::-webkit-scrollbar-thumb {
+    background: rgba(100, 181, 246, 0.3);
 }
 
-body.dark-theme::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, rgba(100, 181, 246, 0.4), rgba(144, 202, 249, 0.6));
-}
-
-body.dark-theme::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, rgba(100, 181, 246, 0.6), rgba(144, 202, 249, 0.8));
+body.dark-theme html::-webkit-scrollbar-thumb:hover,
+body.dark-theme body::-webkit-scrollbar-thumb:hover,
+body.dark-theme *::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 181, 246, 0.5);
 }
 
 /* Firefox scrollbar styling */
-body {
+html,
+body,
+* {
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 82, 163, 0.3) transparent;
 }
 
-body.dark-theme {
+body.dark-theme html,
+body.dark-theme body,
+body.dark-theme * {
     scrollbar-color: rgba(100, 181, 246, 0.3) transparent;
 }
 

@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500;600;700&display=swap');
+
+/* Poetry-Specific Styles */
+
+/* Poetry Article Container */
+.poetry-article {
+    background: var(--bg-color);
+    padding: 0;
+}
+
+/* Poetry Header */
+.poetry-header {
+    margin-bottom: 3rem;
+    padding: 2.5rem 2rem;
+    border-bottom: 2px solid var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-light), transparent);
+    margin: -2.5rem -3rem 3rem -3rem;
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+}
+
+.poem-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+    color: var(--text-color);
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--accent-color), var(--link-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Noto Serif', 'Merriweather', 'Georgia', 'Times New Roman', serif;
+}
+
+.poem-author {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin: 0.5rem 0;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    font-family: 'Noto Serif', 'Merriweather', 'Georgia', 'Times New Roman', serif;
+}
+
+.poem-meta {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0.5rem 0 0 0;
+    opacity: 0.8;
+    font-family: 'Noto Serif', 'Merriweather', 'Georgia', 'Times New Roman', serif;
+}
+
+/* Poetry Content Container */
+.poetry-content {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    padding: 2rem 0;
+}
+
+/* Stanza Styling */
+.poem-stanza {
+    display: block;
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.poem-stanza:hover {
+    border-left-color: var(--link-color);
+    padding-left: 2rem;
+}
+
+/* Line Styling */
+.poem-line {
+    display: block;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin: 0.8rem 0;
+    color: var(--text-color);
+    font-family: 'Noto Serif', 'Merriweather', 'Georgia', 'Times New Roman', serif;
+    transition: all 0.2s ease;
+}
+
+.poem-line:hover {
+    color: var(--link-color);
+    transform: translateX(8px);
+}
+
+/* Emphasize first line of stanza */
+.poem-stanza .poem-line:first-child {
+    font-weight: 500;
+    color: var(--link-color);
+}
+
+/* Poetry Footer / Notes */
+.poetry-footer {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--highlight-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.poem-notes {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    font-family: 'Noto Serif', 'Merriweather', 'Georgia', 'Times New Roman', serif;
+}
+
+.poem-notes strong {
+    color: var(--text-color);
+}
+
+/* Dark Theme Adjustments */
+body.dark-theme .poem-stanza {
+    border-left-color: var(--link-color);
+}
+
+body.dark-theme .poem-stanza:hover {
+    border-left-color: var(--link-hover);
+}
+
+body.dark-theme .poem-line:hover {
+    color: var(--link-hover);
+}
+
+body.dark-theme .poem-line:first-child {
+    color: var(--link-color);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .poem-title {
+        font-size: 2rem;
+    }
+
+    .poem-line {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .poetry-header {
+        padding: 1.5rem 1.5rem;
+        margin: -2.5rem -3rem 2rem -3rem;
+    }
+
+    .poetry-content {
+        padding: 1rem 0;
+    }
+
+    .poem-stanza {
+        margin-bottom: 2rem;
+        padding-left: 1rem;
+    }
+
+    .poem-stanza:hover {
+        padding-left: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+
+    .poem-title {
+        font-size: 1.75rem;
+    }
+
+    .poem-author {
+        font-size: 1rem;
+    }
+
+    .poem-line {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin: 0.6rem 0;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .poetry-header {
+        background: white;
+        border-bottom: 1px solid black;
+    }
+
+    .poem-stanza {
+        page-break-inside: avoid;
+        border-left-color: black;
+    }
+
+    .poem-line:hover {
+        transform: none;
+        color: black;
+    }
+
+    .poetry-footer {
+        background: white;
+        border-left-color: black;
+    }
+}

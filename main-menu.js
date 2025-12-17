@@ -105,11 +105,50 @@ var mainMenu = [
         icon: "fas fa-folder",
         subItems: [
             {
-                title: "Personal Values Creation",
-                route: "pages/writing-opinion/personal-values-creation.html",
-                hash: "#/personal-values-creation",
+                title: "Values Creation",
+                route: "pages/writing-opinion/values-creation.html",
+                hash: "#/values-creation",
                 icon: "fas fa-file-alt",
                 subItems: [],
+            },
+        ],
+    },
+    {
+        title: "Literature",
+        icon: "fas fa-book-open",
+        subItems: [
+            {
+                title: "Poetry",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Quê Hương (Giang Nam)",
+                        route: "pages/literature/poetry/Que-huong-Giang-Nam.html",
+                        hash: "#/que-huong-giang-nam",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
+            {
+                title: "Proverbs - Folk Songs",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Tát Nước Đầu Đình",
+                        route: "pages/literature/proverbs-and-folk-songs/Tat-nuoc-dau-dinh.html",
+                        hash: "#/tat-nuoc-dau-dinh",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Trèo Lên Cây Bưởi Hái Hoa",
+                        route: "pages/literature/proverbs-and-folk-songs/Treo-len-cay-buoi-hai-hoa.html",
+                        hash: "#/treo-len-cay-buoi-hai-hoa",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
             },
         ],
     },

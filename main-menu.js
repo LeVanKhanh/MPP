@@ -1,10 +1,49 @@
 var mainMenu = [
     {
         title: "Home",
-        route: "pages/the-planet/about/about.html",
+        route: "pages/the-planet/home.html",
         hash: "#/home",
         icon: "fas fa-home",
         subItems: [],
+    },
+    {
+        title: "The Planet",
+        icon: "fas fa-globe",
+        subItems: [
+            {
+                title: "About",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Mission, Vision & Values",
+                        route: "pages/the-planet/about/mission-vision-values.html",
+                        hash: "#/mission-vision-values",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Understanding The Planet",
+                        route: "pages/the-planet/about/understanding-the-planet.html",
+                        hash: "#/understanding-the-planet",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
+            {
+                title: "Author",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Professional Resume",
+                        route: "pages/the-planet/author/information.html",
+                        hash: "#/author-resume",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
+        ],
     },
     {
         title: "Reading and Studying",

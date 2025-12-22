@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sơ Yếu Lý Lịch Chuyên Nghiệp - Quản Lý Kỹ Thuật Phần Mềm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header Section */
+        .resume-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .resume-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .resume-header .title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .contact-item i {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .resume-content {
+            padding: 50px 60px;
+        }
+
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            font-size: 1.6rem;
+        }
+
+        /* Professional Summary */
+        .summary-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2d3748;
+            text-align: justify;
+        }
+
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .experience-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .experience-card .years {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .experience-card .description {
+            font-size: 1rem;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-category {
+            margin-bottom: 30px;
+        }
+
+        .skills-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-category-title {
+            font-size: 1.2rem;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skills-category-title i {
+            color: #667eea;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-description {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-top: 10px;
+            text-align: justify;
+        }
+
+        /* Education & Certificates */
+        .education-item, .certificate-item {
+            background: #f7fafc;
+            padding: 20px 25px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #764ba2;
+            transition: background 0.3s ease;
+        }
+
+        .education-item:hover, .certificate-item:hover {
+            background: #edf2f7;
+        }
+
+        .education-item:last-child, .certificate-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .item-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .item-year {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .item-subtitle {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .item-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .item-link:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        /* Languages */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .language-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .language-card:hover {
+            transform: scale(1.05);
+        }
+
+        .language-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .language-level {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .resume-header {
+                padding: 40px 30px;
+            }
+
+            .resume-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .resume-header .title {
+                font-size: 1.2rem;
+            }
+
+            .resume-content {
+                padding: 35px 30px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .experience-card:hover,
+            .language-card:hover,
+            .skill-tag:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="resume-header">
+            <h1>Kyle</h1>
+            <div class="title">Kỹ Sư Phần Mềm Chính</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <!-- <span>levankhanhtpd@gmail.com</span> -->
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <!-- <span>+84 388 934 704</span> -->
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Việt Nam</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <!-- <span>linkedin.com/in/yourprofile</span> -->
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="resume-content">
+            <!-- Professional Summary -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-user-tie"></i>
+                    Tóm Tắt Chuyên Môn
+                </h2>
+                <p class="summary-text">
+                    Kỹ sư phần mềm chính xuất sắc với hơn 13 năm kinh nghiệm thực tế trong phát triển phần mềm doanh nghiệp 
+                    và hơn 8 năm trong các vai trò lãnh đạo kỹ thuật. Chuyên gia về hệ sinh thái .NET, kiến trúc cloud-native, 
+                    và các công nghệ web hiện đại. Thành tích đã được chứng minh trong việc thiết kế các giải pháp có khả năng 
+                    mở rộng, thúc đẩy sự xuất sắc kỹ thuật và cố vấn các nhóm kỹ thuật trong các tổ chức quốc tế. Chuyên môn 
+                    sâu về các mẫu thiết kế phần mềm, kiến trúc microservices và phương pháp agile. Đam mê xây dựng các hệ thống 
+                    mạnh mẽ, dễ bảo trì và thúc đẩy sự xuất sắc trong kỹ thuật thông qua các thực hành tốt nhất và đổi mới liên tục.
+                </p>
+            </section>
+
+            <!-- Experience -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    Điểm Nổi Bật Về Kinh Nghiệm
+                </h2>
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="years">13+</div>
+                        <div class="description">Năm kinh nghiệm lập trình .NET C# và phát triển web</div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="years">8+</div>
+                        <div class="description">Năm kinh nghiệm làm việc trong lãnh đạo và quản lý</div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="years">6+</div>
+                        <div class="description">Năm làm việc trong các tập đoàn quốc tế</div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="years">2</div>
+                        <div class="description">Năm làm việc tại Malaysia</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>
+                    Kỹ Năng & Chuyên Môn
+                </h2>
+
+                <div class="skills-category">
+                    <h3 class="skills-category-title">
+                        <i class="fas fa-users-cog"></i>
+                        Lãnh Đạo & Quản Lý
+                    </h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Lý Thuyết Động Lực</span>
+                        <span class="skill-tag">Đào Tạo & Cố Vấn</span>
+                        <span class="skill-tag">Ra Quyết Định</span>
+                        <span class="skill-tag">Ủy Quyền</span>
+                        <span class="skill-tag">Lập Kế Hoạch Vận Hành</span>
+                        <span class="skill-tag">Agile Scrum</span>
+                        <span class="skill-tag">Quản Lý Chiến Lược</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="skills-category-title">
+                        <i class="fas fa-tasks"></i>
+                        Quản Lý Dự Án
+                    </h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Quản Lý Dự Án</span>
+                        <span class="skill-tag">Ngân Sách & Kiểm Soát Chi Phí</span>
+                        <span class="skill-tag">Kiểm Soát Chất Lượng</span>
+                        <span class="skill-tag">Quản Lý Rủi Ro</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="skills-category-title">
+                        <i class="fas fa-laptop-code"></i>
+                        Kỹ Năng Kỹ Thuật
+                    </h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">.NET Framework</span>
+                        <span class="skill-tag">.NET Core</span>
+                        <span class="skill-tag">ASP.NET MVC</span>
+                        <span class="skill-tag">Web API</span>
+                        <span class="skill-tag">Entity Framework</span>
+                        <span class="skill-tag">MSSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">Vuetify</span>
+                        <span class="skill-tag">jQuery</span>
+                        <span class="skill-tag">SignalR</span>
+                        <span class="skill-tag">GraphQL</span>
+                        <span class="skill-tag">WCF</span>
+                        <span class="skill-tag">RabbitMQ</span>
+                        <span class="skill-tag">MediatR</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="skills-category-title">
+                        <i class="fas fa-tools"></i>
+                        Công Cụ & Công Nghệ
+                    </h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">TFS</span>
+                        <span class="skill-tag">SVN</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Azure Service Bus</span>
+                        <span class="skill-tag">Application Insights</span>
+                        <span class="skill-tag">Splunk</span>
+                        <span class="skill-tag">Swagger</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Fiddler</span>
+                        <span class="skill-tag">IIS</span>
+                        <span class="skill-tag">Selenium</span>
+                        <span class="skill-tag">SpecFlow</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="skills-category-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        Frameworks & Patterns
+                    </h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Autofac</span>
+                        <span class="skill-tag">Unity</span>
+                        <span class="skill-tag">AutoMapper</span>
+                        <span class="skill-tag">FluentValidation</span>
+                        <span class="skill-tag">NLog</span>
+                        <span class="skill-tag">Log4Net</span>
+                        <span class="skill-tag">NUnit</span>
+                        <span class="skill-tag">XUnit</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="skills-category-title">
+                        <i class="fas fa-brain"></i>
+                        Kiến Trúc & Thiết Kế
+                    </h3>
+                    <p class="skill-description">
+                        Kiến thức vững chắc về các khái niệm hướng đối tượng, các mẫu thiết kế và mẫu Specification. 
+                        Thành thạo các nguyên tắc phần mềm bao gồm SOLID, KISS, DRY và YAGNI. Có kinh nghiệm trong 
+                        Domain-Driven Design (DDD), Behavior-Driven Development (BDD), Test-Driven Development (TDD), 
+                        CQRS và kiến trúc Microservices.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-university"></i>
+                    Học Vấn
+                </h2>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Thạc Sĩ Quản Trị Kinh Doanh (MBA)</div>
+                            <div class="item-subtitle">Đại Học Andrews</div>
+                        </div>
+                        <div class="item-year">2023</div>
+                    </div>
+                    <a href="images/mba-degree.jpg" target="_blank" class="item-link">
+                        <i class="fas fa-image"></i> Xem Bằng Cấp
+                    </a>
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Cử Nhân Công Nghệ Thông Tin</div>
+                            <div class="item-subtitle">Đại Học Công Nghiệp TP. Hồ Chí Minh (IUH)</div>
+                        </div>
+                        <div class="item-year">2010</div>
+                    </div>
+                    <a href="images/bachelor-degree.jpg" target="_blank" class="item-link">
+                        <i class="fas fa-image"></i> Xem Bằng Cấp
+                    </a>
+                </div>
+            </section>
+
+            <!-- Certificates -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-certificate"></i>
+                    Chứng Chỉ
+                </h2>
+                <div class="certificate-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Chuyên Gia Scrum Chuyên Nghiệp II (PSM II)</div>
+                            <div class="item-subtitle">Scrum.org</div>
+                        </div>
+                        <div class="item-year">2025</div>
+                    </div>
+                    <a href="https://www.scrum.org/user/1405028" target="_blank" class="item-link">
+                        <i class="fas fa-external-link-alt"></i> Xem Chứng Chỉ
+                    </a>
+                </div>
+                <div class="certificate-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Chứng Chỉ Lãnh Đạo Toàn Cầu</div>
+                            <div class="item-subtitle">Đại Học Andrews</div>
+                        </div>
+                        <div class="item-year">2023</div>
+                    </div>
+                    <a href="images/cer-leadership.jpg" target="_blank" class="item-link">
+                        <i class="fas fa-image"></i> Xem Chứng Chỉ
+                    </a>
+                </div>
+            </section>
+
+            <!-- Languages -->
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-language"></i>
+                    Ngôn Ngữ
+                </h2>
+                <div class="languages-grid">
+                    <div class="language-card">
+                        <div class="language-name">Tiếng Anh</div>
+                        <div class="language-level">Trình Độ Chuyên Nghiệp</div>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-name">Tiếng Việt</div>
+                        <div class="language-level">Ngôn Ngữ Mẹ Đẻ</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

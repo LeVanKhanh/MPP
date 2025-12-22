@@ -532,13 +532,3 @@ function generateMenuHTML(menu, isOpen = false) {
         }
     }).join('');
 }
-
-/**
- * Khởi tạo menu khi DOM sẵn sàng
- */
-function initializeMenu() {
-    const menuContainer = document.querySelector('.menu');
-    if (menuContainer && mainMenu) {
-        menuContainer.innerHTML = generateMenuHTML(mainMenu, true);
-    }
-}

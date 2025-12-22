@@ -112,23 +112,99 @@
         });
     }
 
+    // Menu generation functions
+    function generateMenuHTML(menu, isOpen = false) {
+        return menu.map(item => {
+            if (item.subItems && item.subItems.length > 0) {
+                // Parent with submenu
+                return `
+                    <li role="none">
+                        <details class="submenu-group" ${isOpen ? 'open' : ''}>
+                            <summary class="submenu-summary">
+                                <i class="${item.icon}" aria-hidden="true"></i>
+                                <span>${item.title}</span>
+                            </summary>
+                            <ul class="submenu" role="menu">
+                                ${generateMenuHTML(item.subItems)}
+                            </ul>
+                        </details>
+                    </li>
+                `;
+            } else {
+                // Leaf node with link
+                return `
+                    <li role="none">
+                        <a role="menuitem" href="${item.hash}" data-route="${item.route}">
+                            <i class="${item.icon}" aria-hidden="true"></i> ${item.title}
+                        </a>
+                    </li>
+                `;
+            }
+        }).join('');
+    }
+
+    function initializeMenu() {
+        const menuContainer = document.querySelector('.menu');
+        const currentLang = getCurrentLanguage();
+        const menuData = currentLang === 'vn' ? (window.mainMenuVn || window.mainMenu) : window.mainMenu;
+        
+        if (menuContainer && menuData) {
+            menuContainer.innerHTML = generateMenuHTML(menuData, true);
+        }
+    }
+
     // Language helpers
     function getCurrentLanguage() {
-        // Check localStorage first
-        const stored = localStorage.getItem('language');
-        if (stored === 'vn' || stored === 'en') return stored;
-        
-        // Check hash for language indicator
-        const hash = window.location.hash || '';
-        if (hash.includes('-vn.html')) return 'vn';
-        
-        // Default to English
-        return 'en';
+        const langToggle = document.getElementById('lang-toggle');
+        return langToggle?.getAttribute('data-lang') || 'en';
+    }
+
+    function loadMenuScript(lang) {
+        // Remove existing menu script
+        const oldScript = document.querySelector('script[src*="main-menu"]');
+        if (oldScript) {
+            oldScript.remove();
+        }
+
+        // Clear menu container
+        const menuRoot = sidebar ? sidebar.querySelector('.menu') : null;
+        if (menuRoot) menuRoot.innerHTML = '';
+
+        // Clear global menu variables
+        if (window.menuItems) delete window.menuItems;
+        if (window.initializeMenu) delete window.initializeMenu;
+
+        // Load new menu script
+        const script = document.createElement('script');
+        script.src = lang === 'vn' ? 'main-menu-vn.js' : 'main-menu.js';
+        script.onload = () => {
+            // Re-initialize menu
+            if (typeof initializeMenu === 'function') {
+                initializeMenu();
+            }
+            // Re-attach navigation handlers
+            attachNavHandlers();
+            // Hide duplicate Home
+            const menuHomeLi = document.querySelector('nav .menu a[href="#/home"]')?.closest('li');
+            if (menuHomeLi) {
+                menuHomeLi.classList.add('is-duplicate-home');
+                menuHomeLi.style.display = 'none';
+            }
+            // Reload current route
+            loadRouteFromHash();
+        };
+        document.body.appendChild(script);
     }
 
     function setLanguage(lang) {
-        localStorage.setItem('language', lang);
-        location.reload();
+        // Update toggle UI
+        const langToggle = document.getElementById('lang-toggle');
+        if (langToggle) {
+            langToggle.setAttribute('data-lang', lang);
+        }
+
+        // Load menu script for new language
+        loadMenuScript(lang);
     }
 
     // Language toggle button
@@ -140,6 +216,9 @@
         const currentLang = getCurrentLanguage();
         langToggle.setAttribute('data-lang', currentLang);
         
+        // Load initial menu script
+        loadMenuScript(currentLang);
+        
         // Toggle on click
         langToggle.addEventListener('click', () => {
             const current = getCurrentLanguage();
@@ -150,10 +229,6 @@
 
     // Init on DOMContentLoaded
     window.addEventListener('DOMContentLoaded', () => {
-        // Initialize menu from main-menu.js
-        if (typeof initializeMenu === 'function') {
-            initializeMenu();
-        }
         initTheme();
         initThemeToggle();
         initLanguageToggle();
@@ -265,6 +340,3 @@
     // Respond to hash changes
     window.addEventListener('hashchange', loadRouteFromHash);
 })();
-
-// Theme toggle logic
-// Removed legacy duplicate initializations and consolidated logic above

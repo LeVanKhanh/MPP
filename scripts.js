@@ -166,8 +166,25 @@
     }
 
     // ========== Language Management ==========
+    function getLanguageFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang');
+        return (lang === 'vn' || lang === 'en') ? lang : null;
+    }
+
     function getCurrentLanguage() {
+        // Check URL parameter first
+        const urlLang = getLanguageFromURL();
+        if (urlLang) return urlLang;
+        
+        // Fall back to toggle attribute
         return elements.langToggle?.getAttribute('data-lang') || 'en';
+    }
+
+    function updateURL(lang) {
+        const url = new URL(window.location);
+        url.searchParams.set('lang', lang);
+        window.history.replaceState({}, '', url);
     }
 
     function loadMenuScript(lang) {
@@ -194,6 +211,7 @@
         if (elements.langToggle) {
             elements.langToggle.setAttribute('data-lang', lang);
         }
+        updateURL(lang);
         loadMenuScript(lang);
     }
 

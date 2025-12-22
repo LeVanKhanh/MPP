@@ -112,6 +112,42 @@
         });
     }
 
+    // Language helpers
+    function getCurrentLanguage() {
+        // Check localStorage first
+        const stored = localStorage.getItem('language');
+        if (stored === 'vn' || stored === 'en') return stored;
+        
+        // Check hash for language indicator
+        const hash = window.location.hash || '';
+        if (hash.includes('-vn.html')) return 'vn';
+        
+        // Default to English
+        return 'en';
+    }
+
+    function setLanguage(lang) {
+        localStorage.setItem('language', lang);
+        location.reload();
+    }
+
+    // Language toggle button
+    function initLanguageToggle() {
+        const langToggle = document.getElementById('lang-toggle');
+        if (!langToggle) return;
+        
+        // Set initial state
+        const currentLang = getCurrentLanguage();
+        langToggle.setAttribute('data-lang', currentLang);
+        
+        // Toggle on click
+        langToggle.addEventListener('click', () => {
+            const current = getCurrentLanguage();
+            const newLang = current === 'en' ? 'vn' : 'en';
+            setLanguage(newLang);
+        });
+    }
+
     // Init on DOMContentLoaded
     window.addEventListener('DOMContentLoaded', () => {
         // Initialize menu from main-menu.js
@@ -120,6 +156,7 @@
         }
         initTheme();
         initThemeToggle();
+        initLanguageToggle();
         initExpandMain();
         attachNavHandlers();
         // Hide duplicate Home in menu (header provides Home)

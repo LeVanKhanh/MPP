@@ -1,4 +1,4 @@
-var mainMenu = [
+var mainMenuVn = [
     {
         title: "Trang Chủ",
         route: "pages/the-planet/home-vn.html",

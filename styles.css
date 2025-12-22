@@ -838,6 +838,133 @@ body.dark-theme .theme-toggle .slider::before {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), 0 0 12px rgba(100, 181, 246, 0.2);
 }
 
+/* Header Controls Container */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/* Beautiful Language Toggle Button */
+.lang-toggle {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.95));
+    border: 2px solid rgba(0, 82, 163, 0.15);
+    border-radius: 24px;
+    cursor: pointer;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.lang-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 82, 163, 0.15), 0 2px 6px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 82, 163, 0.3);
+}
+
+.lang-toggle:active {
+    transform: translateY(0);
+}
+
+.lang-option {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    user-select: none;
+}
+
+.lang-en {
+    left: 0;
+    color: #ffffff;
+}
+
+.lang-vn {
+    right: 0;
+    color: rgba(0, 82, 163, 0.6);
+}
+
+.lang-slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 56px;
+    height: 34px;
+    background: linear-gradient(135deg, #0052a3 0%, #0066cc 50%, #0077e6 100%);
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    box-shadow: 0 3px 8px rgba(0, 82, 163, 0.3), 0 1px 3px rgba(0, 82, 163, 0.2);
+}
+
+/* Vietnamese selected state */
+.lang-toggle[data-lang="vn"] .lang-slider {
+    transform: translateX(58px);
+    background: linear-gradient(135deg, #da251c 0%, #e84118 50%, #ff4757 100%);
+    box-shadow: 0 3px 8px rgba(218, 37, 28, 0.3), 0 1px 3px rgba(218, 37, 28, 0.2);
+}
+
+.lang-toggle[data-lang="vn"] .lang-en {
+    color: rgba(0, 82, 163, 0.6);
+}
+
+.lang-toggle[data-lang="vn"] .lang-vn {
+    color: #ffffff;
+}
+
+/* Dark theme styles */
+body.dark-theme .lang-toggle {
+    background: linear-gradient(135deg, rgba(42, 42, 42, 0.95), rgba(31, 31, 31, 0.95));
+    border-color: rgba(100, 181, 246, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .lang-toggle:hover {
+    box-shadow: 0 6px 20px rgba(100, 181, 246, 0.2), 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-color: rgba(100, 181, 246, 0.35);
+}
+
+body.dark-theme .lang-en {
+    color: #ffffff;
+}
+
+body.dark-theme .lang-vn {
+    color: rgba(144, 202, 249, 0.6);
+}
+
+body.dark-theme .lang-toggle[data-lang="vn"] .lang-en {
+    color: rgba(144, 202, 249, 0.6);
+}
+
+body.dark-theme .lang-toggle[data-lang="vn"] .lang-vn {
+    color: #ffffff;
+}
+
+body.dark-theme .lang-slider {
+    background: linear-gradient(135deg, #1565c0 0%, #1976d2 50%, #2196f3 100%);
+    box-shadow: 0 3px 8px rgba(33, 150, 243, 0.4), 0 1px 3px rgba(33, 150, 243, 0.3);
+}
+
+body.dark-theme .lang-toggle[data-lang="vn"] .lang-slider {
+    background: linear-gradient(135deg, #c62828 0%, #d32f2f 50%, #e53935 100%);
+    box-shadow: 0 3px 8px rgba(229, 57, 53, 0.4), 0 1px 3px rgba(229, 57, 53, 0.3);
+}
+
 .expand-main {
     position: absolute;
     bottom: 1rem;

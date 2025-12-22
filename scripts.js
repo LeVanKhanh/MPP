@@ -1,21 +1,25 @@
 // Refactored for details/summary sidebar, hash routing, and theme sync
 (function () {
-    const body = document.body;
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const sidebar = document.getElementById('sidebar');
-    const sidebarToggle = document.getElementById('sidebar-toggle');
-    const iframe = document.querySelector('iframe[name="content-frame"]');
+    // DOM Elements Cache
+    const elements = {
+        body: document.body,
+        themeToggle: document.getElementById('theme-toggle'),
+        langToggle: document.getElementById('lang-toggle'),
+        sidebar: document.getElementById('sidebar'),
+        sidebarToggle: document.getElementById('sidebar-toggle'),
+        iframe: document.querySelector('iframe[name="content-frame"]')
+    };
 
-    // Theme helpers
+    // ========== Theme Management ==========
     function pushIframeTheme(theme) {
-        if (iframe && iframe.contentWindow) {
-            iframe.contentWindow.postMessage({ type: 'set-theme', theme }, '*');
+        if (elements.iframe?.contentWindow) {
+            elements.iframe.contentWindow.postMessage({ type: 'set-theme', theme }, '*');
         }
     }
 
     function setTheme(theme) {
         const isDark = theme === 'dark';
-        body.classList.toggle('dark-theme', isDark);
+        elements.body.classList.toggle('dark-theme', isDark);
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
         pushIframeTheme(isDark ? 'dark' : 'light');
     }
@@ -25,98 +29,93 @@
         setTheme(saved);
     }
 
-    // Sidebar collapse toggle (header button)
-    if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', function () {
-            sidebar.classList.toggle('collapsed');
+    function initThemeToggle() {
+        if (!elements.themeToggle) return;
+        elements.themeToggle.addEventListener('click', () => {
+            const isDark = !elements.body.classList.contains('dark-theme');
+            setTheme(isDark ? 'dark' : 'light');
         });
     }
 
+    // ========== Sidebar Management ==========
+    function initSidebarToggle() {
+        if (!elements.sidebarToggle) return;
+        elements.sidebarToggle.addEventListener('click', () => {
+            elements.sidebar.classList.toggle('collapsed');
+        });
+    }
+
+    // ========== Navigation & Routing ==========
     function highlightActive(hash) {
-        const links = Array.from(document.querySelectorAll('nav .menu a[data-route]'));
-        links.forEach(l => l.classList.remove('active'));
+        const links = document.querySelectorAll('nav .menu a[data-route]');
+        links.forEach(link => link.classList.remove('active'));
         const current = document.querySelector(`nav .menu a[href="${hash}"]`);
         if (current) current.classList.add('active');
     }
 
-    // Ensure parent details are opened for a given link
     function openParents(link) {
-        let el = link?.closest('.submenu-group') || null;
+        let el = link?.closest('.submenu-group');
         while (el) {
             if (el.tagName.toLowerCase() === 'details') el.open = true;
-            el = el.parentElement?.closest('.submenu-group') || null;
+            el = el.parentElement?.closest('.submenu-group');
         }
     }
 
-    // Routing based on hash + data-route
     function loadRouteFromHash() {
         const hash = window.location.hash || '#/home';
         const link = document.querySelector(`nav .menu a[href="${hash}"]`);
-        if (link && link.dataset && link.dataset.route) {
-            if (iframe) iframe.src = link.dataset.route;
+        
+        if (link?.dataset?.route) {
+            if (elements.iframe) elements.iframe.src = link.dataset.route;
             openParents(link);
             highlightActive(hash);
             return;
         }
-        // Fallback: default to first route or about page
+        
+        // Fallback
         const firstRoute = document.querySelector('nav .menu a[data-route]');
-        if (iframe) iframe.src = firstRoute ? firstRoute.dataset.route : 'pages/the-planet/about/about.html';
+        const defaultRoute = firstRoute?.dataset.route || 'pages/the-planet/about/about.html';
+        if (elements.iframe) elements.iframe.src = defaultRoute;
         if (firstRoute) {
             openParents(firstRoute);
             highlightActive(firstRoute.getAttribute('href'));
         }
     }
 
-    // Click handlers: ensure hash updates and route loads immediately
     function attachNavHandlers() {
-        const links = Array.from(document.querySelectorAll('nav .menu a[data-route]'));
+        const links = document.querySelectorAll('nav .menu a[data-route]');
         links.forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href') || '';
                 if (href.startsWith('#')) {
                     e.preventDefault();
-                    if (window.location.hash !== href) {
-                        window.location.hash = href;
-                    } else {
-                        // same hash clicked, force reload
-                        loadRouteFromHash();
-                    }
+                    window.location.hash !== href ? window.location.hash = href : loadRouteFromHash();
                 }
             });
         });
     }
 
-    // Expand main button
+    // ========== Expand Main Button ==========
     function initExpandMain() {
         const expandBtn = document.getElementById('expand-main');
         const main = document.getElementById('main-content');
         if (!expandBtn || !main) return;
+        
         let expanded = false;
-        expandBtn.addEventListener('click', function () {
+        expandBtn.addEventListener('click', () => {
             expanded = !expanded;
             main.classList.toggle('expanded', expanded);
-            document.body.classList.toggle('expanded-main', expanded);
-            // Change icon
+            elements.body.classList.toggle('expanded-main', expanded);
             expandBtn.innerHTML = expanded
                 ? '<i class="fas fa-compress"></i>'
                 : '<i class="fas fa-expand"></i>';
         });
     }
 
-    // Theme toggle button
-    function initThemeToggle() {
-        if (!themeToggleBtn) return;
-        themeToggleBtn.addEventListener('click', () => {
-            const isDark = !body.classList.contains('dark-theme');
-            setTheme(isDark ? 'dark' : 'light');
-        });
-    }
-
-    // Menu generation functions
+    // ========== Menu Generation ==========
     function generateMenuHTML(menu, isOpen = false) {
         return menu.map(item => {
-            if (item.subItems && item.subItems.length > 0) {
-                // Parent with submenu
+            if (item.subItems?.length > 0) {
                 return `
                     <li role="none">
                         <details class="submenu-group" ${isOpen ? 'open' : ''}>
@@ -130,16 +129,14 @@
                         </details>
                     </li>
                 `;
-            } else {
-                // Leaf node with link
-                return `
-                    <li role="none">
-                        <a role="menuitem" href="${item.hash}" data-route="${item.route}">
-                            <i class="${item.icon}" aria-hidden="true"></i> ${item.title}
-                        </a>
-                    </li>
-                `;
             }
+            return `
+                <li role="none">
+                    <a role="menuitem" href="${item.hash}" data-route="${item.route}">
+                        <i class="${item.icon}" aria-hidden="true"></i> ${item.title}
+                    </a>
+                </li>
+            `;
         }).join('');
     }
 
@@ -153,76 +150,62 @@
         }
     }
 
-    // Language helpers
+    function hideDuplicateHome() {
+        const menuHomeLi = document.querySelector('nav .menu a[href="#/home"]')?.closest('li');
+        if (menuHomeLi) {
+            menuHomeLi.classList.add('is-duplicate-home');
+            menuHomeLi.style.display = 'none';
+        }
+    }
+
+    function reinitializeMenuAfterLoad() {
+        initializeMenu();
+        attachNavHandlers();
+        hideDuplicateHome();
+        loadRouteFromHash();
+    }
+
+    // ========== Language Management ==========
     function getCurrentLanguage() {
-        const langToggle = document.getElementById('lang-toggle');
-        return langToggle?.getAttribute('data-lang') || 'en';
+        return elements.langToggle?.getAttribute('data-lang') || 'en';
     }
 
     function loadMenuScript(lang) {
         // Remove existing menu script
         const oldScript = document.querySelector('script[src*="main-menu"]');
-        if (oldScript) {
-            oldScript.remove();
-        }
+        if (oldScript) oldScript.remove();
 
-        // Clear menu container
-        const menuRoot = sidebar ? sidebar.querySelector('.menu') : null;
+        // Clear menu
+        const menuRoot = elements.sidebar?.querySelector('.menu');
         if (menuRoot) menuRoot.innerHTML = '';
 
-        // Clear global menu variables
+        // Clear global variables
         if (window.menuItems) delete window.menuItems;
         if (window.initializeMenu) delete window.initializeMenu;
 
         // Load new menu script
         const script = document.createElement('script');
         script.src = lang === 'vn' ? 'main-menu-vn.js' : 'main-menu.js';
-        script.onload = () => {
-            // Re-initialize menu
-            if (typeof initializeMenu === 'function') {
-                initializeMenu();
-            }
-            // Re-attach navigation handlers
-            attachNavHandlers();
-            // Hide duplicate Home
-            const menuHomeLi = document.querySelector('nav .menu a[href="#/home"]')?.closest('li');
-            if (menuHomeLi) {
-                menuHomeLi.classList.add('is-duplicate-home');
-                menuHomeLi.style.display = 'none';
-            }
-            // Reload current route
-            loadRouteFromHash();
-        };
+        script.onload = reinitializeMenuAfterLoad;
         document.body.appendChild(script);
     }
 
     function setLanguage(lang) {
-        // Update toggle UI
-        const langToggle = document.getElementById('lang-toggle');
-        if (langToggle) {
-            langToggle.setAttribute('data-lang', lang);
+        if (elements.langToggle) {
+            elements.langToggle.setAttribute('data-lang', lang);
         }
-
-        // Load menu script for new language
         loadMenuScript(lang);
     }
 
-    // Language toggle button
     function initLanguageToggle() {
-        const langToggle = document.getElementById('lang-toggle');
-        if (!langToggle) return;
+        if (!elements.langToggle) return;
         
-        // Set initial state
         const currentLang = getCurrentLanguage();
-        langToggle.setAttribute('data-lang', currentLang);
-        
-        // Load initial menu script
+        elements.langToggle.setAttribute('data-lang', currentLang);
         loadMenuScript(currentLang);
         
-        // Toggle on click
-        langToggle.addEventListener('click', () => {
-            const current = getCurrentLanguage();
-            const newLang = current === 'en' ? 'vn' : 'en';
+        elements.langToggle.addEventListener('click', () => {
+            const newLang = getCurrentLanguage() === 'en' ? 'vn' : 'en';
             setLanguage(newLang);
         });
     }

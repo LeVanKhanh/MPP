@@ -1,6 +1,19 @@
-// Refactored for details/summary sidebar, hash routing, and theme sync
+// My Personal Planet - Main Application Script
 (function () {
-    // DOM Elements Cache
+    'use strict';
+
+    // ========== Constants & Configuration ==========
+    const CONFIG = {
+        DEFAULT_THEME: 'dark',
+        DEFAULT_LANG: 'en',
+        DEFAULT_ROUTE: 'pages/the-planet/about/about.html',
+        MENU_SCRIPTS: {
+            en: 'main-menu.js',
+            vn: 'main-menu-vn.js'
+        }
+    };
+
+    // ========== DOM Elements Cache ==========
     const elements = {
         body: document.body,
         themeToggle: document.getElementById('theme-toggle'),
@@ -10,281 +23,309 @@
         iframe: document.querySelector('iframe[name="content-frame"]')
     };
 
+    // ========== Utility Functions ==========
+    const utils = {
+        getUrlParam: (param) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        },
+        
+        updateUrlParam: (param, value) => {
+            const url = new URL(window.location);
+            url.searchParams.set(param, value);
+            window.history.replaceState({}, '', url);
+        },
+        
+        isValidLanguage: (lang) => lang === 'vn' || lang === 'en',
+        
+        querySelector: (selector) => document.querySelector(selector),
+        querySelectorAll: (selector) => document.querySelectorAll(selector)
+    };
+
     // ========== Theme Management ==========
-    function pushIframeTheme(theme) {
-        if (elements.iframe?.contentWindow) {
-            elements.iframe.contentWindow.postMessage({ type: 'set-theme', theme }, '*');
-        }
-    }
+    const themeManager = {
+        pushToIframe(theme) {
+            if (elements.iframe?.contentWindow) {
+                elements.iframe.contentWindow.postMessage({ type: 'set-theme', theme }, '*');
+            }
+        },
 
-    function setTheme(theme) {
-        const isDark = theme === 'dark';
-        elements.body.classList.toggle('dark-theme', isDark);
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        pushIframeTheme(isDark ? 'dark' : 'light');
-    }
+        set(theme) {
+            const isDark = theme === 'dark';
+            elements.body.classList.toggle('dark-theme', isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            this.pushToIframe(isDark ? 'dark' : 'light');
+        },
 
-    function initTheme() {
-        const saved = localStorage.getItem('theme') || 'dark';
-        setTheme(saved);
-    }
+        init() {
+            const saved = localStorage.getItem('theme') || CONFIG.DEFAULT_THEME;
+            this.set(saved);
+        },
 
-    function initThemeToggle() {
-        if (!elements.themeToggle) return;
-        elements.themeToggle.addEventListener('click', () => {
+        toggle() {
             const isDark = !elements.body.classList.contains('dark-theme');
-            setTheme(isDark ? 'dark' : 'light');
-        });
-    }
-
-    // ========== Sidebar Management ==========
-    function initSidebarToggle() {
-        if (!elements.sidebarToggle) return;
-        elements.sidebarToggle.addEventListener('click', () => {
-            elements.sidebar.classList.toggle('collapsed');
-        });
-    }
+            this.set(isDark ? 'dark' : 'light');
+        }
+    };
 
     // ========== Navigation & Routing ==========
-    function highlightActive(hash) {
-        const links = document.querySelectorAll('nav .menu a[data-route]');
-        links.forEach(link => link.classList.remove('active'));
-        const current = document.querySelector(`nav .menu a[href="${hash}"]`);
-        if (current) current.classList.add('active');
-    }
+    const router = {
+        highlightActive(hash) {
+            const links = utils.querySelectorAll('nav .menu a[data-route]');
+            links.forEach(link => link.classList.remove('active'));
+            const current = utils.querySelector(`nav .menu a[href="${hash}"]`);
+            if (current) current.classList.add('active');
+        },
 
-    function openParents(link) {
-        let el = link?.closest('.submenu-group');
-        while (el) {
-            if (el.tagName.toLowerCase() === 'details') el.open = true;
-            el = el.parentElement?.closest('.submenu-group');
-        }
-    }
+        openParents(link) {
+            let el = link?.closest('.submenu-group');
+            while (el) {
+                if (el.tagName.toLowerCase() === 'details') el.open = true;
+                el = el.parentElement?.closest('.submenu-group');
+            }
+        },
 
-    function loadRouteFromHash() {
-        const hash = window.location.hash || '#/home';
-        const link = document.querySelector(`nav .menu a[href="${hash}"]`);
-        
-        if (link?.dataset?.route) {
-            if (elements.iframe) elements.iframe.src = link.dataset.route;
-            openParents(link);
-            highlightActive(hash);
-            return;
-        }
-        
-        // Fallback
-        const firstRoute = document.querySelector('nav .menu a[data-route]');
-        const defaultRoute = firstRoute?.dataset.route || 'pages/the-planet/about/about.html';
-        if (elements.iframe) elements.iframe.src = defaultRoute;
-        if (firstRoute) {
-            openParents(firstRoute);
-            highlightActive(firstRoute.getAttribute('href'));
-        }
-    }
+        loadFromHash() {
+            const hash = window.location.hash || '#/home';
+            const link = utils.querySelector(`nav .menu a[href="${hash}"]`);
+            
+            if (link?.dataset?.route) {
+                if (elements.iframe) elements.iframe.src = link.dataset.route;
+                this.openParents(link);
+                this.highlightActive(hash);
+                return;
+            }
+            
+            // Fallback
+            const firstRoute = utils.querySelector('nav .menu a[data-route]');
+            const defaultRoute = firstRoute?.dataset.route || CONFIG.DEFAULT_ROUTE;
+            if (elements.iframe) elements.iframe.src = defaultRoute;
+            if (firstRoute) {
+                this.openParents(firstRoute);
+                this.highlightActive(firstRoute.getAttribute('href'));
+            }
+        },
 
-    function attachNavHandlers() {
-        const links = document.querySelectorAll('nav .menu a[data-route]');
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const href = link.getAttribute('href') || '';
-                if (href.startsWith('#')) {
-                    e.preventDefault();
-                    window.location.hash !== href ? window.location.hash = href : loadRouteFromHash();
-                }
+        attachHandlers() {
+            const links = utils.querySelectorAll('nav .menu a[data-route]');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href') || '';
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        window.location.hash !== href ? window.location.hash = href : this.loadFromHash();
+                    }
+                });
             });
-        });
-    }
+        }
+    };
 
-    // ========== Expand Main Button ==========
-    function initExpandMain() {
-        const expandBtn = document.getElementById('expand-main');
-        const main = document.getElementById('main-content');
-        if (!expandBtn || !main) return;
-        
-        let expanded = false;
-        expandBtn.addEventListener('click', () => {
-            expanded = !expanded;
-            main.classList.toggle('expanded', expanded);
-            elements.body.classList.toggle('expanded-main', expanded);
-            expandBtn.innerHTML = expanded
-                ? '<i class="fas fa-compress"></i>'
-                : '<i class="fas fa-expand"></i>';
-        });
-    }
+    // ========== UI Controls ==========
+    const uiControls = {
+        initExpandMain() {
+            const expandBtn = document.getElementById('expand-main');
+            const main = document.getElementById('main-content');
+            if (!expandBtn || !main) return;
+            
+            let expanded = false;
+            expandBtn.addEventListener('click', () => {
+                expanded = !expanded;
+                main.classList.toggle('expanded', expanded);
+                elements.body.classList.toggle('expanded-main', expanded);
+                expandBtn.innerHTML = expanded
+                    ? '<i class="fas fa-compress"></i>'
+                    : '<i class="fas fa-expand"></i>';
+            });
+        },
+
+        initSidebarToggle() {
+            if (!elements.sidebarToggle) return;
+            elements.sidebarToggle.addEventListener('click', () => {
+                elements.sidebar.classList.toggle('collapsed');
+            });
+        }
+    };
 
     // ========== Menu Generation ==========
-    function generateMenuHTML(menu, isOpen = false) {
-        return menu.map(item => {
-            if (item.subItems?.length > 0) {
+    const menuManager = {
+        generateHTML(menu, isOpen = false) {
+            return menu.map(item => {
+                if (item.subItems?.length > 0) {
+                    return `
+                        <li role="none">
+                            <details class="submenu-group" ${isOpen ? 'open' : ''}>
+                                <summary class="submenu-summary">
+                                    <i class="${item.icon}" aria-hidden="true"></i>
+                                    <span>${item.title}</span>
+                                </summary>
+                                <ul class="submenu" role="menu">
+                                    ${this.generateHTML(item.subItems)}
+                                </ul>
+                            </details>
+                        </li>
+                    `;
+                }
                 return `
                     <li role="none">
-                        <details class="submenu-group" ${isOpen ? 'open' : ''}>
-                            <summary class="submenu-summary">
-                                <i class="${item.icon}" aria-hidden="true"></i>
-                                <span>${item.title}</span>
-                            </summary>
-                            <ul class="submenu" role="menu">
-                                ${generateMenuHTML(item.subItems)}
-                            </ul>
-                        </details>
+                        <a role="menuitem" href="${item.hash}" data-route="${item.route}">
+                            <i class="${item.icon}" aria-hidden="true"></i> ${item.title}
+                        </a>
                     </li>
                 `;
+            }).join('');
+        },
+
+        render() {
+            const menuContainer = utils.querySelector('.menu');
+            const currentLang = languageManager.getCurrent();
+            const menuData = currentLang === 'vn' ? (window.mainMenuVn || window.mainMenu) : window.mainMenu;
+            
+            if (menuContainer && menuData) {
+                menuContainer.innerHTML = this.generateHTML(menuData, true);
             }
-            return `
-                <li role="none">
-                    <a role="menuitem" href="${item.hash}" data-route="${item.route}">
-                        <i class="${item.icon}" aria-hidden="true"></i> ${item.title}
-                    </a>
-                </li>
-            `;
-        }).join('');
-    }
+        },
 
-    function initializeMenu() {
-        const menuContainer = document.querySelector('.menu');
-        const currentLang = getCurrentLanguage();
-        const menuData = currentLang === 'vn' ? (window.mainMenuVn || window.mainMenu) : window.mainMenu;
-        
-        if (menuContainer && menuData) {
-            menuContainer.innerHTML = generateMenuHTML(menuData, true);
+        hideDuplicateHome() {
+            const menuHomeLi = utils.querySelector('nav .menu a[href="#/home"]')?.closest('li');
+            if (menuHomeLi) {
+                menuHomeLi.classList.add('is-duplicate-home');
+                menuHomeLi.style.display = 'none';
+            }
+        },
+
+        reinitialize() {
+            this.render();
+            router.attachHandlers();
+            this.hideDuplicateHome();
+            router.loadFromHash();
         }
-    }
-
-    function hideDuplicateHome() {
-        const menuHomeLi = document.querySelector('nav .menu a[href="#/home"]')?.closest('li');
-        if (menuHomeLi) {
-            menuHomeLi.classList.add('is-duplicate-home');
-            menuHomeLi.style.display = 'none';
-        }
-    }
-
-    function reinitializeMenuAfterLoad() {
-        initializeMenu();
-        attachNavHandlers();
-        hideDuplicateHome();
-        loadRouteFromHash();
-    }
+    };
 
     // ========== Language Management ==========
-    function getLanguageFromURL() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const lang = urlParams.get('lang');
-        return (lang === 'vn' || lang === 'en') ? lang : null;
-    }
+    const languageManager = {
+        getFromURL() {
+            const lang = utils.getUrlParam('lang');
+            return utils.isValidLanguage(lang) ? lang : null;
+        },
 
-    function getCurrentLanguage() {
-        // Check URL parameter first
-        const urlLang = getLanguageFromURL();
-        if (urlLang) return urlLang;
-        
-        // Fall back to toggle attribute
-        return elements.langToggle?.getAttribute('data-lang') || 'en';
-    }
+        getCurrent() {
+            return this.getFromURL() || elements.langToggle?.getAttribute('data-lang') || CONFIG.DEFAULT_LANG;
+        },
 
-    function updateURL(lang) {
-        const url = new URL(window.location);
-        url.searchParams.set('lang', lang);
-        window.history.replaceState({}, '', url);
-    }
+        loadScript(lang) {
+            // Remove existing menu script
+            const oldScript = utils.querySelector('script[src*="main-menu"]');
+            if (oldScript) oldScript.remove();
 
-    function loadMenuScript(lang) {
-        // Remove existing menu script
-        const oldScript = document.querySelector('script[src*="main-menu"]');
-        if (oldScript) oldScript.remove();
+            // Clear menu
+            const menuRoot = elements.sidebar?.querySelector('.menu');
+            if (menuRoot) menuRoot.innerHTML = '';
 
-        // Clear menu
-        const menuRoot = elements.sidebar?.querySelector('.menu');
-        if (menuRoot) menuRoot.innerHTML = '';
+            // Clear global variables (set to undefined instead of delete to avoid errors)
+            if (window.menuItems) window.menuItems = undefined;
+            if (window.mainMenu) window.mainMenu = undefined;
+            if (window.mainMenuVn) window.mainMenuVn = undefined;
 
-        // Clear global variables
-        if (window.menuItems) delete window.menuItems;
-        if (window.initializeMenu) delete window.initializeMenu;
+            // Load new menu script
+            const script = document.createElement('script');
+            script.src = CONFIG.MENU_SCRIPTS[lang] || CONFIG.MENU_SCRIPTS.en;
+            script.onload = () => menuManager.reinitialize();
+            document.body.appendChild(script);
+        },
 
-        // Load new menu script
-        const script = document.createElement('script');
-        script.src = lang === 'vn' ? 'main-menu-vn.js' : 'main-menu.js';
-        script.onload = reinitializeMenuAfterLoad;
-        document.body.appendChild(script);
-    }
+        set(lang) {
+            if (elements.langToggle) {
+                elements.langToggle.setAttribute('data-lang', lang);
+            }
+            utils.updateUrlParam('lang', lang);
+            this.loadScript(lang);
+        },
 
-    function setLanguage(lang) {
-        if (elements.langToggle) {
-            elements.langToggle.setAttribute('data-lang', lang);
+        init() {
+            if (!elements.langToggle) return;
+            
+            const currentLang = this.getCurrent();
+            elements.langToggle.setAttribute('data-lang', currentLang);
+            this.loadScript(currentLang);
+            
+            elements.langToggle.addEventListener('click', () => {
+                const newLang = this.getCurrent() === 'en' ? 'vn' : 'en';
+                this.set(newLang);
+            });
         }
-        updateURL(lang);
-        loadMenuScript(lang);
-    }
+    };
 
-    function initLanguageToggle() {
-        if (!elements.langToggle) return;
-        
-        const currentLang = getCurrentLanguage();
-        elements.langToggle.setAttribute('data-lang', currentLang);
-        loadMenuScript(currentLang);
-        
-        elements.langToggle.addEventListener('click', () => {
-            const newLang = getCurrentLanguage() === 'en' ? 'vn' : 'en';
-            setLanguage(newLang);
-        });
-    }
+    // ========== Search Functionality ==========
+    const searchManager = {
+        init() {
+            if (!elements.sidebar) return;
 
-    // Init on DOMContentLoaded
-    window.addEventListener('DOMContentLoaded', () => {
-        initTheme();
-        initThemeToggle();
-        initLanguageToggle();
-        initExpandMain();
-        attachNavHandlers();
-        // Hide duplicate Home in menu (header provides Home)
-        const menuHomeLi = document.querySelector('nav .menu a[href="#/home"]')?.closest('li');
-        if (menuHomeLi) {
-            menuHomeLi.classList.add('is-duplicate-home');
-            menuHomeLi.style.display = 'none';
-        }
-        // Sidebar menu search toggle and filtering (header inline)
-        const searchContainer = sidebar ? sidebar.querySelector('.menu-header') : null;
-        const searchToggle = document.getElementById('menu-search-toggle');
-        const searchInput = document.getElementById('menu-search-input');
-        const menuRoot = sidebar ? sidebar.querySelector('.menu') : null;
-        const headerHome = sidebar ? sidebar.querySelector('.menu-header .menu-home') : null;
+            const searchContainer = elements.sidebar.querySelector('.menu-header');
+            const searchToggle = document.getElementById('menu-search-toggle');
+            const searchInput = document.getElementById('menu-search-input');
+            const menuRoot = elements.sidebar.querySelector('.menu');
+            const headerHome = elements.sidebar.querySelector('.menu-header .menu-home');
 
-        if (searchContainer && searchToggle && searchInput && menuRoot) {
-            const showSearch = () => {
+            if (!searchContainer || !searchToggle || !searchInput || !menuRoot) return;
+
+            const show = () => {
                 searchContainer.classList.add('active');
                 searchToggle.setAttribute('aria-expanded', 'true');
                 searchToggle.setAttribute('title', 'Close search');
-                // Use fa-times for broad Font Awesome compatibility
                 searchToggle.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i>';
                 searchInput.value = '';
-                // focus after layout update
                 setTimeout(() => searchInput.focus(), 0);
-                filterMenu('');
+                this.filter('');
             };
 
-            const hideSearch = () => {
+            const hide = () => {
                 searchContainer.classList.remove('active');
                 searchToggle.setAttribute('aria-expanded', 'false');
                 searchToggle.setAttribute('title', 'Search menu');
                 searchToggle.innerHTML = '<i class="fas fa-search" aria-hidden="true"></i>';
                 searchInput.blur();
                 searchInput.value = '';
-                filterMenu('');
+                this.filter('');
             };
 
-            const filterMenu = (query) => {
-                const q = (query || '').trim().toLowerCase();
-                const items = Array.from(menuRoot.querySelectorAll('li'));
-                if (!q) {
-                    items.forEach(li => {
-                        if (li.classList.contains('is-duplicate-home')) {
-                            li.style.display = 'none';
-                            return;
-                        }
-                        li.style.display = '';
-                        li.removeAttribute('data-match');
-                    });
-                    return;
-                }
+            searchToggle.addEventListener('click', () => {
+                searchContainer.classList.contains('active') ? hide() : show();
+            });
+
+            searchInput.addEventListener('input', (e) => this.filter(e.target.value));
+
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') hide();
+            });
+
+            // Header Home link routing
+            if (headerHome) {
+                headerHome.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = headerHome.getAttribute('href') || '#/home';
+                    window.location.hash !== href ? window.location.hash = href : router.loadFromHash();
+                });
+            }
+        },
+
+        filter(query) {
+            const menuRoot = elements.sidebar?.querySelector('.menu');
+            if (!menuRoot) return;
+
+            const q = (query || '').trim().toLowerCase();
+            const items = Array.from(menuRoot.querySelectorAll('li'));
+
+            if (!q) {
+                items.forEach(li => {
+                    if (li.classList.contains('is-duplicate-home')) {
+                        li.style.display = 'none';
+                        return;
+                    }
+                    li.style.display = '';
+                    li.removeAttribute('data-match');
+                });
+                return;
+            }
 
             items.forEach(li => {
                 if (li.classList.contains('is-duplicate-home')) {
@@ -297,47 +338,28 @@
                 li.style.display = match ? '' : 'none';
             });
 
-                // Ensure parents are shown if any descendant matches
-                items.forEach(li => {
-                    const childVisible = Array.from(li.querySelectorAll('li')).some(child => child.style.display !== 'none');
-                    if (childVisible) li.style.display = '';
-                });
-            };
-
-            searchToggle.addEventListener('click', () => {
-                if (searchContainer.classList.contains('active')) {
-                    hideSearch();
-                } else {
-                    showSearch();
-                }
+            // Ensure parents are shown if any descendant matches
+            items.forEach(li => {
+                const childVisible = Array.from(li.querySelectorAll('li')).some(child => child.style.display !== 'none');
+                if (childVisible) li.style.display = '';
             });
-
-            searchInput.addEventListener('input', (e) => {
-                filterMenu(e.target.value);
-            });
-
-            searchInput.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    hideSearch();
-                }
-            });
-            // Header Home link routing
-            if (headerHome) {
-                headerHome.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const href = headerHome.getAttribute('href') || '#/home';
-                    if (window.location.hash !== href) {
-                        window.location.hash = href;
-                    } else {
-                        loadRouteFromHash();
-                    }
-                });
-            }
         }
-        // Load route after wiring header
-        loadRouteFromHash();
-    });
+    };
 
-    // Respond to hash changes
-    window.addEventListener('hashchange', loadRouteFromHash);
+    // ========== Application Initialization ==========
+    window.addEventListener('DOMContentLoaded', () => {
+        themeManager.init();
+        languageManager.init();
+        uiControls.initSidebarToggle();
+        uiControls.initExpandMain();
+        searchManager.init();
+        
+        // Initialize theme toggle
+        if (elements.themeToggle) {
+            elements.themeToggle.addEventListener('click', () => themeManager.toggle());
+        }
+        
+        // Initialize routing
+        window.addEventListener('hashchange', () => router.loadFromHash());
+    });
 })();

@@ -263,6 +263,33 @@ var mainMenuVn = [
                 ],
             },
             {
+                title: "Triết Học & Tôn Giáo",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Triết Học Mác - Ăng-ghen",
+                        route: "pages/reading-studying/philosophy-religion/marx-engels-philosophy-vn.html",
+                        hash: "#/marx-engels-philosophy",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Phật Giáo",
+                        route: "pages/reading-studying/philosophy-religion/buddhism-vn.html",
+                        hash: "#/buddhism",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Đạo Gia - Lão Tử",
+                        route: "pages/reading-studying/philosophy-religion/taoism-laozi-vn.html",
+                        hash: "#/taoism-laozi",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
+            {
                 title: "Ngụy Biện, Thiên Kiến & Tranh Luận",
                 icon: "fas fa-folder",
                 subItems: [

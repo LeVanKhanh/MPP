@@ -263,6 +263,26 @@ var mainMenu = [
                 ],
             },
             {
+                title: "Philosophy & Religion",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Marxist Philosophy (Marx-Engels)",
+                        route: "pages/reading-studying/philosophy-religion/marx-engels-philosophy.html",
+                        hash: "#/marx-engels-philosophy",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Buddhism",
+                        route: "pages/reading-studying/philosophy-religion/buddhism.html",
+                        hash: "#/buddhism",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
+            {
                 title: "Fallacy, Bias & Debate",
                 icon: "fas fa-folder",
                 subItems: [

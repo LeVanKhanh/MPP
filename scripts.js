@@ -148,12 +148,12 @@
 
     // ========== Menu Generation ==========
     const menuManager = {
-        generateHTML(menu, isOpen = false) {
+        generateHTML(menu) {
             return menu.map(item => {
                 if (item.subItems?.length > 0) {
                     return `
                         <li role="none">
-                            <details class="submenu-group" ${isOpen ? 'open' : ''}>
+                            <details class="submenu-group">
                                 <summary class="submenu-summary">
                                     <i class="${item.icon}" aria-hidden="true"></i>
                                     <span>${item.title}</span>
@@ -181,8 +181,13 @@
             const menuData = currentLang === 'vn' ? (window.mainMenuVn || window.mainMenu) : window.mainMenu;
             
             if (menuContainer && menuData) {
-                menuContainer.innerHTML = this.generateHTML(menuData, true);
+                menuContainer.innerHTML = this.generateHTML(menuData);
             }
+        },
+
+        collapseAll() {
+            const allDetails = utils.querySelectorAll('nav .menu details.submenu-group');
+            allDetails.forEach(detail => detail.open = false);
         },
 
         hideDuplicateHome() {
@@ -195,6 +200,7 @@
 
         reinitialize() {
             this.render();
+            this.collapseAll();
             router.attachHandlers();
             this.hideDuplicateHome();
             router.loadFromHash();

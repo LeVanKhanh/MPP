@@ -912,7 +912,7 @@ body.dark-theme .theme-toggle .slider::before {
 }
 
 .flag-vn {
-    background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20"%3e%3crect width="30" height="20" fill="%23da251d"/%3e%3cpath fill="%23ffff00" d="M15 4l1.8 5.5h5.8l-4.7 3.4 1.8 5.5-4.7-3.4-4.7 3.4 1.8-5.5-4.7-3.4h5.8z"/%3e%3c/svg%3e');
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20"%3e%3crect width="30" height="20" fill="%23da251d"/%3e%3cpath fill="%23ffff00" d="M15 2.8l2.35 5.5h5.8l-4.7 3.4 1.8 5.5-4.7-3.4-4.7 3.4 1.8-5.5-4.7-3.4h5.8z"/%3e%3c/svg%3e');
 }
 
 /* Sliding Indicator */

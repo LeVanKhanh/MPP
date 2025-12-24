@@ -7,7 +7,7 @@ var mainMenu = [
         subItems: [],
     },
     {
-        title: "The Planet",
+        title: "My Personal Planet",
         icon: "fas fa-globe",
         subItems: [
             {

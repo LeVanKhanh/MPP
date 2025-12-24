@@ -467,6 +467,13 @@ header {
     transition: all 0.3s ease;
 }
 
+/* Mobile styles */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+}
+
 .logo-container > i.fa-globe {
     font-size: 2rem;
     background: linear-gradient(135deg, var(--link-color), var(--link-hover));
@@ -992,6 +999,14 @@ body.expanded-main .expand-main .expand-icon {
 
 body.expanded-main .expand-main .compress-icon {
     display: inline-block;
+}
+
+/* Mobile: Move collapse button to top right when expanded */
+@media (max-width: 768px) {
+    body.expanded-main .expand-main {
+        top: 1rem;
+        bottom: auto;
+    }
 }
 
 body.dark-theme {

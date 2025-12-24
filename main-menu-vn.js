@@ -7,7 +7,7 @@ var mainMenuVn = [
         subItems: [],
     },
     {
-        title: "Hành Tinh",
+        title: "Hành Tinh Của Tôi",
         icon: "fas fa-globe",
         subItems: [
             {
@@ -536,6 +536,13 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "Người Hàng Xóm (Nguyễn Bính)",
+                                route: "pages/literature/poetry/nguyen-binh/nguoi-hang-xom-nguyen-binh.html",
+                                hash: "#/nguoi-hang-xom-nguyen-binh",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                     {
@@ -657,6 +664,26 @@ var mainMenuVn = [
                                 title: "Ông Đồ (Vũ Đình Liên)",
                                 route: "pages/literature/poetry/tac-gia-khac/ong-do-vu-dinh-liên.html",
                                 hash: "#/ong-do-vu-dinh-lien",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
+                                title: "Đôi Dép (Nguyễn Trung Kiên)",
+                                route: "pages/literature/poetry/tac-gia-khac/doi-dep-nguyen-trung-kien.html",
+                                hash: "#/doi-dep-nguyen-trung-kien",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                        ],
+                    },
+                    {
+                        title: "TPD",
+                        icon: "fas fa-folder",
+                        subItems: [
+                            {
+                                title: "Lá Vàng (TPD)",
+                                route: "pages/literature/poetry/tpd/la-vang-tpd.html",
+                                hash: "#/la-vang-tpd",
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },

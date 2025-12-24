@@ -128,13 +128,25 @@
             if (!expandBtn || !main) return;
             
             let expanded = false;
-            expandBtn.addEventListener('click', () => {
-                expanded = !expanded;
+            
+            const toggleExpand = (shouldExpand) => {
+                expanded = shouldExpand;
                 main.classList.toggle('expanded', expanded);
                 elements.body.classList.toggle('expanded-main', expanded);
                 expandBtn.innerHTML = expanded
                     ? '<i class="fas fa-compress"></i>'
                     : '<i class="fas fa-expand"></i>';
+            };
+            
+            expandBtn.addEventListener('click', () => {
+                toggleExpand(!expanded);
+            });
+            
+            // Exit fullscreen on ESC key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && expanded) {
+                    toggleExpand(false);
+                }
             });
         },
 

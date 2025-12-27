@@ -462,59 +462,6 @@ var mainMenu = [
             },
         ],
     },
-    {
-        title: "Literature",
-        icon: "fas fa-book-open",
-        subItems: [
-            {
-                title: "Poetry",
-                icon: "fas fa-folder",
-                subItems: [
-                    {
-                        title: "Hai Sắc Hoa Tigôn",
-                        route: "pages/literature/poetry/Hai-sac-hoa-tigon.html",
-                        hash: "#/hai-sac-hoa-tigon",
-                        icon: "fas fa-file-alt",
-                        subItems: [],
-                    },
-                    {
-                        title: "Nhớ Rừng (Thế Lữ)",
-                        route: "pages/literature/poetry/Nho-rung-The-Lu.html",
-                        hash: "#/nho-rung-the-lu",
-                        icon: "fas fa-file-alt",
-                        subItems: [],
-                    },
-                    {
-                        title: "Quê Hương (Giang Nam)",
-                        route: "pages/literature/poetry/Que-huong-Giang-Nam.html",
-                        hash: "#/que-huong-giang-nam",
-                        icon: "fas fa-file-alt",
-                        subItems: [],
-                    },
-                ],
-            },
-            {
-                title: "Proverbs - Folk Songs",
-                icon: "fas fa-folder",
-                subItems: [
-                    {
-                        title: "Tát Nước Đầu Đình",
-                        route: "pages/literature/proverbs-and-folk-songs/Tat-nuoc-dau-dinh.html",
-                        hash: "#/tat-nuoc-dau-dinh",
-                        icon: "fas fa-file-alt",
-                        subItems: [],
-                    },
-                    {
-                        title: "Trèo Lên Cây Bưởi Hái Hoa",
-                        route: "pages/literature/proverbs-and-folk-songs/Treo-len-cay-buoi-hai-hoa.html",
-                        hash: "#/treo-len-cay-buoi-hai-hoa",
-                        icon: "fas fa-file-alt",
-                        subItems: [],
-                    },
-                ],
-            },
-        ],
-    },
 ];
 
 /**

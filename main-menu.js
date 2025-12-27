@@ -455,10 +455,23 @@ var mainMenu = [
         subItems: [
             {
                 title: "Values Creation",
-                route: "pages/writing-opinion/values-creation.html",
-                hash: "#/values-creation",
-                icon: "fas fa-file-alt",
-                subItems: [],
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Understanding the Nature of Value",
+                        route: "pages/writing-opinion/values-creation/understanding-the-nature-of-value.html",
+                        hash: "#/understanding-the-nature-of-value",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Values Creation",
+                        route: "pages/writing-opinion/values-creation/values-creation.html",
+                        hash: "#/values-creation",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
             },
         ],
     },

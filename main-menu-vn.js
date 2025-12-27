@@ -461,11 +461,24 @@ var mainMenuVn = [
         icon: "fas fa-folder",
         subItems: [
             {
-                title: "Tạo Giá Trị",
-                route: "pages/writing-opinion/values-creation-vn.html",
-                hash: "#/values-creation",
-                icon: "fas fa-file-alt",
-                subItems: [],
+                title: "Tạo Ra Giá Trị",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Hiểu Về Bản Chất Của Giá Trị",
+                        route: "pages/writing-opinion/values-creation/understanding-the-nature-of-value-vn.html",
+                        hash: "#/understanding-the-nature-of-value",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Tạo Ra Giá Trị",
+                        route: "pages/writing-opinion/values-creation/values-creation-vn.html",
+                        hash: "#/values-creation",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
             },
         ],
     },

@@ -6,6 +6,34 @@
     <title>Sơ Yếu Lý Lịch Chuyên Nghiệp - Quản Lý Kỹ Thuật Phần Mềm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            /* Light theme colors */
+            --bg-gradient-start: #667eea;
+            --bg-gradient-end: #764ba2;
+            --container-bg: #ffffff;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --card-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --card-hover-shadow: rgba(102, 126, 234, 0.2);
+            --education-bg: #f7fafc;
+            --education-hover-bg: #edf2f7;
+            --box-shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-theme {
+            /* Dark theme colors */
+            --bg-gradient-start: #1a202c;
+            --bg-gradient-end: #2d3748;
+            --container-bg: #1a202c;
+            --text-primary: #e2e8f0;
+            --text-secondary: #cbd5e0;
+            --card-bg: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            --card-hover-shadow: rgba(102, 126, 234, 0.4);
+            --education-bg: #2d3748;
+            --education-hover-bg: #374151;
+            --box-shadow: rgba(0, 0, 0, 0.6);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,19 +42,21 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
             padding: 40px 20px;
             min-height: 100vh;
+            transition: background 0.3s ease;
         }
 
         .resume-container {
             max-width: 1000px;
             margin: 0 auto;
-            background: #ffffff;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: var(--container-bg);
+            box-shadow: 0 20px 60px var(--box-shadow);
             border-radius: 10px;
             overflow: hidden;
             animation: fadeIn 0.8s ease-in;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
         @keyframes fadeIn {
@@ -130,8 +160,9 @@
         .summary-text {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #2d3748;
+            color: var(--text-primary);
             text-align: justify;
+            transition: color 0.3s ease;
         }
 
         /* Experience Section */
@@ -143,16 +174,16 @@
         }
 
         .experience-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: var(--card-bg);
             padding: 25px;
             border-radius: 10px;
             border-left: 4px solid #667eea;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
         }
 
         .experience-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 10px 25px var(--card-hover-shadow);
         }
 
         .experience-card .years {
@@ -164,8 +195,9 @@
 
         .experience-card .description {
             font-size: 1rem;
-            color: #2d3748;
+            color: var(--text-primary);
             line-height: 1.6;
+            transition: color 0.3s ease;
         }
 
         /* Skills Section */
@@ -179,12 +211,13 @@
 
         .skills-category-title {
             font-size: 1.2rem;
-            color: #2d3748;
+            color: var(--text-primary);
             font-weight: 600;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
+            transition: color 0.3s ease;
         }
 
         .skills-category-title i {
@@ -212,15 +245,16 @@
         }
 
         .skill-description {
-            color: #4a5568;
+            color: var(--text-secondary);
             line-height: 1.7;
             margin-top: 10px;
             text-align: justify;
+            transition: color 0.3s ease;
         }
 
         /* Education & Certificates */
         .education-item, .certificate-item {
-            background: #f7fafc;
+            background: var(--education-bg);
             padding: 20px 25px;
             border-radius: 8px;
             margin-bottom: 15px;
@@ -229,7 +263,7 @@
         }
 
         .education-item:hover, .certificate-item:hover {
-            background: #edf2f7;
+            background: var(--education-hover-bg);
         }
 
         .education-item:last-child, .certificate-item:last-child {
@@ -248,7 +282,8 @@
         .item-title {
             font-size: 1.15rem;
             font-weight: 600;
-            color: #2d3748;
+            color: var(--text-primary);
+            transition: color 0.3s ease;
         }
 
         .item-year {
@@ -261,8 +296,9 @@
         }
 
         .item-subtitle {
-            color: #4a5568;
+            color: var(--text-secondary);
             font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
 
         .item-link {

@@ -127,7 +127,9 @@
             const main = document.getElementById('main-content');
             if (!expandBtn || !main) return;
             
-            let expanded = false;
+            // Check URL parameter for initial state (default: false)
+            const urlExpanded = utils.getUrlParam('expanded');
+            let expanded = urlExpanded === 'true';
             
             const toggleExpand = (shouldExpand) => {
                 expanded = shouldExpand;
@@ -136,7 +138,15 @@
                 expandBtn.innerHTML = expanded
                     ? '<i class="fas fa-compress"></i>'
                     : '<i class="fas fa-expand"></i>';
+                
+                // Update URL parameter
+                utils.updateUrlParam('expanded', expanded ? 'true' : 'false');
             };
+            
+            // Set initial state from URL
+            if (expanded) {
+                toggleExpand(true);
+            }
             
             expandBtn.addEventListener('click', () => {
                 toggleExpand(!expanded);

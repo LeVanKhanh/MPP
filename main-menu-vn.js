@@ -462,7 +462,7 @@ var mainMenuVn = [
         subItems: [
             {
                 title: "Tạo Giá Trị",
-                route: "pages/writing-opinion/values-creation.html",
+                route: "pages/writing-opinion/values-creation-vn.html",
                 hash: "#/values-creation",
                 icon: "fas fa-file-alt",
                 subItems: [],

@@ -465,6 +465,13 @@ var mainMenuVn = [
                 icon: "fas fa-folder",
                 subItems: [
                     {
+                        title: "Lời Mở Đầu",
+                        route: "pages/writing-opinion/values-creation/0-introduction-vn.html",
+                        hash: "#/values-creation-introduction",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Hiểu Về Bản Chất Của Giá Trị",
                         route: "pages/writing-opinion/values-creation/understanding-the-nature-of-value-vn.html",
                         hash: "#/understanding-the-nature-of-value",

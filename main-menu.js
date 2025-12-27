@@ -458,6 +458,13 @@ var mainMenu = [
                 icon: "fas fa-folder",
                 subItems: [
                     {
+                        title: "Introduction",
+                        route: "pages/writing-opinion/values-creation/0-introduction.html",
+                        hash: "#/values-creation-introduction",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Understanding the Nature of Value",
                         route: "pages/writing-opinion/values-creation/understanding-the-nature-of-value.html",
                         hash: "#/understanding-the-nature-of-value",

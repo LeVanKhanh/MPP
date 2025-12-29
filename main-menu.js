@@ -486,6 +486,13 @@ var mainMenu = [
                         subItems: [],
                     },
                     {
+                        title: "3. Creating Value Through Actions",
+                        route: "pages/writing-opinion/values-creation/3-creating-value-through-actions.html",
+                        hash: "#/creating-value-through-actions",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Values Creation",
                         route: "pages/writing-opinion/values-creation/values-creation.html",
                         hash: "#/values-creation",

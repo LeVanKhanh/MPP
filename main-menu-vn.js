@@ -493,6 +493,13 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
+                        title: "3. Tạo Ra Giá Trị Qua Hành Động",
+                        route: "pages/writing-opinion/values-creation/3-creating-value-through-actions-vn.html",
+                        hash: "#/creating-value-through-actions",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Tạo Ra Giá Trị",
                         route: "pages/writing-opinion/values-creation/values-creation-vn.html",
                         hash: "#/values-creation",

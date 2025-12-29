@@ -458,6 +458,13 @@ var mainMenu = [
                 icon: "fas fa-folder",
                 subItems: [
                     {
+                        title: "Table of Contents",
+                        route: "pages/writing-opinion/values-creation/contents.html",
+                        hash: "#/values-creation-contents",
+                        icon: "fas fa-list",
+                        subItems: [],
+                    },
+                    {
                         title: "Introduction",
                         route: "pages/writing-opinion/values-creation/0-introduction.html",
                         hash: "#/values-creation-introduction",

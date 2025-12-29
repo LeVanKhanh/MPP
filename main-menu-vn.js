@@ -465,6 +465,13 @@ var mainMenuVn = [
                 icon: "fas fa-folder",
                 subItems: [
                     {
+                        title: "Mục Lục",
+                        route: "pages/writing-opinion/values-creation/contents-vn.html",
+                        hash: "#/values-creation-contents",
+                        icon: "fas fa-list",
+                        subItems: [],
+                    },
+                    {
                         title: "Lời Mở Đầu",
                         route: "pages/writing-opinion/values-creation/0-introduction-vn.html",
                         hash: "#/values-creation-introduction",

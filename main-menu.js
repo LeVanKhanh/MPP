@@ -465,9 +465,16 @@ var mainMenu = [
                         subItems: [],
                     },
                     {
-                        title: "Understanding the Nature of Value",
-                        route: "pages/writing-opinion/values-creation/understanding-the-nature-of-value.html",
+                        title: "1. Understanding the Nature of Value",
+                        route: "pages/writing-opinion/values-creation/1-understanding-the-nature-of-value.html",
                         hash: "#/understanding-the-nature-of-value",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "2. Why We Must Create Value",
+                        route: "pages/writing-opinion/values-creation/2-why-we-must-create-value.html",
+                        hash: "#/why-we-must-create-value",
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },

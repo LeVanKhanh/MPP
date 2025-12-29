@@ -472,9 +472,16 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
-                        title: "Hiểu Về Bản Chất Của Giá Trị",
-                        route: "pages/writing-opinion/values-creation/understanding-the-nature-of-value-vn.html",
+                        title: "1. Hiểu Về Bản Chất Của Giá Trị",
+                        route: "pages/writing-opinion/values-creation/1-understanding-the-nature-of-value-vn.html",
                         hash: "#/understanding-the-nature-of-value",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "2. Tại Sao Chúng Ta Phải Tạo Ra Giá Trị",
+                        route: "pages/writing-opinion/values-creation/2-why-we-must-create-value-vn.html",
+                        hash: "#/why-we-must-create-value",
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },

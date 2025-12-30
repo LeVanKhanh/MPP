@@ -493,6 +493,13 @@ var mainMenu = [
                         subItems: [],
                     },
                     {
+                        title: "4. Sustainable and Ethical Value Creation",
+                        route: "pages/writing-opinion/values-creation/4-sustainable-ethical-value-creation.html",
+                        hash: "#/sustainable-ethical-value-creation",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Values Creation",
                         route: "pages/writing-opinion/values-creation/values-creation.html",
                         hash: "#/values-creation",

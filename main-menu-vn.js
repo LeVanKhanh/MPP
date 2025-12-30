@@ -500,6 +500,13 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
+                        title: "4. Tạo Giá Trị Bền Vững và Đạo Đức",
+                        route: "pages/writing-opinion/values-creation/4-sustainable-ethical-value-creation-vn.html",
+                        hash: "#/sustainable-ethical-value-creation",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Tạo Ra Giá Trị",
                         route: "pages/writing-opinion/values-creation/values-creation-vn.html",
                         hash: "#/values-creation",

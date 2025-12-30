@@ -500,6 +500,13 @@ var mainMenu = [
                         subItems: [],
                     },
                     {
+                        title: "5. Health and Clarity of Mind",
+                        route: "pages/writing-opinion/values-creation/5-health-and-clarity-of-mind.html",
+                        hash: "#/health-clarity-of-mind",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Values Creation",
                         route: "pages/writing-opinion/values-creation/values-creation.html",
                         hash: "#/values-creation",

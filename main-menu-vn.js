@@ -507,6 +507,13 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
+                        title: "5. Sức Khỏe Và Sự Minh Mẫn Của Tâm Trí",
+                        route: "pages/writing-opinion/values-creation/5-health-and-clarity-of-mind-vn.html",
+                        hash: "#/health-clarity-of-mind",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Tạo Ra Giá Trị",
                         route: "pages/writing-opinion/values-creation/values-creation-vn.html",
                         hash: "#/values-creation",

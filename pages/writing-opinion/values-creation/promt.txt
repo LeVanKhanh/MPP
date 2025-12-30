@@ -9,8 +9,7 @@ I updated this file please update the EN version
 
 -------
 
-Only apply style of template-notes.html to create html for the content of this file, and then add route to it in main-menu-vn.js
-
+Apply style of template-notes.html to create html for this file without changing the content, and then add route to it in main-menu-vn.js
 -------
 Create "Tóm Tắt Các Điểm Chính" with the same way as of 1-understanding-the-nature-of-value-vn.html
 

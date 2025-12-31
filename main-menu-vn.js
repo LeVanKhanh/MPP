@@ -5,13 +5,20 @@ var mainMenuVn = [
         hash: "#/home",
         icon: "fas fa-home",
         subItems: [],
+    {
+        title: "7 Kỹ Năng Cốt Lõi",
+        route: "pages/writing-opinion/values-creation/7-core-skills-building-vn.html",
+        hash: "#/7-core-skills-building",
+        icon: "fas fa-file-alt",
+        subItems: [],
     },
     {
-        title: "Hành Tinh Của Tôi",
-        icon: "fas fa-globe",
-        subItems: [
-            {
-                title: "Giới Thiệu",
+        title: "Giá trị cốt lõi",
+        route: "pages/writing-opinion/values-creation/core-values-vn.html",
+        hash: "#/core-values",
+        icon: "fas fa-file-alt",
+        subItems: [],
+    },
                 icon: "fas fa-folder",
                 subItems: [
                     {

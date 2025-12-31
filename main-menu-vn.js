@@ -514,6 +514,13 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
+                        title: "6. Những Cạm Bẫy Thường Gặp Khi Tạo Ra Giá Trị",
+                        route: "pages/writing-opinion/values-creation/6-common-traps-in-value-creation-vn.html",
+                        hash: "#/common-traps-in-value-creation",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Tạo Ra Giá Trị",
                         route: "pages/writing-opinion/values-creation/values-creation-vn.html",
                         hash: "#/values-creation",

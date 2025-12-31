@@ -507,6 +507,13 @@ var mainMenu = [
                         subItems: [],
                     },
                     {
+                        title: "6. Common Traps In Value Creation",
+                        route: "pages/writing-opinion/values-creation/6-common-traps-in-value-creation.html",
+                        hash: "#/common-traps-in-value-creation",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Values Creation",
                         route: "pages/writing-opinion/values-creation/values-creation.html",
                         hash: "#/values-creation",

@@ -556,6 +556,13 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
+                        title: "7.5 Kỹ Năng 5 - Biết",
+                        route: "pages/writing-opinion/values-creation/7-5-core-skills-building-skill-5-vn.html",
+                        hash: "#/7-5-knowing",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Tạo Ra Giá Trị",
                         route: "pages/writing-opinion/values-creation/values-creation-vn.html",
                         hash: "#/values-creation",

@@ -570,6 +570,13 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
+                        title: "6.2.6 Những Cạm Bẫy Thường Gặp Khi Tạo Ra Giá Trị - Cạm Bẫy Cảm Xúc",
+                        route: "pages/writing-opinion/values-creation/6-2-6-common-traps-in-value-creation-common-traps-6-vn.html",
+                        hash: "#/common-traps-in-value-creation-common-traps-6",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "7 Những Kỹ Năng Cốt Lõi",
                         route: "pages/writing-opinion/values-creation/7-0-core-skills-building-vn.html",
                         hash: "#/7-core-skills-building",

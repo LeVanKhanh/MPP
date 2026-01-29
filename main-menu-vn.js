@@ -619,6 +619,27 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
+                        title: "8 Khung chiến lược",
+                        route: "pages/writing-opinion/values-creation/8-0-strategic-frameworks-vn.html",
+                        hash: "#/8-strategic-frameworks",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "8.1 Khung chiến lược - Thiết lập mục tiêu",
+                        route: "pages/writing-opinion/values-creation/8-1-strategic-frameworks-1-vn.html",
+                        hash: "#/8-1-strategic-frameworks",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "8.2 Khung chiến lược - Từ Mục Tiêu Đến Hành Động",
+                        route: "pages/writing-opinion/values-creation/8-2-strategic-frameworks-2-vn.html",
+                        hash: "#/8-2-strategic-frameworks",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Tạo Ra Giá Trị",
                         route: "pages/writing-opinion/values-creation/values-creation-vn.html",
                         hash: "#/values-creation",

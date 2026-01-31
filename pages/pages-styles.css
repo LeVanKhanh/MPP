@@ -51,6 +51,7 @@ body {
     max-width: 900px;
     margin: 0 auto;
     transition: background 0.3s, color 0.3s;
+    text-align: justify;
 }
 
 /* Article Container */

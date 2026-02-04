@@ -241,12 +241,16 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
+body.font-size-default {
+    --base-font-size: 16px;
+}
+
 body.font-size-larger {
-    --base-font-size: 18px;
+    --base-font-size: 20px;
 }
 
 body.font-size-large {
-    --base-font-size: 20px;
+    --base-font-size: 24px;
 }
 
 a {

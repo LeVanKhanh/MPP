@@ -30,11 +30,13 @@ function setTheme() {
 }
 
 function applyFontSize(size) {
-    document.body.classList.remove('font-size-larger', 'font-size-large');
+    document.body.classList.remove('font-size-default', 'font-size-larger', 'font-size-large');
     if (size === 'larger') {
         document.body.classList.add('font-size-larger');
     } else if (size === 'large') {
         document.body.classList.add('font-size-large');
+    } else {
+        document.body.classList.add('font-size-default');
     }
 }
 

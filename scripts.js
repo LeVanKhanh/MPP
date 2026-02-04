@@ -75,7 +75,7 @@
     // ========== Font Size Management ==========
     const fontSizeManager = {
         classes: {
-            default: '',
+            default: 'font-size-default',
             larger: 'font-size-larger',
             large: 'font-size-large'
         },
@@ -92,10 +92,8 @@
 
         apply(size) {
             const normalized = this.classes[size] !== undefined ? size : 'default';
-            elements.body.classList.remove('font-size-larger', 'font-size-large');
-            if (this.classes[normalized]) {
-                elements.body.classList.add(this.classes[normalized]);
-            }
+            elements.body.classList.remove('font-size-default', 'font-size-larger', 'font-size-large');
+            elements.body.classList.add(this.classes[normalized]);
             localStorage.setItem('font-size', normalized);
             this.pushToIframe(normalized);
             this.updateSelectClass(normalized);

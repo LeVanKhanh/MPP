@@ -44,6 +44,10 @@
 
     // ========== Theme Management ==========
     const themeManager = {
+        getCurrent() {
+            return localStorage.getItem('theme') || CONFIG.DEFAULT_THEME;
+        },
+
         pushToIframe(theme) {
             if (elements.iframe?.contentWindow) {
                 elements.iframe.contentWindow.postMessage({ type: 'set-theme', theme }, '*');
@@ -58,13 +62,65 @@
         },
 
         init() {
-            const saved = localStorage.getItem('theme') || CONFIG.DEFAULT_THEME;
+            const saved = this.getCurrent();
             this.set(saved);
         },
 
         toggle() {
             const isDark = !elements.body.classList.contains('dark-theme');
             this.set(isDark ? 'dark' : 'light');
+        }
+    };
+
+    // ========== Font Size Management ==========
+    const fontSizeManager = {
+        classes: {
+            default: '',
+            larger: 'font-size-larger',
+            large: 'font-size-large'
+        },
+
+        getCurrent() {
+            return localStorage.getItem('font-size') || 'default';
+        },
+
+        pushToIframe(size) {
+            if (elements.iframe?.contentWindow) {
+                elements.iframe.contentWindow.postMessage({ type: 'set-font-size', size }, '*');
+            }
+        },
+
+        apply(size) {
+            const normalized = this.classes[size] !== undefined ? size : 'default';
+            elements.body.classList.remove('font-size-larger', 'font-size-large');
+            if (this.classes[normalized]) {
+                elements.body.classList.add(this.classes[normalized]);
+            }
+            localStorage.setItem('font-size', normalized);
+            this.pushToIframe(normalized);
+            this.updateSelectClass(normalized);
+        },
+
+        updateSelectClass(size) {
+            const select = document.getElementById('font-size-select');
+            if (!select) return;
+            select.classList.remove('font-size-default', 'font-size-larger', 'font-size-large');
+            select.classList.add(`font-size-${size}`);
+        },
+
+        init() {
+            const select = document.getElementById('font-size-select');
+            if (!select) return;
+
+            const current = this.getCurrent();
+            this.apply(current);
+            select.value = current;
+            this.updateSelectClass(current);
+
+            select.addEventListener('change', () => {
+                const size = select.value || 'default';
+                this.apply(size);
+            });
         }
     };
 
@@ -377,6 +433,7 @@
     // ========== Application Initialization ==========
     window.addEventListener('DOMContentLoaded', () => {
         themeManager.init();
+        fontSizeManager.init();
         languageManager.init();
         uiControls.initSidebarToggle();
         uiControls.initExpandMain();
@@ -389,5 +446,12 @@
         
         // Initialize routing
         window.addEventListener('hashchange', () => router.loadFromHash());
+
+        if (elements.iframe) {
+            elements.iframe.addEventListener('load', () => {
+                themeManager.pushToIframe(themeManager.getCurrent());
+                fontSizeManager.pushToIframe(fontSizeManager.getCurrent());
+            });
+        }
     });
 })();

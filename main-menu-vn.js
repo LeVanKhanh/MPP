@@ -688,6 +688,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Bản đồ tư duy",
+                        route: "pages/writing-opinion/values-creation/mind-map-vn.html",
+                        hash: "#/mind-map",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
         ],

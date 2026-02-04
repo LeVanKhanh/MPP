@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Value Creation — Mind Map - My Personal Planet</title>
+  <link rel="stylesheet" href="../../pages-styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Mind map of the entire Value Creation book: the conceptual structure and flow from foundational understanding to action, strategy, and legacy." />
+
+  <style>
+    /* ========= Mind map styles (self-contained) ========= */
+    :root{
+      --mm-border: rgba(0,0,0,0.12);
+      --mm-muted: rgba(0,0,0,0.65);
+      --mm-soft: rgba(0,0,0,0.04);
+      --mm-soft-2: rgba(0,0,0,0.02);
+      --mm-accent: #2c3e50;
+      --mm-accent-2: #3498db;
+    }
+
+    .mindmap-toolbar{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items:center;
+      justify-content: space-between;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--mm-border);
+      border-radius: 12px;
+      background: linear-gradient(180deg, var(--mm-soft), var(--mm-soft-2));
+      margin: 1.2rem 0 1rem;
+    }
+    .mindmap-toolbar .left,
+    .mindmap-toolbar .right{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items:center;
+    }
+    .mindmap-toolbar .hint{
+      color: var(--mm-muted);
+      font-size: 0.92rem;
+      line-height: 1.3;
+    }
+
+    .mm-btn{
+      appearance:none;
+      border: 1px solid var(--mm-border);
+      background: #fff;
+      color: var(--mm-accent);
+      border-radius: 10px;
+      padding: 0.55rem 0.8rem;
+      font-size: 0.92rem;
+      cursor:pointer;
+      transition: transform 120ms ease, border-color 120ms ease, color 120ms ease;
+      user-select:none;
+    }
+    .mm-btn:hover{
+      border-color: rgba(52,152,219,0.45);
+      color: var(--mm-accent-2);
+      transform: translateY(-1px);
+    }
+    .mm-search{
+      display:flex;
+      align-items:center;
+      gap: 0.5rem;
+      border: 1px solid var(--mm-border);
+      border-radius: 10px;
+      background:#fff;
+      padding: 0.45rem 0.7rem;
+      min-width: min(420px, 100%);
+    }
+    .mm-search input{
+      border:none;
+      outline:none;
+      width: 100%;
+      font-size: 0.95rem;
+      background: transparent;
+      color: var(--mm-accent);
+    }
+    .mm-search .badge{
+      font-size: 0.78rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid var(--mm-border);
+      color: var(--mm-muted);
+      white-space: nowrap;
+    }
+
+    .mindmap-wrap{
+      border: 1px solid var(--mm-border);
+      border-radius: 14px;
+      padding: 1rem;
+      background: #fff;
+      overflow: auto;
+    }
+
+    /* Tree structure */
+    .mm-root{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .mm-node{
+      position: relative;
+      margin: 0.35rem 0;
+    }
+
+    /* details/summary look */
+    .mm-node details{
+      border: 1px solid var(--mm-border);
+      border-radius: 12px;
+      padding: 0.55rem 0.7rem;
+      background: linear-gradient(180deg, var(--mm-soft), #fff);
+    }
+
+    .mm-node details[open]{
+      background: linear-gradient(180deg, rgba(52,152,219,0.08), #fff);
+      border-color: rgba(52,152,219,0.35);
+    }
+
+    .mm-node summary{
+      cursor: pointer;
+      list-style: none;
+      display:flex;
+      align-items:flex-start;
+      gap: 0.6rem;
+    }
+    .mm-node summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .mm-toggle{
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      margin-top: 0.15rem;
+      border-radius: 6px;
+      border: 1px solid var(--mm-border);
+      display:grid;
+      place-items:center;
+      color: var(--mm-muted);
+      background:#fff;
+      font-size: 0.9rem;
+      line-height: 1;
+      user-select:none;
+    }
+    details[open] > summary .mm-toggle{
+      border-color: rgba(52,152,219,0.35);
+      color: var(--mm-accent-2);
+    }
+
+    .mm-title{
+      font-weight: 700;
+      color: var(--mm-accent);
+      line-height: 1.25;
+    }
+    .mm-subtitle{
+      margin-top: 0.15rem;
+      color: var(--mm-muted);
+      font-size: 0.95rem;
+      line-height: 1.35;
+    }
+
+    .mm-meta{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.35rem;
+    }
+    .mm-tag{
+      display:inline-block;
+      font-size: 0.78rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--mm-border);
+      background: #fff;
+      color: var(--mm-muted);
+      white-space: nowrap;
+    }
+    .mm-tag.strong{
+      border-color: rgba(39,174,96,0.35);
+      color: #1f7a46;
+      background: rgba(39,174,96,0.08);
+    }
+    .mm-tag.warn{
+      border-color: rgba(243,156,18,0.4);
+      color: #a56a05;
+      background: rgba(243,156,18,0.10);
+    }
+    .mm-tag.info{
+      border-color: rgba(52,152,219,0.35);
+      color: #2b79aa;
+      background: rgba(52,152,219,0.10);
+    }
+
+    /* Nested children with connector line */
+    .mm-children{
+      list-style:none;
+      margin: 0.6rem 0 0.2rem 1.35rem;
+      padding: 0 0 0 1rem;
+      border-left: 2px solid rgba(0,0,0,0.08);
+    }
+    .mm-children > li{
+      position: relative;
+      margin: 0.5rem 0;
+    }
+    .mm-children > li::before{
+      content:"";
+      position:absolute;
+      left: -1rem;
+      top: 1.05rem;
+      width: 1rem;
+      height: 2px;
+      background: rgba(0,0,0,0.08);
+    }
+
+    .mm-leaf{
+      padding: 0.55rem 0.7rem;
+      border: 1px dashed rgba(0,0,0,0.18);
+      border-radius: 12px;
+      background: #fff;
+    }
+    .mm-leaf .mm-title{
+      font-weight: 650;
+    }
+
+    /* Highlight from search */
+    .mm-hit{
+      outline: 2px solid rgba(52,152,219,0.35);
+      box-shadow: 0 0 0 4px rgba(52,152,219,0.08);
+    }
+    mark.mm-mark{
+      background: rgba(52,152,219,0.16);
+      color: inherit;
+      padding: 0 0.12rem;
+      border-radius: 4px;
+    }
+
+    /* Small note section */
+    .mm-note{
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--mm-border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, var(--mm-soft), #fff);
+      color: var(--mm-muted);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="content-article">
+    <header class="article-header">
+      <h1 class="page-title">Mind Map</h1>
+      <p class="page-subtitle">Value Creation — the conceptual structure and flow of the whole book</p>
+      <p class="page-meta">Published: <time datetime="2026-02-02">February 2, 2026</time></p>
+    </header>
+
+    <section class="content-section">
+      <div class="sub-section">
+        <p>
+          This map is not meant to “summarize for memory,” but to preserve the <strong>flow</strong> of the book:
+          from the foundational understanding of value to action, limits, baseline conditions, skills, systems,
+          and the ability for value to continue living beyond the individual.
+        </p>
+
+        <div class="mindmap-toolbar">
+          <div class="left">
+            <button class="mm-btn" type="button" id="btnExpandAll">Expand all</button>
+            <button class="mm-btn" type="button" id="btnCollapseAll">Collapse</button>
+            <span class="hint">Tip: click a title to open/close each branch.</span>
+          </div>
+
+          <div class="right">
+            <div class="mm-search">
+              <input id="mmSearch" type="text" placeholder="Search in the mind map (e.g., “habits”, “feedback”, “ethics”)…" />
+              <span class="badge" id="mmCount">0</span>
+            </div>
+            <button class="mm-btn" type="button" id="btnClear">Clear</button>
+          </div>
+        </div>
+
+        <div class="mindmap-wrap" id="mindmap">
+          <ul class="mm-root">
+
+            <!-- ROOT -->
+            <li class="mm-node">
+              <details open>
+                <summary>
+                  <span class="mm-toggle">+</span>
+                  <div>
+                    <div class="mm-title">VALUE CREATION</div>
+                    <div class="mm-subtitle">Not a destination; a conscious way of living.</div>
+                    <div class="mm-meta">
+                      <span class="mm-tag info">Central question</span>
+                      <span class="mm-tag strong">Keep the mind clear</span>
+                      <span class="mm-tag">No universal formula</span>
+                    </div>
+                  </div>
+                </summary>
+
+                <ul class="mm-children">
+
+                  <!-- PART I -->
+                  <li class="mm-node">
+                    <details>
+                      <summary>
+                        <span class="mm-toggle">+</span>
+                        <div>
+                          <div class="mm-title">I. Understanding value</div>
+                          <div class="mm-subtitle">Foundational understanding: what value is and why we must create it.</div>
+                          <div class="mm-meta">
+                            <span class="mm-tag info">Foundational understanding</span>
+                          </div>
+                        </div>
+                      </summary>
+
+                      <ul class="mm-children">
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">1. Understanding the nature of value</div>
+                                <div class="mm-subtitle">Value depends on context; established by real impact.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Value is not obvious</div>
+                                  <div class="mm-subtitle">Many things are called value only because we are used to the current context.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Visible / Invisible</div>
+                                  <div class="mm-subtitle">Material, tools… and ideas, knowledge, beliefs.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Evaluation principle</div>
+                                  <div class="mm-subtitle"><strong>Benefit &gt; harm</strong> in a specific context.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">2. Why we must create value</div>
+                                <div class="mm-subtitle">Meaning is not to be found; meaning is created through contribution.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Meaning comes from contribution</div>
+                                  <div class="mm-subtitle">Value is defined by what we create, not only by what we own.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Knowledge matters only when transformed</div>
+                                  <div class="mm-subtitle">Learning is not a destination; it is the starting point of action.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Value doesn’t have to be seen</div>
+                                  <div class="mm-subtitle">Not showy; still durable and still impactful.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+
+                  <!-- PART II -->
+                  <li class="mm-node">
+                    <details>
+                      <summary>
+                        <span class="mm-toggle">+</span>
+                        <div>
+                          <div class="mm-title">II. Creating value through action</div>
+                          <div class="mm-subtitle">Value appears when we enter life through concrete actions.</div>
+                          <div class="mm-meta">
+                            <span class="mm-tag info">Condition of existence</span>
+                          </div>
+                        </div>
+                      </summary>
+
+                      <ul class="mm-children">
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">3. Creating value through action</div>
+                                <div class="mm-subtitle">Small + consistent + wise actions → sustainable value.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Quiet accumulation</div>
+                                  <div class="mm-subtitle">Big value rarely comes from leaps.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Meaning attaches to action</div>
+                                  <div class="mm-subtitle">The same task: “laying bricks” or “building a castle.”</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Action needs wisdom & context</div>
+                                  <div class="mm-subtitle">Good intentions don’t automatically create value.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">4. Sustainable and ethical value creation</div>
+                                <div class="mm-subtitle">Minimum principle: do no harm.</div>
+                                <div class="mm-meta">
+                                  <span class="mm-tag warn">Limits</span>
+                                  <span class="mm-tag strong">Do no harm</span>
+                                </div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Ethics as the evaluative anchor</div>
+                                  <div class="mm-subtitle">No attempt to set universal standards; keep the minimum yardstick.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Direct & indirect harm</div>
+                                  <div class="mm-subtitle">Many consequences are quiet and long-lasting, beyond immediate observation.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Uncertainty of consequences</div>
+                                  <div class="mm-subtitle">Need a cautious, humble stance, ready to adjust.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+
+                  <!-- PART III -->
+                  <li class="mm-node">
+                    <details>
+                      <summary>
+                        <span class="mm-toggle">+</span>
+                        <div>
+                          <div class="mm-title">III. Building capacity</div>
+                          <div class="mm-subtitle">Foundational conditions: health, clarity, and inner strength to go long.</div>
+                          <div class="mm-meta">
+                            <span class="mm-tag info">Foundational conditions</span>
+                          </div>
+                        </div>
+                      </summary>
+
+                      <ul class="mm-children">
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">5. Health and mental clarity</div>
+                                <div class="mm-subtitle">Physical and mental foundations to sustain right action.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Balance stress & recovery</div>
+                                  <div class="mm-subtitle">Endurance comes from the rhythm of load and rest.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Clarity keeps you on track</div>
+                                  <div class="mm-subtitle">Clear-sighted to distinguish right/wrong and take responsibility for outcomes.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">When foundations aren’t enough</div>
+                                  <div class="mm-subtitle">Value is easily distorted even with good intentions.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">6. Common traps in creating value</div>
+                                <div class="mm-subtitle">Subtle distortions make us conclude too early and drift while being serious.</div>
+                                <div class="mm-meta">
+                                  <span class="mm-tag warn">Premature conclusions</span>
+                                  <span class="mm-tag">Cognitive inertia</span>
+                                </div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">What is often true is not always true</div>
+                                  <div class="mm-subtitle">Familiarity can be mistaken for truth.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Traps linked in a chain</div>
+                                  <div class="mm-subtitle">Shallow observation → hasty conclusion → belief → selective filtering.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Stop at the right time</div>
+                                  <div class="mm-subtitle">Not extreme skepticism; just pause to re-check.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">7. Core skills for building sustainable value</div>
+                                <div class="mm-subtitle">Five skills – one path: go the right way, long enough, without losing yourself.</div>
+                                <div class="mm-meta">
+                                  <span class="mm-tag strong">Capability chain</span>
+                                </div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">Skill 1 — Learning & self-learning</div><div class="mm-subtitle">Opens cognition and self-adjustment.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Skill 2 — Perseverance</div><div class="mm-subtitle">Stay long enough with the chosen path.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Skill 3 — Self-motivation</div><div class="mm-subtitle">Not dependent on circumstances or immediate recognition.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Skill 4 — Habit formation</div><div class="mm-subtitle">Reduce friction; keep value-creating action as a flow.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Skill 5 — Knowing</div><div class="mm-subtitle">Observe context; adjust; stop/turn at the right time.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Summary</div><div class="mm-subtitle">No mandatory formula; just prompts to see what you are missing.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+
+                      </ul>
+                    </details>
+                  </li>
+
+                  <!-- PART IV -->
+                  <li class="mm-node">
+                    <details>
+                      <summary>
+                        <span class="mm-toggle">+</span>
+                        <div>
+                          <div class="mm-title">IV. Strategy and systems</div>
+                          <div class="mm-subtitle">From what we pursue to how we actually live and act daily.</div>
+                          <div class="mm-meta">
+                            <span class="mm-tag info">Life organization</span>
+                          </div>
+                        </div>
+                      </summary>
+
+                      <ul class="mm-children">
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">8. Strategic framework</div>
+                                <div class="mm-subtitle">Strategy as a living hypothesis: formed – tested – self-corrected.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">Gap between goals and action</div><div class="mm-subtitle">Not a lack of effort; a lack of conversion mechanism.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Value → problem → choices → behavior</div><div class="mm-subtitle">Link what we pursue with what we do each day.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Self-correct when reality deviates</div><div class="mm-subtitle">A living hypothesis is nourished by learning and feedback.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">9. Consistency and accelerating progress</div>
+                                <div class="mm-subtitle">Maintain momentum, fine-tune direction, learn from feedback.</div>
+                                <div class="mm-meta">
+                                  <span class="mm-tag info">Momentum</span>
+                                  <span class="mm-tag">Feedback loop</span>
+                                </div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">Small wins</div><div class="mm-subtitle">Psychological reinforcement: “effort has meaning.”</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Overcoming procrastination</div><div class="mm-subtitle">Don’t force, but do start; lower the barrier to begin.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Feedback loops</div><div class="mm-subtitle">Feedback is data to refine, not judgment.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Build – Measure – Learn</div><div class="mm-subtitle">Speed up by reducing deviation each loop.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">10. Legacy and long-term impact</div>
+                                <div class="mm-subtitle">When value does not stop with its creator.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">Not mandatory, only when possible</div><div class="mm-subtitle">Legacy should not be born from pressure.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Value beyond the individual</div><div class="mm-subtitle">It spreads when it can be understood, applied, and continued.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Lead by example</div><div class="mm-subtitle">Consistency between words – actions – observable results.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Mentorship</div><div class="mm-subtitle">Help others go faster, not go the same.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Documentation</div><div class="mm-subtitle">Prevent forgetting; let value keep existing over time.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+
+                  <!-- PART V -->
+                  <li class="mm-node">
+                    <details>
+                      <summary>
+                        <span class="mm-toggle">+</span>
+                        <div>
+                          <div class="mm-title">V. Opening and closing</div>
+                          <div class="mm-subtitle">Return verification to the reader and return the journey to life.</div>
+                          <div class="mm-meta">
+                            <span class="mm-tag info">Step back</span>
+                            <span class="mm-tag strong">No imposition</span>
+                          </div>
+                        </div>
+                      </summary>
+
+                      <ul class="mm-children">
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">11. Practical lessons and reflections</div>
+                                <div class="mm-subtitle">An open chapter: observe, compare, and find your own formula.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">Refuse the “illustrative formula”</div><div class="mm-subtitle">Avoid forcing other lives into a preset mold.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Self-observation & self-verification</div><div class="mm-subtitle">Let readers form their own path.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">Conclusion</div>
+                                <div class="mm-subtitle">Value is not in the destination, but in how we go.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">No single right path</div><div class="mm-subtitle">Each person enters life with different conditions.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Value formed through small choices</div><div class="mm-subtitle">In stages where results are still unclear.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Keep a stance</div><div class="mm-subtitle">Clear, humble, steady — and keep walking.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">The book pauses; life begins</div><div class="mm-subtitle">The most important part is testing answers in real life.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+
+                </ul>
+              </details>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="mm-note">
+          <strong>How to use this page:</strong>
+          <ul style="margin: 0.5rem 0 0 1.1rem;">
+            <li>Use it as a <em>“map page”</em> before/during/after the book.</li>
+            <li>Or use it as navigation: each branch can link to its corresponding chapter (if you want, I can add them).</li>
+            <li>The search above helps you quickly check the flow when editing the full draft.</li>
+          </ul>
+        </div>
+
+        <p style="text-align:right; margin-top: 2.5em; font-style: italic;">Phù Du</p>
+      </div>
+    </section>
+  </article>
+
+  <script src="settings.js"></script>
+  <script src="../../pages-scripts.js"></script>
+
+  <script>
+    // ========= Helper: update "+" icon based on open state =========
+    function syncToggleIcons(root) {
+      root.querySelectorAll("details").forEach(d => {
+        const toggle = d.querySelector(":scope > summary .mm-toggle");
+        if (!toggle) return;
+        toggle.textContent = d.open ? "–" : "+";
+      });
+    }
+
+    // ========= Expand / Collapse all =========
+    const mindmap = document.getElementById("mindmap");
+    const btnExpandAll = document.getElementById("btnExpandAll");
+    const btnCollapseAll = document.getElementById("btnCollapseAll");
+
+    btnExpandAll.addEventListener("click", () => {
+      mindmap.querySelectorAll("details").forEach(d => d.open = true);
+      syncToggleIcons(mindmap);
+    });
+
+    btnCollapseAll.addEventListener("click", () => {
+      // keep the very first root open for usability
+      const all = Array.from(mindmap.querySelectorAll("details"));
+      all.forEach((d, idx) => d.open = (idx === 0));
+      syncToggleIcons(mindmap);
+      // scroll to top of mind map
+      mindmap.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Sync icons when user toggles
+    mindmap.addEventListener("toggle", (e) => {
+      if (e.target && e.target.tagName === "DETAILS") syncToggleIcons(mindmap);
+    });
+    syncToggleIcons(mindmap);
+
+    // ========= Search / highlight =========
+    const input = document.getElementById("mmSearch");
+    const btnClear = document.getElementById("btnClear");
+    const countEl = document.getElementById("mmCount");
+
+    const textNodesSelector = ".mm-title, .mm-subtitle, .mm-tag";
+
+    function clearHighlights() {
+      mindmap.querySelectorAll(".mm-hit").forEach(el => el.classList.remove("mm-hit"));
+      mindmap.querySelectorAll("mark.mm-mark").forEach(m => {
+        const parent = m.parentNode;
+        parent.replaceChild(document.createTextNode(m.textContent), m);
+        parent.normalize();
+      });
+      countEl.textContent = "0";
+    }
+
+    function markText(el, query) {
+      const text = el.textContent;
+      const idx = text.toLowerCase().indexOf(query.toLowerCase());
+      if (idx === -1) return false;
+
+      // Replace only first occurrence for cleanliness
+      const before = text.slice(0, idx);
+      const match = text.slice(idx, idx + query.length);
+      const after = text.slice(idx + query.length);
+
+      el.textContent = "";
+      el.appendChild(document.createTextNode(before));
+
+      const mark = document.createElement("mark");
+      mark.className = "mm-mark";
+      mark.textContent = match;
+      el.appendChild(mark);
+
+      el.appendChild(document.createTextNode(after));
+      return true;
+    }
+
+    function runSearch() {
+      const q = input.value.trim();
+      clearHighlights();
+      if (!q) return;
+
+      let hits = 0;
+      const candidates = mindmap.querySelectorAll(textNodesSelector);
+
+      candidates.forEach(el => {
+        const ok = el.textContent.toLowerCase().includes(q.toLowerCase());
+        if (!ok) return;
+
+        // Mark matched text
+        const marked = markText(el, q);
+
+        // Highlight the closest container (details or leaf)
+        const container = el.closest("details, .mm-leaf");
+        if (container) container.classList.add("mm-hit");
+
+        // Expand parents so user can see hits
+        const parentDetails = el.closest("details");
+        if (parentDetails) {
+          // open all ancestor details
+          let cur = parentDetails;
+          while (cur) {
+            cur.open = true;
+            cur = cur.parentElement ? cur.parentElement.closest("details") : null;
+          }
+        }
+
+        if (marked) hits++;
+      });
+
+      syncToggleIcons(mindmap);
+      countEl.textContent = String(hits);
+
+      // Scroll to the first hit
+      const first = mindmap.querySelector(".mm-hit");
+      if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    input.addEventListener("input", () => {
+      // Debounce lightly
+      window.clearTimeout(window.__mmTimer);
+      window.__mmTimer = window.setTimeout(runSearch, 180);
+    });
+
+    btnClear.addEventListener("click", () => {
+      input.value = "";
+      clearHighlights();
+      // collapse to default state (root open)
+      btnCollapseAll.click();
+      input.focus();
+    });
+  </script>
+</body>
+</html>

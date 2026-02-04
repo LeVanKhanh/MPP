@@ -681,6 +681,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Mind Map",
+                        route: "pages/writing-opinion/values-creation/mind-map.html",
+                        hash: "#/mind-map",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
         ],

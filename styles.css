@@ -218,11 +218,15 @@ body.dark-theme main {
     scrollbar-color: rgba(100, 181, 246, 0.3) transparent;
 }
 
+:root {
+    --base-font-size: 16px;
+}
+
 html, body {
     height: 100%;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
+    font-size: var(--base-font-size);
     line-height: 1.6;
     letter-spacing: 0.3px;
     -webkit-font-smoothing: antialiased;
@@ -235,6 +239,14 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
     transition: background 0.3s, color 0.3s;
+}
+
+body.font-size-larger {
+    --base-font-size: 18px;
+}
+
+body.font-size-large {
+    --base-font-size: 20px;
 }
 
 a {
@@ -510,39 +522,74 @@ header {
     }
 }
 
-.ai-indicator {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.3rem 0.75rem;
-    background: linear-gradient(135deg, rgba(100, 181, 246, 0.12), rgba(255, 152, 0, 0.08));
-    border: 1.5px solid rgba(100, 181, 246, 0.25);
-    border-radius: 16px;
-    font-size: 0.65rem;
+.font-size-select {
+    border: 1px solid rgba(100, 181, 246, 0.35);
+    background: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0.92));
+    color: var(--text-color);
+    border-radius: 999px;
+    padding: 0.15rem 1.4rem 0.15rem 0.7rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    color: var(--link-color);
-    letter-spacing: 0.8px;
     text-transform: uppercase;
-    white-space: nowrap;
-    box-shadow: 0 2px 8px rgba(100, 181, 246, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    background-image: linear-gradient(45deg, transparent 50%, rgba(0, 82, 163, 0.75) 50%),
+        linear-gradient(135deg, rgba(0, 82, 163, 0.75) 50%, transparent 50%);
+    background-position: calc(100% - 0.85rem) calc(50% - 2px), calc(100% - 0.75rem) calc(50% - 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: 0 1px 4px rgba(100, 181, 246, 0.12);
 }
 
-.ai-indicator:hover {
-    background: linear-gradient(135deg, rgba(100, 181, 246, 0.25), rgba(255, 152, 0, 0.18));
-    border-color: rgba(100, 181, 246, 0.5);
-    box-shadow: 0 4px 12px rgba(100, 181, 246, 0.25), 0 0 20px rgba(100, 181, 246, 0.1);
-    transform: translateY(-1px) scale(1.02);
+#font-size-select option.default {
+    font-size: 16px;
 }
 
-.ai-indicator i {
+#font-size-select option.larger {
+    font-size: 19px;
+}
+
+#font-size-select option.large {
+    font-size: 21px;
+}
+
+.font-size-select:hover {
+    background: linear-gradient(180deg, #ffffff, rgba(100, 181, 246, 0.08));
+    border-color: rgba(100, 181, 246, 0.55);
+    box-shadow: 0 2px 8px rgba(100, 181, 246, 0.18);
+}
+
+.font-size-select.font-size-default {
     font-size: 0.75rem;
-    animation: aiSpin 2s ease-in-out infinite;
 }
 
-body.dark-theme .ai-indicator {
-    background: linear-gradient(135deg, rgba(100, 181, 246, 0.15), rgba(255, 152, 0, 0.1));
-    border-color: rgba(100, 181, 246, 0.3);
+.font-size-select.font-size-larger {
+    font-size: 0.9rem;
+}
+
+.font-size-select.font-size-large {
+    font-size: 1.05rem;
+}
+
+.font-size-select:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(100, 181, 246, 0.25);
+}
+
+body.dark-theme .font-size-select {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    color: #e8e8e8;
+    border-color: rgba(100, 181, 246, 0.45);
+    background-image: linear-gradient(45deg, transparent 50%, rgba(100, 181, 246, 0.85) 50%),
+        linear-gradient(135deg, rgba(100, 181, 246, 0.85) 50%, transparent 50%);
+}
+
+body.dark-theme .font-size-select:hover {
+    background: linear-gradient(180deg, rgba(100, 181, 246, 0.18), rgba(255, 255, 255, 0.06));
 }
 
 body.dark-theme .ai-indicator:hover {

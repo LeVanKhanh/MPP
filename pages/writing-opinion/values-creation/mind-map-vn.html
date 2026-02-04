@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tạo Ra Giá Trị — Bản Đồ Tư Duy - My Personal Planet</title>
+  <link rel="stylesheet" href="../../pages-styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Bản đồ tư duy toàn bộ cuốn sách Tạo Ra Giá Trị: cấu trúc tư tưởng và dòng chảy nội dung từ nền nhận thức đến hành động, chiến lược và di sản." />
+
+  <style>
+    /* ========= Mind map styles (self-contained) ========= */
+    :root{
+      --mm-border: rgba(0,0,0,0.12);
+      --mm-muted: rgba(0,0,0,0.65);
+      --mm-soft: rgba(0,0,0,0.04);
+      --mm-soft-2: rgba(0,0,0,0.02);
+      --mm-accent: #2c3e50;
+      --mm-accent-2: #3498db;
+    }
+
+    .mindmap-toolbar{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items:center;
+      justify-content: space-between;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--mm-border);
+      border-radius: 12px;
+      background: linear-gradient(180deg, var(--mm-soft), var(--mm-soft-2));
+      margin: 1.2rem 0 1rem;
+    }
+    .mindmap-toolbar .left,
+    .mindmap-toolbar .right{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items:center;
+    }
+    .mindmap-toolbar .hint{
+      color: var(--mm-muted);
+      font-size: 0.92rem;
+      line-height: 1.3;
+    }
+
+    .mm-btn{
+      appearance:none;
+      border: 1px solid var(--mm-border);
+      background: #fff;
+      color: var(--mm-accent);
+      border-radius: 10px;
+      padding: 0.55rem 0.8rem;
+      font-size: 0.92rem;
+      cursor:pointer;
+      transition: transform 120ms ease, border-color 120ms ease, color 120ms ease;
+      user-select:none;
+    }
+    .mm-btn:hover{
+      border-color: rgba(52,152,219,0.45);
+      color: var(--mm-accent-2);
+      transform: translateY(-1px);
+    }
+    .mm-search{
+      display:flex;
+      align-items:center;
+      gap: 0.5rem;
+      border: 1px solid var(--mm-border);
+      border-radius: 10px;
+      background:#fff;
+      padding: 0.45rem 0.7rem;
+      min-width: min(420px, 100%);
+    }
+    .mm-search input{
+      border:none;
+      outline:none;
+      width: 100%;
+      font-size: 0.95rem;
+      background: transparent;
+      color: var(--mm-accent);
+    }
+    .mm-search .badge{
+      font-size: 0.78rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid var(--mm-border);
+      color: var(--mm-muted);
+      white-space: nowrap;
+    }
+
+    .mindmap-wrap{
+      border: 1px solid var(--mm-border);
+      border-radius: 14px;
+      padding: 1rem;
+      background: #fff;
+      overflow: auto;
+    }
+
+    /* Tree structure */
+    .mm-root{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .mm-node{
+      position: relative;
+      margin: 0.35rem 0;
+    }
+
+    /* details/summary look */
+    .mm-node details{
+      border: 1px solid var(--mm-border);
+      border-radius: 12px;
+      padding: 0.55rem 0.7rem;
+      background: linear-gradient(180deg, var(--mm-soft), #fff);
+    }
+
+    .mm-node details[open]{
+      background: linear-gradient(180deg, rgba(52,152,219,0.08), #fff);
+      border-color: rgba(52,152,219,0.35);
+    }
+
+    .mm-node summary{
+      cursor: pointer;
+      list-style: none;
+      display:flex;
+      align-items:flex-start;
+      gap: 0.6rem;
+    }
+    .mm-node summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .mm-toggle{
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      margin-top: 0.15rem;
+      border-radius: 6px;
+      border: 1px solid var(--mm-border);
+      display:grid;
+      place-items:center;
+      color: var(--mm-muted);
+      background:#fff;
+      font-size: 0.9rem;
+      line-height: 1;
+      user-select:none;
+    }
+    details[open] > summary .mm-toggle{
+      border-color: rgba(52,152,219,0.35);
+      color: var(--mm-accent-2);
+    }
+
+    .mm-title{
+      font-weight: 700;
+      color: var(--mm-accent);
+      line-height: 1.25;
+    }
+    .mm-subtitle{
+      margin-top: 0.15rem;
+      color: var(--mm-muted);
+      font-size: 0.95rem;
+      line-height: 1.35;
+    }
+
+    .mm-meta{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.35rem;
+    }
+    .mm-tag{
+      display:inline-block;
+      font-size: 0.78rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--mm-border);
+      background: #fff;
+      color: var(--mm-muted);
+      white-space: nowrap;
+    }
+    .mm-tag.strong{
+      border-color: rgba(39,174,96,0.35);
+      color: #1f7a46;
+      background: rgba(39,174,96,0.08);
+    }
+    .mm-tag.warn{
+      border-color: rgba(243,156,18,0.4);
+      color: #a56a05;
+      background: rgba(243,156,18,0.10);
+    }
+    .mm-tag.info{
+      border-color: rgba(52,152,219,0.35);
+      color: #2b79aa;
+      background: rgba(52,152,219,0.10);
+    }
+
+    /* Nested children with connector line */
+    .mm-children{
+      list-style:none;
+      margin: 0.6rem 0 0.2rem 1.35rem;
+      padding: 0 0 0 1rem;
+      border-left: 2px solid rgba(0,0,0,0.08);
+    }
+    .mm-children > li{
+      position: relative;
+      margin: 0.5rem 0;
+    }
+    .mm-children > li::before{
+      content:"";
+      position:absolute;
+      left: -1rem;
+      top: 1.05rem;
+      width: 1rem;
+      height: 2px;
+      background: rgba(0,0,0,0.08);
+    }
+
+    .mm-leaf{
+      padding: 0.55rem 0.7rem;
+      border: 1px dashed rgba(0,0,0,0.18);
+      border-radius: 12px;
+      background: #fff;
+    }
+    .mm-leaf .mm-title{
+      font-weight: 650;
+    }
+
+    /* Highlight from search */
+    .mm-hit{
+      outline: 2px solid rgba(52,152,219,0.35);
+      box-shadow: 0 0 0 4px rgba(52,152,219,0.08);
+    }
+    mark.mm-mark{
+      background: rgba(52,152,219,0.16);
+      color: inherit;
+      padding: 0 0.12rem;
+      border-radius: 4px;
+    }
+
+    /* Small note section */
+    .mm-note{
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--mm-border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, var(--mm-soft), #fff);
+      color: var(--mm-muted);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="content-article">
+    <header class="article-header">
+      <h1 class="page-title">Bản đồ tư duy</h1>
+      <p class="page-subtitle">Tạo Ra Giá Trị — cấu trúc tư tưởng và dòng chảy toàn bộ cuốn sách</p>
+      <p class="page-meta">Published: <time datetime="2026-02-02">February 2, 2026</time></p>
+    </header>
+
+    <section class="content-section">
+      <div class="sub-section">
+        <p>
+          Bản đồ này không nhằm “tóm tắt để nhớ”, mà để giữ lại <strong>dòng chảy</strong> của cuốn sách:
+          từ nền nhận thức về giá trị, đến hành động, giới hạn, điều kiện nền, kỹ năng, hệ thống,
+          và khả năng để giá trị tiếp tục sống ngoài phạm vi cá nhân.
+        </p>
+
+        <div class="mindmap-toolbar">
+          <div class="left">
+            <button class="mm-btn" type="button" id="btnExpandAll">Mở tất cả</button>
+            <button class="mm-btn" type="button" id="btnCollapseAll">Thu gọn</button>
+            <span class="hint">Mẹo: bấm vào tiêu đề để mở/đóng từng nhánh.</span>
+          </div>
+
+          <div class="right">
+            <div class="mm-search">
+              <input id="mmSearch" type="text" placeholder="Tìm trong mind map (ví dụ: “thói quen”, “phản hồi”, “đạo đức”)…" />
+              <span class="badge" id="mmCount">0</span>
+            </div>
+            <button class="mm-btn" type="button" id="btnClear">Xóa</button>
+          </div>
+        </div>
+
+        <div class="mindmap-wrap" id="mindmap">
+          <ul class="mm-root">
+
+            <!-- ROOT -->
+            <li class="mm-node">
+              <details open>
+                <summary>
+                  <span class="mm-toggle">+</span>
+                  <div>
+                    <div class="mm-title">TẠO RA GIÁ TRỊ</div>
+                    <div class="mm-subtitle">Không phải đích đến; là một cách sống có ý thức.</div>
+                    <div class="mm-meta">
+                      <span class="mm-tag info">Câu hỏi trung tâm</span>
+                      <span class="mm-tag strong">Giữ sạch tư duy</span>
+                      <span class="mm-tag">Không công thức chung</span>
+                    </div>
+                  </div>
+                </summary>
+
+                <ul class="mm-children">
+
+                  <!-- PART I -->
+                  <li class="mm-node">
+                    <details>
+                      <summary>
+                        <span class="mm-toggle">+</span>
+                        <div>
+                          <div class="mm-title">I. Hiểu về giá trị</div>
+                          <div class="mm-subtitle">Nền nhận thức: giá trị là gì và vì sao phải tạo ra giá trị.</div>
+                          <div class="mm-meta">
+                            <span class="mm-tag info">Nền nhận thức</span>
+                          </div>
+                        </div>
+                      </summary>
+
+                      <ul class="mm-children">
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">1. Hiểu về bản chất của giá trị</div>
+                                <div class="mm-subtitle">Giá trị phụ thuộc bối cảnh; được xác lập bởi tác động thực.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Giá trị không hiển nhiên</div>
+                                  <div class="mm-subtitle">Nhiều thứ được gọi là giá trị chỉ vì ta quen với bối cảnh hiện tại.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Hữu hình / Vô hình</div>
+                                  <div class="mm-subtitle">Vật chất, công cụ… và ý tưởng, tri thức, niềm tin.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Nguyên tắc đánh giá</div>
+                                  <div class="mm-subtitle"><strong>Lợi ích &gt; tác hại</strong> trong một bối cảnh cụ thể.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">2. Tại sao chúng ta phải tạo ra giá trị</div>
+                                <div class="mm-subtitle">Ý nghĩa không để tìm; ý nghĩa được tạo ra qua đóng góp.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Ý nghĩa đến từ sự đóng góp</div>
+                                  <div class="mm-subtitle">Giá trị được định nghĩa bởi điều ta tạo ra, không chỉ điều ta sở hữu.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Tri thức chỉ có ý nghĩa khi chuyển hóa</div>
+                                  <div class="mm-subtitle">Học không phải điểm đến; là điểm khởi đầu của hành động.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Giá trị không nhất thiết phải được nhìn thấy</div>
+                                  <div class="mm-subtitle">Không phô trương; vẫn bền và vẫn có tác động.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+
+                  <!-- PART II -->
+                  <li class="mm-node">
+                    <details>
+                      <summary>
+                        <span class="mm-toggle">+</span>
+                        <div>
+                          <div class="mm-title">II. Tạo ra giá trị qua hành động</div>
+                          <div class="mm-subtitle">Giá trị xuất hiện khi ta bước vào đời sống bằng hành động cụ thể.</div>
+                          <div class="mm-meta">
+                            <span class="mm-tag info">Điều kiện tồn tại</span>
+                          </div>
+                        </div>
+                      </summary>
+
+                      <ul class="mm-children">
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">3. Tạo ra giá trị qua hành động</div>
+                                <div class="mm-subtitle">Hành động nhỏ + đều đặn + sáng suốt → giá trị bền vững.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Tích lũy âm thầm</div>
+                                  <div class="mm-subtitle">Giá trị lớn hiếm khi đến từ bước nhảy vọt.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Ý nghĩa gắn vào hành động</div>
+                                  <div class="mm-subtitle">Cùng một việc: “đặt gạch” hoặc “xây lâu đài”.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Hành động cần trí tuệ & bối cảnh</div>
+                                  <div class="mm-subtitle">Ý định tốt không tự động tạo ra giá trị.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">4. Tạo giá trị bền vững và đạo đức</div>
+                                <div class="mm-subtitle">Nguyên tắc tối thiểu: không gây tổn hại.</div>
+                                <div class="mm-meta">
+                                  <span class="mm-tag warn">Giới hạn</span>
+                                  <span class="mm-tag strong">Không gây tổn hại</span>
+                                </div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Đạo đức như điểm tựa đánh giá</div>
+                                  <div class="mm-subtitle">Không cố lập hệ chuẩn phổ quát; chỉ giữ thước đo tối thiểu.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Tổn hại trực tiếp & gián tiếp</div>
+                                  <div class="mm-subtitle">Nhiều hệ quả âm thầm và kéo dài, vượt khỏi quan sát tức thời.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Bất định hệ quả</div>
+                                  <div class="mm-subtitle">Cần thái độ thận trọng, khiêm tốn, sẵn sàng điều chỉnh.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+
+                  <!-- PART III -->
+                  <li class="mm-node">
+                    <details>
+                      <summary>
+                        <span class="mm-toggle">+</span>
+                        <div>
+                          <div class="mm-title">III. Xây dựng năng lực</div>
+                          <div class="mm-subtitle">Điều kiện nền: sức khỏe, minh mẫn, và nội lực để đi đường dài.</div>
+                          <div class="mm-meta">
+                            <span class="mm-tag info">Điều kiện nền</span>
+                          </div>
+                        </div>
+                      </summary>
+
+                      <ul class="mm-children">
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">5. Sức khỏe và sự minh mẫn của tâm trí</div>
+                                <div class="mm-subtitle">Nền tảng vật lý và tinh thần để duy trì hành động đúng.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Cân bằng áp lực & phục hồi</div>
+                                  <div class="mm-subtitle">Sức bền đến từ nhịp chịu tải và nghỉ đúng lúc.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Trí lực giúp không đi chệch</div>
+                                  <div class="mm-subtitle">Sáng suốt để phân biệt đúng/sai và chịu trách nhiệm hệ quả.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Khi điều kiện nền không đủ</div>
+                                  <div class="mm-subtitle">Giá trị dễ bị bóp méo dù ý định tốt.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">6. Những cạm bẫy thường gặp trong việc tạo ra giá trị</div>
+                                <div class="mm-subtitle">Sai lệch tinh vi khiến ta kết luận sớm và đi lệch khi đang rất nghiêm túc.</div>
+                                <div class="mm-meta">
+                                  <span class="mm-tag warn">Kết luận sớm</span>
+                                  <span class="mm-tag">Quán tính tư duy</span>
+                                </div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Điều thường đúng không phải luôn đúng</div>
+                                  <div class="mm-subtitle">Sự quen thuộc dễ bị nhầm thành chân lý.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Cạm bẫy liên kết thành chuỗi</div>
+                                  <div class="mm-subtitle">Quan sát non → kết luận vội → niềm tin → lọc thông tin.</div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="mm-leaf">
+                                  <div class="mm-title">Dừng lại đúng lúc</div>
+                                  <div class="mm-subtitle">Không hoài nghi cực đoan; chỉ tạm dừng để kiểm tra lại.</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">7. Những kỹ năng cốt lõi để xây dựng giá trị bền vững</div>
+                                <div class="mm-subtitle">Năm kỹ năng – một con đường: đi đúng hướng, đi đủ lâu, không đánh mất chính mình.</div>
+                                <div class="mm-meta">
+                                  <span class="mm-tag strong">Chuỗi năng lực</span>
+                                </div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">Kỹ năng 1 — Học hỏi & tự học</div><div class="mm-subtitle">Mở năng lực nhận thức và tự điều chỉnh.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Kỹ năng 2 — Kiên trì</div><div class="mm-subtitle">Ở lại đủ lâu với con đường đã chọn.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Kỹ năng 3 — Tự tạo động lực</div><div class="mm-subtitle">Không phụ thuộc hoàn cảnh và sự công nhận tức thì.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Kỹ năng 4 — Hình thành thói quen</div><div class="mm-subtitle">Giảm ma sát; duy trì hành động tạo giá trị như dòng chảy.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Kỹ năng 5 — Biết</div><div class="mm-subtitle">Quan sát bối cảnh; điều chỉnh; dừng/rẽ đúng lúc.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Tổng kết</div><div class="mm-subtitle">Không công thức bắt buộc; chỉ gợi mở để tự nhận ra mình đang thiếu điều gì.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+
+                      </ul>
+                    </details>
+                  </li>
+
+                  <!-- PART IV -->
+                  <li class="mm-node">
+                    <details>
+                      <summary>
+                        <span class="mm-toggle">+</span>
+                        <div>
+                          <div class="mm-title">IV. Chiến lược và hệ thống</div>
+                          <div class="mm-subtitle">Từ điều ta theo đuổi đến cách ta thực sự sống và hành động hằng ngày.</div>
+                          <div class="mm-meta">
+                            <span class="mm-tag info">Tổ chức đời sống</span>
+                          </div>
+                        </div>
+                      </summary>
+
+                      <ul class="mm-children">
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">8. Khung chiến lược</div>
+                                <div class="mm-subtitle">Chiến lược như một giả thuyết sống: hình thành – kiểm chứng – tự hiệu chỉnh.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">Khoảng trống giữa mục tiêu và hành động</div><div class="mm-subtitle">Không thiếu nỗ lực; thiếu cơ chế chuyển hóa.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Giá trị → vấn đề → lựa chọn → hành vi</div><div class="mm-subtitle">Liên kết điều theo đuổi với việc làm mỗi ngày.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Tự điều chỉnh khi thực tế lệch dự tính</div><div class="mm-subtitle">Giả thuyết sống được nuôi bằng học hỏi và phản hồi.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">9. Sự nhất quán và tăng tốc tiến độ</div>
+                                <div class="mm-subtitle">Duy trì đà, tinh chỉnh hướng đi, học hỏi từ phản hồi.</div>
+                                <div class="mm-meta">
+                                  <span class="mm-tag info">Momentum</span>
+                                  <span class="mm-tag">Feedback loop</span>
+                                </div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">Chiến thắng nhỏ</div><div class="mm-subtitle">Củng cố tâm lý: “nỗ lực có ý nghĩa”.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Vượt qua trì hoãn</div><div class="mm-subtitle">Không thúc ép, nhưng phải khởi động; hạ rào cản bắt đầu.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Vòng lặp phản hồi</div><div class="mm-subtitle">Phản hồi là dữ liệu để tinh chỉnh, không phải phán xét.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Xây dựng – Đo lường – Học hỏi</div><div class="mm-subtitle">Tăng tốc bằng giảm sai lệch sau mỗi vòng lặp.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">10. Di sản và tác động lâu dài</div>
+                                <div class="mm-subtitle">Khi giá trị không dừng lại ở người tạo ra nó.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">Không bắt buộc, chỉ khi có thể</div><div class="mm-subtitle">Di sản không nên sinh ra từ áp lực.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Giá trị vượt ra ngoài cá nhân</div><div class="mm-subtitle">Lan truyền khi có thể hiểu, áp dụng và tiếp nối.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Dẫn dắt bằng gương mẫu</div><div class="mm-subtitle">Nhất quán giữa nói – làm – kết quả quan sát được.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Cố vấn</div><div class="mm-subtitle">Giúp người khác đi nhanh hơn, không đi giống mình.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Tài liệu hóa</div><div class="mm-subtitle">Chống lãng quên; để giá trị tiếp tục tồn tại theo thời gian.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+
+                  <!-- PART V -->
+                  <li class="mm-node">
+                    <details>
+                      <summary>
+                        <span class="mm-toggle">+</span>
+                        <div>
+                          <div class="mm-title">V. Mở và khép</div>
+                          <div class="mm-subtitle">Trao lại quyền kiểm chứng và trả hành trình về đời sống.</div>
+                          <div class="mm-meta">
+                            <span class="mm-tag info">Khoảng lùi</span>
+                            <span class="mm-tag strong">Không áp đặt</span>
+                          </div>
+                        </div>
+                      </summary>
+
+                      <ul class="mm-children">
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">11. Những bài học thực tế và suy ngẫm</div>
+                                <div class="mm-subtitle">Một chương mở: quan sát, đối chiếu, tự tìm công thức của riêng mình.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">Từ chối “công thức minh họa”</div><div class="mm-subtitle">Tránh gán đời sống người khác vào khuôn sẵn có.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Tự quan sát & tự kiểm chứng</div><div class="mm-subtitle">Để người đọc hình thành lối đi của chính mình.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+
+                        <li class="mm-node">
+                          <details>
+                            <summary>
+                              <span class="mm-toggle">+</span>
+                              <div>
+                                <div class="mm-title">Kết luận</div>
+                                <div class="mm-subtitle">Giá trị không nằm ở đích đến, mà ở cách ta đi.</div>
+                              </div>
+                            </summary>
+                            <ul class="mm-children">
+                              <li><div class="mm-leaf"><div class="mm-title">Không có con đường đúng duy nhất</div><div class="mm-subtitle">Mỗi người bước vào đời với điều kiện khác nhau.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Giá trị hình thành qua lựa chọn nhỏ</div><div class="mm-subtitle">Trong giai đoạn kết quả chưa rõ ràng.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Giữ lại một thái độ</div><div class="mm-subtitle">Tỉnh táo, khiêm tốn, kiên định — và tiếp tục bước đi.</div></div></li>
+                              <li><div class="mm-leaf"><div class="mm-title">Cuốn sách dừng lại; đời sống bắt đầu</div><div class="mm-subtitle">Phần quan trọng nhất nằm ở thử nghiệm câu trả lời trong thực tế.</div></div></li>
+                            </ul>
+                          </details>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+
+                </ul>
+              </details>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="mm-note">
+          <strong>Gợi ý dùng trang này:</strong>
+          <ul style="margin: 0.5rem 0 0 1.1rem;">
+            <li>Dùng làm <em>một trang “bản đồ”</em> trước/giữa/cuối sách.</li>
+            <li>Hoặc dùng làm trang điều hướng: mỗi nhánh có thể gắn link tới chương tương ứng (nếu bạn muốn, mình sẽ thêm giúp).</li>
+            <li>Tìm kiếm phía trên giúp bạn rà lại mạch nhanh khi chỉnh sửa toàn bộ bản thảo.</li>
+          </ul>
+        </div>
+
+        <p style="text-align:right; margin-top: 2.5em; font-style: italic;">Phù Du</p>
+      </div>
+    </section>
+  </article>
+
+  <script src="settings.js"></script>
+  <script src="../../pages-scripts.js"></script>
+
+  <script>
+    // ========= Helper: update "+" icon based on open state =========
+    function syncToggleIcons(root) {
+      root.querySelectorAll("details").forEach(d => {
+        const toggle = d.querySelector(":scope > summary .mm-toggle");
+        if (!toggle) return;
+        toggle.textContent = d.open ? "–" : "+";
+      });
+    }
+
+    // ========= Expand / Collapse all =========
+    const mindmap = document.getElementById("mindmap");
+    const btnExpandAll = document.getElementById("btnExpandAll");
+    const btnCollapseAll = document.getElementById("btnCollapseAll");
+
+    btnExpandAll.addEventListener("click", () => {
+      mindmap.querySelectorAll("details").forEach(d => d.open = true);
+      syncToggleIcons(mindmap);
+    });
+
+    btnCollapseAll.addEventListener("click", () => {
+      // keep the very first root open for usability
+      const all = Array.from(mindmap.querySelectorAll("details"));
+      all.forEach((d, idx) => d.open = (idx === 0));
+      syncToggleIcons(mindmap);
+      // scroll to top of mind map
+      mindmap.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Sync icons when user toggles
+    mindmap.addEventListener("toggle", (e) => {
+      if (e.target && e.target.tagName === "DETAILS") syncToggleIcons(mindmap);
+    });
+    syncToggleIcons(mindmap);
+
+    // ========= Search / highlight =========
+    const input = document.getElementById("mmSearch");
+    const btnClear = document.getElementById("btnClear");
+    const countEl = document.getElementById("mmCount");
+
+    const textNodesSelector = ".mm-title, .mm-subtitle, .mm-tag";
+
+    function clearHighlights() {
+      mindmap.querySelectorAll(".mm-hit").forEach(el => el.classList.remove("mm-hit"));
+      mindmap.querySelectorAll("mark.mm-mark").forEach(m => {
+        const parent = m.parentNode;
+        parent.replaceChild(document.createTextNode(m.textContent), m);
+        parent.normalize();
+      });
+      countEl.textContent = "0";
+    }
+
+    function markText(el, query) {
+      const text = el.textContent;
+      const idx = text.toLowerCase().indexOf(query.toLowerCase());
+      if (idx === -1) return false;
+
+      // Replace only first occurrence for cleanliness
+      const before = text.slice(0, idx);
+      const match = text.slice(idx, idx + query.length);
+      const after = text.slice(idx + query.length);
+
+      el.textContent = "";
+      el.appendChild(document.createTextNode(before));
+
+      const mark = document.createElement("mark");
+      mark.className = "mm-mark";
+      mark.textContent = match;
+      el.appendChild(mark);
+
+      el.appendChild(document.createTextNode(after));
+      return true;
+    }
+
+    function runSearch() {
+      const q = input.value.trim();
+      clearHighlights();
+      if (!q) return;
+
+      let hits = 0;
+      const candidates = mindmap.querySelectorAll(textNodesSelector);
+
+      candidates.forEach(el => {
+        const ok = el.textContent.toLowerCase().includes(q.toLowerCase());
+        if (!ok) return;
+
+        // Mark matched text
+        const marked = markText(el, q);
+
+        // Highlight the closest container (details or leaf)
+        const container = el.closest("details, .mm-leaf");
+        if (container) container.classList.add("mm-hit");
+
+        // Expand parents so user can see hits
+        const parentDetails = el.closest("details");
+        if (parentDetails) {
+          // open all ancestor details
+          let cur = parentDetails;
+          while (cur) {
+            cur.open = true;
+            cur = cur.parentElement ? cur.parentElement.closest("details") : null;
+          }
+        }
+
+        if (marked) hits++;
+      });
+
+      syncToggleIcons(mindmap);
+      countEl.textContent = String(hits);
+
+      // Scroll to the first hit
+      const first = mindmap.querySelector(".mm-hit");
+      if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    input.addEventListener("input", () => {
+      // Debounce lightly
+      window.clearTimeout(window.__mmTimer);
+      window.__mmTimer = window.setTimeout(runSearch, 180);
+    });
+
+    btnClear.addEventListener("click", () => {
+      input.value = "";
+      clearHighlights();
+      // collapse to default state (root open)
+      btnCollapseAll.click();
+      input.focus();
+    });
+  </script>
+</body>
+</html>

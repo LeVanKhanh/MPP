@@ -50,26 +50,6 @@ var mainMenu = [
         icon: "fas fa-book",
         subItems: [
             {
-                title: "Agile",
-                icon: "fas fa-folder",
-                subItems: [
-                    {
-                        title: "Agile Manifesto",
-                        route: "pages/reading-studying/agile-software-development/agile-software-development.html",
-                        hash: "#/agile-manifesto",
-                        icon: "fas fa-file-alt",
-                        subItems: [],
-                    },
-                    {
-                        title: "Scrum",
-                        route: "pages/reading-studying/agile-software-development/scrum.html",
-                        hash: "#/scrum",
-                        icon: "fas fa-file-alt",
-                        subItems: [],
-                    },
-                ],
-            },
-            {
                 title: "Leadership",
                 icon: "fas fa-folder",
                 subItems: [
@@ -685,6 +665,32 @@ var mainMenu = [
                         title: "Mind Map",
                         route: "pages/writing-opinion/values-creation/mind-map.html",
                         hash: "#/mind-map",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        title: "Information Technology",
+        icon: "fas fa-folder",
+        subItems: [
+            {
+                title: "Agile",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Agile Manifesto",
+                        route: "pages/information-technology/agile-software-development/agile-software-development.html",
+                        hash: "#/agile-manifesto",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Scrum",
+                        route: "pages/information-technology/agile-software-development/scrum.html",
+                        hash: "#/scrum",
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },

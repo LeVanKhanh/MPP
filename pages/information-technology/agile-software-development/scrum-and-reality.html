@@ -1,0 +1,261 @@
+Scrum cố tình tránh:
+- Performance system
+- Quản trị năng lực (skill, seniority, career)
+- Ra quyết định tổ chức & con người
+- Capability system
+
+“Scrum giúp team tạo giá trị. Nhưng để vận hành tổ chức, ta cần thêm những hệ đo khác — tách biệt.”
+— Jeff Sutherland, đồng sáng lập Scrum
+
+“Scrum không thay thế quản trị. Scrum giả định quản trị đủ trưởng thành.”
+— Ken Schwaber, đồng sáng lập Scrum
+
+Đo lường giá trị kinh doanh & Khách hàng:
+- Net Promoter Score (NPS): Mức độ khách hàng sẵn sàng giới thiệu sản phẩm.
+- Customer Satisfaction Score (CSAT): Mức độ hài lòng của khách hàng sau khi sử dụng sản phẩm.
+- Doanh thu/Lợi nhuận trên mỗi tính năng (Feature ROI): Hiệu quả kinh tế của từng phần sản phẩm được tạo ra.
+
+Đo lường hiệu suất tổ chức (Flow Metrics):
+- Lead Time: Thời gian từ khi có ý tưởng đến khi sản phẩm tới tay khách hàng.
+- Cycle Time: Thời gian thực hiện từ lúc bắt đầu làm đến khi hoàn thành.
+- Throughput: Số lượng yêu cầu/công việc hoàn thành trong một khoảng thời gian.
+
+Đo lường văn hóa & Nhân sự (Organizational Health):
+- Employee Net Promoter Score (eNPS): Mức độ gắn kết và hài lòng của nhân viên.
+- Tỷ lệ nghỉ việc (Turnover Rate): Phản ánh văn hóa và sự ổn định của đội ngũ.
+
+Đo lường chất lượng & Kỹ thuật:
+- Defect Density: Mật độ lỗi trong sản phẩm.
+- Technical Debt Ratio: Tỷ lệ nợ kỹ thuật, cảnh báo về sự bền vững của code trong dài hạn. 
+
+Việc kết hợp hệ đo của Scrum (tăng trưởng sản phẩm) và các hệ đo tổ chức (vận hành) giúp cân bằng giữa nhanh (Agile) và bền vững (Organization).
+
+bổ sung cho manager:
+- Predictability (commit vs done)
+- Cycle time / Lead time
+- Defect escape
+- Feature adoption
+- Rework ratio
+
+performance cá nhân:
+- Ownership
+- Quality
+- Collaboration
+- Reliability
+- Learning
+
+Công cụ:
+- 1-1
+- OKR
+- Feedback loop, Peer feedback
+- Evidence-based notes (không bảng chấm điểm)
+
+Capability Map:
+- Skill matrix (ẩn - nội bộ lead/manager)
+- Risk-based skill gaps (bus factor)
+- Learning OKRs (team-level)
+
+Sự khác biệt quan trọng:
+Sprint metrics ≠ Performance metrics
+Team metrics ≠ Individual metrics
+Delivery system ≠ People system
+
+“KPIs for devs” chỉ hiệu quả khi ta hiểu:
+KPI không để ép nhanh hơn, mà để quản trị rủi ro, chất lượng và năng lực.”
+
+- Không KPI hoá velocity / story point
+- KPI dev ≠ KPI cá nhân kiểu sales
+- KPI phải đo behavior đúng, không đo output thô
+
+- KPI Nhóm 1 - Delivery Reliability (đáng tin cậy)
+Commitment reliability
+Carry-over rate
+Task aging
+(Không so dev với nhau, chỉ so dev với chính họ theo thời gian.)
+
+
+Nhóm 2 - Quality & Engineering Discipline (rất quan trọng)
+- Bug rate (per scope)
+- Defect escape
+- Rework ratio
+- PR rejection rate
+
+Không dùng để phạt, dùng để:
+    phát hiện skill gap
+    phát hiện nợ kỹ thuật
+
+Nhóm 3 - Collaboration & Flow Impact (thứ hay bị quên nhất)
+- PR review latency
+- PR review quality
+- Knowledge sharing
+- Cross-task support
+(Nhóm này đánh giá bằng evidence + peer feedback, không dashboard hoá.)
+
+
+Nhóm 4 - Growth & Risk Reduction (manager rất thích nếu hiểu đúng)
+- Skill coverage
+- Tech debt paydown
+- Learning delivery
+- Ownership scope
+(KPI này thường review theo quý, không theo sprint.)
+
+Những KPI TUYỆT ĐỐI KHÔNG NÊN DÙNG
+- Velocity / Story points completed
+- Lines of code
+- Number of tasks / tickets
+- Hours worked
+- Ranking devs với nhau
+(Những KPI này chỉ đo được sự bận rộn, không đo được giá trị.)
+
+“Scrum bảo vệ team khỏi KPI sai.
+KPI đúng phải đo reliability, quality và impact, không đo tốc độ.”
+
+
+“Dev performance là khả năng làm hệ thống chạy tốt hơn,
+không phải làm nhiều việc hơn.”
+
+
+1 dashboard cho tất cả.
+- │  Team Outcome Metrics       │  (public, dashboard)
+- │  Team Flow & Quality        │  (public, xu hướng)
+- │  Individual Impact Evidence │  (private: TL + dev)
+
+Tầng 1 - Team Outcome Metrics (data-first, không tranh cãi)
+- Sprint Goal Success %
+- Commit vs Done
+- Release frequency
+- Feature adoption (nếu có)
+
+Tầng 2 - Team Flow & Quality (đòn bẩy tăng performance)
+- Cycle time (median, p85)
+- WIP
+- Rework ratio
+- Defect escape
+- PR lead time
+
+tìm bottleneck, quyết định tech debt, justify refactor
+
+Tầng 3 - Individual Performance (công bằng + data-first)
+Reliability (Task aging, carry-over)
+Quality (Defect escape, Rework ratio, Bug source, rework)
+Collaboration (PR review latency, Knowledge sharing)
+Flow Impact (Cycle time, Ownership scope, PR review latency, unblock)
+Ownership (Feature / system owned)
+Growth (Skill coverage, Learning delivery)
+
+
+Nguyên tắc sống còn khi dùng OKR cho dev
+OKR ≠ KPI
+ - KPI = đo trạng thái
+ - OKR = thúc đẩy thay đổi
+
+OKR không gắn trực tiếp lương thưởng
+ - nếu không, dev sẽ chọn mục tiêu an toàn, không chọn mục tiêu đúng.
+
+OKR đo outcome, không đo effort
+ - Không: “hoàn thành X task”
+ - Có: “giảm X rủi ro / cải thiện X chỉ số”
+
+Scrum vẫn chạy bình thường
+- Sprint = delivery
+- OKR = định hướng vì sao delivery đó quan trọng
+
+Cấu trúc OKR đúng cho dev (rất quan trọng)
+❌ Sai (rất phổ biến)
+
+OKR cá nhân = task list
+OKR team = tổng hợp task
+
+Bạn nên có 3 tầng OKR, giống kiến trúc performance bạn đang hướng tới:
+- │ Product / Team OKRs       │  (public)
+- │ Engineering OKRs (Team)   │  (public)
+- │ Individual OKRs           │  (private + aligned)
+
+Ví dụ OKR team (chuẩn, không màu mè)
+Objective
+- Improve delivery predictability and engineering quality
+Key Results
+- Reduce median cycle time from 8 → 5 days
+- Keep Sprint Goal success rate ≥ 85%
+- Reduce defect escape rate by 30%
+- PR review median time ≤ 24h
+
+KRs = metric đã có
+Không thêm việc, chỉ định hướng cải thiện
+
+Individual OKRs cho dev (an toàn + công bằng)
+OKR cá nhân không phải để so dev với nhau, mà để:
+ghi nhận impact
+định hướng growth
+
+4.1 Nguyên tắc viết OKR cá nhân
+1-2 Objectives / quý
+Mỗi Objective 2-3 KRs
+Ít nhưng sắc
+
+4.2 Mẫu OKR cá nhân CHUẨN cho dev
+Objective
+Increase reliability and system ownership in checkout module
+Key Results
+Own end-to-end delivery of at least 2 checkout features
+Reduce checkout-related production incidents by 40%
+Mentor at least 1 dev to contribute independently to checkout module
+👉 KRs đo được, nhưng không ép task.
+
+Objective
+Improve code quality and collaboration effectiveness
+Key Results
+Reduce rework rate in assigned tasks by 25%
+Keep PR rejection rate < 10%
+Deliver PR reviews within 24h for 90% cases
+
+Ví dụ 3  Junior Dev
+Objective 
+Build confidence and delivery reliability
+Key Results
+- Complete ≥ 90% committed tasks without carry-over
+- Deliver at least 1 feature with minimal supervision
+- Apply agreed coding standards in 100% PRs
+
+Mapping OKR ↔ Performance (đây là điểm mấu chốt)
+
+Reliability OKR
+Quality OKR
+Ownership OKR
+Mentoring OKR
+Learning OKR
+
+Khi review performance:
+Bạn không hỏi cảm giác
+Bạn hỏi: OKR đạt tới đâu & impact gì
+
+6. Cách triển khai để team không “dị ứng OKR”
+Sprint level
+❌ Không nhắc OKR trong daily
+❌ Không ép task theo OKR
+✅ Chỉ dùng OKR để ưu tiên quyết định
+
+Monthly
+- Check-in nhẹ: KR đang đi hướng nào?
+- Không score, không blame
+
+Quarterly
+- Review OKR
+- Link sang growth & performance discussion
+
+
+Những OKR cho dev tuyệt đối tránh
+❌ “Increase velocity by 20%”
+❌ “Complete X tickets”
+❌ “Deliver all assigned stories”
+❌ “Reduce bugs to zero”
+
+(Những cái này khiến dev chơi game, không tạo giá trị.)
+
+“OKR không phải cam kết hoàn hảo.
+OKR là hướng để chúng ta cải thiện điều quan trọng nhất.”
+
+“KPI cho tôi biết team đang ở đâu.
+OKR cho tôi biết team đang muốn đi đâu.”
+
+

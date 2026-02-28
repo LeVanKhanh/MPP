@@ -74,6 +74,16 @@
         },
 
         pushToIframe(size) {
+            // Direct DOM - reliable for same-origin iframes (works on all mobile browsers)
+            try {
+                const iframeBody = elements.iframe?.contentDocument?.body;
+                if (iframeBody) {
+                    iframeBody.classList.remove('font-size-default', 'font-size-larger', 'font-size-large');
+                    iframeBody.classList.add(`font-size-${size}`);
+                }
+            } catch { /* cross-origin, fall through to postMessage */ }
+
+            // postMessage - fallback for cases where contentDocument is not accessible
             elements.iframe?.contentWindow?.postMessage({ type: 'set-font-size', size }, '*');
         },
 
@@ -102,6 +112,7 @@
             this.apply(current);
 
             select.addEventListener('change', () => this.apply(select.value || 'default'));
+            select.addEventListener('input',  () => this.apply(select.value || 'default')); // fallback for Samsung/Android
         }
     };
 

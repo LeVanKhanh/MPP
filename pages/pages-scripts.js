@@ -1,46 +1,26 @@
-window.addEventListener('DOMContentLoaded', function() {
-    setTheme();
-    setFontSize();
+window.addEventListener('DOMContentLoaded', () => {
+    applyTheme(localStorage.getItem('theme'));
+    applyFontSize(localStorage.getItem('font-size'));
 });
 
 // Listen for theme and font size change messages from parent
-window.addEventListener('message', function(event) {
-    if (!event.data || !event.data.type) return;
+window.addEventListener('message', ({ data }) => {
+    if (!data?.type) return;
 
-    if (event.data.type === 'set-theme') {
-        if (event.data.theme === 'dark') {
-            document.body.classList.add('dark-theme');
-        } else {
-            document.body.classList.remove('dark-theme');
-        }
-    }
-
-    if (event.data.type === 'set-font-size') {
-        applyFontSize(event.data.size);
+    if (data.type === 'set-theme') {
+        applyTheme(data.theme);
+    } else if (data.type === 'set-font-size') {
+        applyFontSize(data.size);
     }
 });
 
-function setTheme() {
-    const theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
-    if (theme === 'dark') {
-        document.body.classList.add('dark-theme');
-    } else {
-        document.body.classList.remove('dark-theme');
-    }
+function applyTheme(theme) {
+    document.body.classList.toggle('dark-theme', theme === 'dark');
 }
 
 function applyFontSize(size) {
+    const valid = ['larger', 'large', 'default'];
+    const normalized = valid.includes(size) ? size : 'default';
     document.body.classList.remove('font-size-default', 'font-size-larger', 'font-size-large');
-    if (size === 'larger') {
-        document.body.classList.add('font-size-larger');
-    } else if (size === 'large') {
-        document.body.classList.add('font-size-large');
-    } else {
-        document.body.classList.add('font-size-default');
-    }
-}
-
-function setFontSize() {
-    const size = localStorage.getItem('font-size') || 'default';
-    applyFontSize(size);
+    document.body.classList.add(`font-size-${normalized}`);
 }

@@ -25,21 +25,15 @@
 
     // ========== Utility Functions ==========
     const utils = {
-        getUrlParam: (param) => {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        },
-        
+        getUrlParam: (param) => new URLSearchParams(window.location.search).get(param),
+
         updateUrlParam: (param, value) => {
             const url = new URL(window.location);
             url.searchParams.set(param, value);
             window.history.replaceState({}, '', url);
         },
-        
-        isValidLanguage: (lang) => lang === 'vn' || lang === 'en',
-        
-        querySelector: (selector) => document.querySelector(selector),
-        querySelectorAll: (selector) => document.querySelectorAll(selector)
+
+        isValidLanguage: (lang) => lang === 'vn' || lang === 'en'
     };
 
     // ========== Theme Management ==========
@@ -49,26 +43,21 @@
         },
 
         pushToIframe(theme) {
-            if (elements.iframe?.contentWindow) {
-                elements.iframe.contentWindow.postMessage({ type: 'set-theme', theme }, '*');
-            }
+            elements.iframe?.contentWindow?.postMessage({ type: 'set-theme', theme }, '*');
         },
 
         set(theme) {
-            const isDark = theme === 'dark';
-            elements.body.classList.toggle('dark-theme', isDark);
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            this.pushToIframe(isDark ? 'dark' : 'light');
+            elements.body.classList.toggle('dark-theme', theme === 'dark');
+            localStorage.setItem('theme', theme);
+            this.pushToIframe(theme);
         },
 
         init() {
-            const saved = this.getCurrent();
-            this.set(saved);
+            this.set(this.getCurrent());
         },
 
         toggle() {
-            const isDark = !elements.body.classList.contains('dark-theme');
-            this.set(isDark ? 'dark' : 'light');
+            this.set(elements.body.classList.contains('dark-theme') ? 'light' : 'dark');
         }
     };
 
@@ -85,14 +74,12 @@
         },
 
         pushToIframe(size) {
-            if (elements.iframe?.contentWindow) {
-                elements.iframe.contentWindow.postMessage({ type: 'set-font-size', size }, '*');
-            }
+            elements.iframe?.contentWindow?.postMessage({ type: 'set-font-size', size }, '*');
         },
 
         apply(size) {
-            const normalized = this.classes[size] !== undefined ? size : 'default';
-            elements.body.classList.remove('font-size-default', 'font-size-larger', 'font-size-large');
+            const normalized = size in this.classes ? size : 'default';
+            elements.body.classList.remove(...Object.values(this.classes));
             elements.body.classList.add(this.classes[normalized]);
             localStorage.setItem('font-size', normalized);
             this.pushToIframe(normalized);
@@ -102,7 +89,7 @@
         updateSelectClass(size) {
             const select = document.getElementById('font-size-select');
             if (!select) return;
-            select.classList.remove('font-size-default', 'font-size-larger', 'font-size-large');
+            select.classList.remove(...Object.values(this.classes));
             select.classList.add(`font-size-${size}`);
         },
 
@@ -111,24 +98,18 @@
             if (!select) return;
 
             const current = this.getCurrent();
-            this.apply(current);
             select.value = current;
-            this.updateSelectClass(current);
+            this.apply(current);
 
-            select.addEventListener('change', () => {
-                const size = select.value || 'default';
-                this.apply(size);
-            });
+            select.addEventListener('change', () => this.apply(select.value || 'default'));
         }
     };
 
     // ========== Navigation & Routing ==========
     const router = {
         highlightActive(hash) {
-            const links = utils.querySelectorAll('nav .menu a[data-route]');
-            links.forEach(link => link.classList.remove('active'));
-            const current = utils.querySelector(`nav .menu a[href="${hash}"]`);
-            if (current) current.classList.add('active');
+            document.querySelectorAll('nav .menu a[data-route]').forEach(link => link.classList.remove('active'));
+            document.querySelector(`nav .menu a[href="${hash}"]`)?.classList.add('active');
         },
 
         openParents(link) {
@@ -141,17 +122,17 @@
 
         loadFromHash() {
             const hash = window.location.hash || '#/home';
-            const link = utils.querySelector(`nav .menu a[href="${hash}"]`);
-            
+            const link = document.querySelector(`nav .menu a[href="${hash}"]`);
+
             if (link?.dataset?.route) {
                 if (elements.iframe) elements.iframe.src = link.dataset.route;
                 this.openParents(link);
                 this.highlightActive(hash);
                 return;
             }
-            
+
             // Fallback
-            const firstRoute = utils.querySelector('nav .menu a[data-route]');
+            const firstRoute = document.querySelector('nav .menu a[data-route]');
             const defaultRoute = firstRoute?.dataset.route || CONFIG.DEFAULT_ROUTE;
             if (elements.iframe) elements.iframe.src = defaultRoute;
             if (firstRoute) {
@@ -161,8 +142,7 @@
         },
 
         attachHandlers() {
-            const links = utils.querySelectorAll('nav .menu a[data-route]');
-            links.forEach(link => {
+            document.querySelectorAll('nav .menu a[data-route]').forEach(link => {
                 link.addEventListener('click', (e) => {
                     const href = link.getAttribute('href') || '';
                     if (href.startsWith('#')) {
@@ -180,11 +160,9 @@
             const expandBtn = document.getElementById('expand-main');
             const main = document.getElementById('main-content');
             if (!expandBtn || !main) return;
-            
-            // Check URL parameter for initial state (default: false)
-            const urlExpanded = utils.getUrlParam('expanded');
-            let expanded = urlExpanded === 'true';
-            
+
+            let expanded = utils.getUrlParam('expanded') === 'true';
+
             const toggleExpand = (shouldExpand) => {
                 expanded = shouldExpand;
                 main.classList.toggle('expanded', expanded);
@@ -192,31 +170,20 @@
                 expandBtn.innerHTML = expanded
                     ? '<i class="fas fa-compress"></i>'
                     : '<i class="fas fa-expand"></i>';
-                
-                // Update URL parameter
-                utils.updateUrlParam('expanded', expanded ? 'true' : 'false');
+                utils.updateUrlParam('expanded', expanded);
             };
-            
-            // Set initial state from URL
-            if (expanded) {
-                toggleExpand(true);
-            }
-            
-            expandBtn.addEventListener('click', () => {
-                toggleExpand(!expanded);
-            });
-            
-            // Exit fullscreen on ESC key
+
+            if (expanded) toggleExpand(true);
+
+            expandBtn.addEventListener('click', () => toggleExpand(!expanded));
+
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && expanded) {
-                    toggleExpand(false);
-                }
+                if (e.key === 'Escape' && expanded) toggleExpand(false);
             });
         },
 
         initSidebarToggle() {
-            if (!elements.sidebarToggle) return;
-            elements.sidebarToggle.addEventListener('click', () => {
+            elements.sidebarToggle?.addEventListener('click', () => {
                 elements.sidebar.classList.toggle('collapsed');
             });
         }
@@ -252,22 +219,21 @@
         },
 
         render() {
-            const menuContainer = utils.querySelector('.menu');
+            const menuContainer = document.querySelector('.menu');
             const currentLang = languageManager.getCurrent();
             const menuData = currentLang === 'vn' ? (window.mainMenuVn || window.mainMenu) : window.mainMenu;
-            
+
             if (menuContainer && menuData) {
                 menuContainer.innerHTML = this.generateHTML(menuData);
             }
         },
 
         collapseAll() {
-            const allDetails = utils.querySelectorAll('nav .menu details.submenu-group');
-            allDetails.forEach(detail => detail.open = false);
+            document.querySelectorAll('nav .menu details.submenu-group').forEach(detail => detail.open = false);
         },
 
         hideDuplicateHome() {
-            const menuHomeLi = utils.querySelector('nav .menu a[href="#/home"]')?.closest('li');
+            const menuHomeLi = document.querySelector('nav .menu a[href="#/home"]')?.closest('li');
             if (menuHomeLi) {
                 menuHomeLi.classList.add('is-duplicate-home');
                 menuHomeLi.style.display = 'none';
@@ -296,8 +262,7 @@
 
         loadScript(lang) {
             // Remove existing menu script
-            const oldScript = utils.querySelector('script[src*="main-menu"]');
-            if (oldScript) oldScript.remove();
+            document.querySelector('script[src*="main-menu"]')?.remove();
 
             // Clear menu
             const menuRoot = elements.sidebar?.querySelector('.menu');
@@ -316,9 +281,7 @@
         },
 
         set(lang) {
-            if (elements.langToggle) {
-                elements.langToggle.setAttribute('data-lang', lang);
-            }
+            elements.langToggle?.setAttribute('data-lang', lang);
             utils.updateUrlParam('lang', lang);
             this.loadScript(lang);
         },
@@ -350,34 +313,31 @@
 
             if (!searchContainer || !searchToggle || !searchInput || !menuRoot) return;
 
-            const show = () => {
-                searchContainer.classList.add('active');
-                searchToggle.setAttribute('aria-expanded', 'true');
-                searchToggle.setAttribute('title', 'Close search');
-                searchToggle.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i>';
-                searchInput.value = '';
-                setTimeout(() => searchInput.focus(), 0);
-                this.filter('');
-            };
-
-            const hide = () => {
-                searchContainer.classList.remove('active');
-                searchToggle.setAttribute('aria-expanded', 'false');
-                searchToggle.setAttribute('title', 'Search menu');
-                searchToggle.innerHTML = '<i class="fas fa-search" aria-hidden="true"></i>';
-                searchInput.blur();
-                searchInput.value = '';
+            const setSearchVisible = (visible) => {
+                searchContainer.classList.toggle('active', visible);
+                searchToggle.setAttribute('aria-expanded', String(visible));
+                if (visible) {
+                    searchToggle.setAttribute('title', 'Close search');
+                    searchToggle.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i>';
+                    searchInput.value = '';
+                    setTimeout(() => searchInput.focus(), 0);
+                } else {
+                    searchToggle.setAttribute('title', 'Search menu');
+                    searchToggle.innerHTML = '<i class="fas fa-search" aria-hidden="true"></i>';
+                    searchInput.blur();
+                    searchInput.value = '';
+                }
                 this.filter('');
             };
 
             searchToggle.addEventListener('click', () => {
-                searchContainer.classList.contains('active') ? hide() : show();
+                setSearchVisible(!searchContainer.classList.contains('active'));
             });
 
             searchInput.addEventListener('input', (e) => this.filter(e.target.value));
 
             searchInput.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') hide();
+                if (e.key === 'Escape') setSearchVisible(false);
             });
 
             // Header Home link routing
@@ -396,24 +356,18 @@
 
             const q = (query || '').trim().toLowerCase();
             const items = Array.from(menuRoot.querySelectorAll('li'));
+            const isDuplicateHome = (li) => li.classList.contains('is-duplicate-home');
 
             if (!q) {
                 items.forEach(li => {
-                    if (li.classList.contains('is-duplicate-home')) {
-                        li.style.display = 'none';
-                        return;
-                    }
-                    li.style.display = '';
+                    li.style.display = isDuplicateHome(li) ? 'none' : '';
                     li.removeAttribute('data-match');
                 });
                 return;
             }
 
             items.forEach(li => {
-                if (li.classList.contains('is-duplicate-home')) {
-                    li.style.display = 'none';
-                    return;
-                }
+                if (isDuplicateHome(li)) { li.style.display = 'none'; return; }
                 const label = (li.querySelector('a')?.textContent || li.textContent || '').trim().toLowerCase();
                 const match = label.includes(q);
                 li.dataset.match = match ? '1' : '0';
@@ -422,8 +376,9 @@
 
             // Ensure parents are shown if any descendant matches
             items.forEach(li => {
-                const childVisible = Array.from(li.querySelectorAll('li')).some(child => child.style.display !== 'none');
-                if (childVisible) li.style.display = '';
+                if (Array.from(li.querySelectorAll('li')).some(child => child.style.display !== 'none')) {
+                    li.style.display = '';
+                }
             });
         }
     };
@@ -437,19 +392,13 @@
         uiControls.initExpandMain();
         searchManager.init();
         
-        // Initialize theme toggle
-        if (elements.themeToggle) {
-            elements.themeToggle.addEventListener('click', () => themeManager.toggle());
-        }
-        
-        // Initialize routing
+        elements.themeToggle?.addEventListener('click', () => themeManager.toggle());
+
         window.addEventListener('hashchange', () => router.loadFromHash());
 
-        if (elements.iframe) {
-            elements.iframe.addEventListener('load', () => {
-                themeManager.pushToIframe(themeManager.getCurrent());
-                fontSizeManager.pushToIframe(fontSizeManager.getCurrent());
-            });
-        }
+        elements.iframe?.addEventListener('load', () => {
+            themeManager.pushToIframe(themeManager.getCurrent());
+            fontSizeManager.pushToIframe(fontSizeManager.getCurrent());
+        });
     });
 })();

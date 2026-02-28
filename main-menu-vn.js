@@ -50,26 +50,6 @@ var mainMenuVn = [
         icon: "fas fa-book",
         subItems: [
             {
-                title: "Agile",
-                icon: "fas fa-folder",
-                subItems: [
-                    {
-                        title: "Tuyên Ngôn Agile",
-                        route: "pages/reading-studying/agile-software-development/agile-software-development-vn.html",
-                        hash: "#/agile-manifesto",
-                        icon: "fas fa-file-alt",
-                        subItems: [],
-                    },
-                    {
-                        title: "Scrum",
-                        route: "pages/reading-studying/agile-software-development/scrum-vn.html",
-                        hash: "#/scrum",
-                        icon: "fas fa-file-alt",
-                        subItems: [],
-                    },
-                ],
-            },
-            {
                 title: "Lãnh Đạo",
                 icon: "fas fa-folder",
                 subItems: [
@@ -950,6 +930,32 @@ var mainMenuVn = [
                         title: "Trèo Lên Cây Bưởi Hái Hoa",
                         route: "pages/literature/proverbs-and-folk-songs/Treo-len-cay-buoi-hai-hoa.html",
                         hash: "#/treo-len-cay-buoi-hai-hoa",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        title: "Công Nghệ Thông Tin",
+        icon: "fas fa-folder",
+        subItems: [
+            {
+                title: "Agile",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Tuyên Ngôn Agile",
+                        route: "pages/information-technology/agile-software-development/agile-software-development-vn.html",
+                        hash: "#/agile-manifesto",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Scrum",
+                        route: "pages/information-technology/agile-software-development/scrum-vn.html",
+                        hash: "#/scrum",
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },

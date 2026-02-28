@@ -527,73 +527,67 @@ header {
 }
 
 .font-size-select {
-    border: 1px solid rgba(100, 181, 246, 0.35);
-    background: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0.92));
-    color: var(--text-color);
-    border-radius: 999px;
-    padding: 0.15rem 1.4rem 0.15rem 0.7rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    cursor: pointer;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    background-image: linear-gradient(45deg, transparent 50%, rgba(0, 82, 163, 0.75) 50%),
-        linear-gradient(135deg, rgba(0, 82, 163, 0.75) 50%, transparent 50%);
-    background-position: calc(100% - 0.85rem) calc(50% - 2px), calc(100% - 0.75rem) calc(50% - 2px);
-    background-size: 6px 6px, 6px 6px;
-    background-repeat: no-repeat;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    box-shadow: 0 1px 4px rgba(100, 181, 246, 0.12);
+    border: 1.5px solid rgba(100, 181, 246, 0.4);
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%230052a3' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.6rem center;
+    color: var(--text-color);
+    border-radius: 999px;
+    padding: 0.25rem 1.75rem 0.25rem 0.85rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), inset 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
-#font-size-select option.default {
-    font-size: 16px;
+#font-size-select option {
+    background: #ffffff;
+    color: #1a1a1a;
+    font-weight: 600;
 }
 
-#font-size-select option.larger {
-    font-size: 19px;
-}
-
-#font-size-select option.large {
-    font-size: 21px;
-}
+#font-size-select option.default  { font-size: 14px; }
+#font-size-select option.larger   { font-size: 16px; }
+#font-size-select option.large    { font-size: 18px; }
 
 .font-size-select:hover {
-    background: linear-gradient(180deg, #ffffff, rgba(100, 181, 246, 0.08));
-    border-color: rgba(100, 181, 246, 0.55);
-    box-shadow: 0 2px 8px rgba(100, 181, 246, 0.18);
-}
-
-.font-size-select.font-size-default {
-    font-size: 0.75rem;
-}
-
-.font-size-select.font-size-larger {
-    font-size: 0.9rem;
-}
-
-.font-size-select.font-size-large {
-    font-size: 1.05rem;
+    border-color: rgba(100, 181, 246, 0.7);
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(100, 181, 246, 0.2);
 }
 
 .font-size-select:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(100, 181, 246, 0.25);
+    border-color: rgba(0, 82, 163, 0.6);
+    box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.2);
 }
 
+.font-size-select.font-size-default { font-size: 0.75rem; }
+.font-size-select.font-size-larger  { font-size: 0.88rem; }
+.font-size-select.font-size-large   { font-size: 1rem; }
+
 body.dark-theme .font-size-select {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    background-color: rgba(255, 255, 255, 0.07);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2364b5f6' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     color: #e8e8e8;
-    border-color: rgba(100, 181, 246, 0.45);
-    background-image: linear-gradient(45deg, transparent 50%, rgba(100, 181, 246, 0.85) 50%),
-        linear-gradient(135deg, rgba(100, 181, 246, 0.85) 50%, transparent 50%);
+    border-color: rgba(100, 181, 246, 0.4);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-theme .font-size-select:hover {
-    background: linear-gradient(180deg, rgba(100, 181, 246, 0.18), rgba(255, 255, 255, 0.06));
+    background-color: rgba(100, 181, 246, 0.1);
+    border-color: rgba(100, 181, 246, 0.65);
+    box-shadow: 0 2px 8px rgba(100, 181, 246, 0.15);
+}
+
+body.dark-theme #font-size-select option {
+    background: #1e2a38;
+    color: #e8e8e8;
 }
 
 body.dark-theme .ai-indicator:hover {

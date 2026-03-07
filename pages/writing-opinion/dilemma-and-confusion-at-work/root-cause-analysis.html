@@ -1,0 +1,77 @@
+root-cause-analysis
+
+1. Dừng ở triệu chứng thay vì nguyên nhân gốc
+chỉ sửa symptom, không giải quyết root cause.
+
+2. Chỉ tìm một nguyên nhân duy nhất
+Trong hệ thống thực tế, vấn đề thường là multi-cause.
+
+3. Biến RCA thành blame game
+# Nguyên tắc tư duy - Tìm hiểu nguyên nhân gốc rễ của vấn đề thay vì chỉ tập trung vào người gây ra - Văn hóa đổ lỗi vs Văn hóa học hỏi
+# Chúng ta đi tìm nguyên nhân để hiểu vấn đề và tìm giải pháp, không phải để đổ lỗi cho ai đó. Điều này giúp tạo ra một môi trường làm việc tích cực và khuyến khích sự học hỏi từ những sai lầm.
+# Cùng nhau giải quyết vấn đề thay vì chỉ trích nhau sẽ giúp tăng cường sức mạnh tập thể và tạo ra một môi trường làm việc tích cực.
+# Khi vấn đề xảy ra, xem cách để giải quyết vấn đề thay vì tìm người chịu trách nhiệm để giải quyết.
+Trong quá trình đi tìm nguyên nhân tôi vẫn thường xuyên gặp phải hình thức tư duy là vấn đề này thuộc về team A, B, C hay thuộc về người khá...
+do đó ta không cần quan tâm hãy để họ xử lý, còn mình thì không liên quan.
+Cách làm việc như vậy dẫn đến lối tư duy là tránh làm ra lỗi để không bị chỉ trích.
+Có những nhóm hoặc cá nhân quá cẩn thận đến mức không dám làm gì vì sợ mắc lỗi. Họ chỉ làm những gì chắc chắc đã được cho phép và kiềm hãm sự sáng tạo.
+Nếu vấn đề thực sự do con người làm ra thì phải làm sao?
+
+4. Thiếu dữ liệu / log khi phân tích
+Root cause = assumption
+Một RCA tốt luôn dựa trên:
+log, metrics, traces, timeline
+
+5. Không dựng timeline của sự cố
+Không có timeline → RCA rất dễ sai logic.
+
+6. Nhầm trigger với root cause
+7. RCA không dẫn đến action
+    Một RCA tốt phải trả lời: Làm gì để việc này không xảy ra nữa?
+
+8. Action quá chung chung
+    Action phải cụ thể và measurable.
+
+9. Không phân biệt các loại nguyên nhân
+    Một RCA tốt thường phân loại:
+        Technical cause
+            code bug
+            configuration error
+
+        Process cause
+            thiếu test
+            deploy process yếu
+
+        Organizational cause
+            team thiếu ownership
+            thiếu monitoring culture
+
+10. RCA chỉ làm cho có (postmortem theater)
+Một RCA tốt phải:
+    - review trong team
+    - track action items
+    - follow-up
+
+Một cấu trúc RCA tốt (gợi ý)
+1. Incident Summary
+2. Impact
+3. Timeline
+4. Root Causes
+5. Contributing Factors
+6. What worked / what failed
+7. Action Items
+
+Root cause không phải là “ai sai”, mà là
+tại sao hệ thống cho phép sai lầm xảy ra.
+
+# Nguyên tắc tư duy - Tìm hiểu nguyên nhân gốc rễ của vấn đề thay vì chỉ tập trung vào người gây ra - Văn hóa đổ lỗi vs Văn hóa học hỏi
+# Chúng ta đi tìm nguyên nhân để hiểu vấn đề và tìm giải pháp, không phải để đổ lỗi cho ai đó. Điều này giúp tạo ra một môi trường làm việc tích cực và khuyến khích sự học hỏi từ những sai lầm.
+# Cùng nhau giải quyết vấn đề thay vì chỉ trích nhau sẽ giúp tăng cường sức mạnh tập thể và tạo ra một môi trường làm việc tích cực.
+# Khi vấn đề xảy ra, xem cách để giải quyết vấn đề thay vì tìm người chịu trách nhiệm để giải quyết.
+
+Trong quá trình đi tìm nguyên nhân tôi vẫn thường xuyên gặp phải hình thức tư duy là vấn đề này thuộc về team A, B, C hay thuộc về người khá...
+do đó ta không cần quan tâm hãy để họ xử lý, còn mình thì không liên quan.
+Cách làm việc như vậy dẫn đến lối tư duy là tránh làm ra lỗi để không bị chỉ trích.
+Có những nhóm hoặc cá nhân quá cẩn thận đến mức không dám làm gì vì sợ mắc lỗi. Họ chỉ làm những gì chắc chắc đã được cho phép và kiềm hãm sự sáng tạo.
+
+Nếu vấn đề thực sự do con người làm ra thì phải làm sao?

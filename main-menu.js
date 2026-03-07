@@ -696,6 +696,26 @@ var mainMenu = [
                     },
                 ],
             },
+            {
+                title: "AI",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Resources",
+                        route: "pages/information-technology/ai/resources.html",
+                        hash: "#/ai-resources",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Terminologies",
+                        route: "pages/information-technology/ai/terminologies.html",
+                        hash: "#/ai-terminologies",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
         ],
     },
 ];

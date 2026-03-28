@@ -694,6 +694,26 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Scrum, Agile and More",
+                        icon: "fas fa-folder",
+                        subItems: [
+                            {
+                                title: "0. Introduction",
+                                route: "pages/information-technology/agile-software-development/scrum-agile-and-more/0-introduction.html",
+                                hash: "#/scrum-agile-and-more-introduction",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
+                                title: "1. Scrum Team - Product Owner (PO)",
+                                route: "pages/information-technology/agile-software-development/scrum-agile-and-more/1-scrum-team-product-owner.html",
+                                hash: "#/scrum-agile-and-more-po",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                        ],
+                    },
                 ],
             },
             {

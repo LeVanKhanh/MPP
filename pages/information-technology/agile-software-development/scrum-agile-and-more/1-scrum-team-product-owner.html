@@ -12,7 +12,7 @@
 	<header class="article-header">
 		<h1 class="page-title">1. Scrum Team - Product Owner (PO)</h1>
 		<p class="page-subtitle">
-			Core issue: When the PO cannot effectively fulfill the role of product value direction.
+			Core issue: what happens when the PO cannot provide clear value direction for the product.
 		</p>
 		<p class="page-meta">
 			Published on: <time datetime="2026-03-28">28/03/2026</time>
@@ -24,7 +24,7 @@
 		<div class="sub-section">
 			<h3 class="sub-point-1">Problem context: the PO role and Scrum expectations</h3>
 
-			<p>The most important outcome in product development is value creation. According to the Scrum Guide, the PO is responsible for maximizing product value by understanding the Product Goal, market context, user needs, priorities, and by communicating these clearly to the development team.</p>
+			<p>Products rarely fail because they lack features. They fail when value remains unclear. According to the Scrum Guide, the PO is accountable for maximizing product value by understanding the Product Goal, market context, user needs, and priorities, then communicating those clearly to the development team.</p>
 
 			<p>However, a practical question must be asked: what happens when the PO does not meet these expectations? What if direction is unclear, priorities are inconsistent, or value is misidentified?</p>
 
@@ -34,9 +34,9 @@
 		<div class="sub-section">
 			<h3 class="sub-point-1">Three common team responses when PO direction is weak</h3>
 
-			<p>When a PO does not perform the value-direction role well, Scrum does not provide a concrete prescription. In practice, teams usually respond in three ways, and each response has distinct consequences.</p>
+			<p>When a PO cannot provide clear value direction, Scrum does not offer a concrete prescription. In practice, teams usually respond in three ways, and each response has distinct consequences.</p>
 
-			<p><strong>1) Passive execution.</strong> This is the most common response. The development team keeps accepting requests and executes as an "execution team," avoiding debate to preserve pace and stability. In the short term, sprints finish, velocity looks stable, and backlog items keep moving. In the long term, however, the product loses direction, value is not optimized, and team ownership fades.</p>
+			<p><strong>1) Passive execution.</strong> This is the most common response. The development team keeps accepting requests and operates like an "execution team," avoiding debate to preserve pace and stability. In the short term, sprints finish, velocity looks stable, and backlog items keep moving. In the long term, however, the product loses direction, value is not optimized, and team ownership fades.</p>
 
 			<p><strong>2) Pushback without structure.</strong> Some teams challenge PO decisions when they see problems. This is a positive signal because the team starts caring about real product value. But if pushback is emotional, data-poor, or unsupported by a clear mechanism, conflict grows, collaboration declines, and decisions become slower and less consistent.</p>
 
@@ -45,6 +45,8 @@
 
 		<div class="sub-section">
 			<h3 class="sub-point-1">The gap that lies beyond Scrum</h3>
+
+			<p>Scrum is not incomplete; it simply stops where it should. What comes next is an organizational capability question.</p>
 
 			<p>None of the three responses truly solves the root problem. Scrum exposes the gap, but filling that gap requires capabilities outside Scrum itself.</p>
 
@@ -68,7 +70,7 @@
 
 			<p>Scrum talks about "maximizing value" but does not define a fixed measurement model. Without care, measurement can drift off target from the beginning.</p>
 
-			<p><strong>What should not be measured (or is easily misread):</strong> number of backlog items written, requirement detail level, team velocity, and number of tasks completed in a sprint. Shared issue: these indicators mostly measure output, not outcome.</p>
+			<p><strong>What should not be measured (or is often misread):</strong> number of backlog items written, requirement detail level, team velocity, and number of tasks completed in a sprint. Common issue: these indicators mostly measure output, not outcome.</p>
 		</div>
 
 		<div class="sub-section">
@@ -82,13 +84,90 @@
 		</div>
 
 		<div class="sub-section">
-			<h3 class="sub-point-1">One candid point</h3>
+			<h3 class="sub-point-1">Measuring PO Effectiveness</h3>
 
-			<p>Measurement is not for "proving whether the PO is good enough." It is for enabling decisions: continue investing, adjust, or change.</p>
+			<p>Measurement is not about "proving whether the PO is good enough." It is about enabling decisions: continue investing, adjust, or change.</p>
 
 			<p>If measurement ends at evaluation and does not lead to action, then measurement itself creates no value.</p>
 
 			<p>Scrum does not prescribe a value measurement method, and that gap forces organizations to confront a harder question: what do we actually mean by "value"?</p>
+		</div>
+
+		<div class="sub-section">
+			<h3 class="sub-point-1">Practical PO Measurement Framework</h3>
+
+			<p><strong>Principle</strong></p>
+			<ul>
+				<li>Do not measure how busy the PO is.</li>
+				<li>Measure whether the PO reduces uncertainty and creates value.</li>
+			</ul>
+
+			<p><strong>Framework structure (3 layers)</strong></p>
+			<ol>
+				<li>Outcome: Are we building the right thing?</li>
+				<li>Flow Efficiency: Is the PO slowing the team down?</li>
+				<li>Decision Quality: Is the PO thinking clearly?</li>
+			</ol>
+
+			<p><strong>Layer 1 - Outcome (40%): Is the PO choosing high-value problems?</strong></p>
+			<p><strong>Metrics</strong></p>
+			<ul>
+				<li><strong>Feature Adoption Rate:</strong> % of users actually using new features after release.</li>
+				<li><strong>User Impact:</strong> e.g., retention, complaints, conversion.</li>
+				<li><strong>Business Proxy:</strong> revenue, cost saving, usage frequency.</li>
+			</ul>
+			<p>Perfect data is not required; trend and direction are what matter.</p>
+			<p><strong>Scoring</strong></p>
+			<ul>
+				<li>Strong positive impact.</li>
+				<li>Neutral / unclear.</li>
+				<li>Negative / wasted.</li>
+			</ul>
+
+			<p><strong>Layer 2 - Flow Efficiency: Is the PO an enabler or a bottleneck?</strong></p>
+			<p><strong>Metrics</strong></p>
+			<ol>
+				<li><strong>Backlog Readiness Rate:</strong> % of items ready before sprint (clear AC, no ambiguity).</li>
+				<li><strong>Dev Clarification Interruptions:</strong> How often developers need clarification during the sprint. Low -> PO is clear. High -> PO is guessing / unclear.</li>
+				<li><strong>Rework Rate:</strong> % of work redone due to wrong requirements.</li>
+				<li><strong>Blocked Time Due to PO:</strong> Time spent waiting for PO decisions.</li>
+			</ol>
+			<p><strong>Scoring</strong></p>
+			<ul>
+				<li>Smooth flow.</li>
+				<li>Some friction.</li>
+				<li>Constant disruption.</li>
+			</ul>
+
+			<p><strong>Layer 3 - Decision Quality: Is the PO thinking like a product owner, or just managing the backlog?</strong></p>
+			<p>Evaluate through observable behavior.</p>
+			<ol>
+				<li><strong>Decision Latency:</strong> How long the PO takes to decide when needed. Fast when low risk. Careful when high impact.</li>
+				<li><strong>Consistency:</strong> Does the PO change direction frequently? High churn = weak thinking.</li>
+				<li><strong>Trade-off Thinking:</strong> Can the PO explain: Why this over that? What are we sacrificing?</li>
+				<li><strong>Problem Framing:</strong> Does the PO define the problem clearly, or jump straight to a solution?</li>
+			</ol>
+			<p><strong>Scoring</strong></p>
+			<ul>
+				<li>Clear, fast, logical.</li>
+				<li>Sometimes unclear.</li>
+				<li>Random / reactive.</li>
+			</ul>
+		</div>
+
+		<div class="sub-section">
+			<h3 class="sub-point-1">From Measurement to Decision</h3>
+
+			<p>Based on signals across outcome, flow efficiency, and decision quality, organizations usually face three situations:</p>
+			<ul>
+				<li><strong>The PO creates no meaningful outcome and also reduces team effectiveness:</strong> This is no longer a training issue. Consider changing role fit or responsibility scope.</li>
+				<li><strong>The PO has no clear outcome yet, but team flow is healthy and decision quality is high:</strong> The issue may be strategy or context. Continue investing and supporting the PO.</li>
+				<li><strong>The PO achieves some outcomes but hurts flow or causes high rework:</strong> This is a danger signal: short-term wins with long-term cost. Adjust the way of working before scaling.</li>
+			</ul>
+
+			<p>From this angle, measurement is no longer about scoring people. It answers one question: should we keep trusting the current way of working?</p>
+
+			<p>Organizations rarely lack Product Owners.<br>What they often lack is a system clear enough to identify who is truly creating value.</p>
 		</div>
 
 		<div class="sub-section">
@@ -99,9 +178,14 @@
 				<li>All three responses carry long-term costs and do not resolve the PO capability root cause.</li>
 				<li>The real gap is organizational capability and operating mechanisms beyond Scrum.</li>
 				<li>PO training matters, but it must be paired with clear effectiveness measurement.</li>
-				<li>Avoid using output-heavy indicators like task count or velocity to evaluate PO effectiveness.</li>
-				<li>Prefer value-near signals: Product Goal clarity, prioritization consistency, Idea -> Impact, and real usage feedback.</li>
-				<li>Measurement must support action-oriented decisions, not just formal evaluation.</li>
+				<li>Avoid output-heavy indicators such as task count, velocity, or requirement-document detail.</li>
+				<li>Prefer value-oriented signals: Product Goal clarity, prioritization consistency, idea-to-impact time, and real usage feedback.</li>
+				<li>The practical PO framework has three layers: Outcome (40%), Flow Efficiency, and Decision Quality.</li>
+				<li>The Outcome layer asks whether the PO selects the right problems and creates user/business impact.</li>
+				<li>The Flow Efficiency layer asks whether the PO enables flow or creates bottlenecks for development.</li>
+				<li>The Decision Quality layer asks whether the PO demonstrates product thinking, consistency, and trade-off reasoning.</li>
+				<li>From measurement to decision: based on signal combinations, organizations should decide whether to invest further, adjust ways of working, or change role/scope.</li>
+				<li>Measurement must support action-oriented decisions, not just formal scoring.</li>
 			</ul>
 		</div>
 
@@ -111,7 +195,7 @@
 				<pre class="mm-text-tree">
 1. SCRUM TEAM - PRODUCT OWNER (PO)
 ├─ Core thesis
-│  └─ Core issue: PO cannot reliably provide product value direction
+│  └─ Core issue: PO cannot provide clear, reliable value direction
 │
 ├─ 1) PO role context
 │  ├─ PO is accountable for maximizing product value
@@ -145,7 +229,32 @@
 │  ├─ Idea -> Impact lead time
 │  └─ User/stakeholder feedback
 │
-└─ 7) Action principle
+├─ 7) Practical PO measurement framework
+│  ├─ Principle: do not measure busyness, measure uncertainty reduction and value creation
+│  ├─ Layer 1 (Outcome - 40%)
+│  │  ├─ Feature Adoption Rate
+│  │  ├─ User Impact
+│  │  └─ Business Proxy
+│  ├─ Layer 2 (Flow Efficiency)
+│  │  ├─ Backlog Readiness Rate
+│  │  ├─ Dev Clarification Interruptions
+│  │  ├─ Rework Rate
+│  │  └─ Blocked Time Due to PO
+│  └─ Layer 3 (Decision Quality)
+│     ├─ Decision Latency
+│     ├─ Consistency
+│     ├─ Trade-off Thinking
+│     └─ Problem Framing
+│
+├─ 8) From measurement to decision
+│  ├─ No outcome + reduced team effectiveness
+│  │  └─ Consider role/scope change
+│  ├─ Unclear outcome + healthy flow + high-quality decisions
+│  │  └─ Continue investing and supporting
+│  └─ Some outcomes + weak flow + high rework
+│     └─ Adjust ways of working before scaling
+│
+└─ 9) Action principle
    ├─ No single universal Scrum KPI set for PO
    ├─ Measure in context with the right questions
    └─ Measurement must drive decisions: invest, adjust, or change

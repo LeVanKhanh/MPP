@@ -977,6 +977,13 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "2. Scrum Team - Scrum Master",
+                                route: "pages/information-technology/agile-software-development/scrum-agile-and-more/2-scrum-team-scrum-master-vn.html",
+                                hash: "#/scrum-agile-and-more-sm",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                 ],

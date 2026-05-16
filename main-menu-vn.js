@@ -984,6 +984,13 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "3. Scrum Team - Development Team",
+                                route: "pages/information-technology/agile-software-development/scrum-agile-and-more/3-scrum-team-development-team-vn.html",
+                                hash: "#/scrum-agile-and-more-development-team",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                 ],

@@ -998,6 +998,13 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "5. Sự phối hợp giữa các Accountability",
+                                route: "pages/information-technology/agile-software-development/scrum-agile-and-more/5-collaboration-across-scrum-accountabilities.html",
+                                hash: "#/scrum-agile-and-more-collaboration-across-scrum-accountabilities",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                 ],

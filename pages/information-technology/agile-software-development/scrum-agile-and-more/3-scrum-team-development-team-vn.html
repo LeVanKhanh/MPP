@@ -284,6 +284,143 @@
             <p>Bài viết này không đi sâu vào Definition of Done, Sprint Goal hay Product Goal, vì đó là các cơ chế riêng trong Scrum flow. Trọng tâm ở đây là điều kiện nền: Developers có đủ năng lực và tự chủ để những cơ chế đó vận hành hiệu quả hay không.</p>
             <p>Khi năng lực, autonomy, value và flow được quan sát đúng cách, Scrum không còn chỉ là một chuỗi nghi thức. Nó trở thành một hệ thống giúp Developers thực sự tạo ra giá trị bền vững.</p>
         </section>
+
+        <section class="content-section">
+            <h3 class="sub-point-1">Ghi chú tóm tắt (outline)</h3>
+            <ul>
+                <li>Developers không chỉ là người thực thi; họ là nơi giá trị được hiện thực hóa thành Increment có thể sử dụng được.</li>
+                <li>Ba vấn đề cốt lõi thường gặp: thiếu năng lực nền để tự chủ, áp lực đo sai vào output, và can thiệp làm vỡ nhịp Sprint.</li>
+                <li>Ba vấn đề này tạo thành vòng lặp suy giảm: thiếu năng lực → đo sai → can thiệp → khó cải thiện → tiếp tục thiếu năng lực.</li>
+                <li>Giải pháp cần được thiết kế ở cấp hệ thống: đầu tư năng lực, đặt giá trị làm trung tâm, và dùng đo lường để dẫn dắt hành vi đúng.</li>
+                <li>Khung quan sát hiệu quả Developers nên gồm 5 khía cạnh: Capability, Technical Sustainability, Value Collaboration, Flow Reliability, Ownership and Improvement.</li>
+                <li>Đo lường cần dựa trên xu hướng, kết hợp dữ liệu định lượng với bằng chứng định tính, và mỗi tín hiệu phải dẫn đến hành động cụ thể.</li>
+                <li>Các chỉ số sản lượng như velocity, số ticket, số PR chỉ là dữ liệu tham khảo, không nên trở thành KPI thưởng phạt cá nhân.</li>
+                <li>Mục tiêu cuối cùng không phải kiểm soát Developers bằng một con số, mà là tạo điều kiện để team tạo giá trị ổn định, tự chủ và bền vững.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h3 class="sub-point-1">Một số câu hỏi mở dành cho Developers</h3>
+            <ul>
+                <li>Khi một yêu cầu chưa rõ, Developers sẽ làm gì để làm rõ trước khi bắt đầu: hỏi thêm context, xác nhận acceptance criteria, đề xuất spike hay đưa ra một giả định cần kiểm chứng?</li>
+
+                <li>Developers làm gì khi nhận thấy giải pháp Product Owner hoặc stakeholder yêu cầu quá phức tạp, rủi ro cao hoặc không phải cách hiệu quả nhất để đạt outcome mong muốn?</li>
+
+                <li>Làm sao để Developers phản biện một giải pháp mà vẫn giữ được sự tôn trọng với Product Owner, stakeholder và các quyết định sản phẩm?</li>
+
+                <li>Khi Developers không đồng ý với Product Owner về cách tiếp cận, bất đồng đó thuộc về product decision, technical decision hay cần được chia nhỏ để cả hai bên cùng giải quyết?</li>
+
+                <li>Developers có đang chủ động đề xuất một giải pháp nhỏ hơn, đơn giản hơn hoặc có thể kiểm chứng sớm hơn trước khi cam kết xây dựng phạm vi lớn không?</li>
+
+                <li>Khi một Product Backlog Item được đưa vào Sprint nhưng vẫn còn nhiều uncertainty, Developers sẽ làm gì để minh bạch hóa rủi ro thay vì âm thầm nhận việc và hy vọng có thể xử lý?</li>
+
+                <li>Developers sẽ xử lý thế nào khi Sprint Goal bị đe dọa: tự điều chỉnh Sprint Backlog, giảm scope, tăng collaboration hay escalate một blocker cần quyết định từ bên ngoài?</li>
+
+                <li>Khi một công việc mất nhiều thời gian hơn dự kiến, Developers sẽ làm gì để phân biệt giữa complexity thực tế, refinement chưa đủ, dependency, technical debt hay cách chia nhỏ công việc chưa phù hợp?</li>
+
+                <li>Developers có đang tối ưu cho việc hoàn thành ticket của riêng mình, hay đang hỗ trợ nhau để đạt Sprint Goal của cả team?</li>
+
+                <li>Khi một thành viên trong team bị block hoặc thiếu năng lực ở một khu vực quan trọng, Developers sẽ làm gì để hỗ trợ mà không tạo thêm dependency lâu dài?</li>
+
+                <li>Làm sao để Developers giảm key-person risk khi một khu vực hệ thống chỉ có một người hiểu rõ hoặc có thể thay đổi an toàn?</li>
+
+                <li>Developers cần làm gì khi knowledge sharing luôn bị trì hoãn vì áp lực delivery ngắn hạn?</li>
+
+                <li>Khi code review trở thành nút thắt, Developers sẽ kiểm tra điều gì: kích thước Pull Request, chất lượng review, ownership, thiếu thời gian hay thiếu tiêu chuẩn kỹ thuật rõ ràng?</li>
+
+                <li>Developers làm gì khi code review chỉ tập trung vào style hoặc lỗi nhỏ nhưng bỏ qua design, maintainability, security, testability và trade-off kỹ thuật?</li>
+
+                <li>Khi defect hoặc incident lặp lại, Developers sẽ làm gì để tìm nguyên nhân gốc thay vì chỉ sửa triệu chứng và đóng ticket?</li>
+
+                <li>Làm sao để Developers xác định một defect là lỗi cục bộ, dấu hiệu technical debt hay vấn đề hệ thống trong Definition of Done, testing hoặc observability?</li>
+
+                <li>Developers có đang minh bạch technical debt, complexity và maintenance cost với Product Owner, hay chỉ chấp nhận tăng nợ kỹ thuật để giữ tốc độ delivery ngắn hạn?</li>
+
+                <li>Khi Product Owner ưu tiên feature mới liên tục, Developers sẽ làm gì để trình bày trade-off giữa delivery ngắn hạn, chất lượng, risk và khả năng phát triển sản phẩm trong tương lai?</li>
+
+                <li>Developers cần đưa ra bằng chứng nào để technical debt không trở thành một khái niệm mơ hồ hoặc lý do chung chung để trì hoãn delivery?</li>
+
+                <li>Khi một thay đổi được release thành công về mặt kỹ thuật, Developers sẽ làm thế nào để biết giải pháp đó có thực sự hoạt động trong môi trường thực tế?</li>
+
+                <li>Developers có tham gia quan sát adoption, error rate, support ticket, performance, reliability hoặc phản hồi người dùng sau release không?</li>
+
+                <li>Khi outcome không đạt như kỳ vọng, Developers sẽ xem lại điều gì: giả định ban đầu, solution fit, implementation quality, observability hay cách release và kiểm chứng?</li>
+
+                <li>Developers cần làm gì khi môi trường, CI/CD, test automation hoặc monitoring đang làm giảm khả năng delivery của team?</li>
+
+                <li>Khi dependency với team khác liên tục làm work item bị Blocked, Developers sẽ làm gì để minh bạch technical dependency, ownership, interface contract và impact tới Sprint Goal?</li>
+
+                <li>Developers sẽ phản ứng thế nào khi Manager hoặc stakeholder đưa yêu cầu trực tiếp vào giữa Sprint, bỏ qua Product Owner hoặc Sprint Goal?</li>
+
+                <li>Khi unplanned work tăng cao, Developers có đang xem đây chỉ là “việc đột xuất phải làm”, hay đang cùng Scrum Master và Product Owner tìm nguyên nhân hệ thống khiến mọi thứ đều trở thành urgent?</li>
+
+                <li>Làm sao để Developers giữ được autonomy mà không biến autonomy thành “mỗi người tự làm theo cách riêng” hoặc thiếu minh bạch với team?</li>
+
+                <li>Developers sẽ làm gì khi team cần một quyết định kỹ thuật nhưng không có đủ dữ liệu, thời gian hoặc chuyên môn để quyết định một cách tự tin?</li>
+
+                <li>Khi nào Developers nên tự quyết trong phạm vi chuyên môn, khi nào cần tham vấn Product Owner, và khi nào cần escalate đến Manager hoặc kiến trúc sư có quyền quyết định?</li>
+
+                <li>Developers có dám nói ra khi commitment của Sprint không còn thực tế, hay tiếp tục giữ im lặng để tránh tạo cảm giác team đang thất bại?</li>
+
+                <li>Khi Sprint Goal không đạt, Developers sẽ tập trung tìm người làm chậm tiến độ hay cùng xem lại cách lựa chọn work, dependency, scope, quality và điều kiện hệ thống?</li>
+
+                <li>Developers làm gì khi retrospective liên tục nêu ra cùng một vấn đề nhưng action không được thực hiện hoặc không tạo thay đổi thật?</li>
+
+                <li>Làm sao để Developers biến retrospective từ nơi nói về cảm nhận thành nơi đưa ra thử nghiệm cải tiến nhỏ, có owner, có tiêu chí kiểm chứng và có ngày xem lại?</li>
+
+                <li>Developers có đang phát triển capability của cả team hay chỉ phát triển năng lực cá nhân và tối ưu phạm vi công việc của riêng mình?</li>
+
+                <li>Khi một Developers tạo ra nhiều code, nhiều Pull Request hoặc đóng nhiều ticket, team sẽ đánh giá điều đó trong bối cảnh nào để tránh nhầm output với giá trị?</li>
+
+                <li>Developers cần làm gì để chất lượng kỹ thuật, khả năng bảo trì và khả năng thay đổi của hệ thống không bị hy sinh vì deadline ngắn hạn?</li>
+
+                <li>Làm sao để Developers biết team đang thực sự tạo Increment có giá trị, thay vì chỉ tạo ra nhiều thay đổi có vẻ đã hoàn thành?</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <details class="mm-text-tree-details">
+                <summary class="sub-point-1">Mind map dạng chữ (tree)</summary>
+                <pre class="mm-text-tree">
+3. SCRUM TEAM - DEVELOPERS
+├─ Luận điểm trung tâm
+│  └─ Developers là nơi giá trị được hiện thực hóa thành Increment
+│
+├─ 1) Vấn đề cốt lõi
+│  ├─ Thiếu năng lực nền để tự chủ thực chất
+│  ├─ Áp lực đo lường thiên về output
+│  └─ Can thiệp quản lý làm vỡ nhịp Sprint
+│
+├─ 2) Vòng lặp suy giảm
+│  ├─ Thiếu năng lực
+│  ├─ Đo sai (tập trung sản lượng)
+│  ├─ Can thiệp đột xuất
+│  └─ Mất khả năng cải thiện bền vững
+│
+├─ 3) Hướng giải pháp
+│  ├─ Xây năng lực như trách nhiệm hệ thống
+│  ├─ Đặt giá trị làm trung tâm quyết định
+│  └─ Thiết kế đo lường để dẫn dắt hành vi đúng
+│
+├─ 4) Hệ thống quan sát Developers (5 khía cạnh)
+│  ├─ Capability
+│  ├─ Technical Sustainability
+│  ├─ Value Collaboration
+│  ├─ Flow Reliability
+│  └─ Ownership and Improvement
+│
+├─ 5) Nguyên tắc đo lường
+│  ├─ Quan sát theo xu hướng, không chụp một thời điểm
+│  ├─ Kết hợp định lượng và định tính
+│  ├─ Mỗi tín hiệu phải dẫn tới hành động
+│  └─ Không tối ưu KPI sản lượng như mục tiêu chính
+│
+└─ 6) Kết luận
+   ├─ Đích đến không phải tối đa output
+   └─ Đích đến là tạo giá trị ổn định, tự chủ và bền vững
+                </pre>
+            </details>
+        </section>
     </article>
     <script src="../../../pages-scripts.js"></script>
 </body>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<title>Đo lường năng lực cá nhân</title>
+	<link rel="stylesheet" href="../../../pages-styles.css">
+</head>
+<body>
+	<article class="content-article">
+		<header class="article-header">
+			<h1 class="page-title">Đo lường năng lực cá nhân</h1>
+		</header>
+
+		<section class="content-section">
+            <h2 class="main-point">Đặt vấn đề</h2>
+			<p>Không có Development Team nào hoàn hảo. Một team được hình thành từ những cá nhân có năng lực, kinh nghiệm, động lực, cách giao tiếp và mức độ cam kết khác nhau. Vì vậy, để các thành viên có thể phối hợp nhịp nhàng, tin tưởng lẫn nhau và cùng hướng về một mục tiêu chung là một quá trình khó, không phải điều tự nhiên sẽ xảy ra chỉ vì họ được xếp vào cùng một team.</p>
+			<p>Scrum Guide đặt kỳ vọng rằng Developers có thể self-manage: tự tổ chức công việc, tự quyết định cách thực hiện và cùng chịu trách nhiệm cho Sprint Goal. Tuy nhiên, self-management không đồng nghĩa với việc team sẽ luôn tự vận hành tốt trong mọi điều kiện.</p>
+			<p>Điều gì xảy ra khi trong team có một hoặc nhiều cá nhân chưa phù hợp với cách làm việc chung: thiếu năng lực cần thiết, không hợp tác, không tôn trọng cam kết, không chia sẻ thông tin, hoặc liên tục tạo ra xung đột? Liệu team có đủ khả năng tự nhận diện và điều chỉnh hay không?</p>
+			<p>Vấn đề thực tế không chỉ là yêu cầu team “tự tổ chức”, mà là cần có cơ chế để nhận diện sớm các dấu hiệu lệch nhịp: dependency tập trung vào một người, chất lượng công việc không ổn định, cam kết không được thực hiện, mâu thuẫn kéo dài, kiến thức không được chia sẻ, hoặc một số thành viên phải liên tục gánh phần việc của người khác.</p>
+			<p>Khi đó, câu hỏi quan trọng là: ai cần can thiệp, can thiệp ở mức nào, và làm sao để xử lý vấn đề cá nhân mà vẫn bảo vệ được hiệu quả chung của Development Team?</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Làm sao để đo lường năng lực cá nhân?</h2>
+			<p>Đo lường năng lực cá nhân là một vấn đề không đơn giản, nhưng hầu như tổ chức nào cũng cần giải quyết. Đây cũng là điểm dễ tạo ra căng thẳng với cách tiếp cận của Scrum.</p>
+			<p>Scrum đề cao sự phối hợp, tinh thần trách nhiệm chung và kết quả của cả Scrum Team. Một Sprint thành công hay thất bại không nên được quy về công lao hoặc lỗi của riêng một cá nhân. Điều này là cần thiết, bởi sản phẩm thường được tạo ra từ sự kết hợp của nhiều vai trò, nhiều kỹ năng và nhiều quyết định phụ thuộc lẫn nhau.</p>
+			<p>Tuy nhiên, điều đó không có nghĩa năng lực cá nhân không còn quan trọng.</p>
+			<p>Một tập thể không tồn tại độc lập với các thành viên tạo nên nó. Chất lượng của Development Team chịu ảnh hưởng trực tiếp bởi năng lực chuyên môn, khả năng giải quyết vấn đề, tinh thần trách nhiệm, khả năng hợp tác và mức độ chủ động của từng cá nhân. Khi một số thành viên liên tục gánh phần việc khó, xử lý các vấn đề quan trọng hoặc hỗ trợ người khác vượt qua trở ngại, đóng góp đó cần được nhìn nhận. Ngược lại, khi một cá nhân chưa đáp ứng được yêu cầu về năng lực, cam kết hoặc cách phối hợp, tổ chức cũng cần nhận diện sớm để hỗ trợ hoặc điều chỉnh.</p>
+			<p>Vấn đề không phải là có nên đo lường năng lực cá nhân hay không, mà là đo lường như thế nào để không phá vỡ tinh thần hợp tác của Scrum.</p>
+			<p>Nếu chỉ đo bằng số lượng ticket hoàn thành, story point, số dòng code hoặc số bug đã xử lý, tổ chức rất dễ tạo ra hành vi tối ưu cục bộ: chọn việc dễ, chia nhỏ công việc hình thức, né trách nhiệm chung hoặc giảm hỗ trợ đồng đội.</p>
+			<p>Vì vậy, đánh giá năng lực cá nhân cần nhìn vào nhiều chiều hơn, bao gồm:</p>
+			<ul class="outline-list">
+				<li>Khả năng hoàn thành công việc với chất lượng và mức độ độc lập phù hợp.</li>
+				<li>Khả năng xử lý vấn đề phức tạp, rủi ro hoặc tình huống chưa rõ ràng.</li>
+				<li>Khả năng hợp tác, chia sẻ kiến thức và nâng năng lực chung của team.</li>
+				<li>Mức độ trách nhiệm đối với kết quả chung, thay vì chỉ phần việc được giao.</li>
+				<li>Khả năng học hỏi, tiếp nhận phản hồi và cải thiện theo thời gian.</li>
+				<li>Tác động của cá nhân đến chất lượng sản phẩm, độ bền vững của codebase và hiệu quả delivery.</li>
+			</ul>
+			<p>Một mô hình Scrum lành mạnh không nên chọn giữa “đánh giá team” hoặc “đánh giá cá nhân”. Tổ chức cần cả hai: đánh giá kết quả tập thể để bảo vệ tinh thần phối hợp, và đánh giá năng lực cá nhân để phát triển con người, nhận diện khoảng trống năng lực và xây dựng một Development Team mạnh hơn theo thời gian.</p>
+			<p>Câu hỏi quan trọng là: làm sao để đánh giá đúng đóng góp của từng cá nhân mà không biến Scrum Team thành những người cạnh tranh với nhau vì chỉ số?</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Khung đo lường năng lực cá nhân trong Development Team</h2>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">1. Nguyên tắc sử dụng</h3>
+				<p>Khung này không nhằm xếp hạng ai làm nhiều ticket hơn. Mục tiêu là trả lời bốn câu hỏi:</p>
+				<ol class="numbered-outline">
+					<li>Cá nhân có thể tạo ra giá trị ở mức độ nào?</li>
+					<li>Cá nhân có thể làm việc độc lập đến đâu?</li>
+					<li>Cá nhân có nâng năng lực và hiệu quả của team hay không?</li>
+					<li>Cá nhân cần phát triển gì để đảm nhận phạm vi trách nhiệm lớn hơn?</li>
+				</ol>
+				<p>Mỗi đánh giá cần dựa trên ví dụ cụ thể trong kỳ đánh giá, không dựa trên ấn tượng chung hoặc một sự kiện đơn lẻ.</p>
+			</div>
+
+			<hr>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Sáu nhóm năng lực cốt lõi</h2>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">A. Delivery Quality &amp; Execution</h3>
+				<p><strong>Khả năng hoàn thành công việc với chất lượng và mức độ độc lập phù hợp</strong></p>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Cần quan sát</h4>
+					<ul class="outline-list">
+						<li>Có hoàn thành cam kết đúng hạn ở mức hợp lý không?</li>
+						<li>Có chủ động làm rõ yêu cầu trước khi bắt đầu không?</li>
+						<li>Chất lượng code, test, tài liệu và handover có ổn định không?</li>
+						<li>Công việc có thường xuyên phải rework, rollback hoặc được người khác sửa lại không?</li>
+						<li>Có phụ thuộc quá nhiều vào senior hoặc manager để đi tiếp không?</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Bằng chứng nên dùng</h4>
+					<ul class="outline-list">
+						<li>Pull request và code review feedback.</li>
+						<li>Tỷ lệ rework hoặc bug sau khi release.</li>
+						<li>Khả năng hoàn thành task từ đầu đến cuối.</li>
+						<li>Mức độ cần hỗ trợ khi xử lý công việc quen thuộc.</li>
+						<li>Chất lượng acceptance criteria, test case hoặc tài liệu kỹ thuật.</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Thang đo 1–5</h4>
+					<p><strong>Level 1 – Cần hỗ trợ sát</strong><br>Chỉ hoàn thành được các task rõ ràng, thường xuyên cần hướng dẫn, dễ bỏ sót edge case và chất lượng chưa ổn định.</p>
+					<p><strong>Level 2 – Làm được việc quen thuộc</strong><br>Có thể hoàn thành task thông thường với sự hỗ trợ định kỳ; chất lượng cơ bản đạt yêu cầu nhưng vẫn cần review kỹ.</p>
+					<p><strong>Level 3 – Độc lập, đáng tin cậy</strong><br>Tự xử lý được phần lớn công việc trong phạm vi vai trò; biết làm rõ yêu cầu, quản lý tiến độ và duy trì chất lượng ổn định.</p>
+					<p><strong>Level 4 – Dẫn dắt delivery ở phạm vi lớn</strong><br>Có thể điều phối một feature hoặc workstream, chủ động xử lý dependency, rủi ro và giúp người khác hoàn thành công việc.</p>
+					<p><strong>Level 5 – Nâng chuẩn delivery của cả team</strong><br>Thiết kế hoặc cải tiến cách làm giúp team tăng chất lượng, giảm rework, giảm lead time hoặc tăng độ tin cậy khi release.</p>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">B. Problem Solving &amp; Technical Judgment</h3>
+				<p><strong>Khả năng xử lý vấn đề phức tạp, rủi ro hoặc tình huống chưa rõ ràng</strong></p>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Cần quan sát</h4>
+					<ul class="outline-list">
+						<li>Phản ứng thế nào khi yêu cầu thiếu rõ ràng?</li>
+						<li>Có phân tích nguyên nhân gốc hay chỉ xử lý triệu chứng?</li>
+						<li>Có nhận diện trade-off giữa tốc độ, chất lượng, chi phí và rủi ro?</li>
+						<li>Có biết khi nào cần escalate hoặc cần thêm chuyên môn?</li>
+						<li>Có ra quyết định kỹ thuật dựa trên dữ liệu và bối cảnh không?</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Bằng chứng nên dùng</h4>
+					<ul class="outline-list">
+						<li>Solution design, ADR, technical proposal.</li>
+						<li>Incident analysis hoặc root cause analysis.</li>
+						<li>Cách xử lý production issue.</li>
+						<li>Chất lượng câu hỏi đặt ra trong refinement hoặc planning.</li>
+						<li>Các quyết định kỹ thuật đã giúp tránh rủi ro hoặc giảm complexity.</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Thang đo 1–5</h4>
+					<p><strong>Level 1 – Giải quyết theo hướng dẫn</strong><br>Khó xử lý khi thiếu tài liệu hoặc có nhiều hướng lựa chọn; thường chờ người khác quyết định.</p>
+					<p><strong>Level 2 – Xử lý được vấn đề giới hạn</strong><br>Có thể debug hoặc xử lý vấn đề quen thuộc nhưng chưa mạnh về nguyên nhân gốc và trade-off.</p>
+					<p><strong>Level 3 – Phân tích được vấn đề độc lập</strong><br>Biết chia nhỏ vấn đề, xác định nguyên nhân, đánh giá lựa chọn và đề xuất giải pháp hợp lý.</p>
+					<p><strong>Level 4 – Xử lý được bài toán phức tạp</strong><br>Có thể giải quyết vấn đề liên quan nhiều hệ thống, nhiều stakeholder hoặc rủi ro cao; đưa ra trade-off rõ ràng.</p>
+					<p><strong>Level 5 – Tạo ra năng lực giải quyết vấn đề cho tổ chức</strong><br>Định hình kiến trúc, nguyên tắc kỹ thuật hoặc phương pháp xử lý giúp team giải quyết các lớp vấn đề tương tự trong tương lai.</p>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">C. Collaboration &amp; Team Enablement</h3>
+				<p><strong>Khả năng hợp tác, chia sẻ kiến thức và nâng năng lực chung của team</strong></p>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Cần quan sát</h4>
+					<ul class="outline-list">
+						<li>Có chia sẻ thông tin kịp thời hay giữ kiến thức cho riêng mình?</li>
+						<li>Có hỗ trợ đồng đội xử lý blocker không?</li>
+						<li>Có review code và phản hồi theo hướng xây dựng không?</li>
+						<li>Có thể làm việc hiệu quả với PO, QA, DevOps, Manager và các team khác không?</li>
+						<li>Có nâng năng lực người khác hay chỉ tối ưu phần việc của bản thân?</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Bằng chứng nên dùng</h4>
+					<ul class="outline-list">
+						<li>Chất lượng code review.</li>
+						<li>Pair programming, mentoring, knowledge-sharing session.</li>
+						<li>Feedback từ peers và các vai trò liên quan.</li>
+						<li>Mức độ giảm dependency vào một cá nhân.</li>
+						<li>Đóng góp vào documentation, onboarding, playbook hoặc reusable component.</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Thang đo 1–5</h4>
+					<p><strong>Level 1 – Hợp tác bị động</strong><br>Chủ yếu tập trung phần việc cá nhân, ít chia sẻ và thường tạo dependency cho người khác.</p>
+					<p><strong>Level 2 – Hợp tác khi được yêu cầu</strong><br>Có phối hợp nhưng chưa chủ động; hỗ trợ người khác ở mức cơ bản.</p>
+					<p><strong>Level 3 – Thành viên team đáng tin cậy</strong><br>Giao tiếp rõ ràng, hỗ trợ đồng đội, chia sẻ kiến thức và giữ cam kết chung.</p>
+					<p><strong>Level 4 – Người kết nối và nâng năng lực team</strong><br>Chủ động mentoring, giảm silo, cải thiện phối hợp giữa các vai trò và giúp người khác độc lập hơn.</p>
+					<p><strong>Level 5 – Nhân tố phát triển hệ sinh thái năng lực</strong><br>Xây dựng cộng đồng thực hành, chuẩn hóa knowledge sharing hoặc tạo ra cơ chế giúp nhiều team cùng phát triển.</p>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">D. Ownership &amp; Product Mindset</h3>
+				<p><strong>Mức độ chịu trách nhiệm với kết quả chung, thay vì chỉ phần việc được giao</strong></p>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Cần quan sát</h4>
+					<ul class="outline-list">
+						<li>Có chỉ “đóng ticket” hay quan tâm feature có hoạt động thật không?</li>
+						<li>Có chủ động báo sớm rủi ro, dependency hoặc scope ambiguity không?</li>
+						<li>Có đặt câu hỏi về giá trị người dùng và mục tiêu sản phẩm không?</li>
+						<li>Có tham gia xử lý vấn đề sau release không?</li>
+						<li>Có hành động khi thấy vấn đề không thuộc “phần việc của mình” nhưng ảnh hưởng team không?</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Bằng chứng nên dùng</h4>
+					<ul class="outline-list">
+						<li>Cách phản ứng với blocker và production issue.</li>
+						<li>Tỷ lệ issue được phát hiện sớm thay vì phát hiện muộn.</li>
+						<li>Sự tham gia trong Sprint Review, refinement và retrospective.</li>
+						<li>Những việc chủ động cải thiện ngoài ticket được giao.</li>
+						<li>Phản hồi của PO, QA, Support hoặc stakeholder.</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Thang đo 1–5</h4>
+					<p><strong>Level 1 – Ownership hẹp</strong><br>Chỉ tập trung vào task được giao; dễ bỏ qua tác động đến mục tiêu chung.</p>
+					<p><strong>Level 2 – Có trách nhiệm với đầu việc</strong><br>Hoàn thành công việc của mình nhưng ít chủ động nhìn dependency hoặc outcome.</p>
+					<p><strong>Level 3 – Chịu trách nhiệm với kết quả phạm vi mình phụ trách</strong><br>Chủ động làm rõ, cảnh báo rủi ro, theo dõi kết quả sau khi delivery.</p>
+					<p><strong>Level 4 – Ownership ở cấp feature hoặc Sprint Goal</strong><br>Điều phối các bên liên quan, giải quyết vấn đề xuyên vai trò và bảo vệ mục tiêu delivery.</p>
+					<p><strong>Level 5 – Ownership ở cấp product hoặc hệ thống</strong><br>Tạo ảnh hưởng đến định hướng, cách ưu tiên và chất lượng quyết định của tổ chức.</p>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">E. Learning Agility &amp; Growth</h3>
+				<p><strong>Khả năng học hỏi, tiếp nhận phản hồi và cải thiện theo thời gian</strong></p>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Cần quan sát</h4>
+					<ul class="outline-list">
+						<li>Có tiếp nhận feedback mà không phòng thủ không?</li>
+						<li>Có biến feedback thành hành động cụ thể không?</li>
+						<li>Có học chỉ để biết hay học để áp dụng vào công việc?</li>
+						<li>Có phát triển kỹ năng theo nhu cầu của team và sản phẩm không?</li>
+						<li>Có cải thiện rõ ràng qua từng quý hoặc từng giai đoạn không?</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Bằng chứng nên dùng</h4>
+					<ul class="outline-list">
+						<li>Mục tiêu phát triển cá nhân và kết quả thực tế.</li>
+						<li>Các kỹ năng mới đã áp dụng vào delivery.</li>
+						<li>Sự cải thiện sau feedback, incident hoặc retrospective.</li>
+						<li>Khả năng tiếp nhận vai trò hoặc phạm vi mới.</li>
+						<li>Peer feedback về sự thay đổi theo thời gian.</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Thang đo 1–5</h4>
+					<p><strong>Level 1 – Học thụ động</strong><br>Chỉ học khi được yêu cầu, ít thay đổi hành vi sau feedback.</p>
+					<p><strong>Level 2 – Có nỗ lực phát triển cá nhân</strong><br>Có học và cải thiện nhưng chưa gắn rõ với nhu cầu công việc.</p>
+					<p><strong>Level 3 – Học nhanh và áp dụng được</strong><br>Biết chuyển feedback hoặc kiến thức mới thành cải tiến thực tế trong công việc.</p>
+					<p><strong>Level 4 – Chủ động định hướng phát triển năng lực</strong><br>Nhận diện skill gap, tự xây kế hoạch học và áp dụng để giải quyết các vấn đề khó hơn.</p>
+					<p><strong>Level 5 – Tạo môi trường học tập cho người khác</strong><br>Biến bài học cá nhân thành tài liệu, mentoring, framework hoặc thực hành chung cho team.</p>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">F. Sustainable Impact</h3>
+				<p><strong>Tác động đến chất lượng sản phẩm, độ bền vững của codebase và hiệu quả delivery</strong></p>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Cần quan sát</h4>
+					<ul class="outline-list">
+						<li>Công việc có tạo ra tác động lâu dài hay chỉ giải quyết ngắn hạn?</li>
+						<li>Có giảm technical debt, defect, incident, rework hoặc dependency không?</li>
+						<li>Có tạo ra reusable asset, automation hoặc cải tiến quy trình không?</li>
+						<li>Có cải thiện observability, maintainability, testability hoặc security không?</li>
+						<li>Có giúp team delivery nhanh hơn mà không đánh đổi chất lượng không?</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Bằng chứng nên dùng</h4>
+					<ul class="outline-list">
+						<li>Giảm defect leakage hoặc production incident.</li>
+						<li>Giảm thời gian xử lý issue, build time, deployment time hoặc cycle time.</li>
+						<li>Tăng test coverage có ý nghĩa, observability hoặc automation.</li>
+						<li>Tài sản tái sử dụng: library, template, pipeline, guideline, component.</li>
+						<li>Các cải tiến giúp giảm key-person risk hoặc giảm maintenance cost.</li>
+					</ul>
+				</div>
+
+				<div class="sub-section-nested">
+					<h4 class="sub-point-2">Thang đo 1–5</h4>
+					<p><strong>Level 1 – Tác động chủ yếu ngắn hạn</strong><br>Hoàn thành task nhưng ít quan tâm đến maintainability hoặc hệ quả dài hạn.</p>
+					<p><strong>Level 2 – Có chú ý đến chất lượng</strong><br>Tuân thủ chuẩn hiện có nhưng ít tạo ra cải tiến đáng kể.</p>
+					<p><strong>Level 3 – Tạo tác động tích cực, có thể quan sát</strong><br>Cải thiện chất lượng hoặc hiệu quả delivery trong phạm vi feature, module hoặc team.</p>
+					<p><strong>Level 4 – Tạo cải tiến có tính hệ thống</strong><br>Giải quyết nguyên nhân gốc, giảm chi phí vận hành hoặc tăng khả năng mở rộng của hệ thống.</p>
+					<p><strong>Level 5 – Tạo đòn bẩy dài hạn cho nhiều team hoặc sản phẩm</strong><br>Các cải tiến có thể nhân rộng, tạo chuẩn mới hoặc thay đổi đáng kể năng lực delivery của tổ chức.</p>
+				</div>
+			</div>
+
+			<hr>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Cách tính điểm khuyến nghị</h2>
+			<p>Không nên cộng điểm một cách máy móc. Tuy nhiên, có thể dùng trọng số để định hướng thảo luận:</p>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Nhóm năng lực</th>
+						<th>Trọng số gợi ý</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Delivery Quality &amp; Execution</td>
+						<td>20%</td>
+					</tr>
+					<tr>
+						<td>Problem Solving &amp; Technical Judgment</td>
+						<td>20%</td>
+					</tr>
+					<tr>
+						<td>Collaboration &amp; Team Enablement</td>
+						<td>15%</td>
+					</tr>
+					<tr>
+						<td>Ownership &amp; Product Mindset</td>
+						<td>15%</td>
+					</tr>
+					<tr>
+						<td>Learning Agility &amp; Growth</td>
+						<td>10%</td>
+					</tr>
+					<tr>
+						<td>Sustainable Impact</td>
+						<td>20%</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Điểm tổng chỉ nên là chỉ báo phụ. Kết luận chính cần dựa trên:</p>
+			<ul class="outline-list">
+				<li>Điểm mạnh nổi bật.</li>
+				<li>Khoảng trống năng lực rõ nhất.</li>
+				<li>Mức độ phù hợp với level hiện tại.</li>
+				<li>Bằng chứng công việc cụ thể.</li>
+				<li>Mục tiêu phát triển trong 3–6 tháng tiếp theo.</li>
+			</ul>
+
+			<hr>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Cơ chế đánh giá để giảm thiên kiến</h2>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">1. Đánh giá theo bằng chứng</h3>
+				<p>Mỗi dimension cần tối thiểu 2–3 ví dụ cụ thể: PR, feature, incident, design, phản hồi peer, số liệu delivery hoặc hoạt động mentoring.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">2. Không đánh giá chỉ bằng output</h3>
+				<p>Không dùng số ticket, story point, commit, số dòng code hoặc số giờ làm việc làm KPI cá nhân.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">3. Có calibration giữa các manager hoặc technical leader</h3>
+				<p>Cùng một mức “Level 3” phải có ý nghĩa tương tự giữa các team. Nếu không, mỗi manager sẽ có một chuẩn riêng.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">4. Tách đánh giá hiệu suất và đánh giá tiềm năng</h3>
+				<p>Một người có thể delivery tốt ở vai trò hiện tại nhưng chưa sẵn sàng cho phạm vi lớn hơn. Ngược lại, có người đang phát triển nhanh nhưng chưa có đủ cơ hội thể hiện.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">5. Đánh giá theo xu hướng, không theo một Sprint</h3>
+				<p>Nên nhìn trong chu kỳ ít nhất một quý hoặc 2–3 Sprint có tính đại diện, đặc biệt với các vai trò làm việc trên hệ thống phức tạp.</p>
+			</div>
+
+			<hr>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Mẫu kết quả đánh giá cá nhân</h2>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Năng lực</th>
+						<th>Điểm</th>
+						<th>Bằng chứng chính</th>
+						<th>Hành động phát triển</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Delivery Quality &amp; Execution</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Problem Solving &amp; Technical Judgment</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Collaboration &amp; Team Enablement</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Ownership &amp; Product Mindset</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Learning Agility &amp; Growth</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Sustainable Impact</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3 class="sub-point-1"><strong>Điểm mạnh nổi bật:</strong></h3>
+			<h3 class="sub-point-1"><strong>Khoảng trống năng lực cần ưu tiên:</strong></h3>
+			<h3 class="sub-point-1"><strong>Mục tiêu phát triển 3–6 tháng:</strong></h3>
+			<h3 class="sub-point-1"><strong>Hỗ trợ cần từ Manager / Team / Tổ chức:</strong></h3>
+		</section>
+	</article>
+
+	<script src="../../../pages-scripts.js"></script>
+</body>
+</html>

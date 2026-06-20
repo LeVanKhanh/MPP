@@ -991,6 +991,13 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "4. Scrum Team - Development Team - Personal Observation",
+                                route: "pages/information-technology/agile-software-development/scrum-agile-and-more/4-scrum-team-development-team-personal-observation-vn.html",
+                                hash: "#/scrum-agile-and-more-development-team-personal-observation",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                 ],

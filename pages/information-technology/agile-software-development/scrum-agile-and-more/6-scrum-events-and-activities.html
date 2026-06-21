@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>6 Scrum Events and Activities - Complete Guide - My Personal Planet</title>
+        <link href="../../../pages-styles.css" rel="stylesheet" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <style>
+            :root {
+                --diagram-bg-start: #f7fbff;
+                --diagram-bg-end: #f9f7ff;
+                --diagram-border: #d7e6f6;
+                --diagram-node-bg: #ffffff;
+                --diagram-node-stroke: #4b5f77;
+                --diagram-accent-bg: #e7f0ff;
+                --diagram-accent-stroke: #245ca6;
+                --diagram-arrow: #58779c;
+                --diagram-text: #1f2a37;
+                --diagram-muted: #5a6b80;
+            }
+
+            body.dark-theme {
+                --diagram-bg-start: #16202e;
+                --diagram-bg-end: #121a26;
+                --diagram-border: #2c3d51;
+                --diagram-node-bg: #1a2534;
+                --diagram-node-stroke: #90a4be;
+                --diagram-accent-bg: #213956;
+                --diagram-accent-stroke: #8fc0ff;
+                --diagram-arrow: #9bb4cf;
+                --diagram-text: #e7edf5;
+                --diagram-muted: #aebdd0;
+            }
+
+            .scrum-visual {
+                margin: 1.5rem 0 2rem;
+                padding: 1.2rem;
+                border: 1px solid var(--diagram-border);
+                border-radius: 14px;
+                overflow-x: auto;
+                background:
+                    radial-gradient(circle at 100% -10%, rgba(81, 140, 255, 0.12), transparent 48%),
+                    radial-gradient(circle at 0% 110%, rgba(49, 189, 149, 0.1), transparent 44%),
+                    linear-gradient(160deg, var(--diagram-bg-start), var(--diagram-bg-end));
+                box-shadow: 0 10px 24px rgba(18, 33, 53, 0.08);
+            }
+
+            .scrum-visual svg {
+                min-width: 780px;
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .scrum-visual .node {
+                fill: var(--diagram-node-bg);
+                stroke: var(--diagram-node-stroke);
+                stroke-width: 1.55;
+            }
+
+            .scrum-visual .accent-node {
+                fill: var(--diagram-accent-bg);
+                stroke: var(--diagram-accent-stroke);
+                stroke-width: 1.8;
+            }
+
+            .scrum-visual .arrow,
+            .scrum-visual path[marker-end] {
+                fill: none;
+                stroke: var(--diagram-arrow);
+                stroke-width: 1.8;
+            }
+
+            .scrum-visual text {
+                fill: var(--diagram-text);
+                font-family: inherit;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0.1px;
+                text-anchor: middle;
+                dominant-baseline: middle;
+            }
+
+            .scrum-visual .small {
+                font-size: 12px;
+                font-weight: 500;
+                fill: var(--diagram-muted);
+            }
+
+            .scrum-visual figcaption {
+                margin-top: 0.9rem;
+                font-style: italic;
+                color: var(--diagram-muted);
+                line-height: 1.65;
+            }
+
+            @media (max-width: 768px) {
+                .scrum-visual {
+                    padding: 0.9rem;
+                    border-radius: 12px;
+                }
+
+                .scrum-visual svg {
+                    min-width: 760px;
+                }
+
+                .scrum-visual text {
+                    font-size: 13px;
+                }
+
+                .scrum-visual .small {
+                    font-size: 11px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <article class="content-article">
+            <header class="article-header">
+                <h1 class="page-title">6 Scrum Events and Activities</h1>
+                <p class="page-subtitle">From a general meeting structure to full Scrum Event and Scrum Activity design</p>
+            </header>
+
+            <section class="content-section">
+                <h2 class="main-point">General structure of a meeting</h2>
+                <p>Besides the Sprint itself as a timebox containing the full working cycle, the remaining Scrum Events such as Sprint Planning, Daily Scrum, Sprint Review, and Sprint Retrospective are often run as meetings.</p>
+                <p>However, treating them as ordinary meetings can hide their actual purpose.</p>
+                <p>A typical meeting may only share information, report status, or exchange opinions. A Scrum Event should create a concrete change: a Sprint Goal is formed, a working plan is adjusted, the Product Backlog is updated, or the Scrum Team improves the way it works.</p>
+                <p>So before diving into each Scrum Event, it helps to define a general structure for evaluating whether a meeting truly creates value, or only consumes the participants' time.</p>
+                <p>An effective meeting usually clarifies the following components.</p>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Meeting title</h3>
+                    <p>The meeting title should be concise and accurately reflect topic and purpose.</p>
+                    <p>A title is not only for identification. It helps track one discussion stream from start to completion.</p>
+                    <p>Examples:</p>
+                    <ul class="outline-list">
+                        <li>Mars AI Support Tool - MVP Scope Alignment</li>
+                        <li>Sprint Planning - Sprint 12</li>
+                        <li>Sprint Review - Payment Integration Release</li>
+                        <li>Retrospective - Improving Defect Detection</li>
+                    </ul>
+                    <p>A good title lets participants quickly understand what this meeting is about and what outcome it is trying to reach.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Objective</h3>
+                    <p>The objective answers one question:</p>
+                    <blockquote>
+                        <p>Why does this meeting need to exist?</p>
+                    </blockquote>
+                    <p>The objective should be clear enough that participants understand why they are investing time in this session. If you cannot state the objective simply, the meeting may not be necessary yet, or its scope is still unclear.</p>
+                    <p>Example:</p>
+                    <blockquote>
+                        <p>Align on an MVP implementation approach for the Mars AI Support Tool.</p>
+                    </blockquote>
+                    <p>In Scrum, each event also has its own objective:</p>
+                    <ul class="outline-list">
+                        <li>Sprint Planning: define why the Sprint is valuable, what can be done, and how the work will be done.</li>
+                        <li>Daily Scrum: inspect progress toward the Sprint Goal and adapt the working plan.</li>
+                        <li>Sprint Review: inspect Sprint results and identify required Product Backlog adaptations.</li>
+                        <li>Sprint Retrospective: improve quality and effectiveness of Scrum Team collaboration and delivery.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Expected result / success criteria</h3>
+                    <p>The expected result answers:</p>
+                    <blockquote>
+                        <p>When this meeting ends, what must be clearer, decided, or improved?</p>
+                    </blockquote>
+                    <p>A meeting should not end with only the feeling that "we discussed a lot." It should produce an observable result.</p>
+                    <p>Examples:</p>
+                    <ul class="outline-list">
+                        <li>MVP scope selected.</li>
+                        <li>Ownership defined for each workstream.</li>
+                        <li>Initial rollout milestone confirmed.</li>
+                        <li>One technical direction aligned.</li>
+                        <li>Product Backlog updated from new feedback.</li>
+                        <li>One or a few concrete improvements selected for next Sprint.</li>
+                    </ul>
+                    <p>Success criteria prevent a common problem: participants attend the same meeting while holding different expectations of what "done" means.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Context</h3>
+                    <p>Context provides the background for discussion.</p>
+                    <p>It answers:</p>
+                    <ul class="outline-list">
+                        <li>What is the current problem?</li>
+                        <li>Why discuss it now?</li>
+                        <li>What has changed or what pressure exists?</li>
+                        <li>What risks or opportunities are active?</li>
+                    </ul>
+                    <p>Example:</p>
+                    <blockquote>
+                        <p>Support questions for Mars are repeating, documentation is fragmented, support response time is inconsistent, and there is no consistent mechanism for internal knowledge retrieval.</p>
+                    </blockquote>
+                    <p>Context helps participants start from shared understanding instead of spending most of the meeting re-explaining the problem.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Input information / pre-read</h3>
+                    <p>A quality meeting should not start with everyone reading key materials for the first time.</p>
+                    <p>Important information should be prepared in advance or clearly provided in the meeting, such as:</p>
+                    <ul class="outline-list">
+                        <li>Current-state analysis.</li>
+                        <li>Architecture draft.</li>
+                        <li>User feedback.</li>
+                        <li>Metrics.</li>
+                        <li>Risks, constraints, and dependencies.</li>
+                        <li>Proposal options.</li>
+                        <li>Product Backlog Items.</li>
+                        <li>Current Sprint Goal.</li>
+                        <li>Completed Increment.</li>
+                        <li>Defects, incidents, or improvement issues.</li>
+                    </ul>
+                    <p>Pre-read does not need to be long. What matters is that participants have enough information to contribute quality decisions and collaboration.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Attendees and roles</h3>
+                    <p>Not everyone connected to a topic should attend every meeting.</p>
+                    <p>Inviting too many people increases coordination cost, reduces focus, and slows decision quality. On the other hand, if key decision makers or key doers are missing, the meeting struggles to produce outcomes.</p>
+                    <p>It helps to distinguish these groups.</p>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Required attendees</h4>
+                        <p>These are people whose absence makes it hard to meet the objective or turn outcomes into action.</p>
+                        <p>Examples:</p>
+                        <ul class="outline-list">
+                            <li>Developers in Daily Scrum.</li>
+                            <li>The Scrum Team in Sprint Planning and Sprint Retrospective.</li>
+                            <li>The Scrum Team plus relevant stakeholders in Sprint Review.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Optional attendees</h4>
+                        <p>These participants can contribute specialized knowledge, need updates, or are impacted by outcomes, but their absence does not block decision making.</p>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Decision maker</h4>
+                        <p>The person or role with authority to finalize decisions when needed.</p>
+                        <p>In some meetings, decision authority belongs to one clear role. In others, decisions are formed through cross-role collaboration. What matters is clarity on who decides what.</p>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Facilitator</h4>
+                        <p>The facilitator keeps the meeting aligned to objective, manages time, ensures balanced participation, and helps the group reach outcomes.</p>
+                        <p>The facilitator does not need to be the deepest expert in the content. Their primary job is to support the process.</p>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Note taker</h4>
+                        <p>The note taker records decisions, open points, action items, and follow-up information.</p>
+                        <p>In small meetings, one person may hold multiple roles. But in meetings with many stakeholders or high-impact decisions, avoid forcing the facilitator to both run the flow and deeply argue the content.</p>
+                    </div>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Agenda</h3>
+                    <p>The agenda is how time and discussion flow are structured.</p>
+                    <p>A good agenda moves from understanding the problem to generating decisions or actions, instead of drifting into unbounded discussion.</p>
+                    <p>A common flow can include:</p>
+                    <ol class="numbered-outline">
+                        <li>Opening and objective reminder.</li>
+                        <li>Context and input clarification.</li>
+                        <li>Discussion on key questions, options, or problems.</li>
+                        <li>Decision or alignment.</li>
+                        <li>Next actions if needed.</li>
+                        <li>Recap to confirm outcomes before close.</li>
+                    </ol>
+                    <p>Each block should have a suitable timebox. A timebox is not meant to force closure before issues are understood. It creates healthy pressure to focus on what matters most.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Logistics</h3>
+                    <p>Basic operational details should be clear before the meeting starts:</p>
+                    <ul class="outline-list">
+                        <li>Date.</li>
+                        <li>Time.</li>
+                        <li>Duration.</li>
+                        <li>Location or meeting link.</li>
+                        <li>Required tools such as whiteboard, Miro, Teams, shared document, Jira, or Azure DevOps board.</li>
+                    </ul>
+                    <p>These details may look simple, but unclear logistics often reduce meeting quality before content even begins.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Decisions, actions, and follow-up</h3>
+                    <p>Meeting closure does not mean work closure.</p>
+                    <p>Depending on meeting type, outcomes can include:</p>
+                    <ul class="outline-list">
+                        <li>A decision.</li>
+                        <li>An alignment.</li>
+                        <li>An adjusted work plan.</li>
+                        <li>An updated Product Backlog.</li>
+                        <li>An action list.</li>
+                        <li>An improvement experiment for the next Sprint.</li>
+                        <li>An issue requiring deeper follow-up by a smaller group.</li>
+                    </ul>
+                    <p>When action items exist, they should be captured clearly.</p>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Owner</th>
+                                <th>Deadline</th>
+                                <th>Dependency / Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Finalize MVP scope</td>
+                                <td>Product Owner</td>
+                                <td>25/06</td>
+                                <td>Needs support-team feedback</td>
+                            </tr>
+                            <tr>
+                                <td>Propose RAG architecture</td>
+                                <td>Tech Lead</td>
+                                <td>27/06</td>
+                                <td>Based on security constraints</td>
+                            </tr>
+                            <tr>
+                                <td>Prepare sample documentation set</td>
+                                <td>Support Lead</td>
+                                <td>26/06</td>
+                                <td>Include FAQ and known issues</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Finally, define where outcomes and actions are tracked:</p>
+                    <ul class="outline-list">
+                        <li>Jira.</li>
+                        <li>Azure DevOps.</li>
+                        <li>Confluence.</li>
+                        <li>Teams.</li>
+                        <li>Notion.</li>
+                        <li>Shared document or another work management system.</li>
+                    </ul>
+                    <p>A meeting creates real value only when outcomes are converted into concrete decisions, changes, or follow-through actions afterward.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">From a general structure to Scrum Events</h3>
+                    <p>This structure is not a rigid checklist applied the same way to every meeting.</p>
+                    <p>Daily Scrum can be very short and does not need complex agenda mechanics. Sprint Review may require broader stakeholder involvement and stronger feedback discussion. Sprint Retrospective needs psychological safety so the Scrum Team can inspect and improve the way it works. Sprint Planning needs clarity on Sprint Goal, selected Product Backlog Items, and how Developers expect to execute.</p>
+                    <p>Still, every Scrum Event should answer core questions:</p>
+                    <ul class="outline-list">
+                        <li>Why does this event exist?</li>
+                        <li>Who must participate to meet the objective?</li>
+                        <li>What information should this event be grounded on?</li>
+                        <li>When the event ends, what should be clearer?</li>
+                        <li>How does that outcome affect Sprint Goal, Product Goal, or the Scrum Team's working model?</li>
+                    </ul>
+                    <p>With this foundation, each Scrum Event can be treated not as a scheduled ritual, but as a practical mechanism for transparency, inspection, and adaptation.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="main-point">Designing Scrum Events and Scrum Activity</h2>
+                <p>Sprint Planning, Daily Scrum, Sprint Review, and Sprint Retrospective are Scrum Events that happen inside the Sprint. They are not extra meeting overhead. They are intentional points for transparency, inspection, and adaptation.</p>
+                <p>Product Backlog Refinement is not an official Scrum Event. It is a continuous activity to clarify, split, and order Product Backlog Items so they are transparent enough for upcoming decisions. A team may run dedicated Refinement sessions, but should not turn Refinement into a heavy ritual or an "estimate tickets" meeting.</p>
+                <p>Each event below follows a common Meeting Brief mindset:</p>
+                <ul class="outline-list">
+                    <li>Purpose of the event.</li>
+                    <li>Expected result when the event ends.</li>
+                    <li>Context and input information.</li>
+                    <li>Who really needs to attend.</li>
+                    <li>Timeboxed discussion flow.</li>
+                    <li>Core guiding questions.</li>
+                    <li>How outcomes are turned into concrete actions or adaptations.</li>
+                </ul>
+                <blockquote>
+                    <p><strong>General principle:</strong> Event quality is not measured by how much people talked. It is measured by whether, after the event, the team understands better, decides better, or adapts actions better.</p>
+                </blockquote>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Big picture: activities inside a Sprint</h3>
+                    <p>Scrum events and activities are not isolated meetings. They form one loop: clarify direction, plan, synchronize daily, inspect Increment, learn from reality, and improve the way of working.</p>
+                    <figure class="scrum-visual">
+                        <svg aria-label="Relationship diagram among Product Goal, Refinement, Sprint Planning, Daily Scrum, Sprint Review, and Sprint Retrospective" role="img" viewBox="0 0 1120 315">
+                            <defs>
+                                <marker id="arrow" markerheight="10" markerunits="strokeWidth" markerwidth="10" orient="auto" refx="9" refy="3">
+                                    <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                                </marker>
+                            </defs>
+                            <rect class="accent-node" height="52" rx="10" width="150" x="30" y="38"></rect>
+                            <text x="105" y="64">Product Goal</text>
+                            <rect class="node" height="52" rx="10" width="175" x="235" y="38"></rect>
+                            <text x="322" y="64">Product Backlog</text>
+                            <rect class="node" height="52" rx="10" width="190" x="465" y="38"></rect>
+                            <text x="560" y="64">Backlog Refinement</text>
+                            <rect class="accent-node" height="52" rx="10" width="175" x="715" y="38"></rect>
+                            <text x="802" y="64">Sprint Planning</text>
+                            <rect class="node" height="52" rx="10" width="145" x="945" y="38"></rect>
+                            <text x="1017" y="64">Sprint Goal</text>
+                            <path class="arrow" d="M180 64 H235"></path>
+                            <path class="arrow" d="M410 64 H465"></path>
+                            <path class="arrow" d="M655 64 H715"></path>
+                            <path class="arrow" d="M890 64 H945"></path>
+                            <rect class="node" height="52" rx="10" width="175" x="240" y="158"></rect>
+                            <text x="327" y="184">Sprint Backlog</text>
+                            <rect class="accent-node" height="52" rx="10" width="170" x="475" y="158"></rect>
+                            <text x="560" y="184">Daily Scrum</text>
+                            <rect class="node" height="52" rx="10" width="150" x="705" y="158"></rect>
+                            <text x="780" y="184">Increment</text>
+                            <path class="arrow" d="M802 90 V128 H327 V158"></path>
+                            <path class="arrow" d="M1017 90 V128 H560 V158"></path>
+                            <path class="arrow" d="M415 184 H475"></path>
+                            <path class="arrow" d="M645 184 H705"></path>
+                            <rect class="accent-node" height="52" rx="10" width="165" x="380" y="252"></rect>
+                            <text x="462" y="278">Sprint Review</text>
+                            <rect class="accent-node" height="52" rx="10" width="190" x="630" y="252"></rect>
+                            <text x="725" y="278">Sprint Retrospective</text>
+                            <path class="arrow" d="M780 210 V231 H462 V252"></path>
+                            <path class="arrow" d="M780 210 V231 H725 V252"></path>
+                            <path class="arrow" d="M462 252 V230 H322 V90"></path>
+                            <path class="arrow" d="M725 252 V230 H802 V90"></path>
+                            <text class="small" x="322" y="120">adapt product direction</text>
+                            <text class="small" x="802" y="120">improve way of working</text>
+                        </svg>
+                        <figcaption>
+                            <strong>Diagram 1.</strong> Refinement prepares Planning; Daily Scrum helps Developers adapt during the Sprint; Review adapts product direction; Retrospective improves the team's working model for the next Sprint.
+                        </figcaption>
+                    </figure>
+
+                    <figure class="scrum-visual">
+                        <svg aria-label="Core-question sequence across Scrum events" role="img" viewBox="0 0 1120 220">
+                            <defs>
+                                <marker id="arrow2" markerheight="10" markerunits="strokeWidth" markerwidth="10" orient="auto" refx="9" refy="3">
+                                    <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                                </marker>
+                            </defs>
+                            <rect class="node" height="72" rx="10" width="185" x="20" y="72"></rect>
+                            <text x="112" y="96">Refinement</text>
+                            <text class="small" x="112" y="119">What is valuable and possible?</text>
+                            <rect class="accent-node" height="72" rx="10" width="185" x="245" y="72"></rect>
+                            <text x="337" y="96">Planning</text>
+                            <text class="small" x="337" y="119">What will this Sprint achieve?</text>
+                            <rect class="node" height="72" rx="10" width="185" x="470" y="72"></rect>
+                            <text x="562" y="96">Daily Scrum</text>
+                            <text class="small" x="562" y="119">What must change today?</text>
+                            <rect class="accent-node" height="72" rx="10" width="185" x="695" y="72"></rect>
+                            <text x="787" y="96">Sprint Review</text>
+                            <text class="small" x="787" y="119">What did we learn about product?</text>
+                            <rect class="node" height="72" rx="10" width="185" x="920" y="72"></rect>
+                            <text x="1012" y="96">Retrospective</text>
+                            <text class="small" x="1012" y="119">How do we improve delivery?</text>
+                            <path d="M205 108 H245" fill="none" marker-end="url(#arrow2)" stroke="currentColor" stroke-width="1.6"></path>
+                            <path d="M430 108 H470" fill="none" marker-end="url(#arrow2)" stroke="currentColor" stroke-width="1.6"></path>
+                            <path d="M655 108 H695" fill="none" marker-end="url(#arrow2)" stroke="currentColor" stroke-width="1.6"></path>
+                            <path d="M880 108 H920" fill="none" marker-end="url(#arrow2)" stroke="currentColor" stroke-width="1.6"></path>
+                        </svg>
+                        <figcaption>
+                            <strong>Diagram 2.</strong> Each event focuses on a different type of question. This prevents event purpose overlap and reduces the risk of turning Scrum events into status meetings.
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <hr />
+
+            <section class="content-section">
+                <h2 class="main-point">1. Product Backlog Refinement</h2>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Nature</h3>
+                    <p>Product Backlog Refinement is the activity of making Product Backlog Items clearer, smaller, and better ordered. The goal is not to detail the full backlog early. The goal is to invest just enough in items likely to be selected in near Sprints.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Meeting Brief</h3>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Meeting title</h4>
+                        <ul class="outline-list">
+                            <li>Product Backlog Refinement - Sprint 12 Preparation</li>
+                            <li>Refinement - Payment Integration</li>
+                            <li>Refinement - Candidate Items for Next Sprint</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Objective</h4>
+                        <p>Create shared understanding between Product Owner and Developers for Product Backlog Items likely to be worked on soon, so Sprint Planning can focus on selection and planning instead of starting with requirement explanation.</p>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Expected result / success criteria</h4>
+                        <p>After Refinement, high-priority items should have a suitable level of transparency:</p>
+                        <ul class="outline-list">
+                            <li>Value or problem statement is clear.</li>
+                            <li>Scope is clear enough for feasibility discussion.</li>
+                            <li>Acceptance criteria or success conditions are clarified to a necessary level.</li>
+                            <li>Dependencies, risks, and assumptions are visible.</li>
+                            <li>Items are split if too large or too uncertain.</li>
+                            <li>Items are reasonably ordered in Product Backlog.</li>
+                            <li>Developers have enough basis for estimation or feasibility assessment.</li>
+                            <li>Items likely completable within one Sprint are ready for Sprint Planning consideration.</li>
+                        </ul>
+                        <p>A rigid Definition of Ready is not required. What matters is readiness sufficient for responsible decisions, not additional bureaucracy gates.</p>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Context</h4>
+                        <ul class="outline-list">
+                            <li>Product Backlog contains ambiguous or oversized items.</li>
+                            <li>Product Owner needs to prioritize by value, risk, or opportunity.</li>
+                            <li>Developers need problem clarity before technical direction and effort evaluation.</li>
+                            <li>Items near Sprint Planning are not clear enough, risking long planning or assumption-based commitments.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Input information / pre-read</h4>
+                        <ul class="outline-list">
+                            <li>Product Goal and current product objectives.</li>
+                            <li>Prioritized Product Backlog Items.</li>
+                            <li>Relevant customer feedback, analytics, support tickets, or market signals.</li>
+                            <li>Business rules, regulatory requirements, and security constraints.</li>
+                            <li>Architecture context, known technical limitations, and known dependencies.</li>
+                            <li>Decisions and learning from previous Sprint Review.</li>
+                            <li>Wireframes, workflows, API contracts, or prototypes when truly needed.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Attendees and roles</h4>
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Participation level</th>
+                                    <th>Primary responsibility</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Product Owner</td>
+                                    <td>Required</td>
+                                    <td>Clarify value, problem framing, priority, and expected outcomes</td>
+                                </tr>
+                                <tr>
+                                    <td>Developers</td>
+                                    <td>Required</td>
+                                    <td>Explore feasibility, risks, slicing, dependencies, and effort</td>
+                                </tr>
+                                <tr>
+                                    <td>Scrum Master</td>
+                                    <td>Optional / support when needed</td>
+                                    <td>Support collaboration quality, facilitation, and impediment handling</td>
+                                </tr>
+                                <tr>
+                                    <td>Stakeholders / domain experts</td>
+                                    <td>Optional</td>
+                                    <td>Provide domain clarity for high-uncertainty or high-risk items</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Suggested agenda</h4>
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Part</th>
+                                    <th>Content</th>
+                                    <th>Expected output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Reconnect to Product Goal</td>
+                                    <td>Restate product direction and priority context</td>
+                                    <td>Shared direction understanding</td>
+                                </tr>
+                                <tr>
+                                    <td>2. Review selected candidate items</td>
+                                    <td>Product Owner explains problem, value, and expected outcome</td>
+                                    <td>Problem statement clarified</td>
+                                </tr>
+                                <tr>
+                                    <td>3. Clarify and explore</td>
+                                    <td>Developers ask, identify risks, dependencies, assumptions</td>
+                                    <td>Unknowns clarified or tracked</td>
+                                </tr>
+                                <tr>
+                                    <td>4. Split and refine</td>
+                                    <td>Split items, clarify scope, acceptance criteria, ordering</td>
+                                    <td>Smaller and clearer items</td>
+                                </tr>
+                                <tr>
+                                    <td>5. Assess feasibility and size</td>
+                                    <td>Developers assess implementation feasibility</td>
+                                    <td>Planning-ready understanding</td>
+                                </tr>
+                                <tr>
+                                    <td>6. Recap decisions</td>
+                                    <td>Confirm refined items, unresolved questions, and owners</td>
+                                    <td>Updated Product Backlog</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Core questions</h4>
+
+                        <h5>Value and objective</h5>
+                        <ul class="outline-list">
+                            <li><strong>Why is this backlog item needed?</strong></li>
+                            <li>What user, customer, or business problem are we trying to solve?</li>
+                            <li>What happens if we do not do this item?</li>
+                            <li>How does this item move Product Goal or expected outcomes?</li>
+                            <li>Is expected value revenue, risk reduction, compliance, customer experience, learning, or technical sustainability?</li>
+                            <li>How will we know this item created the expected result?</li>
+                        </ul>
+
+                        <h5>Scope and shared understanding</h5>
+                        <ul class="outline-list">
+                            <li>What is in scope, and what is clearly out of scope?</li>
+                            <li>What are the most important user flows or business scenarios?</li>
+                            <li>Which acceptance criteria are truly necessary to confirm value?</li>
+                            <li>Are there edge cases, business rules, or data rules that can materially change implementation approach?</li>
+                            <li>What assumptions exist but remain unvalidated?</li>
+                        </ul>
+
+                        <h5>Possibility and Sprint-level completion</h5>
+                        <ul class="outline-list">
+                            <li><strong>Can this item be completed within one Sprint while meeting the Definition of Done?</strong></li>
+                            <li>If not, how can we split by outcome, workflow, rule, user segment, or technical slice?</li>
+                            <li>After splitting, does the first slice still create independent value or learning?</li>
+                            <li>Do Developers have needed skills, access, environment, and information?</li>
+                            <li>What dependencies can block this item?</li>
+                            <li>Do we need discovery, spike, or validation before committing to delivery?</li>
+                        </ul>
+
+                        <h5>Risk and quality</h5>
+                        <ul class="outline-list">
+                            <li>What are technical, security, performance, legal, or operational risks?</li>
+                            <li>How does Definition of Done affect actual effort?</li>
+                            <li>Should test automation, observability, migration, rollback, or support readiness be included in scope?</li>
+                            <li>Could today's decisions create technical debt or limit future product options?</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Best practices</h4>
+                        <ul class="outline-list">
+                            <li>Refine near-top items first. Avoid deep detailing for distant uncertain ideas.</li>
+                            <li>Start from problem and value, not from solution and implementation detail.</li>
+                            <li>Invite domain experts when specific questions require them, not by default for the full session.</li>
+                            <li>Timebox deep technical debates. Create focused follow-up discovery with a clear owner when needed.</li>
+                            <li>When an item is too large, split into slices that create value or learning, not only technical layers.</li>
+                            <li>Do not use Refinement to force delivery-date promises.</li>
+                            <li>Do not make estimation the meeting target. Estimation is only one supporting signal.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Anti-patterns to avoid</h4>
+                        <ul class="outline-list">
+                            <li>Product Owner reads ticket by ticket while Developers only answer with story points.</li>
+                            <li>Refinement turns into detailed solution design for the next quarter.</li>
+                            <li>Slicing by frontend/backend/database such that each piece has no testable outcome.</li>
+                            <li>Bringing unclear items into Sprint with "the team will figure it out during implementation."</li>
+                            <li>Using Definition of Ready as an approval gate that slows backlog flow.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr />
+
+            <section class="content-section">
+                <h2 class="main-point">2. Sprint Planning</h2>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Nature</h3>
+                    <p>Sprint Planning starts the Sprint by creating shared understanding of why the Sprint matters, what can be done to create that value, and how Developers expect to execute the work.</p>
+                    <p>Sprint Planning is not where the Product Owner assigns tickets. It is where the Scrum Team creates a Sprint Goal together and Developers build the Sprint Backlog.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Meeting Brief</h3>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Meeting title</h4>
+                        <ul class="outline-list">
+                            <li>Sprint Planning - Sprint 12</li>
+                            <li>Sprint Planning - Payment Integration Sprint</li>
+                            <li>Sprint Planning - Q3 Sprint 1</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Objective</h4>
+                        <p>Set a meaningful Sprint Goal and build a realistic Sprint Backlog so Developers start the Sprint with clear direction.</p>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Expected result / success criteria</h4>
+                        <p>When Sprint Planning ends:</p>
+                        <ul class="outline-list">
+                            <li>The Scrum Team has a clear Sprint Goal.</li>
+                            <li>Selected Product Backlog Items reasonably support that Sprint Goal.</li>
+                            <li>Developers understand why selected items are valuable.</li>
+                            <li>Developers have an initial plan to create an Increment aligned to Definition of Done.</li>
+                            <li>Capacity, risks, dependencies, and known event constraints are considered.</li>
+                            <li>Open uncertainties have owners and handling approach, not hidden inside commitments.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Context</h4>
+                        <ul class="outline-list">
+                            <li>A new Sprint is beginning.</li>
+                            <li>Product Backlog is ordered, and top candidate items are refined to a suitable level.</li>
+                            <li>The Scrum Team must balance value opportunity, realistic capacity, quality, and risk.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Input information / pre-read</h4>
+                        <ul class="outline-list">
+                            <li>Product Goal.</li>
+                            <li>Ordered Product Backlog.</li>
+                            <li>Refined candidate items.</li>
+                            <li>Outcome and feedback from the previous Sprint Review.</li>
+                            <li>Developers' capacity: leave, support load, operational commitments, training, and known dependencies.</li>
+                            <li>Definition of Done.</li>
+                            <li>Current Increment, technical health, production issues, and known risks.</li>
+                            <li>Relevant improvement actions from the previous Retrospective.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Attendees and roles</h4>
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Participation level</th>
+                                    <th>Primary responsibility</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Product Owner</td>
+                                    <td>Required</td>
+                                    <td>Clarify value, Product Backlog order, and desired outcomes</td>
+                                </tr>
+                                <tr>
+                                    <td>Developers</td>
+                                    <td>Required</td>
+                                    <td>Assess capacity, feasibility, and build Sprint Backlog</td>
+                                </tr>
+                                <tr>
+                                    <td>Scrum Master</td>
+                                    <td>Required within Scrum Team</td>
+                                    <td>Ensure event effectiveness and support the Scrum Team as needed</td>
+                                </tr>
+                                <tr>
+                                    <td>Manager / stakeholder</td>
+                                    <td>Optional, only with clear value</td>
+                                    <td>Provide context or dependency support, not planning on behalf of Developers</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Suggested agenda</h4>
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Part</th>
+                                    <th>Content</th>
+                                    <th>Expected output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Product direction</td>
+                                    <td>Review Product Goal, context, and recent feedback</td>
+                                    <td>Shared why for this Sprint</td>
+                                </tr>
+                                <tr>
+                                    <td>2. Form Sprint Goal</td>
+                                    <td>Discuss valuable, focused Sprint outcome</td>
+                                    <td>Sprint Goal draft</td>
+                                </tr>
+                                <tr>
+                                    <td>3. Select candidate PBIs</td>
+                                    <td>Select items that fit Sprint Goal, value, and capacity</td>
+                                    <td>Candidate Sprint Backlog</td>
+                                </tr>
+                                <tr>
+                                    <td>4. Validate feasibility</td>
+                                    <td>Developers inspect DoD, risks, dependencies, capacity, and required technical work</td>
+                                    <td>Realistic scope</td>
+                                </tr>
+                                <tr>
+                                    <td>5. Build initial plan</td>
+                                    <td>Developers break down and plan at needed level</td>
+                                    <td>Initial execution plan</td>
+                                </tr>
+                                <tr>
+                                    <td>6. Confirm commitment direction</td>
+                                    <td>Confirm Sprint Goal, selected items, known risks, and next steps</td>
+                                    <td>Sprint Goal + Sprint Backlog</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Core questions</h4>
+
+                        <h5>Why</h5>
+                        <ul class="outline-list">
+                            <li>What value should this Sprint create?</li>
+                            <li>If we can achieve only one most important outcome this Sprint, what is it?</li>
+                            <li>Does Sprint Goal describe shared value purpose, or only a ticket list?</li>
+                            <li>Which Product Backlog Items truly support Sprint Goal?</li>
+                            <li>Are any items selected only because "their turn came" but they do not serve this Sprint objective?</li>
+                        </ul>
+
+                        <h5>What</h5>
+                        <ul class="outline-list">
+                            <li>Which items are essential for Sprint Goal?</li>
+                            <li>Can we reduce scope while preserving key outcome?</li>
+                            <li>Are selected items transparent enough for Developers to start responsibly?</li>
+                            <li>Is required non-feature work accounted for (security, testing, migration, observability, operational readiness)?</li>
+                        </ul>
+
+                        <h5>How</h5>
+                        <ul class="outline-list">
+                            <li>How do Developers expect to create the Increment?</li>
+                            <li>Is Definition of Done fully included in planning assumptions?</li>
+                            <li>What is realistic Sprint capacity, not idealized capacity?</li>
+                            <li>Which dependencies threaten Sprint Goal?</li>
+                            <li>Are there unknowns large enough to require spike or scope adaptation?</li>
+                            <li>Does the initial plan preserve space for adaptation during Sprint?</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Best practices</h4>
+                        <ul class="outline-list">
+                            <li>Start with Sprint Goal, not with "filling all capacity."</li>
+                            <li>Use Product Goal and recent feedback to shape choices.</li>
+                            <li>Let Developers determine realistic workload and execution approach.</li>
+                            <li>Include all work needed for Definition of Done, not just coding.</li>
+                            <li>Treat capacity as planning signal, not quota to consume.</li>
+                            <li>Favor coherent Sprint Goal over unrelated ticket aggregation for utilization.</li>
+                            <li>Capture risks and assumptions directly in Sprint Backlog or work-tracking system.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Anti-patterns to avoid</h4>
+                        <ul class="outline-list">
+                            <li>Product Owner or Manager assigns tickets per Developer.</li>
+                            <li>Sprint Planning is only pulling tickets based on historical velocity.</li>
+                            <li>Sprint Goal is "Complete all selected backlog items."</li>
+                            <li>Ignoring Definition of Done to create the illusion of taking more scope.</li>
+                            <li>Treating Sprint Backlog as an immutable contract with no room for adaptation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr />
+
+            <section class="content-section">
+                <h2 class="main-point">3. Daily Scrum</h2>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Nature</h3>
+                    <p>Daily Scrum is an event for Developers. Its purpose is to inspect progress toward Sprint Goal and adapt Sprint Backlog when needed.</p>
+                    <p>Daily Scrum does not need to follow a fixed "yesterday / today / blockers" format. Developers can use any structure that keeps focus on Sprint Goal and produces a practical plan for the next day.</p>
+                    <p>The core is not status reporting. It is <strong>re-synchronizing to make coordination decisions</strong>. That is the critical difference between Daily Scrum and a daily status meeting.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Meeting Brief</h3>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Meeting title</h4>
+                        <ul class="outline-list">
+                            <li>Daily Scrum - Sprint 12, Day 4</li>
+                            <li>Daily Scrum - Payment Integration Sprint</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Objective</h4>
+                        <p>Inspect progress toward Sprint Goal, identify drift or impediments, and adapt Developers' working plan for the next 24 hours.</p>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Expected result / success criteria</h4>
+                        <ul class="outline-list">
+                            <li>Developers understand Sprint Goal status clearly.</li>
+                            <li>The most important work for the next 24 hours is clear.</li>
+                            <li>New blockers, risks, and dependencies are made visible.</li>
+                            <li>Sprint Backlog is adapted when needed.</li>
+                            <li>Deep-dive follow-ups have clear owner, purpose, and timing.</li>
+                            <li>Daily does not become a status report to Scrum Master, Product Owner, or Manager.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Context</h4>
+                        <ul class="outline-list">
+                            <li>Sprint is active and Developers now have fresh signals from coding, testing, deployment, production, or dependency changes.</li>
+                            <li>The initial plan may need adaptation to protect Sprint Goal.</li>
+                            <li>Unplanned work, impediments, or flow imbalance may be emerging.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Input information</h4>
+                        <ul class="outline-list">
+                            <li>Current Sprint Goal and Sprint Backlog.</li>
+                            <li>Board status, work item aging, blocked work, and WIP.</li>
+                            <li>Build, test, deployment, or production signals when relevant.</li>
+                            <li>Capacity changes: leave, support load, urgent priority, or environment loss.</li>
+                            <li>Definition of Done and quality signals when needed.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Attendees and roles</h4>
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Participation level</th>
+                                    <th>Primary responsibility</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Developers</td>
+                                    <td>Required</td>
+                                    <td>Inspect progress, adapt plan, and coordinate execution</td>
+                                </tr>
+                                <tr>
+                                    <td>Scrum Master</td>
+                                    <td>Optional</td>
+                                    <td>Support as needed and observe impediments; do not turn Daily into reporting</td>
+                                </tr>
+                                <tr>
+                                    <td>Product Owner</td>
+                                    <td>Optional</td>
+                                    <td>Join when collaborating directly within Sprint; not to run Daily</td>
+                                </tr>
+                                <tr>
+                                    <td>Manager / stakeholder</td>
+                                    <td>Not as report audience</td>
+                                    <td>Only attend when truly needed and without reducing Developers' self-management</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Suggested agenda</h4>
+                        <p>Daily Scrum is timeboxed to 15 minutes maximum.</p>
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Part</th>
+                                    <th>Content</th>
+                                    <th>Expected output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Reconnect to Sprint Goal</td>
+                                    <td>Review Sprint Goal and current state</td>
+                                    <td>Shared understanding of objective status</td>
+                                </tr>
+                                <tr>
+                                    <td>2. Inspect work flow</td>
+                                    <td>Check blocked work, in-progress work, ready-for-test, ready-for-release</td>
+                                    <td>Bottlenecks and risks identified</td>
+                                </tr>
+                                <tr>
+                                    <td>3. Decide next best actions</td>
+                                    <td>Define needed coordination, priority shifts, and completion focus</td>
+                                    <td>24-hour coordination plan</td>
+                                </tr>
+                                <tr>
+                                    <td>4. Park deep dives</td>
+                                    <td>Move deep technical discussion outside Daily</td>
+                                    <td>Daily timebox preserved</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Core questions</h4>
+
+                        <h5>Sprint Goal focus</h5>
+                        <ul class="outline-list">
+                            <li>What is current progress toward Sprint Goal?</li>
+                            <li>If we continue as-is, are we still likely to achieve Sprint Goal?</li>
+                            <li>What is today's biggest risk to Sprint Goal?</li>
+                            <li>Do we see signs of busyness without meaningful progress toward objective?</li>
+                        </ul>
+
+                        <h5>Flow focus over individual status</h5>
+                        <ul class="outline-list">
+                            <li>Which work items are blocked, waiting, or aging abnormally?</li>
+                            <li>Are we starting too much work but finishing too little?</li>
+                            <li>Which work needs finishing first before starting more?</li>
+                            <li>Where is the bottleneck: analysis, coding, review, test, release, or dependency?</li>
+                            <li>Which work should be paired or coordinated instead of handled in isolation?</li>
+                        </ul>
+
+                        <h5>Adaptation focus</h5>
+                        <ul class="outline-list">
+                            <li>What did we learn that makes the current plan less suitable?</li>
+                            <li>Do we need scope adjustment to protect Sprint Goal?</li>
+                            <li>Who needs immediate support to avoid blocker aging?</li>
+                            <li>Who needs to synchronize with Product Owner on priority or trade-off change?</li>
+                            <li>After Daily, what will we do differently?</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Signals of a high-quality Daily Scrum</h4>
+                        <ul class="outline-list">
+                            <li>Conversation centers on board, flow, and Sprint Goal.</li>
+                            <li>Developers talk to each other more than to a central "meeting owner."</li>
+                            <li>Follow-up coordination starts naturally right after Daily.</li>
+                            <li>The tone stays short, practical, and coordination-focused.</li>
+                            <li>Daily helps reveal issues earlier and reduce delays.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Best practices</h4>
+                        <ul class="outline-list">
+                            <li>Keep Sprint Goal and board visible so conversation is flow-based, not memory-based.</li>
+                            <li>Use Daily for Developers' coordination, not management reporting.</li>
+                            <li>Focus on "what must change now" over personal activity narration.</li>
+                            <li>Limit deep dives; schedule immediate follow-up with the right people.</li>
+                            <li>Track blockers with clear owner and aging time.</li>
+                            <li>When scope or technical discovery changes, synchronize early with Product Owner.</li>
+                            <li>Adapt WIP proactively to prioritize completion over starting more work.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Anti-patterns to avoid</h4>
+                        <ul class="outline-list">
+                            <li>Round-robin status reporting per person.</li>
+                            <li>Scrum Master, Manager, or Product Owner asking each person "what did you do yesterday?"</li>
+                            <li>Everyone sounds busy, but no one references Sprint Goal.</li>
+                            <li>Daily runs long because every issue is solved on the spot.</li>
+                            <li>Board is updated after Daily, instead of Daily using board to support decisions.</li>
+                            <li>Daily becomes attendance control instead of a self-management mechanism.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr />
+
+            <section class="content-section">
+                <h2 class="main-point">4. Sprint Review</h2>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Nature</h3>
+                    <p>Sprint Review is when the Scrum Team and stakeholders inspect Sprint results together, discuss what has changed, and determine how Product Backlog should adapt.</p>
+                    <p>Sprint Review is not a demo for approval, and not a ticket-completion report. It is a working session about product, market, feedback, value, and next choices.</p>
+                    <p>The key difference: Review does not only inspect <strong>what was built</strong>. It inspects <strong>what it means for product direction and what should happen next</strong>.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Meeting Brief</h3>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Meeting title</h4>
+                        <ul class="outline-list">
+                            <li>Sprint Review - Sprint 12</li>
+                            <li>Sprint Review - Payment Integration Increment</li>
+                            <li>Sprint Review - Q3 Sprint 1 Outcomes</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Objective</h4>
+                        <p>Inspect completed Increment, gather actionable feedback, and adapt Product Backlog direction using newly available reality signals.</p>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Expected result / success criteria</h4>
+                        <ul class="outline-list">
+                            <li>Completed Increment is transparent and linked to Product Goal context.</li>
+                            <li>Stakeholders understand outcomes, capability changes, or learning from Sprint.</li>
+                            <li>Actionable feedback is collected.</li>
+                            <li>Changes in market, needs, priorities, risks, or opportunities are made visible.</li>
+                            <li>Product Backlog is adapted, or adaptation direction is clearly agreed.</li>
+                            <li>Scrum Team and stakeholders leave with better shared understanding of next steps.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Context</h4>
+                        <ul class="outline-list">
+                            <li>Sprint is ending or has ended.</li>
+                            <li>Done Increment exists and is inspectable.</li>
+                            <li>Product, customer, market, operational, or organizational context may have changed since last Sprint.</li>
+                            <li>Relevant stakeholders hold decision-impacting feedback or data.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Input information / pre-read</h4>
+                        <ul class="outline-list">
+                            <li>Sprint Goal, completed Increment, and access/demo path.</li>
+                            <li>Product Goal and current Product Backlog.</li>
+                            <li>Usage metrics, user feedback, customer feedback, or support data if available.</li>
+                            <li>Outcomes from previous experiments.</li>
+                            <li>Market, regulatory, business, or dependency updates.</li>
+                            <li>Known limitations and unfinished items.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Attendees and roles</h4>
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Participation level</th>
+                                    <th>Primary responsibility</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Scrum Team</td>
+                                    <td>Required</td>
+                                    <td>Provide transparency on Increment, outcomes, and learning</td>
+                                </tr>
+                                <tr>
+                                    <td>Key stakeholders</td>
+                                    <td>Required when their feedback or decisions affect Product Backlog</td>
+                                    <td>Provide feedback, context shifts, and needs updates</td>
+                                </tr>
+                                <tr>
+                                    <td>Product Owner</td>
+                                    <td>Required</td>
+                                    <td>Connect Product Goal, Product Backlog, value, and decision direction</td>
+                                </tr>
+                                <tr>
+                                    <td>Scrum Master</td>
+                                    <td>Required within Scrum Team</td>
+                                    <td>Support event quality and keep discussion outcome-focused</td>
+                                </tr>
+                                <tr>
+                                    <td>Wider audience</td>
+                                    <td>Optional</td>
+                                    <td>Invite only with clear purpose: learning, alignment, or adoption</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Suggested agenda</h4>
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Part</th>
+                                    <th>Content</th>
+                                    <th>Expected output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Reconnect to Product Goal</td>
+                                    <td>Restate Product Goal and Sprint Goal context</td>
+                                    <td>Shared context</td>
+                                </tr>
+                                <tr>
+                                    <td>2. Inspect Increment</td>
+                                    <td>Show or experience Done Increment</td>
+                                    <td>Result transparency</td>
+                                </tr>
+                                <tr>
+                                    <td>3. Discuss outcomes and evidence</td>
+                                    <td>Metrics, feedback, learning, and limitations</td>
+                                    <td>Real impact understanding</td>
+                                </tr>
+                                <tr>
+                                    <td>4. Inspect changed context</td>
+                                    <td>Market changes, stakeholder needs, risks, opportunities</td>
+                                    <td>New decision inputs</td>
+                                </tr>
+                                <tr>
+                                    <td>5. Adapt Product Backlog</td>
+                                    <td>Discuss priority shifts and next bets</td>
+                                    <td>Adapted backlog direction</td>
+                                </tr>
+                                <tr>
+                                    <td>6. Recap</td>
+                                    <td>Confirm learning, decisions, and follow-up</td>
+                                    <td>Shared understanding</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Core questions</h4>
+
+                        <h5>Increment and value</h5>
+                        <ul class="outline-list">
+                            <li>To what degree was Sprint Goal achieved?</li>
+                            <li>Which Increment is truly Done under Definition of Done?</li>
+                            <li>What new capability can users or stakeholders now use?</li>
+                            <li>What evidence suggests value was created, or not created?</li>
+                            <li>How does this result move product closer to Product Goal?</li>
+                        </ul>
+
+                        <h5>Feedback and learning</h5>
+                        <ul class="outline-list">
+                            <li>Which feedback changed our understanding?</li>
+                            <li>What did users or business find most valuable?</li>
+                            <li>What still does not solve the expected problem?</li>
+                            <li>Which assumptions were invalidated?</li>
+                            <li>What new risk, opportunity, or dependency appeared?</li>
+                            <li>Which insights should be reflected in Product Backlog?</li>
+                        </ul>
+
+                        <h5>Direction adaptation</h5>
+                        <ul class="outline-list">
+                            <li>After this Review, which themes or items should move higher?</li>
+                            <li>What should we stop, postpone, or reduce investment in?</li>
+                            <li>What new opportunity is worth testing?</li>
+                            <li>What still needs clarification before next Sprint Planning?</li>
+                            <li>Which feedback should become backlog item, spike, or experiment?</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Signals of a high-quality Sprint Review</h4>
+                        <ul class="outline-list">
+                            <li>Increment is inspected as part of real product, not demo theater.</li>
+                            <li>Discussion is deep on value, outcomes, and context change.</li>
+                            <li>Stakeholders participate as collaborators, not passive observers.</li>
+                            <li>Backlog direction is genuinely influenced by what was learned.</li>
+                            <li>The team is transparent about wins, limitations, and unfinished work.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Best practices</h4>
+                        <ul class="outline-list">
+                            <li>Demo real Increment whenever possible, avoid slide-only reviews.</li>
+                            <li>Connect demonstration to problem, value, and Product Goal, not only feature list.</li>
+                            <li>Show evidence, learning, and limitations, not only achievements.</li>
+                            <li>Invite stakeholders who can provide decision-relevant feedback.</li>
+                            <li>Capture backlog changes during or immediately after Review.</li>
+                            <li>Enable two-way learning: team learns from stakeholders, stakeholders learn from Increment.</li>
+                            <li>Use Review as product transparency mechanism, not approval gate.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Anti-patterns to avoid</h4>
+                        <ul class="outline-list">
+                            <li>Review as show-and-tell or management progress report.</li>
+                            <li>Stakeholders invited only to approve completed features.</li>
+                            <li>Only happy path demo while limitations or unfinished work are hidden.</li>
+                            <li>Feedback collected but never reflected in backlog.</li>
+                            <li>Success judged solely by completed ticket count.</li>
+                            <li>Sprint Review confused with project sign-off ceremony.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr />
+
+            <section class="content-section">
+                <h2 class="main-point">5. Sprint Retrospective</h2>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Nature</h3>
+                    <p>Sprint Retrospective is the Scrum Team's opportunity to inspect how it worked and identify improvements that raise quality, effectiveness, collaboration, and value creation in the next Sprint.</p>
+                    <p>Retrospective is not for complaints, individual blame, or judging who was right. It is a space to inspect working system, signals, behavior, and conditions producing current outcomes.</p>
+                    <p>If Sprint Review focuses on <strong>the product</strong>, Sprint Retrospective focuses on <strong>how the team creates that product</strong>.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">Meeting Brief</h3>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Meeting title</h4>
+                        <ul class="outline-list">
+                            <li>Sprint Retrospective - Sprint 12</li>
+                            <li>Retrospective - Improving Delivery Flow</li>
+                            <li>Retrospective - Reducing Escaped Defects</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Objective</h4>
+                        <p>Inspect how the Scrum Team worked during Sprint and select high-impact, feasible improvements for the next Sprint.</p>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Expected result / success criteria</h4>
+                        <ul class="outline-list">
+                            <li>The Scrum Team has shared understanding of what is helping or hurting effectiveness.</li>
+                            <li>The team identifies causes or patterns, not only symptoms.</li>
+                            <li>A small set of improvement actions or experiments is selected.</li>
+                            <li>Each action has owner, expected impact, and signal for tracking.</li>
+                            <li>Key improvements are included in Sprint Backlog or tracked transparently for follow-through.</li>
+                            <li>People can speak honestly without fear of personal blame.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Context</h4>
+                        <ul class="outline-list">
+                            <li>The Sprint has just ended.</li>
+                            <li>The team has new data on delivery, quality, collaboration, product outcome, dependencies, and working model.</li>
+                            <li>Actions from previous Retrospective need inspection for actual impact.</li>
+                            <li>Issues may exist in process, technical practices, collaboration, communication, or organizational constraints.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Input information / pre-read</h4>
+                        <ul class="outline-list">
+                            <li>Sprint Goal and achievement level.</li>
+                            <li>Delivery flow signals: work aging, blocked time, cycle time, carryover, and unplanned work.</li>
+                            <li>Quality signals: defects, production incidents, test status, rework, and meaningful code smells where relevant.</li>
+                            <li>Collaboration signals: handoffs, dependencies, unclear ownership, and decision latency.</li>
+                            <li>Feedback from Sprint Review.</li>
+                            <li>Previous Retrospective actions and observed outcomes.</li>
+                            <li>Notable events: outage, escalation, scope change, turnover, or environment issues.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Attendees and roles</h4>
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Participation level</th>
+                                    <th>Primary responsibility</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Scrum Team</td>
+                                    <td>Required</td>
+                                    <td>Inspect and improve shared way of working</td>
+                                </tr>
+                                <tr>
+                                    <td>Scrum Master</td>
+                                    <td>Required within Scrum Team, often facilitator</td>
+                                    <td>Protect psychological safety, facilitate effectively, and support follow-through</td>
+                                </tr>
+                                <tr>
+                                    <td>Manager / stakeholder</td>
+                                    <td>Not default participants</td>
+                                    <td>Attend only if Scrum Team intentionally requests and psychological safety remains protected</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Suggested agenda</h4>
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Part</th>
+                                    <th>Content</th>
+                                    <th>Expected output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Set the stage</td>
+                                    <td>Restate objective, safety principles, and previous action follow-up</td>
+                                    <td>Shared focus and safe space</td>
+                                </tr>
+                                <tr>
+                                    <td>2. Gather data</td>
+                                    <td>Inspect facts, signals, events, and team experiences</td>
+                                    <td>Evidence-based observations</td>
+                                </tr>
+                                <tr>
+                                    <td>3. Generate insights</td>
+                                    <td>Find patterns, constraints, root causes, leverage points</td>
+                                    <td>Deeper understanding of problems</td>
+                                </tr>
+                                <tr>
+                                    <td>4. Decide what to improve</td>
+                                    <td>Select a small set of high-impact, feasible improvements</td>
+                                    <td>Improvement experiments</td>
+                                </tr>
+                                <tr>
+                                    <td>5. Define follow-through</td>
+                                    <td>Set owner, expected impact, tracking signal, review date</td>
+                                    <td>Action accountability</td>
+                                </tr>
+                                <tr>
+                                    <td>6. Close</td>
+                                    <td>Check commitment and Retrospective quality</td>
+                                    <td>Shared ownership of improvements</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Core questions</h4>
+
+                        <h5>Inspect outcomes and working system</h5>
+                        <ul class="outline-list">
+                            <li>What helped us move toward Sprint Goal?</li>
+                            <li>What slowed us down, blocked work, or caused rework?</li>
+                            <li>Where does work spend the longest waiting: analysis, development, test, review, release, or dependency?</li>
+                            <li>Are we starting more than we can finish?</li>
+                            <li>How did unplanned work and interruptions affect Sprint?</li>
+                            <li>Was quality traded off for speed?</li>
+                        </ul>
+
+                        <h5>Find insights, not just symptoms</h5>
+                        <ul class="outline-list">
+                            <li>Is this an isolated incident or a repeating pattern?</li>
+                            <li>What conditions in the system are creating this issue?</li>
+                            <li>Which decisions, policies, dependencies, or handoffs are creating friction?</li>
+                            <li>If we can change one small high-leverage factor, what should it be?</li>
+                            <li>What data is missing for clearer diagnosis?</li>
+                        </ul>
+
+                        <h5>Select and track improvements</h5>
+                        <ul class="outline-list">
+                            <li>Which improvement has the highest impact on value, quality, or flow?</li>
+                            <li>Can we test this improvement in the next Sprint?</li>
+                            <li>Who owns it and who needs to be involved?</li>
+                            <li>Which signal will show whether the improvement works?</li>
+                            <li>What can block this action from execution?</li>
+                            <li>Should this action be included in Sprint Backlog or tracked another clear way?</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Signals of a high-quality Sprint Retrospective</h4>
+                        <ul class="outline-list">
+                            <li>The team discusses real issues, not only safe topics.</li>
+                            <li>Observations are tied to data, patterns, or concrete examples.</li>
+                            <li>Discussion centers on system conditions more than personal blame.</li>
+                            <li>Post-retro actions are few, focused, and feasible.</li>
+                            <li>Actions from previous retrospectives are followed seriously.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Best practices</h4>
+                        <ul class="outline-list">
+                            <li>Start by reviewing previous actions; do not add new actions when old ones are always ignored.</li>
+                            <li>Use data and concrete events, while still respecting lived team experience.</li>
+                            <li>Focus on system, flow, and working conditions; avoid personal fault framing.</li>
+                            <li>Select few actions with clear owner and clear measurement signal.</li>
+                            <li>Use improvement experiments instead of large unrealistic promises.</li>
+                            <li>Include key improvement actions in Sprint Backlog for transparency and protection.</li>
+                            <li>Change retrospective formats when useful, but do not trade depth for games.</li>
+                            <li>Psychological safety is foundational. If people cannot speak honestly, Retrospective becomes performative.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sub-section-nested">
+                        <h4 class="sub-point-2">Anti-patterns to avoid</h4>
+                        <ul class="outline-list">
+                            <li>"Nothing to improve" repeated across Sprints.</li>
+                            <li>Too many actions listed, none completed.</li>
+                            <li>Retrospective becomes personal complaint session.</li>
+                            <li>Retrospective deep-dives product scope instead of working model.</li>
+                            <li>No review of previous retro actions.</li>
+                            <li>Actions are vague: "communicate better" or "work harder".</li>
+                            <li>Actions are created but system conditions remain unchanged, so issues repeat.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <hr />
+
+            <section class="content-section">
+                <h2 class="main-point">6. Quick comparison: event outcomes</h2>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Activity / Event</th>
+                            <th>Core question</th>
+                            <th>Primary outcome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Product Backlog Refinement</td>
+                            <td>What value does this item create, is it clear enough, and can it be completed in one Sprint?</td>
+                            <td>Product Backlog Items become clearer, smaller, and better ordered</td>
+                        </tr>
+                        <tr>
+                            <td>Sprint Planning</td>
+                            <td>What value should this Sprint create, what should be selected, and how do Developers expect to execute?</td>
+                            <td>Sprint Goal and Sprint Backlog</td>
+                        </tr>
+                        <tr>
+                            <td>Daily Scrum</td>
+                            <td>What should be adapted today to move closer to Sprint Goal?</td>
+                            <td>Adapted day-to-day working plan</td>
+                        </tr>
+                        <tr>
+                            <td>Sprint Review</td>
+                            <td>What value did Increment create, what did we learn, and how should backlog direction adapt?</td>
+                            <td>Adapted Product Backlog direction</td>
+                        </tr>
+                        <tr>
+                            <td>Sprint Retrospective</td>
+                            <td>What in our way of working should improve to increase effectiveness?</td>
+                            <td>Improvement actions / experiments for next Sprint</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <hr />
+
+            <section class="content-section">
+                <h2 class="main-point">7. Shared design principles</h2>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">1. Outcome first, agenda second</h3>
+                    <p>Do not start with "How long should this meeting be?" Start with:</p>
+                    <blockquote>
+                        <p>When this meeting ends, what should be clearly understood or clearly changed?</p>
+                    </blockquote>
+                    <p>Agenda, participants, and duration should be designed to serve that outcome.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">2. Invite only people who contribute to the outcome</h3>
+                    <p>Someone may care about the topic but still not need to attend. Participants should have at least one clear role:</p>
+                    <ul class="outline-list">
+                        <li>provide context,</li>
+                        <li>make decisions,</li>
+                        <li>execute work,</li>
+                        <li>contribute expertise,</li>
+                        <li>or directly use the outcome.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">3. Do not use meeting time to replace preparation</h3>
+                    <p>Pre-read, board readiness, backlog quality, data, and prototypes reduce explanation overhead. Meeting time should be used for higher-value activities: clarification, debate, decision, coordination, and adaptation.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">4. Every event needs a suitable follow-up mechanism</h3>
+                    <p>Not every event needs the same action-plan style:</p>
+                    <ul class="outline-list">
+                        <li>Refinement updates Product Backlog.</li>
+                        <li>Planning updates Sprint Backlog.</li>
+                        <li>Daily adapts day-to-day execution plan.</li>
+                        <li>Review adapts Product Backlog direction.</li>
+                        <li>Retrospective creates improvement experiments or actions.</li>
+                    </ul>
+                    <p>What matters is that outcomes do not disappear immediately after the event closes.</p>
+                </div>
+
+                <div class="sub-section">
+                    <h3 class="sub-point-1">5. Timebox protects focus, but cannot replace thinking</h3>
+                    <p>Timebox prevents drift and supports rhythm. But timebox cannot compensate for a vague objective, wrong attendees, or weak input information.</p>
+                    <p>A high-quality Scrum Event needs both: clarity of purpose and enough transparency for responsible inspection and adaptation.</p>
+                </div>
+            </section>
+
+            <hr />
+
+            <section class="content-section">
+                <h2 class="main-point">References</h2>
+                <ul class="outline-list">
+                    <li>Scrum Guide 2020: definitions of Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective, role accountabilities, and event timeboxes.</li>
+                    <li>Scrum.org practical resources on Product Backlog Refinement: continuous clarification, splitting, ordering, and preparing Product Backlog Items for Sprint Planning decisions.</li>
+                </ul>
+            </section>
+        </article>
+
+        <script src="../../../pages-scripts.js"></script>
+    </body>
+</html>

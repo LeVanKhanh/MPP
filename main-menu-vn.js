@@ -1005,6 +1005,13 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "6. Scrum Events and Activities",
+                                route: "pages/information-technology/agile-software-development/scrum-agile-and-more/6-scrum-events-and-activities-vn.html",
+                                hash: "#/scrum-agile-and-more-events-and-activities",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                 ],

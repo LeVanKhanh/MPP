@@ -5,7 +5,7 @@
 	<title>Scrum, Agile and More - Introduction - My Personal Planet</title>
 	<link rel="stylesheet" href="../../../pages-styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Shared foundation for Scrum, Agile and More: Scrum provides clarity, while capability, measurement, and organizational conditions determine sustainable value delivery.">
+	<meta name="description" content="Foundation for Scrum, Agile and More: how Scrum provides clarity, while capability, measurement principles, and organizational conditions determine sustainable value delivery.">
 </head>
 <body>
 	<article class="content-article">
@@ -18,7 +18,7 @@
 		<section class="content-section">
 			<h2 class="main-point">Scrum is a foundation, not a cure-all</h2>
 
-			<p>Scrum is a minimalist yet powerful framework for tackling complex work through transparency, inspection, and adaptation. It gives the Scrum Team a clear structure to align around a Product Goal, deliver valuable Increments, and learn from reality in short cycles.</p>
+			<p>Scrum is a minimalist yet powerful framework for tackling complex work through transparency, inspection, and adaptation. It gives the Scrum Team a clear structure to align around a Product Goal, deliver valuable Increments, and learn from reality in short cycles. <sup><a href="#ref-1">[1]</a></sup></p>
 
 			<p>But Scrum is not designed to replace an organization's full operating system.</p>
 
@@ -33,6 +33,25 @@
 			<p>When the Product Goal is unclear, Scrum exposes a lack of product direction. When the backlog changes constantly, Scrum reveals weak decision quality or strategic instability. When Developers cannot self-manage, Scrum makes capability gaps, authority gaps, or poor working conditions visible. When events are held but no real learning happens, Scrum reveals form-over-substance behavior instead of true empiricism.</p>
 
 			<p>So Scrum is not the destination. It is the starting point for seeing the system more honestly.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Scope of this series: using Scrum to see the system, not to replace it</h2>
+
+			<p>This series is written for people working within or alongside a Scrum Team: Product Owners, Scrum Masters, Developers, People Managers, Engineering Managers, and leaders who influence delivery conditions. The goal is not to reteach Scrum basics, but to help readers identify the conditions that enable or prevent a Scrum Team from creating sustainable value.</p>
+
+			<p>The articles will focus on four themes: product value direction; capability to deliver quality Increments; how Scrum Teams learn and improve; and organizational conditions like decision rights, dependencies, capability, incentives, and working environment.</p>
+
+			<p>This series is <strong>not</strong>:</p>
+
+			<ul class="outline-list">
+				<li>A standard KPI scorecard for grading Product Owners, Scrum Masters, Developers, or Scrum Teams.</li>
+				<li>A one-size-fits-all formula for applying Scrum across different products, organizations, or maturity levels.</li>
+				<li>A replacement for product strategy, architecture, people management, deep coaching, or leadership accountability.</li>
+				<li>A standalone basis for ranking, rewarding, penalizing, reassigning, or making performance judgments about individuals.</li>
+			</ul>
+
+			<p>The Scrum Guide describes Scrum as a lightweight framework helping people, teams, and organizations create value through adaptive solutions to complex problems.<sup><a href="#ref-1">[1]</a></sup> Therefore, the frameworks in this series should be read as observation and dialogue tools for asking questions and testing improvements in your specific context; not as a closed management model.</p>
 		</section>
 
 		<section class="content-section">
@@ -82,7 +101,7 @@
 		</section>
 
 		<section class="content-section">
-			<h2 class="main-point">An effectiveness lens: measure to learn, not to control</h2>
+			<h2 class="main-point">An effectiveness lens: measure to learn and improve, not to control</h2>
 
 			<p>One of the biggest risks in Scrum adoption is applying old measurement habits: velocity, ticket counts, work hours, pull request counts, meeting counts, or visible busyness.</p>
 
@@ -90,17 +109,68 @@
 
 			<p>When velocity becomes the target, teams optimize story points. When ticket count becomes the target, people choose easy-to-close tasks. When pull request count becomes the target, Developers may produce formal but low-value micro-changes. When Scrum Masters are evaluated by meeting volume or impediment closure count, the role can shrink into facilitation and reporting. When Product Owners are judged only by release output, value is replaced by output.</p>
 
-			<p>That is why the measurement lens in this series follows one principle:</p>
+			<p>Therefore, the measurement lens in this series follows one principle:</p>
 
 			<blockquote>
 				<p>Do not use metrics to find someone to blame. Use metrics to understand what conditions the system lacks to create better value.</p>
 			</blockquote>
 
-			<p>Every metric is a signal, not a verdict. A weak signal should trigger questions about root cause, context, constraints, and improvement actions, not immediate judgment of a person or team.</p>
+			<p>This principle can be summarized as <strong>learning over judgment</strong>: prioritize creating shared understanding of the system and choosing improvements, rather than using data to quickly conclude who is good, who is weak, or who should take the blame. Research on developer productivity also recommends viewing productivity through multiple dimensions — including satisfaction and well-being, efficiency, activity, collaboration, and flow — rather than trying to reduce it to a single measure.<sup><a href="#ref-2">[2]</a></sup></p>
+
+			<p>Metrics should be viewed as signals with context. Once a metric becomes a reward-penalty KPI, it can drive local optimization and undermine the real goal: creating useful, reliable, and sustainable products.<sup><a href="#ref-3">[3]</a></sup> Therefore, metrics like velocity, ticket counts, pull requests, bug fixes, lines of code, hours worked, or meeting attendance should not be used as individual performance KPIs.</p>
+
+			<p>Every metric is just a signal, not a verdict. A weak signal should trigger questions about root cause, context, constraints, and improvement actions, not immediate judgment of a person or team.</p>
 		</section>
 
 		<section class="content-section">
-			<h2 class="main-point">Four principles for a healthy measurement system</h2>
+			<h2 class="main-point">Measurement principles: signals for learning, not scores for judgment</h2>
+
+			<p>Every observation table, rubric, or metric mentioned in this series should operate within the following guardrails. If an organization cannot guarantee these guardrails, measurement should be narrowed or paused rather than expanded.</p>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Guardrail</th>
+						<th>How to Apply</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Purpose before data</td>
+						<td>State clearly what you want to learn or decide before choosing a metric; do not collect data just because it exists.</td>
+					</tr>
+					<tr>
+						<td>System before individuals</td>
+						<td>Prioritize observing outcomes, flow, quality, sustainability, and system conditions before drawing conclusions about people.</td>
+					</tr>
+					<tr>
+						<td>Never use directly as reward-penalty</td>
+						<td>Do not use one or a set of delivery metrics to rank, reward, discipline, fire, or compare individuals/teams outside of context.</td>
+					</tr>
+					<tr>
+						<td>Right to explain context</td>
+						<td>People and teams being observed must have the opportunity to explain data, dependencies, risks, priority shifts, and factors outside their control.</td>
+					</tr>
+					<tr>
+						<td>Action must have ownership</td>
+						<td>A signal only matters if it leads to a hypothesis, experiment, decision-maker, and a defined point to re-check impact.</td>
+					</tr>
+					<tr>
+						<td>Monitor for side effects</td>
+						<td>Regularly check whether metrics are causing gaming, hiding problems, local optimization, overload, or reduced psychological safety.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<blockquote>
+				<p>No metric is inherently fair or objective. What matters is purpose, context, interpretation rights, and how an organization uses that metric to impact people.</p>
+			</blockquote>
+
+			<p>For software delivery, system-level metrics like deployment frequency, lead time for changes, change failure rate, and time to restore service can help observe delivery capability when read together and with product context.<sup><a href="#ref-4">[4]</a></sup> They are not scorecards to blame an individual or Scrum Team.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Four common principles for a healthy measurement system</h2>
 
 			<h3 class="sub-point-1">1. Observe trends, not snapshots</h3>
 			<p>One Sprint missing the Sprint Goal, one release with defects, or one Retrospective with weak actions is not enough to conclude that a role or team is ineffective.</p>
@@ -249,9 +319,27 @@
 
 			<p>Scrum can make work more transparent. But sustainable value still depends on investment in capability, decision rights, technical quality, learning, and measurement discipline.</p>
 
+			<p>To read this series effectively, start with the question: <em>"What do I want to understand and improve in this system?"</em> rather than <em>"How can I use this framework to evaluate someone?"</em>. When an article mentions capability or individual development, the purpose is to support growth conversations, mentoring, staffing, and designing better working conditions; not to replace formal performance evaluation or one-sided management judgment.</p>
+
 			<blockquote>
 				<p>Scrum does not create a strong organization on behalf of people. It creates conditions where organizations can no longer hide the problems that prevent people from creating value.</p>
 			</blockquote>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">References</h2>
+
+			<ol class="outline-list">
+				<li id="ref-1">Schwaber, K. &amp; Sutherland, J. (2020). <em>The Scrum Guide: The Definitive Guide to Scrum</em>. The official source for Scrum on Scrum Team, accountabilities, Product Goal, Sprint Goal, Increment, and empiricism. <a href="https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf" rel="noopener noreferrer" target="_blank">Read the guide</a>.</li>
+
+				<li id="ref-2">Forsgren, N., Storey, M.-A., Maddila, C., Zimmermann, T., Houck, B. &amp; Butler, J. (2021). <em>The SPACE of Developer Productivity</em>, ACM Queue. The SPACE framework emphasizes that developer productivity is multidimensional: satisfaction and well-being, performance, activity, communication and collaboration, efficiency and flow. <a href="https://queue.acm.org/detail.cfm?id=3454124" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+
+				<li id="ref-3">Fowler, M. (2013). <em>An Appropriate Use of Metrics</em>. An article on the risks of local optimization and using metrics in ways that distort the goal of creating useful software. <a href="https://martinfowler.com/articles/useOfMetrics.html" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+
+				<li id="ref-4">Google Cloud / DORA (2020). <em>Using Four Keys metrics to measure DevOps performance</em>. Introduces four delivery metrics: deployment frequency, lead time for changes, change failure rate, and time to restore service. <a href="https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+			</ol>
+
+			<p>This reference list forms the foundation for this introduction. Deeper articles will add more specific sources for product discovery, psychological safety, team design, scaling, flow, and capability development.</p>
 		</section>
 
 		<section class="content-section">

@@ -5,6 +5,13 @@
 	<title>Scrum Team - Product Owner (PO)</title>
 	<link rel="stylesheet" href="../../../pages-styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Product Owner in Scrum: value direction, decision rights, product discovery, outcome, flow, decision quality, and measurement guardrails.">
+	<style>
+		sup a {
+			font-size: .8em;
+			text-decoration: none;
+		}
+	</style>
 </head>
 <body>
 
@@ -27,11 +34,56 @@
 
 			<p>A product does not fail because it lacks features.<br>It fails because it does not create real value.</p>
 
-			<p>According to the Scrum Guide, the Product Owner is accountable for maximizing product value by clearly understanding the Product Goal, market context, user needs, and priorities, then making that direction transparent to Developers.</p>
+			<p>According to the Scrum Guide, the Product Owner is accountable for maximizing product value by clearly understanding the Product Goal, market context, user needs, and priorities, then making that direction transparent to the Scrum Team. <sup><a href="#ref-1">[1]</a></sup></p>
 
 			<p>However, a practical question must be asked: what happens when the PO does not meet these expectations? What if direction is unclear, priorities are inconsistent, or value is misidentified?</p>
 
 			<p>In that case, should the development team continue executing requests passively, or should it also take responsibility for clarifying and protecting product value?</p>
+		</div>
+
+		<div class="sub-section">
+			<h3 class="sub-point-1">Decision-right: PO is accountable for value, but does not own every decision</h3>
+
+			<p>The Product Owner is accountable for maximizing product value. However, that does not mean the PO must single-handedly own product strategy, budget, pricing, architecture, staffing, or all customer knowledge. A PO can only fulfill this accountability when the organization clarifies which decisions belong to the PO, which belong to business leaders, and which require co-creation with Developers.</p>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Decision or Scope</th>
+						<th>PO Primary Accountability</th>
+						<th>Essential Collaboration</th>
+						<th>System Owner / Authority Outside Team</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Product Goal and Backlog Priority</td>
+						<td>Clarify objectives, trade-offs, and priority order.</td>
+						<td>Developers contribute feasibility, risk, solution options; Scrum Master supports transparency and empiricism.</td>
+						<td>Business owner / leadership provides strategy, market context, funding, and legal constraints.</td>
+					</tr>
+					<tr>
+						<td>Product Discovery and Assumption Validation</td>
+						<td>Define problems, desired outcomes, and which assumptions need testing.</td>
+						<td>Developers, UX, data, sales, support, and users contribute evidence.</td>
+						<td>Organization invests in customer access, data, research capability, and discovery time.</td>
+					</tr>
+					<tr>
+						<td>Technical Solution</td>
+						<td>Clarify product value, constraints, and trade-offs.</td>
+						<td>Developers hold primary accountability for turning ideas into quality Increments.</td>
+						<td>Architecture/platform owner addresses standards, platform constraints, or cross-team dependencies when needed.</td>
+					</tr>
+					<tr>
+						<td>Urgent Work Between Sprints</td>
+						<td>Clarify value and trade-offs with Product Goal/Sprint Goal.</td>
+						<td>Developers assess delivery impact; Scrum Master supports transparent mechanisms.</td>
+						<td>Manager or business owner decides when priority changes are strategic or mandatory.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>This distinction avoids two extremes: PO reduced to "backlog manager" with no real authority, or PO expected to be accountable for outcomes without strategy, budget, customer access, or corresponding decision rights.</p>
 		</div>
 
 		<div class="sub-section">
@@ -41,7 +93,7 @@
 
 			<p><strong>1) Passive execution.</strong> This is the most common response. The development team keeps accepting requests and operates like an "execution team," avoiding debate to preserve pace and stability. In the short term, sprints finish, velocity looks stable, and backlog items keep moving. In the long term, however, the product loses direction, value is not optimized, and team ownership fades.</p>
 
-			<p><strong>2) Pushback without structure.</strong> Some teams challenge PO decisions when they see problems. This is a positive signal because the team starts caring about real product value. But if pushback is emotional, data-poor, or unsupported by a clear mechanism, conflict grows, collaboration declines, and decisions become slower and less consistent.</p>
+			<p><strong>2) Unstructured pushback.</strong> Some teams challenge PO decisions when they see problems. This is a positive signal because the team starts caring about real product value. But if pushback is emotional, data-poor, or unsupported by a clear mechanism, conflict grows, collaboration declines, and decisions become slower and less consistent.</p>
 
 			<p><strong>3) Compensating for the PO role.</strong> In more mature teams, developers do more than challenge. They actively clarify value by questioning goals, proposing solutions, and even reprioritizing work themselves. This may help in the short term, but over time it creates role drift: the team gradually carries PO responsibilities while the PO loses strategic direction ownership.</p>
 		</div>
@@ -83,7 +135,7 @@
 
 			<p>Still, these indicators must be interpreted in context, not applied as a rigid formula.</p>
 
-			<p>There is no single "Scrum-standard KPI set" for PO performance. Instead of chasing one perfect number, organizations should return to foundational questions: does the team understand why this work matters, is what gets built actually used, and is the product moving closer to the Product Goal?</p>
+			<p>There is no single "Scrum-standard KPI set" for PO performance. Instead of chasing one perfect number, organizations should return to foundational questions: does the team understand why this work matters, is what gets built actually used, and is the product moving closer to the Product Goal? The Scrum Guide introduces Product Goal to create focus for the Scrum Team around a larger value objective.<sup><a href="#ref-1">[1]</a></sup></p>
 		</div>
 
 		<div class="sub-section">
@@ -97,103 +149,379 @@
 		</div>
 
 		<div class="sub-section">
-			<h3 class="sub-point-1">Practical PO measurement framework</h3>
+			<h3 class="sub-point-1">Practical PO observation framework: outcome, learning, flow, and decision quality</h3>
 
-			<p><strong>Principle</strong></p>
-			<ul>
-				<li>Do not measure how busy the PO is.</li>
-				<li>Measure whether the PO reduces uncertainty and creates value.</li>
+			<p>The goal of this framework is not to create a performance scorecard for the PO. It helps organizations see: whether the PO and Scrum Team are understanding the product better; whether decisions are increasingly evidence-based; and whether the system enables the PO to maximize value.</p>
+
+			<h4 class="sub-point-2">Four observation layers</h4>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Layer</th>
+						<th>Core Question</th>
+						<th>Observable Data or Evidence</th>
+						<th>Purpose of Use</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Outcome and Value</td>
+						<td>Is the change creating the intended impact for users, the business, or reducing risk?</td>
+						<td>Adoption, activation, retention, conversion, support demand, cost/risk reduction, user feedback.</td>
+						<td>Validate Product Goal and inform next investment choices.</td>
+					</tr>
+					<tr>
+						<td>Discovery and Learning</td>
+						<td>Is the PO reducing uncertainty before committing to large investments?</td>
+						<td>Problem framing, assumptions, discovery evidence, prototypes/spikes, experiments, post-release learning.</td>
+						<td>Avoid building large features based solely on opinion or authority.</td>
+					</tr>
+					<tr>
+						<td>Flow and Collaboration</td>
+						<td>Is the PO clearing the path or creating friction for the Scrum Team?</td>
+						<td>Backlog clarity, decision wait time, rework, scope churn, refinement quality, dependency visibility.</td>
+						<td>Improve how the PO, Developers, and stakeholders work together.</td>
+					</tr>
+					<tr>
+						<td>Decision Quality and Enablement</td>
+						<td>Does the PO make clear, consistent trade-offs with proper decision rights?</td>
+						<td>Priority rationale, decision latency, outcome linkage, stakeholder alignment, data and customer access.</td>
+						<td>Coach the PO and address organizational barriers.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h4 class="sub-point-2">1. Outcome and Value — Is the product moving closer to the Product Goal?</h4>
+
+			<p>Outcome is not only revenue. Depending on the product, value can be users completing tasks better, reduced processing time, reduced risk, increased reliability, reduced support demand, or new business capability. Evidence-Based Management recommends using Key Value Areas as "lenses" to observe value, risk, and innovation capability, rather than seeking one single metric.<sup><a href="#ref-2">[2]</a></sup></p>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Signal</th>
+						<th>How to Read It Correctly</th>
+						<th>Improvement Questions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Adoption / activation</td>
+						<td>Do not just ask how many users touch the feature; ask whether the right users are using it to solve the intended problem.</td>
+						<td>Is the feature easy to find, easy to understand, and does it truly address the pain point?</td>
+					</tr>
+					<tr>
+						<td>Outcome metric</td>
+						<td>Read the trend together with quality, cost, and user feedback; avoid optimizing a single metric in isolation.</td>
+						<td>When outcome improves, are we trading it off for defects, support burden, or operational cost?</td>
+					</tr>
+					<tr>
+						<td>Product Goal progress</td>
+						<td>Observe whether Product Goal actually influences priorities and Sprint Goals over time.</td>
+						<td>Does the backlog contain too many features unrelated to the Product Goal?</td>
+					</tr>
+					<tr>
+						<td>Post-release learning</td>
+						<td>Feature release is the beginning of learning, not the end of delivery.</td>
+						<td>Which assumptions proved true, false, or need adjustment after release?</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h4 class="sub-point-2">2. Discovery and Learning — Reduce uncertainty before committing</h4>
+
+			<p>The PO does not need to have all answers before Developers begin. But the PO needs to clarify the problem, desired outcome, assumptions being made, and how to test them. Effective product discovery invites Developers to participate early in assessing feasibility, risk, and alternative solutions, rather than simply handing down a feature specification to delivery.<sup><a href="#ref-3">[3]</a></sup></p>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Signal</th>
+						<th>How to Observe</th>
+						<th>Red Flags</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Problem clarity</td>
+						<td>Do important backlog items describe the user, the problem, the context, and expected outcome?</td>
+						<td>Items start with a pre-decided solution instead of stating what problem needs solving.</td>
+					</tr>
+					<tr>
+						<td>Assumption visibility</td>
+						<td>Are assumptions about users, behavior, market, feasibility, or viability made explicit?</td>
+						<td>The team debates solutions but does not know what is being assumed.</td>
+					</tr>
+					<tr>
+						<td>Experiment and early validation</td>
+						<td>Are prototypes, spikes, usability checks, feature flags, staged rollouts, or small releases used when appropriate?</td>
+						<td>The team builds large scope before collecting minimal evidence.</td>
+					</tr>
+					<tr>
+						<td>Learning loop</td>
+						<td>Does the PO and team review evidence after experiments/releases and adjust the backlog as needed?</td>
+						<td>Discovery only happens at the project start, not continuously from the market.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h4 class="sub-point-2">3. Flow and Collaboration — Is the PO clearing the path or creating bottlenecks?</h4>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Signal</th>
+						<th>How to Read It Correctly</th>
+						<th>Possible Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Backlog clarity</td>
+						<td>Do not count "ready" tickets; check whether important items have enough context for Developers to discuss, slice, and plan.</td>
+						<td>Goal-first refinement, add context, clarify acceptance and dependencies.</td>
+					</tr>
+					<tr>
+						<td>Decision wait time</td>
+						<td>Measure time work is blocked waiting for decisions, categorized by decision type and decision owner.</td>
+						<td>Delegate decision rights, set decision policies, or establish escalation paths.</td>
+					</tr>
+					<tr>
+						<td>Rework due to misunderstanding</td>
+						<td>Do not blame the PO or Developers; find gaps in discovery, refinement, feedback loops, or context changes.</td>
+						<td>Joint refinement, early validation, document assumptions, maintain a decision log.</td>
+					</tr>
+					<tr>
+						<td>Scope churn</td>
+						<td>Priority changes are not always bad; distinguish empiricism from whimsical changes.</td>
+						<td>Link changes to evidence, Product Goal, and clear trade-offs.</td>
+					</tr>
+					<tr>
+						<td>Stakeholder bypass</td>
+						<td>Observe when requests go directly to Developers or bypass the Product Backlog mid-Sprint.</td>
+						<td>Establish intake paths, clarify urgent-work policy, and protect the Sprint Goal.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h4 class="sub-point-2">4. Decision Quality and Enablement — Are decisions clear and properly authorized?</h4>
+
+			<p>Decision quality does not mean "decide fastest." A good decision fits the risk level, has a clear rationale, states the trade-offs explicitly, and includes a way to verify. When decision rights lie outside the PO, data should reveal this rather than evaluate the PO as though they have full authority.</p>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Signal</th>
+						<th>How to Observe</th>
+						<th>Red Flags</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Priority rationale</td>
+						<td>Can the PO explain the goal, evidence, trade-offs, and the conditions requiring a priority shift?</td>
+						<td>Priority only reflects who speaks loudest or unarticulated deadlines.</td>
+					</tr>
+					<tr>
+						<td>Decision latency</td>
+						<td>Decision speed should match the risk level and decision type, not pursue absolute speed.</td>
+						<td>Small decisions wait too long; large decisions change constantly without evidence.</td>
+					</tr>
+					<tr>
+						<td>Stakeholder alignment</td>
+						<td>How well do stakeholders understand the Product Goal, priority logic, and the mechanism for handling requests?</td>
+						<td>Stakeholders bypass the PO or constantly conflict over priorities.</td>
+					</tr>
+					<tr>
+						<td>Decision-right coverage</td>
+						<td>Does the PO have the authority and access needed: priority decisions, data, customer feedback, budget boundaries?</td>
+						<td>The PO is accountable for outcomes but lacks authority or information to match.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h4 class="sub-point-2">Product Owner Development Rubric</h4>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Level</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Developing</td>
+						<td>Primarily manages backlog and forwards requests; Product Goal, problem framing, and evidence do not consistently guide decisions.</td>
+					</tr>
+					<tr>
+						<td>Supported</td>
+						<td>Beginning to clarify outcomes, identify assumptions, and consult with Developers/stakeholders, but needs support to establish discovery rhythm and clear trade-offs.</td>
+					</tr>
+					<tr>
+						<td>Reliable</td>
+						<td>Uses Product Goal, evidence, and trade-offs to prioritize; collaborates well with Developers; creates feedback loops after release and is transparent about decisions needing escalation.</td>
+					</tr>
+					<tr>
+						<td>Multiplying</td>
+						<td>Not only leads the product effectively but also builds product thinking, discovery capability, and evidence-based decision-making in other teams or among stakeholders.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>This rubric serves coaching and capability development. It is not a performance score and should not be inferred from feature release count, velocity, or busyness.</p>
+
+			<h4 class="sub-point-2">Minimum viable Product Owner practice</h4>
+
+			<p>New teams do not need to build large dashboards. In the first 2–3 Sprints, the PO and Scrum Team can start with four simple practices:</p>
+
+			<ul class="outline-list">
+				<li>Each Sprint has a Sprint Goal clearly linked to the Product Goal or an assumption that needs testing.</li>
+				<li>Before Planning, important items are clarified using: problem, expected outcome, constraints, assumptions, and dependencies.</li>
+				<li>For each significant change, agree on at least one piece of evidence to check after release: adoption, feedback, error/support signals, or outcome metrics.</li>
+				<li>When priority changes, the PO articulates the evidence, trade-offs with current work, and who holds the decision right.</li>
 			</ul>
 
-			<p><strong>Framework structure (3 layers)</strong></p>
-			<ol>
-				<li>Outcome: Are we building the right thing?</li>
-				<li>Flow Efficiency: Is the PO slowing the team down?</li>
-				<li>Decision Quality: Is the PO thinking clearly?</li>
-			</ol>
+			<h4 class="sub-point-2">Guardrails against measurement abuse</h4>
 
-			<p><strong>Layer 1 - Outcome (40%): Is the PO choosing high-value problems?</strong></p>
-			<p><strong>Metrics</strong></p>
-			<ul>
-				<li><strong>Feature Adoption Rate:</strong> % of users actually using new features after release.</li>
-				<li><strong>User Impact:</strong> e.g., retention, complaints, conversion.</li>
-				<li><strong>Business Proxy:</strong> revenue, cost saving, usage frequency.</li>
-			</ul>
-			<p>Perfect data is not required; trend and direction are what matter.</p>
-			<p><strong>Scoring</strong></p>
-			<ul>
-				<li>Strong positive impact.</li>
-				<li>Neutral / unclear.</li>
-				<li>Negative / wasted.</li>
-			</ul>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Guardrail</th>
+						<th>How to Apply</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Do not reward-penalize using output</td>
+						<td>Do not use feature release count, items written, velocity, or deadline compliance as direct KPIs for the PO.</td>
+					</tr>
+					<tr>
+						<td>Do not solely attribute outcome to PO</td>
+						<td>Outcome is influenced by market, pricing, marketing, UX, sales, delivery capability, technical quality, and many factors outside the PO.</td>
+					</tr>
+					<tr>
+						<td>Evidence has context</td>
+						<td>Each metric needs a baseline, appropriate cohort/timeframe, and qualitative evidence from users/stakeholders when needed.</td>
+					</tr>
+					<tr>
+						<td>Right to explain and counter</td>
+						<td>The PO, Developers, and stakeholders should have a chance to present constraints, risks, and decision rights before conclusions are drawn.</td>
+					</tr>
+					<tr>
+						<td>Metrics lead to experiments</td>
+						<td>When a weak signal appears, the goal is to adjust the hypothesis or try the next experiment, not to find someone to blame.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-			<p><strong>Layer 2 - Flow Efficiency: Is the PO an enabler or a bottleneck?</strong></p>
-			<p><strong>Metrics</strong></p>
-			<ol>
-				<li><strong>Backlog Readiness Rate:</strong> % of items ready before sprint (clear AC, no ambiguity).</li>
-				<li><strong>Dev Clarification Interruptions:</strong> How often developers need clarification during the sprint. Low -> PO is clear. High -> PO is guessing / unclear.</li>
-				<li><strong>Rework Rate:</strong> % of work redone due to wrong requirements.</li>
-				<li><strong>Blocked Time Due to PO:</strong> Time spent waiting for PO decisions.</li>
-			</ol>
-			<p><strong>Scoring</strong></p>
-			<ul>
-				<li>Smooth flow.</li>
-				<li>Some friction.</li>
-				<li>Constant disruption.</li>
-			</ul>
+		<div class="sub-section">
+			<h3 class="sub-point-1">Illustration: Low adoption does not immediately mean the PO "chose wrong"</h3>
 
-			<p><strong>Layer 3 - Decision Quality: Is the PO thinking like a product owner, or just managing the backlog?</strong></p>
-			<p>Evaluate through observable behavior.</p>
-			<ol>
-				<li><strong>Decision Latency:</strong> How long the PO takes to decide when needed. Fast when low risk. Careful when high impact.</li>
-				<li><strong>Consistency:</strong> Does the PO change direction frequently? High churn = weak thinking.</li>
-				<li><strong>Trade-off Thinking:</strong> Can the PO explain: Why this over that? What are we sacrificing?</li>
-				<li><strong>Problem Framing:</strong> Does the PO define the problem clearly, or jump straight to a solution?</li>
-			</ol>
-			<p><strong>Scoring</strong></p>
-			<ul>
-				<li>Clear, fast, logical.</li>
-				<li>Sometimes unclear.</li>
-				<li>Random / reactive.</li>
-			</ul>
+			<p>A feature is released but adoption is low one month later. The quick conclusion: the PO misread the need. A better observation separates the hypotheses:</p>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Signal</th>
+						<th>Hypothesis to Test</th>
+						<th>Appropriate Action</th>
+						<th>Co-Accountability</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Users unaware feature exists</td>
+						<td>Discoverability or communication insufficient.</td>
+						<td>Check entry point, onboarding, in-product guidance, and messaging.</td>
+						<td>PO + UX + Marketing/Support</td>
+					</tr>
+					<tr>
+						<td>Users try but do not return</td>
+						<td>Solution does not address the pain point or quality/UX is insufficient.</td>
+						<td>Interview users, analyze funnels, check errors/performance.</td>
+						<td>PO + Developers + UX</td>
+					</tr>
+					<tr>
+						<td>Only one cohort is not using</td>
+						<td>Target segment or rollout strategy needs adjustment.</td>
+						<td>Analyze cohorts, adjust hypothesis, or scope rollout differently.</td>
+						<td>PO + Data/Business owner</td>
+					</tr>
+					<tr>
+						<td>Outcome correct but operational cost high</td>
+						<td>Short-term value is creating sustainability risk.</td>
+						<td>Add technical/operational cost to trade-offs and backlog.</td>
+						<td>PO + Developers + Manager</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>This case helps the PO and organization learn from evidence. It avoids treating adoption as an isolated verdict removed from product context, delivery quality, and user access capability.</p>
 		</div>
 
 		<div class="sub-section">
 			<h3 class="sub-point-1">From measurement to decision</h3>
 
-			<p>Based on signals across outcome, flow efficiency, and decision quality, organizations usually face three situations:</p>
+			<p>Based on signals about outcomes, discovery, flow, and decision quality, organizations typically face three scenarios:</p>
+
 			<ul>
-				<li><strong>The PO creates no meaningful outcome and also reduces team effectiveness:</strong> This is no longer a training issue. Consider changing role fit or responsibility scope.</li>
-				<li><strong>The PO has no clear outcome yet, but team flow is healthy and decision quality is high:</strong> The issue may be strategy or context. Continue investing and supporting the PO.</li>
-				<li><strong>The PO achieves some outcomes but hurts flow or causes high rework:</strong> This is a danger signal: short-term wins with long-term cost. Adjust the way of working before scaling.</li>
+				<li><strong>Weak evidence, poor flow, and low decision quality:</strong> First clarify the root cause: capability gap, lack of customer/data access, insufficient decision rights, unclear strategy, or poor collaboration. Then choose coaching, system support, scope adjustment, or role change when needed.</li>
+
+				<li><strong>Outcome unclear, but discovery, flow, and decisions are improving:</strong> Continue investing, set learning goals, and build evidence quality before drawing conclusions about effectiveness.</li>
+
+				<li><strong>Short-term outcomes look good but flow, quality, or sustainability decline:</strong> Adjust discovery, prioritization, or trade-off practices before scaling the investment.</li>
 			</ul>
 
-			<p>From this angle, measurement is no longer about scoring people. It answers one question: should we keep trusting the current way of working?</p>
+			<p>From this angle, measurement is no longer about "scoring." It answers one question: should we continue trusting the current way of working?</p>
 
-			<p>Organizations rarely lack Product Owners.<br>What they often lack is a system clear enough to identify who is truly creating value.</p>
+			<p>An organization rarely lacks Product Owners.<br>It often lacks a system clear enough to recognize who is truly creating value.</p>
+		</div>
+
+		<div class="sub-section">
+			<h3 class="sub-point-1">References</h3>
+
+			<ol class="outline-list">
+				<li id="ref-1">Schwaber, K. &amp; Sutherland, J. (2020). <em>The Scrum Guide: The Definitive Guide to Scrum</em>. The official source on the Product Owner's accountability to maximize product value and on Product Goal. <a href="https://scrumguides.org/scrum-guide.html" rel="noopener noreferrer" target="_blank">Read the guide</a>.</li>
+
+				<li id="ref-2">Scrum.org (2024). <em>Evidence-Based Management Guide: Improving Value Delivery Under Conditions of Uncertainty</em>. A framework using evidence, experimentation, and feedback to improve outcomes, reduce risks, and optimize investments. <a href="https://www.scrum.org/resources/evidence-based-management-guide" rel="noopener noreferrer" target="_blank">Read the guide</a>.</li>
+
+				<li id="ref-3">Cagan, M. (2018). <em>Empowered Product Teams</em>, Silicon Valley Product Group. Reference on product discovery and empowering product teams with problems to solve, rather than only handing down feature specifications. <a href="https://www.svpg.com/empowered-product-teams/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+
+				<li id="ref-4">Cagan, M. (2019). <em>Product vs Feature Teams</em>, Silicon Valley Product Group. Distinction between feature teams and empowered product teams, and the Product Owner's role in value, viability, customer understanding, and business context. <a href="https://www.svpg.com/product-vs-feature-teams/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+
+				<li id="ref-5">Cagan, M. (2020). <em>Product Strategy – Overview</em>, Silicon Valley Product Group. Reference on product strategy as the way to choose difficult problems for empowered product teams to solve. <a href="https://www.svpg.com/product-strategy-overview/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+			</ol>
+
+			<p>These sources provide the foundation for understanding outcomes, discovery, and decision rights. They do not replace product context, real data, or professional judgment in your organization.</p>
 		</div>
 
 		<div class="sub-section">
 			<h3 class="sub-point-1">Summary outline</h3>
+
 			<ul>
-				<li>In Scrum, the PO is accountable for maximizing product value.</li>
-				<li>When PO performance is weak, teams often respond in three ways: passive execution, unstructured pushback, or compensating for the PO role.</li>
-				<li>All three responses carry long-term costs and do not resolve the PO capability root cause.</li>
-				<li>The real gap is organizational capability and operating mechanisms beyond Scrum.</li>
-				<li>PO training matters, but it must be paired with clear effectiveness measurement.</li>
-				<li>Avoid output-heavy indicators such as task count, velocity, or requirement-document detail.</li>
+				<li>The PO is accountable for maximizing product value in Scrum.</li>
+				<li>When the PO underperforms, teams typically respond three ways: passive execution, unstructured pushback, or compensating for the role.</li>
+				<li>All three responses carry long-term costs and do not address the root PO capability issue.</li>
+				<li>The real gap lies in organizational capability and operating mechanisms beyond Scrum.</li>
+				<li>PO training is necessary, but it must be paired with clear effectiveness measurement.</li>
+				<li>Avoid output-heavy indicators like task count, velocity, or requirement document detail.</li>
 				<li>Prefer value-oriented signals: Product Goal clarity, prioritization consistency, idea-to-impact time, and real usage feedback.</li>
-				<li>The practical PO framework has three layers: Outcome (40%), Flow Efficiency, and Decision Quality.</li>
+				<li>The practical PO framework has four observation layers: Outcome and Value, Discovery and Learning, Flow and Collaboration, and Decision Quality.</li>
 				<li>The Outcome layer asks whether the PO selects the right problems and creates user/business impact.</li>
-				<li>The Flow Efficiency layer asks whether the PO enables flow or creates bottlenecks for development.</li>
-				<li>The Decision Quality layer asks whether the PO demonstrates product thinking, consistency, and trade-off reasoning.</li>
-				<li>From measurement to decision: based on signal combinations, organizations should decide whether to invest further, adjust ways of working, or change role/scope.</li>
-				<li>Measurement must support action-oriented decisions, not just formal scoring.</li>
+				<li>The Discovery and Learning layer asks whether the PO reduces uncertainty before large commitments.</li>
+				<li>The Flow and Collaboration layer asks whether the PO clears the path or creates bottlenecks for the team.</li>
+				<li>The Decision Quality and Enablement layer asks whether decisions are clear, consistent, and properly authorized.</li>
+				<li>The Product Owner Development Rubric distinguishes between Developing, Supported, Reliable, and Multiplying levels.</li>
+				<li>Minimum viable PO practice: Sprint Goal clarity, pre-refinement, post-release evidence agreement, and transparent priority changes.</li>
+				<li>From measurement to decision: based on signal combinations, organizations decide whether to invest further, adjust ways of working, or change role/scope.</li>
+				<li>Measurement must serve action-oriented decisions, not formal scoring.</li>
 			</ul>
 		</div>
 
 		<div class="sub-section">
-			<h3 class="sub-point-1">Open questions for Product Owner</h3>
+			<h3 class="sub-point-1">Open questions for Product Owners</h3>
+
 			<ul class="outline-list">
 				<li>What should a Product Owner do when a stakeholder requests a specific solution, but the underlying user problem has not been clarified yet?</li>
 
@@ -250,7 +578,6 @@
 				<li>How should a Product Owner escalate when stakeholder conflicts cannot be resolved within the Scrum Team?</li>
 
 				<li>How can a Product Owner know they are truly maximizing product value, rather than simply becoming a more efficient backlog manager?</li>
-
 			</ul>
 		</div>
 
@@ -296,30 +623,58 @@
 │
 ├─ 7) Practical PO measurement framework
 │  ├─ Principle: do not measure busyness, measure uncertainty reduction and value creation
-│  ├─ Layer 1 (Outcome - 40%)
-│  │  ├─ Feature Adoption Rate
-│  │  ├─ User Impact
-│  │  └─ Business Proxy
-│  ├─ Layer 2 (Flow Efficiency)
-│  │  ├─ Backlog Readiness Rate
-│  │  ├─ Dev Clarification Interruptions
-│  │  ├─ Rework Rate
-│  │  └─ Blocked Time Due to PO
-│  └─ Layer 3 (Decision Quality)
-│     ├─ Decision Latency
-│     ├─ Consistency
-│     ├─ Trade-off Thinking
-│     └─ Problem Framing
+│  ├─ Layer 1 (Outcome and Value)
+│  │  ├─ Adoption and activation
+│  │  ├─ Outcome metrics
+│  │  ├─ Product Goal progress
+│  │  └─ Post-release learning
+│  ├─ Layer 2 (Discovery and Learning)
+│  │  ├─ Problem clarity
+│  │  ├─ Assumption visibility
+│  │  ├─ Experiments and early validation
+│  │  └─ Learning loop
+│  ├─ Layer 3 (Flow and Collaboration)
+│  │  ├─ Backlog clarity
+│  │  ├─ Decision wait time
+│  │  ├─ Rework
+│  │  ├─ Scope churn
+│  │  └─ Stakeholder bypass
+│  └─ Layer 4 (Decision Quality and Enablement)
+│     ├─ Priority rationale
+│     ├─ Decision latency
+│     ├─ Stakeholder alignment
+│     └─ Decision-right coverage
 │
-├─ 8) From measurement to decision
-│  ├─ No outcome + reduced team effectiveness
-│  │  └─ Consider role/scope change
-│  ├─ Unclear outcome + healthy flow + high-quality decisions
-│  │  └─ Continue investing and supporting
-│  └─ Some outcomes + weak flow + high rework
-│     └─ Adjust ways of working before scaling
+├─ 8) Product Owner Development Rubric
+│  ├─ Developing: backlog management focused, inconsistent guidance
+│  ├─ Supported: beginning to clarify outcomes, needs support
+│  ├─ Reliable: uses evidence, collaborates well, transparent decisions
+│  └─ Multiplying: builds capability in other teams
 │
-└─ 9) Action principle
+├─ 9) Minimum viable PO practice
+│  ├─ Sprint Goal clarity
+│  ├─ Pre-refinement item preparation
+│  ├─ Post-release evidence agreement
+│  └─ Transparent priority change rationale
+│
+├─ 10) Guardrails against measurement abuse
+│  ├─ No direct reward-penalize using output
+│  ├─ Do not solely attribute outcome to PO
+│  ├─ Evidence has context
+│  ├─ Right to explain and counter
+│  └─ Metrics lead to experiments
+│
+├─ 11) Illustration: Low adoption
+│  ├─ Test multiple hypotheses before concluding PO was wrong
+│  ├─ Discoverability, quality, targeting, and cost all play roles
+│  └─ Co-accountability across functions
+│
+├─ 12) From measurement to decision
+│  ├─ Weak evidence + poor flow + low quality → address root cause or change role
+│  ├─ Unclear outcome + improving discovery + healthy flow → continue investing
+│  └─ Good outcomes + declining flow/quality → adjust approach before scaling
+│
+└─ 13) Action principle
    ├─ No single universal Scrum KPI set for PO
    ├─ Measure in context with the right questions
    └─ Measurement must drive decisions: invest, adjust, or change

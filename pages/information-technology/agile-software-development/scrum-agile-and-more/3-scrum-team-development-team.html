@@ -5,6 +5,13 @@
     <title>3. Scrum Team - Developers - My Personal Planet</title>
     <link rel="stylesheet" href="../../../pages-styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Developers in Scrum: capability, technical sustainability, value collaboration, flow reliability, ownership, measurement guardrails, and the conditions for sustainable Increment delivery.">
+    <style>
+        sup a {
+            font-size: .8em;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <article class="content-article">
@@ -77,7 +84,7 @@
             <p>When value becomes central, supporting Developers no longer depends on one manager. It becomes a shared system responsibility.</p>
             <p>Then the team is no longer dragged by output pressure, but guided by the meaning of what they build.</p>
             <h3 class="sub-point-1">Principle 3: Design measurement to shape the right behavior</h3>
-            <p>How an organization measures determines how teams behave.</p>
+            <p>How an organization measures determines how teams behave. <sup><a href="#ref-3">[3]</a></sup></p>
             <p>In other words, measurement does not just reflect behavior. It actively creates behavior.</p>
             <p>When performance is measured by completed work count, Developers optimize for more completion, not more value.</p>
             <p>So the measurement system should not focus on "How much did Developers do?" It should focus on "Did what was built actually create value?"</p>
@@ -91,7 +98,7 @@
         <section class="content-section">
             <h2 class="main-point">Developer effectiveness observation system</h2>
             <p>Organizations need to observe Developer effectiveness, but should not seek one simple score to decide who is good and who is not.</p>
-            <p>In Scrum, an Increment is a collaborative result. Change quality does not come from lines of code, closed tickets, or pull request volume alone. It depends on problem clarity, technical decision quality, collaboration with Product Owner, system stability, cross-team dependencies, and the working conditions created by the organization.</p>
+            <p>In Scrum, an Increment is a collaborative result. <sup><a href="#ref-1">[1]</a></sup> Change quality does not come from lines of code, closed tickets, or pull request volume alone. It depends on problem clarity, technical decision quality, collaboration with Product Owner, system stability, cross-team dependencies, and the working conditions created by the organization.</p>
             <p>So the goal of an observation system is not to answer:</p>
             <blockquote><p>Which Developer works the most?</p></blockquote>
             <p>It is to answer:</p>
@@ -120,7 +127,7 @@
             <p>Velocity, ticket count, pull requests, and working hours can be useful reference data. But when they become primary targets, they distort behavior and push Developers toward "doing more" instead of "creating better value."</p>
 
             <h3 class="sub-point-1">Developer effectiveness framework</h3>
-            <p>Developer effectiveness can be observed through five dimensions: <strong>Capability</strong>, <strong>Technical Sustainability</strong>, <strong>Value Collaboration</strong>, <strong>Flow Reliability</strong>, and <strong>Ownership and Improvement</strong>.</p>
+            <p>Developer effectiveness can be observed through five dimensions: <strong>Capability</strong>, <strong>Technical Sustainability</strong>, <strong>Value Collaboration</strong>, <strong>Flow Reliability</strong>, and <strong>Ownership and Improvement</strong>. This keeps the view multidimensional instead of reducing productivity to one number. <sup><a href="#ref-2">[2]</a></sup></p>
             <p>These five dimensions should not be collapsed into one "performance score." They should be shown as a team capability and health profile.</p>
             <table class="content-table">
                 <thead><tr><th>Dimension</th><th>Core Question</th><th>Observable Data</th><th>Use Objective</th></tr></thead>
@@ -205,7 +212,7 @@
                     <tr><td>Dependency load</td><td>Number of external dependencies directly affecting Sprint Goal</td><td>Team lacks control over its own delivery</td></tr>
                 </tbody>
             </table>
-            <p>When flow worsens, organizations should not ask, "How can Developers go faster?" The better question is: "What in the system is slowing Developers down, interrupting them, or preventing sustainable completion?"</p>
+            <p>When flow worsens, organizations should not ask, "How can Developers go faster?" The better question is: "What in the system is slowing Developers down, interrupting them, or preventing sustainable completion?" <sup><a href="#ref-4">[4]</a></sup></p>
             <p>For example, rising spillover may require better refinement and slicing; rising blocked time may require better decision paths; rising unplanned work may require investment in quality, observability, or reserve capacity; rising dependencies may require boundary, ownership, or technical-roadmap changes.</p>
 
             <h3 class="sub-point-1">5. Ownership and Improvement</h3>
@@ -285,6 +292,54 @@
             <p>If flow is broken by intervention and dependency, the organization should fix systemic causes instead of adding pressure on Developers.</p>
             <p>This article does not go deep into Definition of Done, Sprint Goal, or Product Goal, because those are specific mechanisms in Scrum flow. The focus here is foundational: do Developers have enough capability and autonomy for those mechanisms to work effectively?</p>
             <p>When capability, autonomy, value, and flow are observed properly, Scrum is no longer only a sequence of ceremonies. It becomes a system that helps Developers create sustainable value.</p>
+        </section>
+
+        <section class="content-section">
+            <h2 class="main-point">Illustrative example: when spillover is not just a speed problem</h2>
+            <p>A team keeps carrying work into the next Sprint. A shallow response would be to ask Developers to estimate more carefully or increase pressure to finish. When viewed through this framework, the team finds three facts: Product Backlog items often enter the Sprint before business decisions are fully made; many items get blocked while waiting for another team's API; and an older set of defects consumes a meaningful share of capacity.</p>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Signal</th>
+                        <th>Hypothesis</th>
+                        <th>Appropriate response</th>
+                        <th>Owner with authority to act</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Spillover increases</td>
+                        <td>Items are too large or refinement is not sufficient</td>
+                        <td>Slice smaller, clarify acceptance, and confirm dependency before Sprint Planning</td>
+                        <td>PO + Developers</td>
+                    </tr>
+                    <tr>
+                        <td>Blocked time increases</td>
+                        <td>Dependency lacks a clear commitment mechanism</td>
+                        <td>Escalate ownership, agree on interface contract, and define response timing</td>
+                        <td>Scrum Master + Manager / System Owner</td>
+                    </tr>
+                    <tr>
+                        <td>Rework increases</td>
+                        <td>Old defects and missing test automation are consuming capacity</td>
+                        <td>Reserve capacity for root-cause fixes, automation, and observability</td>
+                        <td>Developers + Manager</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>In this case, spillover is not used to conclude that the team is simply “slow.” It is a signal that reveals backlog quality, dependency, and technical sustainability issues that Developers alone cannot fully solve.</p>
+        </section>
+
+        <section class="content-section">
+            <h2 class="main-point">References</h2>
+            <ol class="outline-list">
+                <li id="ref-1">Schwaber, K. &amp; Sutherland, J. (2020). <em>The Scrum Guide: The Definitive Guide to Scrum</em>. The official source for Scrum Team accountability and the shared responsibility to create a valuable Increment every Sprint. <a href="https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf" rel="noopener noreferrer" target="_blank">Read the guide</a>.</li>
+                <li id="ref-2">Forsgren, N., Storey, M.-A., Maddila, C., Zimmermann, T., Houck, B. &amp; Butler, J. (2021). <em>The SPACE of Developer Productivity</em>, ACM Queue. A multidimensional model of developer productivity: satisfaction and well-being, performance, activity, communication and collaboration, efficiency and flow. <a href="https://queue.acm.org/detail.cfm?id=3454124" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-3">Fowler, M. (2013). <em>An Appropriate Use of Metrics</em>. Explains how management metrics can create dysfunction when they replace context-aware judgment. <a href="https://martinfowler.com/articles/useOfMetrics.html" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-4">Google Cloud / DORA (2020). <em>Using Four Keys metrics to measure DevOps performance</em>. Introduces deployment frequency, lead time for changes, change failure rate, and time to restore service as signals of software delivery performance. <a href="https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-5">Fowler, M. (2021). <em>Maximizing Developer Effectiveness</em>. Argues that organizations should focus on effective engineering environments rather than trying to identify “underperformers” from output measures such as lines of code or feature output. <a href="https://martinfowler.com/articles/developer-effectiveness.html" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+            </ol>
+            <p>These sources clarify the principles behind the article without turning it into a mechanical formula. Each team still needs to interpret data in its product context, architecture, operational risk, and organizational conditions.</p>
         </section>
 
         <section class="content-section">

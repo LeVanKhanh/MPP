@@ -5,6 +5,13 @@
 	<title>4. Developers - Individual Capability Observation - My Personal Planet</title>
 	<link rel="stylesheet" href="../../../pages-styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Developers in Scrum: evidence-based growth rubric, guardrails against ranking, calibration, coaching, and the balance between individual effectiveness and Scrum Team collaboration.">
+	<style>
+		sup a {
+			font-size: .8em;
+			text-decoration: none;
+		}
+	</style>
 </head>
 <body>
 	<article class="content-article">
@@ -294,95 +301,201 @@
 		</section>
 
 		<section class="content-section">
-			<h2 class="main-point">Recommended scoring approach</h2>
-			<p>Do not calculate scores mechanically. Weights can be used to guide discussion:</p>
-
+			<h2 class="main-point">How to summarize the evaluation: a development profile, not a total score</h2>
+			<p>Do not add the six capability groups into one number, do not force fixed weights, and do not require every organization to use the same level. A single total score can hide important strengths, create a false sense of precision, and encourage people to optimize the rubric instead of creating value.</p>
 			<table class="content-table">
 				<thead>
 					<tr>
-						<th>Capability group</th>
-						<th>Suggested weight</th>
+						<th>Component</th>
+						<th>What to record</th>
+						<th>Purpose</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr><td>Delivery Quality &amp; Execution</td><td>20%</td></tr>
-					<tr><td>Problem Solving &amp; Technical Judgment</td><td>20%</td></tr>
-					<tr><td>Collaboration &amp; Team Enablement</td><td>15%</td></tr>
-					<tr><td>Ownership &amp; Product Mindset</td><td>15%</td></tr>
-					<tr><td>Learning Agility &amp; Growth</td><td>10%</td></tr>
-					<tr><td>Sustainable Impact</td><td>20%</td></tr>
+					<tr>
+						<td>Current scope</td>
+						<td>What type of work is this person handling, and with what level of independence, risk, and impact?</td>
+						<td>Clarify expectations appropriate to the current role or level.</td>
+					</tr>
+					<tr>
+						<td>Notable evidence</td>
+						<td>2-3 work samples with context: delivery, design, incident, collaboration, improvement, or mentoring.</td>
+						<td>Reduce halo effect and avoid impression-based evaluation.</td>
+					</tr>
+					<tr>
+						<td>Strengths worth scaling</td>
+						<td>Which capability is already helping the team or system become better?</td>
+						<td>Design opportunities for broader leverage.</td>
+					</tr>
+					<tr>
+						<td>Priority gaps</td>
+						<td>One or two capabilities that limit the next scope, and the related cause or condition.</td>
+						<td>Choose realistic development goals instead of a long improvement list.</td>
+					</tr>
+					<tr>
+						<td>System support</td>
+						<td>Mentoring, pairing, training, staffing, access to domain, platform or tooling, or decision rights.</td>
+						<td>Avoid putting all responsibility for development on the individual.</td>
+					</tr>
+					<tr>
+						<td>Review milestone</td>
+						<td>Which behavior or evidence should show progress in 3-6 months?</td>
+						<td>Turn feedback into a testable learning loop.</td>
+					</tr>
 				</tbody>
 			</table>
+			<blockquote>
+				<p>A good conclusion is not “how many points does this person have?” It is “what scope is this person operating in, what evidence supports that, and what conditions will help them grow further?”</p>
+			</blockquote>
+		</section>
 
-			<p>Total score should remain a secondary indicator. The primary conclusion should be based on:</p>
-			<ul class="outline-list">
-				<li>Clear strengths.</li>
-				<li>Most important capability gaps.</li>
-				<li>Fit with current level expectations.</li>
-				<li>Concrete work evidence.</li>
-				<li>Development goals for the next 3-6 months.</li>
-			</ul>
-
-			<hr>
+		<section class="content-section">
+			<h2 class="main-point">Illustrative example: performance issue or system issue?</h2>
+			<p>A Developer repeatedly delivers late and needs senior support. The quick conclusion is weak capability. The evidence profile needs more inspection: is the work concentrated in a legacy area only one person understands; are requirements changing repeatedly; is the test environment stable; did the person receive onboarding, pairing, and a suitable scope?</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Evidence</th>
+						<th>Hypothesis</th>
+						<th>Appropriate action</th>
+						<th>Owner</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Work is slow only in one legacy module</td>
+						<td>Knowledge concentration and missing documentation, not just individual capability.</td>
+						<td>Pairing, documentation, lower key-person dependency, and better scope slicing.</td>
+						<td>Team + Tech Lead / Manager</td>
+					</tr>
+					<tr>
+						<td>Rework rises after requirements change during the Sprint</td>
+						<td>Discovery or decision rights are weak, so the issue cannot be reduced to execution alone.</td>
+						<td>Joint refinement, decision log, and a clearer urgent-work policy.</td>
+						<td>PO + Developers + Scrum Master</td>
+					</tr>
+					<tr>
+						<td>The person receives feedback well and improves after pairing</td>
+						<td>There is an active growth trajectory.</td>
+						<td>Keep the development goal, expand scope gradually, and review evidence after one quarter.</td>
+						<td>Individual + Manager</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>This example does not deny personal responsibility. It makes sure feedback and development are grounded in evidence, while also forcing the organization to address conditions that the individual cannot change alone.</p>
 		</section>
 
 		<section class="content-section">
 			<h2 class="main-point">Evaluation mechanisms to reduce bias</h2>
-
 			<div class="sub-section">
-				<h3 class="sub-point-1">1. Evidence-based evaluation</h3>
+				<h3 class="sub-point-1">1. Evaluate from evidence</h3>
 				<p>Each dimension should include at least 2-3 concrete examples: PRs, features, incidents, designs, peer feedback, delivery metrics, or mentoring activity.</p>
 			</div>
-
 			<div class="sub-section">
-				<h3 class="sub-point-1">2. Do not evaluate by output alone</h3>
+				<h3 class="sub-point-1">2. Do not evaluate by output only</h3>
 				<p>Do not use ticket count, story points, commits, lines of code, or working hours as individual KPIs.</p>
 			</div>
-
 			<div class="sub-section">
 				<h3 class="sub-point-1">3. Calibrate across managers or technical leaders</h3>
 				<p>The same "Level 3" should mean the same thing across teams. Without calibration, each manager applies a private standard.</p>
 			</div>
-
 			<div class="sub-section">
-				<h3 class="sub-point-1">4. Separate performance and potential evaluation</h3>
+				<h3 class="sub-point-1">4. Separate performance and potential</h3>
 				<p>Someone may deliver strongly in current scope but not be ready for broader scope yet. Another person may be growing fast but has had limited opportunities to demonstrate it.</p>
 			</div>
-
 			<div class="sub-section">
 				<h3 class="sub-point-1">5. Evaluate by trend, not one Sprint</h3>
-				<p>Use at least one quarter or 2-3 representative Sprints, especially for roles operating in complex systems.</p>
+				<p>Use enough time to collect multiple work samples and to observe a feedback-improvement cycle; for most environments, one quarter is a reasonable reference point. Two or three Sprints are useful for a small experiment, but not enough to conclude individual capability.</p>
 			</div>
-
-			<hr>
+			<div class="sub-section">
+				<h3 class="sub-point-1">6. Guardrails against misuse</h3>
+				<ul class="outline-list">
+					<li>Do not use this rubric as an automatic mechanism for pay, bonus, discipline, transfer, or termination decisions.</li>
+					<li>Do not use a team delivery dashboard to infer individual performance in a one-way manner.</li>
+					<li>Do not ask individuals to prove capability through overtime, heroics, or always taking the hardest work without support.</li>
+					<li>Do not treat peer feedback as a popularity vote; feedback must include examples, context, and fair dialogue.</li>
+					<li>When evidence shows the barrier is staffing, management, policy, architecture, or platform, the action must have a matching system owner.</li>
+				</ul>
+				<p>Using metrics without context can create dysfunctions, because people change behavior to optimize the number rather than the real goal. <sup><a href="#ref-3">[3]</a></sup> Managers therefore need to check the side effects of the evaluation mechanism itself, not only the outcome for the employee.</p>
+			</div>
+			<hr />
 		</section>
 
 		<section class="content-section">
-			<h2 class="main-point">Individual evaluation result template</h2>
+			<h2 class="main-point">References</h2>
+			<ol class="outline-list">
+				<li id="ref-1">Schwaber, K. &amp; Sutherland, J. (2020). <em>The Scrum Guide: The Definitive Guide to Scrum</em>. The official source on Scrum Team self-management and the shared responsibility to create a valuable Increment. <a href="https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf" rel="noopener noreferrer" target="_blank">Read the guide</a>.</li>
+				<li id="ref-2">Forsgren, N., Storey, M.-A., Maddila, C., Zimmermann, T., Houck, B. &amp; Butler, J. (2021). <em>The SPACE of Developer Productivity</em>, ACM Queue. A multidimensional framework for productivity: satisfaction and well-being, performance, activity, communication and collaboration, efficiency and flow. <a href="https://queue.acm.org/detail.cfm?id=3454124" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+				<li id="ref-3">Fowler, M. (2013). <em>An Appropriate Use of Metrics</em>. An analysis of the risks when management uses metrics to control, rank, or replace context-aware judgment. <a href="https://martinfowler.com/articles/useOfMetrics.html" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+				<li id="ref-4">Noda, A. &amp; Cochran, T. (2024). <em>Measuring Developer Productivity via Humans</em>. Argues for combining qualitative data from developers with system data to better understand productivity and friction. <a href="https://martinfowler.com/articles/measuring-developer-productivity-humans.html" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+				<li id="ref-5">Edmondson, A. (1999). <em>Psychological Safety and Learning Behavior in Work Teams</em>. Foundational research on psychological safety and learning behavior in teams. <a href="https://dash.harvard.edu/entities/publication/13a7b031-0fdd-45ec-a7e0-2b80e2bc679f" rel="noopener noreferrer" target="_blank">Read the research</a>.</li>
+			</ol>
+			<p>These sources provide reference principles. The framework still needs to be adjusted to the organization’s role model, career ladder, product, complexity level, and HR policy.</p>
+		</section>
 
+		<section class="content-section">
+			<h2 class="main-point">Individual development profile template</h2>
 			<table class="content-table">
 				<thead>
 					<tr>
-						<th>Capability</th>
-						<th>Score</th>
-						<th>Key evidence</th>
-						<th>Development action</th>
+						<th>Capability group</th>
+						<th>Current scope / development level</th>
+						<th>Contextual evidence</th>
+						<th>Strength or gap</th>
+						<th>Development action and support needed</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr><td>Delivery Quality &amp; Execution</td><td></td><td></td><td></td></tr>
-					<tr><td>Problem Solving &amp; Technical Judgment</td><td></td><td></td><td></td></tr>
-					<tr><td>Collaboration &amp; Team Enablement</td><td></td><td></td><td></td></tr>
-					<tr><td>Ownership &amp; Product Mindset</td><td></td><td></td><td></td></tr>
-					<tr><td>Learning Agility &amp; Growth</td><td></td><td></td><td></td></tr>
-					<tr><td>Sustainable Impact</td><td></td><td></td><td></td></tr>
+					<tr>
+						<td>Delivery Quality &amp; Execution</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Problem Solving &amp; Technical Judgment</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Collaboration &amp; Team Enablement</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Ownership &amp; Product Mindset</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Learning Agility &amp; Growth</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Sustainable Impact</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
 				</tbody>
 			</table>
-
-			<h3 class="sub-point-1"><strong>Key strengths:</strong></h3>
-			<h3 class="sub-point-1"><strong>Priority capability gaps:</strong></h3>
-			<h3 class="sub-point-1"><strong>3-6 month growth goals:</strong></h3>
+			<h3 class="sub-point-1"><strong>Current scope and suitable expectations:</strong></h3>
+			<h3 class="sub-point-1"><strong>Strengths worth scaling further:</strong></h3>
+			<h3 class="sub-point-1"><strong>One or two priority gaps:</strong></h3>
+			<h3 class="sub-point-1"><strong>3-6 month development goals and expected evidence:</strong></h3>
 			<h3 class="sub-point-1"><strong>Support needed from Manager / Team / Organization:</strong></h3>
+			<h3 class="sub-point-1"><strong>Review date and follow-up owner:</strong></h3>
 		</section>
 	</article>
 

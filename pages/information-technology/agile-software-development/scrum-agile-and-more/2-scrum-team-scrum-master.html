@@ -5,6 +5,13 @@
 	<title>Scrum Team - Scrum Master</title>
 	<link rel="stylesheet" href="../../../pages-styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Scrum Master in Scrum: coaching, self-management, goal orientation, impediment removal, continuous improvement, organizational enablement, and measurement guardrails.">
+	<style>
+		sup a {
+			font-size: .8em;
+			text-decoration: none;
+		}
+	</style>
 </head>
 <body>
 
@@ -107,7 +114,43 @@
 		</div>
 
 		<div class="sub-section">
-			<h3 class="sub-point-1">Scrum Master effectiveness observation system</h3>
+			<h3 class="sub-point-1">Three layers of observation: Scrum Master, Scrum Team, and organizational system</h3>
+
+			<p>Evaluating the Scrum Master requires distinguishing between the capability of the role holder, the maturity of the Scrum Team, and the enabling conditions the organization provides. If these layers get mixed, organizations easily blame all delivery problems on the Scrum Master—or use difficult circumstances as an excuse to avoid improving coaching capability.</p>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Observation Layer</th>
+						<th>Core Question</th>
+						<th>Appropriate Use</th>
+						<th>Do Not Use To</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Scrum Master Capability</td>
+						<td>Can the Scrum Master facilitate, coach, teach, expose impediments, and drive change at what level?</td>
+						<td>Coaching, mentoring, development planning, and assigning influence scope appropriately.</td>
+						<td>Infer from velocity, meeting frequency, or tickets tracked only.</td>
+					</tr>
+					<tr>
+						<td>Scrum Team Maturity</td>
+						<td>Is the team becoming more self-managing, goal-focused, and learning over time?</td>
+						<td>Design working agreements, build capability, and select improvement experiments.</td>
+						<td>Judge Scrum Master "good" or "bad" from a single Sprint outcome.</td>
+					</tr>
+					<tr>
+						<td>Organizational Enablement</td>
+						<td>Does management provide decision rights, handle structural impediments, and create supportive incentives?</td>
+						<td>Escalation, policy change, structural adjustment, funding, platform support, and urgent-work intake mechanisms.</td>
+						<td>Expect a Scrum Master to shield the team from management decisions beyond their influence.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>The Scrum Guide states that the Scrum Master is accountable for establishing Scrum as defined in the Scrum Guide and serving both the Scrum Team and the organization. <sup><a href="#ref-1">[1]</a></sup> This does not mean the Scrum Master owns all product delivery results, organizational decisions, or strategic priorities.</p>
+		</div>
 			<p>Scrum Master effectiveness should not be judged by number of meetings run, tickets tracked, impediments logged, or visible busyness in a Sprint. These activities may be necessary, but they are only means.</p>
 			<p>The real value of a Scrum Master lies in sustainable change: the team self-manages better, Sprint work stays aligned to goals, impediments are surfaced earlier, improvements produce real outcomes, and the organization gradually reduces behaviors that break Scrum flow.</p>
 
@@ -169,7 +212,7 @@
 			<p>If self-management is low, check baseline conditions: capability level, real decision rights, management over-intervention, and whether Scrum Master is unintentionally doing too much for the team.</p>
 
 			<h4 class="sub-point-2">2. Goal and Value Orientation</h4>
-			<p>The Scrum Master does not replace Product Owner value decisions. But the Scrum Master is responsible for helping the Scrum Team design events, conversations, and feedback loops so Sprint Goal, Product Goal, and outcome remain central in daily work.</p>
+			<p>The Scrum Master does not replace Product Owner value decisions. But the Scrum Master is responsible for helping the Scrum Team design events, conversations, and feedback loops so Sprint Goal, Product Goal, and outcome remain central in daily work. <sup><a href="#ref-2">[2]</a></sup></p>
 			<table class="content-table">
 				<thead>
 					<tr><th>Metric</th><th>How to Observe or Measure</th><th>Warning Signal</th></tr>
@@ -201,7 +244,7 @@
 					<tr><td>Escalation effectiveness</td><td>Rate of escalated out-of-team impediments with evidence, recommendation, and follow-through</td><td>Scrum Master reports issues but does not clarify impact or required decision</td></tr>
 				</tbody>
 			</table>
-			<p>Impediments should be classified into five groups: in-team, cross-team, process, technical, and organizational. This avoids endless firefighting without system-level resolution.</p>
+			<p>Impediments should be classified into five groups: in-team, cross-team, process, technical, and organizational. This avoids endless firefighting without system-level resolution. Key delivery signals like throughput and stability should be read at the system level to see trade-offs between speed and reliability. <sup><a href="#ref-3">[3]</a></sup></p>
 
 			<h4 class="sub-point-2">4. Continuous Improvement</h4>
 			<p>Retrospective only matters when it produces observable change in how the team works, collaborates, or operates within its system constraints.</p>
@@ -221,6 +264,8 @@
 			</table>
 			<p>A strong improvement action should include: a specific problem, root-cause hypothesis, small testable action, owner, validation criteria, and review point. For example, instead of "improve communication," set: "In the next Sprint, any item with external dependency must confirm owner and response timeline before Planning; target to reduce blocked items caused by waiting for response from 5 to under 2."</p>
 
+			<p><strong>Note on psychological safety:</strong> Psychological safety is the belief that the team is safe to take interpersonal risks, such as admitting mistakes, raising concerns, or warning of risks. <sup><a href="#ref-4">[4]</a></sup> Observing team sentiment should not be used to hunt down "negative people," but to create conditions for honest learning and improvement.</p>
+
 			<h4 class="sub-point-2">5. Organizational Enablement</h4>
 			<p>The Scrum Master serves both Scrum Team and organization. So role effectiveness includes surfacing systemic barriers, helping leadership understand trade-offs, and enabling conditions for healthier Scrum operation.</p>
 			<table class="content-table">
@@ -236,34 +281,99 @@
 					<tr><td>Agility anti-pattern reduction</td><td>Trend reduction in anti-patterns: disguised status meetings, Daily Scrum as manager reporting, velocity KPI pressure, Retro without action</td><td>Ceremonies exist but actual behavior does not change</td></tr>
 				</tbody>
 			</table>
-			<p>When escalating impediments beyond team scope, Scrum Master should use structure: <strong>Problem -> Evidence -> Impact -> Root-cause hypothesis -> Options -> Recommendation -> Decision needed -> Follow-up</strong>. The goal is not to win an argument, but to help the organization see the cost of not changing.</p>
+			<p>When escalating impediments beyond team scope, Scrum Master should use structure: <strong>Problem → Evidence → Impact → Root-cause hypothesis → Options → Recommendation → Decision needed → Follow-up</strong>. The goal is not to win an argument, but to help the organization see the cost of not changing.</p>
 
-			<h4 class="sub-point-2">Periodic Scrum Master review</h4>
+			<h4 class="sub-point-2">Minimum viable Scrum Master practice</h4>
+
+			<p>New teams do not need large frameworks. In the first 2–3 Sprints, keep four simple practices:</p>
+
+			<ul class="outline-list">
+				<li>Each Sprint has a clear Sprint Goal that Developers can use in decisions.</li>
+				<li>Every blocker has an owner, visible impact, and review point; out-of-team blockers have clear escalation.</li>
+				<li>Each Retrospective selects at most one or two small experiments with hypothesis, owner, and verification signal.</li>
+				<li>Scrum Master gradually reduces doing for the team: let Developers self-facilitate Daily Scrum and own the Sprint Backlog.</li>
+			</ul>
+
+			<p>After a few Sprints, expand to signals about self-management, flow, outcome orientation, and organizational enablement.</p>
+
+			<h4 class="sub-point-2">Guardrails against measurement abuse</h4>
+
 			<table class="content-table">
 				<thead>
-					<tr><th>Cadence</th><th>Observation Scope</th><th>Purpose</th></tr>
+					<tr>
+						<th>Guardrail</th>
+						<th>How to Apply</th>
+					</tr>
 				</thead>
 				<tbody>
-					<tr><td>Every Sprint</td><td>Team self-organization, Sprint Goal clarity, blockers, interruptions, previous actions, team health</td><td>Detect flow issues early and adjust quickly</td></tr>
-					<tr><td>Monthly / every 4-6 Sprints</td><td>Self-management maturity, goal reliability, dependency, spillover, recurring issues, systemic impediments</td><td>Observe trends and select medium-term improvements</td></tr>
-					<tr><td>Quarterly</td><td>Team maturity, outcome orientation, organizational barriers, Scrum Master capability gap, sustainability</td><td>Decide long-term capability and organizational investments</td></tr>
-					<tr><td>After major release/incident</td><td>Impact, root cause, recovery, lesson learned, policy/process change</td><td>Learn from reality instead of only fixing consequences</td></tr>
+					<tr>
+						<td>Purpose is learning</td>
+						<td>Measurement must answer a specific improvement question, not just create dashboards or reports.</td>
+					</tr>
+					<tr>
+						<td>No direct reward-penalize</td>
+						<td>Do not use meeting count, impediment count, velocity, or ticket count as direct KPI for Scrum Master.</td>
+					</tr>
+					<tr>
+						<td>Right to explain context</td>
+						<td>Scrum Master, Scrum Team, and system owners can explain dependencies, decisions, risks, and authority limits before conclusions.</td>
+					</tr>
+					<tr>
+						<td>Self-management is not abandonment</td>
+						<td>Low dependency is not the absolute goal; Scrum Master still supports when team lacks capability, safety, or decision rights.</td>
+					</tr>
+					<tr>
+						<td>Monitor for side effects</td>
+						<td>Regularly check whether measurement is creating fake agility, hiding risks, forcing Sprint Goals, or reducing psychological safety.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h4 class="sub-point-2">Measurement principles</h4>
+
+			<ul class="outline-list">
+				<li><strong>Measure trend over time, not one isolated Sprint.</strong> A failed Sprint or one Retrospective with weak follow-through is not enough to conclude that Scrum Master effectiveness is low.</li>
+				<li><strong>Do not attribute all results to the Scrum Master.</strong> Product Owner, Developers, stakeholders, management, and organizational structure all shape outcomes.</li>
+				<li><strong>Combine data with qualitative evidence.</strong> Metrics should be cross-checked with observations from Planning, Daily Scrum, Review, Retrospective, and team feedback.</li>
+				<li><strong>Every signal must lead to action.</strong> A dashboard without hypotheses, owners, and improvement experiments only creates more reporting.</li>
+				<li><strong>Do not use this framework to rank Scrum Masters across teams.</strong> Product context, team maturity, dependency load, and organizational support are different for each team.</li>
+			</ul>
+
+			<h4 class="sub-point-2">Periodic Scrum Master review</h4>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Cadence</th>
+						<th>Observation Scope</th>
+						<th>Purpose</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Every Sprint</td>
+						<td>Team self-organization, Sprint Goal clarity, blockers, interruptions, previous actions, team health</td>
+						<td>Detect flow issues early and adjust quickly</td>
+					</tr>
+					<tr>
+						<td>Monthly / every 4-6 Sprints</td>
+						<td>Self-management maturity, goal reliability, dependency, spillover, recurring issues, systemic impediments</td>
+						<td>Observe trends and select medium-term improvements</td>
+					</tr>
+					<tr>
+						<td>Quarterly</td>
+						<td>Team maturity, outcome orientation, organizational barriers, Scrum Master capability gap, sustainability</td>
+						<td>Decide long-term capability and organizational investments</td>
+					</tr>
+					<tr>
+						<td>After major release/incident</td>
+						<td>Impact, root cause, recovery, lesson learned, policy/process change</td>
+						<td>Learn from reality instead of only fixing consequences</td>
+					</tr>
 				</tbody>
 			</table>
 
 			<h4 class="sub-point-2">Review template</h4>
-			<table class="content-table">
-				<thead>
-					<tr><th>Dimension</th><th>Current Signal</th><th>Evidence</th><th>Hypothesized Cause</th><th>Next Action</th><th>Owner</th><th>Review Date</th></tr>
-				</thead>
-				<tbody>
-					<tr><td>Team Self-Management</td><td>Needs improvement</td><td>Daily Scrum often waits for Scrum Master facilitation</td><td>Team not yet used to self-facilitation; Scrum Master intervenes too much</td><td>Rotate Developers to keep Daily Scrum focused on Sprint Goal</td><td>Developers</td><td>After 2 Sprints</td></tr>
-					<tr><td>Goal and Value</td><td>At risk</td><td>3 consecutive Sprints with unclear Sprint Goal</td><td>Refinement does not connect backlog with outcome</td><td>Run goal-first refinement before Planning</td><td>PO + Developers</td><td>Next Sprint</td></tr>
-					<tr><td>Flow</td><td>Needs improvement</td><td>35% of items blocked by dependencies</td><td>Cross-team ownership unclear</td><td>Create dependency board and escalation SLA</td><td>Scrum Master</td><td>After 1 month</td></tr>
-					<tr><td>Continuous Improvement</td><td>Needs improvement</td><td>4 consecutive Retro actions not completed</td><td>Actions too large, no clear owner</td><td>Limit to max 2 actions/Sprint with verification criteria</td><td>Whole team</td><td>After 2 Sprints</td></tr>
-					<tr><td>Organizational Enablement</td><td>High risk</td><td>Manager frequently adds scope mid-Sprint</td><td>No shared urgent-work handling mechanism</td><td>Present impact and propose an intake path for urgent requests</td><td>Scrum Master + Manager</td><td>After 1 month</td></tr>
-				</tbody>
-			</table>
 
 			<h4 class="sub-point-2">Metrics that should not be used as Scrum Master KPI</h4>
 			<ul class="outline-list">
@@ -293,6 +403,22 @@
 		</div>
 
 		<div class="sub-section">
+			<h3 class="sub-point-1">References</h3>
+
+			<ol class="outline-list">
+				<li id="ref-1">Schwaber, K. &amp; Sutherland, J. (2020). <em>The Scrum Guide: The Definitive Guide to Scrum</em>. The official source on Scrum Master accountability and the role of servant leadership, facilitation, and organizational enablement. <a href="https://scrumguides.org/scrum-guide.html" rel="noopener noreferrer" target="_blank">Read the guide</a>.</li>
+
+				<li id="ref-2">Scrum.org (2024). <em>Evidence-Based Management Guide: Improving Value Delivery Under Conditions of Uncertainty</em>. A framework emphasizing the Scrum Master's role in helping teams understand and measure value in conditions of uncertainty through evidence, experimentation, and feedback. <a href="https://www.scrum.org/resources/evidence-based-management-guide" rel="noopener noreferrer" target="_blank">Read the guide</a>.</li>
+
+				<li id="ref-3">Forsgren, N., Storey, M.-A., Maddila, C., Zimmermann, T., Houck, B. &amp; Butler, J. (2021). <em>The SPACE of Developer Productivity</em>, ACM Queue. Emphasizes that team productivity is multidimensional (satisfaction, performance, activity, communication, efficiency) and helps Scrum Masters view flow holistically. <a href="https://queue.acm.org/detail.cfm?id=3454124" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+
+				<li id="ref-4">Edmondson, A. (2018). <em>The Fearless Organization</em>. Deep reference on psychological safety—the foundation for team learning, honest communication, and willingness to take risks in Retrospectives and improvements. <a href="https://fearlessorganization.com/" rel="noopener noreferrer" target="_blank">Learn more</a>.</li>
+			</ol>
+
+			<p>These sources provide the foundation for understanding Scrum Master coaching, team effectiveness, continuous improvement, and the role of measurement in supporting sustainable change.</p>
+		</div>
+
+		<div class="sub-section">
 			<h3 class="sub-point-1">Conclusion</h3>
 			<p>Scrum Master effectiveness is produced by the interaction between personal capability and system conditions.</p>
 			<p>If either is missing, Scrum can easily become formally correct but practically ineffective.</p>
@@ -306,17 +432,21 @@
 
 		<div class="sub-section">
 			<h3 class="sub-point-1">Summary outline</h3>
+
 			<ul>
-				<li>The Scrum Master is a coach and servant leader, but practical impact depends heavily on organizational context.</li>
+				<li>The Scrum Master is a coach and servant leader, but effectiveness depends on both personal capability and organizational system conditions.</li>
 				<li>Common constraints: team resistance, indirect authority, and impediments beyond direct control.</li>
 				<li>Fake agility appears when Scrum events still run but team self-management and value focus are missing.</li>
 				<li>Empowerment is the necessary condition for meaningful Scrum Master impact.</li>
 				<li>Capability is the sufficient condition for sustainable change.</li>
-				<li>Scrum Master measurement should focus on 3 axes: self-organization, outcome over output, and continuous improvement.</li>
-				<li>Do not measure surface activity; measure real team and system change over time.</li>
-				<li>If the Scrum Master leaves and the team still operates better than before, the role created a sustainable foundation.</li>
+				<li>Three layers of observation must be distinguished: Scrum Master capability, Scrum Team maturity, and organizational enablement.</li>
+				<li>Scrum Master measurement should focus on five dimensions: Team Self-Management, Goal and Value Orientation, Flow and Impediment Removal, Continuous Improvement, and Organizational Enablement.</li>
+				<li>Do not measure surface activity like meeting count or busyness; measure real team and system change over time.</li>
+				<li>Minimum viable practice: clear Sprint Goal each Sprint, tracked blockers with owners, limited Retro actions with verification, and decreasing Scrum Master intervention.</li>
+				<li>Guardrails against measurement abuse: purpose is learning, no direct reward-penalize, right to explain context, self-management is not abandonment, monitor for side effects.</li>
+				<li>If the Scrum Master leaves and the team still operates better, the role created sustainable impact.</li>
 				<li>When direct authority is missing, Scrum Master must make the cost of not changing visible, not just name the problem.</li>
-				<li>The final question is not only whether the Scrum Master performed well, but whether the organization is truly ready to change or only Agile in form.</li>
+				<li>The core question is not only whether the Scrum Master performed well, but whether the organization is truly ready to change or only Agile in form.</li>
 			</ul>
 		</div>
 

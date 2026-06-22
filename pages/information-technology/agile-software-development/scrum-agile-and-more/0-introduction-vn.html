@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 
 <html lang="vi">
+
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8" />
 	<title>Scrum, Agile and More - Khung chung - My Personal Planet</title>
-	<link rel="stylesheet" href="../../../pages-styles.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Khung chung cho Scrum, Agile and More: Scrum là nền tảng, còn năng lực, đo lường và điều kiện tổ chức quyết định khả năng tạo giá trị bền vững.">
+	<link href="../../../pages-styles.css" rel="stylesheet" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta
+		content="Lời mở đầu cho Scrum, Agile and More: phạm vi series, nguyên tắc learning over judgement và cách dùng đo lường để cải thiện hệ thống."
+		name="description" />
 </head>
+
 <body>
 	<article class="content-article">
 		<header class="article-header">
@@ -15,254 +19,382 @@
 			<p class="page-subtitle">Scrum, Agile and More</p>
 			<p class="page-meta">Đăng ngày: <time datetime="2026-03-28">28/03/2026</time></p>
 		</header>
+		<section class="content-section">
+			<h2 class="main-point">Scrum là nền tảng, không phải lời giải cho mọi vấn đề</h2>
+			<p>Scrum là một framework tối giản nhưng mạnh mẽ để giải quyết các bài toán phức tạp thông qua minh bạch,
+				kiểm tra và thích nghi. Nó tạo ra một cấu trúc rõ ràng để Scrum Team cùng hướng đến Product Goal, tạo ra
+				Increment có giá trị và học từ thực tế theo từng chu kỳ. <sup><a href="#ref-1">[1]</a></sup></p>
+			<p>Nhưng Scrum không được thiết kế để thay thế toàn bộ hệ thống vận hành của một tổ chức.</p>
+			<p>Scrum không quy định chi tiết cách tuyển dụng và phát triển con người. Scrum không đưa ra hệ thống quản
+				trị năng lực, đánh giá hiệu suất, lộ trình nghề nghiệp, cơ chế ra quyết định cấp tổ chức hay cách xử lý
+				mọi xung đột quyền lực giữa các bộ phận. Scrum cũng không cung cấp một công thức KPI chuẩn cho Product
+				Owner, Scrum Master hay Developers.</p>
+			<p>Đó không phải là thiếu sót của Scrum. Đó là giới hạn có chủ đích của một framework tối giản.</p>
+			<blockquote>
+				<p>Scrum không bảo đảm rằng một tổ chức sẽ thành công. Scrum giúp tổ chức nhìn thấy rõ hơn vì sao họ
+					chưa thành công.</p>
+			</blockquote>
+			<p>Khi Product Goal không rõ, Scrum làm lộ ra sự thiếu định hướng sản phẩm. Khi backlog liên tục thay đổi,
+				Scrum làm lộ ra chất lượng quyết định hoặc sự bất ổn của chiến lược. Khi Developers không thể tự quản,
+				Scrum làm lộ ra khoảng trống về năng lực, quyền hạn hoặc điều kiện làm việc. Khi Scrum events diễn ra
+				đầy đủ nhưng team vẫn không học hỏi và không cải thiện, Scrum làm lộ ra rằng tổ chức đang vận hành theo
+				hình thức hơn là theo tinh thần empiricism.</p>
+			<p>Vì vậy, Scrum không phải là đích đến. Nó là điểm bắt đầu để tổ chức nhìn vào hệ thống của mình một cách
+				trung thực hơn.</p>
+		</section>
+		<section class="content-section">
+			<h2 class="main-point">Phạm vi của series: dùng Scrum để nhìn hệ thống, không để thay thế hệ thống</h2>
+			<p>Series này dành cho những người đang làm việc trong hoặc cùng với Scrum Team: Product Owner, Scrum
+				Master, Developers, People Manager, Engineering Manager và các lãnh đạo có ảnh hưởng đến điều kiện
+				delivery. Mục tiêu không phải là dạy lại các định nghĩa cơ bản của Scrum, mà là giúp người đọc nhận diện
+				những điều kiện khiến Scrum Team có hoặc không thể tạo ra giá trị bền vững.</p>
+			<p>Các bài viết sẽ tập trung vào bốn chủ đề: định hướng giá trị sản phẩm; khả năng tạo Increment có chất
+				lượng; cách Scrum Team học hỏi và cải thiện; và các điều kiện tổ chức như quyền ra quyết định,
+				dependency, năng lực, incentive và môi trường làm việc.</p>
+			<p>Series này <strong>không</strong> phải là:</p>
+			<ul class="outline-list">
+				<li>Một bộ KPI chuẩn để chấm điểm Product Owner, Scrum Master, Developers hoặc Scrum Team.</li>
+				<li>Một công thức áp dụng Scrum giống nhau cho mọi sản phẩm, tổ chức hoặc mức độ trưởng thành.</li>
+				<li>Một sự thay thế cho product strategy, kiến trúc, quản trị nhân sự, coaching chuyên sâu hoặc trách
+					nhiệm lãnh đạo.</li>
+				<li>Một cơ sở duy nhất để xếp hạng, thưởng phạt, điều chuyển hay kết luận về hiệu suất của một cá nhân.
+				</li>
+			</ul>
+			<p>Scrum Guide mô tả Scrum như một framework nhẹ giúp con người, team và tổ chức tạo giá trị thông qua các
+				giải pháp thích nghi cho những vấn đề phức tạp<sup><a href="#ref-1">[1]</a></sup>. Vì vậy, các khung
+				trong series này cần được đọc như những công cụ để quan sát, đặt câu hỏi và thử nghiệm cải tiến trong
+				bối cảnh cụ thể; không phải như một mô hình quản trị đóng.</p>
+		</section>
+		<section class="content-section">
+			<h2 class="main-point">Ba accountability trong Scrum và một lớp bổ sung cần thiết</h2>
+			<p>Trong Scrum, Scrum Team bao gồm ba accountability: Product Owner, Scrum Master và Developers. Mỗi
+				accountability có trọng tâm riêng, nhưng không tồn tại độc lập. Giá trị chỉ được tạo ra khi cả ba cùng
+				vận hành như một hệ thống.</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Phạm vi</th>
+						<th>Trọng tâm chính</th>
+						<th>Câu hỏi cần trả lời</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Product Owner</td>
+						<td>Định hướng giá trị sản phẩm</td>
+						<td>Chúng ta đang giải quyết đúng vấn đề và ưu tiên đúng điều cần làm không?</td>
+					</tr>
+					<tr>
+						<td>Developers</td>
+						<td>Tạo Increment có chất lượng và bền vững</td>
+						<td>Chúng ta có thể biến mục tiêu thành một sản phẩm có thể sử dụng, vận hành và phát triển tiếp
+							không?</td>
+					</tr>
+					<tr>
+						<td>Scrum Master</td>
+						<td>Nâng hiệu quả của Scrum Team và hệ thống vận hành</td>
+						<td>Team có đang tự quản, học hỏi, xử lý trở ngại và cải thiện liên tục không?</td>
+					</tr>
+					<tr>
+						<td>Phát triển cá nhân</td>
+						<td>Xây dựng năng lực con người</td>
+						<td>Mỗi cá nhân cần phát triển gì để đóng góp tốt hơn cho team và đảm nhận phạm vi trách nhiệm
+							lớn hơn?</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Ba dòng đầu là các accountability trong Scrum. “Phát triển cá nhân” không phải là accountability thứ tư
+				của Scrum, cũng không thay thế trách nhiệm tập thể của Scrum Team.</p>
+			<p>Đây là một lớp bổ sung thuộc về quản trị con người và phát triển năng lực trong tổ chức. Scrum cần một
+				Scrum Team tự quản, liên chức năng và có năng lực. Nhưng Scrum không quy định tổ chức phải xây dựng năng
+				lực đó bằng cách nào. Vì vậy, tổ chức vẫn cần một cơ chế để phát hiện khoảng trống, phát triển con
+				người, chia sẻ kiến thức, hỗ trợ mentoring và tạo lộ trình nghề nghiệp phù hợp.</p>
+			<blockquote>
+				<p>Scrum Team chịu trách nhiệm chung về giá trị và Increment. Tổ chức vẫn cần chịu trách nhiệm phát
+					triển năng lực để Scrum Team có thể thực hiện trách nhiệm đó.</p>
+			</blockquote>
+		</section>
+		<section class="content-section">
+			<h2 class="main-point">Khung quan sát hiệu quả: không đo để kiểm soát, đo để học và cải thiện</h2>
+			<p>Một trong những rủi ro lớn nhất khi áp dụng Scrum là tổ chức vẫn dùng cách đo lường cũ: velocity, số
+				ticket hoàn thành, số giờ làm việc, số Pull Request, số cuộc họp hay mức độ bận rộn.</p>
+			<p>Những dữ liệu này không hoàn toàn vô ích. Chúng có thể giúp team dự báo, nhận diện bottleneck hoặc quan
+				sát xu hướng. Nhưng khi bị biến thành KPI hiệu suất, chỉ số thưởng phạt hoặc công cụ so sánh giữa các
+				team, chúng rất dễ làm méo hành vi.</p>
+			<p>Khi velocity trở thành mục tiêu, team có xu hướng tối ưu story point. Khi số ticket trở thành mục tiêu,
+				mọi người có xu hướng chọn việc dễ đóng. Khi số Pull Request trở thành mục tiêu, Developers có thể tạo
+				nhiều thay đổi nhỏ mang tính hình thức. Khi Scrum Master bị đánh giá bằng số buổi họp hay số impediment
+				đóng, vai trò có thể bị thu hẹp thành điều phối và báo cáo. Khi Product Owner bị đánh giá chỉ bằng số
+				feature release, giá trị bị thay thế bằng output.</p>
+			<p>Vì vậy, hệ thống quan sát trong chuỗi bài viết này dựa trên một nguyên tắc:</p>
+			<blockquote>
+				<p>Không dùng đo lường để tìm một người phải chịu lỗi. Dùng đo lường để hiểu hệ thống đang thiếu điều
+					kiện gì để tạo ra giá trị tốt hơn.</p>
+			</blockquote>
+			<p>Nguyên tắc này có thể được tóm tắt là <strong>learning over judgement</strong>: ưu tiên tạo hiểu biết
+				chung về hệ thống và lựa chọn cải tiến, thay vì dùng dữ liệu để kết luận nhanh ai giỏi, ai yếu hoặc ai
+				phải chịu lỗi. Các nghiên cứu về developer productivity cũng khuyến nghị nhìn năng suất qua nhiều chiều
+				cạnh — gồm sự hài lòng và sức khỏe, hiệu quả, hoạt động, hợp tác, cùng flow — thay vì cố rút gọn thành
+				một thước đo duy nhất<sup><a href="#ref-2">[2]</a></sup>.</p>
+			<p>Các metric cần được xem như tín hiệu có ngữ cảnh. Khi một chỉ số trở thành mục tiêu thưởng phạt, nó có
+				thể thúc đẩy hành vi tối ưu cục bộ và làm suy giảm mục tiêu thực: tạo ra sản phẩm hữu ích, đáng tin cậy
+				và bền vững<sup><a href="#ref-3">[3]</a></sup>. Vì thế, những dữ liệu như velocity, số ticket, số Pull
+				Request, số bug xử lý, lines of code, số giờ làm hay số buổi họp không nên được dùng làm KPI hiệu suất
+				cá nhân.</p>
 
-	<section class="content-section">
-		<h2 class="main-point">Scrum là nền tảng, không phải lời giải cho mọi vấn đề</h2>
+			<p>Mỗi chỉ số chỉ là tín hiệu, không phải phán quyết. Một tín hiệu xấu cần dẫn đến câu hỏi về nguyên nhân,
+				bối cảnh, điều kiện và hành động cải thiện; không nên dẫn ngay đến việc gán nhãn một cá nhân hoặc một
+				team.</p>
+		</section>
+		<section class="content-section">
+			<h2 class="main-point">Nguyên tắc sử dụng measurement: tín hiệu để học, không phải điểm để phán xét</h2>
+			<p>Mọi bảng quan sát, rubric hoặc chỉ số được đề cập trong series cần tuân theo các ranh giới sau. Nếu tổ
+				chức không thể bảo đảm các ranh giới này, việc đo lường nên được thu hẹp hoặc tạm dừng thay vì triển
+				khai rộng hơn.</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Guardrail</th>
+						<th>Cách áp dụng</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Mục đích trước dữ liệu</td>
+						<td>Nêu rõ câu hỏi cần học hoặc quyết định cần cải thiện trước khi chọn metric; không thu thập
+							dữ liệu chỉ vì dữ liệu có sẵn.</td>
+					</tr>
+					<tr>
+						<td>Team và hệ thống trước</td>
+						<td>Ưu tiên quan sát outcome, flow, quality, sustainability và điều kiện hệ thống trước khi đi
+							đến nhận định về cá nhân.</td>
+					</tr>
+					<tr>
+						<td>Không dùng làm công cụ thưởng phạt trực tiếp</td>
+						<td>Không dùng một hoặc một nhóm metric delivery để xếp hạng, tính thưởng, kỷ luật, sa thải hoặc
+							so sánh cá nhân/team ngoài bối cảnh.</td>
+					</tr>
+					<tr>
+						<td>Quyền giải thích bối cảnh</td>
+						<td>Người và team được quan sát phải có cơ hội giải thích dữ kiện, dependency, rủi ro, thay đổi
+							ưu tiên và các điều kiện ngoài quyền kiểm soát của họ.</td>
+					</tr>
+					<tr>
+						<td>Hành động phải có owner</td>
+						<td>Một tín hiệu chỉ có ý nghĩa khi dẫn tới giả thuyết, thử nghiệm, người có decision right và
+							thời điểm kiểm chứng lại.</td>
+					</tr>
+					<tr>
+						<td>Rà soát tác dụng phụ</td>
+						<td>Định kỳ kiểm tra xem metric có đang tạo gaming, che giấu vấn đề, tối ưu cục bộ, quá tải hoặc
+							giảm psychological safety hay không.</td>
+					</tr>
+				</tbody>
+			</table>
+			<blockquote>
+				<p>Không có metric nào tự nó công bằng hoặc khách quan. Điều quyết định là mục đích, bối cảnh, quyền
+					diễn giải và cách tổ chức dùng metric đó để tác động lên con người.</p>
+			</blockquote>
+			<p>Đối với delivery software, các chỉ số cấp hệ thống như deployment frequency, lead time for changes,
+				change failure rate và time to restore service có thể hỗ trợ quan sát năng lực delivery khi được đọc
+				cùng nhau và cùng với bối cảnh sản phẩm<sup><a href="#ref-4">[4]</a></sup>. Chúng không phải bảng điểm
+				để quy kết một cá nhân hay một Scrum Team.</p>
+		</section>
+		<section class="content-section">
+			<h2 class="main-point">Bốn nguyên tắc chung của hệ thống đo lường</h2>
+			<h3 class="sub-point-1">1. Quan sát xu hướng, không phán xét từ một thời điểm</h3>
+			<p>Một Sprint không đạt Sprint Goal, một release có defect hoặc một Retrospective chưa tạo action hoàn chỉnh
+				không đủ để kết luận một vai trò hay một team không hiệu quả.</p>
+			<p>Điều cần quan sát là xu hướng qua nhiều Sprint và nhiều chu kỳ: chất lượng đang tốt hơn hay xấu hơn,
+				dependency có giảm hay tăng, các vấn đề có lặp lại hay được xử lý tận gốc, team có tự chủ hơn hay ngày
+				càng phụ thuộc nhiều hơn.</p>
+			<h3 class="sub-point-1">2. Không có chỉ số nào được diễn giải độc lập</h3>
+			<p>Một outcome tốt nhưng technical debt tăng mạnh chưa chắc là thành công. Flow nhanh hơn nhưng defect
+				escape tăng chưa chắc là cải thiện. Sprint Goal đạt đều nhưng team kiệt sức, overtime kéo dài hoặc
+				knowledge concentration tăng cũng không phải trạng thái bền vững.</p>
+			<p>Mỗi thay đổi cần được nhìn tối thiểu qua bốn góc độ:</p>
+			<ul class="outline-list">
+				<li><strong>Outcome:</strong> thay đổi có tạo giá trị hoặc tác động mong muốn không?</li>
+				<li><strong>Flow:</strong> công việc có di chuyển ổn định và minh bạch không?</li>
+				<li><strong>Quality:</strong> chất lượng kỹ thuật, vận hành và khả năng bảo trì có được bảo vệ không?
+				</li>
+				<li><strong>Sustainability:</strong> con người và hệ thống có thể duy trì kết quả này lâu dài không?
+				</li>
+			</ul>
+			<h3 class="sub-point-1">3. Phân biệt accountability với influence</h3>
+			<p>Một vai trò có thể ảnh hưởng đến một kết quả mà không phải là người chịu trách nhiệm cuối cùng cho toàn
+				bộ kết quả đó.</p>
+			<p>Ví dụ, Product Owner chịu trách nhiệm tối đa hóa giá trị sản phẩm, nhưng outcome còn chịu ảnh hưởng bởi
+				thị trường, chiến lược kinh doanh, marketing, pricing, trải nghiệm người dùng và khả năng delivery.
+				Developers chịu trách nhiệm tạo Increment có chất lượng, nhưng không thể tự giải quyết mọi dependency,
+				approval chain hoặc quyết định cấp tổ chức. Scrum Master có thể làm lộ ra impediment hệ thống và thúc
+				đẩy thay đổi, nhưng không sở hữu quyền quyết định của management.</p>
+			<p>Vì vậy, khi quan sát hiệu quả, cần luôn phân biệt:</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Khái niệm</th>
+						<th>Ý nghĩa</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Accountability</td>
+						<td>Ai chịu trách nhiệm chính trong phạm vi vai trò của mình?</td>
+					</tr>
+					<tr>
+						<td>Influence</td>
+						<td>Ai có thể góp phần cải thiện hoặc làm xấu kết quả?</td>
+					</tr>
+					<tr>
+						<td>Decision right</td>
+						<td>Ai có quyền thực sự để quyết định và xử lý nguyên nhân?</td>
+					</tr>
+					<tr>
+						<td>System owner</td>
+						<td>Ai sở hữu điều kiện hoặc rào cản ở cấp tổ chức?</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="sub-point-1">4. Mỗi tín hiệu phải dẫn đến hành động</h3>
+			<p>Một dashboard không dẫn đến quyết định, thử nghiệm hoặc cải thiện chỉ tạo thêm báo cáo.</p>
+			<p>Mỗi tín hiệu quan trọng cần có ít nhất:</p>
+			<ul class="outline-list">
+				<li>Bằng chứng hoặc dữ liệu quan sát được.</li>
+				<li>Giả thuyết về nguyên nhân.</li>
+				<li>Người hoặc nhóm có quyền xử lý.</li>
+				<li>Một hành động hoặc thử nghiệm cụ thể.</li>
+				<li>Thời điểm kiểm chứng lại.</li>
+			</ul>
+			<p>Mục tiêu không phải là làm nhiều action hơn. Mục tiêu là chọn ít cải tiến nhưng theo đến cùng và kiểm
+				chứng được tác động.</p>
+		</section>
+		<section class="content-section">
+			<h2 class="main-point">Ranh giới trách nhiệm trong hệ thống</h2>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Chủ đề</th>
+						<th>Product Owner</th>
+						<th>Developers</th>
+						<th>Scrum Master</th>
+						<th>Organization / People Manager</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Product Goal</td>
+						<td>Định hướng và chịu trách nhiệm chính</td>
+						<td>Đóng góp góc nhìn kỹ thuật và tính khả thi</td>
+						<td>Hỗ trợ transparency và empiricism</td>
+						<td>Cung cấp chiến lược, bối cảnh và điều kiện cần thiết</td>
+					</tr>
+					<tr>
+						<td>Thứ tự ưu tiên Product Backlog</td>
+						<td>Chịu trách nhiệm chính</td>
+						<td>Làm rõ effort, risk, dependency và solution options</td>
+						<td>Hỗ trợ cách làm việc hiệu quả</td>
+						<td>Tôn trọng vai trò và tránh bypass Product Owner</td>
+					</tr>
+					<tr>
+						<td>Increment và chất lượng kỹ thuật</td>
+						<td>Làm rõ giá trị và acceptance cần thiết</td>
+						<td>Chịu trách nhiệm chính theo Definition of Done</td>
+						<td>Giúp Scrum Team cải thiện cách vận hành</td>
+						<td>Cung cấp công cụ, môi trường và năng lực cần thiết</td>
+					</tr>
+					<tr>
+						<td>Sprint Goal</td>
+						<td>Cộng tác để làm rõ giá trị</td>
+						<td>Lập kế hoạch và thích nghi để đạt mục tiêu</td>
+						<td>Giúp Sprint Goal trở thành cơ chế focus thực chất</td>
+						<td>Tôn trọng Sprint boundary và cơ chế xử lý urgent work</td>
+					</tr>
+					<tr>
+						<td>Flow và dependency</td>
+						<td>Giảm chờ đợi do backlog và quyết định sản phẩm</td>
+						<td>Giảm bottleneck kỹ thuật, rework và work in progress không cần thiết</td>
+						<td>Làm lộ impediment, thúc đẩy xử lý và escalation</td>
+						<td>Giải quyết structural blocker, policy và cross-team ownership</td>
+					</tr>
+					<tr>
+						<td>Phát triển cá nhân</td>
+						<td>Đưa phản hồi về product collaboration khi phù hợp</td>
+						<td>Peer feedback và knowledge sharing</td>
+						<td>Coaching về teamwork, Scrum và cải tiến</td>
+						<td>Chịu trách nhiệm chính về growth, staffing, career và compensation</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Bảng này không nhằm tạo ra ranh giới cứng để mọi người đẩy trách nhiệm cho nhau. Nó giúp tránh một vấn đề
+				phổ biến: mọi người cùng “có trách nhiệm” nhưng không ai có quyền hoặc nghĩa vụ rõ ràng để xử lý vấn đề
+				đến cùng.</p>
+		</section>
+		<section class="content-section">
+			<h2 class="main-point">Cách đọc các bài viết tiếp theo</h2>
+			<p>Các bài viết tiếp theo không nhằm tạo ra một công thức Scrum mới hoặc một bộ KPI áp dụng giống nhau cho
+				mọi tổ chức.</p>
+			<p>Mỗi bài sẽ đi vào một phạm vi riêng:</p>
+			<ul class="outline-list">
+				<li><strong>Product Owner:</strong> cách quan sát khả năng định hướng giá trị, giảm bất định và đưa ra
+					quyết định sản phẩm.</li>
+				<li><strong>Scrum Master:</strong> cách quan sát mức tự quản, khả năng cải tiến, flow và những trở ngại
+					mang tính hệ thống.</li>
+				<li><strong>Developers:</strong> cách quan sát capability, chất lượng kỹ thuật, khả năng cộng tác tạo
+					giá trị và độ bền vững của delivery.</li>
+				<li><strong>Phát triển cá nhân:</strong> cách đánh giá năng lực của từng cá nhân để phát triển con người
+					mà không phá vỡ tinh thần hợp tác của Scrum Team.</li>
+			</ul>
+			<p>Những khung này nên được sử dụng như một hệ thống quan sát và đối thoại. Chúng không thay thế Scrum
+				events, không thay thế Product Goal, Sprint Goal hay Definition of Done, và càng không thay thế trách
+				nhiệm của lãnh đạo trong việc tạo ra môi trường phù hợp.</p>
+			<p>Scrum có thể giúp một tổ chức làm việc minh bạch hơn. Nhưng để tạo ra giá trị bền vững, tổ chức còn phải
+				đầu tư vào năng lực, quyền ra quyết định, chất lượng kỹ thuật, khả năng học hỏi và cách đo lường.</p>
+			<p>Để đọc series hiệu quả, hãy bắt đầu bằng câu hỏi: <em>“Tôi muốn hiểu và cải thiện điều gì trong hệ
+					thống?”</em> thay vì <em>“Tôi cần dùng bảng này để đánh giá ai?”</em>. Khi một bài đề cập đến
+				capability hoặc phát triển cá nhân, mục đích là hỗ trợ growth conversation, mentoring, staffing và thiết
+				kế điều kiện làm việc tốt hơn; không thay thế đánh giá hiệu suất chính thức hay phán quyết một chiều của
+				quản lý.</p>
 
-		<p>Scrum là một framework tối giản nhưng mạnh mẽ để giải quyết các bài toán phức tạp thông qua minh bạch, kiểm tra và thích nghi. Nó tạo ra một cấu trúc rõ ràng để Scrum Team cùng hướng đến Product Goal, tạo ra Increment có giá trị và học từ thực tế theo từng chu kỳ.</p>
-
-		<p>Nhưng Scrum không được thiết kế để thay thế toàn bộ hệ thống vận hành của một tổ chức.</p>
-
-		<p>Scrum không quy định chi tiết cách tuyển dụng và phát triển con người. Scrum không đưa ra hệ thống quản trị năng lực, đánh giá hiệu suất, lộ trình nghề nghiệp, cơ chế ra quyết định cấp tổ chức hay cách xử lý mọi xung đột quyền lực giữa các bộ phận. Scrum cũng không cung cấp một công thức KPI chuẩn cho Product Owner, Scrum Master hay Developers.</p>
-
-		<p>Đó không phải là thiếu sót của Scrum. Đó là giới hạn có chủ đích của một framework tối giản.</p>
-
-		<blockquote>
-			<p>Scrum không bảo đảm rằng một tổ chức sẽ thành công. Scrum giúp tổ chức nhìn thấy rõ hơn vì sao họ chưa thành công.</p>
-		</blockquote>
-
-		<p>Khi Product Goal không rõ, Scrum làm lộ ra sự thiếu định hướng sản phẩm. Khi backlog liên tục thay đổi, Scrum làm lộ ra chất lượng quyết định hoặc sự bất ổn của chiến lược. Khi Developers không thể tự quản, Scrum làm lộ ra khoảng trống về năng lực, quyền hạn hoặc điều kiện làm việc. Khi Scrum events diễn ra đầy đủ nhưng team vẫn không học hỏi và không cải thiện, Scrum làm lộ ra rằng tổ chức đang vận hành theo hình thức hơn là theo tinh thần empiricism.</p>
-
-		<p>Vì vậy, Scrum không phải là đích đến. Nó là điểm bắt đầu để tổ chức nhìn vào hệ thống của mình một cách trung thực hơn.</p>
-	</section>
-
-	<section class="content-section">
-		<h2 class="main-point">Ba accountability trong Scrum và một lớp bổ sung cần thiết</h2>
-
-		<p>Trong Scrum, Scrum Team bao gồm ba accountability: Product Owner, Scrum Master và Developers. Mỗi accountability có trọng tâm riêng, nhưng không tồn tại độc lập. Giá trị chỉ được tạo ra khi cả ba cùng vận hành như một hệ thống.</p>
-
-		<table class="content-table">
-			<thead>
-				<tr>
-					<th>Phạm vi</th>
-					<th>Trọng tâm chính</th>
-					<th>Câu hỏi cần trả lời</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Product Owner</td>
-					<td>Định hướng giá trị sản phẩm</td>
-					<td>Chúng ta đang giải quyết đúng vấn đề và ưu tiên đúng điều cần làm không?</td>
-				</tr>
-				<tr>
-					<td>Developers</td>
-					<td>Tạo Increment có chất lượng và bền vững</td>
-					<td>Chúng ta có thể biến mục tiêu thành một sản phẩm có thể sử dụng, vận hành và phát triển tiếp không?</td>
-				</tr>
-				<tr>
-					<td>Scrum Master</td>
-					<td>Nâng hiệu quả của Scrum Team và hệ thống vận hành</td>
-					<td>Team có đang tự quản, học hỏi, xử lý trở ngại và cải thiện liên tục không?</td>
-				</tr>
-				<tr>
-					<td>Phát triển cá nhân</td>
-					<td>Xây dựng năng lực con người</td>
-					<td>Mỗi cá nhân cần phát triển gì để đóng góp tốt hơn cho team và đảm nhận phạm vi trách nhiệm lớn hơn?</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<p>Ba dòng đầu là các accountability trong Scrum. “Phát triển cá nhân” không phải là accountability thứ tư của Scrum, cũng không thay thế trách nhiệm tập thể của Scrum Team.</p>
-
-		<p>Đây là một lớp bổ sung thuộc về quản trị con người và phát triển năng lực trong tổ chức. Scrum cần một Scrum Team tự quản, liên chức năng và có năng lực. Nhưng Scrum không quy định tổ chức phải xây dựng năng lực đó bằng cách nào. Vì vậy, tổ chức vẫn cần một cơ chế để phát hiện khoảng trống, phát triển con người, chia sẻ kiến thức, hỗ trợ mentoring và tạo lộ trình nghề nghiệp phù hợp.</p>
-
-		<blockquote>
-			<p>Scrum Team chịu trách nhiệm chung về giá trị và Increment. Tổ chức vẫn cần chịu trách nhiệm phát triển năng lực để Scrum Team có thể thực hiện trách nhiệm đó.</p>
-		</blockquote>
-	</section>
-
-	<section class="content-section">
-		<h2 class="main-point">Khung quan sát hiệu quả: không đo để kiểm soát, đo để học và cải thiện</h2>
-
-		<p>Một trong những rủi ro lớn nhất khi áp dụng Scrum là tổ chức vẫn dùng cách đo lường cũ: velocity, số ticket hoàn thành, số giờ làm việc, số Pull Request, số cuộc họp hay mức độ bận rộn.</p>
-
-		<p>Những dữ liệu này không hoàn toàn vô ích. Chúng có thể giúp team dự báo, nhận diện bottleneck hoặc quan sát xu hướng. Nhưng khi bị biến thành KPI hiệu suất, chỉ số thưởng phạt hoặc công cụ so sánh giữa các team, chúng rất dễ làm méo hành vi.</p>
-
-		<p>Khi velocity trở thành mục tiêu, team có xu hướng tối ưu story point. Khi số ticket trở thành mục tiêu, mọi người có xu hướng chọn việc dễ đóng. Khi số Pull Request trở thành mục tiêu, Developers có thể tạo nhiều thay đổi nhỏ mang tính hình thức. Khi Scrum Master bị đánh giá bằng số buổi họp hay số impediment đóng, vai trò có thể bị thu hẹp thành điều phối và báo cáo. Khi Product Owner bị đánh giá chỉ bằng số feature release, giá trị bị thay thế bằng output.</p>
-
-		<p>Vì vậy, hệ thống quan sát trong chuỗi bài viết này dựa trên một nguyên tắc:</p>
-
-		<blockquote>
-			<p>Không dùng đo lường để tìm một người phải chịu lỗi. Dùng đo lường để hiểu hệ thống đang thiếu điều kiện gì để tạo ra giá trị tốt hơn.</p>
-		</blockquote>
-
-		<p>Mỗi chỉ số chỉ là tín hiệu, không phải phán quyết. Một tín hiệu xấu cần dẫn đến câu hỏi về nguyên nhân, bối cảnh, điều kiện và hành động cải thiện; không nên dẫn ngay đến việc gán nhãn một cá nhân hoặc một team.</p>
-	</section>
-
-	<section class="content-section">
-		<h2 class="main-point">Bốn nguyên tắc chung của hệ thống đo lường</h2>
-
-		<h3 class="sub-point-1">1. Quan sát xu hướng, không phán xét từ một thời điểm</h3>
-		<p>Một Sprint không đạt Sprint Goal, một release có defect hoặc một Retrospective chưa tạo action hoàn chỉnh không đủ để kết luận một vai trò hay một team không hiệu quả.</p>
-
-		<p>Điều cần quan sát là xu hướng qua nhiều Sprint và nhiều chu kỳ: chất lượng đang tốt hơn hay xấu hơn, dependency có giảm hay tăng, các vấn đề có lặp lại hay được xử lý tận gốc, team có tự chủ hơn hay ngày càng phụ thuộc nhiều hơn.</p>
-
-		<h3 class="sub-point-1">2. Không có chỉ số nào được diễn giải độc lập</h3>
-		<p>Một outcome tốt nhưng technical debt tăng mạnh chưa chắc là thành công. Flow nhanh hơn nhưng defect escape tăng chưa chắc là cải thiện. Sprint Goal đạt đều nhưng team kiệt sức, overtime kéo dài hoặc knowledge concentration tăng cũng không phải trạng thái bền vững.</p>
-
-		<p>Mỗi thay đổi cần được nhìn tối thiểu qua bốn góc độ:</p>
-
-		<ul class="outline-list">
-			<li><strong>Outcome:</strong> thay đổi có tạo giá trị hoặc tác động mong muốn không?</li>
-			<li><strong>Flow:</strong> công việc có di chuyển ổn định và minh bạch không?</li>
-			<li><strong>Quality:</strong> chất lượng kỹ thuật, vận hành và khả năng bảo trì có được bảo vệ không?</li>
-			<li><strong>Sustainability:</strong> con người và hệ thống có thể duy trì kết quả này lâu dài không?</li>
-		</ul>
-
-		<h3 class="sub-point-1">3. Phân biệt accountability với influence</h3>
-		<p>Một vai trò có thể ảnh hưởng đến một kết quả mà không phải là người chịu trách nhiệm cuối cùng cho toàn bộ kết quả đó.</p>
-
-		<p>Ví dụ, Product Owner chịu trách nhiệm tối đa hóa giá trị sản phẩm, nhưng outcome còn chịu ảnh hưởng bởi thị trường, chiến lược kinh doanh, marketing, pricing, trải nghiệm người dùng và khả năng delivery. Developers chịu trách nhiệm tạo Increment có chất lượng, nhưng không thể tự giải quyết mọi dependency, approval chain hoặc quyết định cấp tổ chức. Scrum Master có thể làm lộ ra impediment hệ thống và thúc đẩy thay đổi, nhưng không sở hữu quyền quyết định của management.</p>
-
-		<p>Vì vậy, khi quan sát hiệu quả, cần luôn phân biệt:</p>
-
-		<table class="content-table">
-			<thead>
-				<tr>
-					<th>Khái niệm</th>
-					<th>Ý nghĩa</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Accountability</td>
-					<td>Ai chịu trách nhiệm chính trong phạm vi vai trò của mình?</td>
-				</tr>
-				<tr>
-					<td>Influence</td>
-					<td>Ai có thể góp phần cải thiện hoặc làm xấu kết quả?</td>
-				</tr>
-				<tr>
-					<td>Decision right</td>
-					<td>Ai có quyền thực sự để quyết định và xử lý nguyên nhân?</td>
-				</tr>
-				<tr>
-					<td>System owner</td>
-					<td>Ai sở hữu điều kiện hoặc rào cản ở cấp tổ chức?</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<h3 class="sub-point-1">4. Mỗi tín hiệu phải dẫn đến hành động</h3>
-		<p>Một dashboard không dẫn đến quyết định, thử nghiệm hoặc cải thiện chỉ tạo thêm báo cáo.</p>
-
-		<p>Mỗi tín hiệu quan trọng cần có ít nhất:</p>
-
-		<ul class="outline-list">
-			<li>Bằng chứng hoặc dữ liệu quan sát được.</li>
-			<li>Giả thuyết về nguyên nhân.</li>
-			<li>Người hoặc nhóm có quyền xử lý.</li>
-			<li>Một hành động hoặc thử nghiệm cụ thể.</li>
-			<li>Thời điểm kiểm chứng lại.</li>
-		</ul>
-
-		<p>Mục tiêu không phải là làm nhiều action hơn. Mục tiêu là chọn ít cải tiến nhưng theo đến cùng và kiểm chứng được tác động.</p>
-	</section>
-
-	<section class="content-section">
-		<h2 class="main-point">Ranh giới trách nhiệm trong hệ thống</h2>
-
-		<table class="content-table">
-			<thead>
-				<tr>
-					<th>Chủ đề</th>
-					<th>Product Owner</th>
-					<th>Developers</th>
-					<th>Scrum Master</th>
-					<th>Organization / People Manager</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Product Goal</td>
-					<td>Định hướng và chịu trách nhiệm chính</td>
-					<td>Đóng góp góc nhìn kỹ thuật và tính khả thi</td>
-					<td>Hỗ trợ transparency và empiricism</td>
-					<td>Cung cấp chiến lược, bối cảnh và điều kiện cần thiết</td>
-				</tr>
-				<tr>
-					<td>Thứ tự ưu tiên Product Backlog</td>
-					<td>Chịu trách nhiệm chính</td>
-					<td>Làm rõ effort, risk, dependency và solution options</td>
-					<td>Hỗ trợ cách làm việc hiệu quả</td>
-					<td>Tôn trọng vai trò và tránh bypass Product Owner</td>
-				</tr>
-				<tr>
-					<td>Increment và chất lượng kỹ thuật</td>
-					<td>Làm rõ giá trị và acceptance cần thiết</td>
-					<td>Chịu trách nhiệm chính theo Definition of Done</td>
-					<td>Giúp Scrum Team cải thiện cách vận hành</td>
-					<td>Cung cấp công cụ, môi trường và năng lực cần thiết</td>
-				</tr>
-				<tr>
-					<td>Sprint Goal</td>
-					<td>Cộng tác để làm rõ giá trị</td>
-					<td>Lập kế hoạch và thích nghi để đạt mục tiêu</td>
-					<td>Giúp Sprint Goal trở thành cơ chế focus thực chất</td>
-					<td>Tôn trọng Sprint boundary và cơ chế xử lý urgent work</td>
-				</tr>
-				<tr>
-					<td>Flow và dependency</td>
-					<td>Giảm chờ đợi do backlog và quyết định sản phẩm</td>
-					<td>Giảm bottleneck kỹ thuật, rework và work in progress không cần thiết</td>
-					<td>Làm lộ impediment, thúc đẩy xử lý và escalation</td>
-					<td>Giải quyết structural blocker, policy và cross-team ownership</td>
-				</tr>
-				<tr>
-					<td>Phát triển cá nhân</td>
-					<td>Đưa phản hồi về product collaboration khi phù hợp</td>
-					<td>Peer feedback và knowledge sharing</td>
-					<td>Coaching về teamwork, Scrum và cải tiến</td>
-					<td>Chịu trách nhiệm chính về growth, staffing, career và compensation</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<p>Bảng này không nhằm tạo ra ranh giới cứng để mọi người đẩy trách nhiệm cho nhau. Nó giúp tránh một vấn đề phổ biến: mọi người cùng “có trách nhiệm” nhưng không ai có quyền hoặc nghĩa vụ rõ ràng để xử lý vấn đề đến cùng.</p>
-	</section>
-
-	<section class="content-section">
-		<h2 class="main-point">Cách đọc các bài viết tiếp theo</h2>
-
-		<p>Các bài viết tiếp theo không nhằm tạo ra một công thức Scrum mới hoặc một bộ KPI áp dụng giống nhau cho mọi tổ chức.</p>
-
-		<p>Mỗi bài sẽ đi vào một phạm vi riêng:</p>
-
-		<ul class="outline-list">
-			<li><strong>Product Owner:</strong> cách quan sát khả năng định hướng giá trị, giảm bất định và đưa ra quyết định sản phẩm.</li>
-			<li><strong>Scrum Master:</strong> cách quan sát mức tự quản, khả năng cải tiến, flow và những trở ngại mang tính hệ thống.</li>
-			<li><strong>Developers:</strong> cách quan sát capability, chất lượng kỹ thuật, khả năng cộng tác tạo giá trị và độ bền vững của delivery.</li>
-			<li><strong>Phát triển cá nhân:</strong> cách đánh giá năng lực của từng cá nhân để phát triển con người mà không phá vỡ tinh thần hợp tác của Scrum Team.</li>
-		</ul>
-
-		<p>Những khung này nên được sử dụng như một hệ thống quan sát và đối thoại. Chúng không thay thế Scrum events, không thay thế Product Goal, Sprint Goal hay Definition of Done, và càng không thay thế trách nhiệm của lãnh đạo trong việc tạo ra môi trường phù hợp.</p>
-
-		<p>Scrum có thể giúp một tổ chức làm việc minh bạch hơn. Nhưng để tạo ra giá trị bền vững, tổ chức còn phải đầu tư vào năng lực, quyền ra quyết định, chất lượng kỹ thuật, khả năng học hỏi và cách đo lường.</p>
-
-		<blockquote>
-			<p>Scrum không tạo ra một tổ chức tốt thay cho con người. Scrum tạo ra điều kiện để tổ chức không thể tiếp tục che giấu những vấn đề đang ngăn con người tạo ra giá trị.</p>
-		</blockquote>
-	</section>
-
-	<section class="content-section">
-		<p>Bài viết tiếp theo: <a href="1-scrum-team-product-owner.html">Scrum Team - Product Owner (PO)</a> — Khi PO không đảm bảo được vai trò định hướng giá trị cho sản phẩm.</p>
-
-		<p style="text-align: right; margin-top: 3em; font-style: italic;">Phù Du</p>
-	</section>
-</article>
-
-<script src="../../../pages-scripts.js"></script>
-
+			<blockquote>
+				<p>Scrum không tạo ra một tổ chức tốt thay cho con người. Scrum tạo ra điều kiện để tổ chức không thể
+					tiếp tục che giấu những vấn đề đang ngăn con người tạo ra giá trị.</p>
+			</blockquote>
+		</section>
+		<section class="content-section">
+			<h2 class="main-point">Nguồn tham khảo</h2>
+			<ol class="outline-list">
+				<li id="ref-1">Schwaber, K. &amp; Sutherland, J. (2020). <em>The Scrum Guide: The Definitive Guide to
+						Scrum</em>. Nguồn chính thức của Scrum về Scrum Team, accountabilities, Product Goal, Sprint
+					Goal, Increment và empiricism. <a
+						href="https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf"
+						rel="noopener noreferrer" target="_blank">Đọc tài liệu</a>.</li>
+				<li id="ref-2">Forsgren, N., Storey, M.-A., Maddila, C., Zimmermann, T., Houck, B. &amp; Butler, J.
+					(2021). <em>The SPACE of Developer Productivity</em>, ACM Queue. Khung SPACE nhấn mạnh năng suất
+					developers là đa chiều: satisfaction and well-being, performance, activity, communication and
+					collaboration, efficiency and flow. <a href="https://queue.acm.org/detail.cfm?id=3454124"
+						rel="noopener noreferrer" target="_blank">Đọc bài viết</a>.</li>
+				<li id="ref-3">Fowler, M. (2013). <em>An Appropriate Use of Metrics</em>. Bài viết về rủi ro tối ưu cục
+					bộ và việc dùng metric theo cách làm lệch mục tiêu tạo ra phần mềm hữu ích. <a
+						href="https://martinfowler.com/articles/useOfMetrics.html" rel="noopener noreferrer"
+						target="_blank">Đọc bài viết</a>.</li>
+				<li id="ref-4">Google Cloud / DORA (2020). <em>Using Four Keys metrics to measure DevOps
+						performance</em>. Giới thiệu bốn chỉ số delivery: deployment frequency, lead time for changes,
+					change failure rate và time to restore service. <a
+						href="https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance"
+						rel="noopener noreferrer" target="_blank">Đọc bài viết</a>.</li>
+			</ol>
+			<p>Danh sách này là nền tảng tham chiếu cho bài mở đầu. Các bài chuyên sâu tiếp theo sẽ bổ sung nguồn phù
+				hợp hơn cho product discovery, psychological safety, team design, scaling, flow và phát triển năng lực.
+			</p>
+		</section>
+		<section class="content-section">
+			<p>Bài viết tiếp theo: <a href="1-scrum-team-product-owner.html">Scrum Team - Product Owner (PO)</a> — Khi
+				PO không đảm bảo được vai trò định hướng giá trị cho sản phẩm.</p>
+			<p style="text-align: right; margin-top: 3em; font-style: italic;">Phù Du</p>
+		</section>
+	</article>
+	<script src="../../../pages-scripts.js"></script>
 </body>
+
 </html>

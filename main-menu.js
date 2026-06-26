@@ -769,6 +769,19 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Microsoft AI Transformation Leader",
+                        icon: "fas fa-folder",
+                        subItems: [
+                            {
+                                title: "Quizzes",
+                                route: "quizzes/quizzes.html?config=../pages/information-technology/microsoft-AI-transformation-leader/quizzes/quizzes-main.js",
+                                hash: "#/information-technology/microsoft-AI-transformation-leader/quizzes",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                        ],
+                    },
                 ],
             },
         ],

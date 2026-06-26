@@ -4,6 +4,7 @@
 	const state = {
 		configs: [],
 		configScriptPath: null,
+		configScriptUrl: null,
 		selectedConfigIndex: 0,
 		activeConfig: null,
 		activeQuestions: [],
@@ -117,6 +118,18 @@
 		});
 	}
 
+	function resolveFromConfigPath(path) {
+		if (!state.configScriptUrl) {
+			return path;
+		}
+
+		try {
+			return new URL(path, state.configScriptUrl).toString();
+		} catch {
+			return path;
+		}
+	}
+
 	function normalizeAnswerIds(answerList) {
 		const unique = new Set((answerList || []).map((id) => toNumber(id, -1)).filter((id) => id >= 0));
 		return [...unique].sort((a, b) => a - b);
@@ -157,7 +170,8 @@
 
 	async function parseQuestionBankSource(source) {
 		if (typeof source === 'string') {
-			const response = await fetch(source);
+			const resolvedPath = resolveFromConfigPath(source);
+			const response = await fetch(resolvedPath);
 			if (!response.ok) {
 				throw new Error(`Khong tai duoc question bank: ${source}`);
 			}
@@ -173,7 +187,8 @@
 				return source;
 			}
 			if (typeof source.file === 'string') {
-				const response = await fetch(source.file);
+				const resolvedPath = resolveFromConfigPath(source.file);
+				const response = await fetch(resolvedPath);
 				if (!response.ok) {
 					throw new Error(`Khong tai duoc question bank: ${source.file}`);
 				}
@@ -519,6 +534,7 @@
 				window.quizzesConfig = undefined;
 				await loadConfigScript(scriptPath);
 				state.configScriptPath = scriptPath;
+				state.configScriptUrl = new URL(scriptPath, window.location.href).toString();
 			}
 
 			const rawConfigs = Array.isArray(window.quizzesConfig) ? window.quizzesConfig : [];

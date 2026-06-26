@@ -774,6 +774,13 @@ var mainMenu = [
                         icon: "fas fa-folder",
                         subItems: [
                             {
+                                title: "Cheat Sheet",
+                                route: "pages/information-technology/microsoft-AI-transformation-leader/ab-731-cheat-sheet.html",
+                                hash: "#/ab-731-cheat-sheet",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
                                 title: "Quizzes",
                                 route: "quizzes/quizzes.html?config=../pages/information-technology/microsoft-AI-transformation-leader/quizzes/quizzes-main.js",
                                 hash: "#/information-technology/microsoft-AI-transformation-leader/quizzes",

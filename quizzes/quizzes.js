@@ -16,6 +16,112 @@
 		quizStarted: false,
 	};
 
+	const locale = String(document.documentElement.lang || 'en').toLowerCase().startsWith('vi') ? 'vi' : 'en';
+	const TEXT = {
+		en: {
+			labels: {
+				selectedCount: 'selected',
+				questionPrefix: 'Question',
+				questionTags: 'Tags',
+				noTags: 'N/A',
+			},
+			setup: {
+				duration: 'Duration',
+				questions: 'Questions',
+				passingScore: 'Passing score',
+				category: 'Category ratio',
+				noCategory: 'Not specified (the system will randomize from the whole question bank).',
+				loadingConfig: 'Loading quiz configuration...',
+				loadedConfig: 'Configuration loaded successfully. Choose a quiz set to start.',
+				noConfig: 'No valid quiz configuration found in the config file.',
+				chooseOther: 'Please choose another quiz set.',
+			},
+			quiz: {
+				loadingQuestions: 'Loading question bank...',
+				started: 'You are now taking the quiz. Your answers are saved automatically for each question.',
+				cannotStart: 'Unable to start the quiz.',
+				noQuestions: 'No questions could be selected. Check categoryPercentage and tags.',
+				confirmSubmit: 'Are you sure you want to submit?',
+				timeOver: 'Time is up. The system submitted your quiz automatically.',
+				submitted: 'Your quiz has been submitted successfully.',
+				passed: 'Passed',
+				notPassed: 'Not passed',
+				retry: 'Retry',
+				back: 'Choose another quiz',
+				resultTitle: 'Results',
+				correct: 'Correct',
+				score: 'Score',
+			},
+			timer: {
+				timeLeft: 'Time left',
+				question: 'Question',
+				status: 'Status',
+			},
+			buttons: {
+				start: 'Start quiz',
+				reload: 'Reload config',
+				previous: 'Previous',
+				next: 'Next',
+				submit: 'Submit',
+			},
+			hint: 'Tip: you can pass the config file with URL param <strong>?config=path/to/quizzes-main.js</strong>.',
+			statusDefault: 'Initializing quiz...',
+		},
+		vi: {
+			labels: {
+				selectedCount: 'đã chọn',
+				questionPrefix: 'Câu',
+				questionTags: 'Tags',
+				noTags: 'N/A',
+			},
+			setup: {
+				duration: 'Thời gian',
+				questions: 'Số câu',
+				passingScore: 'Mức đạt',
+				category: 'Tỷ lệ category',
+				noCategory: 'Không khai báo (hệ thống sẽ trộn ngẫu nhiên toàn bộ question bank).',
+				loadingConfig: 'Đang nạp cấu hình quiz...',
+				loadedConfig: 'Đã nạp cấu hình thành công. Chọn bộ quiz để bắt đầu.',
+				noConfig: 'Không tìm thấy quizzesConfig hợp lệ trong file cấu hình.',
+				chooseOther: 'Mời chọn bộ quiz khác.',
+			},
+			quiz: {
+				loadingQuestions: 'Đang tải question bank...',
+				started: 'Bạn đang làm bài. Hệ thống tự lưu lựa chọn từng câu.',
+				cannotStart: 'Không thể bắt đầu quiz.',
+				noQuestions: 'Không chọn được câu hỏi nào. Kiểm tra categoryPercentage và tags.',
+				confirmSubmit: 'Bạn chắc chắn muốn nộp bài?',
+				timeOver: 'Hết giờ, hệ thống đã nộp bài tự động.',
+				submitted: 'Bạn đã nộp bài thành công.',
+				passed: 'Đạt',
+				notPassed: 'Chưa đạt',
+				retry: 'Làm lại',
+				back: 'Chọn bộ quiz khác',
+				resultTitle: 'Kết quả',
+				correct: 'Trả lời đúng',
+				score: 'Điểm số',
+			},
+			timer: {
+				timeLeft: 'Thời gian còn lại',
+				question: 'Câu',
+				status: 'Trạng thái',
+			},
+			buttons: {
+				start: 'Bắt đầu làm bài',
+				reload: 'Nạp lại cấu hình',
+				previous: 'Câu trước',
+				next: 'Câu tiếp theo',
+				submit: 'Nộp bài',
+			},
+			hint: 'Mẹo: có thể truyền file cấu hình bằng URL param <strong>?config=duong-dan/quizzes-main.js</strong>.',
+			statusDefault: 'Đang khởi tạo quiz...',
+		},
+	}[locale];
+
+	function text(path) {
+		return path.split('.').reduce((value, key) => value && value[key], TEXT);
+	}
+
 	const elements = {
 		quizTitle: document.getElementById('quiz-title'),
 		quizSubtitle: document.getElementById('quiz-subtitle'),
@@ -114,7 +220,7 @@
 			script.async = true;
 			script.dataset.quizConfigPath = path;
 			script.onload = () => resolve();
-			script.onerror = () => reject(new Error(`Khong the tai file cau hinh: ${path}`));
+			script.onerror = () => reject(new Error(locale === 'vi' ? `Không thể tải file cấu hình: ${path}` : `Unable to load config file: ${path}`));
 			document.head.appendChild(script);
 		});
 	}
@@ -141,7 +247,7 @@
 				state.loadedQuestionBankScripts.add(path);
 				resolve();
 			};
-			script.onerror = () => reject(new Error(`Khong tai duoc question bank script: ${path}`));
+			script.onerror = () => reject(new Error(locale === 'vi' ? `Không thể tải question bank script: ${path}` : `Unable to load question bank script: ${path}`));
 			document.head.appendChild(script);
 		});
 	}
@@ -171,19 +277,19 @@
 			xhr.onload = () => {
 				const ok = (xhr.status >= 200 && xhr.status < 300) || (xhr.status === 0 && xhr.responseText);
 				if (!ok) {
-					reject(new Error(`Khong tai duoc question bank: ${sourceLabel}`));
+					reject(new Error(locale === 'vi' ? `Không thể tải question bank: ${sourceLabel}` : `Unable to load question bank: ${sourceLabel}`));
 					return;
 				}
 
 				try {
 					resolve(JSON.parse(xhr.responseText));
 				} catch {
-					reject(new Error(`Question bank khong phai JSON hop le: ${sourceLabel}`));
+					reject(new Error(locale === 'vi' ? `Question bank không phải JSON hợp lệ: ${sourceLabel}` : `Question bank is not valid JSON: ${sourceLabel}`));
 				}
 			};
 
 			xhr.onerror = () => {
-				reject(new Error(`Khong tai duoc question bank: ${sourceLabel}`));
+				reject(new Error(locale === 'vi' ? `Không thể tải question bank: ${sourceLabel}` : `Unable to load question bank: ${sourceLabel}`));
 			};
 
 			xhr.send();
@@ -194,7 +300,7 @@
 		try {
 			const response = await fetch(url);
 			if (!response.ok) {
-				throw new Error(`Khong tai duoc question bank: ${sourceLabel}`);
+				throw new Error(locale === 'vi' ? `Không thể tải question bank: ${sourceLabel}` : `Unable to load question bank: ${sourceLabel}`);
 			}
 			return response.json();
 		} catch (error) {
@@ -225,7 +331,7 @@
 
 		return {
 			id: `${index + 1}-${Math.random().toString(36).slice(2, 10)}`,
-			question: typeof question.question === 'string' ? question.question : `Cau hoi ${index + 1}`,
+			question: typeof question.question === 'string' ? question.question : `${text('labels.questionPrefix')} ${index + 1}`,
 			tags: Array.isArray(question.tags) ? question.tags.map((tag) => String(tag)) : [],
 			options: normalizedOptions,
 			answer: normalizeAnswerIds(Array.isArray(question.answer) ? question.answer : []),
@@ -388,13 +494,13 @@
 			? config.categoryPercentage
 				.map((item) => `${escapeHtml(String(item.tag || 'N/A'))}: ${toNumber(item.percentage, 0)}%`)
 				.join(' | ')
-			: 'Khong khai bao (he thong se tron ngau nhien toan bo question bank).';
+			: text('setup.noCategory');
 
 		elements.configMetrics.innerHTML = `
-			<div class="metric-pill"><span>Thoi gian</span><strong>${config.duration} phut</strong></div>
-			<div class="metric-pill"><span>So cau</span><strong>${config.questions}</strong></div>
-			<div class="metric-pill"><span>Muc dat</span><strong>${config.passingScore}%</strong></div>
-			<div class="metric-pill metric-wide"><span>Ty le category</span><strong>${categoryText}</strong></div>
+			<div class="metric-pill"><span>${text('setup.duration')}</span><strong>${config.duration} ${locale === 'vi' ? 'phút' : 'min'}</strong></div>
+			<div class="metric-pill"><span>${text('setup.questions')}</span><strong>${config.questions}</strong></div>
+			<div class="metric-pill"><span>${text('setup.passingScore')}</span><strong>${config.passingScore}%</strong></div>
+			<div class="metric-pill metric-wide"><span>${text('setup.category')}</span><strong>${categoryText}</strong></div>
 		`;
 	}
 
@@ -415,7 +521,7 @@
 		const total = state.activeQuestions.length;
 		const percent = total === 0 ? 0 : Math.round((answeredCount / total) * 100);
 
-		elements.answeredCount.textContent = `${answeredCount}/${total} da tra loi`;
+		elements.answeredCount.textContent = `${answeredCount}/${total} ${text('labels.selectedCount')}`;
 		elements.progressBar.style.width = `${percent}%`;
 		elements.progressWrap.setAttribute('aria-valuenow', String(percent));
 	}
@@ -430,7 +536,7 @@
 
 		elements.questionIndex.textContent = `${currentIndex + 1}/${total}`;
 		elements.questionText.textContent = question.question;
-		elements.questionTags.textContent = question.tags.length > 0 ? `Tags: ${question.tags.join(', ')}` : 'Tags: N/A';
+		elements.questionTags.textContent = question.tags.length > 0 ? `${text('labels.questionTags')}: ${question.tags.join(', ')}` : `${text('labels.questionTags')}: ${text('labels.noTags')}`;
 
 		const selected = getSelectedAnswerSet(currentIndex);
 		const isMultiChoice = question.answer.length > 1;
@@ -529,14 +635,14 @@
 	function showResult(result, timeOver = false) {
 		togglePanel('result');
 		const summary = timeOver
-			? 'Het gio, he thong da nop bai tu dong.'
-			: 'Ban da nop bai thanh cong.';
+			? text('quiz.timeOver')
+			: text('quiz.submitted');
 		setStatus(summary, timeOver ? 'warn' : 'ok');
 
 		elements.resultScore.textContent = `${result.percentByPoints}%`;
 		elements.resultPassThreshold.textContent = `${state.activeConfig.passingScore}%`;
 		elements.resultCorrect.textContent = `${result.correctCount}/${result.totalQuestions}`;
-		elements.resultStatus.textContent = result.passed ? 'Dat' : 'Chua dat';
+		elements.resultStatus.textContent = result.passed ? text('quiz.passed') : text('quiz.notPassed');
 		elements.resultStatus.classList.toggle('pass', result.passed);
 		elements.resultStatus.classList.toggle('fail', !result.passed);
 	}
@@ -567,17 +673,17 @@
 		try {
 			const config = state.configs[state.selectedConfigIndex];
 			if (!config) {
-				throw new Error('Khong tim thay cau hinh quiz.');
+				throw new Error(locale === 'vi' ? 'Không tìm thấy cấu hình quiz.' : 'Quiz configuration not found.');
 			}
 
-			setStatus('Dang tai questions bank...', 'info');
+			setStatus(text('quiz.loadingQuestions'), 'info');
 
 			const allQuestions = await loadAllQuestions(config);
 			const targetCount = Math.min(config.questions, allQuestions.length);
 			const selected = pickQuestionsByCategory(allQuestions, config.categoryPercentage, targetCount);
 
 			if (selected.length === 0) {
-				throw new Error('Khong chon duoc cau hoi nao. Kiem tra categoryPercentage va tags.');
+				throw new Error(text('quiz.noQuestions'));
 			}
 
 			state.activeConfig = config;
@@ -587,15 +693,17 @@
 			state.quizStarted = true;
 
 			elements.quizTitle.textContent = config.quizName;
-			elements.quizSubtitle.textContent = `Tong so ${state.activeQuestions.length} cau hoi, nguong dat ${config.passingScore}%.`;
+			elements.quizSubtitle.textContent = locale === 'vi'
+				? `Tổng số ${state.activeQuestions.length} câu hỏi, ngưỡng đạt ${config.passingScore}%.`
+				: `Total ${state.activeQuestions.length} questions, passing score ${config.passingScore}%.`;
 
 			togglePanel('quiz');
 			startTimer(config.duration);
 			renderCurrentQuestion();
 
-			setStatus('Dang lam bai. He thong tu luu lua chon tung cau.', 'ok');
+			setStatus(text('quiz.started'), 'ok');
 		} catch (error) {
-			setStatus(error instanceof Error ? error.message : 'Khong the bat dau quiz.', 'error');
+			setStatus(error instanceof Error ? error.message : text('quiz.cannotStart'), 'error');
 		}
 	}
 
@@ -614,7 +722,7 @@
 
 	async function initializeConfig(reload = false) {
 		try {
-			setStatus('Dang nap cau hinh quiz...', 'info');
+			setStatus(text('setup.loadingConfig'), 'info');
 			const scriptPath = getConfigScriptPath();
 
 			if (reload || state.configScriptPath !== scriptPath || !Array.isArray(window.quizzesConfig)) {
@@ -628,7 +736,7 @@
 			const normalizedConfigs = rawConfigs.map((config, index) => normalizeConfig(config, index));
 
 			if (normalizedConfigs.length === 0) {
-				throw new Error('Khong tim thay quizzesConfig hop le trong file cau hinh.');
+				throw new Error(text('setup.noConfig'));
 			}
 
 			state.configs = normalizedConfigs;
@@ -636,12 +744,12 @@
 
 			renderConfigSelect();
 			togglePanel('setup');
-			setStatus('Da nap cau hinh thanh cong. Chon bo quiz de bat dau.', 'ok');
+			setStatus(text('setup.loadedConfig'), 'ok');
 		} catch (error) {
 			state.configs = [];
 			renderConfigSelect();
 			togglePanel('setup');
-			setStatus(error instanceof Error ? error.message : 'Khong the nap cau hinh quiz.', 'error');
+			setStatus(error instanceof Error ? error.message : text('setup.noConfig'), 'error');
 		}
 	}
 
@@ -672,7 +780,7 @@
 		});
 
 		elements.submitBtn.addEventListener('click', () => {
-			const accepted = window.confirm('Ban chac chan muon nop bai?');
+			const accepted = window.confirm(text('quiz.confirmSubmit'));
 			if (accepted) {
 				submitQuiz(false);
 			}
@@ -696,7 +804,7 @@
 			stopTimer();
 			state.quizStarted = false;
 			togglePanel('setup');
-			setStatus('Moi chon bo quiz khac.', 'info');
+				setStatus(text('setup.chooseOther'), 'info');
 		});
 	}
 

@@ -1026,7 +1026,7 @@ var mainMenuVn = [
                         subItems: [
                             {
                                 title: "Bai Quiz",
-                                route: "quizzes/quizzes.html?config=../pages/information-technology/microsoft-AI-transformation-leader/quizzes/quizzes-main.js",
+                                route: "quizzes/quizzes-vn.html?config=../pages/information-technology/microsoft-AI-transformation-leader/quizzes/quizzes-main.js",
                                 hash: "#/information-technology/microsoft-AI-transformation-leader/quizzes",
                                 icon: "fas fa-file-alt",
                                 subItems: [],

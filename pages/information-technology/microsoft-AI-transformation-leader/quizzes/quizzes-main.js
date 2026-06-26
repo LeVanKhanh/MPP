@@ -1,28 +1,93 @@
-window.quizzesConfig = [
+﻿window.quizzesConfig = [
     {
-        duration: 30,
-        questions: 40,
-        passingScore: 70,
-        quizName: "Microsoft AI Transformation Leader",   
-        questionsBank: [
-            {
-                script: "quiz1.js",
-                globalVar: "quiz1Data"
-            },
-            {
-                script: "quiz2.js",
-                globalVar: "quiz2Data"
-            },
-        ],
-        categoryPercentage: [
-            {
-                tag: 'Quiz 1',
-                percentage: 50
-            },
-            {
-                tag: 'Quiz 2',
-                percentage: 50
-            }
-        ]
+        "duration":  45,
+        "questions":  40,
+        "passingScore":  70,
+        "quizName":  "Domain 1 - Business value of generative AI",
+        "questionsBank":  [
+                              {
+                                  "script":  "domain1.js",
+                                  "globalVar":  "domain1Data"
+                              }
+                          ],
+        "categoryPercentage":  [
+
+                               ]
+    },
+    {
+        "duration":  45,
+        "questions":  45,
+        "passingScore":  70,
+        "quizName":  "Domain 2 - Microsoft AI apps and services",
+        "questionsBank":  [
+                              {
+                                  "script":  "domain2.js",
+                                  "globalVar":  "domain2Data"
+                              }
+                          ],
+        "categoryPercentage":  [
+
+                               ]
+    },
+    {
+        "duration":  45,
+        "questions":  35,
+        "passingScore":  70,
+        "quizName":  "Domain 3 - Implementation and adoption strategy",
+        "questionsBank":  [
+                              {
+                                  "script":  "domain3.js",
+                                  "globalVar":  "domain3Data"
+                              }
+                          ],
+        "categoryPercentage":  [
+
+                               ]
+    },
+    {
+        "duration":  45,
+        "questions":  40,
+        "passingScore":  70,
+        "quizName":  "Mock Exam 1",
+        "questionsBank":  [
+                              {
+                                  "script":  "mock1.js",
+                                  "globalVar":  "mock1Data"
+                              }
+                          ],
+        "categoryPercentage":  [
+
+                               ]
+    },
+    {
+        "duration":  45,
+        "questions":  40,
+        "passingScore":  70,
+        "quizName":  "Mock Exam 2",
+        "questionsBank":  [
+                              {
+                                  "script":  "mock2.js",
+                                  "globalVar":  "mock2Data"
+                              }
+                          ],
+        "categoryPercentage":  [
+
+                               ]
+    },
+    {
+        "duration":  45,
+        "questions":  40,
+        "passingScore":  70,
+        "quizName":  "Mock Exam 3",
+        "questionsBank":  [
+                              {
+                                  "script":  "mock3.js",
+                                  "globalVar":  "mock3Data"
+                              }
+                          ],
+        "categoryPercentage":  [
+
+                               ]
     }
 ];
+

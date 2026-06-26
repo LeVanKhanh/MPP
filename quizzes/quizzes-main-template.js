@@ -1,22 +1,15 @@
 window.quizzesConfig = [
     {
-        duration: 30,
+        duration: 45,
         questions: 40,
         passingScore: 70,
-        quizName: "Microsoft AI Transformation Leader",   
+        quizName: "Microsoft AI Transformation Leader",
         questionsBank: [
-            "quiz1.json",
-            "quiz2.json",
-        ],
-        categoryPercentage: [
             {
-                tag: 'abc',
-                percentage: 50
-            },
-            {
-                tag: 'xyz',
-                percentage: 50
+                script: "domain1.js",
+                globalVar: "domain1Data"
             }
-        ]
+        ],
+        categoryPercentage: []
     }
 ];

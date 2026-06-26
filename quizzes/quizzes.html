@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quiz Engine</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="quizzes.css">
+</head>
+<body>
+	<div class="quiz-bg-pattern" aria-hidden="true"></div>
+	<main class="quiz-app" aria-live="polite">
+		<section class="quiz-header-card">
+			<p class="quiz-kicker">QUIZ WORKSPACE</p>
+			<h1 class="quiz-title" id="quiz-title">Trình làm quiz theo cấu hình</h1>
+			<p class="quiz-subtitle" id="quiz-subtitle">Nạp cấu hình từ quizzes-main.js, trộn câu hỏi theo categoryPercentage và tính điểm tự động.</p>
+		</section>
+
+		<section class="quiz-panel" id="setup-panel">
+			<h2 class="section-title">Chọn bộ quiz</h2>
+			<div class="form-row">
+				<label for="quiz-select">Bộ đề</label>
+				<select id="quiz-select"></select>
+			</div>
+			<div class="config-metrics" id="config-metrics"></div>
+			<div class="button-row">
+				<button class="btn btn-primary" id="start-btn" type="button">Bắt đầu làm bài</button>
+				<button class="btn btn-ghost" id="reload-btn" type="button">Nạp lại cấu hình</button>
+			</div>
+			<p class="hint-text">Mẹo: có thể truyền file cấu hình bằng URL param <strong>?config=duong-dan/quizzes-main.js</strong>.</p>
+		</section>
+
+		<section class="quiz-panel hidden" id="quiz-panel">
+			<div class="quiz-toolbar">
+				<div class="toolbar-item">
+					<span>Thời gian còn lại</span>
+					<strong id="timer">00:00</strong>
+				</div>
+				<div class="toolbar-item">
+					<span>Câu</span>
+					<strong id="question-index">1/1</strong>
+				</div>
+				<div class="toolbar-item">
+					<span>Trạng thái</span>
+					<strong id="answered-count">0 đã chọn</strong>
+				</div>
+			</div>
+
+			<div class="progress-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-wrap">
+				<div class="progress-bar" id="progress-bar"></div>
+			</div>
+
+			<article class="question-card" id="question-card">
+				<h3 id="question-text"></h3>
+				<p class="question-tags" id="question-tags"></p>
+				<form id="options-form" class="options-list"></form>
+			</article>
+
+			<div class="button-row">
+				<button class="btn btn-ghost" type="button" id="prev-btn">Câu trước</button>
+				<button class="btn btn-primary" type="button" id="next-btn">Câu tiếp theo</button>
+				<button class="btn btn-warn" type="button" id="submit-btn">Nộp bài</button>
+			</div>
+		</section>
+
+		<section class="quiz-panel hidden" id="result-panel">
+			<h2 class="section-title">Kết quả</h2>
+			<div class="result-grid">
+				<div class="result-card">
+					<span>Điểm số</span>
+					<strong id="result-score">0%</strong>
+				</div>
+				<div class="result-card">
+					<span>Ngưỡng đạt</span>
+					<strong id="result-pass-threshold">0%</strong>
+				</div>
+				<div class="result-card">
+					<span>Trả lời đúng</span>
+					<strong id="result-correct">0/0</strong>
+				</div>
+				<div class="result-card">
+					<span>Kết luận</span>
+					<strong id="result-status">Chưa đạt</strong>
+				</div>
+			</div>
+			<div class="button-row">
+				<button class="btn btn-primary" type="button" id="retry-btn">Làm lại</button>
+				<button class="btn btn-ghost" type="button" id="back-btn">Chọn bộ quiz khác</button>
+			</div>
+		</section>
+
+		<section class="quiz-panel status-panel" id="status-panel">
+			<p id="status-text">Đang khởi tạo quiz...</p>
+		</section>
+	</main>
+
+	<script src="quizzes.js"></script>
+</body>
+</html>

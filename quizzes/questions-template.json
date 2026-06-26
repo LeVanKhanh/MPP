@@ -1,0 +1,53 @@
+
+{
+    "questions": [
+        {
+            "tags": ["Microsoft AI Transformation Leader", "Quiz 1"],
+            "question": "What is the primary goal of the Microsoft AI Transformation Leader program?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "To help organizations implement AI solutions effectively and responsibly."
+                },
+                {
+                    "id": 2,
+                    "text": "To provide training on Microsoft Office applications."
+                },
+                {
+                    "id": 3,
+                    "text": "To guide organizations in leveraging AI for business transformation."
+                },
+                {
+                    "id": 4,
+                    "text": "To develop AI algorithms for Microsoft products."
+                }
+            ],
+            "score": 10,
+            "answer": [1, 3]
+        },
+        {
+            "tags": ["Microsoft AI Transformation Leader", "Quiz 1"],
+            "question": "What is the primary goal of the Microsoft AI Transformation Leader program?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "To help organizations implement AI solutions effectively and responsibly."
+                },
+                {
+                    "id": 2,
+                    "text": "To provide training on Microsoft Office applications."
+                },
+                {
+                    "id": 3,
+                    "text": "To guide organizations in leveraging AI for business transformation."
+                },
+                {
+                    "id": 4,
+                    "text": "To develop AI algorithms for Microsoft products."
+                }
+            ],
+            "score": 10,
+            "answer": [1, 3]
+        }
+    ]
+}

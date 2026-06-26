@@ -1,1313 +1,1312 @@
 ﻿(() => {
     const data = {
-    "questions":  [
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Nhân viên cần tóm tắt email, chat, tài liệu và tạo nội dung ngay trong Word, Outlook, Teams. Sản phẩm phù hợp nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Microsoft 365 Copilot"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Azure AI Search một mình"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Azure Vision"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Power BI only"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Doanh nghiệp muốn xây chatbot có topic, workflow, connector và publish ra Teams/website với low-code. Chọn gì?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Microsoft Copilot Studio"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Azure Vision"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Excel"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Microsoft Defender"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một nhóm cần tìm semantic trên hàng triệu tài liệu, kết hợp keyword, vector và filters. Dịch vụ nào phù hợp?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Azure AI Search"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Microsoft Word"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Azure Vision"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Microsoft Lists"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Use case nào phù hợp nhất với Azure Vision in Foundry Tools?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Tạo roadmap dự án"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Đọc và phân tích hình ảnh/ảnh tài liệu"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Quản lý license Copilot"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tạo PowerPoint"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một công ty cần thử nhiều model, đánh giá chúng và triển khai solution AI dưới control enterprise. Nền tảng phù hợp nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Microsoft Foundry"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Outlook"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "OneDrive"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Planner"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Microsoft Graph đem lại giá trị gì trong hệ sinh thái Microsoft 365?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Cung cấp access có kiểm soát tới dữ liệu và mối quan hệ Microsoft 365"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Thay thế toàn bộ identity provider"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Chỉ lưu ảnh"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tự động mua license"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một team muốn dùng Copilot để nghiên cứu chuyên sâu, tổng hợp thông tin từ nhiều nguồn và trả báo cáo có cấu trúc. Feature nào phù hợp nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Researcher"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Analyst"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Azure Vision"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Teams Phone"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một manager có file dữ liệu lớn và cần phân tích, phát hiện xu hướng, mô hình hóa/giải thích dữ liệu. Feature nào phù hợp nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Researcher"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Analyst"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Copilot Studio topic"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Azure Vision"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một HR team chỉ cần chat với Copilot trên web/mobile để tổng hợp nội dung công khai và file được phép, không cần build agent. Điểm bắt đầu hợp lý?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Microsoft 365 Copilot Chat"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Fine-tune model"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Azure AI Search riêng"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Custom code first"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Khi nào nên “buy” thay vì build custom AI app?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Khi need là phổ biến và sản phẩm có sẵn đáp ứng yêu cầu với governance phù hợp"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Khi không có use case"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Khi cần tính năng độc đáo chưa tồn tại"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Khi không có budget"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Khi nào nên “extend” Microsoft 365 Copilot?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Khi có need domain-specific nhưng có thể bổ sung bằng agent, connector hoặc extensibility trong ecosystem"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Khi cần đổi toàn bộ ERP"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Khi không có dữ liệu nào"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Khi muốn bỏ security"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một business process cần trả lời dựa trên policy nội bộ và thực hiện action trong system khác sau khi người dùng xác nhận. Nên ưu tiên?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Copilot Studio agent with approved knowledge/actions"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Copilot Chat công khai"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Azure Vision only"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Manual copy paste"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Điểm mạnh của integrated Microsoft AI solution là gì?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Luôn miễn phí"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Có thể tận dụng identity, permissions, compliance và hệ sinh thái Microsoft sẵn có"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Không cần governance"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Không cần data quality"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một đội vận hành muốn search trong manual PDF và trả lời có trích dẫn. Bộ đôi khả năng nào phù hợp nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Azure AI Search + generative model trong Foundry"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Outlook + Excel"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Azure Vision only"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Teams meeting"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một tổ chức cần lựa chọn model cho chat đa ngôn ngữ, cost-sensitive và có đánh giá chất lượng. Cách tốt nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Chọn model lớn nhất mặc định"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Dùng Foundry để so sánh model theo quality, cost, latency, safety và requirement"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Chọn theo tên thương hiệu"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Không cần test"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một user hỏi “Copilot có thể tóm tắt cuộc họp Teams và liệt kê action items không?” Câu trả lời đúng nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Có, trong trải nghiệm Microsoft 365 Copilot/Teams phù hợp và tùy quyền truy cập"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Không, AI chỉ làm hình ảnh"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Chỉ khi dùng Azure Vision"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Không thể trong mọi trường hợp"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Use case nào là mapping tốt nhất cho Outlook Copilot?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Tạo và tinh chỉnh email, tóm tắt email thread"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Nhận diện lỗi camera"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Tạo vector index"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Triển khai infrastructure"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Use case nào là mapping tốt nhất cho Word Copilot?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Draft, rewrite, summarize document"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Vector search hàng triệu records"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "OCR invoice"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Identity governance"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Use case nào là mapping tốt nhất cho Excel Copilot/Analyst?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Phân tích dữ liệu, nhận diện trend và giải thích"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Tự động route ticket với workflow"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Nhận diện khuôn mặt"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tạo index document"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một agent cần biết chỉ các tài liệu mà người dùng đã có quyền xem. Kiến trúc nào hỗ trợ tốt nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Tích hợp sử dụng identity và permission trimming phù hợp"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Copy toàn bộ data vào public wiki"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Shared generic account"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tắt access checks"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một startup cần PoC chatbot nhanh trên website; sau đó có thể mở rộng enterprise. Sản phẩm low-code phù hợp?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Copilot Studio"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "PowerPoint"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Azure Vision"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "OneNote"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một nhà máy cần detect missing label từ ảnh trên dây chuyền. Nên cân nhắc?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Azure Vision in Foundry Tools"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Microsoft 365 Copilot"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Microsoft Graph"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Researcher"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một AI app cần retrieval trên private corpus với filtering theo department. Thành phần then chốt?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Azure AI Search index với filters/security design"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Word document"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Copilot Chat only"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Image generator"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Lợi ích chính của Microsoft Foundry trong lựa chọn AI model là gì?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Một model luôn tốt nhất"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Khám phá, đánh giá và quản trị model/solution theo business requirements"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Không cần monitor"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Không cần cost analysis"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Doanh nghiệp có một workflow nhân sự riêng, cần agent hỏi đáp policy và gọi HR system để tạo request. Chọn chiến lược nào?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Extend bằng Copilot Studio agent"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Chỉ dùng Word Copilot"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Chỉ mua Azure Vision"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Dùng spreadsheet manual"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một use case chỉ cần năng suất cá nhân trong Microsoft 365, không có workflow chuyên biệt. Hướng phù hợp nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Triển khai Microsoft 365 Copilot trước"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Build custom model"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Fine-tune everything"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tự tạo search engine"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Khi nào custom build là hợp lý nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Khi yêu cầu differentiating, workflow/UX/domain sâu mà buy/extend không đáp ứng"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Khi cần draft email thông thường"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Khi không có owner"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Khi muốn tránh evaluation"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một executive cần dashboard tóm tắt trạng thái dự án từ nhiều tài liệu, nhưng phải kiểm chứng nguồn. Khuyến nghị?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Dùng Researcher hoặc grounded solution với citations, sau đó human review"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Chỉ dùng model không nguồn"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Không cần review"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Dùng Vision"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một sales team muốn copilots có thể lấy account context từ CRM và đề xuất action. Kiến trúc khái niệm?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Extend Copilot/agent with approved CRM data and actions"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Chỉ dùng public search"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Copy CRM credentials vào prompt"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tắt permissions"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Tính năng nào KHÔNG phải lý do để dùng Azure AI Search?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Hybrid/vector retrieval"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Semantic search"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Index private documents for RAG"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Soạn email trong Outlook"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         4
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một leader hỏi sự khác nhau thực tế giữa Microsoft 365 Copilot và Copilot Studio. Câu đúng nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "M365 Copilot là productivity experience; Copilot Studio tạo/mở rộng agents và actions"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Chúng hoàn toàn giống nhau"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Copilot Studio chỉ dùng để xem ảnh"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "M365 Copilot chỉ làm code"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một solution phải chạy ở quy mô lớn và cần guardrails, monitoring và model governance. Nền tảng nên đánh giá?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Microsoft Foundry"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Word"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Outlook"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "OneDrive recycle bin"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một nhóm tài chính cần phân tích workbook phức tạp và giải thích variance. Ai/feature phù hợp nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Analyst"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Researcher"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Azure Vision"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Copilot Studio trigger"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một nhóm strategy cần nghiên cứu thị trường, tổng hợp đa nguồn và tạo brief có trích dẫn. Ai/feature phù hợp nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Researcher"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Analyst"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Azure Vision"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Power Automate only"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một app trả lời bằng private manuals nhưng cần cập nhật ngay khi tài liệu đổi. Lợi thế của RAG + Azure AI Search so với fine-tuning?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Có thể retrieve knowledge cập nhật mà không retrain model"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Không cần index"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Loại bỏ permissions"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Giảm nhu cầu testing về 0"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một owner hỏi “Tại sao không đưa mọi thứ vào Copilot Chat?” Lý do tốt nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Một số use case cần structured workflow, custom actions, specialized retrieval hoặc governance riêng"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Copilot Chat không có UI"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Copilot Chat không dùng AI"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tất cả data đều public"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một organization đã có Microsoft 365 và Entra ID. Lợi ích adoption khi dùng integrated solution?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Có thể tận dụng identity, tenant controls và familiar tools"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Không cần onboarding"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Không cần training"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Không có chi phí"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một chatbot nội bộ chỉ trả lời knowledge FAQs, không cần action. Lựa chọn tối giản nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Copilot Studio/grounded agent with approved knowledge"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Custom fine-tuned model first"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Azure Vision"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Manual email distribution"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Để mở rộng Microsoft 365 Copilot bằng dữ liệu doanh nghiệp, yếu tố nào không được bỏ qua?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Permission model và data governance"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Logo redesign"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Số font"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Màu nền"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một public-facing app cần nhận dạng đối tượng từ ảnh tải lên. Cần dịch vụ nào?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Azure Vision"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Microsoft 365 Copilot"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Researcher"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Microsoft Graph"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một app cần trả lời “what is in this document?” với citations và semantic retrieval. Cặp thành phần tốt nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Azure AI Search + model/agent"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Outlook + Teams"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Excel only"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Vision only"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Điều nào giúp quyết định build/buy/extend đúng hơn?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Đánh giá strategic differentiation, fit, time-to-value, integration, total cost and governance"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Chọn giải pháp mới nhất"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Chọn theo demo đẹp nhất"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Chỉ xem giá license"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một “agent” trong bối cảnh Copilot Studio thường khác chat đơn giản ở điểm nào?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Có thể được thiết kế với knowledge, instructions, topics/actions và channels"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Không thể trả lời"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Chỉ dùng offline"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Không có governance"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một business cần workflow trên existing Microsoft stack, nhưng muốn minimize custom code. Roadmap hợp lý?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Prototype with M365 Copilot/Copilot Studio, validate value and controls, then extend where gaps remain"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Build custom foundation model"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Skip pilot"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Move all data to public cloud storage"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 2 - Microsoft AI apps and services"
-                                   ],
-                          "question":  "Một agent cần truy xuất dữ liệu Microsoft 365 theo quyền của từng nhân viên. Thành phần và nguyên tắc nào quan trọng?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Microsoft Graph kết hợp identity và permissions"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Azure Vision không cần identity"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Public links cho mọi file"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Shared admin account"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      }
-                  ]
-};
+        "questions": [
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "Employees need to summarize emails, chats, and documents, and create content directly in Word, Outlook, and Teams. Which product is the best fit?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Microsoft 365 Copilot"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Azure AI Search alone"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Azure Vision"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Power BI only"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An enterprise wants to build a chatbot with topics, workflows, connectors, and publishing to Teams or a website using low code. What should it choose?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Microsoft Copilot Studio"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Azure Vision"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Excel"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Microsoft Defender"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A team needs semantic search across millions of documents, combining keyword search, vectors, and filters. Which service is suitable?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Azure AI Search"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Microsoft Word"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Azure Vision"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Microsoft Lists"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "Which use case is best suited to Azure Vision in Foundry Tools?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Creating a project roadmap"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Reading and analyzing images/document images"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Managing Copilot licenses"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Creating PowerPoint presentations"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    2
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A company needs to test multiple models, evaluate them, and deploy AI solutions under enterprise controls. Which platform is the best fit?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Microsoft Foundry"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Outlook"
+                    },
+                    {
+                        "id": 3,
+                        "text": "OneDrive"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Planner"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "What value does Microsoft Graph provide in the Microsoft 365 ecosystem?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Controlled access to Microsoft 365 data and relationships"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Replacing all identity providers"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Storing only images"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Automatically purchasing licenses"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A team wants to use Copilot for in-depth research, synthesizing information from multiple sources and producing a structured report. Which feature is most suitable?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Researcher"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Analyst"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Azure Vision"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Teams Phone"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A manager has a large data file and needs to analyze it, identify trends, and model/explain the data. Which feature is most suitable?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Researcher"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Analyst"
+                    },
+                    {
+                        "id": 3,
+                        "text": "A Copilot Studio topic"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Azure Vision"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    2
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An HR team only needs to chat with Copilot on the web or mobile to synthesize public content and permitted files; it does not need to build an agent. What is a sensible starting point?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Microsoft 365 Copilot Chat"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Fine-tune a model"
+                    },
+                    {
+                        "id": 3,
+                        "text": "A standalone Azure AI Search solution"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Custom code first"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "When should an organization buy rather than build a custom AI app?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "When the need is common and an available product meets the requirements with suitable governance"
+                    },
+                    {
+                        "id": 2,
+                        "text": "When there is no use case"
+                    },
+                    {
+                        "id": 3,
+                        "text": "When unique, unavailable capabilities are needed"
+                    },
+                    {
+                        "id": 4,
+                        "text": "When there is no budget"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "When should an organization extend Microsoft 365 Copilot?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "When there is a domain-specific need that can be added through an agent, connector, or extensibility in the ecosystem"
+                    },
+                    {
+                        "id": 2,
+                        "text": "When the entire ERP system needs to be replaced"
+                    },
+                    {
+                        "id": 3,
+                        "text": "When no data exists"
+                    },
+                    {
+                        "id": 4,
+                        "text": "When security should be removed"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A business process must answer based on internal policies and perform an action in another system after user confirmation. What should be prioritized?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "A Copilot Studio agent with approved knowledge and actions"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Public Copilot Chat"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Azure Vision only"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Manual copy and paste"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "What is a key strength of an integrated Microsoft AI solution?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "It is always free"
+                    },
+                    {
+                        "id": 2,
+                        "text": "It can use existing Microsoft identity, permissions, compliance, and ecosystem capabilities"
+                    },
+                    {
+                        "id": 3,
+                        "text": "It does not require governance"
+                    },
+                    {
+                        "id": 4,
+                        "text": "It does not require data quality"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    2
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An operations team wants to search PDF manuals and return answers with citations. Which combination of capabilities is most suitable?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Azure AI Search plus a generative model in Foundry"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Outlook plus Excel"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Azure Vision only"
+                    },
+                    {
+                        "id": 4,
+                        "text": "A Teams meeting"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An organization needs to select a model for multilingual chat, is cost-sensitive, and requires quality evaluation. What is the best approach?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Choose the largest model by default"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Use Foundry to compare models by quality, cost, latency, safety, and requirements"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Choose based on brand name"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Do not test"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    2
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A user asks, “Can Copilot summarize a Teams meeting and list action items?” What is the most accurate answer?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Yes, in the appropriate Microsoft 365 Copilot/Teams experience and depending on access permissions"
+                    },
+                    {
+                        "id": 2,
+                        "text": "No, AI can only work with images"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Only when using Azure Vision"
+                    },
+                    {
+                        "id": 4,
+                        "text": "It is never possible"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "Which use case is the best mapping for Outlook Copilot?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Creating and refining emails, and summarizing email threads"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Detecting camera faults"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Creating a vector index"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Deploying infrastructure"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "Which use case is the best mapping for Word Copilot?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Drafting, rewriting, and summarizing documents"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Vector search across millions of records"
+                    },
+                    {
+                        "id": 3,
+                        "text": "OCR for invoices"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Identity governance"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "Which use case is the best mapping for Excel Copilot/Analyst?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Analyzing data, identifying trends, and explaining findings"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Automatically routing tickets with workflows"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Facial recognition"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Creating a document index"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An agent must know only the documents a user already has permission to view. Which architecture provides the best support?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "An integration that uses identity and appropriate permission trimming"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Copying all data to a public wiki"
+                    },
+                    {
+                        "id": 3,
+                        "text": "A shared generic account"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Disabling access checks"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A startup needs a fast chatbot proof of concept on a website and may later scale it for the enterprise. Which low-code product is suitable?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Copilot Studio"
+                    },
+                    {
+                        "id": 2,
+                        "text": "PowerPoint"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Azure Vision"
+                    },
+                    {
+                        "id": 4,
+                        "text": "OneNote"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A factory needs to detect missing labels from images on a production line. What should it consider?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Azure Vision in Foundry Tools"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Microsoft 365 Copilot"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Microsoft Graph"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Researcher"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An AI app requires retrieval over a private corpus with filtering by department. What is the key component?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "An Azure AI Search index with filters and a security design"
+                    },
+                    {
+                        "id": 2,
+                        "text": "A Word document"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Copilot Chat only"
+                    },
+                    {
+                        "id": 4,
+                        "text": "An image generator"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "What is the primary benefit of Microsoft Foundry for selecting AI models?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "One model is always the best"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Discovering, evaluating, and governing models/solutions according to business requirements"
+                    },
+                    {
+                        "id": 3,
+                        "text": "No monitoring is required"
+                    },
+                    {
+                        "id": 4,
+                        "text": "No cost analysis is required"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    2
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An enterprise has a unique HR workflow and needs an agent to answer policy questions and call an HR system to create requests. Which strategy should it choose?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Extend with a Copilot Studio agent"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Use Word Copilot only"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Purchase Azure Vision only"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Use a manual spreadsheet"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A use case only requires personal productivity in Microsoft 365 and has no specialized workflow. What is the most suitable direction?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Deploy Microsoft 365 Copilot first"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Build a custom model"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Fine-tune everything"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Create a search engine from scratch"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "When is a custom build most appropriate?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "When differentiated requirements, deep workflows, UX, or domain needs cannot be met by buying or extending"
+                    },
+                    {
+                        "id": 2,
+                        "text": "When ordinary email drafts are needed"
+                    },
+                    {
+                        "id": 3,
+                        "text": "When there is no owner"
+                    },
+                    {
+                        "id": 4,
+                        "text": "When evaluation should be avoided"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An executive needs a dashboard summarizing project status from multiple documents, but the sources must be verifiable. What is the recommendation?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Use Researcher or a grounded solution with citations, followed by human review"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Use only a model without sources"
+                    },
+                    {
+                        "id": 3,
+                        "text": "No review is required"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Use Vision"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A sales team wants copilots that can retrieve account context from CRM and recommend actions. What is the conceptual architecture?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Extend Copilot/an agent with approved CRM data and actions"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Use public search only"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Copy CRM credentials into the prompt"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Disable permissions"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "Which capability is NOT a reason to use Azure AI Search?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Hybrid/vector retrieval"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Semantic search"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Indexing private documents for RAG"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Drafting emails in Outlook"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    4
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A leader asks about the practical difference between Microsoft 365 Copilot and Copilot Studio. What is the best answer?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Microsoft 365 Copilot is a productivity experience; Copilot Studio is used to create and extend agents and actions"
+                    },
+                    {
+                        "id": 2,
+                        "text": "They are exactly the same"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Copilot Studio is only used to view images"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Microsoft 365 Copilot only writes code"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A solution must operate at scale and requires guardrails, monitoring, and model governance. Which platform should be evaluated?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Microsoft Foundry"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Word"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Outlook"
+                    },
+                    {
+                        "id": 4,
+                        "text": "The OneDrive recycle bin"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A finance team needs to analyze complex workbooks and explain variances. Which feature is most suitable?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Analyst"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Researcher"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Azure Vision"
+                    },
+                    {
+                        "id": 4,
+                        "text": "A Copilot Studio trigger"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A strategy team needs to research markets, synthesize multiple sources, and create a cited brief. Which feature is most suitable?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Researcher"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Analyst"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Azure Vision"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Power Automate only"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An app answers from private manuals but must be updated immediately when documents change. What is the advantage of RAG plus Azure AI Search compared with fine-tuning?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "It can retrieve updated knowledge without retraining the model"
+                    },
+                    {
+                        "id": 2,
+                        "text": "It does not need an index"
+                    },
+                    {
+                        "id": 3,
+                        "text": "It removes permissions"
+                    },
+                    {
+                        "id": 4,
+                        "text": "It reduces the need for testing to zero"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An owner asks, “Why not put everything into Copilot Chat?” What is the best reason?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Some use cases need structured workflows, custom actions, specialized retrieval, or dedicated governance"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Copilot Chat has no UI"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Copilot Chat does not use AI"
+                    },
+                    {
+                        "id": 4,
+                        "text": "All data is public"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An organization already has Microsoft 365 and Entra ID. What is the adoption benefit of using an integrated solution?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "It can use existing identity, tenant controls, and familiar tools"
+                    },
+                    {
+                        "id": 2,
+                        "text": "It requires no onboarding"
+                    },
+                    {
+                        "id": 3,
+                        "text": "It requires no training"
+                    },
+                    {
+                        "id": 4,
+                        "text": "It has no cost"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An internal chatbot only answers knowledge FAQs and does not need to perform actions. What is the most minimal suitable choice?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "A Copilot Studio/grounded agent with approved knowledge"
+                    },
+                    {
+                        "id": 2,
+                        "text": "A custom fine-tuned model first"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Azure Vision"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Manual email distribution"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "When extending Microsoft 365 Copilot with enterprise data, which factor must not be overlooked?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "The permission model and data governance"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Logo redesign"
+                    },
+                    {
+                        "id": 3,
+                        "text": "The number of fonts"
+                    },
+                    {
+                        "id": 4,
+                        "text": "The background color"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A public-facing app needs to recognize objects from uploaded images. Which service is required?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Azure Vision"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Microsoft 365 Copilot"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Researcher"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Microsoft Graph"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An app needs to answer “What is in this document?” with citations and semantic retrieval. What is the best component combination?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Azure AI Search plus a model/agent"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Outlook plus Teams"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Excel only"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Vision only"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "What helps an organization make a better build/buy/extend decision?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Assessing strategic differentiation, fit, time to value, integration, total cost, and governance"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Choosing the newest solution"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Choosing the best-looking demo"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Considering only license price"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "How does an “agent” in the Copilot Studio context typically differ from simple chat?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "It can be designed with knowledge, instructions, topics/actions, and channels"
+                    },
+                    {
+                        "id": 2,
+                        "text": "It cannot respond"
+                    },
+                    {
+                        "id": 3,
+                        "text": "It only works offline"
+                    },
+                    {
+                        "id": 4,
+                        "text": "It has no governance"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "A business needs a workflow on its existing Microsoft stack but wants to minimize custom code. What is a reasonable roadmap?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Prototype with Microsoft 365 Copilot/Copilot Studio, validate value and controls, then extend where gaps remain"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Build a custom foundation model"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Skip the pilot"
+                    },
+                    {
+                        "id": 4,
+                        "text": "Move all data to public cloud storage"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            },
+            {
+                "tags": [
+                    "Microsoft AI Transformation Leader",
+                    "Domain 2 - Microsoft AI apps and services"
+                ],
+                "question": "An agent needs to retrieve Microsoft 365 data according to each employee's permissions. Which component and principle are important?",
+                "options": [
+                    {
+                        "id": 1,
+                        "text": "Microsoft Graph combined with identity and permissions"
+                    },
+                    {
+                        "id": 2,
+                        "text": "Azure Vision without identity"
+                    },
+                    {
+                        "id": 3,
+                        "text": "Public links for every file"
+                    },
+                    {
+                        "id": 4,
+                        "text": "A shared admin account"
+                    }
+                ],
+                "score": 10,
+                "answer": [
+                    1
+                ]
+            }
+        ]
+    };
     window.domain2Data = data;
 })();
-

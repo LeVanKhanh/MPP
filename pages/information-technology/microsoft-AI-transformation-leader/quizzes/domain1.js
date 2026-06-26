@@ -1,1168 +1,1167 @@
 ﻿(() => {
     const data = {
-    "questions":  [
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một bộ phận marketing cần tạo nhiều bản nháp email theo từng nhóm khách hàng. Loại AI nào phù hợp nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Machine learning dự báo doanh số"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Generative AI tạo nội dung mới từ hướng dẫn"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Computer vision nhận diện ảnh"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Hệ thống BI tạo dashboard"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Công ty muốn dự đoán khả năng một khách hàng sẽ rời bỏ dịch vụ dựa trên dữ liệu lịch sử. Cách tiếp cận nào phù hợp nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Generative AI viết email giữ chân khách"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Machine learning phân loại/dự báo"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "RAG trên tài liệu nội bộ"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Prompt engineering"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Khác biệt chính giữa pretrained model và fine-tuned model là gì?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Pretrained model chỉ làm việc với dữ liệu hình ảnh"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Fine-tuned model được tiếp tục tối ưu cho nhiệm vụ hoặc dữ liệu chuyên biệt"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Fine-tuned model không cần dữ liệu"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Pretrained model luôn chính xác hơn"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một chatbot trả lời tự tin nhưng trích dẫn một chính sách không tồn tại. Đây là rủi ro nào?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Latency"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Fabrication/hallucination"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Overfitting"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Data residency"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Đơn vị pháp chế cần câu trả lời bám sát quy chế nội bộ thường xuyên thay đổi. Yêu cầu quan trọng nhất là gì?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Tăng temperature"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Ground câu trả lời trên nguồn nội bộ được kiểm soát"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Fine-tune bằng mọi email của công ty"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Giảm số lượng người dùng"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "RAG thường được dùng để làm gì?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Huấn luyện lại mô hình từ đầu"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Truy xuất tài liệu liên quan rồi đưa vào ngữ cảnh khi tạo câu trả lời"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Mã hóa dữ liệu để lưu trữ lâu dài"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Loại bỏ mọi nhu cầu kiểm soát truy cập"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Yếu tố nào trực tiếp ảnh hưởng đáng kể đến chi phí một giải pháp LLM?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Số màu trong logo"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Số token đầu vào và đầu ra"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Số nhân viên HR"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Kích thước màn hình người dùng"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Khi ước tính ROI cho Copilot, chỉ số nào thuyết phục nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Số prompt được gõ"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Thời gian tiết kiệm đã được xác thực và giá trị kinh doanh chuyển hóa từ thời gian đó"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Số lượng slide về AI"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Số license mua trong quý"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Prompt nào có khả năng cho kết quả nhất quán hơn?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Tóm tắt đi"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Hãy làm tốt nhất có thể"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Bạn là analyst. Tóm tắt tài liệu dưới đây thành 5 rủi ro, mỗi rủi ro có bằng chứng và hành động đề xuất. Không suy diễn ngoài tài liệu."
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Viết một cái gì đó về rủi ro"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         3
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Để giảm nguy cơ câu trả lời thiếu căn cứ trong một giải pháp AI, bước nào hiệu quả nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Yêu cầu model trả lời dài hơn"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Cung cấp nguồn đã phê duyệt, yêu cầu trích dẫn và thiết kế human review cho quyết định quan trọng"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Tắt logging"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Chỉ cho một người dùng thử"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một mô hình tuyển dụng học từ dữ liệu lịch sử thiên lệch. Rủi ro cần xem xét trước tiên là gì?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Bias/fairness"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Bandwidth"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Tokenization"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "File compression"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Tình huống nào cho thấy GenAI tạo giá trị nhờ scalability?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Một chuyên gia viết một email độc nhất"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Tạo bản tóm tắt nhất quán cho hàng nghìn ticket hỗ trợ mỗi ngày"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Chuyển một file Word thành PDF"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Sao chép dữ liệu bằng tay"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một doanh nghiệp cần tự động phân loại hóa đơn scan theo trường dữ liệu. Năng lực AI phù hợp nhất là gì?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Azure Vision/OCR kết hợp extraction"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Chỉ dùng Copilot Chat"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "RAG trên policy"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Fine-tune chatbot văn bản"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Data quality ảnh hưởng đến AI solution như thế nào?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Không ảnh hưởng nếu model mạnh"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Dữ liệu sai, cũ hoặc thiếu đại diện có thể làm kết quả kém tin cậy"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Chỉ ảnh hưởng chi phí lưu trữ"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Chỉ cần khi dùng spreadsheet"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Khi nào nên cân nhắc fine-tuning thay vì chỉ dùng RAG?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Khi cần cập nhật chính sách hàng tuần"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Khi cần mô hình có hành vi/phong cách hoặc nhiệm vụ chuyên biệt ổn định mà prompting không đạt"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Khi không có dữ liệu nào"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Khi cần kiểm soát quyền truy cập tài liệu"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Mục tiêu nào là ví dụ tốt nhất về business outcome thay vì activity metric?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "500 người hoàn thành training"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "10.000 prompt được gửi"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Giảm 20% thời gian xử lý yêu cầu hoàn tiền trong khi giữ CSAT"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Mua thêm 100 license"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         3
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một trưởng bộ phận muốn dùng AI để quyết định tự động việc từ chối cấp tín dụng. Rủi ro governance quan trọng nhất là gì?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Màu giao diện"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Accountability, fairness, transparency và human oversight"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Số lượng token"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Khả năng tạo hình"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Secure AI bao gồm điều nào?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Đưa toàn bộ dữ liệu bí mật vào chatbot công khai"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Bảo vệ dữ liệu, định danh/xác thực, quyền truy cập và ứng dụng khỏi lạm dụng"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Tắt mọi audit log"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Chỉ dùng mật khẩu dùng chung"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một khách hàng hỏi: “Vì sao AI đã đưa khuyến nghị này?” Thuộc nguyên tắc Responsible AI nào nổi bật nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Transparency"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Scalability"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Token economy"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Automation"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một agent hỗ trợ khách hàng cần trả lời bằng dữ liệu sản phẩm mới nhất. Lựa chọn phù hợp nhất là?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Fine-tune mỗi ngày"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "RAG từ knowledge base được quản trị"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Chỉ dùng model offline"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Dùng ảnh minh họa"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một prompt yêu cầu “trích xuất 5 điều khoản, nếu không thấy thì ghi Không tìm thấy”. Kỹ thuật này chủ yếu giảm rủi ro nào?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Fabrication do suy diễn"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Latency mạng"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Storage cost"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "UI inconsistency"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một tổ chức muốn dùng AI để phân loại email spam. Đây là ví dụ của?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Generative AI tạo nội dung"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Machine learning classification"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "RAG retrieval"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Prompt chaining"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Trong lifecycle ML, bước nào cần trước khi triển khai rộng?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Bỏ qua đánh giá để nhanh hơn"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Đánh giá model bằng dữ liệu phù hợp và metric đã xác định"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Chỉ hỏi một người dùng"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Đổi tên sản phẩm"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Tình huống nào phù hợp nhất với Computer Vision?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Tóm tắt cuộc họp"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Phát hiện sản phẩm lỗi từ ảnh dây chuyền"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Tạo email follow-up"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tra cứu quy trình HR"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một nhóm muốn báo cáo ROI nhưng chưa có baseline. Hành động tốt nhất là?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Công bố ROI ước tính như thực tế"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Xác định baseline cho thời gian, chất lượng, chi phí hoặc doanh thu trước pilot"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Tăng số license"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Chỉ đo số prompt"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Khi GenAI có thể tạo nội dung không chính xác, chiến lược vận hành nào tốt nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Cấm mọi AI mãi mãi"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Phân loại theo mức độ rủi ro, dùng grounding/guardrails và human review cho use case high-impact"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Tắt phản hồi của người dùng"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Chỉ kiểm tra khi có khiếu nại"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một dữ liệu training chỉ gồm khách hàng ở một khu vực. Điều này có thể gây vấn đề gì khi dùng toàn cầu?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Dataset thiếu tính đại diện"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Tăng độ chính xác tự động"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Giảm token output"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tăng độ minh bạch"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Use case nào ưu tiên automation hơn augmentation?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Soạn draft email cho manager phê duyệt"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Tự động route ticket đơn giản theo quy tắc rõ ràng"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Hỗ trợ chiến lược M\u0026A"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Đánh giá nhân sự cuối năm"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một lãnh đạo muốn AI “tự học” từ mọi tài liệu mà không phân quyền. Điểm cần phản biện là?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "AI không dùng được tiếng Việt"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Cần tuân thủ quyền truy cập và nguyên tắc least privilege khi grounding"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Token sẽ luôn bằng 0"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Không cần data owner"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Nội dung nào nên được thêm vào prompt để model hiểu ngữ cảnh doanh nghiệp?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Một mật khẩu"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Bối cảnh, audience, mục tiêu, nguồn dữ liệu và tiêu chí đầu ra"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Tên model duy nhất"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Địa chỉ IP"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một đội sales muốn dùng AI để tạo “next best action” từ lịch sử CRM. Giá trị chính là?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Tăng số file PDF"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Ưu tiên và cá nhân hóa hành động dựa trên dữ liệu"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Loại bỏ trách nhiệm của sales"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Không cần CRM hygiene"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Đâu là ví dụ của reliability and safety?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Thử nghiệm một lần rồi không theo dõi"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Thiết kế fallback, đánh giá trước release và giám sát lỗi sau triển khai"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Cho phép agent tự thay đổi policy"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Ẩn giới hạn của hệ thống"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một solution dùng dữ liệu khách hàng nhạy cảm. Kiểm soát nào quan trọng nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Dùng shared account"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Data classification, access control, encryption và retention phù hợp"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Đưa dữ liệu lên public forum"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tắt MFA để dễ dùng"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một chuyên gia có 20 ví dụ đầu ra tốt theo format chuẩn. Cách dùng hiệu quả nhất ban đầu?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Đưa vài ví dụ representative vào prompt/few-shot để hướng model"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Xóa hết ví dụ"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Bắt đầu bằng fine-tuning ngay không đánh giá"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Chỉ tăng temperature"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Tại sao token budget quan trọng trong thiết kế RAG?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Vì token quyết định màu của UI"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Context quá dài làm tăng chi phí và có thể giảm focus của model"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Vì token thay thế authentication"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Vì token loại bỏ nhu cầu evaluation"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Khi nào ML add value hơn rule-based automation?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Quy tắc thay đổi ít và hoàn toàn rõ"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Mẫu trong dữ liệu phức tạp, cần dự báo/phân loại mà khó mô tả bằng quy tắc"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Không có dữ liệu lịch sử"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Cần tạo thơ"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một leader muốn đo adoption đúng cách. Metric nào có ý nghĩa hơn “số người được cấp license”?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Tỷ lệ active use theo use case và tác động quy trình"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Số email quảng bá"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Số máy tính trong công ty"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Số font trong template"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         1
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một chatbot được yêu cầu xử lý yêu cầu y tế/pháp lý phức tạp. Thiết kế an toàn nhất?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Khẳng định đáp án chắc chắn"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Cung cấp thông tin có nguồn, nêu giới hạn, và route đến chuyên gia khi cần"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Không log anything"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tự thay đổi quyết định"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Tại sao “data owner” cần tham gia dự án GenAI?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Để chọn màu slide"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Để xác định chất lượng, quyền sử dụng, độ mới và trách nhiệm của dữ liệu"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Để thay model bằng spreadsheet"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Để bỏ governance"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      },
-                      {
-                          "tags":  [
-                                       "Microsoft AI Transformation Leader",
-                                       "Domain 1 - Business value of generative AI"
-                                   ],
-                          "question":  "Một doanh nghiệp muốn dùng GenAI để tóm tắt báo cáo hằng ngày, nhưng chỉ có một người dùng thử nghiệm. Bước nào giúp xác thực business value tốt hơn?",
-                          "options":  [
-                                          {
-                                              "id":  1,
-                                              "text":  "Mở rộng ngay cho toàn công ty"
-                                          },
-                                          {
-                                              "id":  2,
-                                              "text":  "Thiết lập baseline và pilot trên workflow có đủ volume, đo thời gian và chất lượng"
-                                          },
-                                          {
-                                              "id":  3,
-                                              "text":  "Chỉ đo số prompt"
-                                          },
-                                          {
-                                              "id":  4,
-                                              "text":  "Tăng nhiệt độ model"
-                                          }
-                                      ],
-                          "score":  10,
-                          "answer":  [
-                                         2
-                                     ]
-                      }
-                  ]
+    "questions": [
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A marketing department needs to create multiple email drafts for different customer segments. Which type of AI is most suitable?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Machine learning to forecast sales"
+                },
+                {
+                    "id": 2,
+                    "text": "Generative AI to create new content from instructions"
+                },
+                {
+                    "id": 3,
+                    "text": "Computer vision to recognize images"
+                },
+                {
+                    "id": 4,
+                    "text": "A BI system to create dashboards"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A company wants to predict the likelihood that a customer will leave its service based on historical data. Which approach is most suitable?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Generative AI to write customer-retention emails"
+                },
+                {
+                    "id": 2,
+                    "text": "Machine learning for classification/prediction"
+                },
+                {
+                    "id": 3,
+                    "text": "RAG over internal documents"
+                },
+                {
+                    "id": 4,
+                    "text": "Prompt engineering"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "What is the primary difference between a pretrained model and a fine-tuned model?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "A pretrained model works only with image data"
+                },
+                {
+                    "id": 2,
+                    "text": "A fine-tuned model is further optimized for a specific task or specialized data"
+                },
+                {
+                    "id": 3,
+                    "text": "A fine-tuned model does not require data"
+                },
+                {
+                    "id": 4,
+                    "text": "A pretrained model is always more accurate"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A chatbot responds confidently but cites a policy that does not exist. What risk does this represent?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Latency"
+                },
+                {
+                    "id": 2,
+                    "text": "Fabrication/hallucination"
+                },
+                {
+                    "id": 3,
+                    "text": "Overfitting"
+                },
+                {
+                    "id": 4,
+                    "text": "Data residency"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "The legal department needs answers that closely follow internal regulations that change frequently. What is the most important requirement?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Increase the temperature"
+                },
+                {
+                    "id": 2,
+                    "text": "Ground responses in controlled internal sources"
+                },
+                {
+                    "id": 3,
+                    "text": "Fine-tune on every company email"
+                },
+                {
+                    "id": 4,
+                    "text": "Reduce the number of users"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "What is RAG commonly used for?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Retraining a model from scratch"
+                },
+                {
+                    "id": 2,
+                    "text": "Retrieving relevant documents and including them as context when generating an answer"
+                },
+                {
+                    "id": 3,
+                    "text": "Encrypting data for long-term storage"
+                },
+                {
+                    "id": 4,
+                    "text": "Eliminating all access-control requirements"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "Which factor directly and significantly affects the cost of an LLM solution?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "The number of colors in the logo"
+                },
+                {
+                    "id": 2,
+                    "text": "The number of input and output tokens"
+                },
+                {
+                    "id": 3,
+                    "text": "The number of HR employees"
+                },
+                {
+                    "id": 4,
+                    "text": "The size of users' screens"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "When estimating ROI for Copilot, which metric is the most compelling?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "The number of prompts entered"
+                },
+                {
+                    "id": 2,
+                    "text": "Validated time savings and the business value realized from that time"
+                },
+                {
+                    "id": 3,
+                    "text": "The number of AI slides"
+                },
+                {
+                    "id": 4,
+                    "text": "The number of licenses purchased during the quarter"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "Which prompt is more likely to produce consistent results?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Summarize it"
+                },
+                {
+                    "id": 2,
+                    "text": "Do your best"
+                },
+                {
+                    "id": 3,
+                    "text": "You are an analyst. Summarize the document below into five risks, each with evidence and a recommended action. Do not infer beyond the document."
+                },
+                {
+                    "id": 4,
+                    "text": "Write something about risks"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                3
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "To reduce the risk of unsupported responses in an AI solution, which step is most effective?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Ask the model to provide longer answers"
+                },
+                {
+                    "id": 2,
+                    "text": "Provide approved sources, require citations, and design human review for important decisions"
+                },
+                {
+                    "id": 3,
+                    "text": "Disable logging"
+                },
+                {
+                    "id": 4,
+                    "text": "Allow only one user to test it"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A recruitment model learns from biased historical data. What risk should be considered first?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Bias/fairness"
+                },
+                {
+                    "id": 2,
+                    "text": "Bandwidth"
+                },
+                {
+                    "id": 3,
+                    "text": "Tokenization"
+                },
+                {
+                    "id": 4,
+                    "text": "File compression"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                1
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "Which scenario demonstrates GenAI creating value through scalability?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "One expert writes a single unique email"
+                },
+                {
+                    "id": 2,
+                    "text": "Generating consistent summaries for thousands of support tickets every day"
+                },
+                {
+                    "id": 3,
+                    "text": "Converting a Word file to PDF"
+                },
+                {
+                    "id": 4,
+                    "text": "Copying data manually"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "An enterprise needs to automatically classify scanned invoices by data fields. Which AI capability is most suitable?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Azure Vision/OCR combined with extraction"
+                },
+                {
+                    "id": 2,
+                    "text": "Using Copilot Chat only"
+                },
+                {
+                    "id": 3,
+                    "text": "RAG over policies"
+                },
+                {
+                    "id": 4,
+                    "text": "Fine-tuning a text chatbot"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                1
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "How does data quality affect an AI solution?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "It has no impact when the model is powerful"
+                },
+                {
+                    "id": 2,
+                    "text": "Incorrect, outdated, or unrepresentative data can make results unreliable"
+                },
+                {
+                    "id": 3,
+                    "text": "It affects only storage costs"
+                },
+                {
+                    "id": 4,
+                    "text": "It is needed only when using spreadsheets"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "When should fine-tuning be considered instead of using RAG alone?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "When policies need weekly updates"
+                },
+                {
+                    "id": 2,
+                    "text": "When a model needs stable specialized behavior, style, or task performance that prompting cannot achieve"
+                },
+                {
+                    "id": 3,
+                    "text": "When no data is available"
+                },
+                {
+                    "id": 4,
+                    "text": "When document access control is required"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "Which objective is the best example of a business outcome rather than an activity metric?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "500 people complete training"
+                },
+                {
+                    "id": 2,
+                    "text": "10,000 prompts are submitted"
+                },
+                {
+                    "id": 3,
+                    "text": "Reduce refund-request processing time by 20% while maintaining CSAT"
+                },
+                {
+                    "id": 4,
+                    "text": "Purchase 100 additional licenses"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                3
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A department head wants to use AI to automatically decide whether to deny credit. What is the most important governance risk?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "The interface color"
+                },
+                {
+                    "id": 2,
+                    "text": "Accountability, fairness, transparency, and human oversight"
+                },
+                {
+                    "id": 3,
+                    "text": "The number of tokens"
+                },
+                {
+                    "id": 4,
+                    "text": "Image-generation capability"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "What does secure AI include?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Putting all confidential data into a public chatbot"
+                },
+                {
+                    "id": 2,
+                    "text": "Protecting data, identity/authentication, access permissions, and applications from misuse"
+                },
+                {
+                    "id": 3,
+                    "text": "Disabling all audit logs"
+                },
+                {
+                    "id": 4,
+                    "text": "Using only shared passwords"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A customer asks, “Why did the AI make this recommendation?” Which Responsible AI principle is most relevant?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Transparency"
+                },
+                {
+                    "id": 2,
+                    "text": "Scalability"
+                },
+                {
+                    "id": 3,
+                    "text": "Token economy"
+                },
+                {
+                    "id": 4,
+                    "text": "Automation"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                1
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A customer-support agent needs to answer using the latest product data. What is the most suitable choice?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Fine-tune every day"
+                },
+                {
+                    "id": 2,
+                    "text": "RAG from a governed knowledge base"
+                },
+                {
+                    "id": 3,
+                    "text": "Use only an offline model"
+                },
+                {
+                    "id": 4,
+                    "text": "Use illustrative images"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A prompt asks to “extract five clauses; if a clause is not found, write Not found.” Which risk does this technique primarily reduce?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Fabrication caused by inference"
+                },
+                {
+                    "id": 2,
+                    "text": "Network latency"
+                },
+                {
+                    "id": 3,
+                    "text": "Storage cost"
+                },
+                {
+                    "id": 4,
+                    "text": "UI inconsistency"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                1
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "An organization wants to use AI to classify spam emails. This is an example of:",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Generative AI content creation"
+                },
+                {
+                    "id": 2,
+                    "text": "Machine learning classification"
+                },
+                {
+                    "id": 3,
+                    "text": "RAG retrieval"
+                },
+                {
+                    "id": 4,
+                    "text": "Prompt chaining"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "In the ML lifecycle, which step is required before broad deployment?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Skip evaluation to move faster"
+                },
+                {
+                    "id": 2,
+                    "text": "Evaluate the model using appropriate data and predefined metrics"
+                },
+                {
+                    "id": 3,
+                    "text": "Ask only one user"
+                },
+                {
+                    "id": 4,
+                    "text": "Rename the product"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "Which scenario is the most suitable for Computer Vision?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Summarizing a meeting"
+                },
+                {
+                    "id": 2,
+                    "text": "Detecting defective products from production-line images"
+                },
+                {
+                    "id": 3,
+                    "text": "Creating a follow-up email"
+                },
+                {
+                    "id": 4,
+                    "text": "Looking up an HR process"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A team wants to report ROI but does not yet have a baseline. What is the best action?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Publish estimated ROI as actual results"
+                },
+                {
+                    "id": 2,
+                    "text": "Establish baselines for time, quality, cost, or revenue before the pilot"
+                },
+                {
+                    "id": 3,
+                    "text": "Increase the number of licenses"
+                },
+                {
+                    "id": 4,
+                    "text": "Measure only the number of prompts"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "When GenAI can generate inaccurate content, what is the best operating strategy?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Ban all AI forever"
+                },
+                {
+                    "id": 2,
+                    "text": "Classify use cases by risk level, apply grounding/guardrails, and use human review for high-impact use cases"
+                },
+                {
+                    "id": 3,
+                    "text": "Disable user feedback"
+                },
+                {
+                    "id": 4,
+                    "text": "Review only when a complaint is received"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "Training data includes customers from only one region. What issue might this cause when the solution is used globally?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "The dataset lacks representativeness"
+                },
+                {
+                    "id": 2,
+                    "text": "It automatically increases accuracy"
+                },
+                {
+                    "id": 3,
+                    "text": "It reduces output tokens"
+                },
+                {
+                    "id": 4,
+                    "text": "It increases transparency"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                1
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "Which use case prioritizes automation over augmentation?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Drafting emails for a manager to approve"
+                },
+                {
+                    "id": 2,
+                    "text": "Automatically routing simple tickets using clear rules"
+                },
+                {
+                    "id": 3,
+                    "text": "Supporting M&A strategy"
+                },
+                {
+                    "id": 4,
+                    "text": "Performing year-end employee evaluations"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A leader wants AI to “learn” from every document without applying permissions. What is the key concern?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "AI cannot use Vietnamese"
+                },
+                {
+                    "id": 2,
+                    "text": "Access permissions and the principle of least privilege must be respected during grounding"
+                },
+                {
+                    "id": 3,
+                    "text": "Tokens will always be zero"
+                },
+                {
+                    "id": 4,
+                    "text": "No data owner is needed"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "What should be added to a prompt to help the model understand the business context?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "A password"
+                },
+                {
+                    "id": 2,
+                    "text": "Context, audience, objective, data sources, and output criteria"
+                },
+                {
+                    "id": 3,
+                    "text": "Only the model name"
+                },
+                {
+                    "id": 4,
+                    "text": "An IP address"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A sales team wants to use AI to generate a “next best action” from CRM history. What is the primary value?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Increasing the number of PDF files"
+                },
+                {
+                    "id": 2,
+                    "text": "Prioritizing and personalizing actions based on data"
+                },
+                {
+                    "id": 3,
+                    "text": "Removing sales accountability"
+                },
+                {
+                    "id": 4,
+                    "text": "Eliminating the need for CRM hygiene"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "Which is an example of reliability and safety?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Testing once and then not monitoring"
+                },
+                {
+                    "id": 2,
+                    "text": "Designing fallbacks, evaluating before release, and monitoring errors after deployment"
+                },
+                {
+                    "id": 3,
+                    "text": "Allowing an agent to change policies on its own"
+                },
+                {
+                    "id": 4,
+                    "text": "Hiding system limitations"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A solution uses sensitive customer data. Which control is most important?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Using a shared account"
+                },
+                {
+                    "id": 2,
+                    "text": "Appropriate data classification, access control, encryption, and retention"
+                },
+                {
+                    "id": 3,
+                    "text": "Posting the data to a public forum"
+                },
+                {
+                    "id": 4,
+                    "text": "Disabling MFA to make access easier"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "An expert has 20 examples of good outputs in a standard format. What is the most effective initial approach?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Include a few representative examples in the prompt as few-shot examples to guide the model"
+                },
+                {
+                    "id": 2,
+                    "text": "Delete all examples"
+                },
+                {
+                    "id": 3,
+                    "text": "Start fine-tuning immediately without evaluation"
+                },
+                {
+                    "id": 4,
+                    "text": "Only increase the temperature"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                1
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "Why is a token budget important in RAG design?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Because tokens determine the UI color"
+                },
+                {
+                    "id": 2,
+                    "text": "An overly long context increases cost and may reduce the model's focus"
+                },
+                {
+                    "id": 3,
+                    "text": "Because tokens replace authentication"
+                },
+                {
+                    "id": 4,
+                    "text": "Because tokens eliminate the need for evaluation"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "When does ML add more value than rule-based automation?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "When rules change infrequently and are completely clear"
+                },
+                {
+                    "id": 2,
+                    "text": "When patterns in the data are complex and require prediction/classification that is difficult to describe with rules"
+                },
+                {
+                    "id": 3,
+                    "text": "When no historical data exists"
+                },
+                {
+                    "id": 4,
+                    "text": "When poetry needs to be created"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A leader wants to measure adoption correctly. Which metric is more meaningful than the “number of people assigned licenses”?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Active-use rate by use case and its process impact"
+                },
+                {
+                    "id": 2,
+                    "text": "The number of promotional emails"
+                },
+                {
+                    "id": 3,
+                    "text": "The number of computers in the company"
+                },
+                {
+                    "id": 4,
+                    "text": "The number of fonts in the template"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                1
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "A chatbot is asked to handle a complex medical/legal request. What is the safest design?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "State an answer with certainty"
+                },
+                {
+                    "id": 2,
+                    "text": "Provide sourced information, communicate limitations, and route to an expert when needed"
+                },
+                {
+                    "id": 3,
+                    "text": "Do not log anything"
+                },
+                {
+                    "id": 4,
+                    "text": "Change the decision automatically"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "Why should a data owner be involved in a GenAI project?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "To choose slide colors"
+                },
+                {
+                    "id": 2,
+                    "text": "To determine data quality, usage rights, freshness, and data accountability"
+                },
+                {
+                    "id": 3,
+                    "text": "To replace the model with a spreadsheet"
+                },
+                {
+                    "id": 4,
+                    "text": "To remove governance"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        },
+        {
+            "tags": [
+                "Microsoft AI Transformation Leader",
+                "Domain 1 - Business value of generative AI"
+            ],
+            "question": "An enterprise wants to use GenAI to summarize daily reports, but only one user has tested it. Which step would better validate business value?",
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Scale it immediately to the entire company"
+                },
+                {
+                    "id": 2,
+                    "text": "Establish a baseline and run a pilot on a workflow with sufficient volume, measuring time and quality"
+                },
+                {
+                    "id": 3,
+                    "text": "Measure only the number of prompts"
+                },
+                {
+                    "id": 4,
+                    "text": "Increase the model temperature"
+                }
+            ],
+            "score": 10,
+            "answer": [
+                2
+            ]
+        }
+    ]
 };
     window.domain1Data = data;
 })();
-

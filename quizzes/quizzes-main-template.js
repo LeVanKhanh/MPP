@@ -1,4 +1,4 @@
-const quizzesConfig = [
+window.quizzesConfig = [
     {
         duration: 30,
         questions: 40,
@@ -19,4 +19,4 @@ const quizzesConfig = [
             }
         ]
     }
-]
+];

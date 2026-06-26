@@ -5,6 +5,7 @@
 		configs: [],
 		configScriptPath: null,
 		configScriptUrl: null,
+		loadedQuestionBankScripts: new Set(),
 		selectedConfigIndex: 0,
 		activeConfig: null,
 		activeQuestions: [],
@@ -118,6 +119,33 @@
 		});
 	}
 
+	function loadQuestionBankScript(path) {
+		return new Promise((resolve, reject) => {
+			if (state.loadedQuestionBankScripts.has(path)) {
+				resolve();
+				return;
+			}
+
+			const existing = document.querySelector(`script[data-quiz-bank-path="${CSS.escape(path)}"]`);
+			if (existing) {
+				state.loadedQuestionBankScripts.add(path);
+				resolve();
+				return;
+			}
+
+			const script = document.createElement('script');
+			script.src = path;
+			script.async = true;
+			script.dataset.quizBankPath = path;
+			script.onload = () => {
+				state.loadedQuestionBankScripts.add(path);
+				resolve();
+			};
+			script.onerror = () => reject(new Error(`Khong tai duoc question bank script: ${path}`));
+			document.head.appendChild(script);
+		});
+	}
+
 	function resolveFromConfigPath(path) {
 		if (!state.configScriptUrl) {
 			return path;
@@ -127,6 +155,54 @@
 			return new URL(path, state.configScriptUrl).toString();
 		} catch {
 			return path;
+		}
+	}
+
+	function isLocalFileUrl(url) {
+		return window.location.protocol === 'file:' || String(url).startsWith('file:');
+	}
+
+	function loadJsonByXhr(url, sourceLabel) {
+		return new Promise((resolve, reject) => {
+			const xhr = new XMLHttpRequest();
+			xhr.open('GET', url, true);
+			xhr.responseType = 'text';
+
+			xhr.onload = () => {
+				const ok = (xhr.status >= 200 && xhr.status < 300) || (xhr.status === 0 && xhr.responseText);
+				if (!ok) {
+					reject(new Error(`Khong tai duoc question bank: ${sourceLabel}`));
+					return;
+				}
+
+				try {
+					resolve(JSON.parse(xhr.responseText));
+				} catch {
+					reject(new Error(`Question bank khong phai JSON hop le: ${sourceLabel}`));
+				}
+			};
+
+			xhr.onerror = () => {
+				reject(new Error(`Khong tai duoc question bank: ${sourceLabel}`));
+			};
+
+			xhr.send();
+		});
+	}
+
+	async function loadJsonFromUrl(url, sourceLabel) {
+		try {
+			const response = await fetch(url);
+			if (!response.ok) {
+				throw new Error(`Khong tai duoc question bank: ${sourceLabel}`);
+			}
+			return response.json();
+		} catch (error) {
+			if (!isLocalFileUrl(url)) {
+				throw error;
+			}
+
+			return loadJsonByXhr(url, sourceLabel);
 		}
 	}
 
@@ -171,11 +247,7 @@
 	async function parseQuestionBankSource(source) {
 		if (typeof source === 'string') {
 			const resolvedPath = resolveFromConfigPath(source);
-			const response = await fetch(resolvedPath);
-			if (!response.ok) {
-				throw new Error(`Khong tai duoc question bank: ${source}`);
-			}
-			return response.json();
+			return loadJsonFromUrl(resolvedPath, source);
 		}
 
 		if (Array.isArray(source)) {
@@ -186,13 +258,28 @@
 			if (Array.isArray(source.questions)) {
 				return source;
 			}
+
+			if (typeof source.script === 'string') {
+				const resolvedScriptPath = resolveFromConfigPath(source.script);
+				await loadQuestionBankScript(resolvedScriptPath);
+
+				const globalVarName = typeof source.globalVar === 'string' ? source.globalVar : 'data';
+				const loadedData = window[globalVarName];
+
+				if (loadedData && Array.isArray(loadedData.questions)) {
+					return loadedData;
+				}
+
+				if (Array.isArray(loadedData)) {
+					return { questions: loadedData };
+				}
+
+				throw new Error(`Khong tim thay du lieu question bank trong bien global: ${globalVarName}`);
+			}
+
 			if (typeof source.file === 'string') {
 				const resolvedPath = resolveFromConfigPath(source.file);
-				const response = await fetch(resolvedPath);
-				if (!response.ok) {
-					throw new Error(`Khong tai duoc question bank: ${source.file}`);
-				}
-				return response.json();
+				return loadJsonFromUrl(resolvedPath, source.file);
 			}
 		}
 

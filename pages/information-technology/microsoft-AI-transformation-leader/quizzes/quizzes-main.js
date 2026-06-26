@@ -1,12 +1,18 @@
-const quizzesConfig = [
+window.quizzesConfig = [
     {
         duration: 30,
         questions: 40,
         passingScore: 70,
         quizName: "Microsoft AI Transformation Leader",   
         questionsBank: [
-            "quiz1.json",
-            "quiz2.json",
+            {
+                script: "quiz1.js",
+                globalVar: "quiz1Data"
+            },
+            {
+                script: "quiz2.js",
+                globalVar: "quiz2Data"
+            },
         ],
         categoryPercentage: [
             {
@@ -19,4 +25,4 @@ const quizzesConfig = [
             }
         ]
     }
-]
+];

@@ -5,16 +5,16 @@ const quizzesConfig = [
         passingScore: 70,
         quizName: "Microsoft AI Transformation Leader",   
         questionsBank: [
-            quiz1,
-            quiz1,
+            "quiz1.json",
+            "quiz2.json",
         ],
         categoryPercentage: [
             {
-                tag: 'abc',
+                tag: 'Quiz 1',
                 percentage: 50
             },
             {
-                tag: 'xyz',
+                tag: 'Quiz 2',
                 percentage: 50
             }
         ]

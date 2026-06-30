@@ -1,419 +1,356 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AB-731 Cheat Sheet - My Personal Planet</title>
-    <meta name="description" content="AB-731 cheat sheet: Microsoft AI Transformation Leader concepts and 20 trap-style practice questions.">
-    <link rel="stylesheet" href="../../pages-styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AB-731 — Consolidated Cheat Sheet</title>
+  <meta name="description" content="AB-731 Microsoft AI Transformation Leader consolidated cheat sheet, organized by exam decision flow.">
+  <link rel="stylesheet" href="../../pages-styles.css">
 </head>
 <body>
-    <article class="content-article">
-        <header class="article-header">
-            <h1 class="page-title">AB-731 — Cheat Sheet &amp; Trap Questions</h1>
-            <p class="page-subtitle">Microsoft AI Transformation Leader: product mapping, governance, adoption, and exam decision patterns</p>
-            <p class="page-meta">Published: <time datetime="2026-06-26">June 26, 2026</time></p>
-        </header>
+<article class="content-article">
+  <header class="article-header">
+    <h1 class="page-title">AB-731 — Consolidated Cheat Sheet</h1>
+    <p class="page-subtitle">Microsoft AI Transformation Leader — learn in the order: business need → AI approach → Microsoft solution → governance → adoption → measurement</p>
+    <p class="page-meta">Consolidated from the prior cheat sheet and test notes. Updated: <time datetime="2026-06-29">June 29, 2026</time></p>
+  </header>
 
-        <section class="content-section">
-            <h2 class="main-point">1. Copilot Chat vs Microsoft 365 Copilot</h2>
-            <table class="content-table">
-                <thead>
-                    <tr>
-                        <th>Criteria</th>
-                        <th>Microsoft 365 Copilot Chat</th>
-                        <th>Microsoft 365 Copilot (licensed)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Grounding</td>
-                        <td>Web</td>
-                        <td>Web + work data through Microsoft Graph</td>
-                    </tr>
-                    <tr>
-                        <td>License</td>
-                        <td>Included with eligible Microsoft 365 subscriptions</td>
-                        <td>Paid add-on license</td>
-                    </tr>
-                    <tr>
-                        <td>Embedded in Word, Excel, Outlook, and Teams</td>
-                        <td>No</td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr>
-                        <td>Researcher and Analyst</td>
-                        <td>No</td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr>
-                        <td>Agent using organizational data</td>
-                        <td>Requires metered pay-as-you-go usage</td>
-                        <td>Included, including custom agents</td>
-                    </tr>
-                    <tr>
-                        <td>Copilot Control System and Analytics</td>
-                        <td>No</td>
-                        <td>Yes</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="summary-box">
-                <p><strong>Decision signal:</strong> Need an answer grounded in internal emails or files <em>inside a Microsoft 365 app</em> → choose <strong>Microsoft 365 Copilot with a license</strong>.</p>
-                <p><strong>Exam trap:</strong> “Microsoft Copilot” without “365” generally refers to the consumer experience using a Microsoft account, not the enterprise Microsoft 365 product.</p>
-            </div>
-        </section>
+  <section class="content-section">
+    <h2 class="main-point">How to use this sheet</h2>
+    <div class="summary-box">
+      <p><strong>For every scenario, ask six questions in sequence:</strong></p>
+      <ol class="numbered-outline">
+        <li><strong>Business outcome:</strong> What decision, productivity gain, risk reduction, or customer outcome matters?</li>
+        <li><strong>AI pattern:</strong> Generative, predictive, conversational, document, vision, speech, search/RAG, or agent workflow?</li>
+        <li><strong>Data:</strong> Public web, user-provided content, Microsoft 365 work data, or external enterprise data?</li>
+        <li><strong>Microsoft product:</strong> Copilot Chat, Microsoft 365 Copilot, Copilot Studio, Foundry, Foundry Tools, Azure AI Search, Purview, or Security Copilot?</li>
+        <li><strong>Control:</strong> Permissions, privacy, security, Responsible AI, human oversight, evaluation, and cost?</li>
+        <li><strong>Adoption:</strong> Pilot, champions, workflow change, training, business KPI, then scale?</li>
+      </ol>
+      <p><strong>Exam anti-pattern:</strong> “Deploy widely first; governance, training, security, and measurement later” is normally the wrong choice.</p>
+    </div>
+  </section>
 
-        <section class="content-section">
-            <h2 class="main-point">2. Researcher vs Analyst vs Standard Copilot Chat</h2>
-            <table class="content-table">
-                <thead>
-                    <tr>
-                        <th>Tool</th>
-                        <th>Use it when</th>
-                        <th>Output / characteristic</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Standard Copilot chat</td>
-                        <td>Quick, lightweight work such as summarizing an email or drafting a short response</td>
-                        <td>Fast, optimized for speed</td>
-                    </tr>
-                    <tr>
-                        <td>Researcher</td>
-                        <td>Combining multiple web and work sources with multi-step reasoning</td>
-                        <td>A structured report with citations</td>
-                    </tr>
-                    <tr>
-                        <td>Analyst</td>
-                        <td>Analyzing quantitative data, large workbooks, and trends</td>
-                        <td>Data-science-style reasoning and numeric explanation</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="summary-box">
-                <p><strong>Quick distinction:</strong> “Large spreadsheet, find trends” → <strong>Analyst</strong>. “Synthesize many sources into a cited report” → <strong>Researcher</strong>.</p>
-                <p>Both Researcher and Analyst require Microsoft 365 Copilot licensing.</p>
-            </div>
-        </section>
+  <section class="content-section">
+    <h2 class="main-point">1. Exam map: what to prioritize</h2>
+    <table class="content-table">
+      <thead><tr><th>Domain</th><th>What you need to decide</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td>Business value of generative AI</td><td>AI type, business fit, prompts, RAG, model choice, data, security, ML, ROI and cost drivers</td><td>High</td></tr>
+        <tr><td>Microsoft AI apps and services</td><td>Copilot versions, apps, Graph, agents/connectors, Foundry, Foundry Tools, Azure AI Search, Researcher/Analyst</td><td>High</td></tr>
+        <tr><td>Implementation and adoption</td><td>Responsible AI, governance, adoption team, champions, risk, privacy, security, cost, measurement</td><td>Medium–High</td></tr>
+      </tbody>
+    </table>
+    <p class="intro-text"><strong>Study order:</strong> Learn Sections 2–4 first, then Section 5 product mapping, then Sections 6–7 governance and adoption. Do not memorize products without first identifying the underlying business and data pattern.</p>
+  </section>
 
-        <section class="content-section">
-            <h2 class="main-point">3. Build, Buy, or Extend</h2>
-            <table class="content-table">
-                <thead>
-                    <tr>
-                        <th>Choice</th>
-                        <th>Choose it when</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Buy / use an existing product</td>
-                        <td>The need is common, and an available product meets it with appropriate governance.</td>
-                    </tr>
-                    <tr>
-                        <td>Extend with a connector</td>
-                        <td>You only need to add <strong>knowledge</strong> from an external source such as Salesforce, ServiceNow, or Jira.</td>
-                    </tr>
-                    <tr>
-                        <td>Extend with an agent</td>
-                        <td>You need specialized <strong>behavior</strong>, a workflow, or actions. Use declarative agents for low-code and custom-engine agents for pro-code scenarios.</td>
-                    </tr>
-                    <tr>
-                        <td>Extend with an action or plugin</td>
-                        <td>Copilot needs to call an API and perform work in another system.</td>
-                    </tr>
-                    <tr>
-                        <td>Build</td>
-                        <td>The need is differentiated or unique and cannot be met through buying or extending.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="summary-box">
-                <p><strong>Rule:</strong> Need extra <strong>knowledge</strong> → connector. Need distinct <strong>behavior, workflow, or action</strong> → agent. Common need with an existing product → buy. Unique unmet need → build.</p>
-            </div>
-        </section>
+  <section class="content-section">
+    <h2 class="main-point">2. AI fundamentals and business value</h2>
+    <table class="content-table">
+      <thead><tr><th>AI type</th><th>Best at</th><th>Typical signal</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Generative AI</strong></td><td>Create or transform text, code, images, summaries, drafts, explanations, and answers.</td><td>“Draft, summarize, generate, rewrite, ask questions of content.”</td></tr>
+        <tr><td><strong>Predictive AI / machine learning</strong></td><td>Predict or classify using patterns in historical data.</td><td>“Forecast demand, detect fraud, predict churn, classify tickets.”</td></tr>
+        <tr><td><strong>Conversational AI</strong></td><td>Natural-language interaction for support, guidance, and task completion.</td><td>“Chatbot, assistant, self-service support.”</td></tr>
+        <tr><td><strong>Agentic AI</strong></td><td>Reason across steps, retrieve information, invoke tools/actions, and complete a bounded workflow.</td><td>“Follow approval steps, update a system, orchestrate work.”</td></tr>
+      </tbody>
+    </table>
 
-        <section class="content-section">
-            <h2 class="main-point">4. Responsible AI: Six Principles and Recognition Signals</h2>
-            <ul class="outline-list">
-                <li><strong>Fairness:</strong> Treat groups fairly; watch for biased data and discriminatory outcomes.</li>
-                <li><strong>Reliability and Safety:</strong> Evaluate before release, design fallbacks, and monitor after deployment.</li>
-                <li><strong>Privacy and Security:</strong> Protect data with access control, encryption, and suitable retention.</li>
-                <li><strong>Inclusiveness:</strong> Serve diverse users and contexts.</li>
-                <li><strong>Transparency:</strong> “Why did AI produce this result?” Explain the basis and limitations.</li>
-                <li><strong>Accountability:</strong> “Who is ultimately responsible?” A person or organization owns the outcome.</li>
-            </ul>
-        </section>
+    <div class="sub-section">
+      <h3 class="sub-point-1">When generative AI creates value</h3>
+      <ul class="outline-list">
+        <li><strong>Scale:</strong> assist many users or process high volumes of similar requests.</li>
+        <li><strong>Automation:</strong> reduce repetitive drafting, summarizing, classifying, extracting, or routing work.</li>
+        <li><strong>Augmentation:</strong> improve speed and quality of human decisions, not necessarily replace people.</li>
+        <li><strong>Knowledge access:</strong> ground answers in governed, current enterprise knowledge.</li>
+      </ul>
+      <p><strong>ROI logic:</strong> establish a baseline → estimate time, quality, revenue, risk, or service improvement → account for license, token, integration, data preparation, governance, training, and ongoing operations cost → validate in a pilot.</p>
+    </div>
 
-        <section class="content-section">
-            <h2 class="main-point">5. Trap Patterns and Exam Logistics</h2>
-            <ul class="outline-list">
-                <li>“Roll out quickly and fix later” or “skip security review” is almost always incorrect.</li>
-                <li><strong>RAG</strong> is for knowledge that changes frequently; <strong>fine-tuning</strong> is for stable specialized behavior or output format.</li>
-                <li><strong>Pay-as-you-go</strong> fits uncertain or variable usage; a <strong>commitment tier</strong> fits stable, predictable usage.</li>
-                <li>Measure adoption through active use in priority workflows and business outcomes, not the number of assigned licenses.</li>
-                <li>The scaled passing score is 700 out of 1,000. Most questions are generally available, and some may be preview questions. Coding is not required.</li>
-            </ul>
-        </section>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Core challenges and correct response</h3>
+      <table class="content-table">
+        <thead><tr><th>Challenge</th><th>Meaning</th><th>Primary response</th></tr></thead>
+        <tbody>
+          <tr><td>Fabrication / hallucination</td><td>AI produces unsupported or incorrect content.</td><td>Grounding, citations, evaluation, human review, and clear user guidance.</td></tr>
+          <tr><td>Bias</td><td>Unequal or systematically unfair outcomes caused by data, design, or use.</td><td>Representative data, fairness evaluation, monitoring, and human escalation.</td></tr>
+          <tr><td>Reliability</td><td>Output can vary or fail under different inputs and conditions.</td><td>Test representative scenarios, add fallbacks, monitor production, and set boundaries.</td></tr>
+          <tr><td>Prompt injection</td><td>Untrusted content attempts to override instructions or misuse tools/data.</td><td>Separate trusted instructions from untrusted data; least privilege; tool/action safeguards; validate outputs.</td></tr>
+          <tr><td>Automation bias / over-reliance</td><td>People accept an AI suggestion without sufficient review.</td><td>Human accountability, review gates for high-impact decisions, training, and auditability.</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-        <section class="content-section">
-            <h2 class="main-point">6. High-Priority Exam Review: Copilot, Extensibility, Licensing, and Responsible AI</h2>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Responsible AI: six principles</h3>
+      <table class="content-table">
+        <thead><tr><th>Principle</th><th>Recognition cue</th></tr></thead>
+        <tbody>
+          <tr><td>Fairness</td><td>Bias, equal treatment, discriminatory outcome.</td></tr>
+          <tr><td>Reliability and safety</td><td>Robustness, safeguards, failure handling, monitoring.</td></tr>
+          <tr><td>Privacy and security</td><td>Personal/sensitive data, access, encryption, retention, protection.</td></tr>
+          <tr><td>Inclusiveness</td><td>Accessibility, diverse users, different contexts and needs.</td></tr>
+          <tr><td>Transparency</td><td>Explain the basis, limitations, source, or uncertainty of an AI result.</td></tr>
+          <tr><td>Accountability</td><td>Named human or organization remains responsible for the outcome.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-            <div class="sub-section">
-                <h3 class="sub-point-1">Copilot versions</h3>
-                <table class="content-table">
-                    <thead>
-                        <tr>
-                            <th>Option</th>
-                            <th>Best description</th>
-                            <th>Exam decision signal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Copilot Chat</td>
-                            <td>Web-grounded chat for general questions and public information.</td>
-                            <td>Choose it when the task does not require Microsoft 365 work-data grounding.</td>
-                        </tr>
-                        <tr>
-                            <td>Microsoft 365 Copilot</td>
-                            <td>A licensed enterprise Copilot that can be grounded in work data through Microsoft Graph.</td>
-                            <td>Choose it for emails, files, meetings, chats, and work inside Microsoft 365 apps.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="summary-box">
-                    <p><strong>Memory cue:</strong> Public web information → <strong>Copilot Chat</strong>. Organizational work data through Microsoft Graph → <strong>Microsoft 365 Copilot with a license</strong>.</p>
-                </div>
-            </div>
+  <section class="content-section">
+    <h2 class="main-point">3. Prompting, grounding, RAG, and model choice</h2>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Prompt anatomy</h3>
+      <table class="content-table">
+        <thead><tr><th>Prompt component</th><th>Purpose</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Directive</strong></td><td>State the task, audience, role, constraints, and desired output.</td><td>“Summarize this for an executive in five bullets; identify decisions and risks.”</td></tr>
+          <tr><td><strong>Supporting content</strong></td><td>Supply relevant facts, source text, examples, or data.</td><td>Meeting notes, policy excerpt, table, or approved template.</td></tr>
+          <tr><td><strong>Output specification</strong></td><td>Define format, length, fields, tone, and quality checks.</td><td>“Use a table with owner, date, action, confidence, and source.”</td></tr>
+          <tr><td><strong>One-shot learning</strong></td><td>Provide one example of the desired transformation or response.</td><td>Input → ideal output example for a recurring classification task.</td></tr>
+          <tr><td><strong>Reasoning guidance</strong></td><td>Ask the model to use a structured method or verify work.</td><td>“Compare options against cost, latency, safety, and accuracy; present concise rationale.”</td></tr>
+        </tbody>
+      </table>
+      <p class="intro-text"><strong>Prompt rule:</strong> improve the prompt before changing the model. Be specific, add only relevant context, define a verifiable output, and do not treat an AI response as authoritative without validation.</p>
+    </div>
 
-            <div class="sub-section">
-                <h3 class="sub-point-1">Microsoft 365 Copilot extensibility: buy, extend, or build</h3>
-                <ul class="outline-list">
-                    <li><strong>Buy:</strong> Use an existing Microsoft or third-party product when it already meets a common business need with suitable governance.</li>
-                    <li><strong>Extend:</strong> Add capability to Copilot rather than recreating it. Use <strong>connectors</strong> to bring in external knowledge; use <strong>agents</strong> for specialized behavior, workflows, and orchestration; use <strong>plugins or actions</strong> when Copilot must call an API or perform work in another system.</li>
-                    <li><strong>Build:</strong> Create a bespoke solution only when the need is differentiated, strategic, or cannot be met by buying or extending.</li>
-                </ul>
-                <div class="summary-box">
-                    <p><strong>Decision rule:</strong> Knowledge → connector. Behavior or workflow → agent. API operation → plugin/action. Common solved need → buy. Unique unmet need → build.</p>
-                </div>
-            </div>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Choose the right approach</h3>
+      <table class="content-table">
+        <thead><tr><th>Approach</th><th>What changes</th><th>Use it when</th></tr></thead>
+        <tbody>
+          <tr><td>Pretrained model</td><td>Nothing in model weights.</td><td>A general model meets the need with good prompting and controls.</td></tr>
+          <tr><td>Prompt engineering</td><td>Instructions, context, examples, and output format.</td><td>You need better task steering, tone, process, or structure.</td></tr>
+          <tr><td>RAG</td><td>Runtime context retrieved from governed sources.</td><td>Knowledge is private, current, frequently changing, or must be traceable to sources.</td></tr>
+          <tr><td>Fine-tuning</td><td>Model weights are adapted with a quality task-specific dataset.</td><td>After prompt/RAG evaluation fails to meet a stable, repeated specialized behavior or format requirement.</td></tr>
+        </tbody>
+      </table>
+      <div class="summary-box"><p><strong>Decision rule:</strong> Start with pretrained + prompt. Add RAG for knowledge. Fine-tune only for durable behavior, not for weekly policy updates or document lookup.</p></div>
+    </div>
 
-            <div class="sub-section">
-                <h3 class="sub-point-1">License and subscription tiers</h3>
-                <table class="content-table">
-                    <thead>
-                        <tr>
-                            <th>Offering</th>
-                            <th>Commercial pattern</th>
-                            <th>Use it when</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Copilot</td>
-                            <td>Included experience with eligible Microsoft 365 subscriptions, licensed monthly Microsoft 365 Copilot, or metered pay-as-you-go consumption for applicable agent scenarios.</td>
-                            <td>Match the option to whether the user needs public web chat, Microsoft 365 work-data grounding, or variable agent usage.</td>
-                        </tr>
-                        <tr>
-                            <td>Microsoft Foundry</td>
-                            <td>Pay-as-you-go consumption or commitment tiers.</td>
-                            <td>Pay-as-you-go fits uncertain or variable demand; commitment tiers fit stable, predictable usage.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="summary-box">
-                    <p><strong>Exam trap:</strong> Do not assume every Copilot capability is included in a Microsoft 365 subscription. Check whether the scenario requires a Microsoft 365 Copilot license or metered pay-as-you-go usage.</p>
-                </div>
-            </div>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Model selection signals</h3>
+      <table class="content-table">
+        <thead><tr><th>Need</th><th>Model/capability pattern</th></tr></thead>
+        <tbody>
+          <tr><td>Drafting, summarization, Q&amp;A, code, language understanding</td><td>General-purpose language model.</td></tr>
+          <tr><td>Complex multi-step analysis, planning, difficult mathematics or code</td><td>Reasoning model; validate higher quality against extra latency and cost.</td></tr>
+          <tr><td>Semantic search, similarity, clustering, RAG retrieval</td><td>Embedding model + vector/hybrid retrieval; embeddings do not generate the final answer.</td></tr>
+          <tr><td>Text plus image/audio/video understanding or creation</td><td>Multimodal model.</td></tr>
+          <tr><td>High-volume narrow task with cost/latency constraint</td><td>Small language model or task-specific model; use the smallest model that meets measured quality.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-            <div class="sub-section">
-                <h3 class="sub-point-1">Responsible AI: six named principles</h3>
-                <p class="intro-text">The list contains <strong>six</strong> principles:</p>
-                <ul class="outline-list">
-                    <li><strong>Fairness</strong></li>
-                    <li><strong>Reliability and safety</strong></li>
-                    <li><strong>Privacy and security</strong></li>
-                    <li><strong>Inclusiveness</strong></li>
-                    <li><strong>Transparency</strong></li>
-                    <li><strong>Accountability</strong></li>
-                </ul>
-                <div class="summary-box">
-                    <p><strong>Recognition cues:</strong> Bias or unequal treatment → fairness. Explainability → transparency. Ownership of outcomes → accountability. Secure data handling → privacy and security. Robust operation and safeguards → reliability and safety. Support for diverse users → inclusiveness.</p>
-                </div>
-            </div>
-        </section>
+  <section class="content-section">
+    <h2 class="main-point">4. Data, machine learning, security, and cost</h2>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Data and grounding checklist</h3>
+      <ul class="outline-list">
+        <li>Is the data accurate, current, representative, classified, and approved for the intended purpose?</li>
+        <li>Does the user already have permission to access the content? Preserve least privilege and permission trimming.</li>
+        <li>Does a high-impact scenario require human review, source citations, an appeal/escalation route, or audit records?</li>
+        <li>Can the solution minimize sensitive data and apply appropriate retention, redaction, encryption, and logging?</li>
+      </ul>
+    </div>
+    <div class="sub-section">
+      <h3 class="sub-point-1">When machine learning adds value</h3>
+      <p class="intro-text">Use ML when historical patterns can improve a forecast, classification, recommendation, anomaly detection, or optimization beyond fixed rules alone.</p>
+      <ol class="numbered-outline">
+        <li><strong>Frame:</strong> define user, decision, KPI, risk, constraints, baseline, and accountable owner.</li>
+        <li><strong>Prepare data:</strong> collect, clean, label, secure, and assess quality/representativeness.</li>
+        <li><strong>Train and validate:</strong> compare candidate models against quality, fairness, robustness, latency, and cost.</li>
+        <li><strong>Deploy safely:</strong> integrate with access controls, monitoring, rollback, user guidance, and human oversight where needed.</li>
+        <li><strong>Monitor and improve:</strong> measure real outcomes, drift, failures, bias, feedback, and retraining needs.</li>
+      </ol>
+    </div>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Cost and commercial pattern</h3>
+      <table class="content-table">
+        <thead><tr><th>Question</th><th>Decision pattern</th></tr></thead>
+        <tbody>
+          <tr><td>What drives cost?</td><td>Tokens/model choice, requests, agent actions, search/indexing, storage, integrations, monitoring, human operations, and training.</td></tr>
+          <tr><td>Usage uncertain or variable?</td><td>Pay-as-you-go fits experimentation and variable demand; enforce budgets, tags, quotas, and monitoring.</td></tr>
+          <tr><td>Usage stable and predictable?</td><td>Consider commitment/prepaid capacity where commercially appropriate; compare effective cost, not price alone.</td></tr>
+          <tr><td>Cost rises unexpectedly?</td><td>Instrument usage, identify the driver, right-size model/retrieval, cache where suitable, and set guardrails before scaling.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-        <section class="content-section">
-            <h2 class="main-point">7. Twenty Trap-Style Practice Questions</h2>
-            <p class="intro-text">Try each question before opening the answer section below. When you miss one, record the decisive concept: AI type, product mapping, or governance principle.</p>
+  <section class="content-section">
+    <h2 class="main-point">5. Microsoft AI solution map</h2>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Copilot Chat vs Microsoft 365 Copilot</h3>
+      <table class="content-table">
+        <thead><tr><th>Option</th><th>Primary grounding</th><th>Use it when</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Microsoft 365 Copilot Chat</strong></td><td>Web by default; can use user-provided/open content in specific experiences; organizational-data agents can be metered.</td><td>Secure web-grounded chat, lightweight work, file upload, or an entry point without the full add-on experience.</td></tr>
+          <tr><td><strong>Microsoft 365 Copilot (add-on license)</strong></td><td>Web + work data from files, emails, meetings, and chats, respecting user permissions.</td><td>Users need rich work-data grounding and integrated experiences in Microsoft 365 apps, advanced agents, Researcher/Analyst, analytics, and broader controls.</td></tr>
+          <tr><td><strong>Microsoft Copilot (consumer)</strong></td><td>Consumer/public experience.</td><td>Do not select for an enterprise work-data scenario requiring Microsoft 365 governance.</td></tr>
+        </tbody>
+      </table>
+      <div class="summary-box"><p><strong>Memory cue:</strong> Public web → Copilot Chat. Organizational work context across files, email, meetings, chats, and in-app work → Microsoft 365 Copilot.</p></div>
+    </div>
 
-            <div class="sub-section">
-                <h3 class="sub-point-1">Questions 1–10</h3>
-                <ol class="numbered-outline">
-                    <li><strong>A team needs Copilot to answer from internal SharePoint files directly in Word, without setup beyond licensing. What should it choose?</strong>
-                        <ul class="nested-list">
-                            <li>A. Microsoft 365 Copilot Chat (free)</li>
-                            <li>B. Microsoft 365 Copilot (licensed)</li>
-                            <li>C. Microsoft Copilot (consumer)</li>
-                            <li>D. Copilot Studio agent only</li>
-                        </ul>
-                    </li>
-                    <li><strong>An organization has a Microsoft 365 subscription but has not purchased the Copilot add-on. Users want web-grounded chat with no extra cost. What is already available?</strong>
-                        <ul class="nested-list">
-                            <li>A. Microsoft 365 Copilot Chat (web-grounded)</li>
-                            <li>B. Licensed Microsoft 365 Copilot</li>
-                            <li>C. Microsoft Foundry</li>
-                            <li>D. Nothing</li>
-                        </ul>
-                    </li>
-                    <li><strong>A user of unlicensed Copilot Chat needs an agent that can answer from organizational data. What is required?</strong>
-                        <ul class="nested-list">
-                            <li>A. Nothing; it is already included</li>
-                            <li>B. Enable metered pay-as-you-go usage through Copilot Studio billing</li>
-                            <li>C. Fine-tune a model</li>
-                            <li>D. Use a personal Microsoft account</li>
-                        </ul>
-                    </li>
-                    <li><strong>A manager has a large sales file and needs to identify trends and explain numbers. Which tool is best?</strong>
-                        <ul class="nested-list">
-                            <li>A. Researcher</li>
-                            <li>B. Analyst</li>
-                            <li>C. Copilot Studio topic</li>
-                            <li>D. Azure Vision</li>
-                        </ul>
-                    </li>
-                    <li><strong>A leadership brief requires synthesis from web and internal documents, with citations. Which tool should be selected?</strong>
-                        <ul class="nested-list">
-                            <li>A. Researcher</li>
-                            <li>B. Analyst</li>
-                            <li>C. Standard Copilot chat</li>
-                            <li>D. Outlook Copilot</li>
-                        </ul>
-                    </li>
-                    <li><strong>You need Copilot to know and answer from ServiceNow ticket data, but it does not need to take an action. What is the best option?</strong>
-                        <ul class="nested-list">
-                            <li>A. Copilot connector (Graph connector)</li>
-                            <li>B. Custom-engine pro-code agent</li>
-                            <li>C. Fine-tune a model</li>
-                            <li>D. Build a new application</li>
-                        </ul>
-                    </li>
-                    <li><strong>A process requires Copilot to follow a specific approval workflow and perform an action in another system after confirmation. What should be prioritized?</strong>
-                        <ul class="nested-list">
-                            <li>A. Copilot Studio agent with approved knowledge and actions</li>
-                            <li>B. A standalone Copilot connector</li>
-                            <li>C. Public Copilot Chat</li>
-                            <li>D. Azure Vision</li>
-                        </ul>
-                    </li>
-                    <li><strong>A need is common and a Microsoft product already meets it with appropriate governance. What is the correct decision?</strong>
-                        <ul class="nested-list">
-                            <li>A. Build a custom solution from scratch</li>
-                            <li>B. Buy / use the existing product</li>
-                            <li>C. Fine-tune a private model</li>
-                            <li>D. Drop the use case</li>
-                        </ul>
-                    </li>
-                    <li><strong>A customer asks, “Why did AI deny my loan?” Which Responsible AI principle is most relevant?</strong>
-                        <ul class="nested-list">
-                            <li>A. Accountability</li>
-                            <li>B. Transparency</li>
-                            <li>C. Reliability and Safety</li>
-                            <li>D. Inclusiveness</li>
-                        </ul>
-                    </li>
-                    <li><strong>“Who is ultimately responsible when AI makes a wrong decision?” Which Responsible AI principle applies?</strong>
-                        <ul class="nested-list">
-                            <li>A. Transparency</li>
-                            <li>B. Accountability</li>
-                            <li>C. Privacy</li>
-                            <li>D. Fairness</li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Microsoft 365 Copilot in apps</h3>
+      <table class="content-table">
+        <thead><tr><th>App</th><th>Primary value</th></tr></thead>
+        <tbody>
+          <tr><td>Word</td><td>Draft, summarize, rewrite, improve tone, structure, and action extraction.</td></tr>
+          <tr><td>Excel</td><td>Analyze tables, formulas, trends, anomalies, and charts.</td></tr>
+          <tr><td>PowerPoint</td><td>Create or refine presentations from prompts and source documents.</td></tr>
+          <tr><td>Outlook</td><td>Summarize threads, draft replies, manage follow-ups, and prepare for meetings.</td></tr>
+          <tr><td>Teams</td><td>Meeting/chat/channel recap, decisions, action items, unresolved questions.</td></tr>
+        </tbody>
+      </table>
+      <p class="intro-text"><strong>Researcher</strong> = multi-source research and cited report. <strong>Analyst</strong> = quantitative analysis, large data/workbooks, trend and numeric explanation.</p>
+    </div>
 
-            <div class="sub-section">
-                <h3 class="sub-point-1">Questions 11–20</h3>
-                <ol class="numbered-outline" start="11">
-                    <li><strong>Policies change weekly and answers must remain current. What is the suitable approach?</strong>
-                        <ul class="nested-list"><li>A. Fine-tune every week</li><li>B. RAG over governed sources</li><li>C. Increase temperature</li><li>D. Build a new model</li></ul>
-                    </li>
-                    <li><strong>A recurring task needs a specialized, stable output style or format that prompting cannot achieve. What should be selected?</strong>
-                        <ul class="nested-list"><li>A. RAG</li><li>B. Fine-tuning</li><li>C. Add web search</li><li>D. Reduce tokens</li></ul>
-                    </li>
-                    <li><strong>An organization wants an immediate company-wide rollout but has no data-security baseline. What is the right recommendation?</strong>
-                        <ul class="nested-list"><li>A. Roll out everywhere and fix it later</li><li>B. Establish minimum controls, run a scoped pilot, then scale</li><li>C. Disable security to increase adoption</li><li>D. Use only personal accounts</li></ul>
-                    </li>
-                    <li><strong>Usage is high, stable, and predictable. Which cost model is more suitable than pure pay-as-you-go?</strong>
-                        <ul class="nested-list"><li>A. Subscription/commitment tier</li><li>B. Do not measure usage</li><li>C. Use PAYG forever</li><li>D. Disable billing</li></ul>
-                    </li>
-                    <li><strong>A human approver accepts every AI recommendation without review. What is the main risk?</strong>
-                        <ul class="nested-list"><li>A. Automation bias</li><li>B. Latency</li><li>C. Token overflow</li><li>D. Data residency</li></ul>
-                    </li>
-                    <li><strong>An agent must answer only from documents the user is already permitted to view. What architecture is suitable?</strong>
-                        <ul class="nested-list"><li>A. Identity plus permission trimming through Graph</li><li>B. Copy all data to a public wiki</li><li>C. Shared generic account</li><li>D. Disable access checks</li></ul>
-                    </li>
-                    <li><strong>You need to compare models by quality, cost, latency, and safety before enterprise-controlled deployment. Which platform should be used?</strong>
-                        <ul class="nested-list"><li>A. Microsoft Foundry</li><li>B. Outlook</li><li>C. OneDrive</li><li>D. Planner</li></ul>
-                    </li>
-                    <li><strong>A factory needs to detect products missing labels from production-line images. What should it consider?</strong>
-                        <ul class="nested-list"><li>A. Azure Vision in Foundry Tools</li><li>B. Microsoft 365 Copilot</li><li>C. Researcher</li><li>D. Microsoft Graph</li></ul>
-                    </li>
-                    <li><strong>A leader wants to measure meaningful adoption. Which metric matters most?</strong>
-                        <ul class="nested-list"><li>A. Number of licenses assigned</li><li>B. Active use in priority workflows plus improved business outcomes</li><li>C. Number of launch emails</li><li>D. Number of promotional posters</li></ul>
-                    </li>
-                    <li><strong>What is the primary purpose of an AI council?</strong>
-                        <ul class="nested-list"><li>A. Only purchasing licenses</li><li>B. Providing strategy, oversight, and cross-functional alignment for AI</li><li>C. Replacing all managers</li><li>D. Writing code for agents</li></ul>
-                    </li>
-                </ol>
-            </div>
-        </section>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Microsoft Graph, connectors, agents, and build/buy/extend</h3>
+      <table class="content-table">
+        <thead><tr><th>Term / decision</th><th>Use it when</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Microsoft Graph</strong></td><td>Microsoft 365 data and context such as users, files, mail, calendar, Teams, and permissions; it is not itself a chatbot or an AI model.</td></tr>
+          <tr><td><strong>Connector</strong></td><td>Copilot needs external <em>knowledge</em> from a source such as ServiceNow, Salesforce, or Jira.</td></tr>
+          <tr><td><strong>Agent</strong></td><td>Copilot needs specialized instructions, behavior, orchestration, workflow, knowledge, and/or controlled actions.</td></tr>
+          <tr><td><strong>Action / plugin</strong></td><td>The solution must call an API or perform work in another system after appropriate authorization/confirmation.</td></tr>
+          <tr><td><strong>Buy</strong></td><td>The need is common and an approved existing product already meets it.</td></tr>
+          <tr><td><strong>Extend</strong></td><td>Existing Copilot needs added knowledge, domain behavior, or actions.</td></tr>
+          <tr><td><strong>Build</strong></td><td>The use case is differentiated, strategic, or cannot be met safely by buying/extending.</td></tr>
+        </tbody>
+      </table>
+      <p class="intro-text"><strong>Terminology trap:</strong> “Copilot Integrator” and “Copilot Graph” are not the usual extension choices. Remember the exam mapping: Graph = work-data platform/context; connector = knowledge; agent = behavior/workflow; action/plugin = API operation.</p>
+    </div>
 
-        <section class="content-section">
-            <h2 class="main-point">8. Answers and Decision Rationale</h2>
-            <ol class="numbered-outline">
-                <li><strong>B.</strong> Internal work-data grounding inside an app requires licensed Microsoft 365 Copilot. Copilot Chat is web-grounded, while “Microsoft Copilot” without “365” is the consumer product.</li>
-                <li><strong>A.</strong> Web-grounded Copilot Chat is available with eligible Microsoft 365 subscriptions without the Copilot add-on.</li>
-                <li><strong>B.</strong> An organizational-data agent in Copilot Chat requires metered pay-as-you-go consumption through Copilot Studio billing, or a Microsoft 365 Copilot license.</li>
-                <li><strong>B.</strong> Quantitative analysis of large tables and trend detection maps to Analyst; Researcher focuses on multi-source report synthesis.</li>
-                <li><strong>A.</strong> Multi-source research, multi-step reasoning, and cited reports map to Researcher.</li>
-                <li><strong>A.</strong> Adding knowledge from an external source without custom behavior or actions maps to a connector.</li>
-                <li><strong>A.</strong> Specialized workflow plus system actions maps to a Copilot Studio agent, not a connector alone.</li>
-                <li><strong>B.</strong> Prefer buy, then extend, then build. Do not build a common capability that an approved existing product already provides.</li>
-                <li><strong>B.</strong> Explaining the basis or rationale of a decision is transparency.</li>
-                <li><strong>B.</strong> Ultimate responsibility for outcomes belongs to people or the organization: accountability.</li>
-                <li><strong>B.</strong> Fast-changing knowledge should be retrieved through RAG from governed sources. Fine-tuning is not intended for constant knowledge updates.</li>
-                <li><strong>B.</strong> Stable specialized behavior or output format, especially with quality examples, is a fine-tuning scenario.</li>
-                <li><strong>B.</strong> Start with minimum controls and a governed pilot before scaling. “Roll out now, fix later” is a classic incorrect choice.</li>
-                <li><strong>A.</strong> A commitment tier can optimize cost when usage is stable and predictable; PAYG suits uncertain or variable demand.</li>
-                <li><strong>A.</strong> Excessive trust in an AI recommendation without critical review is automation bias.</li>
-                <li><strong>A.</strong> Use identity-aware access and permission trimming. Do not copy data beyond existing access rights.</li>
-                <li><strong>A.</strong> Microsoft Foundry supports model discovery, evaluation, comparison, and controlled deployment.</li>
-                <li><strong>A.</strong> Image-based product or label detection is a computer-vision scenario for Azure Vision.</li>
-                <li><strong>B.</strong> Adoption is valuable use in priority workflows and measurable impact, not entitlement or launch activity.</li>
-                <li><strong>B.</strong> An AI council provides strategic direction, oversight, and coordination among business, IT, security, legal, data, and change stakeholders.</li>
-            </ol>
-        </section>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Agent Builder vs Copilot Studio</h3>
+      <table class="content-table">
+        <thead><tr><th>Tool</th><th>Best fit</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Agent Builder in Microsoft 365 Copilot</strong></td><td>Fast, low-code creation of lightweight reusable agents in the Microsoft 365 Copilot experience; follows existing Microsoft 365 permissions.</td></tr>
+          <tr><td><strong>Microsoft Copilot Studio</strong></td><td>Richer enterprise agent building: wider data/connectors, advanced configuration, security/governance, deployment options, workflow and action integration.</td></tr>
+        </tbody>
+      </table>
+      <div class="summary-box"><p><strong>“Lite vs Full” memory model:</strong> use an in-product, lightweight agent experience for simple reusable guidance; use Copilot Studio for advanced/custom enterprise capabilities. Verify the current commercial entitlement rather than relying on an old “Lite/Full” product label.</p></div>
+    </div>
 
-        <section class="content-section">
-            <h2 class="main-point">Final Revision Checklist</h2>
-            <div class="summary-box">
-                <ul class="outline-list">
-                    <li>Internal work data in Word, Excel, Outlook, or Teams → licensed Microsoft 365 Copilot.</li>
-                    <li>Research across sources with citations → Researcher; quantitative workbook analysis → Analyst.</li>
-                    <li>External knowledge → connector; custom workflow or action → agent.</li>
-                    <li>Frequently changing knowledge → RAG; stable specialized behavior → fine-tuning.</li>
-                    <li>High-risk AI → stronger evaluation, safeguards, monitoring, and human oversight.</li>
-                    <li>Adoption success → active priority-workflow use plus business outcomes.</li>
-                </ul>
-            </div>
-        </section>
-    </article>
+    <div class="sub-section">
+      <h3 class="sub-point-1">Microsoft Foundry, Foundry Tools, Azure AI Search, Purview, Security Copilot</h3>
+      <table class="content-table">
+        <thead><tr><th>Service</th><th>Use it when</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Microsoft Foundry</strong></td><td>Build, evaluate, deploy, observe, and govern enterprise AI apps and agents; compare models and manage lifecycle.</td></tr>
+          <tr><td><strong>Foundry Tools</strong></td><td>A prebuilt AI capability solves a defined task faster than training a custom model.</td></tr>
+          <tr><td>Azure Vision in Foundry Tools</td><td>Image/video understanding, inspection, object/image analysis.</td></tr>
+          <tr><td>Azure Document Intelligence</td><td>Extract text, fields, tables, layout, and structured data from invoices, forms, contracts, receipts, or IDs.</td></tr>
+          <tr><td>Azure Speech</td><td>Speech-to-text, text-to-speech, transcription, spoken translation, voice experiences.</td></tr>
+          <tr><td><strong>Azure AI Search</strong></td><td>Index and retrieve current enterprise knowledge with lexical/vector/hybrid/semantic retrieval for RAG. It is not the generative model.</td></tr>
+          <tr><td><strong>Microsoft Purview</strong></td><td>Data security, compliance, classification, sensitivity labels, DLP, audit, retention, and AI risk/governance controls.</td></tr>
+          <tr><td><strong>Microsoft Security Copilot</strong></td><td>Assist security teams with investigation, response, threat analysis, and security operations—not general productivity.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-    <script src="../../pages-scripts.js"></script>
+  <section class="content-section">
+    <h2 class="main-point">6. Implement responsibly: strategy, governance, and security</h2>
+    <ol class="numbered-outline">
+      <li><strong>Set strategy and prioritize:</strong> select use cases by business value, feasibility, risk, data readiness, and alignment.</li>
+      <li><strong>Assess readiness and risk:</strong> data sensitivity, users impacted, regulatory obligations, harms, model limitations, and human oversight.</li>
+      <li><strong>Establish minimum controls:</strong> approved tools, identity/access, data boundaries, evaluation, incident management, logging, monitoring, and cost controls.</li>
+      <li><strong>Run a scoped pilot:</strong> representative users, one priority workflow, baseline and success metrics, training, feedback, and ownership.</li>
+      <li><strong>Measure, improve, scale:</strong> expand only after demonstrated value, acceptable risk, sustainable operations, and continuous monitoring.</li>
+    </ol>
+
+    <div class="sub-section">
+      <h3 class="sub-point-1">AI council and operating ownership</h3>
+      <p class="intro-text">An AI council is a cross-functional forum for strategic prioritization and oversight; it does not replace delivery teams and it is not only a licensing committee.</p>
+      <table class="content-table">
+        <thead><tr><th>Area</th><th>Typical contributors</th></tr></thead>
+        <tbody>
+          <tr><td>Business value and portfolio</td><td>Executive sponsor, business leaders, product/workflow owners, IT leadership.</td></tr>
+          <tr><td>Responsible AI, legal, compliance, privacy</td><td>Risk, legal, compliance, privacy, security, data owners.</td></tr>
+          <tr><td>Technical assurance</td><td>Engineering, AI/data teams, enterprise architecture, platform operations.</td></tr>
+          <tr><td>Adoption and change</td><td>Change/adoption team, managers, champions, learning/support functions.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-section">
+      <h3 class="sub-point-1">Security and privacy decision cues</h3>
+      <ul class="outline-list">
+        <li><strong>Identity and permissions:</strong> use least privilege; do not let agents bypass the user’s existing authorization.</li>
+        <li><strong>Data protection:</strong> classify data, apply sensitivity labels/DLP, minimize sensitive data, define retention, and use approved sources/tools.</li>
+        <li><strong>Application and agent security:</strong> validate inputs/outputs, constrain tools/actions, protect secrets, log significant actions, and plan incident response.</li>
+        <li><strong>High-impact decisions:</strong> add human oversight, clear accountability, explanation/traceability, validation, and an escalation route.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">7. Adoption and measurement</h2>
+    <table class="content-table">
+      <thead><tr><th>Role</th><th>Primary contribution</th><th>Failure to avoid</th></tr></thead>
+      <tbody>
+        <tr><td>Executive sponsor</td><td>Sets direction, funds priorities, removes blockers, reinforces accountability.</td><td>Leaving AI as an isolated IT experiment.</td></tr>
+        <tr><td>Adoption/change team</td><td>Communications, role-based learning, support, feedback, benefit measurement, change plan.</td><td>Measuring success only by training attendance or licenses issued.</td></tr>
+        <tr><td>AI champions</td><td>Demonstrate useful scenarios, support peers, surface needs/risks, provide feedback bridge.</td><td>Treating champions as ungoverned shadow-IT builders or final approvers for high-risk use cases.</td></tr>
+        <tr><td>Managers/workflow owners</td><td>Redesign work, set human review, create time/incentives, own local outcomes.</td><td>Expecting adoption without workflow/process change.</td></tr>
+      </tbody>
+    </table>
+    <div class="summary-box">
+      <p><strong>Meaningful adoption metric:</strong> active use in priority workflows <em>plus</em> a measurable business outcome (for example: cycle time, resolution quality, rework, customer satisfaction, compliance, or cost-to-serve). License assignment, launch emails, and training attendance are leading indicators, not proof of value.</p>
+      <p><strong>Response to low adoption:</strong> do not only provide more generic training. Pair a clear use case with role-based practice, in-workflow support, champions, manager sponsorship, approved guardrails, feedback loops, and visible outcome measurement.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">8. Final high-speed decision table</h2>
+    <table class="content-table">
+      <thead><tr><th>Scenario signal</th><th>Best answer direction</th></tr></thead>
+      <tbody>
+        <tr><td>Current internal policies/files; grounded answer required</td><td>RAG over governed sources; preserve permissions; Azure AI Search can provide retrieval in a custom solution.</td></tr>
+        <tr><td>Need complex report from web + internal sources with citations</td><td>Researcher.</td></tr>
+        <tr><td>Large spreadsheet; find trends/explain numbers</td><td>Analyst.</td></tr>
+        <tr><td>External system knowledge only</td><td>Connector.</td></tr>
+        <tr><td>Workflow + specialized behavior + API action</td><td>Agent with approved actions, safeguards, and authorization.</td></tr>
+        <tr><td>Scanned invoice/form; extract fields/tables</td><td>Azure Document Intelligence.</td></tr>
+        <tr><td>Production camera/image inspection</td><td>Azure Vision in Foundry Tools.</td></tr>
+        <tr><td>Audio, transcription, voice experience</td><td>Azure Speech.</td></tr>
+        <tr><td>Build/evaluate/deploy/observe AI app or agent</td><td>Microsoft Foundry.</td></tr>
+        <tr><td>Security/compliance, labels, DLP, audit, retention for AI</td><td>Microsoft Purview.</td></tr>
+        <tr><td>Security operations investigation and response</td><td>Microsoft Security Copilot.</td></tr>
+        <tr><td>Stable specialized output behavior after prompt/RAG are insufficient</td><td>Fine-tuning.</td></tr>
+        <tr><td>Weekly-changing knowledge</td><td>RAG, not weekly fine-tuning.</td></tr>
+        <tr><td>Risky rollout without control baseline</td><td>Establish minimum controls, scope a pilot, measure, then scale.</td></tr>
+        <tr><td>Employees accept AI output without review</td><td>Automation bias; strengthen human oversight and accountability.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">What was consolidated or removed</h2>
+    <ul class="outline-list">
+      <li>Merged duplicated sections on Copilot versions, build/buy/extend, licensing, and six Responsible AI principles into one authoritative location.</li>
+      <li>Merged repeated “trap patterns,” fast scenario mapping, and final checklist into one final decision table.</li>
+      <li>Added missing note topics: AI types, prompt components, prompt injection/over-reliance/fabrication/bias, Graph, Purview, Security Copilot, Agent Builder versus Copilot Studio, and Azure AI services benefits.</li>
+      <li>Kept nuanced licensing statements as decision cues rather than rigid feature claims, because Copilot commercial entitlements change frequently.</li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Reference sources to revisit before the exam</h2>
+    <ul class="outline-list">
+      <li>Microsoft Learn: Study guide for Exam AB-731 — use it as the scope authority.</li>
+      <li>Microsoft Learn: Microsoft 365 Copilot Chat overview and Copilot extensibility/licensing documentation — recheck near exam day.</li>
+      <li>Microsoft Learn: Microsoft Foundry, Foundry Tools, Azure AI Search, Microsoft Purview, and Copilot Studio documentation.</li>
+    </ul>
+  </section>
+</article>
+<script src="../../pages-scripts.js"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@
 		configScriptUrl: null,
 		loadedQuestionBankScripts: new Set(),
 		selectedConfigIndex: 0,
+		selectedMode: 'practice',
 		activeConfig: null,
 		activeQuestions: [],
 		currentQuestionIndex: 0,
@@ -134,6 +135,7 @@
 		configMetrics: document.getElementById('config-metrics'),
 		startBtn: document.getElementById('start-btn'),
 		reloadBtn: document.getElementById('reload-btn'),
+		modeTabsContainer: document.getElementById('mode-tabs'),
 		timer: document.getElementById('timer'),
 		questionIndex: document.getElementById('question-index'),
 		answeredCount: document.getElementById('answered-count'),
@@ -342,6 +344,7 @@
 	function normalizeConfig(config, index) {
 		return {
 			quizName: typeof config.quizName === 'string' ? config.quizName : `Quiz ${index + 1}`,
+			mode: config.mode === 'exam' ? 'exam' : 'practice',
 			duration: Math.max(1, toNumber(config.duration, 30)),
 			questions: Math.max(1, toNumber(config.questions, 10)),
 			passingScore: Math.max(0, toNumber(config.passingScore, 70)),
@@ -485,7 +488,7 @@
 
 	function updateSetupMetrics() {
 		const config = state.configs[state.selectedConfigIndex];
-		if (!config) {
+		if (!config || config.mode !== state.selectedMode) {
 			elements.configMetrics.innerHTML = '';
 			return;
 		}
@@ -504,11 +507,28 @@
 		`;
 	}
 
+	function getFilteredConfigs() {
+		return state.configs
+			.map((config, index) => ({ config, index }))
+			.filter(({ config }) => config.mode === state.selectedMode);
+	}
+
 	function renderConfigSelect() {
-		elements.quizSelect.innerHTML = state.configs
-			.map((config, index) => `<option value="${index}">${escapeHtml(config.quizName)}</option>`)
+		const filtered = getFilteredConfigs();
+		elements.quizSelect.innerHTML = filtered
+			.map(({ config, index }) => `<option value="${index}">${escapeHtml(config.quizName)}</option>`)
 			.join('');
-		elements.quizSelect.value = String(state.selectedConfigIndex);
+
+		elements.startBtn.disabled = filtered.length === 0;
+
+		if (filtered.length > 0) {
+			const validIndices = new Set(filtered.map(({ index }) => index));
+			if (!validIndices.has(state.selectedConfigIndex)) {
+				state.selectedConfigIndex = filtered[0].index;
+			}
+			elements.quizSelect.value = String(state.selectedConfigIndex);
+		}
+
 		updateSetupMetrics();
 	}
 
@@ -687,7 +707,10 @@
 			}
 
 			state.activeConfig = config;
-			state.activeQuestions = shuffle(selected);
+			state.activeQuestions = shuffle(selected).map((question) => ({
+				...question,
+				options: shuffle(question.options),
+			}));
 			state.currentQuestionIndex = 0;
 			state.answers.clear();
 			state.quizStarted = true;
@@ -727,16 +750,39 @@
 
 			if (reload || state.configScriptPath !== scriptPath || !Array.isArray(window.quizzesConfig)) {
 				window.quizzesConfig = undefined;
+				window.quizzesExamConfig = undefined;
 				await loadConfigScript(scriptPath);
 				state.configScriptPath = scriptPath;
 				state.configScriptUrl = new URL(scriptPath, window.location.href).toString();
 			}
 
 			const rawConfigs = Array.isArray(window.quizzesConfig) ? window.quizzesConfig : [];
-			const normalizedConfigs = rawConfigs.map((config, index) => normalizeConfig(config, index));
+			const normalizedPracticeConfigs = rawConfigs.map((config, index) => normalizeConfig(config, index));
+
+			const rawExamConfigs = Array.isArray(window.quizzesExamConfig) ? window.quizzesExamConfig : [];
+			const normalizedExamConfigs = rawExamConfigs.map((config, index) => ({
+				...normalizeConfig(config, normalizedPracticeConfigs.length + index),
+				mode: 'exam',
+			}));
+
+			const normalizedConfigs = [...normalizedPracticeConfigs, ...normalizedExamConfigs];
 
 			if (normalizedConfigs.length === 0) {
 				throw new Error(text('setup.noConfig'));
+			}
+
+			const hasExamConfig = normalizedExamConfigs.length > 0 || normalizedPracticeConfigs.some((c) => c.mode === 'exam');
+			if (!hasExamConfig) {
+				const allBanks = normalizedPracticeConfigs.flatMap((c) => c.questionsBank);
+				normalizedConfigs.push({
+					quizName: locale === 'vi' ? 'Thi thử toàn bộ (tự động)' : 'Full Exam – All Banks (auto)',
+					mode: 'exam',
+					duration: 60,
+					questions: 50,
+					passingScore: 70,
+					questionsBank: allBanks,
+					categoryPercentage: [],
+				});
 			}
 
 			state.configs = normalizedConfigs;
@@ -754,6 +800,16 @@
 	}
 
 	function bindEvents() {
+		elements.modeTabsContainer.querySelectorAll('.mode-tab').forEach((tab) => {
+			tab.addEventListener('click', () => {
+				state.selectedMode = tab.dataset.mode;
+				elements.modeTabsContainer.querySelectorAll('.mode-tab').forEach((t) => {
+					t.classList.toggle('active', t === tab);
+				});
+				renderConfigSelect();
+			});
+		});
+
 		elements.quizSelect.addEventListener('change', (event) => {
 			state.selectedConfigIndex = toNumber(event.target.value, 0);
 			updateSetupMetrics();
@@ -810,4 +866,16 @@
 
 	bindEvents();
 	initializeConfig();
+
+	function applyTheme(theme) {
+		document.body.classList.toggle('dark-theme', theme === 'dark');
+	}
+
+	applyTheme(localStorage.getItem('theme') || 'dark');
+
+	window.addEventListener('message', (event) => {
+		if (event.data && event.data.type === 'set-theme') {
+			applyTheme(event.data.theme);
+		}
+	});
 })();

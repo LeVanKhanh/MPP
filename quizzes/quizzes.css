@@ -111,6 +111,40 @@ body {
 	font-size: 1.2rem;
 }
 
+.mode-tabs {
+	display: flex;
+	gap: 0.3rem;
+	margin-bottom: 1rem;
+	background: rgba(15, 23, 42, 0.07);
+	border-radius: 14px;
+	padding: 0.3rem;
+}
+
+.mode-tab {
+	flex: 1;
+	border: none;
+	border-radius: 10px;
+	padding: 0.52rem 1rem;
+	font: inherit;
+	font-weight: 600;
+	font-size: 0.9rem;
+	cursor: pointer;
+	background: transparent;
+	color: var(--ink-2);
+	transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.mode-tab.active {
+	background: #fff;
+	color: var(--primary-strong);
+	box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+
+.mode-tab:hover:not(.active) {
+	background: rgba(255, 255, 255, 0.5);
+	color: var(--ink-1);
+}
+
 .form-row {
 	display: grid;
 	gap: 0.4rem;
@@ -390,4 +424,126 @@ select {
 	.button-row {
 		flex-direction: column;
 	}
+}
+
+/* ===== Dark Mode ===== */
+body.dark-theme {
+	--bg-1: #0d1117;
+	--bg-2: #161b22;
+	--ink-1: #e2e8f0;
+	--ink-2: #94a3b8;
+	--card: rgba(22, 27, 34, 0.94);
+	--card-border: rgba(255, 255, 255, 0.08);
+	--primary: #2dd4bf;
+	--primary-strong: #14b8a6;
+	--warn: #fb923c;
+	--warn-strong: #f97316;
+	--pass: #4ade80;
+	--fail: #f87171;
+	--shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+
+	background:
+		radial-gradient(circle at 12% 0%, rgba(20, 184, 166, 0.12) 0%, transparent 42%),
+		radial-gradient(circle at 88% 100%, rgba(249, 115, 22, 0.08) 0%, transparent 38%),
+		linear-gradient(155deg, var(--bg-1), var(--bg-2));
+	color: var(--ink-1);
+}
+
+body.dark-theme .quiz-bg-pattern {
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+body.dark-theme .quiz-disclaimer {
+	border-color: rgba(251, 146, 60, 0.25);
+	background: rgba(28, 17, 6, 0.7);
+}
+
+body.dark-theme .quiz-disclaimer p {
+	color: #fcd34d;
+}
+
+body.dark-theme .mode-tabs {
+	background: rgba(255, 255, 255, 0.06);
+}
+
+body.dark-theme .mode-tab {
+	color: var(--ink-2);
+}
+
+body.dark-theme .mode-tab.active {
+	background: rgba(255, 255, 255, 0.1);
+	color: var(--primary-strong);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .mode-tab:hover:not(.active) {
+	background: rgba(255, 255, 255, 0.07);
+	color: var(--ink-1);
+}
+
+body.dark-theme select {
+	background: #1e2530;
+	border-color: rgba(255, 255, 255, 0.12);
+	color: var(--ink-1);
+}
+
+body.dark-theme .metric-pill {
+	background: rgba(255, 255, 255, 0.05);
+	border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .btn-ghost {
+	background: rgba(255, 255, 255, 0.07);
+	border-color: rgba(255, 255, 255, 0.14);
+	color: var(--ink-1);
+}
+
+body.dark-theme .btn-ghost:hover {
+	background: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-theme .toolbar-item {
+	background: rgba(255, 255, 255, 0.05);
+	border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .progress-wrap {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .question-card {
+	background: rgba(30, 37, 48, 0.95);
+	border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .option-item {
+	border-color: rgba(255, 255, 255, 0.1);
+	background: transparent;
+}
+
+body.dark-theme .option-item:hover {
+	border-color: var(--primary-strong);
+	background: rgba(20, 184, 166, 0.08);
+}
+
+body.dark-theme .result-card {
+	background: rgba(30, 37, 48, 0.95);
+	border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme #status-panel[data-type='error'] {
+	border-color: rgba(248, 113, 113, 0.4);
+	background: rgba(30, 10, 10, 0.85);
+}
+
+body.dark-theme #status-panel[data-type='ok'] {
+	border-color: rgba(74, 222, 128, 0.35);
+	background: rgba(10, 28, 18, 0.85);
+}
+
+body.dark-theme #status-panel[data-type='warn'] {
+	border-color: rgba(251, 146, 60, 0.4);
+	background: rgba(30, 17, 5, 0.85);
 }

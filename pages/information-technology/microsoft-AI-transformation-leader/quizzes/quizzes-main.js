@@ -91,3 +91,21 @@
     }
 ];
 
+window.quizzesExamConfig = [
+    {
+        "duration": 60,
+        "questions": 40,
+        "passingScore": 70,
+        "quizName": "Microsoft AI Transformation Leader – Full Exam Simulation",
+        "questionsBank": [
+            { "script": "domain1.js", "globalVar": "domain1Data" },
+            { "script": "domain2.js", "globalVar": "domain2Data" },
+            { "script": "domain3.js", "globalVar": "domain3Data" }
+        ],
+        "categoryPercentage": [
+            { "tag": "Domain 1 - Business value of generative AI",        "percentage": 33 },
+            { "tag": "Domain 2 - Microsoft AI apps and services",          "percentage": 38 },
+            { "tag": "Domain 3 - Implementation and adoption strategy",    "percentage": 29 }
+        ]
+    }
+];

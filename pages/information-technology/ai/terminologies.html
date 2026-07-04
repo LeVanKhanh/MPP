@@ -2,89 +2,533 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical AI terminology reference covering technical, agentic, governance, and adoption concepts.">
     <title>AI Terminologies - My Personal Planet</title>
     <link rel="stylesheet" href="../../pages-styles.css">
+    <style>
+        .term-card { margin-bottom: 1.75rem; }
+        .term-details { margin: 0.75rem 0 0; }
+        .term-details dt { margin-top: 0.7rem; font-weight: 700; }
+        .term-details dd { margin: 0.2rem 0 0; }
+        .term-details a { overflow-wrap: anywhere; }
+        .term-index { columns: 2; column-gap: 2rem; }
+        .term-index li { break-inside: avoid; margin-bottom: 0.4rem; }
+        @media (max-width: 720px) { .term-index { columns: 1; } }
+    </style>
 </head>
 <body>
     <article class="content-article">
         <header class="article-header">
             <h1 class="page-title">AI Terminologies</h1>
-            <p class="page-subtitle">Quick reference for core AI and LLM concepts</p>
-            <p class="page-meta">Published: <time datetime="2026-03-07">March 7, 2026</time></p>
+            <p class="page-subtitle">A practical reference for AI, LLM, agentic AI, and organisational adoption concepts.</p>
+            <p class="page-meta">Updated: <time datetime="2026-07-04">July 4, 2026</time></p>
         </header>
 
         <section class="content-section">
-            <h2 class="main-point">Foundation Terms</h2>
-            <p class="intro-text">Core concepts that appear frequently in modern AI discussions and implementations.</p>
-
-            <div class="sub-section">
-                <h3 class="sub-point-1">LLM</h3>
-                <p><strong>Large Language Model</strong> is a neural network trained on large-scale text data to understand and generate human-like language for tasks such as summarization, question answering, and code generation.</p>
-            </div>
-
-            <div class="sub-section">
-                <h3 class="sub-point-1">NLP</h3>
-                <p><strong>Natural Language Processing</strong> is the field of AI focused on helping computers process, understand, and generate human language.</p>
-            </div>
-
-            <div class="sub-section">
-                <h3 class="sub-point-1">Prompt Engineering</h3>
-                <p>The practice of designing and refining prompts so language models produce reliable, accurate, and context-appropriate outputs.</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2 class="main-point">Application Frameworks and Patterns</h2>
-            <p class="intro-text">Frameworks and architectures commonly used to build real-world AI products.</p>
-
-            <div class="sub-section">
-                <h3 class="sub-point-1">LangChain</h3>
-                <p>A framework for building applications powered by language models, with tooling for prompt templates, chains, tool calling, memory, and integrations.</p>
-            </div>
-
-            <div class="sub-section">
-                <h3 class="sub-point-1">RAG</h3>
-                <p><strong>Retrieval-Augmented Generation</strong> is an architecture that combines information retrieval with generation, allowing a model to ground answers in external knowledge sources.</p>
-            </div>
-
-            <div class="sub-section">
-                <h3 class="sub-point-1">AI Automation Workflow</h3>
-                <p>An orchestrated flow where AI models, APIs, and business logic are connected to automate repetitive tasks, decision support, or content generation processes.</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2 class="main-point">Agent Concepts</h2>
-            <p class="intro-text">Terms related to AI systems that can plan, decide, and execute multi-step tasks.</p>
-
-            <div class="sub-section">
-                <h3 class="sub-point-1">Agents</h3>
-                <p>Software entities that use AI models to reason about goals, choose actions, and interact with tools or environments to complete tasks.</p>
-            </div>
-
-            <div class="sub-section">
-                <h3 class="sub-point-1">Agentic</h3>
-                <p>Describes a behavior pattern where an AI system proactively plans and executes actions toward objectives rather than only producing one-off responses.</p>
-            </div>
-
-            <div class="sub-section">
-                <h3 class="sub-point-1">Autonomous Agents</h3>
-                <p>Agents that can operate with limited human intervention, continuously making decisions and adapting actions based on feedback or changing context.</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2 class="main-point">Summary</h2>
+            <h2 class="main-point">How to use this reference</h2>
+            <p class="intro-text">Each term is explained through five practical lenses: what it is, why it exists, when it is appropriate, how to apply it, and a primary study source. The goal is not to treat every term as a solution; select the smallest, safest approach that solves the business problem.</p>
             <div class="summary-box">
                 <ul class="outline-list">
-                    <li><strong>LLM, NLP, and Prompt Engineering</strong> form the conceptual foundation.</li>
-                    <li><strong>LangChain, RAG, and AI automation workflows</strong> support practical solution building.</li>
-                    <li><strong>Agents, agentic behavior, and autonomous agents</strong> represent the move toward action-oriented AI systems.</li>
+                    <li><strong>Start with the problem:</strong> define the workflow, user, decision, risk, and measurable outcome.</li>
+                    <li><strong>Prefer simple controls:</strong> prompt design, structured outputs, and deterministic workflows often precede RAG, agents, or fine-tuning.</li>
+                    <li><strong>Design for evidence:</strong> production AI needs evaluation, monitoring, data controls, escalation, and accountable ownership.</li>
                 </ul>
             </div>
         </section>
-    </article>
 
+        <section class="content-section">
+            <h2 class="main-point">Foundation and Model Concepts</h2>
+            <p class="intro-text">Concepts used to understand how AI models receive information, generate outputs, and behave in production.</p>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">LLM — Large Language Model</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>A neural-network model trained on large volumes of language data to predict and generate text; many LLMs can also reason over code and structured inputs.</dd>
+                    <dt>Why</dt><dd>It provides a flexible language interface for tasks that would otherwise require many narrow NLP models or hand-written rules.</dd>
+                    <dt>When</dt><dd>Use it when the task is language-heavy, varies in wording, and tolerates probabilistic output with validation.</dd>
+                    <dt>How to use it</dt><dd>Start with a clearly bounded task such as summarising support tickets. Define the input, output schema, success criteria, and human review path before expanding scope.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/overview" target="_blank" rel="noopener noreferrer">OpenAI developer documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">NLP — Natural Language Processing</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The AI discipline concerned with analysing, understanding, and generating human language.</dd>
+                    <dt>Why</dt><dd>It addresses the gap between unstructured human language and software that requires explicit, structured data or commands.</dd>
+                    <dt>When</dt><dd>Use it for classification, extraction, search, translation, summarisation, and conversational interfaces.</dd>
+                    <dt>How to use it</dt><dd>For example, extract product, priority, and customer sentiment from inbound emails, then route the result to a workflow.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://developers.google.com/machine-learning/crash-course" target="_blank" rel="noopener noreferrer">Google Machine Learning Crash Course</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Generative AI</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>AI that produces new content such as text, images, audio, code, or structured drafts from learned patterns and provided context.</dd>
+                    <dt>Why</dt><dd>It reduces the effort required to create first drafts, transform content, and interact with complex knowledge using natural language.</dd>
+                    <dt>When</dt><dd>Use it when output is created or transformed rather than only predicted or classified.</dd>
+                    <dt>How to use it</dt><dd>Use it to draft a release note from accepted work items, with source links and an approval step before publication.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/overview" target="_blank" rel="noopener noreferrer">OpenAI developer documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Prompting / Prompt Engineering</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The practice of supplying instructions, context, examples, constraints, and an expected format to guide model output.</dd>
+                    <dt>Why</dt><dd>It reduces ambiguity and improves task reliability without changing the underlying model.</dd>
+                    <dt>When</dt><dd>Use it before fine-tuning whenever a task can be improved through clearer instructions, examples, or grounded context.</dd>
+                    <dt>How to use it</dt><dd>Specify the role, goal, input boundaries, required JSON schema, refusal behaviour, and two or three representative examples; evaluate against a fixed test set.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="noopener noreferrer">OpenAI prompt engineering guide</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Tokens</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The units of text a model reads and generates. A token may be a whole word, part of a word, punctuation, or whitespace.</dd>
+                    <dt>Why</dt><dd>They provide the operational unit for context limits, throughput, and most model usage pricing.</dd>
+                    <dt>When</dt><dd>Consider tokens whenever designing prompts, sizing retrieved context, estimating cost, or diagnosing truncation.</dd>
+                    <dt>How to use it</dt><dd>Log input and output token counts by use case; set limits for document chunks and reserve space for the model response.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/overview" target="_blank" rel="noopener noreferrer">OpenAI developer documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Context Window</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The maximum amount of tokenized information a model can consider in one request, including instructions, conversation history, retrieved data, and the output budget.</dd>
+                    <dt>Why</dt><dd>It constrains how much evidence and history can be processed at once; exceeding it can cause errors, truncation, or loss of important context.</dd>
+                    <dt>When</dt><dd>Use context-window design whenever conversations, documents, or RAG results may become large.</dd>
+                    <dt>How to use it</dt><dd>Keep stable instructions short, retrieve only relevant passages, summarize prior conversation turns, and reserve output tokens for the required answer.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/overview" target="_blank" rel="noopener noreferrer">OpenAI developer documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Inference</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Running a trained model on new input to produce an output; this is distinct from training or fine-tuning the model.</dd>
+                    <dt>Why</dt><dd>It is the production-time operation that turns a model into a usable feature and creates latency and usage cost.</dd>
+                    <dt>When</dt><dd>Use the term when discussing serving architecture, performance, capacity, cost, or runtime evaluation.</dd>
+                    <dt>How to use it</dt><dd>Instrument each request with model version, prompt version, latency, token usage, tool calls, and outcome signals.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/overview" target="_blank" rel="noopener noreferrer">OpenAI developer documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Temperature</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>A sampling parameter that controls how concentrated or varied a model’s next-token choices are; lower values tend to be more repeatable and higher values more diverse.</dd>
+                    <dt>Why</dt><dd>It lets teams tune the trade-off between consistency and creative variation.</dd>
+                    <dt>When</dt><dd>Use low temperature for extraction, classification, and deterministic business workflows; use a higher setting for ideation or varied drafts.</dd>
+                    <dt>How to use it</dt><dd>For a contract-field extractor, start near zero and enforce a schema. For marketing ideation, test a moderately higher setting and evaluate diversity against quality.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/overview" target="_blank" rel="noopener noreferrer">OpenAI developer documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Multimodal AI</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>AI that can process or generate more than one modality, such as text, images, audio, video, or documents.</dd>
+                    <dt>Why</dt><dd>It enables workflows where meaning is distributed across formats rather than contained only in text.</dd>
+                    <dt>When</dt><dd>Use it when visual, spoken, or document-layout evidence is necessary to complete the task.</dd>
+                    <dt>How to use it</dt><dd>Build an invoice assistant that accepts a PDF or photo, extracts line items, highlights uncertain fields, and asks for confirmation before posting data.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/overview" target="_blank" rel="noopener noreferrer">OpenAI developer documentation</a></dd>
+                </dl>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="main-point">Knowledge, Retrieval, and Integration</h2>
+            <p class="intro-text">Patterns and components used to ground AI outputs in current enterprise information and connect models to operational systems.</p>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">RAG — Retrieval-Augmented Generation</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>An architecture that retrieves relevant external information at query time and supplies it to a model as evidence for its answer.</dd>
+                    <dt>Why</dt><dd>It addresses stale model knowledge, private organisational data, and the need for answers supported by sources.</dd>
+                    <dt>When</dt><dd>Use it when answers must be based on changing policies, product documentation, tickets, or other governed knowledge.</dd>
+                    <dt>How to use it</dt><dd>Ingest approved documents, chunk and index them, retrieve relevant passages per question, ask the model to cite only those passages, and return “not found” when evidence is insufficient.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://docs.langchain.com/oss/python/langchain/retrieval" target="_blank" rel="noopener noreferrer">LangChain retrieval and RAG guide</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Embeddings</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Numeric vector representations of data that place semantically similar items close together in a vector space.</dd>
+                    <dt>Why</dt><dd>They make semantic similarity and retrieval possible even when two texts use different wording.</dd>
+                    <dt>When</dt><dd>Use them for semantic search, RAG retrieval, clustering, recommendation, and duplicate detection.</dd>
+                    <dt>How to use it</dt><dd>Embed document chunks and the user question with the same embedding model, retrieve the nearest chunks, then rerank before giving them to an LLM.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/guides/embeddings" target="_blank" rel="noopener noreferrer">OpenAI embeddings guide</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Vector Database</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>A database or search service optimized to store vectors and retrieve the nearest vectors by similarity.</dd>
+                    <dt>Why</dt><dd>It provides scalable, low-latency semantic retrieval for embeddings that conventional keyword search alone cannot provide.</dd>
+                    <dt>When</dt><dd>Use one when you need semantic search over a sizeable or frequently queried collection.</dd>
+                    <dt>How to use it</dt><dd>Store embedding, document ID, chunk text, source URL, access-control metadata, and version. Filter by user permissions before returning candidate chunks.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://docs.langchain.com/oss/python/langchain/retrieval" target="_blank" rel="noopener noreferrer">LangChain retrieval and RAG guide</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">MCP — Model Context Protocol</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>An open protocol for connecting AI applications to external tools, resources, and prompt-based workflows through a standard client–server model.</dd>
+                    <dt>Why</dt><dd>It reduces one-off integrations and gives AI applications a consistent way to discover and use governed capabilities.</dd>
+                    <dt>When</dt><dd>Use it when several AI clients need access to the same internal tools or data sources, or when you want reusable integrations.</dd>
+                    <dt>How to use it</dt><dd>Expose a narrowly scoped MCP server for a read-only knowledge search API; require authorization, validate tool arguments, log calls, and start with least-privilege access.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noopener noreferrer">Model Context Protocol documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">LangChain</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>An application framework for composing LLM-powered applications and agents with models, prompts, tools, retrieval, and integrations.</dd>
+                    <dt>Why</dt><dd>It reduces boilerplate when an application needs orchestration across multiple AI components.</dd>
+                    <dt>When</dt><dd>Use it when its abstractions improve speed and observability; do not introduce it for a single straightforward model API call.</dd>
+                    <dt>How to use it</dt><dd>Build a small proof of concept with explicit prompt templates, retrieval, and tool boundaries; add tracing and tests before relying on autonomous execution.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://docs.langchain.com/oss/javascript/langchain/overview" target="_blank" rel="noopener noreferrer">LangChain documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">AI Automation Workflow</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>A controlled orchestration of AI models, data sources, APIs, deterministic business rules, and approval steps that automates part of a business process.</dd>
+                    <dt>Why</dt><dd>It turns isolated AI responses into repeatable business outcomes while preserving predictable system controls.</dd>
+                    <dt>When</dt><dd>Use it for repetitive, high-volume processes where inputs, actions, ownership, and exception paths can be defined.</dd>
+                    <dt>How to use it</dt><dd>For incident triage: classify the ticket, retrieve relevant runbooks, create a proposed diagnosis, and require an engineer to approve any production action.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI adoption guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Fine-tuning</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Additional training of a pretrained model on selected examples to better perform a narrow task, style, or output pattern.</dd>
+                    <dt>Why</dt><dd>It can improve consistency and reduce prompt length for stable, high-volume behaviours that prompting and RAG do not adequately solve.</dd>
+                    <dt>When</dt><dd>Use it only after proving that prompt engineering, structured outputs, and retrieval are insufficient, and when you have high-quality representative data.</dd>
+                    <dt>How to use it</dt><dd>Create a curated training and holdout evaluation set, establish a baseline prompt, fine-tune only for the measurable gap, and continually compare quality, cost, and safety.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/overview" target="_blank" rel="noopener noreferrer">OpenAI developer documentation</a></dd>
+                </dl>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="main-point">Agents and Operational Controls</h2>
+            <p class="intro-text">Terms for action-taking AI systems and the engineering controls required to make their behaviour safe, observable, and useful.</p>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">AI Agents / Agentic AI</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Systems that use an AI model to pursue a goal through multiple steps, often selecting tools, using retrieved context, and adapting from intermediate results.</dd>
+                    <dt>Why</dt><dd>They address tasks that require planning and action across systems rather than a single generated response.</dd>
+                    <dt>When</dt><dd>Use them when the workflow genuinely needs dynamic tool selection or multi-step reasoning. Prefer deterministic workflows for fixed processes.</dd>
+                    <dt>How to use it</dt><dd>Start with a constrained agent that can read data and propose actions. Define tool contracts, maximum steps, approval gates, stop conditions, and audit logs.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://docs.langchain.com/oss/javascript/langchain/overview" target="_blank" rel="noopener noreferrer">LangChain documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Agentic Behaviour</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>A behaviour pattern in which an AI system decomposes an objective, chooses next actions, observes results, and iterates toward completion.</dd>
+                    <dt>Why</dt><dd>It enables flexible handling of tasks whose sequence cannot be fully predefined.</dd>
+                    <dt>When</dt><dd>Use it for investigation, research, triage, and assisted operations where the action path varies but the boundaries are well defined.</dd>
+                    <dt>How to use it</dt><dd>Use a planner–executor pattern: create a bounded plan, execute only approved tools, verify each result, and surface the final evidence and decision trail.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://docs.langchain.com/oss/javascript/langchain/overview" target="_blank" rel="noopener noreferrer">LangChain documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Autonomous Agents</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Agents permitted to take actions with limited real-time human intervention within defined authority, budget, and safety boundaries.</dd>
+                    <dt>Why</dt><dd>They can reduce manual work in stable, low-risk operations, but amplify errors if controls are weak.</dd>
+                    <dt>When</dt><dd>Use only after a supervised version proves reliable and the action has reversible, low-impact failure modes.</dd>
+                    <dt>How to use it</dt><dd>Allow automatic creation of draft responses or low-severity tickets first. Require explicit human approval for spending, access changes, or irreversible production actions.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/agents/architecture/responsible-ai" target="_blank" rel="noopener noreferrer">Microsoft Responsible AI guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Guardrails</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Technical and policy controls that constrain model inputs, outputs, tool use, and escalation behaviour.</dd>
+                    <dt>Why</dt><dd>They prevent unsafe, unauthorized, irrelevant, or non-compliant behaviour that a general-purpose model may otherwise produce.</dd>
+                    <dt>When</dt><dd>Use guardrails in every production AI feature, especially when user input, sensitive data, or system actions are involved.</dd>
+                    <dt>How to use it</dt><dd>Combine input validation, content and policy checks, schema validation, retrieval permission filters, tool allowlists, rate limits, and human escalation rules.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/guides/safety-best-practices" target="_blank" rel="noopener noreferrer">OpenAI safety best practices</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Fabrications / Hallucinations</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Outputs that are incorrect, unsupported by available evidence, or invented while appearing plausible or confident.</dd>
+                    <dt>Why</dt><dd>They are a core reliability risk because fluent language can hide factual uncertainty.</dd>
+                    <dt>When</dt><dd>Plan for this in every generative AI use case; treat it as a system-design concern, not merely a model defect.</dd>
+                    <dt>How to use it</dt><dd>Ground answers in retrieved sources, require citations, validate structured fields, provide an “I do not know” path, and measure unsupported-claim rates in evaluation.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/guides/safety-best-practices" target="_blank" rel="noopener noreferrer">OpenAI safety best practices</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Bias</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>A systematic and potentially unfair skew in model outputs, data, or decision processes that affects groups, cases, or outcomes differently.</dd>
+                    <dt>Why</dt><dd>It can create discriminatory, inaccurate, or unrepresentative outcomes and undermine trust.</dd>
+                    <dt>When</dt><dd>Assess it when AI affects people, eligibility, prioritization, performance evaluation, access, or other consequential decisions.</dd>
+                    <dt>How to use it</dt><dd>Define affected groups and harm scenarios, evaluate representative cases, use human review for consequential decisions, and document known limitations and mitigations.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/agents/architecture/responsible-ai" target="_blank" rel="noopener noreferrer">Microsoft Responsible AI guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Reliability</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The degree to which an AI system produces consistent, correct, safe, and usable outcomes across representative conditions.</dd>
+                    <dt>Why</dt><dd>It makes an AI capability dependable enough to include in a business process rather than treating it as a novelty.</dd>
+                    <dt>When</dt><dd>Use it as a release criterion for any production use case, especially when errors affect customers, money, security, or operations.</dd>
+                    <dt>How to use it</dt><dd>Create an evaluation suite with normal, edge, adversarial, and policy-sensitive cases; release only when quality, failure handling, and monitoring targets are met.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/agents/architecture/responsible-ai" target="_blank" rel="noopener noreferrer">Microsoft Responsible AI guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Latency</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The elapsed time between a request and a useful response or completed action.</dd>
+                    <dt>Why</dt><dd>It determines whether an AI interaction feels responsive and whether a workflow meets operational service levels.</dd>
+                    <dt>When</dt><dd>Track it for interactive assistants, real-time automation, and any process with SLA commitments.</dd>
+                    <dt>How to use it</dt><dd>Measure end-to-end latency separately from retrieval, model generation, tool calls, and post-processing; cache stable results and use smaller models for simple tasks.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://platform.openai.com/docs/overview" target="_blank" rel="noopener noreferrer">OpenAI developer documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Machine Learning Lifecycle</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The end-to-end discipline of defining a problem, preparing data, training or selecting a model, evaluating, deploying, monitoring, and improving it.</dd>
+                    <dt>Why</dt><dd>It addresses the fact that model quality and risks change after deployment as data, users, and environments evolve.</dd>
+                    <dt>When</dt><dd>Use this lifecycle for predictive ML and adapt its governance, evaluation, deployment, and monitoring practices for generative AI.</dd>
+                    <dt>How to use it</dt><dd>Define owners and gates for data quality, evaluation, deployment, monitoring, incident response, and retraining or prompt/model updates.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/machine-learning/concept-model-management-and-deployment" target="_blank" rel="noopener noreferrer">Azure Machine Learning MLOps documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">No-code AI Development Tools</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Platforms that enable users to assemble AI experiences through visual configuration rather than conventional software development.</dd>
+                    <dt>Why</dt><dd>They broaden participation and speed up low-complexity solutions, while still requiring governance and lifecycle discipline.</dd>
+                    <dt>When</dt><dd>Use them for prototypes, departmental workflows, and bounded solutions where platform controls meet security and integration needs.</dd>
+                    <dt>How to use it</dt><dd>Create a governed template for data connections, prompt instructions, approval flows, testing, and ownership before allowing broad self-service creation.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI adoption guidance</a></dd>
+                </dl>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="main-point">Organisation, Governance, and Adoption</h2>
+            <p class="intro-text">Business and operating-model concepts for adopting AI safely, measuring value, and scaling beyond isolated experiments.</p>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">AI Governance</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The policies, roles, decision rights, controls, and evidence used to direct and oversee how an organisation develops, buys, deploys, and monitors AI.</dd>
+                    <dt>Why</dt><dd>It aligns AI activity with business value, security, privacy, legal obligations, and responsible-use expectations.</dd>
+                    <dt>When</dt><dd>Implement it before scaling beyond limited experiments or whenever AI handles organisational data, customers, or business decisions.</dd>
+                    <dt>How to use it</dt><dd>Establish intake and risk tiers, approval criteria, an inventory, data-use rules, model and vendor review, release gates, monitoring, and incident management.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/govern" target="_blank" rel="noopener noreferrer">Microsoft AI governance guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">AI Council</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>A cross-functional governance group that steers AI strategy, prioritizes initiatives, resolves risk decisions, and coordinates business, technology, security, legal, and people perspectives.</dd>
+                    <dt>Why</dt><dd>It prevents fragmented decisions and ensures AI initiatives have accountable sponsorship and proportionate oversight.</dd>
+                    <dt>When</dt><dd>Create one when AI initiatives span departments, shared data, material risk, or substantial investment.</dd>
+                    <dt>How to use it</dt><dd>Assign a charter, decision rights, required functions, meeting cadence, intake criteria, and a transparent record of approvals, conditions, and follow-up actions.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/govern" target="_blank" rel="noopener noreferrer">Microsoft AI governance guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">AI Champions</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Employees who help colleagues learn, experiment responsibly, share practical patterns, and surface adoption barriers within their teams.</dd>
+                    <dt>Why</dt><dd>They bridge central AI strategy and the daily realities of work, increasing adoption through trusted peer support.</dd>
+                    <dt>When</dt><dd>Use champions during pilot and scale phases after baseline policy and enablement materials exist.</dd>
+                    <dt>How to use it</dt><dd>Select volunteers across roles, train them in responsible use and escalation, give them approved scenarios, and collect feedback through a regular community of practice.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI adoption guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">AI Adoption</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The process by which people, teams, and the organisation incorporate AI capabilities into real work with measurable, sustained use.</dd>
+                    <dt>Why</dt><dd>It focuses attention on workflow change and outcomes, not simply license provision or technical deployment.</dd>
+                    <dt>When</dt><dd>Use adoption planning whenever introducing an AI assistant, platform, or internal solution.</dd>
+                    <dt>How to use it</dt><dd>Choose a high-value workflow, establish a baseline, train users in task-specific practices, measure quality and time impact, and iterate using user feedback.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI adoption guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Scaling AI Adoption</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Expanding proven AI use from pilots to repeatable, secure, supported use across teams or the organisation.</dd>
+                    <dt>Why</dt><dd>It addresses the gap between a promising demonstration and sustainable operating capability.</dd>
+                    <dt>When</dt><dd>Scale only after a pilot demonstrates measurable value, acceptable risk, clear ownership, and supportability.</dd>
+                    <dt>How to use it</dt><dd>Standardize reference architectures, onboarding, data access, evaluation, support, monitoring, and cost controls; scale by use-case class rather than copying one pilot everywhere.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI adoption guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Responsible AI</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The practice of designing, deploying, and operating AI to meet principles such as fairness, reliability and safety, privacy and security, inclusiveness, transparency, and accountability.</dd>
+                    <dt>Why</dt><dd>It protects people and organisations from avoidable harm, misuse, opaque decisions, and loss of trust.</dd>
+                    <dt>When</dt><dd>Apply it from use-case discovery through retirement, with additional rigor for high-impact or sensitive scenarios.</dd>
+                    <dt>How to use it</dt><dd>Conduct impact assessment, define harm mitigations, test safety and fairness, document limitations, provide appropriate transparency, and retain human accountability.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/agents/architecture/responsible-ai" target="_blank" rel="noopener noreferrer">Microsoft Responsible AI guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Ethical AI</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>AI use that aligns with moral, social, and professional norms such as fairness, privacy, human dignity, and avoidance of harm.</dd>
+                    <dt>Why</dt><dd>It broadens decision-making beyond legal compliance and technical performance to the effects on people and society.</dd>
+                    <dt>When</dt><dd>Use ethical review when a system changes access, opportunity, safety, privacy, autonomy, or how people are treated.</dd>
+                    <dt>How to use it</dt><dd>Discuss stakeholders, power imbalances, foreseeable harms, and acceptable trade-offs; make the resulting principles enforceable through design and governance controls.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/agents/architecture/responsible-ai" target="_blank" rel="noopener noreferrer">Microsoft Responsible AI guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">AI Risk Management</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>A continuous process for identifying, analysing, prioritising, mitigating, monitoring, and communicating AI-related risks.</dd>
+                    <dt>Why</dt><dd>It provides a disciplined way to manage uncertainty across model behaviour, data, security, misuse, operations, and business impact.</dd>
+                    <dt>When</dt><dd>Use it for every AI system, with controls proportional to impact and likelihood of harm.</dd>
+                    <dt>How to use it</dt><dd>Maintain a risk register covering data, model, security, user misuse, legal, and operational risks; assign owners, controls, residual risk, and review dates.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Accountability in AI Systems</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Clear assignment of responsibility for decisions, controls, outcomes, and remediation throughout an AI system’s lifecycle.</dd>
+                    <dt>Why</dt><dd>It prevents responsibility gaps when a system involves business owners, developers, vendors, model providers, and users.</dd>
+                    <dt>When</dt><dd>Define accountability before launch and whenever a system has customer, operational, or consequential impact.</dd>
+                    <dt>How to use it</dt><dd>Create a RACI covering use-case approval, data stewardship, model configuration, release approval, monitoring, incident response, and final business decisions.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/agents/architecture/responsible-ai" target="_blank" rel="noopener noreferrer">Microsoft Responsible AI guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Centralized AI Inventory</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>A governed register of AI tools, models, agents, vendors, datasets, use cases, owners, risk tiers, and lifecycle status.</dd>
+                    <dt>Why</dt><dd>It provides visibility needed for oversight, audit, risk response, portfolio decisions, and cost management.</dd>
+                    <dt>When</dt><dd>Create it once multiple teams can procure, build, or deploy AI independently.</dd>
+                    <dt>How to use it</dt><dd>Record purpose, owner, users, data classification, model/vendor, integrations, risk assessment, approvals, monitoring status, and retirement date; make registration part of procurement and release workflows.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/govern" target="_blank" rel="noopener noreferrer">Microsoft AI governance guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Security Risk</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The possibility that AI use causes unauthorized access, data exposure, unsafe tool actions, prompt injection, model abuse, or other compromise of systems and information.</dd>
+                    <dt>Why</dt><dd>AI expands the attack surface because natural-language input, retrieved content, and tools can influence system behaviour.</dd>
+                    <dt>When</dt><dd>Assess it before connecting models to internal data, code, APIs, or actions, and continuously after deployment.</dd>
+                    <dt>How to use it</dt><dd>Enforce least privilege, isolate secrets, validate and authorize every tool action, treat retrieved content as untrusted, log events, test for prompt injection, and maintain incident response procedures.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/" target="_blank" rel="noopener noreferrer">OWASP Top 10 for LLM Applications</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Cost Management for AI</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The practice of forecasting, allocating, monitoring, and optimizing AI spending across models, tokens, infrastructure, tools, licenses, and support.</dd>
+                    <dt>Why</dt><dd>It prevents successful prototypes from becoming unpredictable or unsustainable operating costs.</dd>
+                    <dt>When</dt><dd>Implement it before production scale and whenever usage-based model or infrastructure costs are material.</dd>
+                    <dt>How to use it</dt><dd>Tag requests by product and feature, set budget alerts, monitor cost per successful outcome, cap retries and context size, select models by task complexity, and review vendor commitments regularly.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI adoption guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Copilot</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Microsoft’s product brand for AI assistants and agents embedded in Microsoft experiences; more generally, a copilot is an AI assistant that supports a user’s work.</dd>
+                    <dt>Why</dt><dd>It brings assistance into familiar work surfaces and can reduce context switching when access to organisational data is appropriately governed.</dd>
+                    <dt>When</dt><dd>Use it for productivity tasks such as drafting, summarising, searching, analysis, and guided work within supported Microsoft tools.</dd>
+                    <dt>How to use it</dt><dd>Begin with a specific role workflow, apply data permissions and sensitivity controls, train users to verify output, and measure task-level value rather than general activity.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/" target="_blank" rel="noopener noreferrer">Microsoft 365 Copilot extensibility documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Copilot Extensibility — Extend</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Adding domain-specific capabilities to a copilot through agents, connectors, plugins, or integrations so it can access approved knowledge and actions.</dd>
+                    <dt>Why</dt><dd>It closes the gap between a general assistant and an organisation’s actual systems, data, and workflows.</dd>
+                    <dt>When</dt><dd>Use extension when an existing copilot provides the right user experience but lacks a governed connection to your domain capability.</dd>
+                    <dt>How to use it</dt><dd>Expose a narrow, secure API or connector with clear intent, authorization, output contracts, and audit logging; validate the business value before building a broad integration.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/" target="_blank" rel="noopener noreferrer">Microsoft 365 Copilot extensibility documentation</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Organisation and Culture — AI Readiness</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The skills, leadership behaviours, incentives, trust, governance habits, and change capacity that determine whether AI can be adopted productively.</dd>
+                    <dt>Why</dt><dd>Technology alone does not change work; readiness determines whether people can use AI critically, responsibly, and consistently.</dd>
+                    <dt>When</dt><dd>Assess readiness before large rollouts or when adoption stalls despite available tools.</dd>
+                    <dt>How to use it</dt><dd>Survey skills and workflow barriers, train by role and use case, set leadership expectations, protect time for learning, celebrate verified value, and create channels for concerns and feedback.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI adoption guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">AI Literacy</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>The baseline ability to understand what AI can and cannot do, use it critically, recognise risks, and apply organisational policies.</dd>
+                    <dt>Why</dt><dd>It reduces misuse, overreliance, fear, and low-value experimentation while enabling better adoption decisions.</dd>
+                    <dt>When</dt><dd>Provide it to all employees before or alongside broad AI access, with deeper training for builders and approvers.</dd>
+                    <dt>How to use it</dt><dd>Teach model limitations, data handling, prompt practices, verification, bias, security, and escalation through realistic role-based exercises.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/agents/architecture/responsible-ai" target="_blank" rel="noopener noreferrer">Microsoft Responsible AI guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Shadow AI</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>Use of AI tools, models, or data-sharing practices outside approved governance, visibility, and controls.</dd>
+                    <dt>Why</dt><dd>It creates unmanaged risks such as data leakage, inconsistent decisions, compliance gaps, and duplicate spending.</dd>
+                    <dt>When</dt><dd>Address it whenever employees can easily access consumer AI tools or adoption outpaces formal enablement.</dd>
+                    <dt>How to use it</dt><dd>Offer approved alternatives that are useful, make policies clear and practical, create an easy intake route for new needs, monitor proportionately, and focus on enablement rather than punishment alone.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/govern" target="_blank" rel="noopener noreferrer">Microsoft AI governance guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">Build vs. Buy</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>A strategic decision between developing an AI capability internally, purchasing a vendor product, or combining both through extension and integration.</dd>
+                    <dt>Why</dt><dd>It balances differentiation, speed, control, maintenance burden, security, and total cost.</dd>
+                    <dt>When</dt><dd>Make the decision after defining the business problem, required capabilities, data constraints, integration needs, and success measures.</dd>
+                    <dt>How to use it</dt><dd>Buy commodity capability; build when the workflow or intellectual property is a durable differentiator; use a time-boxed proof of value and compare lifecycle cost, not just initial price.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI adoption guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">AI Maturity Model</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>A staged framework for assessing an organisation’s present AI capabilities and defining the next practical improvements across strategy, technology, governance, people, and value management.</dd>
+                    <dt>Why</dt><dd>It turns a broad ambition to “become AI-enabled” into a sequenced roadmap rather than disconnected initiatives.</dd>
+                    <dt>When</dt><dd>Use it for portfolio planning, executive alignment, and periodic reassessment as adoption grows.</dd>
+                    <dt>How to use it</dt><dd>Assess current state with evidence, identify the limiting capability, choose a small number of measurable next-stage improvements, fund them, and reassess on a regular cadence.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI adoption guidance</a></dd>
+                </dl>
+            </div>
+            <div class="sub-section term-card">
+                <h3 class="sub-point-1">ROI / TCO for AI Initiatives</h3>
+                <dl class="term-details">
+                    <dt>Definition</dt><dd>ROI measures value gained relative to investment; TCO captures the full lifecycle cost, including licenses, model usage, integration, security, governance, training, support, and change management.</dd>
+                    <dt>Why</dt><dd>Together they prevent AI decisions based on attractive demos or headline subscription prices rather than sustainable business value.</dd>
+                    <dt>When</dt><dd>Use both at intake, pilot evaluation, procurement, and scaling decisions.</dd>
+                    <dt>How to use it</dt><dd>Define a baseline and target metric, quantify quality and time impacts, include all lifecycle costs, test assumptions in a pilot, and report realised—not only forecast—benefits.</dd>
+                    <dt>Documents / source</dt><dd><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI adoption guidance</a></dd>
+                </dl>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="main-point">Study sequence</h2>
+            <div class="summary-box">
+                <ol class="outline-list">
+                    <li>Learn the foundation: LLMs, tokens, context windows, prompting, inference, and temperature.</li>
+                    <li>Build reliable knowledge experiences: embeddings, vector databases, RAG, guardrails, and evaluation.</li>
+                    <li>Add action carefully: workflow automation, MCP, agents, approval gates, and security controls.</li>
+                    <li>Scale responsibly: governance, adoption, risk management, accountable ownership, cost management, and maturity planning.</li>
+                </ol>
+            </div>
+        </section>
+    </article>
     <script src="../../pages-scripts.js"></script>
 </body>
 </html>

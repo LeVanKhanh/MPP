@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Part 1 — Core Generative AI Concepts — Azure AI Study Materials - My Personal Planet</title>
+  <meta name="description" content="Part 1 of the reviewed and consolidated Azure AI / Microsoft AI Transformation Leader (AB-731) study materials: Core Generative AI Concepts.">
+  <link rel="stylesheet" href="../../pages-styles.css">
+</head>
+<body>
+<article class="content-article">
+  <header class="article-header">
+    <h1 class="page-title">Part 1 — Core Generative AI Concepts</h1>
+    <p class="page-subtitle">Azure AI Study Materials — Reviewed and Consolidated</p>
+    <p class="page-meta">◀ Back: <a href="azure-ai-study-materials-reviewed-01-introduction.html">Introduction</a> | <a href="azure-ai-study-materials-reviewed-00-toc.html">Table of Contents</a></p>
+  </header>
+
+  <section class="content-section">
+    <h2 class="main-point">Key Difference Between Traditional AI and Generative AI</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">An organization needs to understand how generative AI differs from more traditional AI approaches so it can select the correct technology for a business problem.</p>
+    <p>Traditional AI and generative AI can both use machine learning, but they are typically optimized for different outcomes.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Distinguish Prediction and Classification from Content Generation</h4>
+        <p>A key difference is that <strong>traditional AI usually analyzes existing data to classify, predict, detect, or recommend</strong>, while <strong>generative AI creates new content based on learned patterns and user instructions</strong>.</p>
+        <p>Traditional AI commonly performs tasks such as:</p>
+        <ul class="outline-list">
+          <li>Predicting customer churn</li>
+          <li>Classifying transactions as fraudulent or legitimate</li>
+          <li>Detecting defects in images</li>
+          <li>Forecasting demand</li>
+          <li>Recommending products</li>
+          <li>Scoring risk</li>
+        </ul>
+        <p>Generative AI commonly creates:</p>
+        <ul class="outline-list">
+          <li>Text</li>
+          <li>Images</li>
+          <li>Audio</li>
+          <li>Video</li>
+          <li>Code</li>
+          <li>Summaries</li>
+          <li>Conversational responses</li>
+        </ul>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>This distinction helps organizations match the technology to the intended outcome.</p>
+        <p>Use traditional AI when the primary requirement is to:</p>
+        <ul class="outline-list">
+          <li>Predict a value</li>
+          <li>Assign a category</li>
+          <li>Detect an anomaly</li>
+          <li>Rank or recommend options</li>
+          <li>Optimize a decision based on structured signals</li>
+        </ul>
+        <p>Use generative AI when the primary requirement is to:</p>
+        <ul class="outline-list">
+          <li>Produce new content</li>
+          <li>Transform or summarize information</li>
+          <li>Answer questions conversationally</li>
+          <li>Generate drafts, code, or designs</li>
+          <li>Combine instructions and context into a new response</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Describe the Difference by Model Architecture</h4>
+        <p>Traditional AI often uses task-specific models trained for a narrow prediction or classification objective, while generative AI often uses large foundation models that can support many tasks through prompting.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This distinction is useful for technical audiences comparing:</p>
+        <ul class="outline-list">
+          <li>Task-specific models</li>
+          <li>Foundation models</li>
+          <li>Training objectives</li>
+          <li>Prompt-based interaction</li>
+          <li>Fine-tuning and adaptation</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Not all traditional AI models are narrow.</li>
+          <li>Not all generative AI systems use very large models.</li>
+          <li>Architecture alone does not explain the business difference as clearly as the output type.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Describe the Difference by Output Determinism</h4>
+        <p>Traditional AI often produces a constrained result such as a class label, probability, score, or numeric forecast. Generative AI produces open-ended outputs whose wording or form can vary between requests.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This is useful when discussing:</p>
+        <ul class="outline-list">
+          <li>Evaluation complexity</li>
+          <li>Reliability</li>
+          <li>Reproducibility</li>
+          <li>Governance</li>
+          <li>Human review requirements</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Traditional AI outputs can also vary when inputs or thresholds change.</li>
+          <li>Generative AI can be constrained to structured outputs.</li>
+          <li>This distinction is helpful but less fundamental than prediction versus content generation.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead>
+        <tr><th>AI type</th><th>Typical purpose</th><th>Example output</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Traditional AI</td><td>Predict, classify, detect, rank, or recommend</td><td>Risk score, category, forecast, anomaly flag</td></tr>
+        <tr><td>Generative AI</td><td>Create or transform content</td><td>Text, image, code, summary, conversation</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Traditional AI primarily analyzes existing data to make predictions or classifications, while generative AI creates new content such as text, images, audio, or code.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Improving AI Reliability Through Grounding</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">A generative AI model can produce answers that sound plausible but are inaccurate, outdated, incomplete, or unsupported.</p>
+    <p>This happens because the model generates responses from patterns learned during training rather than automatically verifying every statement against current or organization-specific information.</p>
+    <p>The solution needs to:</p>
+    <ul class="outline-list">
+      <li>Improve factual accuracy</li>
+      <li>Use trusted and relevant information</li>
+      <li>Reduce hallucinations</li>
+      <li>Provide answers based on current business data</li>
+      <li>Make responses easier to verify</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Ground the Model with Trusted, Relevant Data</h4>
+        <p><strong>Grounding</strong> connects the AI solution to authoritative information that is relevant to the user's request.</p>
+        <p>The application retrieves appropriate information from sources such as:</p>
+        <ul class="outline-list">
+          <li>Internal documents</li>
+          <li>Knowledge bases</li>
+          <li>Databases</li>
+          <li>Product documentation</li>
+          <li>Policies and procedures</li>
+          <li>Approved websites</li>
+          <li>Current business systems</li>
+        </ul>
+        <p>The retrieved information is added to the model's context before it generates the response. This pattern is commonly implemented through <strong>retrieval-augmented generation (RAG)</strong>.</p>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Grounding improves reliability because it:</p>
+        <ul class="outline-list">
+          <li>Gives the model access to information that may not exist in its training data</li>
+          <li>Provides current and organization-specific context</li>
+          <li>Reduces the need for the model to infer or invent missing facts</li>
+          <li>Helps constrain answers to approved sources</li>
+          <li>Enables citations or source references</li>
+          <li>Allows knowledge to be updated without retraining the model</li>
+        </ul>
+        <p>For example, an employee-support assistant can retrieve the latest human-resources policy before answering a leave-policy question.</p>
+
+        <p><strong>Important implementation practices</strong></p>
+        <p>A reliable grounding solution should:</p>
+        <ul class="outline-list">
+          <li>Retrieve only relevant information</li>
+          <li>Prefer authoritative and current sources</li>
+          <li>Apply access controls before retrieving data</li>
+          <li>Preserve document metadata and source references</li>
+          <li>Instruct the model to answer only from the supplied evidence</li>
+          <li>Allow the model to state that the available information is insufficient</li>
+          <li>Evaluate retrieval quality separately from answer quality</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Fine-Tuning the Model</h4>
+        <p>Fine-tuning adjusts a model using additional examples so that it better follows a desired style, format, task pattern, or domain behavior.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Fine-tuning may be useful when the primary need is to improve:</p>
+        <ul class="outline-list">
+          <li>Response structure</li>
+          <li>Classification behavior</li>
+          <li>Specialized terminology</li>
+          <li>Consistency of tone</li>
+          <li>Repeated task performance</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Fine-tuning does not guarantee factual accuracy.</li>
+          <li>Knowledge embedded during fine-tuning can become outdated.</li>
+          <li>Updating information usually requires another training cycle.</li>
+          <li>It can be more expensive and operationally complex than updating a grounding source.</li>
+          <li>It is generally less suitable than grounding for frequently changing facts.</li>
+        </ul>
+        <p>Fine-tuning and grounding can be combined when the system needs both specialized behavior and access to current knowledge.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Prompt Engineering Without External Data</h4>
+        <p>The application can provide clearer instructions, examples, constraints, and response formats directly in the prompt.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Prompt engineering is useful when:</p>
+        <ul class="outline-list">
+          <li>The required knowledge is already available to the model</li>
+          <li>The problem is primarily about task clarity</li>
+          <li>The application is a prototype</li>
+          <li>External retrieval would add unnecessary complexity</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It cannot reliably provide information the model does not know.</li>
+          <li>It does not ensure that answers are current.</li>
+          <li>It may reduce hallucinations but cannot eliminate them.</li>
+          <li>Large prompts can increase token usage and cost.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="sub-point-1">Key Trade-Offs</h3>
+    <table class="content-table">
+      <thead>
+        <tr><th>Approach</th><th>Best suited for</th><th>Main limitation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Grounding or RAG</td><td>Current, factual, organization-specific knowledge</td><td>Depends on retrieval and source quality</td></tr>
+        <tr><td>Fine-tuning</td><td>Specialized behavior, format, or task consistency</td><td>Knowledge can become outdated</td></tr>
+        <tr><td>Prompt engineering</td><td>Clearer instructions and lightweight prototypes</td><td>Does not add authoritative external knowledge</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p>Grounding improves AI reliability by supplying trusted, relevant, and current information at response time. It reduces hallucinations and enables answers to be supported by evidence, but its effectiveness depends on the quality of the source data and retrieval process.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Understanding and Applying Prompt Engineering to Improve Generative AI Answer Quality</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">A generative AI model may produce vague, incomplete, inconsistent, off-topic, or poorly formatted results when the user's instruction does not clearly communicate:</p>
+    <ul class="outline-list">
+      <li>The task</li>
+      <li>The expected output</li>
+      <li>Relevant context</li>
+      <li>Constraints</li>
+      <li>Audience</li>
+      <li>Tone</li>
+      <li>Examples</li>
+      <li>Success criteria</li>
+    </ul>
+    <p>Tailwind Traders has an internal policy assistant whose answers are fluent but sometimes:</p>
+    <ul class="outline-list">
+      <li>Off-topic</li>
+      <li>Incomplete</li>
+      <li>Missing important policy rules</li>
+      <li>Insufficiently grounded in approved content</li>
+    </ul>
+    <p>The organization needs a practical way to understand what prompt engineering does and use it to improve answer quality — without retraining the model or redesigning the architecture.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Prompt Engineering to Guide the Model Toward More Relevant, Grounded, and Well-Structured Outputs</h4>
+        <p>The primary purpose of <strong>prompt engineering</strong> is to design and refine the instructions, context, constraints, examples, and output format given to a generative AI model so it produces more relevant, accurate, consistent, and useful responses — without changing the model's internal parameters or weights.</p>
+        <p>A well-designed prompt specifies:</p>
+        <ul class="outline-list">
+          <li>The model's role (typically set via a system message/system prompt)</li>
+          <li>The task to perform</li>
+          <li>The relevant context (e.g., supplied policy excerpts)</li>
+          <li>The expected output format</li>
+          <li>Constraints and boundaries (e.g., use only supplied sources; do not invent exceptions)</li>
+          <li>Few-shot examples of acceptable and unacceptable outputs</li>
+          <li>Criteria for a successful response, including how to signal missing information</li>
+        </ul>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Fluent but off-topic or incomplete answers, like Tailwind Traders is seeing, usually mean the model lacks enough direction or relevant context — not that the model itself is deficient. Because prompt engineering changes only the input given to the model, it is the fastest and least expensive lever to try first: it requires no training data, no evaluation pipeline, and no hosting of a custom model deployment. A stronger prompt can:</p>
+        <ul class="outline-list">
+          <li>Narrow the task and reduce ambiguity</li>
+          <li>Emphasize critical rules</li>
+          <li>Reduce unsupported speculation</li>
+          <li>Improve consistency and control tone/structure</li>
+          <li>Make omissions easier to detect</li>
+          <li>Produce answers in a predictable, checkable format</li>
+        </ul>
+        <p>A useful structure is:</p>
+        <pre><code>Role
+Task
+Relevant context
+Rules and constraints
+Required output format
+Examples
+Fallback behavior</code></pre>
+        <p>For example, instead of asking:</p>
+        <pre><code>Summarize this document.</code></pre>
+        <p>A stronger prompt could be:</p>
+        <pre><code>Summarize this policy document for senior managers in five bullet points.
+Highlight risks, required actions, and effective dates.
+Use only information from the supplied document.</code></pre>
+        <p>For Tailwind Traders specifically:</p>
+        <pre><code>You are an internal policy assistant.
+
+Answer the employee's question using only the supplied policy excerpts.
+
+Requirements:
+- Include every rule that directly affects the answer.
+- Cite the policy title and section.
+- If the excerpts do not contain enough information, say so.
+- Do not invent exceptions or approvals.
+- Return: Answer, Applicable rules, Required actions, Sources.</code></pre>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Ground the Model with External Data (RAG)</h4>
+        <p>Grounding — most commonly implemented as retrieval-augmented generation (RAG) — supplies trusted, current, or organization-specific information, such as the actual policy excerpts, to the model at response time.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Choose grounding when the root cause is missing or outdated knowledge rather than instruction quality. A prompt can tell the model to "use only the supplied policy excerpts," but it cannot supply those excerpts itself — that is retrieval's job. In practice, prompt engineering and grounding are used together: retrieval supplies the facts, and the prompt tells the model how to use them.</p>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Requires a retrieval or data-access architecture (indexing, search, refresh pipeline)</li>
+          <li>Poor retrieval quality (irrelevant or outdated matches) degrades answer quality regardless of how good the prompt is</li>
+          <li>Adds operational and governance complexity (access control, content freshness, source attribution)</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Try a More Capable Model</h4>
+        <p>Swapping to a more capable base model, without changing the prompt, is sometimes proposed as a quick fix for weak answers.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>A more capable model can genuinely improve reasoning or instruction-following on hard tasks. But for an off-topic or incomplete answer, the more targeted and reversible fix is usually to improve the prompt and grounding first — including adding explicit reasoning instructions (e.g., asking the model to identify applicable rules step by step before answering) — since a stronger model given the same vague instructions and missing context will often produce the same class of error.</p>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Increases per-call cost and, potentially, latency</li>
+          <li>Does not fix poor instructions or missing context on its own</li>
+          <li>Should be evaluated after prompt and grounding improvements, not instead of them, so the actual cause of the quality problem is understood</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Fine-Tune the Model</h4>
+        <p>Fine-tuning changes model behavior by training it further on additional labeled examples, which updates the model's parameters and typically requires deploying and hosting a distinct fine-tuned model.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Fine-tuning may be worth the added cost and complexity when the organization needs:</p>
+        <ul class="outline-list">
+          <li>Highly consistent behavior on a narrow, well-defined task across a large number of edge cases too numerous to enumerate as few-shot examples</li>
+          <li>Specialized or domain-specific terminology and phrasing that examples in a prompt don't reliably teach</li>
+          <li>Performance improvements that prompting and grounding alone cannot achieve</li>
+        </ul>
+        <p>Note: basic output formatting (e.g., returning JSON, or a fixed section layout) is usually solved more cheaply with prompt constraints or structured-output/JSON-mode features than with fine-tuning.</p>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Requires curated, labeled training data and an evaluation process</li>
+          <li>Costs more and takes longer than prompt refinement — in Azure OpenAI, a fine-tuned model also carries an ongoing hourly hosting cost for the deployment, on top of the one-time training cost</li>
+          <li>Does not guarantee access to current facts — it bakes in patterns from training data at a point in time, so it still needs grounding for anything that changes afterward</li>
+          <li>If the underlying base model is retired or updated, the fine-tuned model may need to be retrained against the new base</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead>
+        <tr><th>Approach</th><th>Primary purpose</th><th>Changes model weights?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Prompt engineering</td><td>Improve how the model interprets instructions and structures responses</td><td>No</td></tr>
+        <tr><td>Grounding / RAG</td><td>Provide trusted, current, or organization-specific knowledge at response time</td><td>No</td></tr>
+        <tr><td>Model upgrade</td><td>Increase raw reasoning/instruction-following capability</td><td>No (different model, not retrained)</td></tr>
+        <tr><td>Fine-tuning</td><td>Adjust model behavior for specialized or repeated tasks</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The primary purpose of prompt engineering is to create clear, structured instructions — role, task, context, constraints, format, and examples — that guide a generative AI model toward more relevant, accurate, consistent, and useful outputs without retraining the model. When answers are fluent but off-topic or incomplete, first improve instructions and grounding context; reserve a model upgrade or fine-tuning for cases where prompting and retrieval genuinely cannot achieve the required behavior.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Distinguishing Prompt Engineering from Fine-Tuning</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Fabrikam's executive team wants to understand prompt engineering in practical terms.</p>
+    <p>A senior manager claims:</p>
+    <div class="summary-box">
+      <p>Prompt engineering is mainly about adjusting the underlying model parameters and weights in Azure OpenAI in order to change how the model behaves.</p>
+    </div>
+    <p>The organization needs to determine whether this statement is correct.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Treat the Statement as False</h4>
+        <p>The statement is <strong>false</strong>.</p>
+        <p><strong>Prompt engineering</strong> is the practice of designing and refining the instructions, context, constraints, examples, and output format provided to a generative AI model.</p>
+        <p>It does <strong>not</strong> change the model's internal parameters or weights.</p>
+        <p>Typical prompt-engineering techniques include:</p>
+        <ul class="outline-list">
+          <li>Defining the model's role (typically implemented via the system message/system prompt in the chat API)</li>
+          <li>Giving clear task instructions</li>
+          <li>Supplying relevant context</li>
+          <li>Adding few-shot examples</li>
+          <li>Specifying output structure</li>
+          <li>Setting constraints and boundaries</li>
+          <li>Asking the model to cite sources or state uncertainty</li>
+          <li>Iteratively testing and refining the prompt</li>
+        </ul>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Prompt engineering changes the <strong>input given to the model</strong>, not the model itself.</p>
+        <p>It is useful because it:</p>
+        <ul class="outline-list">
+          <li>Improves clarity and consistency</li>
+          <li>Reduces ambiguity</li>
+          <li>Guides tone and format</li>
+          <li>Helps the model use supplied context effectively</li>
+          <li>Can improve results without retraining</li>
+          <li>Is faster and less expensive than changing model weights</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Fine-Tuning</h4>
+        <p><strong>Fine-tuning</strong> changes model behavior by training it on additional examples, which updates model parameters or weights.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Fine-tuning may be appropriate when the organization needs:</p>
+        <ul class="outline-list">
+          <li>Consistent specialized behavior</li>
+          <li>Domain-specific terminology</li>
+          <li>Repeated task patterns</li>
+          <li>Consistent behavior across a large number of edge cases that would be impractical to enumerate as few-shot examples</li>
+          <li>Performance improvements that prompting alone cannot achieve</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Requires curated training data</li>
+          <li>Costs more than prompt refinement, and in Azure OpenAI adds an ongoing hourly hosting cost for the deployed fine-tuned model</li>
+          <li>Requires evaluation and lifecycle management</li>
+          <li>Does not automatically provide current knowledge</li>
+          <li>Can reinforce bias if training data is poor</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Grounding or Retrieval-Augmented Generation</h4>
+        <p>Grounding supplies trusted, current, or organization-specific information at response time.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Use grounding when the main problem is missing or outdated knowledge rather than instruction quality.</p>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Requires retrieval architecture and source governance</li>
+          <li>Poor retrieval can reduce answer quality</li>
+          <li>Does not change the model's internal weights</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead>
+        <tr><th>Technique</th><th>What changes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Prompt engineering</td><td>Instructions and context sent to the model</td></tr>
+        <tr><td>Fine-tuning</td><td>Model parameters or weights</td></tr>
+        <tr><td>Grounding / RAG</td><td>External knowledge supplied at response time</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The statement is false. Prompt engineering changes how you instruct and contextualize the model; fine-tuning changes the model's internal parameters or weights.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Using Structured Prompt Design for a Grounded IT Support Assistant</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Adventure Works is building a generative AI assistant for internal IT support.</p>
+    <p>The assistant must:</p>
+    <ul class="outline-list">
+      <li>Use existing knowledge articles and ticket history</li>
+      <li>Produce accurate, context-aware answers</li>
+      <li>State limitations and ask clarifying questions when information is insufficient</li>
+      <li>Support concise or detailed response styles</li>
+      <li>Avoid unnecessary changes to the underlying model or infrastructure</li>
+      <li>Operate within clear security and governance boundaries</li>
+    </ul>
+    <p>A solution architect proposes investing primarily in a structured prompt design that:</p>
+    <ul class="outline-list">
+      <li>Defines the system role, guardrails, and style</li>
+      <li>Includes examples of acceptable and unacceptable responses</li>
+      <li>Instructs the model to use retrieved evidence and avoid speculation</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Structured Prompt Engineering Together with RAG and Runtime Controls</h4>
+        <p>The proposed approach is <strong>appropriate</strong>, provided the assistant also has a reliable retrieval layer and supporting security controls.</p>
+        <p>Structured prompt design should define:</p>
+        <ul class="outline-list">
+          <li>The assistant's role and approved scope (typically defined in the system message)</li>
+          <li>Which sources it may use</li>
+          <li>How to behave when evidence is incomplete</li>
+          <li>When to ask clarifying questions</li>
+          <li>When to escalate to a human</li>
+          <li>Required tone and response length</li>
+          <li>Prohibited actions and speculation</li>
+          <li>Expected citation or source-reference behavior</li>
+          <li>Output structure and fallback messages</li>
+        </ul>
+        <p>Few-shot examples can demonstrate:</p>
+        <ul class="outline-list">
+          <li>A well-grounded answer</li>
+          <li>An answer that correctly asks for clarification</li>
+          <li>A response that refuses to invent missing information</li>
+          <li>A concise answer versus a detailed answer</li>
+          <li>An escalation case</li>
+        </ul>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Prompt engineering is well suited to these requirements because it changes the instructions and context given to the model without changing the model's internal weights.</p>
+        <p>It can improve:</p>
+        <ul class="outline-list">
+          <li>Consistency</li>
+          <li>Tone control</li>
+          <li>Clarification behavior</li>
+          <li>Use of retrieved context</li>
+          <li>Fallback behavior</li>
+          <li>Response formatting</li>
+          <li>Resistance to unsupported speculation</li>
+        </ul>
+        <p>This is faster and less costly than fine-tuning when the primary need is behavioral guidance rather than changing the model's learned capabilities.</p>
+        <p>However, prompt design alone does not provide enterprise knowledge or security. The complete design should include:</p>
+        <ul class="outline-list">
+          <li><strong>RAG or retrieval:</strong> Supplies relevant knowledge articles and approved ticket-history content</li>
+          <li><strong>Prompt orchestration:</strong> Combines system instructions, user input, and retrieved evidence</li>
+          <li><strong>Identity and access controls:</strong> Ensures users retrieve only content they are authorized to access</li>
+          <li><strong>Content and safety controls:</strong> Detect harmful or inappropriate input and output</li>
+          <li><strong>Monitoring and evaluation:</strong> Measures groundedness, accuracy, fallback quality, and escalation behavior</li>
+          <li><strong>Human escalation:</strong> Handles ambiguous, sensitive, or unresolved cases</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Fine-Tune the Model</h4>
+        <p>The organization could fine-tune a model using examples of IT-support responses.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Fine-tuning may be appropriate when the organization needs:</p>
+        <ul class="outline-list">
+          <li>Highly consistent domain-specific behavior</li>
+          <li>Specialized terminology</li>
+          <li>Consistent behavior across a high volume of edge cases that would be impractical to enumerate in a prompt</li>
+          <li>Performance improvements that prompting cannot achieve</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It requires curated training data.</li>
+          <li>It changes model weights, adds lifecycle complexity, and adds an ongoing hosting cost for the fine-tuned deployment.</li>
+          <li>It is not the best mechanism for frequently changing knowledge articles or ticket content.</li>
+          <li>It still requires retrieval for current information.</li>
+          <li>It is excessive when structured prompts already meet the behavioral requirements.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Rely Only on RAG</h4>
+        <p>The assistant could retrieve relevant content and send it to the model with minimal instructions.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This can work for simple prototypes.</p>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Retrieval provides evidence but not behavioral governance.</li>
+          <li>The model may still speculate, use the wrong tone, or fail to clarify ambiguity.</li>
+          <li>Fallbacks and escalation behavior may be inconsistent.</li>
+          <li>Prompt structure is still needed to define how retrieved content should be used.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Encode All Behavior in Application Code</h4>
+        <p>The application can enforce tone, fallbacks, and escalation using deterministic rules outside the model.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This is useful for:</p>
+        <ul class="outline-list">
+          <li>Hard security boundaries</li>
+          <li>Mandatory escalation rules</li>
+          <li>Validation of structured outputs</li>
+          <li>Actions that must be deterministic</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Rules become difficult to maintain for nuanced language behavior.</li>
+          <li>Tone and conversational adaptation are better handled through prompts.</li>
+          <li>A hybrid approach is stronger: deterministic controls for hard boundaries and prompts for flexible language behavior.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead>
+        <tr><th>Capability</th><th>Primary role</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Structured prompt engineering</td><td>Role, tone, guardrails, clarification, fallback, and response behavior</td></tr>
+        <tr><td>RAG</td><td>Current, relevant, enterprise-specific knowledge</td></tr>
+        <tr><td>Fine-tuning</td><td>Persistent model-behavior adaptation</td></tr>
+        <tr><td>Application and security controls</td><td>Deterministic enforcement, permissions, and action safety</td></tr>
+        <tr><td>Monitoring and evaluation</td><td>Ongoing assurance of quality and compliance</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The architect's proposal is sound: structured prompt engineering is the primary way to control role, tone, guardrails, clarification, and evidence-use behavior without modifying model weights. It should be combined with RAG, access controls, safety filters, monitoring, and human escalation for a complete enterprise solution.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">How RAG Works: Retriever and LLM Roles, and the Key Advantage of Grounding</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">A generative AI model must answer questions using current, trusted, or organization-specific information that may not be present in its original training data. Without access to relevant external knowledge, the model may:</p>
+    <ul class="outline-list">
+      <li>Produce outdated answers</li>
+      <li>Invent unsupported details</li>
+      <li>Miss organization-specific policies or facts</li>
+      <li>Provide responses that are difficult to verify</li>
+    </ul>
+    <p>Contoso is designing a retrieval-augmented generation (RAG) assistant to solve this. The architecture includes:</p>
+    <ul class="outline-list">
+      <li>A <strong>retriever</strong> that searches enterprise content</li>
+      <li>A <strong>large language model (LLM)</strong> that generates the final response</li>
+    </ul>
+    <p>Contoso needs to confirm both why RAG is used at all, and whether the following statement about how the two components divide the work is correct:</p>
+    <div class="summary-box">
+      <p>In a RAG architecture, the retriever locates and returns relevant enterprise content, while the LLM interprets the user's question and synthesizes a natural-language answer using that retrieved context.</p>
+    </div>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use RAG to Ground Responses — the Retriever Finds Evidence, the LLM Synthesizes the Answer</h4>
+        <p>The statement is <strong>correct</strong>, and it describes the mechanism behind RAG's key advantage: the AI system retrieves relevant information from external data sources at response time and uses that information to generate a grounded answer.</p>
+        <p>In a typical RAG pipeline:</p>
+        <ol class="numbered-outline">
+          <li>The user submits a question.</li>
+          <li>The system converts the question into a search representation, such as keywords or embeddings.</li>
+          <li>The retriever searches an index, vector store, database, or enterprise content source.</li>
+          <li>The retriever returns the most relevant passages or records.</li>
+          <li>The retrieved content is added to the prompt or model context.</li>
+          <li>The LLM interprets the question together with the retrieved evidence.</li>
+          <li>The LLM generates a natural-language answer.</li>
+        </ol>
+        <p>Typical sources for the retriever include internal documents, knowledge bases, databases, product documentation, policies and procedures, search indexes, and approved websites.</p>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>The retriever and LLM have complementary, non-overlapping responsibilities:</p>
+        <ul class="outline-list">
+          <li><strong>Retriever:</strong> Finds relevant evidence from external sources.</li>
+          <li><strong>LLM:</strong> Understands the request, reasons over the supplied context, and generates the response.</li>
+        </ul>
+        <p>This separation is what gives RAG its key advantage over answering from pretrained knowledge alone. Because the model does not need to rely only on knowledge learned during training, RAG:</p>
+        <ul class="outline-list">
+          <li>Provides current and domain-specific knowledge</li>
+          <li>Reduces unsupported or hallucinated answers</li>
+          <li>Allows responses to include citations or source references</li>
+          <li>Updates knowledge by re-indexing content, without retraining the model</li>
+          <li>Keeps source data separate from the foundation model</li>
+          <li>Supports access controls over enterprise information</li>
+        </ul>
+        <p>The most important advantage is that the model can answer from <strong>relevant, authoritative evidence retrieved at runtime</strong>, rather than relying only on information learned during training.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Fine-Tune the Model</h4>
+        <p>Fine-tuning adjusts model behavior using additional training examples.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Fine-tuning is useful when the main goal is to improve:</p>
+        <ul class="outline-list">
+          <li>Response style</li>
+          <li>Output format</li>
+          <li>Specialized terminology</li>
+          <li>Repeated task behavior</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Fine-tuned knowledge can become outdated.</li>
+          <li>Updating facts requires another training cycle, not just an index refresh.</li>
+          <li>Fine-tuning does not automatically provide citations.</li>
+          <li>It is generally less suitable than RAG for frequently changing knowledge.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Add All Reference Information Directly to the Prompt</h4>
+        <p>The application can insert relevant content manually into each prompt instead of retrieving it dynamically.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This may work for:</p>
+        <ul class="outline-list">
+          <li>Small and fixed reference sets</li>
+          <li>Prototypes</li>
+          <li>Short documents</li>
+          <li>Simple one-time tasks</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Long prompts increase token usage and cost.</li>
+          <li>The context window limits how much information can be included.</li>
+          <li>Irrelevant content can reduce answer quality.</li>
+          <li>Manual prompt assembly does not scale as the knowledge base grows.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Let the LLM Answer Without Retrieval</h4>
+        <p>The system can send the user's question directly to the LLM with no retriever in the loop.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This may be appropriate when:</p>
+        <ul class="outline-list">
+          <li>The question depends only on general knowledge</li>
+          <li>The task is creative rather than factual</li>
+          <li>The use case is a simple prototype</li>
+          <li>No trusted external data source is required</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>The answer may be outdated or unsupported.</li>
+          <li>The model may not know enterprise-specific information.</li>
+          <li>Hallucination risk is higher.</li>
+          <li>Source citations are more difficult to provide.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Return Retrieved Documents Without LLM Synthesis</h4>
+        <p>The system can display search results or matching passages directly, skipping the generation step.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This may be appropriate when:</p>
+        <ul class="outline-list">
+          <li>Exact source content is more important than summarization</li>
+          <li>Users prefer to inspect the original documents</li>
+          <li>The system must minimize generative interpretation</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Users must read and combine the information themselves.</li>
+          <li>Results may be less concise or user-friendly.</li>
+          <li>The system provides search rather than a conversational answer.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead>
+        <tr><th>Component</th><th>Primary responsibility</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Retriever</td><td>Locate and return relevant content</td></tr>
+        <tr><td>LLM</td><td>Interpret the question and synthesize an answer from the retrieved context</td></tr>
+        <tr><td>Search index or vector store</td><td>Store searchable representations of enterprise content</td></tr>
+        <tr><td>Prompt or orchestration layer</td><td>Combine instructions, user input, and retrieved context</td></tr>
+      </tbody>
+    </table>
+    <table class="content-table">
+      <thead>
+        <tr><th>Approach</th><th>Primary advantage</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>RAG</td><td>Adds current, trusted knowledge at response time via a retriever + LLM split</td></tr>
+        <tr><td>Fine-tuning</td><td>Changes model behavior and task consistency</td></tr>
+        <tr><td>Prompt-only context</td><td>Simple for small, fixed information sets</td></tr>
+        <tr><td>No retrieval</td><td>Simplest option, but limited to general/pretrained knowledge</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The statement is correct: the retriever supplies relevant evidence, and the LLM uses that evidence to interpret the request and generate a natural-language answer. This retrieval-at-response-time is exactly what gives RAG its key advantage — it grounds responses in relevant, trusted, current external information without requiring the foundation model to be retrained.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Selecting the Retrieval Layer for a Contract RAG Assistant</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Tailwind Traders' legal department wants to chat over thousands of contracts without placing the contract text into the model's training data.</p>
+    <p>The assistant must:</p>
+    <ul class="outline-list">
+      <li>Retrieve relevant clauses from a large document collection</li>
+      <li>Reflect document updates quickly</li>
+      <li>Keep enterprise knowledge separate from the foundation model</li>
+      <li>Support grounded answers and source citations</li>
+      <li>Avoid fine-tuning solely to add changing contract knowledge</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Azure OpenAI with Azure AI Search</h4>
+        <p>The blank should be filled with <strong>Azure AI Search</strong>.</p>
+        <p>In the RAG pipeline:</p>
+        <ol class="numbered-outline">
+          <li>Contracts are ingested, parsed, chunked, and indexed.</li>
+          <li>Azure AI Search stores searchable text and vector representations.</li>
+          <li>A user's question triggers keyword, vector, hybrid, semantic, or agentic retrieval.</li>
+          <li>The most relevant contract passages are returned.</li>
+          <li>Azure OpenAI uses those passages as grounding context to generate the answer.</li>
+          <li>The application can return citations or links to the source contracts.</li>
+        </ol>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Azure AI Search is designed to provide the retrieval layer for enterprise RAG solutions. It is appropriate because it:</p>
+        <ul class="outline-list">
+          <li>Supports text, vector, hybrid, and semantic search</li>
+          <li>Scales to large document collections</li>
+          <li>Can index PDFs and extracted document content</li>
+          <li>Allows changed documents to be reindexed without retraining the LLM</li>
+          <li>Keeps authoritative knowledge outside the model's weights</li>
+          <li>Supports access-controlled and source-cited enterprise search patterns</li>
+          <li>Integrates with Azure OpenAI and Microsoft Foundry architectures</li>
+        </ul>
+        <p>When a contract changes, the ingestion and indexing pipeline updates the searchable content. The model can then use the new clause during subsequent retrieval without a fine-tuning cycle.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Fine-Tune the Azure OpenAI Model</h4>
+        <p>The organization could train the model on contract examples or domain-specific behavior.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Fine-tuning may be useful for:</p>
+        <ul class="outline-list">
+          <li>Consistent legal drafting style</li>
+          <li>Specialized terminology</li>
+          <li>Repeated classification or extraction behavior</li>
+          <li>A narrow response format</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is not the best way to store thousands of changing contracts.</li>
+          <li>Knowledge can become stale.</li>
+          <li>Updating clauses requires additional training and evaluation.</li>
+          <li>Fine-tuning does not inherently provide source citations.</li>
+          <li>Sensitive document content becomes part of a training workflow rather than a separately governed retrieval source.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Put Contract Text Directly into Every Prompt</h4>
+        <p>The application could add selected contract text manually to the prompt.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This may work for:</p>
+        <ul class="outline-list">
+          <li>A single contract</li>
+          <li>Small proof-of-concept scenarios</li>
+          <li>Short, fixed document sets</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Context-window limits prevent loading thousands of contracts.</li>
+          <li>Token costs increase.</li>
+          <li>Irrelevant context can reduce answer quality.</li>
+          <li>Manual selection does not scale.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use a General Database Without Search Capabilities</h4>
+        <p>The organization could store contracts in blob storage, a relational database, or another repository and retrieve them with custom code.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This can preserve the source documents and may fit existing data architecture.</p>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>The team would have to build and maintain chunking, embedding generation, indexing, ranking, and vector search logic themselves — capabilities Azure AI Search already provides out of the box, with no built-in relevance tuning, hybrid search, or semantic ranking.</li>
+          <li>A content repository is a place to store contracts, not a retrieval layer that can rank and surface the right clause among thousands of documents.</li>
+          <li>Azure AI Search can index content directly from these same repositories, so the two are normally combined rather than treated as competing choices.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead>
+        <tr><th>Component</th><th>Primary role</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Azure OpenAI</td><td>Interpret the question and generate a response</td></tr>
+        <tr><td>Azure AI Search</td><td>Index and retrieve relevant contract content</td></tr>
+        <tr><td>Document repository</td><td>Store the authoritative source files</td></tr>
+        <tr><td>Ingestion pipeline</td><td>Extract, chunk, enrich, and update indexed content</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Use Azure OpenAI together with Azure AI Search as part of the RAG pipeline. Azure AI Search retrieves current contract clauses at response time, so updates can be reflected without fine-tuning the model.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview">Retrieval-augmented generation in Azure AI Search</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/foundry/concepts/retrieval-augmented-generation">RAG and indexes in Microsoft Foundry</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Why RAG Improves an Internal HR Assistant</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Fabrikam is building an internal "Ask HR" assistant with Azure OpenAI.</p>
+    <p>The assistant currently produces generic answers because it relies only on:</p>
+    <ul class="outline-list">
+      <li>The model's pretrained knowledge</li>
+      <li>The user's prompt</li>
+    </ul>
+    <p>It does not have access to Fabrikam's own HR policies, procedures, benefits documentation, or current internal guidance.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use RAG to Ground Answers in Fabrikam's Current HR Documents</h4>
+        <p>The main benefit of introducing retrieval-augmented generation (RAG) is that it allows the assistant to retrieve relevant Fabrikam HR content at response time and use that information to generate organization-specific answers.</p>
+        <p>This means the assistant can:</p>
+        <ul class="outline-list">
+          <li>Answer using Fabrikam's actual policies</li>
+          <li>Reflect updates when documents change</li>
+          <li>Reduce generic or unsupported responses</li>
+          <li>Provide citations or source links</li>
+          <li>Avoid retraining the model whenever a policy changes</li>
+        </ul>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>RAG adds a trusted enterprise knowledge layer without changing the model's internal weights.</p>
+        <p>A typical flow is:</p>
+        <ol class="numbered-outline">
+          <li>HR documents are indexed in a search service.</li>
+          <li>The user asks a question.</li>
+          <li>The retriever finds the most relevant policy passages.</li>
+          <li>Those passages are added to the model context.</li>
+          <li>Azure OpenAI generates a grounded answer using the retrieved evidence.</li>
+        </ol>
+        <p>This improves reliability because the model answers from current internal sources rather than only from general pretrained knowledge.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Fine-Tune the Model on HR Documents</h4>
+        <p>The team could fine-tune a model using HR examples.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Fine-tuning may help with:</p>
+        <ul class="outline-list">
+          <li>Tone</li>
+          <li>Terminology</li>
+          <li>Repeated response patterns</li>
+          <li>Consistent formatting</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is not the best way to store frequently changing policy knowledge — benefits and procedures change on a schedule fine-tuning cycles can't keep up with.</li>
+          <li>New policy updates require additional training before the assistant reflects them.</li>
+          <li>An employee asking about a policy would get no source link back to the specific HR document, which matters when answers affect pay, leave, or compliance.</li>
+          <li>RAG is better for current, source-backed enterprise information.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Add All HR Policies Directly to the Prompt</h4>
+        <p>The application could insert policy text into each request.</p>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This may work for a very small and fixed policy set.</p>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It does not scale to large document collections.</li>
+          <li>Token usage and cost increase.</li>
+          <li>Context-window limits apply.</li>
+          <li>Irrelevant content may reduce answer quality.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>RAG improves the HR assistant by grounding responses in Fabrikam's current, authoritative HR documents at response time, producing more accurate and organization-specific answers without retraining the model.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Using Azure AI Search to Ground Enterprise Knowledge Assistants</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Fabrikam wants to build a long-lived internal "search and ask" experience over policies, contracts, and FAQs.</p>
+    <p>A solution architect states:</p>
+    <div class="summary-box">
+      <p>For long-lived enterprise knowledge scenarios, you should front Azure OpenAI with Azure AI Search so the model is grounded on indexed internal content instead of relying only on prompts.</p>
+    </div>
+    <p>The organization needs to determine whether this is an appropriate architecture.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Treat the Statement as True</h4>
+        <p>The statement is <strong>true</strong>.</p>
+        <p>For long-lived enterprise knowledge scenarios, Azure AI Search is an appropriate retrieval layer in front of Azure OpenAI. It can index and retrieve relevant internal content, which is then added to the model prompt as grounding context.</p>
+        <p>This is the retrieval-augmented generation pattern:</p>
+        <pre><code>User question
+    ↓
+Azure AI Search retrieves relevant indexed content
+    ↓
+Retrieved content is added to the prompt
+    ↓
+Azure OpenAI generates a grounded response</code></pre>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Azure AI Search provides capabilities that ad-hoc document chunks alone do not manage well at enterprise scale, including:</p>
+        <ul class="outline-list">
+          <li>Persistent indexing</li>
+          <li>Keyword, vector, and hybrid search</li>
+          <li>Semantic ranking</li>
+          <li>Integrated vectorization</li>
+          <li>Document chunking and enrichment</li>
+          <li>Filtering by metadata</li>
+          <li>Security-aware retrieval patterns</li>
+          <li>Retrieval from large and changing document collections</li>
+          <li>Support for citations and source attribution in the application</li>
+        </ul>
+        <p>This improves maintainability and retrieval relevance while reducing the need to manually assemble document context for every request. Microsoft describes Azure AI Search as a knowledge retrieval layer for RAG that grounds model responses in enterprise content.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Important Qualification: "Front Azure OpenAI" Does Not Mean Send the Entire Index</h4>
+        <p>The application should retrieve only the most relevant passages for each question.</p>
+        <p>A well-designed solution should:</p>
+        <ul class="outline-list">
+          <li>Chunk content appropriately</li>
+          <li>Preserve source and metadata</li>
+          <li>Use hybrid retrieval where useful</li>
+          <li>Apply filters and access controls</li>
+          <li>Limit retrieved context to relevant passages</li>
+          <li>Include source references in responses</li>
+          <li>Evaluate retrieval quality and groundedness</li>
+          <li>Re-index content when source material changes</li>
+        </ul>
+        <p>The model should not be expected to search the index by itself unless the orchestration layer or agentic retrieval capability has been configured to do so.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Pass Ad-Hoc Document Chunks Directly to Azure OpenAI</h4>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This can be acceptable for:</p>
+        <ul class="outline-list">
+          <li>A quick proof of concept</li>
+          <li>A small, temporary document set</li>
+          <li>A single user-provided file</li>
+          <li>A narrowly scoped one-time analysis</li>
+        </ul>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>The application must manage chunking and selection manually.</li>
+          <li>Context-window limits become a problem.</li>
+          <li>Retrieval quality is inconsistent.</li>
+          <li>Updating and governing a large knowledge base becomes difficult.</li>
+          <li>It is not a strong architecture for a long-lived enterprise search experience.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Fine-Tune the Model on Policies and Contracts</h4>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Fine-tuning can help change model behavior, format, or task specialization.</p>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Fine-tuning is not the preferred way to keep factual enterprise knowledge current.</li>
+          <li>Updating source content requires additional training work.</li>
+          <li>It does not provide direct citations to source documents.</li>
+          <li>RAG is usually the better approach for frequently changing policies and contracts.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead>
+        <tr><th>Capability</th><th>Primary role</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Azure AI Search</td><td>Indexes, retrieves, ranks, and filters enterprise content</td></tr>
+        <tr><td>Azure OpenAI</td><td>Interprets the question and generates the final response</td></tr>
+        <tr><td>RAG orchestration</td><td>Connects retrieval results to the model prompt</td></tr>
+        <tr><td>Fine-tuning</td><td>Changes model behavior or specialization</td></tr>
+        <tr><td>Ad-hoc prompt chunks</td><td>Useful for small or temporary document tasks</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The statement is true. For a long-lived enterprise knowledge assistant, use Azure AI Search as the retrieval and grounding layer for Azure OpenAI rather than relying only on manually supplied document chunks.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">Additional Practice Variations</h3>
+    <p>The same pattern holds regardless of content mix or company framing. Whether the source content is PDFs, web pages, and database records (a company-wide "ask me anything" assistant) or proposals, knowledge-base articles, and project reports (an "ask the firm" assistant), the fill-in/true-false answer is the same: index the content in <strong>Azure AI Search</strong>, retrieve with full-text/vector/hybrid/semantic search, and pass the top passages to <strong>Azure OpenAI</strong> for a grounded, cited answer.</p>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview">Retrieval-augmented generation in Azure AI Search</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search">Introduction to Azure AI Search</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/search/vector-store">Vector indexes in Azure AI Search</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Reviewing a Multimodal RAG Architecture for Technical Knowledge</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Adventure Works wants a technical knowledge portal for field engineers that can:</p>
+    <ul class="outline-list">
+      <li>Search manuals, troubleshooting guides, and architecture diagrams</li>
+      <li>Open source documents for full detail</li>
+      <li>Answer conversational questions using grounded evidence</li>
+      <li>Index thousands of documents and images</li>
+      <li>Support keyword, semantic, and vector retrieval</li>
+      <li>Reuse the knowledge layer in agents built with Microsoft Foundry</li>
+    </ul>
+    <p>The proposed design is:</p>
+    <ol class="numbered-outline">
+      <li>Use Azure Vision to extract OCR text, captions, and tags from diagrams and photographs.</li>
+      <li>Store document content and image-derived metadata in Azure AI Search.</li>
+      <li>Use Microsoft Foundry to connect models and agents to Azure AI Search and manage the conversational solution.</li>
+    </ol>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Treat the Proposal as Appropriate and Well Aligned</h4>
+        <p>The proposal is <strong>appropriate</strong> and maps each requirement to a suitable Azure capability.</p>
+        <table class="content-table">
+          <thead>
+            <tr><th>Architecture layer</th><th>Primary responsibility</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Azure Vision / AI enrichment</td><td>Extract searchable text and visual metadata from images</td></tr>
+            <tr><td>Azure AI Search</td><td>Index, retrieve, rank, filter, and return grounded passages</td></tr>
+            <tr><td>Microsoft Foundry</td><td>Build, evaluate, deploy, monitor, and govern the RAG application and agents</td></tr>
+          </tbody>
+        </table>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>The architecture separates three distinct concerns:</p>
+        <ol class="numbered-outline">
+          <li><strong>Content enrichment</strong>
+            <ul class="outline-list">
+              <li>OCR extracts text embedded in diagrams and photographs.</li>
+              <li>Image analysis can generate tags, captions, and other metadata.</li>
+              <li>The derived information becomes searchable alongside normal document text.</li>
+            </ul>
+          </li>
+          <li><strong>Knowledge retrieval</strong>
+            <ul class="outline-list">
+              <li>Azure AI Search supports full-text, vector, hybrid, and semantic retrieval.</li>
+              <li>Search results can include source metadata and document links.</li>
+              <li>Relevant passages are returned to the model at query time for grounded generation.</li>
+            </ul>
+          </li>
+          <li><strong>Application and agent lifecycle</strong>
+            <ul class="outline-list">
+              <li>Microsoft Foundry provides the environment for selecting models, building the conversational experience, connecting knowledge and tools, evaluating the solution, managing deployments, and monitoring it over time.</li>
+              <li>Foundry agents can connect to Azure AI Search indexes or knowledge bases to obtain citation-backed grounding.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Recommended End-to-End Flow</h4>
+        <pre><code>Repositories
+    ↓
+Document extraction + OCR/image enrichment
+    ↓
+Chunking, metadata, embeddings, and indexing
+    ↓
+Azure AI Search
+    ↓
+Keyword + vector/hybrid retrieval
+    ↓
+Microsoft Foundry model or agent
+    ↓
+Grounded answer with citations and source links</code></pre>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Important Qualification: Azure AI Search Can Orchestrate Image Enrichment</h4>
+        <p>The design does not necessarily require a completely separate preprocessing application that calls Azure Vision for every image.</p>
+        <p>Azure AI Search skillsets can invoke built-in OCR and image-analysis skills during indexing. This can simplify ingestion and keep enrichment, field mapping, and indexing in one pipeline.</p>
+        <p>A separate Azure Vision preprocessing service may still be useful when:</p>
+        <ul class="outline-list">
+          <li>The same visual metadata is needed by multiple applications</li>
+          <li>Custom preprocessing is required</li>
+          <li>Images must be analyzed before entering the search pipeline</li>
+          <li>The organization needs independent scaling or lifecycle control</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Important Qualification: Consider Multimodal Retrieval, Not Only OCR and Tags</h4>
+        <p>OCR and tags are useful, but they may not fully represent complex diagrams.</p>
+        <p>For better diagram and image retrieval, evaluate:</p>
+        <ul class="outline-list">
+          <li>Image verbalization</li>
+          <li>Multimodal embeddings</li>
+          <li>Separate text and image vector fields</li>
+          <li>Retrieval of the original image or page alongside the text result</li>
+        </ul>
+        <p>Azure AI Search supports multimodal indexing patterns using image verbalization or multimodal embeddings.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Important Qualification: "Multiple Channels" Requires a Delivery Layer</h4>
+        <p>Microsoft Foundry can manage and deploy the AI application or agent, but channel delivery should be designed explicitly.</p>
+        <p>Depending on the target channel, the solution may also require:</p>
+        <ul class="outline-list">
+          <li>A custom web or mobile front end</li>
+          <li>An API layer</li>
+          <li>Microsoft Teams or Microsoft 365 integration</li>
+          <li>Copilot Studio or another channel-specific integration</li>
+          <li>Authentication and authorization for each channel</li>
+        </ul>
+        <p>Foundry is the application and agent platform; it does not automatically publish every solution to every possible channel without integration work.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Store Document Chunks Directly in Prompts</h4>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>This can work for a small proof of concept.</p>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It does not scale to thousands of documents.</li>
+          <li>Retrieval and updates become difficult to manage.</li>
+          <li>Source links, filtering, and relevance ranking are weaker.</li>
+          <li>Large prompts increase token cost.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Azure Vision Alone</h4>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Azure Vision is appropriate for extracting text and visual information.</p>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is not a persistent enterprise retrieval engine.</li>
+          <li>It does not replace full-text, vector, hybrid, or semantic search.</li>
+          <li>It does not provide the complete RAG application lifecycle.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The proposal is appropriate. Use Vision-based OCR and image enrichment to make diagrams and photographs searchable, Azure AI Search as the persistent hybrid/vector retrieval layer, and Microsoft Foundry to build, evaluate, deploy, and operate the grounded assistant and agents. Consider using Azure AI Search skillsets for integrated enrichment and multimodal embeddings for complex diagrams.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview">Retrieval-augmented generation in Azure AI Search</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/search/cognitive-search-concept-image-scenarios">Extract text from images by using AI enrichment</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/search/cognitive-search-working-with-skillsets">Azure AI Search skillsets</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/search/search-get-started-portal-image-search">Multimodal search in Azure AI Search</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/tools/ai-search">Connect an Azure AI Search index to Foundry agents</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/foundry/">Microsoft Foundry documentation</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Reviewing Secure RAG for a Customer-Facing Support Copilot</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Adventure Works wants a customer-facing support copilot that:</p>
+    <ul class="outline-list">
+      <li>Uses current approved documentation from multiple repositories</li>
+      <li>Produces grounded answers with citations or source links</li>
+      <li>Respects Microsoft Entra identities and document-level permissions</li>
+      <li>Keeps the foundation model unchanged</li>
+      <li>Minimizes custom model training and operational overhead</li>
+    </ul>
+    <p>The proposed solution uses Azure OpenAI On Your Data with Azure AI Search, document security filters, and citations.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use RAG with Azure AI Search, but Do Not Start a New Design on Azure OpenAI On Your Data</h4>
+        <p>The proposal is <strong>correct in its RAG architecture</strong>, but the named implementation should be updated.</p>
+        <p>The sound architectural pattern is:</p>
+        <ol class="numbered-outline">
+          <li>Index approved content in <strong>Azure AI Search</strong>.</li>
+          <li>Store or ingest document-level permission metadata.</li>
+          <li>Enforce security trimming at query time using Microsoft Entra identities, groups, or source ACLs.</li>
+          <li>Retrieve only the passages the current user is authorized to access.</li>
+          <li>Supply those passages to a model in <strong>Microsoft Foundry</strong>.</li>
+          <li>Generate grounded answers with citations and links to source documents.</li>
+        </ol>
+        <p>However, <strong>Azure OpenAI On Your Data is deprecated and scheduled for retirement on October 14, 2026</strong>. Microsoft recommends migrating these workloads to current Microsoft Foundry retrieval and agent capabilities, including Foundry Agent Service with Foundry IQ knowledge bases.</p>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>RAG meets the requirements without changing the base model:</p>
+        <ul class="outline-list">
+          <li>Knowledge remains in indexed enterprise content rather than model weights.</li>
+          <li>Updated documents can be re-indexed without fine-tuning.</li>
+          <li>Retrieval can be permission-aware.</li>
+          <li>Responses can contain source citations.</li>
+          <li>The model receives only the most relevant authorized passages.</li>
+        </ul>
+        <p>This is generally more maintainable than fine-tuning for changing policies, warranties, and troubleshooting content.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Important Qualification: Microsoft Entra RBAC and Document-Level Authorization Are Different Controls</h4>
+        <p>The architecture must distinguish between:</p>
+        <ul class="outline-list">
+          <li><strong>Service-level RBAC:</strong> controls who can manage or query the Azure AI Search service.</li>
+          <li><strong>Document-level access control or security trimming:</strong> controls which indexed documents a particular end user may retrieve.</li>
+        </ul>
+        <p>Assigning an Azure AI Search reader role does not automatically preserve the permissions of every source document.</p>
+        <p>The indexing and query pipeline must carry permission metadata and enforce it during retrieval. Azure AI Search now natively supports pushing Microsoft Entra ACL/RBAC metadata into the index (stored alongside the text and vector fields) and validates the caller's Entra token at query time to trim results automatically, including for vector search. Depending on the repository and Azure AI Search feature used, this can also involve:</p>
+        <ul class="outline-list">
+          <li>Ingested source ACL metadata</li>
+          <li>User and group identifiers stored in index fields</li>
+          <li>Query-time security filters</li>
+          <li>SharePoint or Azure Storage permission-aware indexing patterns</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Important Qualification: Citations Require Source Metadata and Application Support</h4>
+        <p>The index should retain fields such as:</p>
+        <ul class="outline-list">
+          <li>Source document title</li>
+          <li>Original URL or document location</li>
+          <li>Page, section, or chunk identifier</li>
+          <li>Repository</li>
+          <li>Version or effective date</li>
+          <li>Access-control metadata</li>
+        </ul>
+        <p>The application or agent must then return the citation metadata with the generated answer.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Recommended Current Architecture</h4>
+        <pre><code>Approved repositories
+        ↓
+Permission-aware ingestion and indexing
+        ↓
+Azure AI Search
+  - keyword/vector/hybrid retrieval
+  - document-level access enforcement
+        ↓
+Foundry retrieval or agent orchestration
+        ↓
+Azure OpenAI / Foundry model
+        ↓
+Grounded answer with citations and source links</code></pre>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Fine-Tune the Model on Support Documents</h4>
+
+        <p><strong>Why select this alternative</strong></p>
+        <p>Fine-tuning may help with response style or specialized task behavior.</p>
+
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is not the preferred way to keep changing factual knowledge current.</li>
+          <li>It does not inherently preserve document permissions.</li>
+          <li>It does not naturally provide source citations.</li>
+          <li>Updating knowledge requires additional training and validation.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The RAG design aligns with the requirements: use Azure AI Search for permission-aware retrieval and ground a Foundry model on authorized passages with citations. However, Azure OpenAI On Your Data is deprecated, so new solutions should use current Microsoft Foundry retrieval or agent capabilities rather than adopting the retiring feature.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/azure/foundry-classic/openai/concepts/use-your-data">Azure OpenAI On Your Data (classic)</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/foundry-classic/openai/how-to/on-your-data-configuration">Network and access configuration for Azure OpenAI On Your Data</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/search/search-document-level-access-overview">Document-level access control in Azure AI Search</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/search/search-security-trimming-for-azure-search">Security filters for trimming Azure AI Search results</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview">RAG in Azure AI Search</a></li>
+    </ul>
+  </section>
+
+  <p class="page-meta">Next: <a href="azure-ai-study-materials-reviewed-part2.html">Part 2 — Azure AI Platform &amp; Services →</a></p>
+</article>
+<script src="../../pages-scripts.js"></script>
+</body>
+</html>

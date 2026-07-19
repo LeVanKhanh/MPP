@@ -12,7 +12,7 @@
   <header class="article-header">
     <h1 class="page-title">AB-731 — Consolidated Cheat Sheet</h1>
     <p class="page-subtitle">Microsoft AI Transformation Leader — learn in the order: business need → AI approach → Microsoft solution → governance → adoption → measurement</p>
-    <p class="page-meta">Consolidated from the prior cheat sheet and test notes. Updated: <time datetime="2026-06-29">June 29, 2026</time></p>
+    <p class="page-meta">Consolidated from the prior cheat sheet and test notes. Updated: <time datetime="2026-07-16">July 16, 2026</time></p>
   </header>
 
   <section class="content-section">
@@ -333,12 +333,84 @@
   </section>
 
   <section class="content-section">
+    <h2 class="main-point">9. Terminology I hadn't named yet</h2>
+    <p class="intro-text">A term-coverage check against the fuller reviewed study notes found the concepts above were sound, but a set of specific product names and vocabulary words were never named — the kind of exact term a multiple-choice answer or a distractor uses. Recognize these on sight; they map onto ideas already covered above.</p>
+
+    <div class="sub-section">
+      <h3 class="sub-point-1">Named GenAI service and cost term</h3>
+      <table class="content-table">
+        <thead><tr><th>Term</th><th>Recognition cue</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Azure OpenAI</strong></td><td>The actual model-hosting service behind "tokens," "Foundry models," and most GenAI scenarios in this sheet — the name itself may appear as an answer option.</td></tr>
+          <tr><td><strong>Provisioned Throughput Units (PTU)</strong></td><td>The specific term for "commitment/prepaid capacity" in the cost table — reserved processing capacity billed for the deployed period, not per token.</td></tr>
+          <tr><td><strong>Azure OpenAI On Your Data</strong> (deprecated)</td><td>Exam trap: a retiring feature. A new grounded-answer design should point to Azure AI Search + Foundry retrieval/agent capabilities, not this name.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-section">
+      <h3 class="sub-point-1">Identity, safety, and data-security terms</h3>
+      <table class="content-table">
+        <thead><tr><th>Term</th><th>Recognition cue</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Microsoft Entra (ID)</strong></td><td>The actual identity product behind every "least privilege / permissions / authorization" cue in Sections 4 and 6.</td></tr>
+          <tr><td><strong>Azure AI Content Safety</strong></td><td>The named service for the "fabrication/bias/harmful content" row — detects and filters harmful input/output by category and severity.</td></tr>
+          <tr><td><strong>Prompt Shields</strong></td><td>The named mitigation for the "prompt injection" row — detects jailbreak attempts and indirect attacks hidden in retrieved documents.</td></tr>
+          <tr><td><strong>Microsoft Purview DSPM for AI</strong></td><td>The specific AI-data-security-posture capability inside Purview — discovers AI usage, oversharing, and sensitive-data exposure across copilots/agents; not the same as generic DLP.</td></tr>
+          <tr><td><strong>Microsoft Defender for Cloud Apps (CASB) / "shadow AI"</strong></td><td>Discovers unsanctioned third-party AI tool usage — distinct from Purview (which protects the data) and from Defender for Cloud (which protects infrastructure posture, not app usage).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-section">
+      <h3 class="sub-point-1">Data platform and Foundry Tools additions</h3>
+      <table class="content-table">
+        <thead><tr><th>Term</th><th>Recognition cue</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Microsoft Fabric / OneLake</strong></td><td>Unified analytics platform and its shared logical data lake — the answer when a scenario asks about unifying fragmented ingestion/engineering/warehousing/BI, not Azure AI Search (which is retrieval, not analytics).</td></tr>
+          <tr><td><strong>Azure AI Content Understanding</strong></td><td>Document Intelligence's prebuilt models are now one of two model families <em>inside</em> Content Understanding in Foundry Tools — Content Understanding also adds generative, zero-shot, and multimodal (image/audio/video) extraction for unstructured content Document Intelligence alone can't infer.</td></tr>
+          <tr><td><strong>Azure AI Custom Vision</strong></td><td>The lightweight, purpose-built option for training a custom image classifier/detector when prebuilt Azure Vision can't reach SKU-level or defect-specific accuracy — evaluate before jumping to a general Azure Machine Learning pipeline.</td></tr>
+          <tr><td><strong>Azure AI Translator</strong></td><td>Text and Document Translation with glossaries/Dynamic Dictionary for terminology control — the named service for multilingual text/document scenarios, distinct from Azure Speech (spoken language).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-section">
+      <h3 class="sub-point-1">MLOps vocabulary</h3>
+      <table class="content-table">
+        <thead><tr><th>Term</th><th>Recognition cue</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Feature store</strong></td><td>Shared, reusable, consistent feature definitions across data scientists — a "Prepare data" foundation, not a training or deployment step.</td></tr>
+          <tr><td><strong>Model registry</strong></td><td>Central versioning, evaluation evidence, and approval gate before a model is promoted to production.</td></tr>
+          <tr><td><strong>Experiment tracking</strong></td><td>Records parameters, code versions, metrics, and lineage for every training run — supports reproducibility, distinct from the registry (which tracks approved versions).</td></tr>
+          <tr><td><strong>Canary / blue-green deployment</strong></td><td>Staged-rollout patterns for promoting a new model version safely, paired with rollback capability.</td></tr>
+          <tr><td><strong>Data drift vs. concept drift</strong></td><td>Data drift = input distributions change; concept drift = the relationship between inputs and the target changes. Both are reasons to monitor and retrain — "drift" alone in Section 4 doesn't distinguish them.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub-section">
+      <h3 class="sub-point-1">Copilot family additions</h3>
+      <table class="content-table">
+        <thead><tr><th>Term</th><th>Recognition cue</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Copilot Pro</strong></td><td>A <em>paid consumer</em> subscription on a <em>personal</em> Microsoft account — not enterprise-licensed or Entra-governed. Do not select it for organizational data, even though it's a different thing from "Microsoft Copilot (consumer)" free tier.</td></tr>
+          <tr><td><strong>Copilot in Windows</strong></td><td>An OS-level taskbar assistant, managed via Windows/Intune policy — a different surface from Microsoft 365 Copilot's per-app licensing.</td></tr>
+          <tr><td><strong>GitHub Copilot</strong></td><td>The developer-focused coding assistant in IDEs/GitHub, grounded in source code — licensed and administered entirely separately from Microsoft 365 Copilot. The right answer whenever the persona is a developer, not a knowledge worker.</td></tr>
+        </tbody>
+      </table>
+      <div class="summary-box"><p><strong>Memory cue:</strong> "Copilot" names a family, not one product. Match the persona to the surface: developer → GitHub Copilot; knowledge worker in-app → Microsoft 365 Copilot; any device/cross-surface chat → Copilot Chat; casual OS-level → Copilot in Windows; personal/consumer → Copilot Pro.</p></div>
+    </div>
+  </section>
+
+  <section class="content-section">
     <h2 class="main-point">What was consolidated or removed</h2>
     <ul class="outline-list">
       <li>Merged duplicated sections on Copilot versions, build/buy/extend, licensing, and six Responsible AI principles into one authoritative location.</li>
       <li>Merged repeated “trap patterns,” fast scenario mapping, and final checklist into one final decision table.</li>
       <li>Added missing note topics: AI types, prompt components, prompt injection/over-reliance/fabrication/bias, Graph, Purview, Security Copilot, Agent Builder versus Copilot Studio, and Azure AI services benefits.</li>
       <li>Kept nuanced licensing statements as decision cues rather than rigid feature claims, because Copilot commercial entitlements change frequently.</li>
+      <li>Added Section 9 after a term-coverage check found named services and vocabulary missing: Azure OpenAI, PTU, Microsoft Entra, Content Safety/Prompt Shields, Purview DSPM for AI, Defender for Cloud Apps/shadow AI, Fabric/OneLake, Content Understanding, Custom Vision, Translator, MLOps vocabulary (feature store, model registry, experiment tracking, canary/blue-green, data vs. concept drift), and the Copilot Pro/Copilot in Windows/GitHub Copilot distinctions.</li>
     </ul>
   </section>
 

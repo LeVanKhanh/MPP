@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Part 3 — Microsoft Copilot Ecosystem — Azure AI Study Materials - My Personal Planet</title>
+  <meta name="description" content="Part 3 of the reviewed and consolidated Azure AI / Microsoft AI Transformation Leader (AB-731) study materials: Microsoft Copilot Ecosystem.">
+  <link rel="stylesheet" href="../../pages-styles.css">
+</head>
+<body>
+<article class="content-article">
+  <header class="article-header">
+    <h1 class="page-title">Part 3 — Microsoft Copilot Ecosystem</h1>
+    <p class="page-subtitle">Azure AI Study Materials — Reviewed and Consolidated</p>
+    <p class="page-meta">◀ Back: <a href="azure-ai-study-materials-reviewed-part2.html">Part 2</a> | <a href="azure-ai-study-materials-reviewed-00-toc.html">Table of Contents</a></p>
+  </header>
+
+  <section class="content-section">
+    <h2 class="main-point">Identifying Microsoft's SaaS AI Productivity Offering</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">An organization wants a Microsoft AI solution delivered as software as a service that improves employee productivity inside the applications people use for everyday work.</p>
+    <p>Typical tasks include:</p>
+    <ul class="outline-list">
+      <li>Drafting and revising documents</li>
+      <li>Analyzing spreadsheets</li>
+      <li>Creating presentations</li>
+      <li>Summarizing email and meetings</li>
+      <li>Collaborating in Teams</li>
+      <li>Finding and using organizational information</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Microsoft 365 Copilot</h4>
+        <p><strong>Microsoft 365 Copilot</strong> is the Microsoft offering best described as a SaaS solution that boosts employee productivity with AI in everyday tools.</p>
+        <p>It integrates AI capabilities with Microsoft 365 applications such as:</p>
+        <ul class="outline-list">
+          <li>Word</li>
+          <li>Excel</li>
+          <li>PowerPoint</li>
+          <li>Outlook</li>
+          <li>Teams</li>
+          <li>Loop</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Microsoft 365 Copilot is designed as an AI-powered productivity service for work. It supports users within the context of their existing Microsoft 365 applications and can use permitted organizational data through Microsoft Graph and Microsoft 365 services.</p>
+        <p>It is the best match when the primary requirement is to:</p>
+        <ul class="outline-list">
+          <li>Improve individual and team productivity</li>
+          <li>Generate, summarize, analyze, and transform work content</li>
+          <li>Add AI assistance to familiar business applications</li>
+          <li>Provide a managed cloud service rather than build a custom AI system</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Microsoft 365 Copilot Chat</h4>
+        <p><strong>Microsoft 365 Copilot Chat</strong> provides a secure AI chat experience and access to agents.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It may be appropriate when users primarily need:</p>
+        <ul class="outline-list">
+          <li>Conversational assistance</li>
+          <li>Web-grounded research</li>
+          <li>File-based analysis</li>
+          <li>Access to selected agents</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is not equivalent to the full Microsoft 365 Copilot experience.</li>
+          <li>Full integration and work-grounded capabilities across Microsoft 365 applications can depend on licensing.</li>
+          <li>It is more chat-centric than application-centric.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Microsoft Copilot Studio</h4>
+        <p><strong>Microsoft Copilot Studio</strong> is used to create and manage custom agents and copilots.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It is appropriate when an organization needs:</p>
+        <ul class="outline-list">
+          <li>A custom conversational agent</li>
+          <li>Automated business processes</li>
+          <li>Connections to enterprise systems</li>
+          <li>Organization-specific knowledge and actions</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It requires solution design, configuration, testing, governance, and maintenance.</li>
+          <li>It is primarily a development and extensibility platform rather than an out-of-the-box employee productivity suite.</li>
+          <li>It may complement Microsoft 365 Copilot but does not replace its everyday productivity role.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Microsoft Foundry</h4>
+        <p><strong>Microsoft Foundry</strong> supports the development and operation of custom enterprise AI solutions.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It is appropriate for teams building:</p>
+        <ul class="outline-list">
+          <li>Custom generative AI applications</li>
+          <li>Retrieval-augmented generation solutions</li>
+          <li>AI agents</li>
+          <li>Model evaluation and governance workflows</li>
+          <li>AI applications requiring architectural control</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is a platform for building AI solutions rather than a ready-to-use SaaS productivity application.</li>
+          <li>It requires engineering expertise and ongoing solution management.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Microsoft offering</th><th>Primary purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Microsoft 365 Copilot</td><td>SaaS AI productivity across everyday Microsoft 365 tools</td></tr>
+        <tr><td>Microsoft 365 Copilot Chat</td><td>Secure AI chat and agent access</td></tr>
+        <tr><td>Microsoft Copilot Studio</td><td>Build and manage custom agents</td></tr>
+        <tr><td>Microsoft Foundry</td><td>Develop and operate custom AI applications</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Microsoft 365 Copilot is the SaaS offering that boosts employee productivity by embedding AI into everyday tools such as Word, Excel, PowerPoint, Outlook, and Teams.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview">Microsoft 365 Copilot overview</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot">Microsoft 365 Copilot service description</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">What Microsoft Copilot Studio Is and What It Enables Organizations to Do</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">An organization wants to create AI agents that can answer questions, use enterprise knowledge, interact with business systems, and automate tasks without building every component from scratch.</p>
+    <p>Fabrikam's CIO has heard that Copilot Studio lets organizations "build their own copilots" but needs a practical explanation of what that means — specifically, whether Copilot Studio is primarily:</p>
+    <ul class="outline-list">
+      <li>A general employee chat product</li>
+      <li>A foundation-model training platform</li>
+      <li>An API for Microsoft 365 data</li>
+      <li>A platform for creating organization-specific AI agents</li>
+    </ul>
+    <p>The organization needs capabilities for:</p>
+    <ul class="outline-list">
+      <li>Creating custom agents</li>
+      <li>Adding instructions and organizational knowledge</li>
+      <li>Connecting to applications, APIs, and data sources</li>
+      <li>Automating multistep business processes</li>
+      <li>Publishing agents to employee or customer channels</li>
+      <li>Monitoring and governing agents centrally</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Microsoft Copilot Studio to Build, Extend, Deploy, and Manage AI Agents and Agent Workflows</h4>
+        <p><strong>Microsoft Copilot Studio</strong> enables organizations to create and manage custom AI agents and agent workflows through a graphical, low-code platform.</p>
+        <p>Organizations can use it to:</p>
+        <ul class="outline-list">
+          <li>Build agents using natural language and graphical tools</li>
+          <li>Define agent instructions and behavior</li>
+          <li>Ground agents with enterprise knowledge sources</li>
+          <li>Add tools, connectors, APIs, and actions so agents can call business systems</li>
+          <li>Create agent flows and automated multistep workflows</li>
+          <li>Extend Microsoft 365 Copilot with organization-specific agents</li>
+          <li>Publish agents across supported channels</li>
+          <li>Monitor usage, performance, and outcomes</li>
+          <li>Apply security, lifecycle management, and governance controls</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Copilot Studio occupies a specific middle position, which is what answers the CIO's question directly: it is not a general chat product (that's Microsoft 365 Copilot), not a platform for training or fine-tuning foundation models, and not simply an API onto Microsoft 365 data (that's Microsoft Graph). It is the platform for turning existing business knowledge and processes into a reusable, governed AI agent without building a fully custom application for every use case.</p>
+        <p>It does this through a three-role collaboration model:</p>
+        <ul class="outline-list">
+          <li>Business experts define knowledge, instructions, and workflows.</li>
+          <li>Developers add custom connectors, APIs, and advanced integrations.</li>
+          <li>Administrators manage environments, permissions, deployment, and governance.</li>
+        </ul>
+        <p>This is more than a prompt editor: grounding, tools/connectors, agent flows, multi-channel publishing, monitoring, and governance are all first-class, built-in capabilities rather than things a team would otherwise have to assemble themselves.</p>
+        <p>Typical use cases include:</p>
+        <ul class="outline-list">
+          <li>Employee self-service agents</li>
+          <li>Customer-support agents</li>
+          <li>HR and policy assistants grounded in approved documents</li>
+          <li>IT help-desk agents that retrieve knowledge and open service tickets</li>
+          <li>Sales and service automation, such as an agent that reads CRM data and updates opportunities</li>
+          <li>Agents that retrieve information and perform actions in business systems, such as triggering workflows from a support conversation</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Microsoft 365 Copilot Without Custom Agents</h4>
+        <p>Microsoft 365 Copilot provides built-in AI productivity capabilities in Word, Excel, PowerPoint, Outlook, Teams, and Copilot Chat.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It is appropriate when users need standard productivity assistance without custom knowledge, integrations, or workflows.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It provides less customization for organization-specific processes.</li>
+          <li>Complex actions or external integrations may require Copilot Studio.</li>
+          <li>It is designed primarily for everyday productivity rather than custom agent development.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Microsoft Foundry for Pro-Code AI Applications and Agents</h4>
+        <p>Microsoft Foundry supports developers building highly customized AI applications and agents.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It is appropriate when the solution requires:</p>
+        <ul class="outline-list">
+          <li>Detailed model and architecture control</li>
+          <li>Custom code and orchestration</li>
+          <li>Advanced retrieval or evaluation</li>
+          <li>Specialized deployment and operational requirements</li>
+          <li>Integration into a custom application</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It requires more engineering expertise.</li>
+          <li>Development and maintenance effort are higher.</li>
+          <li>It is less accessible to business makers than Copilot Studio.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Power Automate for Deterministic Workflow Automation</h4>
+        <p>Power Automate can automate rule-based processes across applications and services.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It is appropriate when the process is primarily deterministic and does not require an autonomous or conversational AI agent.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is not primarily an agent-building platform.</li>
+          <li>It may be less suitable for reasoning, conversational interaction, and dynamic orchestration.</li>
+          <li>Copilot Studio can use agent flows and connected automation when both agent reasoning and workflow execution are needed.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Microsoft offering</th><th>Primary purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Microsoft Copilot Studio</td><td>Low-code creation, extension, deployment, and governance of agents and agent workflows</td></tr>
+        <tr><td>Microsoft 365 Copilot</td><td>Ready-to-use AI productivity in Microsoft 365 apps and Copilot Chat</td></tr>
+        <tr><td>Microsoft Foundry</td><td>Pro-code platform for custom enterprise AI applications and agents</td></tr>
+        <tr><td>Power Automate</td><td>Deterministic, rule-based workflow and process automation</td></tr>
+        <tr><td>Microsoft Graph</td><td>API access to Microsoft 365 data and relationships — not an agent-building platform</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Microsoft Copilot Studio enables organizations to build, customize, connect, deploy, and govern AI agents and agent workflows using low-code tools, enterprise knowledge, connectors, APIs, and automated actions. It is distinct from Microsoft 365 Copilot (ready-to-use productivity), Microsoft Foundry (pro-code AI development), and Microsoft Graph (a data API, not an agent platform).</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio">Copilot Studio overview</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/">Microsoft Copilot Studio documentation</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview">Agent flows overview</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-experience">Choose between Agent Builder and Copilot Studio</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Publishing Copilot Studio Agents Beyond Microsoft Teams</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Fabrikam's head of support claims:</p>
+    <blockquote><p>Copilot Studio agents can only be used inside Teams chats and cannot be published to other channels or into Microsoft 365 Copilot.</p></blockquote>
+    <p>The organization needs to determine whether this statement accurately describes Microsoft Copilot Studio.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Treat the Statement as False</h4>
+        <p>The statement is <strong>false</strong>.</p>
+        <p>Microsoft Copilot Studio agents can be published to multiple supported channels, not only Microsoft Teams.</p>
+        <p>Depending on the agent experience, configuration, licensing, and channel support, publishing options can include:</p>
+        <ul class="outline-list">
+          <li>Microsoft Teams</li>
+          <li>Microsoft 365 Copilot</li>
+          <li>Websites and web applications</li>
+          <li>Mobile or custom applications</li>
+          <li>Power Pages</li>
+          <li>Supported messaging and contact-center channels</li>
+          <li>Custom channels through available integration methods</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Copilot Studio is intended to support organization-specific agents across the places where employees or customers already work.</p>
+        <p>For Microsoft 365 scenarios, an agent can be connected to the <strong>Teams and Microsoft 365 Copilot channel</strong>, allowing users to access it from both experiences after it is published and made available to the intended audience.</p>
+        <p>For external or custom experiences, organizations can publish or integrate agents into supported websites, applications, and other channels.</p>
+        <p>The exact channels available depend on:</p>
+        <ul class="outline-list">
+          <li>Whether the agent uses the classic or newer Copilot Studio experience</li>
+          <li>Authentication requirements</li>
+          <li>Agent capabilities and tools</li>
+          <li>Administrative and security configuration</li>
+          <li>Licensing and regional availability</li>
+          <li>Whether the selected channel supports the required features</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Publish Only to Teams</h4>
+        <p>The organization can deliberately limit an internal agent to Microsoft Teams.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Teams-only publication may be appropriate when:</p>
+        <ul class="outline-list">
+          <li>The target users work primarily in Teams</li>
+          <li>The organization wants a controlled initial rollout</li>
+          <li>The agent uses internal authentication and data</li>
+          <li>A limited pilot is preferred before broader distribution</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Users outside Teams cannot access the agent through other surfaces.</li>
+          <li>It reduces reach and channel flexibility.</li>
+          <li>It is a deployment choice, not a platform limitation.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Publish to Microsoft 365 Copilot and Teams</h4>
+        <p>The organization can make the same agent available in both Microsoft 365 Copilot and Teams.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This is the right fit for knowledge-worker agents where the goal is single sign-on convenience and minimal context switching. Employees already spend their day inside Teams and Microsoft 365 Copilot Chat for email, documents, and meetings, so surfacing the agent there means no separate app to install or learn, and the same Entra ID authentication and conditional access policies already governing Microsoft 365 apply to the agent automatically.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Administrators must manage availability, permissions, and governance.</li>
+          <li>Channel-specific behavior and feature support should be tested.</li>
+          <li>The organization still needs to verify licensing and rollout requirements.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Concept</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>Publishing</td><td>Creates a live version of the agent</td></tr>
+        <tr><td>Channel</td><td>The surface through which users access the agent</td></tr>
+        <tr><td>Teams-only deployment</td><td>A deliberate channel choice</td></tr>
+        <tr><td>Microsoft 365 Copilot extension</td><td>Makes the custom agent available through the Microsoft 365 Copilot experience</td></tr>
+        <tr><td>Custom or external channel</td><td>Exposes the agent through supported websites, applications, or messaging surfaces</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The statement is false. Copilot Studio agents can be published beyond Teams, including to Microsoft 365 Copilot and other supported channels such as websites and applications. Available channels depend on the agent experience, configuration, licensing, and feature support.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/channels">Publish agents to channels and clients</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams">Connect and configure an agent for Teams and Microsoft 365</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels">Publish and deploy agents</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Enabling Copilot Studio Agents to Act Across Business Systems</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Tailwind Traders wants a custom Copilot Studio agent that can:</p>
+    <ul class="outline-list">
+      <li>Look up order status</li>
+      <li>Create cases in a service-management platform</li>
+      <li>Update records in Dynamics 365</li>
+      <li>Orchestrate several business actions from one Copilot conversation</li>
+    </ul>
+    <p>The agent must do more than answer questions from knowledge sources; it must call external systems and execute business processes.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Tools Backed by Connectors and Agent Flows</h4>
+        <p>The blank should be filled with <strong>tools, connectors, and agent flows</strong>.</p>
+        <p>In Copilot Studio:</p>
+        <ul class="outline-list">
+          <li><strong>Tools</strong> define capabilities the agent can invoke.</li>
+          <li><strong>Power Platform connectors</strong> provide access to Microsoft and third-party applications and APIs.</li>
+          <li><strong>Agent flows</strong> orchestrate multistep business processes and can return results to the conversation.</li>
+        </ul>
+        <p>For example, the agent could:</p>
+        <ol class="numbered-outline">
+          <li>Use a Dynamics 365 connector to retrieve an order.</li>
+          <li>Ask the user for missing information.</li>
+          <li>Invoke an agent flow to create a service case.</li>
+          <li>Update the related customer or order record.</li>
+          <li>Return the case number and status to the user.</li>
+        </ol>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Tools are the agent-facing building blocks that enable action. Connectors provide standardized communication with external services, while agent flows coordinate sequences of actions, conditions, and business rules.</p>
+        <p>This approach supports:</p>
+        <ul class="outline-list">
+          <li>Reusable integrations</li>
+          <li>Low-code orchestration</li>
+          <li>Authentication and connection management</li>
+          <li>Validation and branching logic</li>
+          <li>Calls to Dynamics 365 and other enterprise systems</li>
+          <li>A single conversational experience for multiple backend actions</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Knowledge Sources Only</h4>
+        <p>The agent can ground answers in Dataverse, SharePoint, websites, or other knowledge sources.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This is appropriate when the agent only needs to retrieve and explain information.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Knowledge sources do not by themselves create cases or update records.</li>
+          <li>Retrieval provides information, while tools and flows perform actions.</li>
+          <li>A transactional agent generally needs both knowledge and action capabilities.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use a Custom API Tool</h4>
+        <p>The organization can expose proprietary services through a custom connector, REST API, or other supported tool integration.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This is useful when:</p>
+        <ul class="outline-list">
+          <li>No prebuilt connector exists</li>
+          <li>The business operation requires custom logic</li>
+          <li>An internal API already provides the needed transaction</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>More development, security testing, and maintenance are required.</li>
+          <li>Authentication, error handling, retries, and authorization must be designed carefully.</li>
+          <li>Prebuilt connectors and agent flows are usually faster for standard Dynamics 365 and service-platform integrations.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Put All Process Logic in Topics</h4>
+        <p>Topics can control conversational paths and collect information from users.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Topics are useful for deterministic dialogue, clarification, and routing.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Topics alone do not provide backend integration.</li>
+          <li>Large process logic can become difficult to maintain.</li>
+          <li>Use topics for conversation control and tools or flows for external actions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Capability</th><th>Primary role</th></tr></thead>
+      <tbody>
+        <tr><td>Knowledge source</td><td>Supplies information for grounded answers</td></tr>
+        <tr><td>Tool</td><td>Gives the agent a callable capability</td></tr>
+        <tr><td>Connector</td><td>Connects the agent or flow to an application or API</td></tr>
+        <tr><td>Agent flow</td><td>Orchestrates multistep actions and business logic</td></tr>
+        <tr><td>Topic</td><td>Controls conversational paths and clarification</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>To call external systems and orchestrate end-to-end business processes, a Copilot Studio agent should primarily use tools backed by Power Platform connectors and agent flows.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-tools-custom-agent">Add tools to custom agents</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-connectors">Use connectors in Copilot Studio agents</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow">Use agent flows with your agent</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Reviewing a Copilot Studio Design for Voice Contact Center and Microsoft 365 Copilot</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Adventure Works wants a conversational support solution that can:</p>
+    <ul class="outline-list">
+      <li>Understand natural-language voice and chat</li>
+      <li>Support telephony and DTMF keypad input</li>
+      <li>Retrieve data from Microsoft 365, Dynamics 365, and external APIs</li>
+      <li>Use generative AI rather than only fixed IVR menus</li>
+      <li>Escalate complex calls to human representatives</li>
+      <li>Provide an internal version through Microsoft 365 Copilot</li>
+    </ul>
+    <p>The architecture team proposes designing one Copilot Studio agent, enabling voice and telephony, adding connectors and actions, and publishing that same agent to both the contact-center channel and Microsoft 365 Copilot.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Treat the Proposal as Directionally Correct but Not Fully Correct as Written</h4>
+        <p>The proposal makes appropriate use of several Copilot Studio capabilities:</p>
+        <ul class="outline-list">
+          <li>Topics and generative orchestration for conversational behavior</li>
+          <li>Voice integration with Dynamics 365 Contact Center</li>
+          <li>Speech and DTMF input</li>
+          <li>Call transfer or escalation to human representatives</li>
+          <li>Connectors, REST APIs, and tools for backend actions</li>
+          <li>Publication to Teams and Microsoft 365 Copilot for supported text-based agents</li>
+        </ul>
+        <p>However, the assumption that one voice-enabled agent can simply be published unchanged as a Microsoft 365 Copilot chat agent requires correction.</p>
+        <p>Microsoft documentation distinguishes:</p>
+        <ul class="outline-list">
+          <li><strong>Text modality</strong> for chat-based agents</li>
+          <li><strong>Speech and DTMF modality</strong> for voice-enabled agents</li>
+        </ul>
+        <p>For basic voice agents, these modalities are mutually exclusive. Therefore, Adventure Works should normally design separate channel-specific agent experiences, or separate agents that reuse shared knowledge, tools, connectors, flows, and business logic.</p>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Voice and chat require different interaction design.</p>
+        <p>A contact-center voice agent must account for:</p>
+        <ul class="outline-list">
+          <li>Speech recognition and synthesized speech</li>
+          <li>Silence and no-input handling</li>
+          <li>Barge-in behavior</li>
+          <li>DTMF mappings</li>
+          <li>Telephony latency and audio quality</li>
+          <li>Call context and transfer to a human</li>
+          <li>Short prompts that are easy to understand by listening</li>
+        </ul>
+        <p>A Microsoft 365 Copilot agent typically uses:</p>
+        <ul class="outline-list">
+          <li>Text-based interaction</li>
+          <li>Rich links and formatted responses</li>
+          <li>Microsoft 365 grounding and permissions</li>
+          <li>Longer responses that users can read</li>
+          <li>Employee-oriented actions and authentication</li>
+        </ul>
+        <p>Reusing the same enterprise integrations is sensible, but the interaction layer should be optimized and tested separately for each modality.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Recommended Architecture</h4>
+        <ol class="numbered-outline">
+          <li><strong>Build a voice/contact-center agent</strong>
+            <ul class="nested-list">
+              <li>Use Copilot Studio voice capabilities.</li>
+              <li>Integrate it with Dynamics 365 Contact Center.</li>
+              <li>Configure speech, DTMF, no-input handling, and call transfer.</li>
+              <li>Use tools and connectors to retrieve account information and perform actions.</li>
+            </ul>
+          </li>
+          <li><strong>Build a text-based internal agent</strong>
+            <ul class="nested-list">
+              <li>Publish it through the Teams and Microsoft 365 Copilot channel.</li>
+              <li>Reuse approved knowledge, connectors, agent flows, and APIs.</li>
+              <li>Adapt instructions and response formatting for employee chat.</li>
+            </ul>
+          </li>
+          <li><strong>Share backend capabilities</strong>
+            <ul class="nested-list">
+              <li>Put reusable business operations in connectors, REST APIs, agent flows, or other governed tools.</li>
+              <li>Apply common authentication, authorization, auditing, and DLP policies.</li>
+              <li>Avoid duplicating core transaction logic inside channel-specific conversations.</li>
+            </ul>
+          </li>
+          <li><strong>Test each channel separately</strong>
+            <ul class="nested-list">
+              <li>Validate voice accuracy, DTMF, latency, and human handoff.</li>
+              <li>Validate text responses, citations, permissions, and Microsoft 365 availability.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use One Basic Voice Agent for the Contact Center Only</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This directly meets the external, customer-facing voice requirement first and reduces initial implementation scope: Adventure Works can deliver the harder, more novel piece — telephony, speech recognition, DTMF, and human handoff — as a single focused project before layering on the internal Microsoft 365 Copilot experience.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It does not provide the required Microsoft 365 Copilot experience.</li>
+          <li>A separate internal agent would need to be added later.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use One Text Agent in Microsoft 365 Copilot Only</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This is appropriate as a fast first release when only the internal, text-based use case is urgent. It reuses the same knowledge sources, connectors, and agent flows planned for the full solution, letting Adventure Works validate grounding and backend actions with employees quickly while deferring the more complex voice/telephony build.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It does not supply PSTN telephony, speech, DTMF, or contact-center handoff.</li>
+          <li>It cannot replace the required voice-channel design.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Capability</th><th>Appropriate design</th></tr></thead>
+      <tbody>
+        <tr><td>Natural conversational voice</td><td>Copilot Studio voice-enabled agent</td></tr>
+        <tr><td>PSTN telephony and DTMF</td><td>Dynamics 365 Contact Center integration and voice configuration</td></tr>
+        <tr><td>Backend system actions</td><td>Tools, Power Platform connectors, REST APIs, and agent flows</td></tr>
+        <tr><td>Human escalation</td><td>Contact-center transfer and routing configuration</td></tr>
+        <tr><td>Microsoft 365 Copilot experience</td><td>Text-based agent published to Teams and Microsoft 365 Copilot</td></tr>
+        <tr><td>Shared implementation</td><td>Reuse knowledge, APIs, connectors, flows, security, and governance across agents</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The proposal is directionally correct but needs an architectural adjustment. Copilot Studio supports voice, DTMF, telephony integration, generative conversations, backend actions, human escalation, and Microsoft 365 Copilot publishing. However, a basic voice-enabled agent uses the Speech and DTMF modality, while a chat agent uses the Text modality; these are mutually exclusive. Use separate channel-optimized agents or experiences while reusing common knowledge, tools, connectors, and flows.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-overview">Use interactive voice response in Copilot Studio agents</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration">Configure basic voice agents</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-get-started">Integrate a voice-enabled agent with Dynamics 365 Contact Center</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-connectors">Use connectors in Copilot Studio agents</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels">Publish and deploy an agent</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams">Connect an agent to Teams and Microsoft 365</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Selecting a Copilot Solution for First Drafts of Policy Documents</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">An organization needs to create an initial draft of a policy document based on instructions, existing organizational files, or reference material.</p>
+    <p>The solution should:</p>
+    <ul class="outline-list">
+      <li>Generate structured long-form text</li>
+      <li>Work in a familiar document-authoring environment</li>
+      <li>Use existing files as grounding material when appropriate</li>
+      <li>Support human review, editing, formatting, and approval</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Microsoft 365 Copilot in Word</h4>
+        <p><strong>Microsoft 365 Copilot in Word</strong> is best suited for generating first drafts of policy documents.</p>
+        <p>Copilot in Word can create new content from a prompt and can use existing documents as reference sources. The user can then review, revise, format, and collaborate on the draft directly in Word.</p>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Microsoft 365 Copilot in Word is preferred because it:</p>
+        <ul class="outline-list">
+          <li>Is designed for drafting and refining long-form documents</li>
+          <li>Works directly within Microsoft Word</li>
+          <li>Can reference organizational files available through Microsoft 365</li>
+          <li>Supports rewriting, expansion, summarization, and tone adjustment</li>
+          <li>Fits existing review and collaboration workflows</li>
+          <li>Keeps a human author responsible for validating and approving the final policy</li>
+        </ul>
+        <p>A suitable workflow is:</p>
+        <ol class="numbered-outline">
+          <li>Provide the policy purpose, audience, scope, and required sections.</li>
+          <li>Reference approved policies, standards, or templates.</li>
+          <li>Ask Copilot in Word to generate the first draft.</li>
+          <li>Review the draft with legal, compliance, security, and business owners.</li>
+          <li>Revise and approve the policy through the organization's normal governance process.</li>
+        </ol>
+        <p>Copilot should be treated as a drafting assistant, not as the final authority on legal or organizational policy.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Microsoft 365 Copilot Chat</h4>
+        <p>Microsoft 365 Copilot Chat can generate an outline or initial policy text in a conversational interface.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It may be useful when:</p>
+        <ul class="outline-list">
+          <li>The user is brainstorming policy content</li>
+          <li>The document structure has not yet been decided</li>
+          <li>The user wants to compare several approaches before creating the Word document</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>The output may require additional transfer and formatting in Word.</li>
+          <li>The workflow is less document-centric than drafting directly in Word.</li>
+          <li>Users must still verify that referenced information is authoritative and current.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Build a Policy-Drafting Agent with Microsoft Copilot Studio</h4>
+        <p>A specialized agent can be built to retrieve approved policy sources, apply organizational templates, and guide users through a standardized drafting process.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This approach may be appropriate when:</p>
+        <ul class="outline-list">
+          <li>Policy drafting is a frequent, repeatable enterprise process</li>
+          <li>The organization requires consistent templates and mandatory sections</li>
+          <li>Drafts must use controlled knowledge sources</li>
+          <li>The workflow requires approvals, integrations, or automated document generation</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It requires design, implementation, testing, security, and maintenance.</li>
+          <li>Governance is needed for the agent's knowledge sources and actions.</li>
+          <li>It is excessive for occasional, straightforward document drafting.</li>
+          <li>Microsoft 365 Copilot in Word remains simpler for individual first drafts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Copilot solution</th><th>Best suited for</th></tr></thead>
+      <tbody>
+        <tr><td>Microsoft 365 Copilot in Word</td><td>Drafting and refining policy documents directly in Word</td></tr>
+        <tr><td>Microsoft 365 Copilot Chat</td><td>Brainstorming, outlining, and exploratory drafting</td></tr>
+        <tr><td>Microsoft Copilot Studio</td><td>Building a repeatable, governed policy-drafting workflow or custom agent</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Microsoft 365 Copilot in Word is best suited for generating first drafts of policy documents because it is designed for long-form document creation, can use existing files as references, and supports direct human review and refinement in Word.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://support.microsoft.com/en-us/word/copilot/draft-and-add-content-with-copilot-in-word">Draft and add content with Copilot in Word</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview">Microsoft 365 Copilot overview</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Requirements for Accessing Microsoft 365 Copilot Features</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">An organization wants users to access Microsoft 365 Copilot capabilities in applications such as Word, Excel, PowerPoint, Outlook, and Teams.</p>
+    <p>The organization needs to understand the licensing and technical prerequisites required before Copilot features become available to each user.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Assign an Eligible Microsoft 365 Base License and a Microsoft 365 Copilot License</h4>
+        <p>For full Microsoft 365 Copilot features, each user generally needs:</p>
+        <ul class="outline-list">
+          <li>An <strong>eligible Microsoft 365 or Office 365 base subscription</strong></li>
+          <li>A <strong>Microsoft 365 Copilot add-on license assigned to that user</strong></li>
+          <li>A <strong>Microsoft Entra ID account</strong></li>
+          <li>Supported Microsoft 365 applications, services, update channels, and network access</li>
+        </ul>
+        <p>For applicable Outlook scenarios, Microsoft also requires a supported primary mailbox hosted in Exchange Online.</p>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Microsoft 365 Copilot is licensed per user. Purchasing licenses at the tenant level is not sufficient by itself; administrators must assign the required licenses to the specific users who need access.</p>
+        <p>The eligible base subscription provides the underlying Microsoft 365 services, while the Copilot license enables the full Copilot experience across supported Microsoft 365 applications.</p>
+        <p>Administrators should also verify that:</p>
+        <ul class="outline-list">
+          <li>The user's Microsoft 365 Apps are on a supported update channel</li>
+          <li>Required connected experiences are enabled</li>
+          <li>Network endpoints are not blocked</li>
+          <li>The user has access to the Microsoft 365 data that Copilot is expected to use</li>
+          <li>Existing permissions and information-protection policies are correctly configured</li>
+        </ul>
+        <p>Copilot respects the user's existing Microsoft 365 permissions. A Copilot license does not grant the user access to documents, email, sites, or other information that the user could not already access.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Microsoft 365 Copilot Chat with an Eligible Base License</h4>
+        <p>Users with an eligible Microsoft 365 subscription may have access to Microsoft 365 Copilot Chat without the full Microsoft 365 Copilot add-on.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Copilot Chat can be appropriate when users need:</p>
+        <ul class="outline-list">
+          <li>Secure, work-oriented AI chat</li>
+          <li>Web-grounded assistance</li>
+          <li>Limited agent access</li>
+          <li>A lower-cost entry point before assigning full Copilot licenses</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It does not provide the same complete, work-grounded Copilot experience across Word, Excel, PowerPoint, Outlook, and Teams.</li>
+          <li>Access to organizational data and agents can depend on licensing and consumption configuration.</li>
+          <li>Some advanced capabilities require the Microsoft 365 Copilot add-on.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Enable Usage-Based Agent Access</h4>
+        <p>An organization may configure metered or pay-as-you-go access for certain agents without assigning every user a full Microsoft 365 Copilot license.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This may be suitable when:</p>
+        <ul class="outline-list">
+          <li>Users need access to a specific agent rather than the full Copilot suite</li>
+          <li>Usage is limited or unpredictable</li>
+          <li>The organization wants to pilot agent scenarios before broader licensing</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Capabilities may be more limited than those available to fully licensed users.</li>
+          <li>Usage costs must be monitored.</li>
+          <li>Tenant billing, security, and governance configuration are required.</li>
+          <li>It does not replace a full Copilot license for users who need Copilot throughout Microsoft 365 applications.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Requirement or option</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Eligible Microsoft 365 or Office 365 base license</td><td>Provides the underlying Microsoft 365 services</td></tr>
+        <tr><td>Microsoft 365 Copilot add-on assigned to the user</td><td>Enables full Copilot capabilities across supported Microsoft 365 applications</td></tr>
+        <tr><td>Microsoft Entra ID account</td><td>Provides organizational identity and access control</td></tr>
+        <tr><td>Supported apps, mailbox, update channel, and network</td><td>Satisfies technical deployment requirements</td></tr>
+        <tr><td>Copilot Chat access</td><td>Provides a more limited entry point with eligible base licenses</td></tr>
+        <tr><td>Usage-based agent access</td><td>Supports selected metered agent scenarios without full licenses for every user</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>To access full Microsoft 365 Copilot features, a user must have an eligible Microsoft 365 or Office 365 base license and be assigned a Microsoft 365 Copilot add-on license. The organization must also meet identity, application, mailbox, and network prerequisites.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing">Microsoft 365 Copilot licensing options</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-minimum-requirements">Minimum requirements for Microsoft 365 Copilot</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements">App and network requirements for Microsoft 365 Copilot</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-chat-requirements">Minimum requirements for Microsoft 365 Copilot Chat</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Distinguishing Microsoft Copilot Products and Extensibility Capabilities</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">An executive claims that Microsoft 365 Copilot, Microsoft Copilot, Microsoft Copilot Studio, and Microsoft Graph are interchangeable because they all contribute to AI-enabled work.</p>
+    <p>The executive therefore proposes that exam preparation should focus only on generic prompting rather than understanding which Microsoft capability fits each business process or extensibility scenario.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Treat the Statement as False and Learn the Distinct Role of Each Capability</h4>
+        <p>The statement is <strong>false</strong>.</p>
+        <p>These capabilities are related, but they are not interchangeable products. They serve different roles in the Microsoft AI ecosystem, and selecting the appropriate capability is a core business and architecture decision.</p>
+
+        <p><strong>Microsoft 365 Copilot</strong></p>
+        <p>Microsoft 365 Copilot is an AI-powered productivity solution integrated with Microsoft 365 experiences such as Word, Excel, PowerPoint, Outlook, Teams, and Copilot Chat.</p>
+        <p>Use it when the primary need is to:</p>
+        <ul class="outline-list">
+          <li>Improve employee productivity</li>
+          <li>Draft, summarize, analyze, and transform work content</li>
+          <li>Use permitted organizational context from Microsoft 365</li>
+          <li>Provide ready-to-use AI capabilities within everyday work applications</li>
+        </ul>
+
+        <p><strong>Microsoft Copilot / Microsoft 365 Copilot Chat</strong></p>
+        <p>The term <strong>Microsoft Copilot</strong> can refer broadly to Microsoft's family of Copilot experiences. In current workplace guidance, Microsoft 365 Copilot Chat is the secure chat-centered experience for asking questions, analyzing content, performing research, and accessing agents.</p>
+        <p>Use it when the primary need is:</p>
+        <ul class="outline-list">
+          <li>Conversational AI assistance</li>
+          <li>Web-grounded or work-grounded chat, depending on licensing and context</li>
+          <li>Entry-point access to agents</li>
+          <li>General research and productivity support</li>
+        </ul>
+        <p>Because product naming has evolved, exam preparation should pay attention to the specific product name and scenario rather than assuming every reference to "Copilot" means the same capability.</p>
+
+        <p><strong>Microsoft Copilot Studio</strong></p>
+        <p>Microsoft Copilot Studio is a graphical, low-code platform for building, extending, deploying, and governing agents and agent flows.</p>
+        <p>Use it when the organization needs to:</p>
+        <ul class="outline-list">
+          <li>Build a custom business agent</li>
+          <li>Ground an agent with enterprise knowledge</li>
+          <li>Connect to APIs, connectors, and business systems</li>
+          <li>Automate business actions and workflows</li>
+          <li>Extend Microsoft 365 Copilot with specialized capabilities</li>
+        </ul>
+
+        <p><strong>Microsoft Graph</strong></p>
+        <p>Microsoft Graph is a developer platform and API surface for accessing Microsoft 365 data and relationships, subject to identity, permissions, and security controls.</p>
+        <p>It is not an end-user Copilot product.</p>
+        <p>Use it when an application or agent needs programmatic access to resources such as:</p>
+        <ul class="outline-list">
+          <li>Users and groups</li>
+          <li>Mail, calendars, and meetings</li>
+          <li>Files and SharePoint content</li>
+          <li>Teams and chats</li>
+          <li>Organizational relationships and activity context</li>
+        </ul>
+        <p>Microsoft 365 Copilot itself uses Microsoft Graph to access organizational context that the user is permitted to access.</p>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Understanding these distinctions helps teams:</p>
+        <ul class="outline-list">
+          <li>Select the correct product for the business requirement</li>
+          <li>Avoid unnecessary custom development</li>
+          <li>Recognize when extensibility or integration is required</li>
+          <li>Understand licensing and governance implications</li>
+          <li>Match SaaS productivity, low-code agents, and API-based development to the appropriate scenario</li>
+          <li>Answer scenario-based exam questions correctly</li>
+        </ul>
+        <p>Generic prompting is useful, but it does not replace product and scenario knowledge.</p>
+        <p>A strong exam-preparation approach should cover both:</p>
+        <ol class="numbered-outline">
+          <li>How to communicate effectively with generative AI</li>
+          <li>How to choose the appropriate Microsoft capability for a business process, data-access pattern, or extensibility requirement</li>
+        </ol>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Focus Only on Prompt Engineering</h4>
+        <p>The learner can study prompt structure, context, constraints, examples, and output formatting.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Prompt engineering is useful across many generative AI tools and can improve output quality.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It does not explain which Microsoft product should be selected.</li>
+          <li>It does not cover licensing, data boundaries, extensibility, or governance.</li>
+          <li>It is insufficient for scenario-based questions about build, buy, extend, integrate, or automate decisions.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Memorize Product Definitions Without Business Scenarios</h4>
+        <p>The learner can memorize a short definition for each product.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This may help with direct recall questions.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Scenario questions require understanding when and why to use each capability.</li>
+          <li>Product boundaries can overlap.</li>
+          <li>Naming and features evolve, so conceptual role and decision criteria are more durable than isolated definitions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Capability</th><th>Primary role</th></tr></thead>
+      <tbody>
+        <tr><td>Microsoft 365 Copilot</td><td>Ready-to-use AI productivity within Microsoft 365 work experiences</td></tr>
+        <tr><td>Microsoft 365 Copilot Chat</td><td>Secure conversational AI and agent access</td></tr>
+        <tr><td>Microsoft Copilot Studio</td><td>Low-code creation, extension, automation, and governance of agents</td></tr>
+        <tr><td>Microsoft Graph</td><td>API and data-access layer for Microsoft 365 resources and relationships</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The executive's statement is false. Microsoft 365 Copilot, Copilot Chat, Copilot Studio, and Microsoft Graph are complementary but distinct capabilities. Exam preparation should include both prompt skills and the ability to match each Microsoft capability to the correct business process, data-access requirement, and extensibility scenario.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Distinguishing the Microsoft Copilot Surfaces: M365 Copilot, Copilot Chat, Copilot Pro, Copilot in Windows, and GitHub Copilot</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">An organization has developers working in GitHub and Visual Studio, knowledge workers across Microsoft 365, and executives who mostly use a browser and mobile device. The CIO proposes "one Copilot for everyone" to simplify licensing and training.</p>
+    <p>A related, narrower confusion shows up inside Microsoft 365 itself: a program manager assumes that once people learn to write good prompts in one app, those prompts will behave identically in every other app — and cannot explain why colleagues report that "Copilot acts differently" in Word versus Excel versus Outlook versus Teams. People are also seeing several different things labeled "Copilot" — a taskbar icon in Windows, an app on their phone, a paid personal subscription a colleague mentions, and a chat panel inside GitHub — and assume these are all the same product with different skins.</p>
+    <p>The organization needs a clear, correct picture of how many distinct "Copilot" surfaces actually exist, who each one is for, and why in-app behavior legitimately differs even within Microsoft 365.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Recognize That "Copilot" Names a Family of Distinct, Separately Licensed and Governed Experiences, Not One Product</h4>
+        <p>Microsoft's Copilot portfolio spans several genuinely different products, each scoped to a different persona and grounded in different data:</p>
+        <ul class="outline-list">
+          <li><strong>Microsoft 365 Copilot (in-app):</strong> Copilot embedded inside Word, Excel, PowerPoint, Outlook, and Teams. Requires an eligible Microsoft 365 base license plus the Microsoft 365 Copilot add-on, and is governed under Microsoft 365's enterprise data protection, tenant isolation, and compliance boundary.</li>
+          <li><strong>Microsoft 365 Copilot Chat:</strong> the cross-device conversational assistant (web, desktop, iOS, Android) described elsewhere in this document — broadly available with a qualifying work/school account, with a fuller work-grounded experience for users holding the Copilot add-on.</li>
+          <li><strong>Copilot Pro:</strong> a <strong>paid consumer subscription</strong> tied to a <strong>personal</strong> Microsoft account. It gives an individual priority access and Copilot features inside personal Office apps and other consumer experiences. It is not an enterprise license, is not assigned or governed through Microsoft Entra ID or the Microsoft 365 admin center, and does not carry Microsoft 365 Copilot's enterprise-grade contractual, tenant-isolation, or compliance commitments. It should not be used as a substitute for a proper Microsoft 365 Copilot or Copilot Chat license when the work involves organizational data.</li>
+          <li><strong>Copilot in Windows:</strong> an OS-level assistant pinned to the Windows taskbar, providing general assistance, some system actions (opening apps, changing settings), and web-grounded question answering. It is a Windows feature, not a Microsoft 365 application experience — its scope, sign-in behavior, and management (via Windows/Intune policy) are distinct from Microsoft 365 Copilot's application-level licensing and Microsoft Graph grounding.</li>
+          <li><strong>GitHub Copilot:</strong> a separate, developer-focused AI pair-programmer integrated into IDEs (Visual Studio, VS Code, JetBrains) and GitHub itself, used for code completion, in-editor chat, and pull-request summaries. It is grounded in source code and repository context — not Microsoft 365 content — and is licensed, administered, and billed entirely separately from Microsoft 365 Copilot, through GitHub/organization settings rather than the Microsoft 365 admin center.</li>
+          <li><strong>Microsoft Copilot Studio:</strong> the low-code platform for building custom agents (covered earlier in this Part) — a development platform, not an end-user chat surface.</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>"One Copilot for everyone" does not match how Microsoft has actually designed and licensed these products, for a concrete reason in each case:</p>
+        <ul class="outline-list">
+          <li>A developer's needs (code completion, repository-grounded chat, PR summarization) have nothing to do with Word/Excel/Outlook grounding — GitHub Copilot exists precisely because a coding assistant needs different grounding, different IDE integration, and a different distribution channel (GitHub/IDE marketplaces) than an M365 productivity assistant.</li>
+          <li>A personal Copilot Pro subscription is billed to and controlled by an individual, not the organization — it sits outside Entra ID, Conditional Access, DLP, and the Microsoft 365 compliance boundary, which is exactly the wrong place for business data to end up (the same risk pattern described in the Enterprise Data Protection topic in Part 4, where an employee reaches for a consumer-facing tool because it's immediately available with no IT provisioning).</li>
+          <li>Copilot in Windows operates at the operating-system layer, available regardless of which (if any) Microsoft 365 apps are installed — it is scoped and administered differently from an in-app Microsoft 365 Copilot license.</li>
+          <li>Even within Microsoft 365 Copilot itself, <strong>each application's Copilot is grounded in and scoped to that application's own data model and available actions</strong>, which is why the same prompt does not behave identically everywhere:
+            <ul class="nested-list">
+              <li><strong>Copilot in Word</strong> is tuned for long-form document drafting, rewriting, and summarizing, grounded in the current document and referenced files.</li>
+              <li><strong>Copilot in Excel</strong> is grounded in tabular data and formulas — it can generate and explain formulas, identify trends, and create visuals from a specific range, tasks that have no equivalent in Word.</li>
+              <li><strong>Copilot in PowerPoint</strong> converts source documents or prompts into slides, speaker notes, and design suggestions.</li>
+              <li><strong>Copilot in Outlook</strong> drafts, summarizes, and triages email threads, grounded in the current message/thread and calendar context.</li>
+              <li><strong>Copilot in Teams</strong> summarizes meetings and chats and can surface action items from a specific conversation.</li>
+            </ul>
+            A prompt like "summarize this" therefore succeeds differently in each app because each app supplies different grounding context and exposes different underlying actions to the model — the apps are not simply different skins over one identical assistant.
+          </li>
+        </ul>
+        <p>This means a rollout plan should treat "Copilot" as a portfolio decision — matching each persona (developer, knowledge worker, executive/mobile user, casual OS-level user) to the specific surface built for them — rather than a single licensing and training exercise.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Standardize on a Single Copilot License for Every Persona</h4>
+        <p>The organization could attempt to give every user (developers included) the same Microsoft 365 Copilot license and train everyone on identical prompts.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It appears to simplify procurement, training materials, and support.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Developers get no code-completion or repository-grounded capability from a Microsoft 365 Copilot license — they need GitHub Copilot specifically.</li>
+          <li>Training materials that assume identical in-app behavior will be wrong the moment users move from Word to Excel to Teams.</li>
+          <li>It ignores that Copilot Pro, Copilot in Windows, and GitHub Copilot are licensed, billed, and administered through entirely different systems than Microsoft 365 Copilot, so "one license" cannot actually cover them.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Allow Individuals to Self-Purchase Copilot Pro for Work Use</h4>
+        <p>Employees who want Copilot sooner than IT can provision it could be allowed to expense or use a personal Copilot Pro subscription.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It can appear to close a short-term gap while enterprise licensing is being rolled out.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Work content processed under a personal account sits outside Entra ID, Conditional Access, DLP, and Purview visibility.</li>
+          <li>It creates exactly the "shadow AI" and inconsistent data-protection risk described in the enterprise data protection and integrated-governance topics elsewhere in this document.</li>
+          <li>It does not scale into a supportable, audited enterprise deployment.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Copilot surface</th><th>Primary user</th><th>Grounded in</th><th>Licensed / administered through</th></tr></thead>
+      <tbody>
+        <tr><td>Microsoft 365 Copilot (in-app)</td><td>Knowledge workers in Word/Excel/PowerPoint/Outlook/Teams</td><td>The current document, sheet, thread, meeting, or file — plus permitted Microsoft 365 content via Microsoft Graph</td><td>Microsoft 365 admin center / Entra ID, per-user add-on license</td></tr>
+        <tr><td>Microsoft 365 Copilot Chat</td><td>Any user needing cross-device conversational AI</td><td>Web plus, with a Copilot license, permitted work content</td><td>Microsoft 365 admin center / Entra ID</td></tr>
+        <tr><td>Copilot Pro</td><td>Individual consumers on a personal Microsoft account</td><td>Personal Office apps and consumer context</td><td>Individual/personal subscription — not enterprise-managed</td></tr>
+        <tr><td>Copilot in Windows</td><td>Any Windows user, at the OS level</td><td>General assistance and web content; some system actions</td><td>Windows/Intune policy — separate from Microsoft 365 licensing</td></tr>
+        <tr><td>GitHub Copilot</td><td>Developers in IDEs and GitHub</td><td>Source code and repository context</td><td>GitHub/organization settings — separate from Microsoft 365</td></tr>
+        <tr><td>Microsoft Copilot Studio</td><td>Makers building custom agents</td><td>Whatever knowledge sources and connectors the agent is configured with</td><td>Power Platform / Copilot Studio admin settings</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>"Copilot" is a family of distinct products, not one assistant with different skins: Microsoft 365 Copilot, Copilot Chat, Copilot Pro, Copilot in Windows, and GitHub Copilot each target a different persona, ground themselves in different data, and are licensed and administered through different systems. Even within Microsoft 365 Copilot, each application's Copilot is grounded in that app's own data model and actions, which is why identical prompts do not behave identically across Word, Excel, PowerPoint, Outlook, and Teams. A rollout plan should map each persona to the surface actually built for it rather than assume "one Copilot for everyone."</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-app-overview">Microsoft 365 Copilot app overview for IT administrators</a></li>
+      <li><a href="https://support.microsoft.com/en-us/copilot-pro">What is Copilot Pro?</a></li>
+      <li><a href="https://support.microsoft.com/en-us/windows/welcome-to-copilot-in-windows-675708af-8a89-4a0c-9d3b-6da1c1e14f18">Copilot in Windows overview</a></li>
+      <li><a href="https://docs.github.com/en/copilot/about-github-copilot">About GitHub Copilot</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Selecting a Copilot Experience for Executive Market Research</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">A strategy team needs to create a long-form executive briefing about a new market segment.</p>
+    <p>The briefing must:</p>
+    <ul class="outline-list">
+      <li>Combine analyst information from the web</li>
+      <li>Use internal slide decks and meeting notes</li>
+      <li>Produce a structured, shareable report</li>
+      <li>Include sources or citations</li>
+      <li>Support content that can be transferred into PowerPoint</li>
+      <li>Avoid unnecessary code execution or deep statistical modeling</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Start with Researcher in Microsoft 365 Copilot</h4>
+        <p>The team should rely first on <strong>Researcher in Microsoft 365 Copilot</strong>.</p>
+        <p>Researcher is designed for complex, multistep research that combines information from:</p>
+        <ul class="outline-list">
+          <li>The web</li>
+          <li>Files and documents</li>
+          <li>Email</li>
+          <li>Meetings</li>
+          <li>Chats</li>
+          <li>Other work content the user is permitted to access</li>
+        </ul>
+        <p>It produces structured, source-cited reports suitable for review and executive communication.</p>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Researcher is the strongest fit because the requirement is primarily:</p>
+        <ul class="outline-list">
+          <li>Broad, defensible research</li>
+          <li>Synthesis across internal and external sources</li>
+          <li>Long-form report generation</li>
+          <li>Clear structure and source attribution</li>
+        </ul>
+        <p>It is specifically intended for deeper research tasks that require more than a quick answer or short summary.</p>
+        <p>A recommended workflow is:</p>
+        <ol class="numbered-outline">
+          <li>Ask Researcher to investigate the market segment.</li>
+          <li>Identify the relevant internal decks and meeting notes.</li>
+          <li>Specify the executive audience, report structure, and decision questions.</li>
+          <li>Review the cited sources and challenge unsupported conclusions.</li>
+          <li>Transfer the approved report or outline into PowerPoint.</li>
+          <li>Use Copilot in PowerPoint to convert the material into an executive presentation.</li>
+        </ol>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Microsoft 365 Copilot Chat</h4>
+        <p>Copilot Chat can answer questions, summarize files, brainstorm ideas, and support conversational research.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It is useful when the team needs:</p>
+        <ul class="outline-list">
+          <li>A quick answer</li>
+          <li>A short summary</li>
+          <li>Early brainstorming</li>
+          <li>Iterative discussion about a limited set of sources</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is less suited than Researcher for comprehensive, multistep research.</li>
+          <li>The resulting response may be less complete or less report-oriented.</li>
+          <li>The team may need to coordinate and structure the research manually.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Analyst in Microsoft 365 Copilot</h4>
+        <p>Analyst is intended for deeper data analysis, including working with structured data, calculations, and analytical models.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It is appropriate when the task requires:</p>
+        <ul class="outline-list">
+          <li>Statistical analysis</li>
+          <li>Spreadsheet or tabular data exploration</li>
+          <li>Quantitative comparisons</li>
+          <li>Calculations, trends, or forecasting</li>
+          <li>Code-assisted analysis</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is unnecessary when the primary task is qualitative research and synthesis.</li>
+          <li>The scenario does not require deep statistical modeling or code.</li>
+          <li>Researcher is a better initial experience for the briefing described.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Start Directly in Copilot for PowerPoint</h4>
+        <p>Copilot in PowerPoint can create or revise a presentation from a prompt or source document.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It is useful after the research and narrative have been established.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>PowerPoint Copilot is primarily a presentation-authoring experience.</li>
+          <li>It should not be the first choice for deep, multi-source research.</li>
+          <li>Starting with slides too early can produce a polished presentation without sufficiently defensible evidence.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Copilot experience</th><th>Best suited for</th></tr></thead>
+      <tbody>
+        <tr><td>Researcher</td><td>Deep, multistep research across web and work sources with a structured, cited report</td></tr>
+        <tr><td>Copilot Chat</td><td>Quick answers, summaries, brainstorming, and conversational tasks</td></tr>
+        <tr><td>Analyst</td><td>Quantitative analysis, calculations, structured data, and statistical investigation</td></tr>
+        <tr><td>Copilot in PowerPoint</td><td>Turning an established narrative or source document into presentation slides</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The team should start with Researcher in Microsoft 365 Copilot because it is designed to synthesize web and internal work sources into a comprehensive, structured, source-cited report. Copilot in PowerPoint can then turn the validated briefing into executive slides.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Using Microsoft 365 Copilot Chat as a Unified, Cross-Device Work Assistant</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Organizations want employees to have one consistent, secure AI chat experience across desktop, web, and mobile rather than a patchwork of different tools per device. In practice this raises several related questions:</p>
+    <ul class="outline-list">
+      <li>Is it accurate to say Microsoft 365 Copilot Chat provides a genuinely unified experience across the web and the mobile app?</li>
+      <li>How is Copilot Chat actually different from Microsoft 365 Search, for a user who assumes Copilot Chat is "just another search box"?</li>
+      <li>What can a mobile user do that a desktop user cannot — for example, turning a photographed paper note into usable digital text?</li>
+      <li>Which app should a commercial user sign in to, given that Microsoft also ships a separate consumer-facing Copilot app?</li>
+    </ul>
+    <p>The solution should let users continue conversations across devices, work with permitted Microsoft 365 files, use voice or text away from a desk, capture information from the physical world into digital text, and remain inside the organization's Microsoft 365 identity, security, and compliance boundary.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Microsoft 365 Copilot Chat via the Microsoft 365 Copilot App as the Single, Permission-Aware Assistant Across Surfaces</h4>
+        <p>The best fit for a consistent, cross-device AI assistant is <strong>Microsoft 365 Copilot Chat</strong>, accessed through the <strong>Microsoft 365 Copilot app</strong> (available on web, desktop, iOS, and Android) or embedded directly in Microsoft 365 apps.</p>
+        <p>Microsoft 365 Copilot Chat is a conversational AI assistant, not a search engine. For a user signed in with a Microsoft Entra ID work or school account, it can reason over permitted organizational content — files, email, meetings, chats — together with web information, to:</p>
+        <ul class="outline-list">
+          <li>Answer questions and explain topics</li>
+          <li>Summarize files, meetings, and communications</li>
+          <li>Find and synthesize information across multiple work sources</li>
+          <li>Draft emails, briefs, agendas, and presentation content</li>
+          <li>Brainstorm and iteratively refine content</li>
+          <li>Save reusable output as a Copilot Page</li>
+        </ul>
+        <p>Because the same app and identity are used everywhere, the experience genuinely travels with the user: a conversation started on a laptop can be picked up on a phone, files remain scoped to what the user could already access, and the organization's security and compliance controls continue to apply regardless of device.</p>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <ul class="outline-list">
+          <li><strong>Versus Search:</strong> Search only locates existing items. Copilot Chat goes further by synthesizing, comparing, and generating new work product from the same permitted content, and it keeps conversational context for follow-up questions — that is the concrete answer for a user who assumes Copilot Chat is "just another search box."</li>
+          <li><strong>Versus fragmenting the experience by device:</strong> a single app and identity across web, desktop, iOS, and Android means users learn one interface, IT manages one access/security surface, and conversation history genuinely carries across devices — instead of employees having to reconcile two disconnected tools.</li>
+          <li><strong>Permission-aware by design:</strong> a Copilot license or Copilot Chat access never grants a user access to content they could not already open themselves.</li>
+          <li><strong>Scales by license tier without fragmenting the app:</strong> users without a paid Microsoft 365 Copilot add-on still get a secure, web-grounded chat experience through the same app and account; users with the add-on additionally get the work-grounded experience (reasoning over their own files, email, meetings, and chats).</li>
+        </ul>
+
+        <p><strong>Distinguishing the Commercial App from the Consumer App</strong></p>
+        <p>Microsoft ships two different apps that are easy to confuse:</p>
+        <ul class="outline-list">
+          <li><strong>Microsoft 365 Copilot app</strong> — the commercial/education productivity app, used with a Microsoft Entra ID work or school account. This is the app that applies the organization's security, compliance, and data-handling controls.</li>
+          <li><strong>Microsoft Copilot app</strong> — a separate, consumer-oriented app for personal Microsoft accounts, without the organization's commercial data protection.</li>
+        </ul>
+        <p>This distinction matters beyond naming: if an employee signs in to the consumer app with work content, or defaults to it out of habit, that conversation falls outside the organization's compliance boundary. Commercial users should be directed specifically to the Microsoft 365 Copilot app.</p>
+
+        <p><strong>Capturing Physical Notes on Mobile with Scan Text</strong></p>
+        <p>Field or on-site workers can turn paper notes, checklists, or whiteboards into usable digital text directly from the Microsoft 365 Copilot mobile app, using the camera-based <strong>Scan Text</strong> action:</p>
+        <ol class="numbered-outline">
+          <li>Open the Microsoft 365 Copilot mobile app.</li>
+          <li>Select the create/add action, then open <strong>Documents</strong>.</li>
+          <li>Select <strong>Scan Text</strong>.</li>
+          <li>Photograph the paper notes, checklist, or whiteboard.</li>
+          <li>Review and save the converted (OCR'd) text.</li>
+          <li>Use the resulting text as context in Copilot Chat to summarize it, draft an email, or create work-item content.</li>
+        </ol>
+        <p>This closes the gap between paper-based fieldwork and Microsoft 365 content: it avoids manual retyping, and the extracted text becomes immediately reusable in Copilot and other Microsoft 365 applications.</p>
+
+        <p><strong>Important Qualification: Exact Capabilities Depend on Licensing, Permissions, and Platform</strong></p>
+        <ul class="outline-list">
+          <li>Web-grounded Copilot Chat is available broadly to users with a qualifying Microsoft Entra ID work or school account in an eligible tenant, without requiring the paid Microsoft 365 Copilot add-on.</li>
+          <li>The fuller, work-grounded experience — reasoning over the user's own files, email, meetings, and chats — requires the user to be assigned a Microsoft 365 Copilot add-on license.</li>
+          <li>Administrator configuration, the user's existing permissions to work content, mobile OS/app version, regional or organizational rollout, and per-feature mobile support can all affect which capabilities (including Scan Text and specific agents) are actually available to a given user.</li>
+          <li>None of this expands what the user could already access — Copilot Chat only reasons over content the signed-in user already has permission to open.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Microsoft 365 Search Instead of Copilot Chat</h4>
+        <p>Microsoft 365 Search is appropriate when the user's actual need is to locate a specific, known item: a file, person, meeting, chat, or recently shared item.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Search returns existing resources; it does not summarize, compare, reason over, or transform them into a new work product.</li>
+          <li>It does not hold conversational, multi-turn context the way Copilot Chat does.</li>
+          <li>For anything beyond "find this item," Copilot Chat is the more capable tool.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Scan to PDF Instead of Scan Text</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Scan to PDF (in the mobile app or OneDrive) is preferable when preserving the original layout matters, multiple pages must be captured together, or the image itself needs to stay available for visual review — for example, an annotated diagram or a multi-page paper form.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>The captured content is less directly editable than the plain text Scan Text produces.</li>
+          <li>Handwriting and low-quality images still limit OCR accuracy if Copilot is asked to read the PDF's contents.</li>
+          <li>Extracted details should be verified before they are used to create operational records.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Upload a Normal Photo Instead of Using Scan Text</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>A standard photo attached directly to Copilot Chat is faster for an informal, one-off question where no dedicated document is needed.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>The image may include glare, distortion, or irrelevant background detail that a scanning mode would crop or clean up.</li>
+          <li>OCR-oriented modes like Scan Text generally produce cleaner, more directly reusable text.</li>
+          <li>Support depends on the specific app, account, and current feature availability.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Build a Custom Agent with Microsoft Copilot Studio</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Appropriate when the assistant must follow organization-specific workflows, ground itself in custom knowledge sources beyond Microsoft 365, call business systems or APIs, or take defined actions — needs that go beyond general knowledge-worker productivity chat.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It requires design, testing, deployment, and ongoing governance.</li>
+          <li>It is unnecessary overhead when the actual need is general-purpose productivity assistance, which Copilot Chat already covers.</li>
+          <li>The organization must still decide how the custom agent is surfaced consistently across devices; it does not automatically inherit the Microsoft 365 Copilot app's cross-device presence.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Separate AI Tools for Desktop and Mobile</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>May be necessary when a specialized field workflow genuinely requires a dedicated mobile application with capabilities the Microsoft 365 Copilot app does not provide.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Users must learn and switch between different interfaces.</li>
+          <li>Conversation and context continuity across devices is lost.</li>
+          <li>Governance, licensing, and support responsibilities roughly double.</li>
+          <li>It is unnecessary friction for general Microsoft 365 knowledge-worker chat, where a single cross-device app already exists.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Microsoft Intune Alone</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Intune matters when the actual requirement is managing and protecting devices and applications across laptops and phones.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Intune is a device/application management tool, not an AI assistant — it does not answer questions, summarize, or draft content.</li>
+          <li>It secures and manages the environment Copilot runs in; it does not replace the productivity experience.</li>
+          <li>It complements the Microsoft 365 Copilot app rather than substituting for it.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Capability / Surface</th><th>Primary role</th></tr></thead>
+      <tbody>
+        <tr><td>Microsoft 365 Copilot app</td><td>Unified, permission-aware Copilot entry point across web, desktop, iOS, and Android</td></tr>
+        <tr><td>Microsoft 365 Copilot Chat</td><td>The conversational AI experience itself — reasons over web (and, with a Copilot license, permitted work content) to answer, summarize, and draft</td></tr>
+        <tr><td>Microsoft 365 Search</td><td>Locates existing, known files, people, meetings, or chats</td></tr>
+        <tr><td>Scan Text (mobile)</td><td>OCR capture that turns photographed notes/checklists into editable text</td></tr>
+        <tr><td>Scan to PDF (mobile)</td><td>Layout-preserving, multi-page capture for visual review</td></tr>
+        <tr><td>Microsoft Copilot app (consumer)</td><td>Separate personal-account app; not the commercial/compliance surface</td></tr>
+        <tr><td>Microsoft Copilot Studio</td><td>Build a custom, governed agent beyond general Copilot Chat capability</td></tr>
+        <tr><td>Microsoft Intune</td><td>Manage and protect devices/apps; not an AI assistant</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Microsoft 365 Copilot Chat, delivered through the Microsoft 365 Copilot app, is a genuinely unified, permission-aware conversational assistant across web, desktop, iOS, and Android — distinct from Search (which only locates items) and from the separate consumer Copilot app. On mobile, its Scan Text action additionally lets field workers turn photographed physical notes into reusable digital text. Exact capabilities still depend on licensing (web-grounded Copilot Chat vs. the fuller work-grounded experience with a Copilot add-on), permissions, admin configuration, and platform rollout.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/stay-productive-on-the-go-with-the-microsoft-365-copilot-mobile-app">Stay productive with the Microsoft 365 Copilot mobile app</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-the-microsoft-365-copilot-mobile-app">Get started with the Microsoft 365 Copilot mobile app</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-the-microsoft-365-copilot-app-for-android">Get started with the Microsoft 365 Copilot app for Android</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/actions-in-the-microsoft-365-copilot-app-for-ios">Actions in the Microsoft 365 Copilot app for iOS</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/copilot/overview">Overview of Microsoft 365 Copilot Chat</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-microsoft-365-copilot-chat">Get started with Microsoft 365 Copilot Chat</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/create-content-using-microsoft-365-copilot-chat">Create content using Microsoft 365 Copilot Chat</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/how-copilot-chat-works-with-and-without-a-microsoft-365-copilot-license">How Copilot Chat works with and without a Microsoft 365 Copilot license</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-app-overview">Microsoft 365 Copilot app overview for IT administrators</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing">Microsoft 365 Copilot licensing options</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Choosing and Sequencing Researcher and Analyst in Microsoft 365 Copilot</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Microsoft 365 Copilot includes two specialized reasoning agents — Researcher and Analyst — and teams need to get two things right:</p>
+    <ol class="numbered-outline">
+      <li>Which agent fits a given task (a common exam trap swaps their roles).</li>
+      <li>How to combine them when a single deliverable needs both a source-backed narrative and a data-driven quantitative analysis — for example, a strategic briefing, an executive board package, or a go/no-go dossier that must synthesize market and competitor evidence and validate it against internal sales, pipeline, or performance datasets.</li>
+    </ol>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Match Each Task to the Right Agent, and Run Researcher Before Analyst When a Deliverable Needs Both</h4>
+        <ul class="outline-list">
+          <li><strong>Researcher</strong> is built for complex, multistep research. It combines the web with permitted work content (files, email, meetings, chats) and produces a structured, source-cited report or narrative. It is the right tool whenever the deliverable is primarily qualitative synthesis across many sources — a market-entry report, a competitor comparison, a regulatory summary, or a go/no-go dossier.</li>
+          <li><strong>Analyst</strong> is built for data-heavy analysis. It works like an on-demand data scientist over structured data (spreadsheets, CSVs, tables), running code-backed (Python) analysis behind the scenes to calculate, detect trends and outliers, compare periods, answer interactive "what-if" questions, and generate charts. It is the right tool whenever the deliverable is primarily quantitative investigation of a dataset the team already has.</li>
+        </ul>
+        <p>A frequent exam trap reverses these roles (claiming Researcher is for tables/code/charts and Analyst is for multi-source cited reports) — the roles are exactly the opposite of that claim.</p>
+        <p>When a single deliverable needs both a narrative and a data-backed validation — such as a strategic briefing or board package — the efficient sequence is:</p>
+        <ol class="numbered-outline">
+          <li><strong>Researcher</strong> establishes the strategic narrative and evidence base, and — critically — identifies <em>which</em> internal metrics and questions matter enough to analyze.</li>
+          <li><strong>Analyst</strong> examines the specific internal datasets Researcher's questions point to, and produces calculations, trend/outlier findings, and a small number of decision-relevant charts.</li>
+          <li>The team combines both outputs (in Word, PowerPoint, or Copilot Chat) into a single package, keeping external evidence/citations, internal calculations/reporting periods, and management interpretation clearly distinguished, and resolving any inconsistencies between the two outputs before executive use.</li>
+        </ol>
+        <p>Example prompts:</p>
+        <blockquote><p>Research the major market, competitor, and regulatory developments affecting our business. Use current web sources and our permitted internal strategy content. Produce a sourced executive briefing, identify the five issues most relevant to the board, and specify which internal performance measures should be analyzed.</p></blockquote>
+        <blockquote><p>Analyze the attached revenue, margin, customer-retention, and regional-performance data in relation to these five issues from the Researcher report. Identify material trends and anomalies, create three board-ready charts, and explain the decision implications.</p></blockquote>
+        <blockquote><p>Create a concise board briefing using the Researcher report and Analyst findings. Include an executive summary, three charts, key risks, recommended decisions, and five speaking points. Preserve the research citations and state the source and reporting period for every internal metric.</p></blockquote>
+        <p><strong>Reverse the sequence — Analyst first, then Researcher — when an unexpected internal result is what triggers the work</strong>, for example a sudden margin decline, a sharp increase in churn, or an unexplained regional variance. In that case Analyst quantifies the internal anomaly first, and Researcher then investigates external (market, competitor, regulatory) explanations for it.</p>
+
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Picking the wrong agent for a single-purpose task wastes the exercise: Researcher is not optimized to run precise calculations, detect statistical outliers, or produce charts from a raw dataset, and Analyst is not built to gather or cite broad qualitative evidence from the web and work content. For a task that only needs one kind of reasoning, using the matching agent directly is faster and more reliable than trying to force the other agent to do it.</p>
+        <p>For a mixed deliverable, sequencing matters because the two agents answer different questions: Researcher answers "what does the broader evidence say, and which internal numbers are worth checking?"; Analyst answers "what do those specific numbers actually show?" Starting with Researcher gives Analyst a target instead of an open-ended, unfocused data exploration; running Analyst first only makes sense when an internal number is already the anomaly that needs an external explanation. Either way, the final synthesis step is what prevents the narrative and the data from remaining two disconnected documents that executives have to reconcile themselves.</p>
+
+        <p><strong>Quick Reference: Which Agent for Which Task</strong></p>
+        <p>Use <strong>Researcher</strong> for:</p>
+        <ul class="outline-list">
+          <li>Preparing a market-entry or go/no-go report</li>
+          <li>Comparing competitors using internal and public information</li>
+          <li>Researching a regulatory topic</li>
+          <li>Synthesizing emails, meetings, files, and web sources into one narrative</li>
+          <li>Producing a detailed report with citations</li>
+        </ul>
+        <p>Use <strong>Analyst</strong> for:</p>
+        <ul class="outline-list">
+          <li>Comparing sales performance across regions</li>
+          <li>Finding unusual values in a large operational dataset (e.g., warehouse picking-error events)</li>
+          <li>Exploring customer churn data</li>
+          <li>Comparing budget vs. actual figures and plotting quarterly trends</li>
+          <li>Letting a frontline manager self-serve trend/outlier analysis without waiting on the BI team</li>
+          <li>Calculating trends, correlations, and creating charts from uploaded tables</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Only One Agent for a Mixed Narrative-and-Data Task</h4>
+        <p>Rely on Researcher or Analyst alone even though the deliverable has both narrative and quantitative components.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <ul class="outline-list">
+          <li>Researcher alone can be sufficient when the "quantitative" component is limited to figures already reported inside documents, and the team does not need to inspect raw or structured datasets directly.</li>
+          <li>Analyst alone can be sufficient when the entire assignment is quantitative, all relevant information already exists in structured datasets, and no external market/competitor research is required.</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Researcher alone is not the strongest tool for detailed dataset exploration: outlier detection, exact calculations, and quarter-over-quarter comparisons are less rigorous than Analyst would produce.</li>
+          <li>Analyst alone will not produce the same depth of cited, multi-source market synthesis that Researcher is designed for — external reports and internal narrative documents still need a research-oriented workflow.</li>
+          <li>Using one agent to approximate the other's job typically means redoing part of the work once the gap is noticed.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Copilot Chat for the Entire Workflow</h4>
+        <p>Copilot Chat can summarize files, answer questions, and support iterative drafting without invoking either specialized agent.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Reasonable for a quick answer, brainstorming, or a small, well-bounded set of sources where neither extended multi-step research nor dataset-level computation is really needed.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Copilot Chat does not run the extended, multi-step research loop Researcher uses to gather and cite many sources, so citation depth and coverage will be thinner.</li>
+          <li>Copilot Chat does not execute code the way Analyst does, so it cannot reliably compute exact statistics, detect outliers in a large dataset, or generate charts from raw data.</li>
+          <li>The user ends up manually coordinating and stitching together work that Researcher and Analyst would otherwise structure automatically.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Copilot agent / sequence</th><th>Primary role</th></tr></thead>
+      <tbody>
+        <tr><td>Researcher</td><td>Multistep research across web and permitted work content; structured, source-cited narrative report</td></tr>
+        <tr><td>Analyst</td><td>Code-backed (Python) analysis of structured/tabular data; trends, outliers, calculations, and charts</td></tr>
+        <tr><td>Copilot Chat</td><td>Quick questions, summaries, and lightweight orchestration; not a substitute for either specialized agent</td></tr>
+        <tr><td>Researcher → Analyst</td><td>Strategic/board briefings: narrative first, then data validation against the questions it raises</td></tr>
+        <tr><td>Analyst → Researcher</td><td>Anomaly-triggered analysis: quantify the internal issue first, then research external explanations</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Researcher performs multi-source, cited research and narrative synthesis; Analyst performs code-backed analysis of structured data, producing calculations, trends, outliers, and charts — a common exam trap reverses these roles. When a deliverable needs both, run Researcher first to frame the questions and Analyst second to answer them with data, then combine the outputs — reversing the order only when an internal data anomaly is what starts the investigation.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/researcher-agent">Get started with Researcher agent in Microsoft 365 Copilot</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-researcher-in-microsoft-365-copilot">Get started with Researcher in Microsoft 365 Copilot</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-analyst-in-microsoft-365-copilot">Get started with Analyst in Microsoft 365 Copilot</a></li>
+    </ul>
+  </section>
+
+  <p class="page-meta">Next: <a href="azure-ai-study-materials-reviewed-part4.html">Part 4 — Responsible &amp; Governed AI →</a></p>
+</article>
+
+<script src="../../pages-scripts.js"></script>
+</body>
+</html>

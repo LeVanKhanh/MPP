@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Quality Audit Summary — Azure AI Study Materials - My Personal Planet</title>
+  <meta name="description" content="Audit summary of duplication, accuracy, and clarity changes made to the Azure AI / Microsoft AI Transformation Leader (AB-731) study materials.">
+  <link rel="stylesheet" href="../../pages-styles.css">
+</head>
+<body>
+<article class="content-article">
+  <header class="article-header">
+    <h1 class="page-title">Data Quality Audit Summary</h1>
+    <p class="page-subtitle">Azure AI Study Materials — Reviewed and Consolidated</p>
+    <p class="page-meta">◀ Back: <a href="azure-ai-study-materials-reviewed-part5.html">Part 5</a> | <a href="azure-ai-study-materials-reviewed-00-toc.html">Table of Contents</a></p>
+  </header>
+
+  <section class="content-section">
+    <p class="intro-text">This document was produced by auditing all 93 original topics in <code>azure-ai-study-materials(98).md</code> against three criteria: <strong>duplication</strong> (merge for unique learning value), <strong>accuracy</strong> (update solutions/alternatives against current Azure/Microsoft product knowledge), and <strong>clarity</strong> (rewrite vague or circular "why" explanations). The original topics were also regrouped from their scattered original order into five themed Parts to make the document usable for sequential study.</p>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">1. Duplication — What Was Merged</h2>
+    <p>93 original topics were consolidated into 73 topics. The following groups were merged because their "Best Practice" guidance was substantially the same, differing only in the wrapper scenario:</p>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Merged topic (in this document)</th>
+          <th>Original topics combined</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Measuring and Proving Generative AI ROI Beyond Proxy Metrics</td>
+          <td>"Measuring Whether AI Delivers Business Value," "Proving ROI for a Generative AI Rollout," "Evaluating Generative AI ROI Beyond Token Cost"</td>
+        </tr>
+        <tr>
+          <td>Understanding Microsoft Foundry's Role as the Unified Enterprise AI Platform</td>
+          <td>"Understanding Microsoft Foundry's Role in Business Transformation," "Primary Role of Microsoft Foundry in an Enterprise AI Strategy," "Understanding Microsoft Foundry as a Unified AI Platform"</td>
+        </tr>
+        <tr>
+          <td>Understanding and Applying Prompt Engineering to Improve Generative AI Answer Quality</td>
+          <td>"Understanding the Purpose of Prompt Engineering in Generative AI," "Improving Generative AI Answer Quality Through Prompt Engineering"</td>
+        </tr>
+        <tr>
+          <td>How RAG Works: Retriever and LLM Roles, and the Key Advantage of Grounding</td>
+          <td>"Key Advantage of Retrieval-Augmented Generation," "Roles of the Retriever and LLM in a RAG Architecture"</td>
+        </tr>
+        <tr>
+          <td>Microsoft Purview DSPM for AI as the Central Data-Security and Compliance Layer for Enterprise AI</td>
+          <td>"Primary Purpose of Microsoft Purview DSPM for AI," "Using Microsoft Purview as the Central Data-Security Layer for Enterprise AI"</td>
+        </tr>
+        <tr>
+          <td>What Microsoft Copilot Studio Is and What It Enables Organizations to Do</td>
+          <td>"What Microsoft Copilot Studio Enables Organizations to Do," "Core Capability of Microsoft Copilot Studio"</td>
+        </tr>
+        <tr>
+          <td>Using Microsoft 365 Copilot Chat as a Unified, Cross-Device Work Assistant</td>
+          <td>"Selecting a Unified Cross-Device AI Assistant for Knowledge Workers," "Validating Microsoft 365 Copilot Chat Across Web and Mobile," "Bringing Physical Notes into Copilot Chat from a Phone," "Primary Capability of Microsoft 365 Copilot Chat in the Browser"</td>
+        </tr>
+        <tr>
+          <td>Choosing and Sequencing Researcher and Analyst in Microsoft 365 Copilot</td>
+          <td>"Combining Researcher and Analyst for Strategic Briefings and Data Analysis," "Choosing Between Researcher and Analyst in Microsoft 365 Copilot," "Sequencing Researcher and Analyst for Executive Board Preparation"</td>
+        </tr>
+        <tr>
+          <td>Understanding the Complete, Iterative Machine Learning Lifecycle</td>
+          <td>"Why the Machine Learning Lifecycle Is Iterative," "First Step in the Machine Learning Solution Lifecycle," "Why the ML Lifecycle Does Not End at Deployment," "Completing the Standard Machine Learning Lifecycle"</td>
+        </tr>
+        <tr>
+          <td>Identifying and Prioritizing Scalable Generative AI Use Cases</td>
+          <td>"Identifying a Scalable Generative AI Use Case in Customer Service," "Identifying a Strong Candidate for Generative AI–Driven Automation," "Where Generative AI Delivers the Greatest Scalable Business Value"</td>
+        </tr>
+        <tr>
+          <td>Collaborating with Business SMEs and Technical Teams Throughout the AI Lifecycle</td>
+          <td>"Including Business Subject Matter Experts in AI Adoption," "Why Technical Teams and Lines of Business Should Collaborate on AI Initiatives"</td>
+        </tr>
+        <tr>
+          <td>Selecting an Azure AI Service for Photo-Based Visual Inspection (Equipment Damage and Retail Shelf Scenarios)</td>
+          <td>"Selecting an Azure Service for Visual Understanding of Equipment Photos," "Selecting an Azure Service for Smart Store Shelf Inspection"</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Everything else was checked for duplication and kept as a separate topic because it taught a genuinely distinct lesson — for example, the three "diagnosing why AI pilots stall" topics (business alignment, trust/psychological safety, data readiness) look similar on the surface but each diagnoses a different root cause, so all three were kept intact rather than force-merged.</p>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">2. Accuracy — Corrections Made</h2>
+    <ul class="outline-list">
+      <li><strong>Diagnosing Unexpected Azure OpenAI Usage Charges:</strong> clarified that request volume multiplies token consumption rather than being billed as a separate per-request fee, and that provisioned throughput is a distinct reserved-capacity billing model rather than a "pay-as-you-go add-on."</li>
+      <li><strong>Microsoft Foundry topics:</strong> added the rebrand timeline (Ignite, November 2025; effective in Product Terms January 2026, "Azure AI Foundry" → "Microsoft Foundry"); corrected the description of Document Intelligence and Content Understanding from "two separate competing Foundry tools" to "Document Intelligence is now one of two model families inside Azure Content Understanding in Foundry Tools"; enriched the Foundry Control Plane description with its actual current capabilities (fleet management, observability, compliance/security posture, cost and token tracking).</li>
+      <li><strong>Azure AI service-selection topics:</strong> standardized product names to their current form throughout (e.g., "Azure Vision" → "Azure AI Vision in Foundry Tools," "Azure Document Intelligence" → "Azure AI Document Intelligence in Foundry Tools"); replaced "Azure Machine Learning" as the only custom-vision fallback with "Azure AI Custom Vision (or Azure Machine Learning for more complex pipelines)," since Custom Vision is the lighter-weight, purpose-built starting point.</li>
+      <li><strong>Text and Document Translation topic:</strong> added that Custom Translator (the legacy custom-model training portal) is on a retirement path for new customers, and that Dynamic Dictionary plus Document Translation glossaries are now the recommended default for terminology control.</li>
+      <li><strong>Secure RAG topic:</strong> confirmed and kept the correct, time-sensitive fact that Azure OpenAI On Your Data is deprecated (retiring October 14, 2026); added that Azure AI Search now natively supports pushing Microsoft Entra ACL/RBAC metadata into the index and validating it at query time, rather than treating this purely as a custom-build pattern.</li>
+      <li><strong>Governance topics:</strong> corrected a claim that grouped "Microsoft Defender for Cloud Apps" and "Microsoft Defender for Cloud" together as serving the same purpose — they are distinct products (CASB app-discovery vs. cloud infrastructure security posture) and are now listed separately.</li>
+      <li><strong>AI adoption/scaling topics:</strong> removed a fabricated citation to a nonexistent "Exam AB-731" and its "study guide" reference link (Microsoft's certification prefixes don't include "AB"), replacing it with a generic reference to Microsoft's AI adoption guidance; standardized the fifth business-value driver's name ("AI Governance and Security") so it is consistent across the two topics that reference the same five-driver taxonomy.</li>
+      <li><strong>Bias/GenAI-quality topic:</strong> replaced a vague reference to "testing outputs for accuracy and safety" with the concrete Azure services that actually implement those checks (Azure AI Content Safety for harm-category screening; Azure AI Foundry's evaluation/groundedness tooling for factual-accuracy checks).</li>
+    </ul>
+    <p>No factual errors were found in the majority of topics (roughly two-thirds); those were left unchanged except for clarity edits.</p>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">3. Clarity — Explanations Rewritten</h2>
+    <p class="intro-text">A recurring pattern across the source document was a "Why select this alternative" or "Why this is the best practice" sentence that merely restated the alternative's name instead of explaining the actual justification (e.g., "This provides a release checkpoint" as the reason for choosing a release checkpoint). These were rewritten throughout to name the concrete mechanism or condition that makes the choice reasonable — for example:</p>
+    <ul class="outline-list">
+      <li>"Improving Azure OpenAI ROI" — removed a leftover fill-in-the-blank artifact ("The blank should be filled with...") that didn't match this topic's actual scenario framing.</li>
+      <li>"Foundational Step for Establishing AI Governance" — explained <em>why</em> forming a committee before defining policy causes delay (no shared criteria for risk tiers yet) instead of just asserting that it might be inconsistent.</li>
+      <li>"Risk-Based AI Governance" — gave concrete motivating conditions (small organization, no risk-classification scheme yet; compliance teams prioritizing legally-mandated use cases) instead of asserting the option "seems simple" or "focuses resources."</li>
+      <li>"Corrective Action for Biased Student-Success Predictions" — expanded thin one-line justifications to match the level of detail in the parallel hiring-bias topic, and added a missing Key Distinction table for structural consistency.</li>
+      <li>Several RAG and prompt-engineering topics — replaced generic trade-off bullets that were copy-pasted near-verbatim across multiple topics with scenario-specific versions (e.g., "no source link back to the specific HR policy document" instead of a generic "does not provide citations").</li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">What to Do With This Document</h2>
+    <div class="summary-box">
+      <p>Use the <strong>Table of Contents</strong> at the top to navigate by theme. Each topic keeps the original format — Problem/Scenario, Best Practice, Alternatives with trade-offs, and a Key Study Point — so it can still be used the same way as the source material, just with less repetition and a few more accurate, current details.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Addendum: Two Topics Added After a Practice-Question Coverage Check</h2>
+    <p class="intro-text">After this document was first produced, it was checked against a separate set of 49 practice scenario questions to see whether the content could answer all of them. Two gaps were found and closed by adding new topics (bringing the total from 73 to 75):</p>
+    <ul class="outline-list">
+      <li><strong>"Distinguishing the Microsoft Copilot Surfaces: M365 Copilot, Copilot Chat, Copilot Pro, Copilot in Windows, and GitHub Copilot"</strong> (Part 3) — the original 73 topics covered Microsoft 365 Copilot, Copilot Chat, Copilot Studio, and Microsoft Graph, but not Copilot Pro (the consumer subscription), Copilot in Windows (the OS-level assistant), GitHub Copilot (the developer tool), or why Copilot behaves differently from one Microsoft 365 app to another.</li>
+      <li><strong>"Understanding How Data Quality Problems Affect Machine Learning Models"</strong> (Part 5) — the original topics covered <em>representativeness</em> and <em>bias</em> in training data, but not the mechanics of label noise, inconsistent units, and non-random missing data as distinct data-quality dimensions with different fixes.</li>
+    </ul>
+    <p>A handful of other practice questions required combining pieces from two or three existing topics rather than pointing to one dedicated topic (e.g., a contract-review automation scenario draws on the RAG/document-extraction topics in Part 1–2 plus the human-oversight principles in Part 4). Those were left as-is, since the underlying concepts are present even though no single topic addresses that exact combination.</p>
+  </section>
+</article>
+
+<script src="../../pages-scripts.js"></script>
+</body>
+</html>

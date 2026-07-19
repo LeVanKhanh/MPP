@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Part 2 — Azure AI Platform &amp; Services — Azure AI Study Materials - My Personal Planet</title>
+  <meta name="description" content="Part 2 of the reviewed and consolidated Azure AI / Microsoft AI Transformation Leader (AB-731) study materials: Azure AI Platform &amp; Services.">
+  <link rel="stylesheet" href="../../pages-styles.css">
+</head>
+<body>
+<article class="content-article">
+  <header class="article-header">
+    <h1 class="page-title">Part 2 — Azure AI Platform &amp; Services</h1>
+    <p class="page-subtitle">Azure AI Study Materials — Reviewed and Consolidated</p>
+    <p class="page-meta">◀ Back: <a href="azure-ai-study-materials-reviewed-part1.html">Part 1</a> | <a href="azure-ai-study-materials-reviewed-00-toc.html">Table of Contents</a></p>
+  </header>
+
+  <section class="content-section">
+    <h2 class="main-point">Understanding Microsoft Foundry's Role as the Unified Enterprise AI Platform</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Fabrikam's CTO states:</p>
+    <p><em>Azure AI Foundry provides a unified environment in Azure to discover models, build and test AI applications and agents, manage their deployments, and monitor them over time, instead of having separate portals and tools for every individual AI service.</em></p>
+    <p>More broadly, an organization wants to move beyond isolated AI experiments and use AI to transform business processes, products, customer experiences, and employee workflows at enterprise scale. It needs to determine whether a single platform can really deliver this, and what such a platform must support:</p>
+    <ul class="outline-list">
+      <li>Discovering, comparing, and deploying multiple AI models</li>
+      <li>Building AI applications and agents</li>
+      <li>Connecting AI to enterprise data and tools</li>
+      <li>Evaluating quality, safety, groundedness, and performance</li>
+      <li>Deploying, scaling, and monitoring solutions in production</li>
+      <li>Applying enterprise security and governance consistently</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Microsoft Foundry as the Unified Platform for Building, Operating, and Governing AI Applications and Agents at Scale</h4>
+        <p>The CTO's statement is <strong>true in substance</strong>. The platform is documented today as <strong>Microsoft Foundry</strong> — renamed from Azure AI Foundry (Microsoft announced the rebrand at Ignite in November 2025, formalized in its Product Terms effective January 2026). It is a unified Azure platform-as-a-service for discovering, building, evaluating, deploying, operating, and governing enterprise AI applications and agents. Microsoft positions Foundry as an <strong>"AI app and agent factory"</strong> — a third pillar of its platform stack alongside Microsoft 365 and Microsoft Fabric.</p>
+        <p>Core capabilities include:</p>
+        <ul class="outline-list">
+          <li><strong>Models:</strong> Discover, compare, and deploy foundation, reasoning, and multimodal models from multiple providers (e.g., OpenAI, Microsoft, Meta, Anthropic, Mistral, DeepSeek) through the model catalog</li>
+          <li><strong>Agents:</strong> Build and operate agents — via Foundry Agent Service — that combine instructions, knowledge, and tools</li>
+          <li><strong>Tools:</strong> Add capabilities such as language, speech, vision, search, and document/content processing</li>
+          <li><strong>Evaluation:</strong> Assess quality, safety, groundedness, and task performance before and after deployment</li>
+          <li><strong>Operations:</strong> Deploy, trace, monitor, and scale AI workloads</li>
+          <li><strong>Governance:</strong> Apply identity, access control, networking, policy, and responsible-AI safeguards, centralized through the Foundry Control Plane</li>
+        </ul>
+        <p>A simplified lifecycle:</p>
+        <pre><code>Discover models
+      ↓
+Build applications and agents
+      ↓
+Test and evaluate
+      ↓
+Deploy
+      ↓
+Trace, monitor, and improve
+      ↓
+Govern at scale</code></pre>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>A model endpoint only exposes a deployed model for inference — it says nothing about how that model was chosen, tested for safety, grounded in enterprise data, monitored, or governed once live. Microsoft Foundry wraps a full development and operational environment around that endpoint, covering the entire path from model selection to production monitoring and governance, so teams do not have to hand-assemble these capabilities from separate services and portals.</p>
+        <p>This is also what ties Foundry to business transformation rather than pure engineering: it gives every team involved — model builders, app/agent developers, platform engineers, and security/compliance — one common environment instead of siloed tools per AI service, which is what lets an organization move from one-off AI pilots to repeatable, secure, scalable delivery.</p>
+        <p>The platform itself does not set business strategy or guarantee transformation. Business value still depends on picking valuable use cases, redesigning processes, driving adoption, and measuring outcomes — Foundry supplies the capability to implement and govern the resulting solutions, not the strategy behind them.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Important Qualification: Foundry Does Not Eliminate Every Specialized Azure Tool or Portal</h4>
+        <p>The phrase "instead of having separate portals and tools for every individual AI service" expresses Foundry's unification goal but should not be read absolutely.</p>
+        <p>Foundry Tools already bring some previously separate services directly into the unified portal — for example, Azure Document Intelligence and Azure Content Understanding are now surfaced as "Foundry Tools" inside Foundry itself, not as separate portals.</p>
+        <p>Other specialized Azure services and management surfaces, however, remain distinct and are typically still configured in their own portals or blades, including:</p>
+        <ul class="outline-list">
+          <li>Azure AI Search (retrieval/grounding at scale)</li>
+          <li>Azure AI Content Safety (standalone content-moderation configuration)</li>
+          <li>Azure Monitor and Application Insights (observability beyond AI workloads)</li>
+          <li>Microsoft Purview (data governance and compliance)</li>
+          <li>Microsoft Entra (identity)</li>
+          <li>Azure networking and resource management</li>
+        </ul>
+        <p>Foundry brings more of these workflows together over time, but as of today it complements rather than completely replaces every specialized Azure management tool.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Microsoft 365 Copilot for Ready-to-Use Employee Productivity</h4>
+        <p>Microsoft 365 Copilot provides AI assistance built into Word, Excel, PowerPoint, Outlook, and Teams.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Choose this when the goal is to improve everyday employee productivity with a managed SaaS solution, and no custom application or agent needs to be built or governed.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Offers far less architectural control than Foundry — you cannot choose the underlying model, customize evaluation, or control deployment topology.</li>
+          <li>Scope is limited to Microsoft 365 productivity scenarios; it cannot be repurposed as a general application platform.</li>
+          <li>Business-specific workflows (e.g., a custom claims-processing agent) still require Foundry or Copilot Studio.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Microsoft Copilot Studio for Low-Code Business Agents</h4>
+        <p>Microsoft Copilot Studio lets business teams create and manage custom agents using low-code tools and connectors, and can extend Microsoft 365 Copilot.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Choose this when business teams — not professional developers — need to assemble agents quickly from existing connectors and workflows, and full custom application development is unnecessary.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Highly customized or performance-sensitive engineering scenarios still require pro-code development in Foundry.</li>
+          <li>Low-code abstractions limit fine-grained control over orchestration, model selection, and architecture.</li>
+          <li>Governance of agent knowledge, permissions, and actions is still required even with low-code tooling — Copilot Studio does not remove that responsibility.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Call Azure OpenAI Endpoints in Foundry Models Directly</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Appropriate for a small application that only needs raw model inference and already has its own engineering, evaluation, deployment, and monitoring framework, so it does not need Foundry's surrounding lifecycle tooling.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>The team must assemble model comparison, agent orchestration, evaluation, tracing, and governance itself.</li>
+          <li>These capabilities end up fragmented across custom code and other tools rather than provided in one place.</li>
+          <li>Loses the integrated, low-friction development experience Foundry provides as the application's scope grows.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Capability / offering</th><th>Primary role</th></tr></thead>
+      <tbody>
+        <tr><td>Model endpoint</td><td>Receives inference requests from an application; no lifecycle tooling included</td></tr>
+        <tr><td>Microsoft Foundry</td><td>Unified platform for discovering, building, evaluating, deploying, monitoring, and governing custom AI applications and agents at enterprise scale</td></tr>
+        <tr><td>Foundry Agent Service</td><td>Managed service for building, deploying, and scaling agents specifically</td></tr>
+        <tr><td>Foundry Control Plane</td><td>Centralized fleet visibility, compliance/security posture, cost and token tracking, and governance across agents, models, and tools (the "Operate" view)</td></tr>
+        <tr><td>Microsoft 365 Copilot</td><td>Ready-to-use SaaS productivity AI inside Microsoft 365 applications</td></tr>
+        <tr><td>Microsoft Copilot Studio</td><td>Low-code platform for creating and extending custom agents</td></tr>
+        <tr><td>Specialized Azure services (AI Search, Content Safety, Monitor, Purview, Entra, networking)</td><td>Provide focused capabilities Foundry integrates with but does not fully replace</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Microsoft Foundry (formerly Azure AI Foundry) is a unified Azure platform-as-a-service — an "AI app and agent factory" — for discovering, building, evaluating, deploying, operating, and governing AI applications and agents at enterprise scale. It is more than a model endpoint and is the technology/operational foundation for business transformation, but it does not set business strategy, and it does not eliminate every specialized Azure tool or portal.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/azure/foundry/what-is-foundry">What is Microsoft Foundry?</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/foundry/">Microsoft Foundry documentation</a></li>
+      <li><a href="https://azure.microsoft.com/en-us/products/ai-foundry">Microsoft Foundry product overview</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/foundry/concepts/observability">Observability in Microsoft Foundry</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/foundry/agents/overview">What is Microsoft Foundry Agent Service?</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/foundry/control-plane/overview">What is Microsoft Foundry Control Plane?</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Selecting a Microsoft Foundry Tool for Document Insight Extraction</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">An organization needs to process documents automatically and convert their contents into structured information that applications and business workflows can use.</p>
+    <p>Common requirements include extracting:</p>
+    <ul class="outline-list">
+      <li>Printed and handwritten text</li>
+      <li>Tables</li>
+      <li>Document layout and structure</li>
+      <li>Key-value pairs</li>
+      <li>Fields from invoices, receipts, identity documents, and forms</li>
+      <li>Custom fields from organization-specific document types</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Document Intelligence Models Within Azure Content Understanding in Foundry Tools</h4>
+        <p><strong>Document Intelligence</strong> is no longer a separate, competing Foundry tool — it is now one of two model families available inside <strong>Azure Content Understanding in Foundry Tools</strong>, alongside Content Understanding's own generative-AI analyzers. Document Intelligence models combine optical character recognition (OCR) with machine-learning-based document processing to extract:</p>
+        <ul class="outline-list">
+          <li>Text</li>
+          <li>Tables</li>
+          <li>Layout</li>
+          <li>Selection marks</li>
+          <li>Key-value pairs</li>
+          <li>Predefined fields (e.g., invoice, receipt, ID-document models)</li>
+          <li>Custom fields (via labeled custom models)</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>For the scenario described — printed/handwritten text, tables, layout, key-value pairs, and fields from standardized documents like invoices, receipts, and IDs — Document Intelligence models are Microsoft's current recommended choice specifically because these are structured, templated documents. Document Intelligence's prebuilt and custom models are purpose-trained for consistent templates, and deliver high accuracy, low latency, and confidence-scored, grounded output — a custom model can be trained with as few as five labeled samples, without needing a full generative pipeline.</p>
+        <p>Typical use cases:</p>
+        <ul class="outline-list">
+          <li>Invoice and receipt processing</li>
+          <li>Form automation</li>
+          <li>Identity-document extraction</li>
+          <li>Contract field extraction (structured contracts)</li>
+          <li>Digitizing records and archives</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Content Understanding Analyzers (Also in Foundry Tools) for Unstructured or Multimodal Content</h4>
+        <p><strong>Content Understanding analyzers</strong> use generative AI/LLMs to analyze documents as well as images, audio, and video, converting unstructured content into structured, searchable output — including fields that must be inferred rather than read directly off the page.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Choose Content Understanding analyzers instead of Document Intelligence models when:</p>
+        <ul class="outline-list">
+          <li>The documents are unstructured or highly variable (e.g., contracts, referral letters, free-form reports) rather than fixed templates</li>
+          <li>Fields must be inferred — for example, deriving a contract end date from a start date and duration, rather than simply read off the page</li>
+          <li>The solution must process multiple modalities (image, audio, video) in addition to documents</li>
+          <li>You want to start with zero-shot extraction — describing fields in plain language — without collecting labeled training data first</li>
+          <li>Output will feed search/RAG, summarization, or agentic workflows</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Generative extraction typically costs more per page and runs at higher latency than a purpose-trained Document Intelligence model on a well-known template.</li>
+          <li>For fixed, high-volume templated forms, a Document Intelligence prebuilt or custom model is usually more accurate and cheaper at scale.</li>
+          <li>Both options now live under the same Content Understanding umbrella in Foundry Tools, so the real decision is which underlying model family fits the document — not which service to provision.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Azure Language in Foundry Tools</h4>
+        <p>Azure Language can analyze text that has already been extracted from a document.</p>
+        <p>It supports capabilities such as:</p>
+        <ul class="outline-list">
+          <li>Named entity recognition</li>
+          <li>Key-phrase extraction</li>
+          <li>Sentiment analysis</li>
+          <li>Summarization</li>
+          <li>Personally identifiable information detection</li>
+          <li>Text classification</li>
+        </ul>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It is useful when the requirement is to interpret the linguistic meaning of extracted text rather than parse the document's visual structure.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It does not replace document OCR or layout extraction.</li>
+          <li>A document-processing model (Document Intelligence or Content Understanding) may first be required to extract the source text.</li>
+          <li>It does not specialize in tables, form fields, or document geometry.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Foundry tool / model family</th><th>Best suited for</th></tr></thead>
+      <tbody>
+        <tr><td>Document Intelligence models (within Content Understanding, Foundry Tools)</td><td>Structured/templated documents: text, tables, layout, key-value pairs, standard and custom fields, with high accuracy and low latency</td></tr>
+        <tr><td>Content Understanding analyzers (Foundry Tools)</td><td>Unstructured, high-variation, or multimodal content requiring semantic inference, zero-shot extraction, or search/RAG-ready output</td></tr>
+        <tr><td>Azure Language (Foundry Tools)</td><td>Analyzing and interpreting text after it has already been extracted</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>In Foundry Tools, Document Intelligence and Content Understanding are no longer two separate competing services — Document Intelligence's models are one of two extraction options inside Azure Content Understanding in Foundry Tools. Use Document Intelligence models for structured, templated documents; use Content Understanding analyzers when documents are unstructured, multimodal, or require inferred fields.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/">Azure Document Intelligence in Foundry Tools</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/overview">Azure Content Understanding in Foundry Tools</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/choosing-right-ai-tool">Choose the right Foundry tool for document processing</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Selecting an Azure AI Service for Automated Invoice Processing</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Contoso's finance team receives thousands of supplier invoices as PDFs and scanned images attached to email.</p>
+    <p>Staff currently rekey invoice headers and line items into the ERP system. Leadership wants to:</p>
+    <ul class="outline-list">
+      <li>Extract structured invoice data automatically</li>
+      <li>Handle digital PDFs and scanned images</li>
+      <li>Capture header fields and line items</li>
+      <li>Send low-confidence or exceptional cases to human reviewers</li>
+      <li>Integrate the resulting structured data into the ERP workflow</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Azure AI Document Intelligence in Foundry Tools with the Prebuilt Invoice Model</h4>
+        <p>The best primary fit is <strong>Azure AI Document Intelligence in Foundry Tools</strong>, using its <strong>prebuilt invoice model</strong>.</p>
+        <p>The invoice model combines OCR and document-understanding capabilities to extract structured fields such as:</p>
+        <ul class="outline-list">
+          <li>Vendor name and address</li>
+          <li>Customer information</li>
+          <li>Invoice ID</li>
+          <li>Invoice date</li>
+          <li>Due date</li>
+          <li>Purchase-order number</li>
+          <li>Subtotal, tax, total, and amount due</li>
+          <li>Line-item descriptions, quantities, unit prices, and amounts</li>
+        </ul>
+        <p>It accepts invoices in formats such as digital PDFs, scanned documents, and images, and returns structured output that can be mapped into an ERP workflow.</p>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Azure AI Document Intelligence is purpose-built for intelligent document processing rather than general text generation.</p>
+        <p>It is the best fit because it:</p>
+        <ul class="outline-list">
+          <li>Supports OCR for scanned invoice images</li>
+          <li>Includes a pretrained model for common invoice schemas</li>
+          <li>Extracts both header fields and line items</li>
+          <li>Returns structured JSON rather than only plain text</li>
+          <li>Provides confidence information that can support exception routing</li>
+          <li>Can be integrated through REST APIs, SDKs, Logic Apps, Power Automate, or custom services</li>
+          <li>Supports custom models when supplier-specific formats require additional extraction</li>
+        </ul>
+        <p>A recommended workflow is:</p>
+        <ol class="numbered-outline">
+          <li>Receive the invoice from email or document storage.</li>
+          <li>Send the PDF or image to the prebuilt invoice model.</li>
+          <li>Validate required fields and confidence scores.</li>
+          <li>Apply business rules such as vendor and purchase-order matching.</li>
+          <li>Route low-confidence, missing, or inconsistent fields to human review.</li>
+          <li>Submit validated structured data to the ERP system.</li>
+          <li>Retain audit records linking the ERP transaction to the original invoice and extraction result.</li>
+        </ol>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Azure AI Content Understanding</h4>
+        <p>Azure AI Content Understanding can analyze documents and other unstructured content and produce customizable structured outputs.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It may be appropriate when:</p>
+        <ul class="outline-list">
+          <li>The workflow includes multiple document types or modalities</li>
+          <li>The organization needs richer semantic interpretation</li>
+          <li>Invoices are part of a broader content-processing pipeline</li>
+          <li>Custom analyzers must combine extraction, classification, and contextual understanding</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It may be broader and more complex than required for standard invoice processing.</li>
+          <li>Azure AI Document Intelligence's prebuilt invoice model is more directly aligned with common invoice fields and line items.</li>
+          <li>A careful proof of concept is needed when choosing between the two for highly customized documents.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use OCR Alone</h4>
+        <p>The organization can use an OCR capability to extract raw text from each invoice.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>OCR can be sufficient when:</p>
+        <ul class="outline-list">
+          <li>Only plain text is required</li>
+          <li>Documents have highly predictable layouts</li>
+          <li>The organization already has its own parsing logic</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>OCR alone does not reliably map text into invoice fields and line-item structures.</li>
+          <li>Custom parsing becomes fragile across supplier layouts.</li>
+          <li>More engineering and maintenance are required.</li>
+          <li>It provides less direct support for confidence-based exception handling.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use AI Builder Invoice Processing</h4>
+        <p>AI Builder provides a prebuilt invoice-processing model that can be used in Power Automate and Power Apps.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It may be appropriate when:</p>
+        <ul class="outline-list">
+          <li>The workflow is primarily built in the Power Platform</li>
+          <li>Low-code orchestration is preferred</li>
+          <li>The organization wants rapid integration with Power Automate</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is a Power Platform-oriented experience rather than the primary Azure AI service.</li>
+          <li>Highly customized integration, scale, or architecture requirements may favor direct use of Azure AI Document Intelligence.</li>
+          <li>Licensing and capacity models differ.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Capability</th><th>Best suited for</th></tr></thead>
+      <tbody>
+        <tr><td>Azure AI Document Intelligence prebuilt invoice model</td><td>Extracting invoice headers and line items into structured data</td></tr>
+        <tr><td>Azure AI Content Understanding</td><td>Broader multimodal or semantically rich content processing</td></tr>
+        <tr><td>OCR alone</td><td>Raw text extraction without document-specific field understanding</td></tr>
+        <tr><td>AI Builder invoice processing</td><td>Low-code invoice workflows in Power Platform</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Use Azure AI Document Intelligence in Foundry Tools with the prebuilt invoice model as the primary service. It extracts structured invoice header fields and line items from PDFs and scanned images, returns machine-readable output, and supports confidence-based routing of exceptions to human reviewers.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice">Invoice data extraction with Document Intelligence</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/model-overview">Document processing models in Azure AI Document Intelligence</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Unlocking Scalable Value from Multilingual Field-Service Notes and Images</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Adventure Works operates a global field-service organization.</p>
+    <p>Technicians submit:</p>
+    <ul class="outline-list">
+      <li>Free-text job notes</li>
+      <li>Photos of equipment, faults, and repairs</li>
+      <li>Records written in multiple languages</li>
+    </ul>
+    <p>Leadership wants to:</p>
+    <ol class="numbered-outline">
+      <li>Automatically classify work types</li>
+      <li>Identify recurring failure patterns</li>
+      <li>Give technicians real-time repair suggestions based on similar historical cases</li>
+      <li>Scale across regions and languages without manually maintaining rules for every scenario</li>
+    </ol>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use a Multimodal AI and RAG Architecture</h4>
+        <p>The most appropriate approach is to combine:</p>
+        <ul class="outline-list">
+          <li><strong>Multimodal AI</strong> to understand both text and images</li>
+          <li><strong>Embeddings and vector search</strong> to identify semantically similar historical cases</li>
+          <li><strong>Retrieval-augmented generation (RAG)</strong> to generate grounded repair suggestions</li>
+          <li><strong>Machine-learning or generative classification</strong> to categorize work types</li>
+          <li><strong>Analytics and clustering</strong> to identify common failure patterns</li>
+        </ul>
+        <p>A Microsoft implementation could use:</p>
+        <ul class="outline-list">
+          <li>Azure AI Content Understanding or suitable vision and language capabilities to extract structured information from notes and photos</li>
+          <li>Azure AI Search to index cases and perform vector or hybrid retrieval</li>
+          <li>Azure OpenAI or Microsoft Foundry models to classify, summarize, and generate grounded recommendations</li>
+          <li>Power BI or Microsoft Fabric to analyze trends and recurring failure patterns</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>This approach is well suited because the source data is:</p>
+        <ul class="outline-list">
+          <li>High volume</li>
+          <li>Unstructured</li>
+          <li>Multimodal</li>
+          <li>Multilingual</li>
+          <li>Too variable for manually maintained rules</li>
+        </ul>
+        <p>Foundation models and embeddings can recognize meaning across different wording, languages, and image variations.</p>
+        <p>The architecture supports each requirement:</p>
+        <table class="content-table">
+          <thead><tr><th>Requirement</th><th>AI capability</th></tr></thead>
+          <tbody>
+            <tr><td>Classify work types</td><td>Text/image classification using multimodal models</td></tr>
+            <tr><td>Find failure patterns</td><td>Embeddings, clustering, analytics, and trend analysis</td></tr>
+            <tr><td>Recommend fixes</td><td>RAG over similar historical cases and approved service knowledge</td></tr>
+            <tr><td>Scale across languages</td><td>Multilingual foundation models and semantic representations</td></tr>
+            <tr><td>Avoid rule rewrites</td><td>Learned semantic understanding rather than scenario-specific rules</td></tr>
+          </tbody>
+        </table>
+        <p>A practical workflow is:</p>
+        <ol class="numbered-outline">
+          <li>Ingest technician notes, photos, asset metadata, and repair outcomes.</li>
+          <li>Extract structured fields and image observations.</li>
+          <li>Generate embeddings and index each historical case.</li>
+          <li>Classify new cases by work type and fault category.</li>
+          <li>Retrieve similar successful repairs and approved technical guidance.</li>
+          <li>Generate a grounded recommendation with citations and confidence information.</li>
+          <li>Escalate uncertain or safety-critical cases to an experienced technician.</li>
+          <li>Feed confirmed repair outcomes back into evaluation and analytics.</li>
+        </ol>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Build a Rules-Based Classification and Recommendation System</h4>
+        <p>The organization could define keywords, decision trees, and region-specific rules.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Rules may work when:</p>
+        <ul class="outline-list">
+          <li>Work categories are few and stable</li>
+          <li>Inputs are highly structured</li>
+          <li>Regulatory or safety controls require deterministic logic</li>
+          <li>The organization needs transparent hard constraints</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Rules do not handle varied language and images well.</li>
+          <li>Maintenance grows rapidly across regions and equipment types.</li>
+          <li>New failure modes require manual updates.</li>
+          <li>Similar cases expressed differently may not match.</li>
+          <li>Rules are better used for mandatory safety and escalation controls than for the entire solution.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Train a Separate Traditional Model for Each Task and Region</h4>
+        <p>The organization could build dedicated models for classification, image recognition, and prediction in each language or geography.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This may be appropriate when:</p>
+        <ul class="outline-list">
+          <li>Large, high-quality labeled datasets exist</li>
+          <li>Very high task-specific accuracy is required</li>
+          <li>The process is stable and narrowly defined</li>
+          <li>Edge deployment or latency constraints require smaller models</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Training and maintaining many models is expensive.</li>
+          <li>Regional and language fragmentation increases operational complexity.</li>
+          <li>New categories require new labeled data and retraining.</li>
+          <li>It is less flexible than a shared multimodal foundation-model architecture.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Generative AI Without Retrieval</h4>
+        <p>The application could send each new note and image directly to a generative model and ask for a repair suggestion.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This is useful only as an early prototype or proof-of-concept. It requires no indexing, embedding, or retrieval pipeline to stand up, so a team can quickly test whether a generative model produces plausible-sounding repair suggestions before investing in the data and retrieval pipeline a production RAG solution needs.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Suggestions may be unsupported or inconsistent.</li>
+          <li>The model may not know organization-specific equipment history.</li>
+          <li>It cannot reliably use newly completed cases.</li>
+          <li>RAG is needed to ground recommendations in similar past cases and approved documentation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Approach</th><th>Best suited for</th></tr></thead>
+      <tbody>
+        <tr><td>Multimodal AI + vector search + RAG</td><td>Scalable classification, pattern discovery, and grounded recommendations across varied text, images, and languages</td></tr>
+        <tr><td>Rules-based automation</td><td>Stable, deterministic processes and hard safety constraints</td></tr>
+        <tr><td>Separate traditional models</td><td>Narrow, high-volume tasks with strong labeled datasets</td></tr>
+        <tr><td>Generative AI without retrieval</td><td>Rapid prototyping, but weaker grounding and reliability</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The strongest approach is a multimodal AI and RAG architecture that classifies notes and images, uses embeddings and analytics to identify recurring failure patterns, and retrieves similar historical cases to generate grounded repair suggestions across regions and languages.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Selecting an Azure AI Service for Photo-Based Visual Inspection (Equipment Damage and Retail Shelf Scenarios)</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Two field-operations teams face the same underlying need for photo-based visual inspection:</p>
+    <ul class="outline-list">
+      <li><strong>Contoso's field-operations mobile app</strong> lets inspectors photograph damaged equipment and needs to detect objects, classify what's visible, and read serial numbers and labels via OCR.</li>
+      <li><strong>Northwind Stores</strong> wants a mobile shelf and aisle-end inspection solution that detects whether required products are present, counts product facings, and reads small price and promotion labels via OCR.</li>
+    </ul>
+    <p>In both cases, the solution must:</p>
+    <ul class="outline-list">
+      <li>Detect and localize objects or products in a photograph</li>
+      <li>Classify or tag what is visible</li>
+      <li>Read serial numbers, labels, price tags, or promotional text using OCR</li>
+      <li>Return structured visual-analysis results to a mobile application</li>
+      <li>Avoid introducing unrelated document-search, corpus-search, or general application-lifecycle capabilities when the core need is direct photo analysis</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Azure AI Vision in Foundry Tools (Image Analysis)</h4>
+        <p>The best primary fit for both scenarios is <strong>Azure AI Vision in Foundry Tools</strong>, using its <strong>Image Analysis</strong> capability.</p>
+        <p>Image Analysis can process a photograph in a single call and return:</p>
+        <ul class="outline-list">
+          <li>Object detection (equipment components, product packages, and so on)</li>
+          <li>Image tags and classification-style descriptions</li>
+          <li>Image captions</li>
+          <li>OCR for printed or handwritten text (serial numbers, nameplates, price and promotion labels)</li>
+          <li>Bounding boxes showing where objects and text were detected</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Azure AI Vision is purpose-built for understanding photograph content, and one Image Analysis call covers every requirement in both scenarios:</p>
+        <ul class="outline-list">
+          <li>Identifying physical objects, whether damaged equipment components or shelved products</li>
+          <li>Tagging or describing what is visible, including visible damage or missing/present items</li>
+          <li>Reading serial numbers, nameplate text, price labels, or promotional tags through built-in OCR</li>
+          <li>Returning structured, machine-readable results (JSON with bounding boxes) that a mobile app can consume directly</li>
+        </ul>
+        <p>Because the requirement is centered on interpreting a single photograph rather than indexing a document corpus or building a broader application platform, Azure AI Vision meets the need without introducing Azure AI Search, Document Intelligence, or an unrelated development-lifecycle service.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Important Qualification: Prebuilt Image Analysis May Not Reach Specialized or SKU-Level Accuracy</h4>
+        <p>Prebuilt Image Analysis recognizes general objects, scenes, and common categories, but it is not trained on an organization's specific equipment models or retail SKUs. Reliably identifying a precise damaged component, or counting exact product facings by SKU and package variant, typically requires a custom-trained model layered on top of Azure AI Vision — see the <strong>Azure AI Custom Vision</strong> alternative below for how this gap is closed.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Azure AI Document Intelligence</h4>
+        <p>Azure AI Document Intelligence is optimized for extracting structured information from documents and forms.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It may be suitable when the main input is:</p>
+        <ul class="outline-list">
+          <li>Scanned forms</li>
+          <li>Invoices</li>
+          <li>Checklists</li>
+          <li>Structured documents</li>
+          <li>Documents requiring tables, fields, and layout extraction</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is not the primary fit for general scene, object, or product understanding in a photograph.</li>
+          <li>It is stronger for document structure than for identifying arbitrary equipment damage or counting shelf products.</li>
+          <li>Azure AI Vision is the better match when visual understanding of a photo is the main requirement.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Azure AI Search</h4>
+        <p>Azure AI Search can index and retrieve text, documents, and vector representations.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It is useful when the organization also needs:</p>
+        <ul class="outline-list">
+          <li>Search over inspection history</li>
+          <li>Retrieval of similar cases</li>
+          <li>A RAG pipeline over technical documentation</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It does not serve as the primary image-analysis engine.</li>
+          <li>A vision service must first extract visual information or embeddings.</li>
+          <li>It addresses retrieval rather than direct object detection and OCR.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Azure AI Custom Vision or Azure Machine Learning</h4>
+        <p>Prebuilt Image Analysis can be supplemented with a trained custom model when generic object recognition isn't precise enough for the equipment or SKU catalog involved.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This is appropriate when:</p>
+        <ul class="outline-list">
+          <li>Prebuilt models cannot reliably recognize specialized equipment components, damage types, or retail SKUs</li>
+          <li>Labeled photos of the equipment or shelf scenario exist or can be collected</li>
+          <li>Business rules require exact facing counts or component-level identification</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li><strong>Azure AI Custom Vision</strong> is the lighter-weight option: it is purpose-built for training custom image classifiers and object detectors from a labeled image set without standing up a full ML pipeline, and should be evaluated first.</li>
+          <li><strong>Azure Machine Learning</strong> adds more control and integration with broader ML workflows but requires more training, evaluation, deployment, and monitoring effort — reserve it for cases where Custom Vision's capabilities are insufficient.</li>
+          <li>Either option adds lifecycle and engineering work beyond the prebuilt Azure AI Vision service, so prebuilt capabilities should be evaluated first before committing to custom training.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Capability</th><th>Best suited for</th></tr></thead>
+      <tbody>
+        <tr><td>Azure AI Vision Image Analysis</td><td>Object/product detection, tagging, captions, and OCR directly from a photograph</td></tr>
+        <tr><td>Azure AI Custom Vision / Azure Machine Learning</td><td>Specialized or SKU-level detection, facing counts, and equipment-specific damage classification beyond generic recognition</td></tr>
+        <tr><td>Azure AI Document Intelligence</td><td>Structured extraction from forms and documents</td></tr>
+        <tr><td>Azure AI Search</td><td>Search, retrieval, and RAG indexing over documents or case history</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Use Azure AI Vision in Foundry Tools with Image Analysis as the primary service for any scenario centered on interpreting a photograph — detecting objects or products, tagging content, and reading text through OCR. Add Azure AI Custom Vision (or Azure Machine Learning for more complex pipelines) only when specialized or SKU-level accuracy is required; reach for Azure AI Document Intelligence for documents and Azure AI Search only when retrieval over an existing corpus is also needed.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-image-analysis">What is Image Analysis?</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview">What is Azure AI Vision in Foundry Tools?</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Why Generative AI Fits High-Volume Insurance Customer Emails</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Contoso Insurance receives tens of thousands of customer emails about:</p>
+    <ul class="outline-list">
+      <li>Policy coverage</li>
+      <li>Renewals</li>
+      <li>Claims status</li>
+      <li>Common policy questions</li>
+    </ul>
+    <p>Agents repeatedly rewrite similar explanations in different wording for each customer.</p>
+    <p>The organization needs to understand why generative AI is a strong fit for this workload, and which Azure service delivers it.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Azure OpenAI in Microsoft Foundry to Create Context-Aware Drafts at Scale</h4>
+        <p>The main benefit is that <strong>Azure OpenAI</strong>, built and governed through <strong>Microsoft Foundry</strong>, can produce tailored natural-language responses for high-volume, repetitive enquiries while adapting the wording to each customer's context.</p>
+        <p>A grounded assistant can:</p>
+        <ul class="outline-list">
+          <li>Retrieve approved policy and claims information</li>
+          <li>Summarize the relevant facts</li>
+          <li>Draft a clear response in the appropriate tone</li>
+          <li>Adapt explanations to the customer's question</li>
+          <li>Reduce repetitive writing effort</li>
+          <li>Escalate uncertain or sensitive cases to human agents</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>This scenario matches the strengths of Azure OpenAI's generative models because the work is:</p>
+        <ul class="outline-list">
+          <li>High volume</li>
+          <li>Repetitive in intent</li>
+          <li>Variable in wording</li>
+          <li>Language intensive</li>
+          <li>Supported by existing policies and customer data</li>
+          <li>Suitable for human review before sending</li>
+        </ul>
+        <p>Unlike a fixed response template, Azure OpenAI can preserve the underlying approved explanation while adapting phrasing, detail, and tone to the specific customer. Azure AI Language can complement this by classifying or triaging incoming emails by intent and urgency before drafting, so the generative step focuses purely on composing the response rather than also deciding what the email is about.</p>
+        <p>This can improve:</p>
+        <ul class="outline-list">
+          <li>Agent productivity</li>
+          <li>Response consistency</li>
+          <li>Handling time</li>
+          <li>Customer experience</li>
+          <li>Scalability during peak demand</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Static Email Templates</h4>
+        <p>The organization can provide agents with standard response templates.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Templates are useful when:</p>
+        <ul class="outline-list">
+          <li>The response must be highly controlled</li>
+          <li>The number of scenarios is small</li>
+          <li>Personalization needs are limited</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Agents still spend time editing templates.</li>
+          <li>Templates do not adapt well to varied customer questions.</li>
+          <li>Large template libraries become difficult to maintain.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Rules-Based Automation</h4>
+        <p>Rules can classify emails and select a predefined response.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This is appropriate when:</p>
+        <ul class="outline-list">
+          <li>Customer intents are narrow and predictable</li>
+          <li>Inputs are structured</li>
+          <li>Responses must be deterministic</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Rules handle varied language poorly.</li>
+          <li>New scenarios require manual rule updates.</li>
+          <li>Responses can feel rigid or generic.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Azure OpenAI, delivered through Microsoft Foundry, is well suited because it can create personalized, context-aware drafts for large volumes of repetitive language-based enquiries, reducing manual rewriting while preserving consistency through grounding and human review.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Selecting an Azure Service for Text and Document Translation</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Tailwind Traders operates in more than 30 countries and needs to support customers who communicate in their native languages.</p>
+    <p>The solution must:</p>
+    <ul class="outline-list">
+      <li>Translate text used in email and chat</li>
+      <li>Translate full documents</li>
+      <li>Support many language pairs</li>
+      <li>Preserve document structure where possible</li>
+      <li>Allow terminology customization for product names and domain-specific language</li>
+      <li>Exclude speech translation, which is handled by another team</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Azure AI Translator in Foundry Tools</h4>
+        <p>The blank should be filled with <strong>Azure AI Translator in Foundry Tools</strong>, using:</p>
+        <ul class="outline-list">
+          <li><strong>Text Translation</strong> for chat and email content</li>
+          <li><strong>Document Translation</strong> for files and documents</li>
+          <li><strong>Dynamic Dictionary</strong> and <strong>glossaries</strong> for domain-specific terminology</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Azure AI Translator is Microsoft's primary cloud service for neural machine translation of text and documents.</p>
+        <p>It directly supports the stated requirements:</p>
+        <ul class="outline-list">
+          <li>Real-time text translation through APIs</li>
+          <li>Batch and single-document translation</li>
+          <li>Preservation of supported document formats and layout</li>
+          <li>Automatic source-language detection</li>
+          <li>Translation into multiple target languages</li>
+          <li>Glossaries or dictionaries for preferred product-name translations</li>
+        </ul>
+        <p>For product names and fixed terminology:</p>
+        <ul class="outline-list">
+          <li>Use a <strong>dynamic dictionary</strong> (inline markup on the request) for request-level text translation when supported.</li>
+          <li>Use <strong>glossaries</strong> with Document Translation for preferred terms across a full document.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Important Qualification: Custom Translator Is on a Retirement Path</h4>
+        <p>Custom Translator — the older training portal for building a fully custom neural-translation model from parallel documents — is being retired for new customers under current Azure AI Translator guidance. New solutions should default to Dynamic Dictionary and Document Translation glossaries for terminology control. If broader, ongoing adaptation of phrasing and style is needed beyond fixed-term substitution, evaluate an Azure OpenAI-based prompt or fine-tuning approach instead of building a new Custom Translator model. Teams with an existing Custom Translator deployment should check current documentation for supported lifetime and migration guidance before expanding on it.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Azure AI Speech for Translation</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Azure AI Speech is appropriate for spoken-language scenarios such as:</p>
+        <ul class="outline-list">
+          <li>Live speech translation</li>
+          <li>Transcription</li>
+          <li>Speech-to-speech experiences</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Speech is outside this requirement.</li>
+          <li>It is not the primary service for translating email, chat text, and business documents.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Azure OpenAI for Translation</h4>
+        <p>A generative model can translate text through prompting.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It may help when the task also requires:</p>
+        <ul class="outline-list">
+          <li>Rewriting</li>
+          <li>Summarization</li>
+          <li>Tone adaptation</li>
+          <li>Complex contextual transformation</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Azure AI Translator is purpose-built for scalable, deterministic translation.</li>
+          <li>Generative-model output can be less deterministic.</li>
+          <li>Cost and latency may be higher for straightforward translation.</li>
+          <li>Document-layout preservation is better handled by Document Translation's native structure-preserving output.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Azure AI Language</h4>
+        <p>Azure AI Language supports capabilities such as sentiment analysis, key-phrase extraction, classification, and named-entity recognition.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It is appropriate for understanding or classifying multilingual text, not for translating it.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It is not the primary service for full text and document translation.</li>
+          <li>Translator should handle the translation stage.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Capability</th><th>Primary role</th></tr></thead>
+      <tbody>
+        <tr><td>Azure AI Translator Text Translation</td><td>Real-time translation for chat, email, and application text</td></tr>
+        <tr><td>Azure AI Translator Document Translation</td><td>Translation of full documents while preserving supported structure and formatting</td></tr>
+        <tr><td>Dynamic Dictionary and glossaries</td><td>Preferred translations for specific terms, phrases, and product names (the current recommended path for terminology control)</td></tr>
+        <tr><td>Azure AI Speech</td><td>Spoken-language transcription and translation</td></tr>
+        <tr><td>Azure OpenAI</td><td>General-purpose generation, rewriting, and contextual language transformation</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Use Azure AI Translator in Foundry Tools. Combine Text Translation and Document Translation with Dynamic Dictionary and glossaries when product terminology must be controlled; treat Custom Translator as a legacy option that is being phased out rather than the default terminology-customization path.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/translator/">Azure AI Translator in Foundry Tools documentation</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/translator/overview">What is Azure AI Translator in Foundry Tools?</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/overview">Document Translation overview</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/how-to-guides/create-use-glossaries">Use glossaries with Document Translation</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Mapping Azure AI Services to an Insurance Claims Workflow</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Adventure Works wants to modernize motor-insurance claims processing.</p>
+    <p>The solution must:</p>
+    <ul class="outline-list">
+      <li>Extract key fields from structured and semi-structured claim forms</li>
+      <li>Analyze vehicle-damage photos for triage and fraud-support signals</li>
+      <li>Transcribe recorded claimant calls</li>
+      <li>Summarize calls and other claim evidence</li>
+      <li>Draft claim summaries and suggested next actions</li>
+      <li>Minimize custom machine-learning development</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Combine Specialized Prebuilt Azure AI Services</h4>
+        <p>The best mapping is:</p>
+        <table class="content-table">
+          <thead><tr><th>Requirement</th><th>Primary Azure AI service</th></tr></thead>
+          <tbody>
+            <tr><td>Extract fields, text, key-value pairs, and tables from claim forms</td><td><strong>Azure AI Document Intelligence in Foundry Tools</strong></td></tr>
+            <tr><td>Analyze vehicle-damage photos</td><td><strong>Azure AI Vision in Foundry Tools</strong>, using Image Analysis</td></tr>
+            <tr><td>Transcribe recorded phone calls</td><td><strong>Azure AI Speech in Foundry Tools</strong>, using Speech to Text or batch transcription</td></tr>
+            <tr><td>Draft claim summaries and suggested next actions</td><td><strong>Azure OpenAI / Microsoft Foundry models</strong>, grounded in extracted claim data and approved business rules</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Each service addresses the data type for which it is optimized:</p>
+        <ul class="outline-list">
+          <li>Document Intelligence handles structured, semi-structured, and unstructured documents and extracts fields without requiring a custom OCR pipeline.</li>
+          <li>Azure AI Vision uses pretrained image-analysis models to identify visual features, objects, tags, captions, and visible text.</li>
+          <li>Azure AI Speech converts recorded audio into text using real-time or batch transcription.</li>
+          <li>Azure OpenAI synthesizes the extracted evidence into adjuster-facing summaries, explanations, and draft next steps.</li>
+        </ul>
+        <p>This minimizes custom ML development because the architecture begins with prebuilt services and adds custom training only where business accuracy requires it.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Recommended End-to-End Flow</h4>
+        <ol class="numbered-outline">
+          <li>A claimant uploads a form, photographs, and call recording.</li>
+          <li>Document Intelligence extracts claim number, policy number, incident date, claimant details, and other fields.</li>
+          <li>Azure AI Vision analyzes damage photographs and extracts visible plate or label text where useful.</li>
+          <li>Azure AI Speech transcribes the recorded call, optionally using batch transcription for stored audio.</li>
+          <li>The application validates and combines the extracted evidence.</li>
+          <li>Azure OpenAI receives only relevant, authorized claim information plus approved policy and decision guidance.</li>
+          <li>The model drafts:
+            <ul class="outline-list">
+              <li>A claim summary</li>
+              <li>Missing-information questions</li>
+              <li>Suggested next actions</li>
+              <li>Triage or escalation recommendations</li>
+            </ul>
+          </li>
+          <li>A human adjuster reviews and approves consequential decisions.</li>
+        </ol>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Important Qualification: Prebuilt Vision Does Not Automatically Provide Insurance-Grade Damage or Fraud Decisions</h4>
+        <p>Azure AI Vision can extract general visual features and support initial triage, but highly specialized tasks — such as estimating repair severity, identifying a precise vehicle component, or detecting staged damage — may require:</p>
+        <ul class="outline-list">
+          <li>A domain-specific model built with Azure AI Custom Vision or Azure Machine Learning</li>
+          <li>Additional business rules</li>
+          <li>Historical claims data</li>
+          <li>Human specialist review</li>
+        </ul>
+        <p>Fraud indicators should support investigation rather than serve as an automatic final fraud determination.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Azure AI Content Understanding for Multimodal Extraction</h4>
+        <p>Azure AI Content Understanding can process multimodal content and produce structured outputs from documents, images, audio, and video.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It can reduce orchestration complexity when one solution must extract a common schema across several content types.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>The specialized services remain easier to map to the explicit exam-style requirements.</li>
+          <li>Availability, pricing, supported modalities, and regional constraints should be checked.</li>
+          <li>A proof of concept should compare accuracy and operational complexity.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Build Custom Models with Azure AI Custom Vision or Azure Machine Learning</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Custom models may be justified when prebuilt services cannot accurately identify insurer-specific damage patterns or fraud signals. Azure AI Custom Vision is the lighter-weight starting point for a custom damage-classification or object-detection model; Azure Machine Learning is better suited when the model needs to integrate with a larger, more complex ML pipeline.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Requires labeled data</li>
+          <li>Adds training, deployment, monitoring, and retraining work</li>
+          <li>Increases time, cost, and governance requirements</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Service</th><th>Primary role</th></tr></thead>
+      <tbody>
+        <tr><td>Azure AI Document Intelligence</td><td>Extract structured information from forms and documents</td></tr>
+        <tr><td>Azure AI Vision</td><td>Analyze photographs and extract visual features</td></tr>
+        <tr><td>Azure AI Speech</td><td>Convert recorded calls into text</td></tr>
+        <tr><td>Azure OpenAI / Foundry models</td><td>Summarize evidence and generate draft recommendations</td></tr>
+        <tr><td>Azure AI Custom Vision / Azure Machine Learning</td><td>Build custom domain-specific vision models when prebuilt services are insufficient</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Use Azure AI Document Intelligence for claim forms, Azure AI Vision for damage photographs, Azure AI Speech for call transcription, and Azure OpenAI or Microsoft Foundry models for grounded summaries and suggested next actions. Keep human review for claim and fraud decisions.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview">Azure Document Intelligence overview</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-image-analysis">Azure Vision Image Analysis overview</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-to-text">Azure Speech to Text overview</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Reviewing a Multimodal Diagnostics Assistant for Field Engineers</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Adventure Works wants a diagnostics assistant for industrial pump field engineers.</p>
+    <p>The solution must:</p>
+    <ul class="outline-list">
+      <li>Accept mobile photos of pump nameplates and visible damage</li>
+      <li>Extract serial numbers, model identifiers, and other text</li>
+      <li>Search troubleshooting guides, incident reports, and manuals</li>
+      <li>Answer conversational "why" and "how-to" questions with grounded evidence</li>
+      <li>Run under standard Azure identity, security, monitoring, and governance</li>
+      <li>Be built and operated through a unified Azure AI environment</li>
+    </ul>
+    <p>The proposed architecture is:</p>
+    <ol class="numbered-outline">
+      <li>Use Azure AI Vision for OCR and image analysis.</li>
+      <li>Index manuals, incident reports, troubleshooting content, and image-derived metadata in Azure AI Search.</li>
+      <li>Build and operate the grounded conversational agent in Microsoft Foundry, connecting it to Azure OpenAI and Azure AI Search.</li>
+    </ol>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Treat the Mapping as Appropriate, with a Qualification for Damage Analysis</h4>
+        <p>The service mapping is <strong>well aligned with the requirements</strong>:</p>
+        <table class="content-table">
+          <thead><tr><th>Requirement</th><th>Primary Azure capability</th></tr></thead>
+          <tbody>
+            <tr><td>Read pump nameplates</td><td>Azure AI Vision OCR</td></tr>
+            <tr><td>Analyze uploaded photos</td><td>Azure AI Vision Image Analysis</td></tr>
+            <tr><td>Index technical content and derived metadata</td><td>Azure AI Search</td></tr>
+            <tr><td>Support full-text, semantic, vector, and hybrid retrieval</td><td>Azure AI Search</td></tr>
+            <tr><td>Generate grounded conversational answers</td><td>Azure OpenAI or other Foundry models</td></tr>
+            <tr><td>Build, evaluate, deploy, monitor, and govern the agent</td><td>Microsoft Foundry</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>The architecture separates the solution into the right layers:</p>
+        <ol class="numbered-outline">
+          <li><strong>Visual enrichment</strong>
+            <ul class="outline-list">
+              <li>OCR extracts model numbers, serial numbers, and labels.</li>
+              <li>Image analysis produces captions, tags, and other searchable metadata.</li>
+            </ul>
+          </li>
+          <li><strong>Knowledge retrieval</strong>
+            <ul class="outline-list">
+              <li>Azure AI Search indexes manuals, prior incidents, troubleshooting guides, and Vision-derived fields.</li>
+              <li>Hybrid retrieval combines keyword and vector search.</li>
+              <li>The application can preserve source links and metadata for citations.</li>
+            </ul>
+          </li>
+          <li><strong>Conversational orchestration</strong>
+            <ul class="outline-list">
+              <li>Microsoft Foundry provides the environment for building and evaluating the agent.</li>
+              <li>Azure OpenAI generates the final answer using passages retrieved from Azure AI Search.</li>
+              <li>Monitoring, deployment, identity, networking, and governance can be applied through Azure services.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Important Qualification: Generic Vision Analysis May Not Reliably Detect Pump-Specific Damage</h4>
+        <p>Azure AI Vision can provide general visual understanding, OCR, tags, captions, and object-related information.</p>
+        <p>However, accurate detection of specialized failure modes such as:</p>
+        <ul class="outline-list">
+          <li>Cavitation damage</li>
+          <li>Seal leakage patterns</li>
+          <li>Corrosion severity</li>
+          <li>Cracked housings</li>
+          <li>Misalignment indicators</li>
+          <li>Model-specific component damage</li>
+        </ul>
+        <p>may require:</p>
+        <ul class="outline-list">
+          <li>A custom computer-vision model built with Azure AI Custom Vision (or Azure Machine Learning for a more complex pipeline)</li>
+          <li>Labeled pump-damage images</li>
+          <li>Domain-specific rules</li>
+          <li>Human engineer review</li>
+        </ul>
+        <p>Therefore, Azure AI Vision is a strong primary service for OCR and general image enrichment, but the phrase "analyse damage patterns" should not be interpreted as guaranteed industrial-grade diagnosis from a prebuilt model alone.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Recommended End-to-End Flow</h4>
+        <pre><code>Mobile photo + engineer question
+        ↓
+Azure AI Vision OCR and image enrichment
+        ↓
+Extracted identifiers, tags, and metadata
+        ↓
+Azure AI Search retrieves manuals and related incidents
+        ↓
+Foundry agent sends relevant passages to Azure OpenAI
+        ↓
+Grounded answer with citations and recommended next checks
+        ↓
+Engineer validates the diagnosis and action</code></pre>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Azure AI Search Skillsets for Integrated Enrichment</h4>
+        <p>Azure AI Search can invoke OCR and image-analysis skills during indexing.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This can simplify ingestion by combining:</p>
+        <ul class="outline-list">
+          <li>Document cracking</li>
+          <li>OCR</li>
+          <li>Image enrichment</li>
+          <li>Chunking</li>
+          <li>Field mapping</li>
+          <li>Index population</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <p>A separate Vision preprocessing service may still be preferable when mobile images must be analyzed immediately before a search query, or when the same visual output is reused by several systems.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Azure AI Custom Vision (or Azure Machine Learning) from the Start</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This may be justified when pump-specific damage classification is the central business requirement and sufficient labeled data already exists. Azure AI Custom Vision is the more direct starting point for a focused damage-classification model; Azure Machine Learning is warranted only if the model must integrate into a larger, more complex ML pipeline.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Higher development and governance effort</li>
+          <li>Requires training, evaluation, deployment, monitoring, and retraining</li>
+          <li>Slower time to value than starting with prebuilt OCR and general visual analysis</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Yes. The mapping is appropriate: use Azure AI Vision for OCR and general image enrichment, Azure AI Search for persistent hybrid/vector retrieval, and Microsoft Foundry with Azure OpenAI for the grounded agent lifecycle. Add a custom vision model (Azure AI Custom Vision, or Azure Machine Learning for more complex pipelines) if reliable pump-specific damage classification is required.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Cost Model for Generative AI Solutions in Azure</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">An organization needs to deploy a generative AI solution in Microsoft Azure and determine how model inference will be billed.</p>
+    <p>Generative AI workloads commonly process text, images, or audio as tokens. Usage can fluctuate depending on:</p>
+    <ul class="outline-list">
+      <li>The number of requests</li>
+      <li>The size of the input prompts</li>
+      <li>The amount of generated output</li>
+      <li>The selected model</li>
+      <li>The deployment type</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Pay-As-You-Go with Token-Based Pricing</h4>
+        <p>The cost model most commonly used for Azure generative AI solutions is <strong>Pay-As-You-Go</strong>, with charges based primarily on the number of tokens processed.</p>
+        <p>Token usage is normally divided into:</p>
+        <ul class="outline-list">
+          <li><strong>Input tokens:</strong> Content sent to the model, such as prompts, instructions, and conversation history</li>
+          <li><strong>Output tokens:</strong> Content generated by the model</li>
+          <li><strong>Cached tokens:</strong> Reused input content that may receive different (typically discounted) pricing when prompt caching is supported by the model and deployment</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Pay-As-You-Go is usually preferred because it:</p>
+        <ul class="outline-list">
+          <li>Requires no reserved processing capacity</li>
+          <li>Supports experimentation and gradual adoption</li>
+          <li>Accommodates variable workloads</li>
+          <li>Charges according to actual model usage</li>
+          <li>Makes it easier to compare and switch between models</li>
+        </ul>
+        <p>It is most appropriate for:</p>
+        <ul class="outline-list">
+          <li>Proofs of concept</li>
+          <li>Development and testing</li>
+          <li>Applications with unpredictable traffic</li>
+          <li>Low-to-medium-volume workloads</li>
+          <li>Solutions whose utilization is insufficient to justify dedicated capacity</li>
+        </ul>
+        <p><strong>Cost estimation</strong></p>
+        <pre><code>Total cost =
+    Input token cost
+  + Output token cost
+  + Costs of supporting Azure services</code></pre>
+        <p>Supporting services can include Azure AI Search, storage, networking, content processing, monitoring, and agent-related tools.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Provisioned Throughput Units</h4>
+        <p><strong>Provisioned Throughput Units (PTUs)</strong> allow an organization to deploy a specified amount of model-processing capacity.</p>
+        <p>Instead of being charged directly for each processed token, the organization is billed according to the provisioned capacity and the period for which it remains deployed (hourly, or via a monthly/annual reservation), regardless of how much of that capacity is actually consumed.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Provisioned throughput can be appropriate when the application has:</p>
+        <ul class="outline-list">
+          <li>High and sustained model usage</li>
+          <li>Predictable traffic</li>
+          <li>Strict throughput or latency-consistency requirements</li>
+          <li>Production workloads requiring more consistent performance</li>
+          <li>Sufficient utilization to justify reserved capacity</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <table class="content-table">
+          <thead><tr><th>Consideration</th><th>Pay-As-You-Go</th><th>Provisioned Throughput</th></tr></thead>
+          <tbody>
+            <tr><td>Billing basis</td><td>Tokens consumed</td><td>Provisioned processing capacity</td></tr>
+            <tr><td>Upfront commitment</td><td>Low</td><td>Higher</td></tr>
+            <tr><td>Variable workloads</td><td>Well suited</td><td>May waste unused capacity</td></tr>
+            <tr><td>Predictable high usage</td><td>Can become expensive</td><td>May be more cost-effective</td></tr>
+            <tr><td>Performance predictability</td><td>Depends on quota and service availability</td><td>More predictable</td></tr>
+            <tr><td>Capacity planning</td><td>Minimal</td><td>Required</td></tr>
+            <tr><td>Idle cost</td><td>Normally no model-inference cost when unused</td><td>Capacity is billed for the deployed period whether or not it is used</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p>Azure generative AI solutions most commonly use a Pay-As-You-Go, token-based consumption model. Provisioned Throughput Units are an alternative for high-volume, predictable production workloads, billed for reserved capacity rather than per token.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Measuring and Proving Generative AI ROI Beyond Proxy Metrics</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Leaders across different organizations need to determine whether a generative AI solution is creating genuine business value — and they often default to a single convenient metric as "proof" of ROI instead of measuring net benefit against total cost.</p>
+    <p>Three flawed shortcuts commonly appear in practice:</p>
+    <ul class="outline-list">
+      <li>A leadership team argues that reducing manual employee effort automatically proves ROI for an AI rollout, without accounting for token costs, adoption friction, human review, or rework.</li>
+      <li>A CFO argues that cost per 1,000 tokens is the only ROI metric that matters, because Azure OpenAI is billed on token consumption.</li>
+      <li>Technical teams or executives point to strong adoption numbers, or strong technical metrics (accuracy, latency, throughput), as evidence the solution is delivering business value.</li>
+    </ul>
+    <p>In each case, the organization needs a rigorous way to distinguish activity, cost, and performance metrics from actual proof of business return.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Measure Net Business Value Using Outcome KPIs and ROI</h4>
+        <p>All three shortcuts above are <strong>false or incomplete</strong>. Adoption, technical performance, token unit-cost, and gross manual-effort reduction are all <em>inputs</em> to a business case, not substitutes for it.</p>
+        <p>The most useful metric is a <strong>business outcome KPI tied to return on investment (ROI)</strong>. Examples of business outcomes include:</p>
+        <ul class="outline-list">
+          <li>Revenue growth or increased conversion</li>
+          <li>Cost reduction and lower customer-service handling time</li>
+          <li>Time saved that translates into additional productive work</li>
+          <li>Reduced error rates and less rework</li>
+          <li>Improved customer retention</li>
+          <li>Faster employee productivity and higher process completion rates</li>
+        </ul>
+        <p>A simplified calculation is:</p>
+        <pre><code>ROI = (Measured business benefit - Total cost of ownership) / Total cost of ownership</code></pre>
+        <p>Total cost of ownership should include:</p>
+        <ul class="outline-list">
+          <li>Model usage (token/PTU cost) and supporting infrastructure</li>
+          <li>Data preparation and integration</li>
+          <li>Monitoring and governance</li>
+          <li>Human review of outputs</li>
+          <li>Training, change management, and adoption support</li>
+          <li>Maintenance and support</li>
+          <li>Rework caused by inaccurate or incomplete outputs</li>
+          <li>Opportunity cost of changing existing workflows</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>Each shortcut fails for a specific, concrete reason:</p>
+        <ul class="outline-list">
+          <li><strong>Manual-effort reduction:</strong> an AI assistant may cut the time to draft a document, but that gain is erased if employees spend as much time correcting the output, if users route around the tool because it disrupts their workflow, or if the saved time never converts into other productive work. The theoretical gross time saved and the realized net benefit are different numbers.</li>
+          <li><strong>Cost per 1,000 tokens:</strong> this is an operational unit-cost metric, not a value metric. A cheaper model that produces inaccurate answers can create expensive downstream rework, while a more expensive model can have far better ROI if it meaningfully lifts conversion or deflects support tickets. Optimizing unit cost in isolation can make the business outcome worse.</li>
+          <li><strong>Adoption and technical performance:</strong> a system that is heavily used or highly accurate in evaluation can still fail to move any business KPI if it targets the wrong problem or the workflow around it doesn't change.</li>
+        </ul>
+        <p>A credible business case therefore measures <strong>net value</strong> — realized benefit minus all-in cost — rather than any single proxy signal.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Adoption and Usage Metrics</h4>
+        <p>Organizations can measure active users, frequency of use, feature adoption, task completion rate, and retention.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Adoption is a useful <strong>leading indicator</strong> because a solution cannot create business value if nobody uses it, and low adoption soon after launch often signals a change-management or usability problem worth investigating even before ROI data is available.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>High usage does not automatically mean high business value; users can generate many low-value requests.</li>
+          <li>Users may adopt a tool that provides limited measurable benefit, or avoid a genuinely valuable one due to poor rollout.</li>
+          <li>Low usage may indicate a change-management problem rather than a lack of underlying value.</li>
+          <li>Adoption should always be combined with outcome metrics, not reported as ROI on its own.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Technical Performance Metrics</h4>
+        <p>Technical metrics include accuracy, precision/recall, response latency, hallucination rate, availability, throughput, and cost per request.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>These metrics tell engineering teams whether the system is reliable, safe, and efficient enough to trust in production — a precondition for business value, but not evidence of it.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>They do not directly prove business impact.</li>
+          <li>A model can score well on offline accuracy tests and still fail to improve the target business process if it solves the wrong problem or the workflow doesn't change around it.</li>
+          <li>Technical metrics should support business KPIs, not replace them, in an executive-facing business case.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Manual-Effort Reduction as an Early Leading Indicator</h4>
+        <p>During a pilot, the organization may use estimated time saved as an early signal of potential value, before a full ROI measurement is possible.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This can be useful when the solution hasn't been deployed long enough to measure full ROI, leaders need an initial signal before funding a larger rollout, and the workflow has a clear, measurable time baseline to compare against.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Estimated time savings, often self-reported during a pilot, may not equal actual realized savings.</li>
+          <li>Pilot participants may report optimistic results.</li>
+          <li>The estimate may omit correction, review, and adoption costs that appear only at scale.</li>
+          <li>It should support a hypothesis for further investment, not be presented as proof of ROI.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Cost per 1,000 Tokens as a FinOps Optimization Metric</h4>
+        <p>The organization can track token cost to compare models, prompts, and deployment patterns.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This metric is useful for monitoring model consumption, comparing input/output token efficiency, identifying expensive prompts, choosing between models, and controlling operational spend.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It does not measure business impact.</li>
+          <li>It can encourage adoption of cheaper but less effective models, which can raise downstream rework or reduce conversion even as unit cost falls.</li>
+          <li>It ignores adoption, quality, rework, and downstream outcomes.</li>
+          <li>It should support ROI analysis as one input, rather than replace it.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Metric / Signal</th><th>What it shows</th><th>What it does NOT prove</th></tr></thead>
+      <tbody>
+        <tr><td>Business KPI / ROI</td><td>Whether total measured benefit exceeds total cost</td><td>—</td></tr>
+        <tr><td>Adoption / usage</td><td>People are engaging with the solution</td><td>That the solution is profitable or valuable</td></tr>
+        <tr><td>Technical performance</td><td>The system works reliably and efficiently</td><td>That the business process actually improved</td></tr>
+        <tr><td>Reduced manual effort</td><td>A potential productivity gain exists</td><td>Net financial return once rework, friction, and review costs are counted</td></tr>
+        <tr><td>Cost per 1,000 tokens</td><td>Model/FinOps unit-cost efficiency</td><td>Whether the solution is worth what it costs overall</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p>The best metric for leaders is a business outcome KPI tied to ROI — measured benefit minus total cost of ownership. Adoption, technical performance, gross manual-effort reduction, and token unit-cost are all real and useful signals, but none of them alone proves business value; each can look good while the underlying ROI is neutral or negative.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Managing AI Costs and Business Value Across Use Cases</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Adventure Works has deployed several generative AI use cases on Azure OpenAI, including:</p>
+    <ul class="outline-list">
+      <li>Customer-support assistance</li>
+      <li>A sales copilot</li>
+      <li>Internal knowledge search</li>
+    </ul>
+    <p>Leadership needs ongoing transparency into both cost and value. The organization wants to:</p>
+    <ul class="outline-list">
+      <li>Allocate AI spend to each business unit and use case</li>
+      <li>Set budgets and receive alerts when actual or forecasted spend exceeds targets</li>
+      <li>Track Azure OpenAI and supporting-service costs</li>
+      <li>Combine cost data with business KPIs such as tickets resolved and deals closed</li>
+      <li>Present the results in a unified ROI dashboard</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Use Microsoft Cost Management for FinOps Controls and Power BI for the Unified ROI Dashboard</h4>
+        <p>The recommended approach is to combine:</p>
+        <ol class="numbered-outline">
+          <li><strong>A deliberate Azure resource and tagging structure</strong> for cost attribution</li>
+          <li><strong>Microsoft Cost Management</strong> for cost analysis, budgets, forecasts, alerts, and exports</li>
+          <li><strong>Application telemetry and business systems</strong> for use-case activity and outcome KPIs</li>
+          <li><strong>Power BI</strong>, optionally supported by Microsoft Fabric, for a unified cost-and-value dashboard</li>
+        </ol>
+        <p><strong>1. Establish cost-allocation dimensions</strong></p>
+        <p>Assign consistent metadata such as:</p>
+        <ul class="outline-list">
+          <li><code>BusinessUnit</code></li>
+          <li><code>UseCase</code></li>
+          <li><code>Application</code></li>
+          <li><code>Environment</code></li>
+          <li><code>CostCenter</code></li>
+          <li><code>Owner</code></li>
+        </ul>
+        <p>Where practical, use separate subscriptions, resource groups, Foundry projects, Azure OpenAI resources, or deployments for workloads requiring clear financial isolation.</p>
+        <p>Azure resource tags are useful for allocating costs, but not every AI meter or subresource supports independent tagging. When several use cases share one Azure OpenAI deployment, Azure billing data alone may not identify which request belongs to which use case.</p>
+        <p>For shared deployments, add application-level attribution such as:</p>
+        <ul class="outline-list">
+          <li>Use-case identifier</li>
+          <li>Business-unit identifier</li>
+          <li>Model deployment</li>
+          <li>Input and output token counts</li>
+          <li>Request count</li>
+          <li>Correlation identifier</li>
+          <li>User or workload category, where appropriate and privacy-compliant</li>
+        </ul>
+        <p>This telemetry can be recorded through Azure Monitor, Application Insights, an API gateway, or the application logging pipeline.</p>
+        <p><strong>2. Use Microsoft Cost Management</strong></p>
+        <p>Use Microsoft Cost Management to:</p>
+        <ul class="outline-list">
+          <li>Analyze cost by subscription, resource group, resource, service, meter, and tag</li>
+          <li>Compare actual costs with budgets</li>
+          <li>Review forecasted spend</li>
+          <li>Create budget alerts at defined thresholds</li>
+          <li>Detect unexpected spending patterns</li>
+          <li>Export detailed cost and usage data for downstream reporting</li>
+        </ul>
+        <p>Budgets can trigger notifications based on actual or forecasted cost. They provide governance alerts but do not automatically stop Azure resources or model consumption.</p>
+        <p><strong>3. Combine cost data with business KPIs</strong></p>
+        <p>Bring together:</p>
+        <ul class="outline-list">
+          <li>Azure Cost Management exports or connector data</li>
+          <li>Token and request telemetry</li>
+          <li>Customer-support KPIs such as tickets resolved, handling time, and escalation rate</li>
+          <li>Sales KPIs such as qualified opportunities, conversion rate, and deals closed</li>
+          <li>Knowledge-search KPIs such as successful searches, deflection, and employee time saved</li>
+        </ul>
+        <p>Power BI can use the Azure Cost Management connector or exported cost data and combine it with operational data from CRM, support, analytics, or business systems.</p>
+        <p><strong>4. Build an ROI and unit-economics dashboard</strong></p>
+        <p>Useful measures include:</p>
+        <pre><code>Net value = Measured business benefit - Total AI cost</code></pre>
+        <pre><code>ROI = (Measured business benefit - Total AI cost) / Total AI cost</code></pre>
+        <pre><code>Cost per resolved ticket = Support AI cost / AI-assisted tickets resolved</code></pre>
+        <pre><code>Cost per closed deal = Sales copilot cost / Attributable deals closed</code></pre>
+        <p>The dashboard should show:</p>
+        <ul class="outline-list">
+          <li>Actual and forecast cost by business unit and use case</li>
+          <li>Budget versus actual spend</li>
+          <li>Token and request trends</li>
+          <li>Cost per business outcome</li>
+          <li>Adoption and quality indicators</li>
+          <li>Gross benefit, total cost, net value, and ROI</li>
+          <li>Data-quality and attribution caveats</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>This approach separates three different requirements:</p>
+        <ul class="outline-list">
+          <li><strong>Azure Cost Management</strong> provides financial governance and billing visibility.</li>
+          <li><strong>Application telemetry</strong> provides request-level attribution when resources are shared.</li>
+          <li><strong>Power BI or Fabric</strong> combines technical cost data with business outcomes.</li>
+        </ul>
+        <p>Azure Cost Management alone cannot prove ROI because it does not know whether a model call resolved a ticket or contributed to a closed deal. Likewise, application telemetry alone is not the authoritative Azure billing record. A joined FinOps and business-value model is required.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Use Only Azure Cost Analysis</h4>
+        <p>The organization can view Azure OpenAI and supporting-service spend directly in Cost Analysis.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This is appropriate for:</p>
+        <ul class="outline-list">
+          <li>Initial cost investigation</li>
+          <li>Resource-level spending trends</li>
+          <li>Identifying expensive services or meters</li>
+          <li>Small pilots with isolated resources</li>
+        </ul>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It does not provide business KPIs.</li>
+          <li>Shared-resource costs may not map cleanly to individual use cases.</li>
+          <li>It does not produce a complete ROI view.</li>
+          <li>Advanced allocation may require tags, resource separation, exports, and telemetry.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Create Separate Azure Resources for Every Use Case</h4>
+        <p>Each use case can have its own subscription, resource group, Azure OpenAI resource, or deployment.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This provides clearer cost isolation and independent budgets.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>It increases resource, quota, networking, security, and operational complexity.</li>
+          <li>Capacity may be fragmented.</li>
+          <li>Some shared platform costs still require allocation.</li>
+          <li>It may be excessive for small or temporary use cases.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Estimate Cost from Token Telemetry Alone</h4>
+        <p>The organization can calculate estimated model cost by multiplying token usage by model rates.</p>
+        <p><strong>Why select this alternative</strong></p>
+        <p>This provides fast, fine-grained attribution by request or use case.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Estimates may differ from invoiced Azure costs.</li>
+          <li>Pricing, caching, deployment models, discounts, and supporting services complicate calculations.</li>
+          <li>It should be reconciled with Cost Management rather than used as the financial source of truth.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Capability</th><th>Primary role</th></tr></thead>
+      <tbody>
+        <tr><td>Azure resource structure and tags</td><td>Allocate billed costs to organizational dimensions</td></tr>
+        <tr><td>Microsoft Cost Management</td><td>Analyze costs, forecast spend, create budgets and alerts, and export billing data</td></tr>
+        <tr><td>Azure Monitor / Application Insights</td><td>Capture request, token, use-case, performance, and quality telemetry</td></tr>
+        <tr><td>Power BI / Microsoft Fabric</td><td>Combine financial and business data into ROI and unit-economics reporting</td></tr>
+        <tr><td>CRM and support systems</td><td>Provide authoritative business-outcome KPIs</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Use Microsoft Cost Management with a consistent resource-and-tagging strategy for allocation, budgets, forecasts, and alerts. Add application-level telemetry for shared AI resources, then combine Azure cost data with business KPIs in Power BI or Fabric to create a unified ROI dashboard.</strong></p>
+    </div>
+
+    <h3 class="sub-point-1">References</h3>
+    <ul class="outline-list">
+      <li><a href="https://learn.microsoft.com/en-us/azure/foundry/concepts/manage-costs">Plan and manage Microsoft Foundry costs</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/cost-allocation-introduction">Introduction to Azure cost allocation</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets">Create and manage Azure budgets</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-connect-azure-cost-management">Connect Power BI to Azure Cost Management</a></li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Improving Azure OpenAI ROI Without Reducing Employee Value</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Tailwind Traders has an internal Azure OpenAI assistant with strong user feedback, but usage cost is approximately 40% above forecast.</p>
+    <p>The organization wants to:</p>
+    <ul class="outline-list">
+      <li>Reduce Azure OpenAI spend</li>
+      <li>Preserve the employee experience</li>
+      <li>Avoid removing valuable capabilities prematurely</li>
+      <li>Improve measurable return on investment</li>
+    </ul>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Analyze Usage and Target High-Cost, Low-Value Interactions First</h4>
+        <p>The right first step is to <strong>analyze usage telemetry to identify high-cost, low-value interactions, and optimize those workloads first</strong> — before changing models or limiting access broadly.</p>
+        <p>The team should measure:</p>
+        <ul class="outline-list">
+          <li>Which use cases employees use most</li>
+          <li>Which interactions create the greatest business value</li>
+          <li>Token consumption by feature, user journey, and request type</li>
+          <li>Average prompt and response length</li>
+          <li>Repeated or unnecessary context</li>
+          <li>Requests being sent to models that are more capable than necessary</li>
+          <li>Failed, abandoned, or low-rated interactions</li>
+          <li>Duplicate requests that could be cached or answered deterministically</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>A cost overrun by itself does not indicate which capability should be reduced — cutting broadly risks removing exactly the high-value interactions driving the strong user feedback.</p>
+        <p>Usage analysis helps the team protect high-value experiences while optimizing wasteful patterns. It prevents indiscriminate cost cutting that could reduce adoption and business value.</p>
+        <p>Typical optimizations identified through telemetry include:</p>
+        <ul class="outline-list">
+          <li>Route simple tasks to a smaller, lower-cost model</li>
+          <li>Reserve premium models for complex reasoning</li>
+          <li>Reduce oversized system prompts and retrieved context</li>
+          <li>Limit unnecessary conversation history</li>
+          <li>Improve retrieval so only relevant passages are sent</li>
+          <li>Set appropriate output-length limits</li>
+          <li>Cache stable or repeated responses</li>
+          <li>Use conventional search, rules, or APIs for deterministic tasks</li>
+          <li>Batch or defer noninteractive workloads where appropriate</li>
+          <li>Remove features with high cost and low user value</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Recommended Optimization Sequence</h4>
+        <ol class="numbered-outline">
+          <li><strong>Measure business value and usage cost by use case</strong></li>
+          <li><strong>Identify high-cost, low-value or redundant interactions</strong></li>
+          <li><strong>Optimize prompts, retrieval, context, and output length</strong></li>
+          <li><strong>Introduce model routing or smaller models for simpler tasks</strong></li>
+          <li><strong>Use caching and deterministic services where appropriate</strong></li>
+          <li><strong>Re-measure quality, employee satisfaction, and cost</strong></li>
+          <li><strong>Scale the changes that preserve value</strong></li>
+        </ol>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Immediately Switch Every Request to the Cheapest Model</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It can reduce token cost quickly.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Complex tasks may become less accurate.</li>
+          <li>Employees may perceive lower quality.</li>
+          <li>Adoption and trust may decline.</li>
+          <li>The lowest unit cost does not necessarily produce the best ROI.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Impose Uniform Usage Limits on All Employees</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>It creates a predictable spending ceiling.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>High-value and low-value usage are restricted equally.</li>
+          <li>Employees may lose access during important work.</li>
+          <li>Cost is controlled without improving solution efficiency.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Shorten Every Response</h4>
+        <p><strong>Why select this alternative</strong></p>
+        <p>Output tokens contribute to usage cost.</p>
+        <p><strong>Trade-offs</strong></p>
+        <ul class="outline-list">
+          <li>Some tasks genuinely require detailed output.</li>
+          <li>Uniform limits may reduce usefulness.</li>
+          <li>Output controls should be tailored by scenario.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Action</th><th>Effect</th></tr></thead>
+      <tbody>
+        <tr><td>Usage and value analysis</td><td>Identifies where cost can be removed safely</td></tr>
+        <tr><td>Prompt and retrieval optimization</td><td>Reduces unnecessary input tokens</td></tr>
+        <tr><td>Model routing</td><td>Matches model cost and capability to task complexity</td></tr>
+        <tr><td>Caching</td><td>Avoids repeated model calls for stable answers</td></tr>
+        <tr><td>Uniform restrictions</td><td>Reduces spending but may also reduce business value</td></tr>
+        <tr><td>ROI measurement</td><td>Compares total value delivered with total solution cost</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>The most effective first step is to analyze usage telemetry and business outcomes to identify high-cost, low-value interactions. Then optimize prompts, retrieval, context, output length, model selection, and caching while protecting the workflows employees value most.</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="main-point">Diagnosing Unexpected Azure OpenAI Usage Charges</h2>
+
+    <h3 class="sub-point-1">Problem / Scenario / Need</h3>
+    <p class="intro-text">Contoso completed a 30-day pilot of an Azure OpenAI knowledge assistant.</p>
+    <p>Although the number of users is small, the Azure bill is much higher than forecast.</p>
+    <p>The organization needs to identify the cost driver that should be investigated first.</p>
+
+    <h3 class="sub-point-1">Solutions</h3>
+    <div class="sub-section">
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Best Practice: Analyze Token Consumption by Model and Request</h4>
+        <p>The first cost driver to analyze is <strong>the volume of input and output tokens processed, together with the model being used</strong>.</p>
+        <p>Azure OpenAI usage charges are primarily influenced by:</p>
+        <ul class="outline-list">
+          <li>Input tokens processed</li>
+          <li>Output tokens generated</li>
+          <li>The selected model and its per-token price</li>
+          <li>Request volume — more requests multiply total token consumption, rather than incurring a separate per-request fee for standard chat/completions usage</li>
+          <li>Additional billable capabilities such as embeddings or image generation, which have their own per-unit pricing</li>
+          <li>Whether the deployment is pay-as-you-go (charged per token) or provisioned throughput (charged for reserved capacity regardless of consumption)</li>
+        </ul>
+        <p>A small number of users can still generate high cost when each request contains:</p>
+        <ul class="outline-list">
+          <li>Long system prompts</li>
+          <li>Large retrieved document chunks</li>
+          <li>Extensive conversation history</li>
+          <li>Repeated context</li>
+          <li>Very long generated responses</li>
+          <li>Calls to a more expensive model than the task requires</li>
+        </ul>
+        <p><strong>Why this is the best practice</strong></p>
+        <p>User count is not the direct unit of consumption for standard token-based Azure OpenAI usage.</p>
+        <p>For example, a knowledge assistant may send the following with every question:</p>
+        <pre><code>System instructions
++ conversation history
++ retrieved documents
++ user question
++ generated answer</code></pre>
+        <p>All relevant input and output tokens can contribute to the charge. Poorly optimized RAG or chat-history handling can therefore create large costs even during a small pilot.</p>
+        <p>The team should first break down:</p>
+        <ul class="outline-list">
+          <li>Tokens by deployment and model</li>
+          <li>Input versus output tokens</li>
+          <li>Tokens per request</li>
+          <li>Cost by use case or feature</li>
+          <li>Retrieved-context size</li>
+          <li>Conversation-history size</li>
+          <li>Failed, repeated, or low-value calls</li>
+        </ul>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Recommended Diagnostic Sequence</h4>
+        <ol class="numbered-outline">
+          <li>Review Azure Cost Management charges by resource and meter.</li>
+          <li>Review Azure OpenAI or Foundry monitoring metrics for token usage and request volume.</li>
+          <li>Identify which model deployments generate the most cost.</li>
+          <li>Measure average input and output tokens per request.</li>
+          <li>Inspect system prompts, RAG context, and chat history.</li>
+          <li>Check for retries, loops, duplicate calls, or unexpectedly long responses.</li>
+          <li>Compare cost with business value by use case.</li>
+        </ol>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Investigate the Number of Registered Users First</h4>
+        <p><strong>Why this is not the best first step</strong></p>
+        <p>The number of registered or licensed users does not directly explain token-based Azure OpenAI charges.</p>
+        <p>A few intensive users can consume more tokens than many light users.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Investigate Storage Cost First</h4>
+        <p><strong>Why this is not the best first step</strong></p>
+        <p>Search indexes, logs, and document storage can add cost, but they are usually separate from the model-inference charges.</p>
+        <p>The team should isolate the Azure OpenAI line items before investigating supporting services.</p>
+      </div>
+
+      <div class="sub-section-nested">
+        <h4 class="sub-point-2">Alternative: Assume the Cause Is the Number of Deployed Models</h4>
+        <p><strong>Why this may be incomplete</strong></p>
+        <p>For standard pay-as-you-go deployments, merely having a deployment is not normally the main cost driver; usage determines the inference charge.</p>
+        <p>However, provisioned throughput deployments can incur reserved capacity cost independent of actual token consumption, so the pricing model must also be verified.</p>
+      </div>
+    </div>
+
+    <h3 class="sub-point-1">Key Distinction</h3>
+    <table class="content-table">
+      <thead><tr><th>Cost factor</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td>Input tokens</td><td>Includes prompts, retrieved context, and conversation history</td></tr>
+        <tr><td>Output tokens</td><td>Includes generated answers and summaries</td></tr>
+        <tr><td>Model choice</td><td>More capable models can have higher per-token pricing</td></tr>
+        <tr><td>Request volume</td><td>Multiplies token consumption</td></tr>
+        <tr><td>Provisioned throughput</td><td>Can create capacity charges even when usage is low</td></tr>
+        <tr><td>Supporting services</td><td>Search, storage, monitoring, and networking are billed separately</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-point-1">Key Study Point</h3>
+    <div class="summary-box">
+      <p><strong>Analyze input and output token consumption by model first. In a knowledge assistant, oversized prompts, retrieved context, conversation history, and long responses can produce high Azure OpenAI costs even with a small user population. Also verify whether the deployment uses pay-as-you-go or provisioned throughput.</strong></p>
+    </div>
+  </section>
+
+  <p class="page-meta">Next: <a href="azure-ai-study-materials-reviewed-part3.html">Part 3 — Microsoft Copilot Ecosystem →</a></p>
+</article>
+<script src="../../pages-scripts.js"></script>
+</body>
+</html>

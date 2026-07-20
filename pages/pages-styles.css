@@ -275,6 +275,12 @@ ul.outline-list > li::before {
     font-weight: bold;
 }
 
+/* Citation markers */
+sup a {
+    font-size: .8em;
+    text-decoration: none;
+}
+
 ol.numbered-outline {
     counter-reset: item;
     list-style: none;

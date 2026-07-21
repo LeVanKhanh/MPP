@@ -434,6 +434,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Tranh Luận: Cả Hai Cùng Thắng",
+                        route: "pages/reading-studying/fallacy-bias-debate/21-debate-vn.html",
+                        hash: "#/debate",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

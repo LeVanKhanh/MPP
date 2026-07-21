@@ -427,6 +427,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Debate: Both Sides Win",
+                        route: "pages/reading-studying/fallacy-bias-debate/21-debate.html",
+                        hash: "#/debate",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

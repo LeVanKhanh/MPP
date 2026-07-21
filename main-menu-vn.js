@@ -309,8 +309,8 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
-                        title: "Hiệu Ứng Xe Nhạc",
-                        route: "pages/reading-studying/fallacy-bias-debate/bandwagon-effect.html",
+                        title: "Hiệu Ứng Đám Đông",
+                        route: "pages/reading-studying/fallacy-bias-debate/bandwagon-effect-vn.html",
                         hash: "#/bandwagon-effect",
                         icon: "fas fa-file-alt",
                         subItems: [],

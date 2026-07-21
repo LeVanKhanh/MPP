@@ -1,78 +1,116 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-	<meta charset="UTF-8">
-	<title>Phương Pháp Phỏng Đoán Tính Khả Dụng - My Personal Planet</title>
-	<link rel="stylesheet" href="../../pages-styles.css">
+    <meta charset="UTF-8">
+    <title>Phương Pháp Phỏng Đoán Tính Khả Dụng - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
 </head>
 <body>
-	<article class="content-article">
-		<header class="article-header">
-			<h1 class="page-title">Phương Pháp Phỏng Đoán Tính Khả Dụng</h1>
-			<p class="page-subtitle">Đánh giá khả năng xảy ra dựa trên mức độ dễ nhớ lại</p>
-			<p class="page-meta">Xuất bản: <time datetime="2025-12-17">17 Tháng 12, 2025</time></p>
-		</header>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Phương Pháp Phỏng Đoán Tính Khả Dụng</h1>
+            <p class="page-subtitle">Nếu bạn dễ dàng hình dung ra nó, não bạn mặc định rằng nó xảy ra thường xuyên</p>
+            <p class="page-meta">Cập nhật: <time datetime="2026-07-20">20 Tháng 7, 2026</time></p>
+        </header>
 
-		<section class="content-section">
-			<h2 class="main-point">Định Nghĩa</h2>
-			<p class="intro-text">Phương pháp phỏng đoán tính khả dụng là một thiên kiến nhận thức trong đó các cá nhân ước tính khả năng xảy ra của một sự kiện dựa trên mức độ dễ dàng mà các ví dụ hoặc trường hợp của sự kiện đó xuất hiện trong tâm trí, thường dẫn đến việc đánh giá quá cao các sự kiện hiếm nhưng đáng nhớ.</p>
-			
-			<div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
-				<iframe 
-					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-					src="https://www.youtube.com/embed/ReFqFPJHLhA" 
-					title="Availability Heuristic Explained" 
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-					referrerpolicy="strict-origin-when-cross-origin"
-					allowfullscreen>
-				</iframe>
-			</div>
-		</section>
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Định Nghĩa</h2>
+            <p class="intro-text">Phương pháp phỏng đoán tính khả dụng là xu hướng đánh giá một điều gì đó phổ biến hay nguy hiểm đến mức nào dựa trên việc ta dễ nhớ lại ví dụ về nó đến đâu, chứ không dựa trên tần suất thực tế của nó. Nếu não bạn có thể nhanh chóng gọi ra một ví dụ sống động, điều đó sẽ cảm giác như phổ biến — bất kể số liệu thống kê thực sự nói gì.</p>
 
-		<section class="content-section">
-			<h2 class="main-point">Ví Dụ</h2>
-			<ul class="outline-list">
-				<li><strong>Sợ Bay:</strong> Mọi người có thể đánh giá quá cao sự nguy hiểm của du lịch hàng không do các vụ tai nạn máy bay nổi bật được đưa tin rộng rãi trên phương tiện truyền thông</li>
-				<li><strong>Nhận Thức Về Tội Phạm:</strong> Các cá nhân có thể tin rằng tỷ lệ tội phạm cao hơn thực tế vì các báo cáo tin tức thường xuyên về tội phạm bạo lực</li>
-				<li><strong>Rủi Ro Sức Khỏe:</strong> Mọi người có thể đánh giá quá cao nguy cơ của các bệnh hiếm gặp sau khi nghe về chúng trên tin tức hoặc từ người quen</li>
-				<li><strong>Trúng Xổ Số:</strong> Các cá nhân có thể đánh giá quá cao cơ hội trúng xổ số của họ do các câu chuyện về những người trúng giải lớn</li>
-			</ul>
-		</section>
+            <p>Não bộ dùng "mức độ dễ nhớ lại" làm một phím tắt để né việc phải tính toán tần suất thật sự — một việc tốn công sức hơn nhiều. Hai nhà tâm lý học Amos Tversky và Daniel Kahneman đặt tên cho hiệu ứng này vào năm 1973, và các thí nghiệm của họ cho thấy phím tắt này dễ "trật" đến mức nào — nó bám theo mức độ đáng nhớ của một điều gì đó, chứ không phải tần suất nó thực sự xảy ra.</p>
 
-		<section class="content-section">
-			<h2 class="main-point">Nguyên Nhân</h2>
-			<ul class="outline-list">
-				<li><strong>Đưa Tin Trên Truyền Thông:</strong> Các sự kiện giật gân hoặc kịch tính nhận được nhiều sự chú ý hơn, khiến chúng đáng nhớ hơn</li>
-				<li><strong>Kinh Nghiệm Cá Nhân:</strong> Các sự kiện mà cá nhân đã trải nghiệm trực tiếp sẽ nổi bật hơn</li>
-			</ul>
-		</section>
+            <table class="content-table">
+                <thead><tr><th>Sự kiện</th><th>Cảm giác phổ biến vì...</th><th>Tần suất thực tế</th></tr></thead>
+                <tbody>
+                    <tr><td>Tai nạn máy bay</td><td>Được đưa tin khắp thế giới, hình ảnh gây sốc</td><td>Là một trong những phương tiện an toàn nhất tính trên mỗi km di chuyển</td></tr>
+                    <tr><td>Cá mập tấn công người</td><td>Phim ảnh, tiêu đề giật gân</td><td>Cực kỳ hiếm so với các rủi ro khác khi ở biển</td></tr>
+                    <tr><td>Trúng số</td><td>Được quảng cáo rầm rộ mỗi khi có người trúng lớn</td><td>Xác suất thấp hơn nhiều so với những rủi ro thường ngày mà ít ai bận tâm</td></tr>
+                </tbody>
+            </table>
 
-		<section class="content-section">
-			<h2 class="main-point">Hậu Quả</h2>
-			<ul class="outline-list">
-				<li>Rủi Ro Bị Đánh Giá Sai: Đánh giá quá cao hoặc đánh giá thấp khả năng xảy ra sự kiện có thể dẫn đến ra quyết định kém</li>
-				<li>Nhận Thức Sai Lệch: Các cá nhân có thể phát triển quan điểm méo mó về thực tế dựa trên các sự kiện đáng nhớ</li>
-			</ul>
-		</section>
+            <!-- YouTube Video Container -->
+            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                <iframe
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                    src="https://www.youtube.com/embed/ReFqFPJHLhA"
+                    title="Availability Heuristic Explained"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
 
-		<section class="content-section">
-			<h2 class="main-point">Chiến Lược Giảm Thiểu</h2>
-			<ul class="outline-list">
-				<li>Nhận Thức và Giáo Dục: Thông báo cho các cá nhân về phương pháp phỏng đoán tính khả dụng để thúc đẩy đánh giá phê phán</li>
-				<li>Tìm Kiếm Dữ Liệu Thống Kê: Dựa vào dữ liệu khách quan thay vì bằng chứng giai thoại</li>
-				<li>Xem Xét Tỷ Lệ Cơ Bản: Đánh giá tần suất thực tế của các sự kiện trong dân số chung</li>
-				<li>Nguồn Thông Tin Đa Dạng: Thu thập thông tin từ nhiều góc nhìn để chống lại việc nhớ lại có thiên kiến</li>
-			</ul>
-		</section>
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Ví Dụ</h2>
+            <p class="intro-text">Thiên kiến này thể hiện ở ba mức độ khác nhau: một tình huống bạn có thể hình dung, một nghiên cứu đã đo lường được nó, và một cuộc khủng hoảng tài chính mà nó góp phần lý giải.</p>
 
-		<section class="content-section">
-			<div class="summary-box">
-				<h3 class="sub-point-1">Điểm Chính</h3>
-				<p>Phương pháp phỏng đoán tính khả dụng nhắc nhở chúng ta rằng các sự kiện đáng nhớ không nhất thiết phản ánh thực tế thống kê. Bằng cách tham khảo dữ liệu khách quan và tỷ lệ cơ bản, chúng ta có thể đưa ra các đánh giá rủi ro chính xác hơn thay vì chỉ dựa vào những gì dễ dàng xuất hiện trong tâm trí.</p>
-			</div>
-		</section>
-	</article>
+            <div class="sub-section">
+                <h3 class="sub-point-1">Hai Đồng Nghiệp, Hai Nỗi Sợ Khác Nhau Trước Cùng Một Chuyến Bay</h3>
+                <p>Hãy tưởng tượng hai đồng nghiệp cùng chuẩn bị bay đến một hội nghị. Người thứ nhất vừa xem xong một bộ phim tài liệu về các vụ rơi máy bay nổi tiếng trong lịch sử. Người thứ hai vừa đọc một bài báo về một vụ tai nạn ô tô nghiêm trọng gần nhà. Dù xác suất khách quan gặp tai nạn trên đường ra sân bay còn cao hơn xác suất gặp sự cố trên chuyến bay, người thứ nhất vẫn thấy lo lắng hơn hẳn về chuyến bay, còn người thứ hai lại thấy lo lắng hơn về đoạn đường lái xe. Không ai trong hai người đang tính sai xác suất một cách có ý thức — mỗi người chỉ đơn giản đang đánh giá dựa trên hình ảnh nào vừa mới và sống động nhất trong đầu mình.</p>
+            </div>
 
-	<script src="../../pages-scripts.js"></script>
+            <div class="sub-section">
+                <h3 class="sub-point-1">Chữ K Đứng Đầu Hay Đứng Thứ Ba?</h3>
+                <p>Năm 1973, Amos Tversky và Daniel Kahneman hỏi người tham gia thí nghiệm một câu tưởng như đơn giản: trong tiếng Anh, có nhiều từ bắt đầu bằng chữ K hơn, hay có nhiều từ có chữ K ở vị trí thứ ba hơn? Phần lớn người được hỏi tự tin trả lời là "bắt đầu bằng K" — vì họ có thể nhanh chóng nghĩ ra các ví dụ như "king," "kitchen," "kind." Nhưng trên thực tế, tiếng Anh có số từ có chữ K ở vị trí thứ ba nhiều gấp khoảng ba lần, như "acknowledge," "biker," "cake." Vấn đề không nằm ở tần suất thực tế, mà ở việc não bộ tìm từ theo chữ cái đầu tiên dễ hơn nhiều so với tìm theo chữ cái thứ ba — nên nhóm từ dễ nhớ lại hơn liền bị tưởng nhầm là nhóm đông hơn. <sup><a href="#ref-1">[1]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Khi Phố Wall Định Giá Rủi Ro Dựa Trên Điều Chưa Từng Xảy Ra</h3>
+                <p>Trước năm 2008, các mô hình định giá rủi ro tại những công ty lớn như Moody's và S&P dùng dữ liệu lịch sử để xếp hạng tín nhiệm cho hàng nghìn tỷ đô la chứng khoán đảm bảo bằng thế chấp nhà. Vấn đề là: trong toàn bộ tập dữ liệu họ có, chưa từng có một đợt sụt giá nhà trên phạm vi toàn nước Mỹ. Vì kịch bản đó chưa từng "có sẵn" trong trí nhớ hay trong dữ liệu của họ, các mô hình gần như không gán bất kỳ xác suất đáng kể nào cho nó — và một lượng lớn chứng khoán rủi ro cao vẫn giữ mức xếp hạng AAA, hạng an toàn cao nhất một trái phiếu có thể nhận được. Khi giá nhà bắt đầu giảm trên diện rộng năm 2007, chỉ riêng Moody's đã phải hạ xếp hạng 83% trong số 869 tỷ đô la chứng khoán họ từng xếp hạng AAA năm 2006. <sup><a href="#ref-2">[2]</a></sup> Đây là một trong những lời giải thích các nhà nghiên cứu đưa ra sau khủng hoảng: rủi ro không bị định giá thấp vì thiếu dữ liệu, mà vì kịch bản tồi tệ nhất chưa từng xảy ra đủ gần để trở nên "có thật" trong tâm trí những người ra quyết định.</p>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="content-section">
+            <h2 class="main-point">Một Vài Nghiên Cứu Về Phương Pháp Phỏng Đoán Tính Khả Dụng</h2>
+            <p class="intro-text">Đây là một nghiên cứu cho thấy phương pháp phỏng đoán này có thể gây ra hậu quả chết người trên diện rộng, chứ không chỉ là một sai lệch nhận thức vô hại.</p>
+            <div class="sub-section">
+                <p><strong>Nghiên cứu:</strong> Sau vụ khủng bố ngày 11 tháng 9 năm 2001, nhà tâm lý học Gerd Gigerenzer đặt ra một câu hỏi cụ thể: liệu nỗi sợ bay tăng vọt sau vụ tấn công có khiến người Mỹ chuyển sang lái xe nhiều hơn hay không, và nếu có, cái giá thực sự của điều đó là gì? Ông phân tích dữ liệu giao thông chính thức của Bộ Giao thông Hoa Kỳ trong ba tháng sau vụ tấn công. <sup><a href="#ref-3">[3]</a></sup></p>
+                <p><strong>Kết quả:</strong> Lượng người đi máy bay giảm mạnh, số dặm lái xe trên đường tăng lên tương ứng. Gigerenzer ước tính có thêm 353 người Mỹ tử vong trong các vụ tai nạn đường bộ trong ba tháng đó — nhiều hơn tổng số hành khách thiệt mạng trên bốn chuyến bay bị không tặc ngày 11/9.</p>
+                <p><strong>Kết luận:</strong> Những hình ảnh từ vụ tấn công — sống động, gây sốc, được phát đi phát lại trên mọi kênh tin tức — khiến việc bay cảm giác nguy hiểm hơn hẳn so với những gì số liệu thực tế cho thấy (bay vẫn an toàn hơn lái xe rất nhiều tính trên mỗi km di chuyển). Nhưng một phán đoán được xây dựng trên hình ảnh dễ nhớ nhất, chứ không phải con số thật, đã đẩy hàng trăm người đến lựa chọn nguy hiểm hơn về mặt khách quan.</p>
+                <p><strong>Vì sao điều này hữu ích:</strong> Đây là lời nhắc rằng phương pháp phỏng đoán tính khả dụng không chỉ khiến bạn ước tính sai một con số vô hại — trong những quyết định liên quan đến an toàn, tiền bạc, hay sức khỏe, nó có thể đẩy bạn về phía lựa chọn rủi ro hơn chỉ vì lựa chọn đó "cảm thấy" an toàn hơn. Trước một quyết định quan trọng, đáng để tự hỏi: mình đang đánh giá rủi ro này dựa trên số liệu, hay dựa trên hình ảnh gần đây nhất mà mình tình cờ nhớ được?</p>
+            </div>
+        </section>
+
+        <!-- Mitigation Strategies -->
+        <section class="content-section">
+            <h2 class="main-point">Chiến Lược Giảm Thiểu</h2>
+            <p class="intro-text">Phương pháp phỏng đoán tính khả dụng hoạt động bằng cách nhầm lẫn "mức độ dễ nhớ lại" với tần suất thực tế, nên cách khắc phục hiệu quả là buộc bản thân đối chiếu với số liệu thật.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Tra tỷ lệ nền trước khi tin vào cảm giác:</strong> Trước khi kết luận điều gì đó phổ biến hay nguy hiểm, hãy tìm số liệu thống kê thực tế — tần suất thật của nó trên toàn bộ dân số hoặc khoảng thời gian — thay vì dựa vào việc bạn nhớ ra ví dụ nhanh hay chậm</li>
+                    <li><strong>Tự hỏi vì sao ví dụ đó lại dễ nhớ đến vậy:</strong> Nếu một ký ức bật ra ngay lập tức, hãy kiểm tra xem đó là vì nó thực sự phổ biến, hay chỉ vì nó gần đây, giật gân, hoặc được truyền thông nhắc đi nhắc lại</li>
+                    <li><strong>Chủ động tìm trường hợp ngược lại:</strong> Giống như cách lật ngược câu hỏi về chữ K, hãy chủ động đếm thử trường hợp mà bạn không tự động nhớ ra, thay vì tin ngay vào câu trả lời bật ra đầu tiên</li>
+                    <li><strong>Đặc biệt cẩn trọng với các quyết định kiểu "chưa từng xảy ra":</strong> Khi đánh giá rủi ro cho một kịch bản chưa có tiền lệ gần đây — thị trường sụp đổ, thiên tai hiếm gặp — đừng để "tôi chưa từng thấy điều đó" âm thầm biến thành "điều đó sẽ không xảy ra"; đây chính xác là lỗi khiến Phố Wall định giá sai rủi ro năm 2008</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Tóm Tắt</h2>
+            <div class="summary-box">
+                <p><strong>Điểm Chính:</strong> Phương pháp phỏng đoán tính khả dụng khiến cảm nhận của bạn về mức độ phổ biến hay nguy hiểm của một điều gì đó bám theo việc bạn dễ nhớ lại ví dụ đến đâu, chứ không phải số liệu thực tế — những sự kiện sống động, gần đây và được đưa tin dày đặc lấn át những sự kiện âm thầm, phổ biến hơn nhiều. Cách khắc phục là kiểm tra tỷ lệ nền thực tế trước khi tin vào trực giác, và luôn cảnh giác với những quyết định mà "chưa từng xảy ra" đang âm thầm bị hiểu thành "sẽ không thể xảy ra."</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">Tài Liệu Tham Khảo</h2>
+            <ol class="outline-list">
+                <li id="ref-1">Tversky, A., & Kahneman, D. (1973). Availability: A heuristic for judging frequency and probability. <em>Cognitive Psychology</em>, 5(2), 207–232. Bài báo đặt tên cho phương pháp phỏng đoán tính khả dụng, bao gồm thí nghiệm về các từ có chữ K. <a href="https://www.sciencedirect.com/science/article/abs/pii/0010028573900339" rel="noopener noreferrer" target="_blank">Đọc tóm tắt</a>.</li>
+                <li id="ref-2">Financial Crisis Inquiry Commission (2011). <em>The Financial Crisis Inquiry Report</em>. Báo cáo chính thức của chính phủ Hoa Kỳ, ghi lại cách các chứng khoán đảm bảo bằng thế chấp được xếp hạng AAA dựa trên mô hình chưa từng có tiền lệ sụt giá nhà toàn quốc. <a href="https://fcic.law.stanford.edu/report" rel="noopener noreferrer" target="_blank">Đọc báo cáo</a>.</li>
+                <li id="ref-3">Gigerenzer, G. (2004). Dread risk, September 11, and fatal traffic accidents. <em>Psychological Science</em>, 15(4), 286–287. Nghiên cứu ước tính số ca tử vong đường bộ tăng thêm do người lái xe né tránh các chuyến bay sau vụ tấn công 11/9. <a href="https://journals.sagepub.com/doi/10.1111/j.0956-7976.2004.00668.x" rel="noopener noreferrer" target="_blank">Đọc tóm tắt</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
 </body>
 </html>

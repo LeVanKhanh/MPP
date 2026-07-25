@@ -291,6 +291,13 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "Án Lệ Đương Đại: Ngụy Biện Trong Chính Trị, Kinh Tế, Nhân Sinh",
+                                route: "pages/reading-studying/fallacy-bias-debate/fallacy/03-fallacy-cases-trending-vn.html",
+                                hash: "#/fallacy-cases-trending",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                     {

@@ -284,6 +284,13 @@ var mainMenu = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "Contemporary Cases: Fallacies in Politics, Economics, and Everyday Life",
+                                route: "pages/reading-studying/fallacy-bias-debate/fallacy/03-fallacy-cases-trending.html",
+                                hash: "#/fallacy-cases-trending",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                     {

@@ -284,6 +284,13 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "Án Lệ Biện Luận: Đông Tây Kinh Điển",
+                                route: "pages/reading-studying/fallacy-bias-debate/fallacy/02-fallacy-cases-traditional-vn.html",
+                                hash: "#/fallacy-cases-traditional",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                     {

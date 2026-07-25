@@ -277,6 +277,13 @@ var mainMenu = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "Landmark Arguments: East and West Classics",
+                                route: "pages/reading-studying/fallacy-bias-debate/fallacy/02-fallacy-cases-traditional.html",
+                                hash: "#/fallacy-cases-traditional",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                     {

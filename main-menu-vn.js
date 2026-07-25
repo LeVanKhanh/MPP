@@ -298,6 +298,13 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "Có Thực Sự Có Lý Luận Luôn Luôn Đúng?",
+                                route: "pages/reading-studying/fallacy-bias-debate/fallacy/05-is-there-always-correct-reasoning-vn.html",
+                                hash: "#/is-there-always-correct-reasoning",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                     {

@@ -305,6 +305,13 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "Phụ Lục Ngụy Biện",
+                                route: "pages/reading-studying/fallacy-bias-debate/fallacy/appendix-vn.html",
+                                hash: "#/fallacy-appendix",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                     {

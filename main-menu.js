@@ -298,6 +298,13 @@ var mainMenu = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "Fallacy Appendix",
+                                route: "pages/reading-studying/fallacy-bias-debate/fallacy/appendix.html",
+                                hash: "#/fallacy-appendix",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                     {

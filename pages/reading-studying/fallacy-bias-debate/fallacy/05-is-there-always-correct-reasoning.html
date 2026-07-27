@@ -9,31 +9,34 @@
     <article class="content-article">
         <header class="article-header">
             <h1 class="page-title">Can Any Line of Reasoning Always Be Correct?</h1>
-            <p class="page-subtitle">Logic can ensure that a conclusion follows from its premises—but what ensures that the premises are true?</p>
-            <p class="page-meta">Updated: <time datetime="2026-07-25">July 25, 2026</time></p>
+            <p class="page-subtitle">Logic can ensure that a conclusion follows from its premises, but what ensures that the premises are true?</p>
+            <p class="page-meta">Updated: <time datetime="2026-07-26">July 26, 2026</time></p>
         </header>
 
+        <!-- Opening -->
         <section class="content-section">
             <h2 class="main-point">After Every Fallacy Has Been Removed</h2>
-            <p class="intro-text">After learning to identify fallacies, uncover premises, and examine evidence, we may develop a tempting expectation: once every error in reasoning has been removed, whatever remains must be the truth. If an argument contains no obvious fallacy, has a rigorous structure, and is clearly presented, where could it still go wrong?</p>
+            <p class="intro-text">The three earlier posts in this series built an increasingly sturdy toolkit: recognizing fallacy patterns and learning to "unpack an argument" into premises and a conclusion (<a href="01-fallacy.html">Post 1</a>), turning that same toolkit on arguments two thousand years old to see that the framework itself has limits (<a href="02-fallacy-cases-traditional.html">Post 2</a>), and then carrying it straight into dinner-table arguments, legislatures, and present-day evidence (<a href="03-fallacy-cases-trending.html">Post 3</a>). After all that work, a tempting expectation tends to follow, almost a natural reward for having done the process properly: strip every fallacy out of an argument, check every hidden premise, weigh it against the best evidence available, and whatever is left must be the truth. An argument that commits none of the twelve named errors from Post 1, holds together structurally, and is backed by data like the cases in Post 3, where could it still go wrong?</p>
+
             <div class="sub-section">
-                <p>The answer lies at its point of departure.</p>
-                <p>Every argument, when reconstructed as an inference, rests on premises, definitions, facts, or assumptions—whether explicitly stated or merely implicit. Logic can determine whether a conclusion genuinely follows from those starting points, but it cannot by itself guarantee that they accurately describe reality. Even a flawless reasoning machine can produce a false conclusion when its input is false, its concepts are poorly defined, or an important condition has been omitted.</p>
+                <p>The answer sits right at its point of departure, exactly where the whole toolkit built across the previous three posts never pointed its lens. Post 1's "unpacking an argument" teaches you to rewrite the premises and ask whether the conclusion necessarily follows; Post 3's "Resolving It With Evidence" teaches you to test those premises against the best data available. Both moves quietly assume that once a premise has been checked and holds up, the matter is settled. But "checked" always means checked against something else, another theory, another observation, another definition, and whatever that something else rests on is itself a further question.</p>
+                <p>Every argument, when reconstructed as an inference, rests on premises, definitions, facts, or assumptions, whether stated aloud or only implicit, just like the hidden premise Post 1 had to drag into the light in the Elon Musk story. Logic can determine whether a conclusion genuinely follows from those starting points, but it cannot by itself guarantee that they accurately describe reality. Even a flawless reasoning machine can produce a false conclusion when its input is false, its concepts are poorly defined, or an important condition has been omitted, and no list of fallacies, however long, catches this kind of error, because it isn't a broken argument pattern in the sense Post 1 defined; it's a limitation sitting one layer beneath the structure of the argument itself.</p>
                 <p>Can there, then, be a line of reasoning that is always correct?</p>
-                <p>The question cannot be answered with a simple “yes” or “no,” because correctness takes several forms. An inference may be necessarily true within an axiomatic system, approximately true within a physical domain, supported by the best currently available scientific evidence, or reasonable within a particular system of values. Confusing these levels is the source of many disputes that appear impossible to resolve.</p>
+                <p>The question cannot be answered with a simple "yes" or "no," because correctness comes in several forms, and most of what follows simply walks through those forms one at a time to see where the floor is under each. An inference may be necessarily true within an axiomatic system, approximately true within a physical domain, best supported by the currently available scientific evidence, or reasonable within a particular system of values. Confusing these levels with one another, treating them as if there were only one kind of "true," is the source of many disputes that look impossible to resolve, not because either side is wrong, but because both are demanding a kind of certainty that doesn't belong where they're asking for it.</p>
             </div>
         </section>
 
+        <!-- Logic guarantees -->
         <section class="content-section">
             <h2 class="main-point">What Does Logic Guarantee?</h2>
             <div class="sub-section">
-                <p>Consider a simple argument:</p>
+                <p>Consider an argument simple to the point of naivety:</p>
                 <ol class="outline-list">
                     <li>All fish can fly.</li>
                     <li>A carp is a fish.</li>
                     <li>Therefore, a carp can fly.</li>
                 </ol>
-                <p>The conclusion is obviously false in reality. Yet the inferential structure is not defective: if the first two premises were true, the third statement would have to be true.</p>
+                <p>The conclusion is obviously false. Yet the inferential structure is not defective: if the first two premises were true, the third statement would have to follow, with no way to escape it. This is exactly the pattern medieval logicians named "Barbara," namely three consecutive universal statements, the syllogism form Aristotle considered "perfect" because its validity is self-evident and needs no reduction to another form to prove it. What's wrong here isn't the mold; it's the material poured into it.</p>
                 <table class="content-table">
                     <thead>
                         <tr><th>Concept</th><th>What it tests</th></tr>
@@ -43,83 +46,84 @@
                         <tr><td><strong>Soundness</strong></td><td>Whether the argument is valid and its premises are true</td></tr>
                     </tbody>
                 </table>
-                <p>The argument about the carp is valid but unsound because the premise “all fish can fly” is false. Logic has performed its task correctly: it has carried the content of the premises through to the conclusion without breaking the inferential structure. The problem lies in the raw material, not in the reasoning machinery. <sup><a href="#ref-1">[1]</a></sup></p>
-                <p>Logic can be imagined as a bridge. It can tell us whether the route from the premises to the conclusion is continuous, but it cannot guarantee that the ground at either end is stable.</p>
+                <p>The argument about the carp is valid but unsound, since the premise "all fish can fly" is false. Logic has done its job correctly: it carried the content of the premises through to the conclusion without losing any structure along the way. The problem lies in the input, not in the reasoning machine. <sup><a href="#ref-1">[1]</a></sup></p>
+                <p><a href="02-fallacy-cases-traditional.html">Post 2</a> already brushed up against this exact boundary, just without naming it. In one familiar reconstruction, Zeno's Arrow paradox can be read as valid, granted the customary formalization of its premises about instants, position, and rest: if a stretch of time really is composed of durationless instants, and if "occupying a definite position" is the same thing as "being at rest," then the arrow really never moved. The break isn't in any inferential step; it's in a premise slipped in far more quietly than "all fish can fly": that occupying a position at an instant is automatically the same as standing still. Calculus later showed that an object can occupy a definite position at an instant while still having a nonzero instantaneous velocity, defined through the derivative, a tool that describes instantaneous velocity precisely, though that doesn't mean the whole philosophical question about motion, time, and instants vanishes just because we have a calculation for it, exactly as Post 2 itself cautioned when discussing Zeno.</p>
+                <p>Logic can be pictured as a bridge. It checks whether the span from premises to conclusion is unbroken, but it doesn't guarantee that the ground on either end is solid.</p>
                 <blockquote>
                     <p>Logic can establish that a conclusion is true <em>if</em> the premises are true; logic alone cannot establish that every premise accurately describes reality.</p>
                 </blockquote>
-                <p>To examine a premise, we need observations, theories, or further arguments. Those arguments, however, have premises of their own. Where, then, does the chain of justification end?</p>
+                <p>To examine a premise, we need observations, theories, or further arguments, and those arguments have premises of their own. So where does the chain of justification stop, or does it ever stop?</p>
             </div>
         </section>
 
+        <!-- Regress -->
         <section class="content-section">
             <h2 class="main-point">Where Do Our Ultimate Premises Come From?</h2>
             <div class="sub-section">
-                <p>Suppose someone advances proposition P<sub>1</sub>. We ask why it should be believed, and P<sub>2</sub> is offered in support. We can then ask why P<sub>2</sub> is true and continue to demand P<sub>3</sub>, P<sub>4</sub>, and so on:</p>
+                <p>Suppose someone advances proposition P<sub>1</sub>. We ask why it should be believed. P<sub>2</sub> is offered in support. But then we can ask why P<sub>2</sub> is true, and keep demanding P<sub>3</sub>, P<sub>4</sub>, with no end point in sight:</p>
                 <p><strong>P<sub>1</sub> ← P<sub>2</sub> ← P<sub>3</sub> ← P<sub>4</sub> ← …</strong></p>
-                <p>This chain presents three possibilities:</p>
+                <p>Picture justification as a linear chain, and there are three classic possibilities, known since antiquity as Agrippa's trilemma:</p>
                 <ul class="outline-list">
-                    <li><strong>Infinite regress:</strong> every premise requires a prior premise. Yet human beings cannot complete an infinite chain of proofs before knowing anything.</li>
-                    <li><strong>Circular justification:</strong> P<sub>1</sub> depends on P<sub>2</sub>, but P<sub>2</sub> ultimately depends on P<sub>1</sub>. The system uses its own components to confirm one another.</li>
-                    <li><strong>A foundational stopping point:</strong> some starting points are accepted without being further proved within that same system. They may be axioms, definitions, direct experiences, observational data, or background assumptions.</li>
+                    <li><strong>Infinite regress:</strong> every premise always needs a prior one. But human beings can't complete an infinite chain of proofs to know anything, so this route, harmless as it sounds, is the one route that makes knowing anything at all impossible from the start.</li>
+                    <li><strong>Circular justification:</strong> P<sub>1</sub> rests on P<sub>2</sub>, but trace it far enough and P<sub>2</sub> turns out to rest on P<sub>1</sub> after all. The system uses only its own components to confirm one another.</li>
+                    <li><strong>A foundational stopping point:</strong> we accept certain starting points without further proving them within that same system. These may be axioms, definitions, direct experience, observational data, or a background assumption.</li>
                 </ul>
-                <p>This does not mean that foundational commitments are chosen arbitrarily. They can still be compared in terms of consistency, explanatory power, predictive success, and agreement with observation. Yet whether we adopt foundationalism, coherentism, or infinitism, a system cannot guarantee all its premises simply by repeating the very claims that still require justification. The regress of justification and the different responses to it form a central problem in epistemology. <sup><a href="#ref-2">[2]</a></sup></p>
-                <p>Different fields handle their starting points in different ways.</p>
+                <p>This three-way split assumes justification has the shape of a chain, and not every epistemological theory settles for that shape. Coherentism, for instance, doesn't treat justification as a linear sequence but as a network of mutually supporting beliefs, closer to "circular" than to "foundational," though not quite a simple loop of the P<sub>1</sub>←P<sub>2</sub>←P<sub>1</sub> kind.</p>
+                <p>None of this means foundational premises are chosen arbitrarily, as if any stopping point were as good as any other. They can still be compared by consistency, explanatory power, predictive strength, and fit with observation, standards this piece returns to more fully near the end. But whether one adopts foundationalism, coherentism, or infinitism, no system can simply guarantee all of its own premises by repeating the very claims that still need justifying. The regress problem of justification, and the different responses to it, is a central topic in epistemology, not a tidy puzzle with a solution waiting to be found. <sup><a href="#ref-2">[2]</a></sup></p>
+                <p>Different fields handle this starting point differently, and it turns out that how a field chooses to stop says a good deal about the nature of that field.</p>
             </div>
         </section>
 
+        <!-- Math -->
         <section class="content-section">
             <h2 class="main-point">Mathematics: Certainty Within an Axiomatic System</h2>
             <div class="sub-section">
-                <p>Mathematics is often regarded as the domain closest to absolute truth. Once a theorem has been proved, it seems that it will remain true today, tomorrow, and thousands of years from now. That is largely correct—but it is a conditional form of certainty.</p>
-                <p>Euclidean geometry begins with a set of axioms, including the parallel postulate. One familiar formulation states that through a point outside a given line, exactly one line can be drawn parallel to the given line.</p>
-                <p>From the Euclidean axioms, we can prove that the interior angles of a triangle add up to 180 degrees. This is not a provisional result awaiting a future experiment to disprove it. If the conclusion is genuinely derived from the specified axioms by valid rules, it is necessarily true relative to that system. The value of the system as a whole also depends on its consistency and intended use.</p>
-                <p>Mathematicians nevertheless discovered that the parallel postulate could be replaced while still producing other consistent geometries:</p>
+                <p>Mathematics is often treated as the domain closest to absolute truth. A proven theorem seems bound to remain true today, tomorrow, and thousands of years from now. That's largely correct, but it's a conditional certainty, and the condition is hiding right inside the phrase "has been proven": proven from what?</p>
+                <p>Euclidean geometry begins with a set of axioms, including the parallel postulate. One familiar formulation states that through a point outside a given line, exactly one line can be drawn parallel to it.</p>
+                <p>From the Euclidean axioms we can prove that the interior angles of a triangle sum to 180 degrees. This isn't a provisional result waiting for some future experiment to overturn it. If a conclusion is genuinely derived by valid rules from a specified set of axioms, it's necessarily true relative to that system, true in exactly the sense of "valid" discussed above, only here the premises (the axioms) are made explicit from the start rather than something to be dug up like Post 1's hidden premise.</p>
+                <p>Mathematicians nevertheless discovered that the parallel postulate could be swapped out while still yielding other consistent geometries:</p>
                 <ul class="outline-list">
-                    <li>In <em>hyperbolic geometry</em>, more than one line through an external point may fail to intersect the given line.</li>
-                    <li>In <em>elliptic geometry</em>, parallel lines in the Euclidean sense do not exist.</li>
-                    <li>The angles of a triangle in these spaces do not necessarily add up to 180 degrees.</li>
+                    <li>In <em>hyperbolic geometry</em>, more than one line through an external point can fail to intersect the given line.</li>
+                    <li>In <em>elliptic geometry</em>, parallel lines in the Euclidean sense don't exist.</li>
+                    <li>The angles of a triangle in these spaces don't necessarily sum to 180 degrees.</li>
                 </ul>
-                <p>This does not make Euclidean geometry false. It shows that Euclidean theorems are true within Euclidean geometry, not within every possible geometry. The development of Lobachevskian and Riemannian geometries demonstrated that alternative treatments of the parallel postulate yield systems in which both parallel lines and triangle-angle sums behave differently. <sup><a href="#ref-3">[3]</a></sup></p>
+                <p>This doesn't make Euclidean geometry false. It shows that Euclid's theorems are true within Euclidean geometry, not within every possible geometry. The development of Lobachevskian and Riemannian geometry showed that swapping out the parallel postulate produces other geometries in which the number of parallel lines and the sum of a triangle's angles behave differently. <sup><a href="#ref-3">[3]</a></sup> This is the purest case of the "foundational stopping point" among the three escape routes named above: nobody proves the parallel postulate true, they simply choose it and see what follows; change the choice and an entirely different, equally consistent geometric universe follows with it.</p>
                 <table class="content-table">
                     <tbody>
                         <tr><td>Necessarily true within a system</td><td>Does not mean true within every system</td></tr>
                         <tr><td>Mathematically consistent</td><td>Does not automatically mean physically accurate</td></tr>
                     </tbody>
                 </table>
-                <p>Different mathematical systems may each be consistent. Determining which one better describes physical space is no longer a purely mathematical question; it requires physical observation and experiment.</p>
-                <blockquote>
-                    <p>Given the axioms and definitions, a conclusion proved through valid rules of inference must be true within that system.</p>
-                </blockquote>
+                <p>Different mathematical systems can each be consistent, or more precisely, can be proven consistent relative to some already-accepted mathematical foundation; a system's absolute consistency usually can't be established from within itself, as the discussion of Gödel below will show. Which geometric system better describes physical space is no longer a question mathematics alone can answer; it needs physical observation and experiment, the topic of the next section.</p>
+                <p>But there's a narrower and far more uncomfortable question than swapping out the parallel postulate: keep a single axiomatic system fixed, already chosen, unchanged, and ask whether that system can prove its own freedom from contradiction. In 1931, Kurt Gödel proved that for any consistent formal system that is effectively axiomatized and strong enough to express a portion of elementary arithmetic, there exist arithmetical statements that can be neither proven nor disproven within that system; and, under the appropriate technical conditions, the system also cannot prove its own consistency. <sup><a href="#ref-4">[4]</a></sup> The point most likely to cause confusion here is the line between "true" and "provable within the system," two distinct concepts, and it's precisely the gap between them that the theorem turns on, a gap in the same family as the gap between "valid" and "sound" discussed earlier, just pushed up one level of abstraction. His proof, reduced to its crudest outline purely for intuition and not the literal technical construction, builds a statement whose content is equivalent to "this statement cannot be proven," a self-referential move in the same family as the rebuttal encountered in Post 2, though serving an entirely different purpose: not to refute an opponent, but to expose a genuine limit of the very system being used to prove it. This is the point foundationalism, however rigorous, never reaches: even mathematics, the textbook example of a "foundational stopping point," cannot vouch for its own foundation using only the tools it has on hand.</p>
             </div>
         </section>
 
+        <!-- Physics -->
         <section class="content-section">
             <h2 class="main-point">Physics: True Within Which Domain?</h2>
             <div class="sub-section">
-                <p>Physics also begins with principles and assumptions, but they do not have the same status as mathematical axioms. Physical laws are judged not only by internal consistency but also by their confrontation with reality through observation and experiment.</p>
-                <p>For centuries, Newtonian mechanics described the motion of objects with remarkable success. It predicted trajectories, explained planetary motion, and became a foundation of modern engineering. Einstein’s relativity later showed that Newtonian mechanics loses accuracy when velocities approach the speed of light or gravitational fields become very strong.</p>
+                <p>Physics also starts from principles and assumptions, but they don't carry the same status as mathematical axioms. Physical laws are judged not just by internal consistency; they also have to face reality through observation and experiment, a door pure mathematics never has to open.</p>
+                <p>For centuries, Newtonian mechanics described the motion of objects with remarkable success. It predicted trajectories, explained planetary motion, and became a foundation of modern engineering. Einstein's relativity later showed that Newtonian mechanics loses accuracy as velocities approach the speed of light or as gravitational fields become very strong.</p>
                 <p>Was Newton once right and then suddenly wrong?</p>
-                <p>That description is too simple. Newtonian mechanics remains highly accurate when velocities are much lower than the speed of light, gravitational fields are not too strong, and the scale is not quantum mechanical. We still use it to calculate the motion of vehicles, machines, structures, and many engineering systems. Einstein did not erase Newton; the newer theory located the older one within a more clearly defined domain. Under weak gravity, general relativity and Newtonian theory make nearly identical predictions, while relativistic corrections can be added systematically. <sup><a href="#ref-4">[4]</a></sup></p>
-                <p>In many cases, the history of science does not follow the pattern <em>True → False</em>. It is closer to <em>Approximate model → More accurate model with a wider domain</em>.</p>
+                <p>That framing is too simple, and this is exactly where Post 3's lesson resurfaces intact, just swapping public policy for physics. Newtonian mechanics remains highly accurate when velocities are much smaller than the speed of light, gravitational fields aren't too strong, and the scale isn't quantum mechanical. We still use it to calculate the motion of vehicles, machinery, structures, and countless engineering systems. Einstein didn't erase Newton; the newer theory simply placed the older one within a more clearly defined domain. Under weak gravitational fields, general relativity and Newtonian theory produce nearly identical predictions, and relativistic corrections can be layered in step by step. <sup><a href="#ref-5">[5]</a></sup></p>
+                <p>In many cases, the history of science doesn't run <strong>True → False</strong>; it runs closer to <strong>Approximate model → More accurate model with a wider domain</strong>. This is exactly the pattern <a href="03-fallacy-cases-trending.html">Post 3</a> examined closely, not for a physical law but for a public-health claim: "contaminated food causes cancer" isn't false, but it's only true once narrowed down properly, tied to a specific contaminant like aflatoxin and a specific cancer like liver cancer; stretching it into an overall cancer-rate comparison between countries applies a true claim at the wrong scope. Physics and epidemiology, worlds apart in subject matter, turn out to share the exact same failure mode when misread: it's not that the statement is false, it's that its domain of application has been stretched past the point where the evidence still holds.</p>
                 <p>A scientific model may:</p>
                 <ul class="outline-list">
                     <li>be highly accurate within one domain but fail outside it;</li>
-                    <li>explain existing data well but not yet account for a newly observed phenomenon;</li>
-                    <li>make useful predictions even though its assumptions simplify reality; or</li>
+                    <li>explain existing data well but not yet handle a newly observed phenomenon;</li>
+                    <li>produce useful predictions even though its assumptions are simplifications; or</li>
                     <li>become an approximate special case of a broader theory.</li>
                 </ul>
-                <p>A good scientific question is therefore not merely “Is this theory true or false?” It also asks: How accurate is it? Under what conditions? Within what margin of error? Where does it fail?</p>
+                <p>A good scientific question is therefore rarely just "Is this theory true or false?" It also asks: how accurate, under what conditions, within what margin of error, and where does it fail?</p>
             </div>
         </section>
 
+        <!-- Earth -->
         <section class="content-section">
             <h2 class="main-point">Is the Earth Really Round?</h2>
             <div class="sub-section">
-                <p>“The Earth is round” is often treated as an obvious truth. More precisely, however, Earth is not a perfect sphere. It is slightly flattened at the poles, wider at the equator, and irregular across its surface. Geodesy also uses the <em>geoid</em> as a more accurate model of Earth’s shape. <sup><a href="#ref-5">[5]</a></sup></p>
-                <p>Does that make the statement “the Earth is round” false?</p>
-                <p>When it distinguishes Earth from a flat plane, it is sufficiently true. When used for precise geophysical or positioning calculations, it is insufficient.</p>
-                <p>The descriptions “Earth is round,” “Earth is nearly spherical,” “Earth is an oblate spheroid,” and “Earth’s shape approximates a geoid” do not necessarily contradict one another. They operate at different levels of precision and serve different purposes.</p>
+                <p>Same mechanism as the physics section above, just a different example, one that seems beyond dispute. Earth is not a perfect sphere: it's slightly flattened at the poles, wider at the equator, and geodesy uses the <em>geoid</em> as a more accurate model of its shape. <sup><a href="#ref-6">[6]</a></sup> Does that make "the Earth is round" false? When it's used to distinguish Earth from a flat plane, it's true enough. When it's used for precise geophysical or positioning calculations, it isn't, since the same sentence carries two different demands and earns two different verdicts, not because reality changed, but because the question being asked changed.</p>
                 <table class="content-table">
                     <thead>
                         <tr><th>Status</th><th>Meaning</th></tr>
@@ -131,93 +135,93 @@
                         <tr><td><strong>True within a domain</strong></td><td>Applies only under specified conditions</td></tr>
                     </tbody>
                 </table>
-                <p>A statement may be accurate enough for a classroom but not precise enough for satellite navigation. This is not a contradiction; it is a difference in the resolution of the model.</p>
-                <p>Rather than saying “what is true today may become false tomorrow,” a more careful formulation is:</p>
-                <blockquote>
-                    <p>What is regarded as true today may later have its domain narrowed, its degree of accuracy revised, or its place redefined within a broader model.</p>
-                </blockquote>
+                <p>A statement can be accurate enough for a classroom yet not precise enough to guide a satellite into orbit, the same kind of gap just seen between Newton and Einstein, only shrunk down to the size of one planet. So rather than saying "what's true today may become false tomorrow," a tighter phrasing is: what's regarded as true today may later have its domain narrowed, its precision revised, or its place redefined within a broader model.</p>
             </div>
         </section>
 
+        <!-- Philosophy -->
         <section class="content-section">
-            <h2 class="main-point">Philosophy: Starting Points in Our Understanding of Reality</h2>
+            <h2 class="main-point">Philosophy: Starting Points in How We Understand Reality</h2>
             <div class="sub-section">
-                <p>In mathematics, axioms are usually explicit. In philosophy, foundational commitments may lie deeper, embedded in how we understand reality, consciousness, and knowledge.</p>
+                <p>In mathematics, axioms are usually stated openly from the first line. In philosophy, foundational commitments often sit much deeper, embedded in how one understands reality, consciousness, and knowledge, deep enough that the person holding a commitment may not even realize they're holding it.</p>
                 <p>Materialism and idealism are often treated as opposing starting points:</p>
                 <ul class="outline-list">
-                    <li>From a materialist perspective, matter is fundamental and consciousness is explained through material processes.</li>
-                    <li>From an idealist perspective, consciousness, mind, or experience has a fundamental status that cannot be fully reduced to matter.</li>
+                    <li>On the materialist view, matter is fundamental and consciousness is explained through material processes.</li>
+                    <li>On the idealist view, consciousness, mind, or experience has a fundamental status that cannot be fully reduced to matter.</li>
                 </ul>
-                <p>These positions should not be called “axioms” in the strict mathematical sense. They are ontological positions—different answers to the question of what exists at the most fundamental level of reality. Materialism is also commonly discussed under the broader modern label of <em>physicalism</em>, while idealism encompasses several distinct doctrines rather than a single unified view. <sup><a href="#ref-6">[6]</a></sup></p>
-                <p>Systems that begin from different conceptions of reality may interpret the same phenomenon differently. Yet having different foundational commitments does not place the choice between them entirely beyond reasons and evidence. Nor does it mean that all philosophical positions are equally correct or merely matters of preference.</p>
+                <p>These positions shouldn't be called "axioms" in the strict mathematical sense. They're ontological positions, different answers to the question of what exists at the most fundamental level of reality. Materialism is also commonly discussed under the broader modern label of <em>physicalism</em>, while idealism spans several distinct doctrines rather than one unified view. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p>Caution is warranted right here, in case one mistakes every difference in starting point for something a single logical maneuver can dispatch. The <em>peritrope</em> that <a href="02-fallacy-cases-traditional.html">Post 2</a> used to turn Protagoras's doctrine against itself carries its force precisely because Protagoras made a claim about <em>truth value</em>, namely that every individual judgment is true, a claim that swallows itself once turned back on itself. But "matter is the foundation of reality" and "consciousness is the foundation of reality" are two claims about <em>what exists</em>, not about <em>who gets to say what's true</em>, so that same reversal doesn't apply here in the same way. Conflating these two kinds of foundational dispute is its own oversimplification.</p>
+                <p>Systems that begin from different conceptions of reality can interpret the same phenomenon in different directions. But having different foundational commitments doesn't place the choice between them entirely outside reason and evidence, and it certainly doesn't mean every philosophical position is equally correct or simply a matter of taste.</p>
                 <p>A philosophical system can still be assessed by:</p>
                 <ul class="outline-list">
                     <li>its internal consistency;</li>
                     <li>its ability to explain experience;</li>
                     <li>its compatibility with scientific knowledge;</li>
-                    <li>its ability to address counterexamples;</li>
-                    <li>the number of auxiliary assumptions it requires; and</li>
-                    <li>whether it contradicts itself when applying its own principles.</li>
+                    <li>its ability to handle counterexamples;</li>
+                    <li>the number of auxiliary assumptions it needs; and</li>
+                    <li>whether it contradicts itself when it applies its own principles.</li>
                 </ul>
-                <p>The fact that philosophy is harder to test than physics does not make rational disagreement impossible. It means only that its standards of assessment are not identical to those of a laboratory experiment.</p>
+                <p>Philosophy being harder to test than physics doesn't make rational argument impossible. It just means the standards of assessment aren't quite the same as those of a lab experiment.</p>
             </div>
         </section>
 
+        <!-- Human nature -->
         <section class="content-section">
-            <h2 class="main-point">Human Nature: Benevolent or Self-Interested?</h2>
+            <h2 class="main-point">Human Nature: Premises About People</h2>
             <div class="sub-section">
-                <p>The classical claims that human beings are naturally good or naturally bad are often presented as opposing truths about human nature.</p>
-                <p>If we assume that people are naturally good, education may be understood as the preservation and cultivation of an existing moral capacity. If we assume that people are naturally self-interested or require correction, we may place greater emphasis on discipline, law, and mechanisms of control.</p>
-                <p>But are “good” and “bad” defined clearly enough? Children may show empathy while also competing for attention and resources. People may cooperate within their own group while competing against another. Behaviour also changes with the environment, education, incentives, and social institutions.</p>
-                <p>The binary question “Are human beings naturally good or naturally bad?” may oversimplify a nature in which several tendencies coexist.</p>
-                <p>More importantly, a premise about human beings can influence how society treats them, while that treatment may in turn produce behaviour that appears to confirm the original premise.</p>
-                <p>An organisation that assumes everyone is dishonest may build an extreme surveillance system. That environment of distrust can weaken autonomy and cooperation, leading to more defensive or evasive behaviour. The organisation then points to that behaviour and concludes, “See? People cannot be trusted.”</p>
-                <p>This is the possibility of a <strong>self-fulfilling prophecy</strong>: a premise does not merely describe reality but helps produce a reality resembling its prediction. Robert K. Merton systematised the concept in 1948 to explain how an initially false definition of a situation can trigger behaviour that makes the prediction come true. <sup><a href="#ref-7">[7]</a></sup></p>
-                <p>When considering premises about human nature, we should therefore ask at least three questions:</p>
+                <p>"Human beings are inherently good" and "human beings are inherently self-interested" are often presented as two opposing truths about human nature.</p>
+                <p>Assume people are inherently good, and education can be framed as protecting and nurturing an existing capacity for goodness. Assume people lean toward self-interest or need correcting, and one tends to emphasize discipline, rules, and mechanisms of control.</p>
+                <p>But are "good" and "self-interested" defined clearly enough? Small children show empathy while also competing for attention and resources. People cooperate within their own group while competing against another. Behavior also shifts with environment, upbringing, incentives, and social institutions. The binary question "are humans inherently good or inherently bad" may oversimplify a nature made of several coexisting tendencies.</p>
+                <p>What's more notable is that a premise about human beings can shape how society treats people, and that treatment then produces the very behavior that makes the original premise look correct. An organization that assumes everyone is dishonest may build an extreme surveillance system. That climate of distrust erodes autonomy and cooperation, producing more defensive behavior in turn. The organization then looks at that behavior and concludes: "See? People really can't be trusted."</p>
+                <p>This is the mechanism of a <strong>self-fulfilling prophecy</strong>: a premise doesn't just describe reality, it helps manufacture a reality that matches its own prediction. Robert K. Merton systematized the concept in a 1948 paper to describe how an initially false definition of a situation can trigger behavior that makes the prediction come true. <sup><a href="#ref-8">[8]</a></sup> This is the most dangerous kind of foundational premise discussed in this piece: it doesn't just sit still waiting to be tested like a geometric axiom or a physical hypothesis, it actively intervenes in the very evidence that will be used to test it, turning the circular justification mentioned in "Where Do Our Ultimate Premises Come From?" from an abstract logical possibility into a real, running social mechanism.</p>
+                <p>With premises about human beings, then, at least three questions are worth asking:</p>
                 <ol class="outline-list">
-                    <li>Have the central concepts been defined clearly enough?</li>
-                    <li>Is the premise describing people, or imposing a particular view upon them?</li>
-                    <li>Does the system built on that premise manufacture the very evidence later used to confirm it?</li>
+                    <li>Have the concepts been defined clearly enough?</li>
+                    <li>Is the premise describing people, or imposing a view onto them?</li>
+                    <li>Does the system built on that premise manufacture the very evidence used to confirm it?</li>
                 </ol>
             </div>
         </section>
 
+        <!-- Finite research -->
         <section class="content-section">
             <h2 class="main-point">Every Study Is Finite</h2>
             <div class="sub-section">
-                <p>If mathematics depends on axiomatic systems, physics on domains of application, and philosophy on foundational commitments, empirical research has limitations of its own.</p>
-                <p>Every study is finite in at least some respect:</p>
+                <p>If mathematics depends on an axiomatic system, physics on its domain of application, and philosophy on foundational conceptions, empirical research has its own kind of limit too, one that's easiest of all to forget, since numbers and charts feel far more certain than a bare axiom ever could.</p>
+                <p>Every study is finite in some respect:</p>
                 <ul class="outline-list">
-                    <li>it includes a finite number of participants;</li>
-                    <li>it observes them for a finite period;</li>
-                    <li>it measures a finite number of variables;</li>
-                    <li>its instruments have margins of error;</li>
-                    <li>its sample represents only certain populations;</li>
-                    <li>its statistical methods rely on assumptions; and</li>
-                    <li>no experiment can control the whole of reality.</li>
+                    <li>a finite number of participants;</li>
+                    <li>a finite observation period;</li>
+                    <li>a finite number of measured variables;</li>
+                    <li>instruments with margins of error;</li>
+                    <li>a sample that represents only certain groups;</li>
+                    <li>statistical methods that rest on assumptions; and</li>
+                    <li>no experiment that controls the whole of reality.</li>
                 </ul>
-                <p>These limitations do not directly make a result false. They limit the breadth and degree of certainty of the conclusions we are entitled to draw from it.</p>
-                <p>A study involving a few hundred participants cannot directly observe every person who has ever lived or will ever live. A two-year trial does not automatically reveal what will happen after twenty years. A result obtained from healthy adults does not necessarily apply to children, older adults, or people with underlying health conditions. In research methodology, extending findings from a sample to other populations concerns external validity, including generalisability and applicability. <sup><a href="#ref-8">[8]</a></sup></p>
-                <p>But “every study is finite” does not imply that “no study is trustworthy.” That would be an unjustified leap from <strong>the absence of absolute certainty</strong> to <strong>the impossibility of knowledge</strong>.</p>
-                <p>A small study may generate a hypothesis. A large controlled study may provide stronger evidence. Independent replications, a plausible mechanism, and systematic reviews or meta-analyses can raise confidence substantially.</p>
+                <p>These limits don't directly make a result false; they bound how broad and how certain the conclusions we're entitled to draw from it can be, exactly the kind of limit every empirical case in <a href="03-fallacy-cases-trending.html">Post 3</a> carries with it, from the meta-analysis on spanking to the epidemiology on aflatoxin, even when it isn't spelled out there in so many words.</p>
+                <p>A study of a few hundred people cannot directly observe everyone who has ever lived or will ever live. A two-year trial doesn't automatically know what happens after twenty years. A result from healthy adults doesn't automatically apply to children, older adults, or people with underlying conditions. In research methodology, extending a result from a sample to a different population falls under external validity, including generalizability and applicability. <sup><a href="#ref-9">[9]</a></sup></p>
+                <p>But "every study is finite" doesn't imply "no study is trustworthy." That would be a leap from <strong>the absence of absolute certainty</strong> to <strong>the impossibility of knowing anything</strong>.</p>
+                <p>A small study can suggest a hypothesis. A large controlled study can offer stronger evidence. Multiple independent replications, a plausible mechanism, and systematic reviews can push confidence very high, though never to the absolute.</p>
                 <blockquote>
                     <p>Finite does not mean worthless. Non-absolute does not mean arbitrary.</p>
                 </blockquote>
-                <p>We may lack absolute certainty and still possess enough evidence to act reasonably. In life, refusing to act until absolute certainty is available is itself a decision—and sometimes a riskier one than acting on the best available evidence.</p>
+                <p>We can lack absolute certainty about a conclusion and still have enough evidence to act reasonably. In life, refusing to act until absolute certainty arrives is itself a decision, and sometimes a riskier one than acting on the best evidence currently available.</p>
             </div>
         </section>
 
+        <!-- Relativism vs fallibilism -->
         <section class="content-section">
             <h2 class="main-point">If Every Conclusion Is Conditional, Are All Opinions Equal?</h2>
             <div class="sub-section">
-                <p>This is the most important objection.</p>
-                <p>If mathematics depends on axioms, physics on models, empirical research is always finite, and philosophy begins from different foundational commitments, does objective truth disappear? Can everyone simply choose whichever premises they prefer and conclude whatever they want?</p>
+                <p>This is the most important objection, and if this piece stopped without addressing it, everything said so far, axiomatic systems that can be swapped, physical models with limited scope, research that's always finite, would too easily read as an invitation to give up entirely.</p>
+                <p>If mathematics depends on axioms, physics on models, research is always finite, and philosophy has different starting points, does objective truth disappear? Can anyone just pick whichever premises they like and conclude whatever they want?</p>
                 <p><strong>No.</strong></p>
-                <p>Two claims can both fall short of absolute certainty without being equally credible. A theory that has survived thousands of independent tests is not equivalent to a guess that has never been examined. A controlled study is not equivalent to one person’s anecdote. A system that states its premises and limitations openly is not equivalent to one that changes its definitions whenever it encounters a counterexample.</p>
-                <p>Arguments can still be compared using concrete standards:</p>
+                <p>Two claims can both fall short of absolute certainty without being equally credible. A theory that has survived thousands of independent tests is not on par with a guess that's never been tested. A controlled study is not on par with one person's story. A system that states its premises and limits openly is not on par with one that redefines its terms every time it hits a counterexample.</p>
+                <p>It's also worth keeping "no resolution yet" and "anything goes" clearly apart. <a href="02-fallacy-cases-traditional.html">Post 2</a> stopped at exactly this line with Gorgias and Zhuangzi: whether <em>On Nature</em> is a sincere nihilist claim or a rhetorical performance, whether the reply on the bridge over the Hao River is a genuine self-referential move or a pun, both questions remain open, because what survives of the text isn't enough to settle them. But "not enough evidence to settle between two specific readings" is nothing like "every reading is equally good."</p>
+                <p>Arguments can still be compared by concrete standards:</p>
                 <ul class="outline-list">
-                    <li>Are the premises explicit or concealed?</li>
-                    <li>Are the concepts used consistently throughout the argument?</li>
+                    <li>Are the premises stated openly or hidden?</li>
+                    <li>Are the concepts used consistently throughout?</li>
                     <li>Does the conclusion genuinely follow from the premises?</li>
                     <li>Is the evidence directly relevant to the question?</li>
                     <li>Is the sample sufficiently representative?</li>
@@ -225,69 +229,81 @@
                     <li>Have the results been independently replicated?</li>
                     <li>Does the theory make testable predictions?</li>
                     <li>Does the scope of the conclusion match the scope of the evidence?</li>
-                    <li>Is the person making the argument willing to revise it in response to better evidence?</li>
+                    <li>Is the person making the argument willing to revise it in light of new evidence?</li>
                 </ul>
                 <blockquote>
-                    <p>The absence of an absolute viewpoint does not mean that every viewpoint sees equally well.</p>
+                    <p>The absence of an absolute vantage point does not mean every vantage point sees equally well.</p>
                 </blockquote>
-                <p>Knowledge can be fallible while still being more objective, more accurate, and more reliable than an untested belief. This is the spirit of <em>fallibilism</em>: justification need not guarantee that a belief could never be wrong, yet we can still distinguish strong evidence from weak evidence. <sup><a href="#ref-9">[9]</a></sup></p>
+                <p>Knowledge can be fallible while still being more objective, more accurate, and more trustworthy than an untested belief. This is the spirit of <em>fallibilism</em>: we accept that justifying a belief never absolutely guarantees it can't be wrong, without giving up the ability to tell strong evidence from weak evidence. <sup><a href="#ref-10">[10]</a></sup></p>
                 <table class="content-table">
                     <thead>
                         <tr><th>Attitude</th><th>Position</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><strong>Reasonable scepticism</strong></td><td>I may be wrong; therefore, I should examine my belief.</td></tr>
-                        <tr><td><strong>Radical relativism</strong></td><td>Anyone may be wrong; therefore, there is no basis for judging one view as better than another.</td></tr>
+                        <tr><td><strong>Reasonable skepticism</strong></td><td>I could be wrong, so I need to check.</td></tr>
+                        <tr><td><strong>Radical relativism</strong></td><td>Anyone could be wrong, so there's no basis for judging one view better than another.</td></tr>
                     </tbody>
                 </table>
-                <p>These attitudes are fundamentally different. The first opens a path toward knowledge; the second eliminates the very possibility of learning from evidence.</p>
+                <p>These are entirely different attitudes. The first opens the door to knowledge; the second closes off the very possibility of learning from evidence.</p>
             </div>
         </section>
 
+        <!-- Conclusion -->
         <section class="content-section">
             <h2 class="main-point">So Can Any Line of Reasoning Always Be Correct?</h2>
             <div class="sub-section">
-                <p>The answer depends on what kind of “correctness” is being asked about.</p>
-                <p>Some inferences are necessarily correct in structure: if their premises are true and their rules of inference are valid, their conclusions must be true. Mathematical theorems can possess this kind of certainty within a specified axiomatic system.</p>
-                <p>When we reason about the real world, however, premises usually come from finite observations, approximate models, and measuring instruments with margins of error. A conclusion is then trustworthy not because it has escaped all premises, but because:</p>
+                <p>The answer depends on which kind of "correct" is being asked about, exactly as stated at the very start of this piece, only now having made a full circuit through mathematics, physics, philosophy, the human sciences, and empirical research to see what that circuit actually looks like.</p>
+                <p>Some inferences are necessarily correct in structure: if the premises are true and the rules of inference are valid, the conclusion must be true. Mathematical theorems can hold onto that certainty within a fixed axiomatic system, though, as Gödel showed, even that system cannot vouch for itself using its own tools alone.</p>
+                <p>But when reasoning about the real world, premises usually come from finite observations, approximate models, and measuring instruments with margins of error. In that case, a conclusion is trustworthy not because it has escaped every premise, but because:</p>
                 <ul class="outline-list">
-                    <li>its premises are explicit;</li>
-                    <li>its evidence is sufficiently strong;</li>
-                    <li>its methods can be examined;</li>
+                    <li>its premises are stated openly;</li>
+                    <li>its evidence is strong enough;</li>
+                    <li>its methods can be checked;</li>
                     <li>its results have been replicated;</li>
                     <li>its domain of application is defined; and</li>
-                    <li>the theory remains open to revision when better evidence appears.</li>
+                    <li>the theory stays open to revision when better data arrives.</li>
                 </ul>
-                <p>A good argument, therefore, need not claim that it can never be wrong. On the contrary, the ability to state what evidence would require it to change is often a sign of intellectual maturity.</p>
-                <p>The endpoint of critical thinking is neither universal doubt nor the discovery of a system permanently immune to criticism. Its value lies in making premises more transparent, conclusions more proportionate to the evidence, and errors easier to detect.</p>
-                <p>We may never be able to stand outside every system and view reality from an absolute position free from all premises. Yet we can still move closer to the truth by comparing models, testing predictions, seeking counterexamples, and revising what we once believed.</p>
-                <p>The final answer, then, is not that “nothing is really true,” but this:</p>
+                <p>In everyday work, this whole set of standards boils down to a handful of questions worth asking before a decision: does the conclusion genuinely follow from the facts at hand, or does it just sound like it does; how trustworthy are those facts, and what assumption is hiding underneath them; what scope, for what population, does the conclusion actually hold in, rather than holding in general; and what evidence, if it turned up, would be enough to change the decision. None of this requires knowing Gödel or Agrippa's trilemma; these four questions are simply the condensed form of everything this piece has walked through.</p>
+                <p>A good argument, then, need not claim it can never be wrong. On the contrary, the ability to say exactly what would force it to change is usually a sign of intellectual maturity, and this is also the final standard for returning to the story that opened <a href="01-fallacy.html">Post 1</a> of this whole series. "A degree isn't a prerequisite for success" isn't quite the pure existential claim a quick reading might suggest; it still depends on whether "a degree" means a bachelor's degree or any degree at all, and on what standard "success" is measured by. But narrowed down properly, reduced to negating the universal claim "without a bachelor's degree, one cannot succeed in business," a verified case like Gates is enough as a counterexample, and it still holds after all these posts. What it does not provide, no matter how narrowly it's read, is evidence for the recommendation "drop out of school to start a business," a recommendation for action that would need an entirely different body of empirical evidence to back it, exactly the kind of level-confusion this whole piece has tried to map.</p>
+                <p>The endpoint of critical thinking is not universal doubt. Nor is it finding a system permanently immune to every objection. Its value lies in making premises more transparent, conclusions more proportionate to the evidence, and errors easier to catch.</p>
+                <p>We may never be able to stand outside every system and view reality from some absolute point free of all premises. But we can still move closer to the truth by comparing models, testing predictions, looking for counterexamples, and revising what we once believed.</p>
+                <p>So the final answer isn't "nothing is really true." It's this:</p>
                 <blockquote>
-                    <p>Some things are necessarily true within a system; some are approximately true within a domain; and some conclusions are the most trustworthy given the available evidence. Wisdom lies not in confusing these categories, but in knowing which one we are dealing with.</p>
+                    <p>Some things are necessarily true within a system; some are approximately true within a domain; and some conclusions are the most trustworthy given the currently available evidence. Wisdom doesn't lie in blending these three together; it lies in knowing which one you're talking about.</p>
                 </blockquote>
             </div>
         </section>
 
-        <section class="content-section summary-section">
+        <!-- Summary -->
+        <section class="content-section">
             <h2 class="main-point">Summary</h2>
             <div class="summary-box">
-                <p><strong>Key point:</strong> Some inferences are always correct in structure when their premises are granted. But when reasoning concerns the real world, the premises usually rest on finite observations, approximate models, and assumptions with limited domains. This does not make every opinion equal: arguments still differ in consistency, evidential quality, predictive power, and resilience to counterexamples.</p>
-                <p>A good argument does not promise that we can never be wrong. It states where it begins, under what conditions it holds, what evidence supports it—and remains willing to change when those foundations no longer stand.</p>
+                <p><strong>Key point:</strong> There are three levels of "true" worth telling apart: necessarily true within a system, approximately or domain-true, and most trustworthy given the current evidence. Confusing these levels is the source of many disputes that seem impossible to resolve.</p>
+                <ul class="outline-list">
+                    <li>Logic guarantees that a conclusion follows correctly from its premises, not that the premises are true of reality.</li>
+                    <li>Even a consistent axiomatic system cannot prove its own consistency (Gödel's incompleteness theorems).</li>
+                    <li>Every scientific model and every empirical study has its own domain and its own limits; none is automatically universal.</li>
+                    <li>Finite does not mean worthless; non-absolute does not mean arbitrary.</li>
+                    <li>A good argument doesn't promise it can never be wrong; it states where it starts, under what conditions it holds, and stays willing to change when those foundations give way.</li>
+                </ul>
+                <p>This also closes the arc of the whole series: from recognizing a broken argument (Post 1), through the limits of that very framework (Post 2), to testing it against real data (Post 3), and finally to one last question, namely where to stand to know you're standing on solid ground.</p>
             </div>
         </section>
 
+        <!-- References -->
         <section class="content-section">
             <h2 class="main-point">References</h2>
             <ol class="outline-list">
-                <li id="ref-1">Internet Encyclopedia of Philosophy. “Validity and Soundness.” A distinction between valid and sound arguments. <a href="https://iep.utm.edu/val-snd/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
-                <li id="ref-2">Cameron, R. (2022). “Infinite Regress Arguments.” <em>Stanford Encyclopedia of Philosophy</em>. An overview of regress problems and responses including foundationalism, coherentism, and infinitism. <a href="https://plato.stanford.edu/entries/infinite-regress/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
-                <li id="ref-3">O’Connor, J. J., &amp; Robertson, E. F. “Non-Euclidean Geometry.” <em>MacTutor History of Mathematics</em>, University of St Andrews. <a href="https://mathshistory.st-andrews.ac.uk/HistTopics/Non-Euclidean_geometry/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
-                <li id="ref-4">Schäfer, G. “A Test Bed for the General Theory of Relativity” and “Step by Step from Newton to Einstein.” <em>Einstein Online</em>, Max Planck Institute for Gravitational Physics. <a href="https://www.einstein-online.info/en/spotlight/A-Test-Bed-for-the-General-Theory-of-Relativity/" rel="noopener noreferrer" target="_blank">Read the first article</a>; <a href="https://www.einstein-online.info/en/spotlight/postnewton/" rel="noopener noreferrer" target="_blank">read the second article</a>.</li>
-                <li id="ref-5">National Oceanic and Atmospheric Administration. “Is the Earth Round?” and “The Geoid.” <a href="https://oceanservice.noaa.gov/facts/earth-round.html" rel="noopener noreferrer" target="_blank">Earth’s shape</a>; <a href="https://oceanservice.noaa.gov/education/tutorial_geodesy/geo03_figure.html" rel="noopener noreferrer" target="_blank">the geoid model</a>.</li>
-                <li id="ref-6">Stoljar, D. “Physicalism”; Guyer, P., &amp; Horstmann, R.-P. “Idealism.” <em>Stanford Encyclopedia of Philosophy</em>. <a href="https://plato.stanford.edu/entries/physicalism/" rel="noopener noreferrer" target="_blank">Physicalism</a>; <a href="https://plato.stanford.edu/entries/idealism/" rel="noopener noreferrer" target="_blank">Idealism</a>.</li>
-                <li id="ref-7">Merton, R. K. (1948). “The Self-Fulfilling Prophecy.” <em>The Antioch Review</em>, 8(2), 193–210. <a href="https://www.jstor.org/stable/4609267" rel="noopener noreferrer" target="_blank">Article information</a>.</li>
-                <li id="ref-8">Murad, M. H., Katabi, A., Benkhadra, R., &amp; Montori, V. M. (2018). “External Validity, Generalisability, Applicability and Directness: A Brief Primer.” <em>BMJ Evidence-Based Medicine</em>, 23(1), 17–19. <a href="https://pubmed.ncbi.nlm.nih.gov/29367319/" rel="noopener noreferrer" target="_blank">Read the abstract</a>.</li>
-                <li id="ref-9">Reed, B. “Certainty.” <em>Stanford Encyclopedia of Philosophy</em>. See the discussion of fallible knowledge and the difference between knowledge and absolute certainty. <a href="https://plato.stanford.edu/entries/certainty/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-1">Internet Encyclopedia of Philosophy. "Validity and Soundness." A distinction between valid and sound arguments. <a href="https://iep.utm.edu/val-snd/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-2">Cameron, R. (2022). "Infinite Regress Arguments." <em>Stanford Encyclopedia of Philosophy</em>. An overview of regress problems and responses including foundationalism, coherentism, and infinitism. <a href="https://plato.stanford.edu/entries/infinite-regress/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-3">O'Connor, J. J., &amp; Robertson, E. F. "Non-Euclidean Geometry." <em>MacTutor History of Mathematics</em>, University of St Andrews. <a href="https://mathshistory.st-andrews.ac.uk/HistTopics/Non-Euclidean_geometry/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-4">Raatikainen, P. (2022). "Gödel's Incompleteness Theorems." <em>Stanford Encyclopedia of Philosophy</em>. Source for Gödel's two incompleteness theorems (1931) and the limits on a system proving its own consistency. <a href="https://plato.stanford.edu/entries/goedel-incompleteness/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-5">Schäfer, G. "A Test Bed for the General Theory of Relativity" and "Step by Step from Newton to Einstein." <em>Einstein Online</em>, Max Planck Institute for Gravitational Physics. <a href="https://www.einstein-online.info/en/spotlight/A-Test-Bed-for-the-General-Theory-of-Relativity/" rel="noopener noreferrer" target="_blank">Read the first article</a>; <a href="https://www.einstein-online.info/en/spotlight/postnewton/" rel="noopener noreferrer" target="_blank">read the second article</a>.</li>
+                <li id="ref-6">National Oceanic and Atmospheric Administration. "Is the Earth Round?" and "The Geoid." <a href="https://oceanservice.noaa.gov/facts/earth-round.html" rel="noopener noreferrer" target="_blank">Earth's shape</a>; <a href="https://oceanservice.noaa.gov/education/tutorial_geodesy/geo03_figure.html" rel="noopener noreferrer" target="_blank">the geoid model</a>.</li>
+                <li id="ref-7">Stoljar, D. "Physicalism"; Guyer, P., &amp; Horstmann, R.-P. "Idealism." <em>Stanford Encyclopedia of Philosophy</em>. <a href="https://plato.stanford.edu/entries/physicalism/" rel="noopener noreferrer" target="_blank">Physicalism</a>; <a href="https://plato.stanford.edu/entries/idealism/" rel="noopener noreferrer" target="_blank">Idealism</a>.</li>
+                <li id="ref-8">Merton, R. K. (1948). "The Self-Fulfilling Prophecy." <em>The Antioch Review</em>, 8(2), 193–210. <a href="https://www.jstor.org/stable/4609267" rel="noopener noreferrer" target="_blank">Article information</a>.</li>
+                <li id="ref-9">Murad, M. H., Katabi, A., Benkhadra, R., &amp; Montori, V. M. (2018). "External Validity, Generalisability, Applicability and Directness: A Brief Primer." <em>BMJ Evidence-Based Medicine</em>, 23(1), 17–19. <a href="https://pubmed.ncbi.nlm.nih.gov/29367319/" rel="noopener noreferrer" target="_blank">Read the abstract</a>.</li>
+                <li id="ref-10">Reed, B. "Certainty." <em>Stanford Encyclopedia of Philosophy</em>. See the discussion of fallible knowledge and the difference between knowledge and absolute certainty. <a href="https://plato.stanford.edu/entries/certainty/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
             </ol>
         </section>
     </article>

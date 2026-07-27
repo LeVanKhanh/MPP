@@ -292,6 +292,13 @@ var mainMenu = [
                                 subItems: [],
                             },
                             {
+                                title: "Fallacy Cases: An Updating Collection",
+                                route: "pages/reading-studying/fallacy-bias-debate/fallacy/04-fallacy-updating-cases.html",
+                                hash: "#/fallacy-updating-cases",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
                                 title: "Can Any Line of Reasoning Always Be Correct?",
                                 route: "pages/reading-studying/fallacy-bias-debate/fallacy/05-is-there-always-correct-reasoning.html",
                                 hash: "#/is-there-always-correct-reasoning",

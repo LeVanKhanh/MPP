@@ -299,6 +299,13 @@ var mainMenuVn = [
                                 subItems: [],
                             },
                             {
+                                title: "Án Lệ Ngụy Biện: Tuyển Tập Cập Nhật",
+                                route: "pages/reading-studying/fallacy-bias-debate/fallacy/04-fallacy-updating-cases-vn.html",
+                                hash: "#/fallacy-updating-cases",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
                                 title: "Có Thực Sự Có Lý Luận Luôn Luôn Đúng?",
                                 route: "pages/reading-studying/fallacy-bias-debate/fallacy/05-is-there-always-correct-reasoning-vn.html",
                                 hash: "#/is-there-always-correct-reasoning",

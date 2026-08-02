@@ -103,6 +103,38 @@ Khi chấm, nêu rõ bài đang đứng ở đâu so với các nguồn dưới 
 4. **Rà giọng văn**: trích nguyên văn câu có vấn đề, kèm bản viết lại đề xuất.
 5. **Rà nguồn**: nguồn yếu, link chết, chỗ cần thêm nguồn.
 6. **Rà HTML**: theo checklist `html-menu-rules.md` mục 8.
-7. **Danh sách sửa theo ưu tiên**: mỗi mục ghi rõ sửa ở đâu, sửa thành gì, và sửa xong thì trục nào lên bao nhiêu điểm.
+7. **Danh sách sửa theo ưu tiên**: mỗi mục ghi rõ sửa ở đâu, sửa thành gì, sửa xong thì trục nào lên bao nhiêu điểm, và thuộc loại A (tự sửa được) hay loại B (phải hỏi tác giả).
 
 Không tự sửa file trừ khi được yêu cầu.
+
+---
+
+## 5. Ngưỡng dừng cho vòng lặp `refine`
+
+Rubric này vừa là thang chấm, vừa là đồng hồ đo của vòng lặp review → sửa. Giao thức đầy đủ nằm ở `refine-loop.md`, phần dưới chỉ là các con số.
+
+**Đạt, dừng thành công:** tổng ≥ 80 **và** không trục nào < 12.
+
+Hai điều kiện phải đúng cùng lúc. Tổng 82 mà trục 3 được 7 điểm không phải là bài L4, đó là bài một chiều được cứu bởi bốn trục kia.
+
+**Dừng dù chưa đạt:**
+
+| Điều kiện | Con số | Ý nghĩa |
+|---|---|---|
+| Hết trần vòng | xong vòng 3 | Không tự nâng trần. Tác giả yêu cầu thì chạy thêm. |
+| Bão hoà | tổng tăng < 3 so với vòng trước | Bài đang kẹt ở thứ trợ lý không tạo ra thay tác giả được. |
+| Giọng trôi | `preserve-author-voice` báo sửa quá tay 2 vòng liên tiếp | Hoàn tác về bản tốt nhất. |
+| Điểm giảm | tổng thấp hơn vòng trước | Hoàn tác vòng đó ngay, giữ bản điểm cao hơn. |
+| Chờ trả lời | còn mục loại B chưa chốt | Làm hết loại A rồi dừng. |
+
+**Delta kỳ vọng theo vòng.** Dùng để biết vòng vừa rồi có đáng không:
+
+- Vòng 1 sửa được nhiều nhất, thường +8 tới +15. Dưới +5 nghĩa là bài chưa hỏng ở chỗ trợ lý sửa được, mà hỏng ở luận đề.
+- Vòng 2 thường +3 tới +8.
+- Vòng 3 thường +1 tới +4. Đây là lý do trần dừng ở ba.
+
+**Ba thứ vòng lặp không tự tạo ra được**, và khi bài kẹt thì gần như luôn kẹt ở đây. Nói thẳng ra cho tác giả thay vì chạy thêm vòng:
+
+1. Một quan sát riêng từ đời sống hoặc công việc thật của tác giả (trục 1, trục 4).
+2. Một nguồn gốc mà tìm kiếm không ra (trục 2).
+3. Một luận đề khác, khi luận đề hiện tại đúng nhưng không có gì để tranh cãi (trục 1).

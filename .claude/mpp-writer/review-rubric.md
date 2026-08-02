@@ -123,7 +123,7 @@ Hai điều kiện phải đúng cùng lúc. Tổng 82 mà trục 3 được 7 �
 |---|---|---|
 | Hết trần vòng | xong vòng 3 | Không tự nâng trần. Tác giả yêu cầu thì chạy thêm. |
 | Bão hoà | tổng tăng < 3 so với vòng trước | Bài đang kẹt ở thứ trợ lý không tạo ra thay tác giả được. |
-| Giọng trôi | `preserve-author-voice` báo sửa quá tay 2 vòng liên tiếp | Hoàn tác về bản tốt nhất. |
+| Giọng trôi | `preserve-author-voice` báo vượt ngưỡng 20% câu tuỳ chọn, 2 vòng liên tiếp | Hoàn tác phần tuỳ chọn, giữ nguyên sửa lỗi ưu tiên 1-2. |
 | Điểm giảm | tổng thấp hơn vòng trước | Hoàn tác vòng đó ngay, giữ bản điểm cao hơn. |
 | Chờ trả lời | còn mục loại B chưa chốt | Làm hết loại A rồi dừng. |
 

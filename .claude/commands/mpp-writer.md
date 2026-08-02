@@ -139,7 +139,8 @@ Không tự nâng trần ba vòng. Muốn chạy thêm thì tác giả yêu cầ
 1. Xác định bản gốc và bản đích (VN `*-vn.html` ↔ EN `*.html`, cùng thư mục).
 2. Dịch theo nghĩa và theo nhịp, không dịch theo từ. Bản tiếng Anh phải đọc như được viết bằng tiếng Anh ngay từ đầu.
 3. Giữ nguyên: cấu trúc section, thứ tự đánh số reference, link ngoài, các `id="ref-N"` và `#ref-N`.
-4. Đổi: `lang="vi"` ↔ `lang="en"`, tiêu đề section ("Tài Liệu Tham Khảo" ↔ "References", "Xem Thêm" ↔ "Further Watching"), định dạng ngày trong `page-meta` (giữ nguyên thuộc tính `datetime`), link nội bộ trỏ sang bản cùng ngôn ngữ.
+4. Đổi: `lang="vi"` ↔ `lang="en"`, tiêu đề section ("Tài Liệu Tham Khảo" ↔ "References", "Xem Thêm" ↔ "Further Watching"), nhãn và định dạng ngày trong `page-meta` theo ngôn ngữ đích, link nội bộ trỏ sang bản cùng ngôn ngữ.
+   - **Ngày trong `page-meta` là ngày dịch, không phải ngày của bản gốc.** Đặt cả `datetime` lẫn phần hiển thị theo `html-menu-rules.md` mục 2.1. Nếu lượt này sửa cả hai bản thì hai bản mang cùng một ngày.
 5. Với nguồn tiếng Việt trong bản EN: giữ nguyên tên gốc, thêm phần dịch tiêu đề trong ngoặc.
 6. Áp dụng checklist máy hoá cho cả bản đích - văn dịch rất dễ rơi vào nhịp lặp. Với bản đích tiếng Việt, chạy `polish-vietnamese`.
 7. Chạy `preserve-author-voice` trên bản dịch: dịch là chỗ giọng văn dễ bay hơi nhất. Năm câu đặc trưng ở bản gốc phải có câu tương ứng ở bản đích, và câu đó cũng phải đặc trưng chứ không phải một câu trung tính đúng nghĩa.
@@ -157,6 +158,7 @@ Không tự nâng trần ba vòng. Muốn chạy thêm thì tác giả yêu cầ
 ## Nguyên tắc chung cho mọi mode
 
 - **Không bịa**. Không bịa nguồn, không bịa số liệu, không bịa nội dung file chưa đọc. Đọc file trước khi sửa.
+- **Ghi file thì đổi `page-meta`.** Mọi lần sửa nội dung một trang, dù nhỏ tới đâu, đều phải cập nhật ngày trong `page-meta` sang ngày sửa, theo `html-menu-rules.md` mục 2.1. Đây là bước cuối cùng trước khi coi một lượt ghi file là xong, ở mọi mode: `draft`, `refine`, `translate`, và cả khi chỉ sửa một câu theo yêu cầu lẻ.
 - **Nói thẳng khi bài chưa tốt.** Tác giả yêu cầu phản biện, không yêu cầu khen. Nếu một ý yếu, nói rõ nó yếu ở đâu và đề xuất thay bằng gì.
 - **Không mở rộng phạm vi.** Được yêu cầu outline thì đừng viết luôn cả bài. Được yêu cầu sửa một section thì đừng viết lại toàn bài. Được yêu cầu `review` thì đừng sửa file.
 - **Hỏi khi có mâu thuẫn hoặc nhiều hướng xử lý.** Phải hỏi khi: đụng vào luận đề hoặc đoạn kết; bỏ hoặc thay cả một section; bỏ chi tiết vì không xác minh được nguồn; hai lens đòi hai điều trái nhau mà thứ tự ưu tiên không giải được; có từ hai hướng sửa trở lên dẫn tới hai bài khác nhau. Gom một lượt, tối đa 3 câu, mỗi câu kèm phương án mặc định và hệ quả từng hướng. Không hỏi thứ tra được trong repo hay bằng WebSearch, và không hỏi lại điều đã chốt. Tác giả hay ra yêu cầu từ điện thoại, câu hỏi phải trả lời được bằng một dòng.

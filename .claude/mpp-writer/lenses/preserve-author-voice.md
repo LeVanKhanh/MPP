@@ -51,10 +51,29 @@ Câu vụng không tự động là lỗi. Câu trơn không tự động là t�
 Sau khi áp các sửa đổi, trước khi ghi file:
 
 - **Đọc lại năm câu đặc trưng ở mục 1.** Còn nguyên không? Bị sửa thì vì lý do gì?
-- **Đếm câu do trợ lý viết mới.** Vượt 20% số câu trong một section thì section đó không còn là văn tác giả. Dừng, báo tác giả, đề xuất tự viết lại section đó.
+- **Đếm câu do trợ lý viết mới**, theo cách ở mục 4.1.
 - **Kiểm nhiệt.** Chỗ có nhiệt ở bản gốc còn nhiệt không?
 - **Kiểm quan điểm.** Bài sau sửa có còn nói cùng một điều với bản gốc không, hay đã trôi về một phiên bản trung tính hơn?
 - **Đọc to một đoạn bất kỳ.** Nếu nghe như bài blog chuẩn mực, đã sửa quá tay.
+
+### 4.1 Ngưỡng 20%: đếm cái gì và không đếm cái gì
+
+Ngưỡng này đo **sự trôi giọng**, không đo khối lượng sửa. Nó tồn tại để bắt trường hợp văn tác giả bị thay dần bằng văn trơn hơn mà không ai để ý. Nó không tồn tại để chặn việc sửa lỗi.
+
+Chia câu viết mới làm hai loại, đếm riêng:
+
+| Loại | Gồm | Có tính vào 20% không |
+|---|---|---|
+| **Bắt buộc** | Sửa theo `research-evidence` hoặc `audit-argument` (ưu tiên 1-2); nội dung tác giả đã duyệt ở bước hỏi loại B | **Không** |
+| **Tuỳ chọn** | Sửa theo `developmental-edit`, `adapt-for-audience`, `polish-vietnamese` (ưu tiên 4-6) | **Có** |
+
+Chỉ **câu tuỳ chọn** mới vào tử số; mẫu số vẫn là tổng số câu của section. Vượt 20% thì hoàn tác **phần tuỳ chọn** của section đó về bản trước, giữ nguyên phần bắt buộc, rồi báo tác giả.
+
+Lý do phải tách: mục 5 đã ghi lens này không phủ quyết được ưu tiên 1-2. Nếu đếm gộp, một lỗi sự thật nằm trong đoạn dài sẽ đẩy section vượt ngưỡng, và hoàn tác theo ngưỡng đồng nghĩa với khôi phục lại lỗi sự thật. Đó là guard tự mâu thuẫn với bảng ưu tiên.
+
+Câu bắt buộc vẫn phải qua mục 5: viết lại **theo nhịp và từ vựng của tác giả**, không thay bằng câu trung tính. Và vẫn phải báo cáo số lượng, kể cả khi không tính vào ngưỡng, để tác giả biết đoạn nào đã bị viết lại nhiều.
+
+Khi câu bắt buộc chiếm hơn nửa một section, đừng hoàn tác, nhưng nói thẳng với tác giả rằng section đó nên được chính tác giả đọc lại: sửa đúng nhiều tới mức đó thường có nghĩa đoạn gốc có vấn đề sâu hơn một lỗi lẻ.
 
 ## 5. Quyền phủ quyết
 
@@ -81,11 +100,12 @@ PHÂN LOẠI ĐỀ XUẤT SỬA:
 
 SAU KHI SỬA:
   Câu đặc trưng còn: x/5
-  Tỷ lệ câu viết mới theo section:
+  Câu viết mới theo section:
+    [section] bắt buộc x câu (không tính ngưỡng) | tuỳ chọn y câu / z câu = n%
   Nhiệt / quan điểm có trôi không:
-  Kết luận: an toàn ghi file / đã sửa quá tay ở section ...
+  Kết luận: an toàn ghi file / hoàn tác phần tuỳ chọn ở section ...
 ```
 
 ## Đạt khi
 
-Mọi thứ trong mục 3 còn nguyên, các câu đặc trưng còn nguyên hoặc bị sửa có lý do được ghi rõ, không section nào vượt 20% câu viết mới, và đọc to lên vẫn nghe ra một người cụ thể.
+Mọi thứ trong mục 3 còn nguyên, các câu đặc trưng còn nguyên hoặc bị sửa có lý do được ghi rõ, không section nào vượt 20% **câu tuỳ chọn** viết mới, và đọc to lên vẫn nghe ra một người cụ thể.

@@ -56,6 +56,28 @@
 - `<time datetime="YYYY-MM-DD">` giữ nguyên định dạng ISO ở thuộc tính, phần hiển thị viết theo ngôn ngữ của bài.
 - Ngày viết theo ngày thật, không viết ngày tương lai.
 
+### 2.1 `page-meta` phải khớp lần sửa cuối
+
+**Mỗi lần ghi file là một lần cập nhật `page-meta`.** Không có ngoại lệ, kể cả khi chỉ sửa một câu. Ngày trong bài là thứ người đọc dùng để biết nội dung này còn mới tới đâu; để nó trỏ về một ngày trước lần sửa gần nhất là nói sai với người đọc, và đó là lỗi nặng hơn trong một repo có cả series về ngụy biện.
+
+| Tình huống | Nhãn | Ngày |
+|---|---|---|
+| Bài mới, ghi file lần đầu | `Đăng ngày:` / `Published:` | Ngày tạo |
+| Bài đã có, sửa nội dung bất kỳ | `Cập nhật:` / `Updated:` | Ngày sửa |
+
+Đổi cả hai chỗ, không chỉ một: thuộc tính `datetime` theo ISO, và phần hiển thị theo ngôn ngữ của bài.
+
+```html
+<!-- VN -->  <time datetime="2026-08-02">2 Tháng 8, 2026</time>
+<!-- EN -->  <time datetime="2026-08-02">August 2, 2026</time>
+```
+
+Khi bài chuyển từ lần đăng đầu sang lần sửa đầu tiên, đổi luôn nhãn `Đăng ngày:` thành `Cập nhật:` (và `Published:` thành `Updated:`).
+
+Nếu một lượt sửa cả bản VN lẫn bản EN, hai bản mang cùng một ngày. Nếu chỉ sửa một bản, chỉ đổi ngày của bản đó; hai bản lệch ngày là thông tin đúng, không phải lỗi.
+
+Lấy ngày hôm nay từ môi trường, đừng suy từ ngày đang có sẵn trong file.
+
 ## 3. Class được phép
 
 Chỉ dùng class đã có style trong `pages/pages-styles.css`:
@@ -174,6 +196,8 @@ Trang thơ cần cả hai stylesheet: `pages-styles.css` và `poetry-style.css`,
 - [ ] Đường dẫn CSS và script đúng số cấp `../`
 - [ ] Chỉ dùng class có sẵn, hoặc có `<style>` inline kèm theo
 - [ ] `<time datetime>` đúng ISO, ngày không nằm ở tương lai
+- [ ] `page-meta` đã đổi sang ngày của lần sửa này, cả `datetime` lẫn phần hiển thị (mục 2.1)
+- [ ] Nhãn đúng loại: `Đăng ngày:` cho bài mới, `Cập nhật:` cho bài đã sửa
 - [ ] Mọi `<sup><a href="#ref-N">` đều có `id="ref-N"` tương ứng, và ngược lại
 - [ ] Mọi link ngoài có `rel="noopener noreferrer" target="_blank"`, và còn sống
 - [ ] Đã đăng ký menu đúng file theo ngôn ngữ, `hash` khớp với bản ngôn ngữ kia

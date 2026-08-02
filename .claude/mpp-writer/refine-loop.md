@@ -76,7 +76,9 @@ Nếu tác giả không trả lời trong lượt này: làm hết loại A, đ�
 
 ### Bước 5 - Kiểm giọng
 
-Chạy `preserve-author-voice` mục 4 trên bản vừa sửa. Nếu một section vượt 20% câu viết mới, hoàn tác section đó về bản trước, báo tác giả, đề xuất tác giả tự viết lại.
+Chạy `preserve-author-voice` mục 4 trên bản vừa sửa. Đếm câu viết mới theo mục 4.1 của lens đó: chỉ câu thuộc ưu tiên 4-6 mới tính vào ngưỡng 20%, còn sửa lỗi thuộc ưu tiên 1-2 và nội dung tác giả đã duyệt ở bước 4 thì không. Vượt ngưỡng thì hoàn tác **phần tuỳ chọn** của section đó, giữ nguyên phần bắt buộc, rồi báo tác giả.
+
+Đừng bao giờ hoàn tác một sửa đổi thuộc ưu tiên 1-2 vì lý do giọng văn. Nếu thấy mình sắp làm vậy, guard đang bị đọc sai.
 
 Đây là cửa cuối. Không bỏ qua bước này kể cả khi vòng lặp đang gấp.
 
@@ -93,7 +95,7 @@ Kiểm theo thứ tự, gặp cái nào trước thì dừng ở đó:
 1. **Đạt ngưỡng:** tổng ≥ 80 **và** không trục nào < 12. Dừng, báo đạt L4.
 2. **Hết trần:** đã xong vòng 3. Dừng dù chưa đạt ngưỡng.
 3. **Bão hoà:** tổng điểm tăng dưới 3 so với vòng trước. Dừng và nói rõ bài đang kẹt ở đâu, cần tác giả làm gì (thường là: cần một quan sát riêng, một nguồn gốc, hoặc một luận đề khác, ba thứ trợ lý không tạo ra thay tác giả được).
-4. **Giọng trôi:** `preserve-author-voice` báo đã sửa quá tay hai vòng liên tiếp. Dừng, hoàn tác về bản tốt nhất, báo tác giả.
+4. **Giọng trôi:** `preserve-author-voice` báo vượt ngưỡng 20% hai vòng liên tiếp. Dừng, hoàn tác phần tuỳ chọn về bản giữ được giọng tốt nhất, giữ nguyên mọi sửa lỗi thuộc ưu tiên 1-2, báo tác giả.
 5. **Chờ trả lời:** có mục loại B chưa được chốt mà vòng không đi tiếp được nếu thiếu.
 
 Không tự nâng trần 3 vòng. Muốn chạy tiếp thì tác giả yêu cầu thêm một lượt.
@@ -156,8 +158,9 @@ TRẠNG THÁI: chạy tiếp vòng N+1 / dừng vì (ngưỡng | trần | bão h
 ## 6. Sau khi dừng
 
 1. Chạy `review` đầy đủ một lần cuối trên bản chốt và báo điểm cuối cùng.
-2. Rà HTML theo `html-menu-rules.md` mục 8.
-3. Liệt kê mọi `<!-- CẦN XÁC MINH -->` còn sót.
-4. Nói rõ bài đang ở cấp nào và có nên đăng chưa. Dưới L3 thì nói thẳng là chưa nên đăng.
-5. Không tự chạy `publish`. Hỏi trước.
-6. Không commit, không push, trừ khi tác giả yêu cầu.
+2. Cập nhật `page-meta` sang ngày hôm nay theo `html-menu-rules.md` mục 2.1. Vòng lặp đã ghi file nhiều lần, ngày cũ chắc chắn đã sai.
+3. Rà HTML theo `html-menu-rules.md` mục 8.
+4. Liệt kê mọi `<!-- CẦN XÁC MINH -->` còn sót.
+5. Nói rõ bài đang ở cấp nào và có nên đăng chưa. Dưới L3 thì nói thẳng là chưa nên đăng.
+6. Không tự chạy `publish`. Hỏi trước.
+7. Không commit, không push, trừ khi tác giả yêu cầu.

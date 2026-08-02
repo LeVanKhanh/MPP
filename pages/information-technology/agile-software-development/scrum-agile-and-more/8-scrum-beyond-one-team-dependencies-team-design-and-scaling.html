@@ -1,0 +1,507 @@
+Scrum Beyond One Team: Scale the Product, Not the Process
+
+## Định hướng trung tâm
+
+Bài viết nên tránh biến thành phần giới thiệu các framework mở rộng như SAFe, LeSS hay Nexus. Luận điểm sắc hơn có thể là:
+
+> Khi Scrum vượt ra ngoài phạm vi một team, vấn đề cốt lõi thường không phải là “làm sao mở rộng Scrum”, mà là “làm sao thiết kế hệ thống làm việc để các team không phải liên tục chờ nhau”.
+
+Từ đó, bài viết đi theo ba lớp:
+
+1. **Dependencies** – Team đang phụ thuộc nhau ở đâu?
+2. **Team design** – Cấu trúc team có đang tạo ra các phụ thuộc đó không?
+3. **Scaling** – Khi không thể loại bỏ phụ thuộc, cần phối hợp ở cấp độ nào?
+
+Mối quan hệ giữa ba lớp này là:
+
+> Dependencies là triệu chứng.
+> Team design thường là nguyên nhân.
+> Scaling framework chỉ là một trong các cách xử lý.
+
+---
+
+# Scrum Beyond One Team: Dependencies, Team Design, and Scaling
+
+## 1. Scrum hoạt động tốt nhất khi một team có thể tạo ra giá trị
+
+Mở đầu bằng một tình huống quen thuộc:
+
+Một Scrum Team muốn hoàn thành một tính năng, nhưng phải:
+
+* chờ team UX thiết kế;
+* chờ platform team cung cấp API;
+* chờ database team sửa schema;
+* chờ security phê duyệt;
+* chờ release team triển khai;
+* chờ một Product Owner khác xác nhận ưu tiên.
+
+Trên Jira, tất cả các team vẫn “hoàn thành Sprint”. Nhưng người dùng chưa nhận được gì.
+
+Câu hỏi trung tâm:
+
+> Nếu một team hoàn thành tất cả công việc của mình nhưng Increment vẫn chưa usable, team đó có thực sự tạo ra giá trị không?
+
+Điểm cần làm rõ:
+
+* Scrum Team được kỳ vọng là **cross-functional** và **self-managing**.
+* Nhưng self-managing không đồng nghĩa với hoàn toàn độc lập.
+* Trong tổ chức lớn, dependency là không thể tránh khỏi.
+* Vấn đề không phải là có dependency hay không, mà là dependency đó có thường xuyên biến thành **waiting, handoff và mất khả năng thích nghi** hay không.
+
+---
+
+## 2. Khi “Done” của một team chưa tạo ra một Increment
+
+Một team có thể đạt Sprint Goal cục bộ nhưng sản phẩm tổng thể vẫn chưa hoạt động.
+
+Có thể phân biệt ba cấp độ:
+
+| Cấp độ               | Team hoàn thành gì?                                  | Giá trị thực tế                   |
+| -------------------- | ---------------------------------------------------- | --------------------------------- |
+| Task completion      | Hoàn thành phần việc được giao                       | Chưa chắc tích hợp được           |
+| Component completion | Hoàn thành một component                             | Chưa chắc người dùng sử dụng được |
+| Product Increment    | Tính năng tích hợp, usable và đạt Definition of Done | Có thể kiểm chứng giá trị         |
+
+Điểm phản biện quan trọng:
+
+> Khi mỗi team chỉ tối ưu phần việc của mình, tổ chức có thể đạt hiệu suất cục bộ rất cao nhưng tốc độ tạo ra giá trị tổng thể lại rất thấp.
+
+Đây là nơi có thể nối với tư duy hệ thống:
+
+* tăng utilization không nhất thiết giảm lead time;
+* team luôn bận không có nghĩa sản phẩm đang tiến nhanh;
+* nhiều work in progress tạo ra nhiều phụ thuộc và thời gian chờ hơn.
+
+---
+
+## 3. Không phải mọi dependency đều giống nhau
+
+Nên xây dựng một taxonomy đủ thực dụng.
+
+### Product dependency
+
+Hai team cùng tác động đến một customer journey hoặc một Product Goal.
+
+Ví dụ: team Checkout cần thay đổi từ team Payment để hoàn thành trải nghiệm thanh toán.
+
+### Technical dependency
+
+Một tính năng cần thay đổi nhiều component do các team khác nhau sở hữu.
+
+Ví dụ: frontend, API, database và identity thuộc bốn team khác nhau.
+
+### Knowledge dependency
+
+Team có quyền sửa code nhưng không có đủ kiến thức để sửa an toàn.
+
+Đây là loại dependency thường bị bỏ qua vì không xuất hiện rõ trên backlog.
+
+### Process dependency
+
+Công việc phải qua một bộ phận kiểm thử, bảo mật, kiến trúc hoặc phê duyệt tập trung.
+
+### Environment and release dependency
+
+Team hoàn thành code nhưng không thể tự kiểm thử, tích hợp hoặc triển khai.
+
+### Priority dependency
+
+Hai team cần phối hợp nhưng Product Owners hoặc stakeholders của họ theo đuổi các mục tiêu khác nhau.
+
+Điểm đáng nhấn mạnh:
+
+> Dependency kỹ thuật có thể nhìn thấy trong architecture. Dependency về ưu tiên thường nguy hiểm hơn vì không thể giải quyết chỉ bằng API contract hay automation.
+
+---
+
+## 4. Dependency không chỉ là vấn đề lập kế hoạch
+
+Các tổ chức thường xử lý dependency bằng:
+
+* dependency board;
+* cross-team planning;
+* Scrum of Scrums;
+* thêm coordinator;
+* thêm program manager;
+* họp đồng bộ thường xuyên hơn.
+
+Những biện pháp này có thể giúp nhìn thấy dependency, nhưng không nhất thiết làm giảm nó.
+
+Một câu có thể dùng làm luận điểm:
+
+> Coordination makes dependencies more manageable. Team design determines how many dependencies must exist in the first place.
+
+Hay bằng tiếng Việt:
+
+> Điều phối giúp tổ chức sống chung với phụ thuộc; thiết kế team quyết định tổ chức phải sống chung với bao nhiêu phụ thuộc.
+
+Từ đây chuyển tự nhiên sang phần team design.
+
+---
+
+## 5. Team structure đang phản chiếu hay phá vỡ dòng giá trị?
+
+### Component teams
+
+Team được tổ chức quanh tầng kỹ thuật:
+
+* frontend team;
+* backend team;
+* database team;
+* QA team;
+* DevOps team.
+
+Ưu điểm:
+
+* tập trung chuyên môn;
+* dễ duy trì tiêu chuẩn kỹ thuật;
+* phù hợp với một số subsystem phức tạp.
+
+Hạn chế:
+
+* một feature phải đi qua nhiều team;
+* tăng handoff và thời gian chờ;
+* khó xác lập ownership đối với outcome;
+* mỗi team có thể có backlog và ưu tiên riêng.
+
+### Feature teams
+
+Một team có phần lớn năng lực cần thiết để đưa một lát cắt giá trị từ ý tưởng đến người dùng.
+
+Ưu điểm:
+
+* giảm dependency;
+* feedback nhanh hơn;
+* ownership gần với outcome;
+* dễ xây dựng Sprint Goal có ý nghĩa.
+
+Hạn chế:
+
+* kiến thức chuyên môn có thể bị phân tán;
+* nguy cơ duplication;
+* cần đầu tư vào architecture, automation và chia sẻ kiến thức;
+* không phải subsystem nào cũng dễ phân chia.
+
+Điều quan trọng là tránh kết luận đơn giản rằng feature team luôn tốt, component team luôn xấu.
+
+Luận điểm cân bằng hơn:
+
+> Mục tiêu không phải tạo ra những team hoàn toàn độc lập, mà là làm cho phần lớn thay đổi có giá trị có thể được hoàn thành trong một team với mức phối hợp chấp nhận được.
+
+---
+
+## 6. Team Topologies như một góc nhìn bổ trợ
+
+Có thể giới thiệu ngắn gọn bốn kiểu team:
+
+* **Stream-aligned team**: gắn với một dòng giá trị hoặc nhóm người dùng.
+* **Platform team**: cung cấp capability để các team khác có thể tự phục vụ.
+* **Enabling team**: giúp team khác tiếp nhận năng lực mới.
+* **Complicated-subsystem team**: sở hữu phần hệ thống cần chuyên môn sâu.
+
+Nhưng phần quan trọng hơn là cách các team tương tác:
+
+* **Collaboration**: cùng làm trong thời gian giới hạn để khám phá hoặc giải quyết vấn đề.
+* **X-as-a-Service**: một team cung cấp capability ổn định cho team khác.
+* **Facilitating**: một team giúp team khác nâng cao năng lực.
+
+Có thể đưa ra cảnh báo:
+
+> Platform team không làm giảm dependency nếu mọi yêu cầu vẫn phải gửi ticket và chờ xử lý. Khi đó, tổ chức chỉ đổi tên component team thành platform team.
+
+Một platform thực sự hữu ích khi tạo được self-service, contract rõ ràng và giảm cognitive load cho stream-aligned teams.
+
+---
+
+## 7. Bốn chiến lược xử lý dependency
+
+Thay vì bắt đầu bằng scaling framework, bài viết có thể đề xuất thứ tự sau.
+
+### 1. Eliminate — Loại bỏ
+
+Hỏi liệu dependency có thực sự cần thiết không.
+
+Ví dụ:
+
+* chuyển một capability vào team;
+* loại bỏ bước phê duyệt không tạo thêm giá trị;
+* tự động hóa kiểm thử và deployment;
+* chia sẻ kiến thức để bỏ phụ thuộc vào chuyên gia duy nhất.
+
+### 2. Internalize — Đưa năng lực vào team
+
+Nếu dependency xuất hiện thường xuyên, team có thể cần thêm năng lực thay vì tiếp tục điều phối với team khác.
+
+Không nhất thiết phải tuyển thêm một vai trò cố định; có thể:
+
+* luân chuyển thành viên;
+* pair programming;
+* embedded specialist;
+* đào tạo T-shaped skills.
+
+### 3. Stabilize — Tạo giao diện ổn định
+
+Khi dependency cần tồn tại:
+
+* API contract;
+* service boundary;
+* platform self-service;
+* Definition of Done chung;
+* quy tắc versioning;
+* integration automation.
+
+Mục tiêu là chuyển từ phụ thuộc vào con người sang phụ thuộc vào một capability có thể dự đoán.
+
+### 4. Coordinate — Điều phối có chủ đích
+
+Chỉ khi không thể loại bỏ hoặc ổn định dependency mới cần tăng coordination:
+
+* joint refinement;
+* shared planning;
+* cross-team synchronization;
+* integrated review;
+* multi-team retrospective.
+
+Ý chính:
+
+> Eliminate before you coordinate. Stabilize before you scale.
+
+---
+
+## 8. Một Product hay nhiều Product?
+
+Đây có thể là phần lý luận quan trọng nhất của bài.
+
+Trước khi chọn mô hình scaling, tổ chức cần hỏi:
+
+> Các team này đang cùng tạo ra một Product, hay chỉ đang làm việc trong cùng một hệ thống kỹ thuật?
+
+Các câu hỏi nhận diện:
+
+* Có cùng một nhóm người dùng hoặc khách hàng không?
+* Có cùng Product Goal không?
+* Giá trị có thể được đánh giá riêng cho từng team không?
+* Một thay đổi có thường xuyên cần nhiều team cùng tham gia không?
+* Có một Product Backlog chung hay nhiều backlog cạnh tranh?
+* Có một người chịu trách nhiệm tối đa hóa giá trị tổng thể không?
+
+Nếu thực chất là một Product nhưng tổ chức chia thành nhiều backlog và nhiều Product Owner độc lập, dependency ưu tiên sẽ xuất hiện một cách có hệ thống.
+
+Ngược lại, không nên gộp mọi hệ thống có liên hệ kỹ thuật thành “một Product” khổng lồ. Khi ranh giới Product quá rộng:
+
+* Product Goal trở nên mơ hồ;
+* Product Owner không thể thực sự quản lý giá trị;
+* backlog trở thành danh sách mọi thứ trong tổ chức;
+* scaling tạo thêm tầng quản trị thay vì tăng khả năng thích nghi.
+
+---
+
+## 9. Scaling Scrum nên giải quyết vấn đề gì?
+
+Scaling không đơn giản là áp dụng Scrum cho nhiều team.
+
+Một mô hình scaling có ý nghĩa khi nó giúp:
+
+* nhiều team cùng hướng đến một Product Goal;
+* quản lý một Product Backlog;
+* tạo ra một Increment tích hợp;
+* phát hiện dependency sớm;
+* kiểm tra kết quả ở cấp Product;
+* thích nghi dựa trên feedback chung.
+
+Một định nghĩa sắc gọn:
+
+> Scaling Scrum is not multiplying teams, roles, and events. It is preserving empiricism when multiple teams contribute to the same product.
+
+Có thể phân biệt:
+
+| Scaling có ích                  | Scaling mang tính hình thức  |
+| ------------------------------- | ---------------------------- |
+| Một Product Goal rõ ràng        | Nhiều roadmap cạnh tranh     |
+| Increment tích hợp thường xuyên | Tích hợp cuối release        |
+| Dependency được giảm dần        | Dependency chỉ được theo dõi |
+| Decision gần nơi có thông tin   | Thêm tầng phê duyệt          |
+| Feedback ở cấp sản phẩm         | Mỗi team demo phần riêng     |
+| Shared outcome                  | Tổng hợp output của các team |
+
+---
+
+## 10. Các Scrum Event thay đổi thế nào khi có nhiều team?
+
+Không nên đơn giản nhân đôi số cuộc họp.
+
+### Sprint Planning
+
+Các team cần hiểu:
+
+* Product Goal chung;
+* thứ tự ưu tiên chung;
+* dependency có thể ảnh hưởng đến Sprint Goal;
+* cách tạo ra Increment tích hợp.
+
+Nhưng mỗi team vẫn cần khả năng tự lập kế hoạch cho công việc của mình.
+
+### Daily Scrum và cross-team synchronization
+
+Daily Scrum phục vụ Developers trong một team. Cross-team sync chỉ nên được dùng khi có vấn đề tích hợp thực sự.
+
+Cảnh báo:
+
+> Scrum of Scrums dễ trở thành cuộc họp báo cáo trạng thái nếu người tham dự chỉ kể team mình đã làm gì.
+
+Nó nên tập trung vào:
+
+* điều gì đang ngăn cản Increment tích hợp;
+* dependency nào vừa xuất hiện hoặc thay đổi;
+* quyết định nào cần được đưa ra giữa các team.
+
+### Sprint Review
+
+Không nên có nhiều demo rời rạc rồi gọi đó là Product Review.
+
+Review cần kiểm tra:
+
+* Increment tổng thể;
+* thay đổi trong thị trường hoặc nhu cầu người dùng;
+* tiến độ hướng đến Product Goal;
+* điều gì nên được làm tiếp theo.
+
+### Retrospective
+
+Ngoài retrospective của từng team, cần có cơ chế xem xét vấn đề ở cấp hệ thống:
+
+* dependency lặp lại;
+* thời gian chờ;
+* lỗi tích hợp;
+* policy tổ chức;
+* ranh giới ownership;
+* bottleneck nằm ngoài quyền kiểm soát của một team.
+
+---
+
+## 11. Vai trò của PO, Scrum Master và Developers
+
+### Product Owner
+
+Khi nhiều team cùng làm một Product, thách thức không phải là chia backlog thành nhiều phần, mà là giữ được một trật tự ưu tiên dựa trên giá trị tổng thể.
+
+Có thể phản biện mô hình “mỗi team một PO”:
+
+* Ai chịu trách nhiệm cho trade-off giữa các team?
+* Ai quyết định ưu tiên khi mục tiêu xung đột?
+* Product Owners là người quyết định hay chỉ là backlog administrators?
+
+### Scrum Master
+
+Scrum Master không chỉ xử lý impediment bên trong team.
+
+Ở cấp độ nhiều team, họ cần giúp tổ chức nhìn thấy:
+
+* dependency do cấu trúc tổ chức tạo ra;
+* policy làm chậm dòng giá trị;
+* local optimization;
+* sự khác biệt giữa coordination problem và organizational design problem.
+
+### Developers
+
+Developers cần ownership vượt qua biên giới repository hoặc component:
+
+* tích hợp sớm;
+* chia sẻ kiến thức;
+* thống nhất Definition of Done;
+* cùng chịu trách nhiệm cho chất lượng Product Increment.
+
+---
+
+## 12. Đo dependency bằng tác động, không bằng số đường nối
+
+Không phải dependency nào cũng xấu. Bài viết có thể đề xuất các chỉ số:
+
+* thời gian công việc bị blocked;
+* dependency waiting time;
+* tuổi của dependency chưa giải quyết;
+* số handoff trước khi giá trị đến người dùng;
+* tỷ lệ Sprint Goal bị ảnh hưởng bởi team khác;
+* thời gian từ code complete đến integrated;
+* integration frequency;
+* lead time từ ý tưởng đến usable Increment;
+* tỷ lệ công việc cần thay đổi từ ba team trở lên;
+* số dependency lặp lại qua nhiều Sprint.
+
+Điểm quan trọng:
+
+> Mục tiêu không phải giảm số dependency về 0, mà giảm chi phí phối hợp và mức độ dependency làm gián đoạn dòng giá trị.
+
+Không nên dùng velocity để so sánh các team hoặc chứng minh mô hình scaling thành công.
+
+---
+
+## 13. Khi nào thực sự cần một scaling framework?
+
+Một framework có thể đáng cân nhắc khi:
+
+* nhiều team thực sự cùng phát triển một Product;
+* các team dùng chung Product Goal và Product Backlog;
+* cần một Increment tích hợp thường xuyên;
+* dependency không thể xử lý chỉ bằng thay đổi ranh giới team;
+* quy mô coordination đã vượt khả năng xử lý không chính thức.
+
+Nhưng framework sẽ không tự sửa được:
+
+* kiến trúc kết nối quá chặt;
+* backlog phân mảnh;
+* Product Ownership không rõ;
+* team thiếu kỹ năng;
+* quy trình phê duyệt tập trung;
+* integration diễn ra quá muộn;
+* ưu tiên xung đột giữa các đơn vị.
+
+Có thể nhắc ngắn:
+
+* **Nexus** tập trung vào integration giữa các Scrum Team.
+* **LeSS** nhấn mạnh một Product, một Product Backlog và feature teams.
+* **Scrum@Scale** tách góc nhìn product và delivery coordination.
+* **SAFe** giải quyết phạm vi tổ chức rộng hơn nhưng kéo theo nhiều cấu trúc và vai trò hơn.
+
+Không cần biến phần này thành so sánh framework chi tiết. Kết luận nên là:
+
+> Chọn framework sau khi hiểu dependency; đừng dùng framework để tránh phải đặt lại câu hỏi về cấu trúc tổ chức.
+
+---
+
+## 14. Một mô hình chẩn đoán thực dụng
+
+Bài viết có thể đưa ra chuỗi câu hỏi:
+
+1. Các team có thực sự cùng phát triển một Product không?
+2. Họ có cùng Product Goal và Product Backlog không?
+3. Một team có thể tạo ra lát cắt giá trị end-to-end không?
+4. Dependency nào xuất hiện thường xuyên nhất?
+5. Dependency đó đến từ bản chất sản phẩm hay cấu trúc tổ chức?
+6. Có thể loại bỏ bằng cách thay đổi team boundary không?
+7. Có thể chuyển nó thành self-service hoặc interface ổn định không?
+8. Nếu vẫn cần coordination, cơ chế tối thiểu nào là đủ?
+9. Scaling framework giải quyết vấn đề cụ thể nào?
+10. Làm sao biết thay đổi đó thực sự giảm lead time và tăng khả năng học hỏi?
+
+Mô hình tóm tắt:
+
+> **Product boundary → Team boundary → Technical boundary → Coordination mechanism → Scaling framework**
+
+Thứ tự này rất quan trọng. Nếu đi ngược lại, tổ chức có thể chọn framework trước rồi ép sản phẩm và team vào cấu trúc của framework.
+
+---
+
+## 15. Kết luận đề xuất
+
+Có thể kết bằng một ý mạnh:
+
+> Một tổ chức không trở nên Agile hơn chỉ vì có nhiều Scrum Team. Nếu mỗi team phải chờ nhiều team khác để tạo ra giá trị, việc nhân rộng Scrum có thể chỉ nhân rộng cả sự phụ thuộc.
+
+Sau đó chốt:
+
+> Scaling tốt không được đo bằng số team có thể cùng lập kế hoạch. Nó được đo bằng khả năng nhiều team cùng tạo ra một Product Increment, nhận feedback và thay đổi hướng đi mà không bị bộ máy phối hợp làm chậm lại.
+
+Và câu cuối:
+
+> Trước khi hỏi “Chúng ta nên scale Scrum bằng framework nào?”, hãy hỏi: “Chúng ta có thể thiết kế Product, architecture và team differently để cần ít scaling hơn không?”

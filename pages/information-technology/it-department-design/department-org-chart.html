@@ -1,0 +1,1198 @@
+# Designing an Enterprise IT Organization: A Reference Architecture
+
+Luận đề trung tâm của bài viết:
+
+> Một tổ chức IT không chỉ là tập hợp các phòng ban và tuyến báo cáo. Nó là một hệ thống phân bổ quyền quyết định, dòng giá trị, thông tin, trách nhiệm và cơ hội phát triển nghề nghiệp.
+
+Bài nên xây dựng một **reference architecture có thể điều chỉnh theo bối cảnh**, không khẳng định có một cơ cấu tối ưu cho mọi doanh nghiệp.
+
+---
+
+## Introduction — Beyond the IT Organization Chart
+
+### 1. Vấn đề của cách thiết kế IT truyền thống
+
+* Thiết kế tổ chức thường dừng ở sơ đồ “ai báo cáo cho ai”.
+* Chia phòng ban theo chuyên môn: Development, QA, Infrastructure, Security, Support.
+* Công việc phải đi qua nhiều silo và nhiều lần bàn giao.
+* Quyền quyết định không rõ ràng.
+* Governance dễ trở thành approval bureaucracy.
+* Report nhiều nhưng không giúp lãnh đạo ra quyết định.
+
+### 2. Organization chart không phải organization architecture
+
+Phân biệt:
+
+* Organization chart: quan hệ quản lý.
+* Operating model: cách tổ chức tạo và vận hành giá trị.
+* Organization architecture: toàn bộ cấu trúc quản trị, team, role, information flow và career system.
+
+### 3. Mục tiêu của reference architecture
+
+Reference architecture phải trả lời:
+
+* IT tồn tại để tạo ra giá trị gì?
+* Ai quyết định điều gì?
+* Team được tổ chức quanh chức năng hay dòng giá trị?
+* Năng lực nào cần tập trung, năng lực nào nên phân quyền?
+* Thông tin nào cần đi qua tổ chức?
+* Thành công được đánh giá bằng gì?
+* Nhân sự có thể phát triển mà không cần trở thành manager hay không?
+
+---
+
+# Part I — Context and Design Foundations
+
+## 1. Context and Assumptions
+
+### 1.1 Enterprise context
+
+Mô tả tổ chức giả định:
+
+* Tập đoàn đa quốc gia ngoài ngành công nghệ.
+* Khoảng 20.000 nhân viên.
+* Hoạt động tại 10–15 quốc gia.
+* Khoảng 500–700 nhân sự công nghệ.
+* Hệ sinh thái hybrid cloud và on-premises.
+* Sử dụng ERP, CRM, supply chain, data platform và digital products.
+* Có cả nhân sự nội bộ, outsourcing và strategic vendors.
+
+### 1.2 Vai trò của IT trong doanh nghiệp
+
+IT đồng thời thực hiện bốn nhiệm vụ:
+
+1. Run the business.
+2. Protect the business.
+3. Change the business.
+4. Grow the business.
+
+Có thể giải thích sự khác nhau giữa:
+
+* Utility IT.
+* Business capability.
+* Digital product.
+* Technology platform.
+* Strategic technology investment.
+
+### 1.3 Những áp lực mà tổ chức phải xử lý
+
+* Global consistency và local autonomy.
+* Innovation và operational stability.
+* Delivery speed và governance.
+* Business ownership và technology ownership.
+* Product investment và project funding.
+* Internal capability và outsourcing.
+* Standardization và domain-specific needs.
+
+### 1.4 Phạm vi của reference architecture
+
+Bao gồm:
+
+* Enterprise IT.
+* Digital product delivery.
+* Platform engineering.
+* Operations.
+* Cybersecurity.
+* Data và AI.
+* Regional IT.
+* Governance và portfolio management.
+
+Không cố gắng mô tả chi tiết một doanh nghiệp hoặc ngành cụ thể.
+
+---
+
+## 2. Design Principles
+
+### 2.1 Organize around value, not activities
+
+Team nên chịu trách nhiệm về business outcome hoặc service outcome, thay vì chỉ thực hiện một công đoạn.
+
+### 2.2 End-to-end ownership
+
+Nguyên tắc:
+
+> The team that builds a product should participate in operating and improving it.
+
+Ownership bao gồm:
+
+* Discovery.
+* Design.
+* Delivery.
+* Production.
+* Support.
+* Product lifecycle.
+* Retirement.
+
+### 2.3 Centralize guardrails, decentralize decisions
+
+Tập trung:
+
+* Enterprise standards.
+* Identity.
+* Security policies.
+* Shared platforms.
+* Strategic architecture.
+* Financial controls.
+
+Phân quyền:
+
+* Product priority.
+* Local implementation.
+* Technical decisions trong guardrails.
+* Delivery planning.
+* Experimentation.
+
+### 2.4 Platform as a product
+
+Platform team không chỉ cung cấp infrastructure mà phải có:
+
+* Internal customers.
+* Product manager hoặc platform owner.
+* Roadmap.
+* Service catalog.
+* SLO.
+* Adoption metrics.
+* Feedback mechanism.
+
+### 2.5 Governance through enablement and automation
+
+Governance nên được thể hiện bằng:
+
+* Policy as code.
+* Automated controls.
+* Reference architectures.
+* Golden paths.
+* Reusable components.
+* Self-service capabilities.
+
+### 2.6 Clear accountability without rigid silos
+
+Mỗi quyết định phải có một accountable owner, nhưng việc thực hiện có thể cần nhiều nhóm phối hợp.
+
+### 2.7 Management is not the only form of leadership
+
+Tách biệt:
+
+* People leadership.
+* Product leadership.
+* Technical leadership.
+* Operational leadership.
+
+### 2.8 Design for evolution
+
+Cơ cấu tổ chức phải được xem như một hệ thống có thể thay đổi theo:
+
+* Business strategy.
+* Technology maturity.
+* Scale.
+* Regulation.
+* Capability.
+* Product lifecycle.
+
+---
+
+# Part II — Governance and Organizational Architecture
+
+## 3. Governance and Decision Rights
+
+### 3.1 Phân biệt governance và management
+
+* Governance: xác lập hướng đi, giới hạn và trách nhiệm giải trình.
+* Management: lập kế hoạch, tổ chức và thực thi trong những giới hạn đó.
+
+### 3.2 Governance layers
+
+Đề xuất bốn tầng:
+
+1. Board and Risk Committee.
+2. Executive Technology Council.
+3. Domain and Portfolio Governance.
+4. Product and Platform Governance.
+
+### 3.3 Decision domains
+
+Xác định các nhóm quyết định:
+
+* Technology strategy.
+* Investment và portfolio.
+* Product priority.
+* Enterprise architecture.
+* Platform standards.
+* Security và risk acceptance.
+* Data ownership.
+* Vendor selection.
+* Build versus buy.
+* Service lifecycle.
+* Local technology exceptions.
+
+### 3.4 Decision-right model
+
+Mỗi quyết định cần xác định:
+
+* Decision owner.
+* Decision participants.
+* Constraints.
+* Required evidence.
+* Escalation path.
+* Review date.
+* Reversibility.
+
+Có thể phân biệt:
+
+* Type 1: khó đảo ngược, cần governance chặt.
+* Type 2: có thể đảo ngược, nên phân quyền cho team.
+
+### 3.5 Governance bodies
+
+#### Board/Risk Committee
+
+* Technology risk.
+* Cybersecurity.
+* Business continuity.
+* Strategic technology exposure.
+
+#### Executive Technology Council
+
+* Technology strategy.
+* Investment priorities.
+* Cross-business trade-offs.
+* Major transformation programs.
+
+#### Architecture Council
+
+* Cross-domain architecture.
+* Strategic standards.
+* Exceptions có ảnh hưởng lớn.
+
+#### Product/Portfolio Council
+
+* Product investment.
+* Product lifecycle.
+* Capacity allocation.
+* Dependencies.
+
+### 3.6 Guardrails và exception management
+
+* Khi nào team được tự quyết?
+* Khi nào phải xin exception?
+* Ai có quyền chấp thuận?
+* Exception có thời hạn hay vĩnh viễn?
+* Technical debt phát sinh được quản lý thế nào?
+
+---
+
+## 4. Organization Structure
+
+### 4.1 Enterprise-level organization
+
+Cấu trúc mẫu dưới Group CIO:
+
+* Strategy, Architecture and Portfolio.
+* Business Technology and Products.
+* Platforms and Operations.
+* Data and AI.
+* Cybersecurity.
+* Regional IT.
+
+### 4.2 Strategy, Architecture and Portfolio
+
+Các capability:
+
+* Technology strategy.
+* Enterprise architecture.
+* Portfolio management.
+* Technology finance và FinOps.
+* Vendor management.
+* Technology governance.
+* Transformation office.
+
+### 4.3 Business Technology and Products
+
+Tổ chức theo business domain:
+
+* Customer and Sales.
+* Supply Chain.
+* Manufacturing.
+* Finance.
+* HR and Corporate Services.
+* Digital Commerce.
+
+### 4.4 Platforms and Operations
+
+* Cloud platform.
+* Developer platform.
+* Integration/API platform.
+* Identity platform.
+* Observability và SRE.
+* Digital workplace.
+* Network và infrastructure.
+* Service management.
+* Service desk và field support.
+
+### 4.5 Data and AI
+
+* Data governance.
+* Data platform.
+* Data engineering.
+* Business intelligence.
+* Data science.
+* AI platform.
+* AI governance.
+* Domain data products.
+
+### 4.6 Cybersecurity
+
+* Security governance, risk and compliance.
+* Security architecture.
+* Security engineering.
+* Security operations.
+* Identity and access.
+* Application security.
+* Security education.
+
+### 4.7 Regional IT
+
+Phân định giữa global và regional:
+
+| Global IT                | Regional IT                 |
+| ------------------------ | --------------------------- |
+| Enterprise platforms     | Local adoption              |
+| Global standards         | Local regulations           |
+| Strategic vendors        | Local vendors               |
+| Shared security controls | Local compliance evidence   |
+| Global product roadmap   | Local business requirements |
+| Reference architecture   | Approved local extensions   |
+
+### 4.8 Centralized, federated và hybrid models
+
+So sánh ba mô hình và đề xuất:
+
+> Federated product–platform model: tập trung platform, security và guardrails; phân quyền product delivery cho business domains.
+
+---
+
+## 5. Team Topology and Interaction Model
+
+### 5.1 Bốn loại team
+
+* Stream-aligned team.
+* Platform team.
+* Enabling team.
+* Complicated-subsystem team.
+
+### 5.2 Stream-aligned product teams
+
+Đặc điểm:
+
+* Gắn với business capability hoặc value stream.
+* Cross-functional.
+* Có product ownership.
+* Chịu trách nhiệm end-to-end.
+* Tồn tại lâu dài hơn project.
+
+### 5.3 Platform teams
+
+Platform team phải giảm cognitive load cho product team thông qua:
+
+* Self-service.
+* Golden paths.
+* Reusable services.
+* Standardized observability.
+* Automated security controls.
+
+### 5.4 Enabling teams
+
+Ví dụ:
+
+* Cloud adoption.
+* DevSecOps enablement.
+* Architecture modernization.
+* Data literacy.
+* AI enablement.
+
+Enabling team không nên biến thành một dependency vĩnh viễn.
+
+### 5.5 Complicated-subsystem teams
+
+Áp dụng cho năng lực chuyên sâu:
+
+* Optimization engine.
+* Core identity.
+* Payment processing.
+* Machine learning infrastructure.
+* Specialized industrial systems.
+
+### 5.6 Interaction modes
+
+* Collaboration.
+* X-as-a-Service.
+* Facilitation.
+
+### 5.7 Team API
+
+Mỗi team nên công bố:
+
+* Mission.
+* Products hoặc services.
+* Ownership boundaries.
+* How to engage.
+* Service expectations.
+* Dependencies.
+* Escalation channel.
+
+### 5.8 Quản lý dependency
+
+* Loại dependency nào chấp nhận được?
+* Dependency nào cần platform hóa?
+* Khi nào hai team nên cộng tác tạm thời?
+* Khi nào cần thay đổi team boundary?
+
+---
+
+# Part III — Leadership, Information and People Systems
+
+## 6. Management Structure
+
+### 6.1 Các tầng quản lý
+
+* CIO/CTO.
+* VP/Head of Technology.
+* Director.
+* Senior Manager.
+* Engineering/Product/Platform Manager.
+* Team.
+
+### 6.2 Span of control
+
+Thảo luận các yếu tố quyết định span:
+
+* Team maturity.
+* Manager responsibilities.
+* Geographic distribution.
+* Technical complexity.
+* Number of direct reports.
+* Amount of cross-team coordination.
+
+Không đặt một con số cố định cho mọi đơn vị.
+
+### 6.3 Bốn tuyến leadership
+
+| Leadership             | Trách nhiệm chính                   |
+| ---------------------- | ----------------------------------- |
+| Product                | Value, outcome, priority            |
+| Engineering management | People và team effectiveness        |
+| Technical              | Architecture và technical direction |
+| Delivery/operations    | Flow, reliability và coordination   |
+
+### 6.4 Solid-line và dotted-line reporting
+
+* Solid line: performance, compensation, staffing, career.
+* Dotted line: professional standards, domain alignment, shared capability.
+
+### 6.5 Tránh mô hình “hai ông chủ”
+
+Phân biệt rõ:
+
+* Ai quyết định priority?
+* Ai đánh giá performance?
+* Ai quyết định technical direction?
+* Ai chịu trách nhiệm production?
+* Ai phân bổ ngân sách?
+
+### 6.6 Management forums
+
+* CIO leadership meeting.
+* Domain leadership review.
+* Product review.
+* Platform review.
+* Architecture forum.
+* Operational review.
+* Talent and capability review.
+
+---
+
+## 7. Information and Reporting Architecture
+
+### 7.1 Information architecture là gì?
+
+Không chỉ là dashboard, mà gồm:
+
+* Information owner.
+* Source of truth.
+* Audience.
+* Reporting cadence.
+* Decision supported.
+* Escalation threshold.
+
+### 7.2 Các tầng thông tin
+
+#### Strategic information
+
+* Technology strategy.
+* Investment allocation.
+* Business outcomes.
+* Strategic risks.
+
+#### Portfolio information
+
+* Product health.
+* Investment distribution.
+* Dependencies.
+* Capacity.
+* Expected versus realized value.
+
+#### Delivery information
+
+* Flow.
+* Release health.
+* Blockers.
+* Quality.
+* Technical debt.
+
+#### Operational information
+
+* Availability.
+* SLO.
+* Incidents.
+* Capacity.
+* Change risk.
+
+#### People information
+
+* Capability.
+* Workforce planning.
+* Mobility.
+* Attrition.
+* Team health.
+
+### 7.3 Reporting principles
+
+* Report để hỗ trợ quyết định.
+* Một nguồn dữ liệu đáng tin cậy.
+* Outcome trước activity.
+* Trend trước snapshot.
+* Exception trước chi tiết.
+* Không dùng report như công cụ vi mô hóa quản lý.
+
+### 7.4 Escalation architecture
+
+Xác định escalation theo:
+
+* Financial impact.
+* Customer impact.
+* Regulatory impact.
+* Security severity.
+* Geographic scope.
+* Duration.
+* Reversibility.
+
+### 7.5 Information flow hai chiều
+
+Không chỉ từ team lên management:
+
+* Strategy đi xuống.
+* Delivery evidence đi lên.
+* Standards đi ngang.
+* Feedback đi ngược về platform và governance.
+* Learning được chia sẻ xuyên domain.
+
+---
+
+## 8. Role Catalog and JD Templates
+
+### 8.1 Role taxonomy
+
+Phân biệt:
+
+* Job family.
+* Role.
+* Position.
+* Title.
+* Level.
+* Assignment.
+
+Một người có thể giữ một job role nhưng thực hiện nhiều assignment khác nhau.
+
+### 8.2 Executive roles
+
+* CIO.
+* CTO.
+* CISO.
+* Chief Data/AI Officer.
+* VP Technology.
+* Technology Director.
+
+### 8.3 Product and delivery roles
+
+* Product Manager.
+* Product Owner.
+* Business Analyst.
+* Engineering Manager.
+* Technical Program Manager.
+* Delivery Lead.
+
+### 8.4 Technical roles
+
+* Software Engineer.
+* Staff/Principal Engineer.
+* Solution Architect.
+* Enterprise Architect.
+* Platform Engineer.
+* SRE.
+* Data Engineer.
+* Security Engineer.
+
+### 8.5 Operational roles
+
+* Service Owner.
+* Service Manager.
+* Incident Manager.
+* Problem Manager.
+* Support Engineer.
+* Vendor Manager.
+
+### 8.6 JD template
+
+Mỗi JD gồm:
+
+1. Role purpose.
+2. Scope.
+3. Expected outcomes.
+4. Accountabilities.
+5. Decision rights.
+6. Key relationships.
+7. Success measures.
+8. Required competencies.
+9. Role boundaries.
+10. Career level.
+
+### 8.7 Role charter và JD
+
+Phân biệt:
+
+* JD mô tả nghề nghiệp tương đối ổn định.
+* Role charter mô tả nhiệm vụ cụ thể trong team hoặc giai đoạn hiện tại.
+
+### 8.8 Tránh JD theo danh sách hoạt động
+
+Không viết:
+
+> Tham dự họp, viết tài liệu, hỗ trợ các bên liên quan.
+
+Nên viết:
+
+> Chịu trách nhiệm về tính nhất quán của technical direction trong một product domain và giảm các rủi ro kiến trúc xuyên team.
+
+---
+
+## 9. Career Framework
+
+### 9.1 Mục tiêu của career framework
+
+* Minh bạch kỳ vọng.
+* Hỗ trợ phát triển.
+* Tạo sự công bằng tương đối giữa các role.
+* Cho phép phát triển mà không bắt buộc chuyển sang quản lý.
+* Hỗ trợ workforce planning.
+
+### 9.2 Dual career tracks
+
+#### Individual Contributor
+
+* Associate.
+* Engineer.
+* Senior.
+* Staff.
+* Principal.
+* Distinguished/Fellow.
+
+#### Management
+
+* Engineering Manager.
+* Senior Manager.
+* Director.
+* Senior Director.
+* VP.
+* CIO/CTO.
+
+### 9.3 Các trục đánh giá level
+
+* Scope.
+* Complexity.
+* Autonomy.
+* Influence.
+* Business impact.
+* Technical impact.
+* Leadership.
+* Time horizon.
+
+### 9.4 Phân biệt Senior, Staff và Principal
+
+* Senior: làm chủ vấn đề phức tạp trong một team/product.
+* Staff: tạo ảnh hưởng xuyên nhiều team.
+* Principal: định hướng một domain hoặc năng lực chiến lược.
+* Distinguished: ảnh hưởng ở cấp tổ chức hoặc ngành.
+
+### 9.5 Promotion philosophy
+
+Promotion dựa trên:
+
+* Impact được thể hiện bền vững.
+* Phạm vi thực tế đã đảm nhận.
+* Năng lực ở level tiếp theo.
+* Nhu cầu của tổ chức.
+
+Không chỉ dựa vào:
+
+* Thâm niên.
+* Chứng chỉ.
+* Số giờ làm.
+* Khả năng “chữa cháy”.
+* Số người dưới quyền.
+
+### 9.6 Career mobility
+
+* IC sang management và quay lại.
+* Product sang engineering management.
+* Operations sang SRE/platform.
+* Regional IT sang global product.
+* Architecture sang product leadership.
+
+### 9.7 Communities of practice
+
+Duy trì chuyên môn xuyên các product team thông qua:
+
+* Engineering guild.
+* Architecture community.
+* Product community.
+* Data community.
+* Security champions.
+* Management community.
+
+---
+
+# Part IV — Accountability and Measurement
+
+## 10. RACI for Critical Decisions
+
+### 10.1 Nguyên tắc sử dụng RACI
+
+* Dùng cho những quyết định xuyên tổ chức.
+* Chỉ có một Accountable.
+* Không dùng RACI để mô tả mọi hoạt động nhỏ.
+* RACI không thay thế decision process.
+
+### 10.2 Danh mục RACI mẫu
+
+Xây dựng RACI cho:
+
+* Phê duyệt technology strategy.
+* Chọn SaaS hoặc enterprise platform.
+* Product investment.
+* Production release.
+* Security risk acceptance.
+* Architecture exception.
+* Data ownership.
+* Major incident.
+* Vendor selection.
+* Service retirement.
+* Platform investment.
+
+### 10.3 RACI cấp global và regional
+
+Giải quyết các xung đột:
+
+* Global standard versus local regulation.
+* Global platform versus local product.
+* Central budget versus business-unit budget.
+* Global vendor versus local vendor.
+
+### 10.4 RACI và delegation
+
+Xác định rõ:
+
+* Quyết định nào được ủy quyền.
+* Ngưỡng phải escalation.
+* Người nhận ủy quyền.
+* Thời hạn của quyền ủy nhiệm.
+
+---
+
+## 11. Metrics and Management Cadence
+
+### 11.1 Measurement hierarchy
+
+```text
+Enterprise outcomes
+→ Technology outcomes
+→ Product and platform outcomes
+→ Team operating indicators
+```
+
+### 11.2 Business metrics
+
+* Revenue contribution.
+* Cost avoidance.
+* Process cycle-time.
+* Customer adoption.
+* Employee productivity.
+* Time to enter a market.
+
+### 11.3 Product metrics
+
+* Adoption.
+* Retention.
+* Task success.
+* Customer satisfaction.
+* Outcome realization.
+* Cost to serve.
+
+### 11.4 Engineering metrics
+
+* Lead time.
+* Deployment frequency.
+* Change failure.
+* Recovery time.
+* Quality trend.
+* Technical debt exposure.
+
+### 11.5 Platform metrics
+
+* Adoption.
+* Self-service completion rate.
+* Developer onboarding time.
+* Time saved.
+* Reliability.
+* Unit cost.
+* Internal customer satisfaction.
+
+### 11.6 Operational metrics
+
+* SLO attainment.
+* Incident impact.
+* Mean time to detect.
+* Mean time to restore.
+* Recurring incidents.
+* Automation ratio.
+
+### 11.7 Security and risk metrics
+
+* Material risk exposure.
+* Time to remediate.
+* Control effectiveness.
+* Risk exceptions.
+* Security incident impact.
+* Critical asset coverage.
+
+### 11.8 People metrics
+
+* Capability gaps.
+* Internal mobility.
+* Regrettable attrition.
+* Time to productivity.
+* Leadership coverage.
+* Team health.
+
+### 11.9 Management cadence
+
+| Cadence    | Forum                      | Mục tiêu                               |
+| ---------- | -------------------------- | -------------------------------------- |
+| Daily      | Team/Ops                   | Điều phối và xử lý bất thường          |
+| Weekly     | Product/Platform review    | Outcome, flow và dependency            |
+| Monthly    | CIO operating review       | Portfolio, finance, risk, operations   |
+| Quarterly  | Technology strategy review | Investment và strategic alignment      |
+| 6–12 tháng | Board review               | Strategy, resilience và material risks |
+
+### 11.10 Metrics anti-patterns
+
+* Đánh giá developer bằng số commit.
+* So sánh velocity giữa các team.
+* Dùng ticket count làm productivity.
+* Chỉ báo cáo màu xanh mà không thể hiện uncertainty.
+* Đo output nhưng không đo adoption hoặc outcome.
+* Gắn metric dùng để học với thưởng phạt cá nhân.
+
+---
+
+# Part V — Architecture in Operation
+
+## 12. Operating Scenarios
+
+Phần này rất quan trọng vì chứng minh kiến trúc có thực sự vận hành được hay chỉ đẹp trên sơ đồ.
+
+### 12.1 Scenario 1: A New Business Demand
+
+Ví dụ: business muốn triển khai customer loyalty capability tại nhiều quốc gia.
+
+Luồng phân tích:
+
+1. Business domain ghi nhận problem và expected outcome.
+2. Product leadership đánh giá product fit.
+3. Architecture kiểm tra capability reuse.
+4. Platform team xác định shared capabilities.
+5. Security, data và regional IT tham gia theo nhu cầu.
+6. Portfolio governance quyết định đầu tư nếu vượt ngưỡng.
+7. Product team thực hiện discovery và delivery.
+8. Outcome được đo sau release.
+
+Các câu hỏi cần làm rõ:
+
+* Ai sở hữu demand?
+* Khi nào demand trở thành product backlog?
+* Khi nào cần portfolio approval?
+* Làm sao tránh biến mọi demand thành project?
+
+### 12.2 Scenario 2: An Architecture Exception
+
+Ví dụ: product team muốn dùng công nghệ ngoài enterprise standard.
+
+Luồng:
+
+1. Team ghi nhận nhu cầu và rationale.
+2. Đánh giá alternatives, risks và reversibility.
+3. Architect xác định phạm vi ảnh hưởng.
+4. Quyết định tại cấp thấp nhất có đủ thẩm quyền.
+5. Exception có owner và expiry date.
+6. Theo dõi cost, risk và exit plan.
+7. Review để loại bỏ exception hoặc thay đổi standard.
+
+Nhấn mạnh:
+
+> Architecture governance quản lý rủi ro và tính nhất quán, không mặc định ngăn cản khác biệt.
+
+### 12.3 Scenario 3: A Production Incident
+
+Ví dụ: hệ thống order toàn cầu bị gián đoạn.
+
+Luồng:
+
+1. Detect và classify.
+2. Incident commander được chỉ định.
+3. Product, platform, security và business phối hợp.
+4. Khôi phục service là ưu tiên đầu tiên.
+5. Executive communication theo impact threshold.
+6. Post-incident review không đổ lỗi.
+7. Corrective actions đi vào backlog.
+8. Theo dõi đến khi systemic causes được xử lý.
+
+Phân biệt:
+
+* Incident ownership.
+* Service ownership.
+* Technical remediation.
+* Business communication.
+* Risk accountability.
+
+### 12.4 Scenario 4: A Platform Investment Decision
+
+Ví dụ: đầu tư developer platform dùng chung.
+
+Luồng:
+
+1. Xác định friction lặp lại ở nhiều product team.
+2. Đo tổng chi phí của giải pháp phân tán.
+3. Xác định internal customer segments.
+4. Xây dựng platform product hypothesis.
+5. Đánh giá build, buy hoặc partner.
+6. Tài trợ MVP.
+7. Đo adoption và developer outcomes.
+8. Mở rộng, điều chỉnh hoặc dừng đầu tư.
+
+Câu hỏi trọng tâm:
+
+* Platform đang giải quyết vấn đề của ai?
+* Product team có tự nguyện sử dụng không?
+* Chi phí migration được tính cho ai?
+* Khi nào platform trở thành một “central bottleneck”?
+
+---
+
+# Part VI — Failure Modes and Evolution
+
+## 13. Organizational Anti-patterns
+
+### 13.1 Functional silos
+
+Development, QA, Security và Operations tối ưu riêng nhưng không ai sở hữu outcome cuối cùng.
+
+### 13.2 Project-based organization
+
+Team giải tán sau go-live khiến product không có long-term owner.
+
+### 13.3 Central IT as a ticket factory
+
+Business đưa yêu cầu, IT nhận ticket và giao hàng nhưng không cùng chịu trách nhiệm về value.
+
+### 13.4 Governance by committee
+
+Mọi quyết định đều cần họp và approval nhưng không ai thật sự accountable.
+
+### 13.5 Architecture ivory tower
+
+Architect tạo standard nhưng không tham gia delivery và không chịu hậu quả của quyết định.
+
+### 13.6 Platform without customers
+
+Platform được xây dựng dựa trên giả định kỹ thuật nhưng không có adoption strategy.
+
+### 13.7 Matrix without decision clarity
+
+Một người có nhiều manager và nhận các priority mâu thuẫn.
+
+### 13.8 Manager as the only career path
+
+Những engineer giỏi phải chuyển sang quản lý để được thăng tiến.
+
+### 13.9 Local duplication
+
+Mỗi region xây lại cùng một platform do global IT phản hồi quá chậm.
+
+### 13.10 Premature centralization
+
+Tập trung hóa khi capability còn chưa hiểu rõ, tạo bottleneck thay vì economies of scale.
+
+### 13.11 Outsourcing accountability
+
+Vendor thực hiện cả delivery lẫn các quyết định mà doanh nghiệp cần sở hữu.
+
+### 13.12 Reporting theatre
+
+Dashboard đẹp nhưng:
+
+* Không có decision owner.
+* Dữ liệu thiếu tin cậy.
+* Không thể hiện risk.
+* Không dẫn tới hành động.
+
+---
+
+## 14. Maturity Roadmap
+
+### Stage 1 — Functional IT
+
+Đặc điểm:
+
+* Tổ chức theo chuyên môn.
+* Project funding.
+* Manual governance.
+* Ops và development tách biệt.
+* Success chủ yếu đo bằng cost và SLA.
+
+Mục tiêu tiếp theo:
+
+* Xác định service ownership.
+* Làm rõ decision rights.
+* Chuẩn hóa thông tin vận hành.
+
+### Stage 2 — Service-oriented IT
+
+Đặc điểm:
+
+* Service catalog.
+* Service owner.
+* ITSM tương đối ổn định.
+* Governance và architecture được chuẩn hóa.
+
+Mục tiêu tiếp theo:
+
+* Chuyển từ service output sang product outcome.
+* Giảm handoff.
+* Tạo cross-functional teams.
+
+### Stage 3 — Product-oriented IT
+
+Đặc điểm:
+
+* Persistent product teams.
+* Product funding.
+* Outcome metrics.
+* End-to-end ownership.
+* Business và IT cùng chịu trách nhiệm.
+
+Mục tiêu tiếp theo:
+
+* Phát triển shared platforms.
+* Tự động hóa governance.
+* Giảm cognitive load.
+
+### Stage 4 — Platform-enabled Enterprise
+
+Đặc điểm:
+
+* Internal platforms.
+* Self-service.
+* Policy as code.
+* Federated delivery.
+* Product và platform portfolio rõ ràng.
+
+Mục tiêu tiếp theo:
+
+* Dynamic organization.
+* Data-driven investment.
+* Enterprise-wide learning.
+
+### Stage 5 — Adaptive Technology Organization
+
+Đặc điểm:
+
+* Team boundaries thay đổi theo value stream.
+* Decision rights được phân quyền.
+* Strategy gắn với continuous evidence.
+* AI và automation hỗ trợ vận hành.
+* Career mobility cao.
+* Organization design được review định kỳ.
+
+### 14.1 Transformation sequencing
+
+Không nên tái cấu trúc toàn bộ cùng lúc. Có thể theo trình tự:
+
+1. Làm rõ ownership.
+2. Xác định decision rights.
+3. Chọn một value stream thí điểm.
+4. Thành lập persistent product team.
+5. Nhận diện shared capability.
+6. Xây platform theo nhu cầu thực.
+7. Điều chỉnh governance và funding.
+8. Mở rộng career framework.
+9. Nhân rộng theo evidence.
+
+### 14.2 Maturity assessment dimensions
+
+Đánh giá theo:
+
+* Strategy alignment.
+* Governance.
+* Product orientation.
+* Platform capability.
+* Engineering excellence.
+* Operational resilience.
+* Information transparency.
+* Talent architecture.
+* Business–technology partnership.
+
+---
+
+# Conclusion — Designing IT as a System
+
+Tóm lại bằng ba luận điểm:
+
+1. Cơ cấu tổ chức không thể tách khỏi quyền quyết định và dòng thông tin.
+2. Product autonomy chỉ hiệu quả khi có platform, guardrails và accountability.
+3. Organization design không phải một lần tái cấu trúc, mà là năng lực liên tục điều chỉnh hệ thống.
+
+Câu kết có thể là:
+
+> The architecture of an IT organization is ultimately the architecture of its decisions: who can decide, using what information, within which boundaries, and who remains accountable for the outcome.
+
+## Appendices
+
+* Appendix A: Complete organization chart.
+* Appendix B: Decision catalog.
+* Appendix C: RACI matrices.
+* Appendix D: Role catalog.
+* Appendix E: JD template.
+* Appendix F: Career-level matrix.
+* Appendix G: Reporting catalog.
+* Appendix H: Management meeting templates.
+* Appendix I: Organization maturity assessment.
+* Appendix J: Glossary of organization-design terms.

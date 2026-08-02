@@ -1,0 +1,422 @@
+# AI, Scrum, and the Future of Product Development
+ *How AI challenges Agile documentation, Scrum accountabilities, team productivity, and the assumption that complex products require a team.*
+
+> Khi AI có thể đảm nhận ngày càng nhiều công việc phát triển sản phẩm, những giả định nền tảng của Scrum — đội nhóm, các accountability, Sprint và empiricism — còn đúng đến đâu?
+
+Như vậy, “developer productivity” chỉ là điểm xuất phát; câu hỏi cuối cùng là **AI có làm thay đổi cấu trúc của Scrum hay không**.
+
+## 1. Luận đề trung tâm
+
+Tôi đề xuất luận đề:
+
+> AI không đơn thuần làm Scrum Team nhanh hơn. Nó chuyển điểm khan hiếm từ năng lực thực thi sang năng lực xác định ý định, cung cấp context, đánh giá kết quả, ra quyết định và chịu trách nhiệm. Vì vậy, AI có thể thu nhỏ Scrum Team và thay đổi cách Scrum vận hành, nhưng chưa đương nhiên loại bỏ nhu cầu về Scrum Team.
+
+Điểm quan trọng ở đây là phân biệt:
+
+* **Capability**: AI có thể thực hiện công việc nào?
+* **Accountability**: Ai chịu trách nhiệm về kết quả?
+* **Authority**: Ai có quyền quyết định?
+* **Legitimacy**: Stakeholder chấp nhận quyết định của ai?
+
+AI đang tiến rất nhanh ở tầng capability. Nhưng PO, Scrum Master và Developers trong Scrum được định nghĩa chủ yếu bằng **accountability**, không phải danh sách tác vụ. [Scrum Guide 2020](https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf)
+
+Đây sẽ là chìa khóa để trả lời ba câu hỏi “AI có thay thế được…?”.
+
+---
+
+# Phần I — AI đang thay đổi Scrum như thế nào?
+
+## 2. AI thay đổi đơn vị cơ bản của năng suất
+
+Trước AI, giới hạn thường nằm ở khả năng thực thi:
+
+* Phân tích;
+* Thiết kế;
+* Viết code;
+* Viết test;
+* Tìm lỗi;
+* Viết tài liệu.
+
+Với AI Agent, chi phí thực hiện các hoạt động này giảm xuống. Nhưng những thứ khác không giảm tương ứng:
+
+* Mức độ rõ ràng của vấn đề;
+* Chất lượng của Product Goal;
+* Khả năng đánh giá một giải pháp;
+* Tốc độ phản hồi của người dùng;
+* Xung đột lợi ích giữa stakeholder;
+* Trách nhiệm đối với quyết định;
+* Hiểu biết ngầm về tổ chức và domain.
+
+Do đó, AI tạo ra một sự dịch chuyển:
+
+> Từ “Ai có thể xây dựng giải pháp?” sang “Ai biết nên xây dựng điều gì, vì sao, dựa trên bằng chứng nào và ai chịu trách nhiệm nếu sai?”
+
+Scrum vốn được thiết kế cho complex problems. Khi việc tạo giải pháp trở nên rẻ, **việc chọn đúng vấn đề và kiểm chứng giả định** càng trở nên quan trọng.
+
+## 3. AI thay đổi Scrum artifacts
+
+### Product Backlog
+
+Product Backlog không nên trở thành hàng đợi khổng lồ gồm các đặc tả chi tiết cho AI thực thi.
+
+AI có thể giúp:
+
+* Tổng hợp feedback;
+* Phân tích dữ liệu sử dụng;
+* Phát hiện mâu thuẫn;
+* Đề xuất Product Backlog Items;
+* Làm rõ acceptance criteria;
+* Tìm quan hệ với code và tài liệu hiện có.
+
+Nhưng Product Backlog vẫn nên thể hiện:
+
+* Vấn đề;
+* Mục tiêu;
+* Giả định;
+* Giá trị kỳ vọng;
+* Điều chưa biết.
+
+Nếu mọi item được đặc tả hoàn chỉnh từ đầu, Product Backlog dễ trở lại thành một project plan cố định.
+
+### Sprint Backlog
+
+Sprint Backlog có thể chuyển từ danh sách task thủ công thành một **execution context**:
+
+* Sprint Goal;
+* Feature specification;
+* Constraints;
+* Architecture context;
+* Acceptance criteria;
+* Agent plan;
+* Test strategy;
+* Trạng thái thực thi.
+
+AI có thể liên tục điều chỉnh implementation plan, nhưng Developers vẫn cần kiểm tra và thích ứng kế hoạch hướng đến Sprint Goal.
+
+### Definition of Done
+
+Definition of Done có thể trở nên quan trọng hơn vì tốc độ tạo output tăng mạnh.
+
+Nhiều tiêu chuẩn có thể được chuyển thành kiểm tra tự động:
+
+* Unit và integration tests;
+* Security scanning;
+* Architectural constraints;
+* Coding conventions;
+* Traceability giữa spec và code;
+* Documentation requirements;
+* Deployment validation.
+
+Khi AI tạo code nhanh hơn khả năng con người kiểm tra, Definition of Done trở thành **hệ thống kiểm soát tốc độ**, không chỉ là một danh sách chất lượng.
+
+## 4. AI thay đổi Scrum events
+
+| Scrum event     | Khi có AI Agent                                                                                     |
+| --------------- | --------------------------------------------------------------------------------------------------- |
+| Sprint Planning | Tập trung vào mục tiêu, giả định, constraint và chiến lược kiểm chứng hơn là chia nhỏ task thủ công |
+| Daily Scrum     | Kiểm tra agent output, integration, divergence, rủi ro và tiến độ hướng đến Sprint Goal             |
+| Sprint Review   | Quan trọng hơn vì cần chuyển output nhanh thành phản hồi thực tế                                    |
+| Retrospective   | Đánh giá toàn bộ hệ thống người–AI: context, prompt, spec, kiểm soát chất lượng và điểm nghẽn       |
+| Sprint          | Có thể không còn là “batch thực thi”, mà trở thành nhịp inspection và adaptation                    |
+
+Một insight đáng phát triển:
+
+> AI có thể nén thời gian implementation, nhưng không nén được tương ứng thời gian quan sát người dùng, thương lượng với stakeholder và hình thành sự tin cậy.
+
+Vì vậy, Sprint có thể vẫn cần thiết, nhưng lý do tồn tại chuyển dần từ **tổ chức công việc** sang **tổ chức vòng phản hồi và ra quyết định**.
+
+---
+
+# Phần II — Agile Manifesto có mâu thuẫn với SDD?
+
+## 5. “Working software over comprehensive documentation” không có nghĩa là không cần tài liệu
+
+Tuyên ngôn nói rằng các yếu tố bên phải vẫn có giá trị, nhưng yếu tố bên trái được coi trọng hơn. [Agile Manifesto](https://agilemanifesto.org/)
+
+Bối cảnh mà Agile phản ứng lại là:
+
+* Tài liệu lớn được tạo trước;
+* Dùng làm hợp đồng chuyển giao;
+* Dựa trên giả định rằng có thể dự đoán đầy đủ;
+* Chỉ được kiểm chứng khi implementation gần hoàn tất;
+* Khó thay đổi khi đã được phê duyệt.
+
+Trong khi đó, Spec-Driven Development hiện nay định vị specification như đầu vào có cấu trúc để AI tạo plan và implementation; GitHub Spec Kit thậm chí mô tả specification và implementation plan như những artifact có khả năng dẫn dắt việc thực thi. [GitHub Spec Kit](https://github.com/github/spec-kit), [mô tả SDD](https://github.com/github/spec-kit/blob/main/spec-driven.md)
+
+Như vậy, “documentation” trong Agile Manifesto và “specification” trong SDD không hoàn toàn là cùng một thứ.
+
+## 6. Với AI, specification không chỉ là tài liệu
+
+Specification có thể đồng thời là:
+
+* Phương tiện trao đổi giữa con người;
+* Context cung cấp cho AI;
+* Input để lập implementation plan;
+* Nguồn sinh test case;
+* Tiêu chuẩn kiểm tra kết quả;
+* Dấu vết giải thích vì sao hệ thống được xây dựng như vậy.
+
+Tức là specification bắt đầu có tính **operational**, gần với source artifact hơn tài liệu tham khảo.
+
+Từ đó có thể đặt một luận điểm khá mới:
+
+> AI không nhất thiết đưa chúng ta quay lại thời kỳ documentation-driven development. Nó làm mờ ranh giới giữa documentation và working software, bởi specification có thể trực tiếp tham gia vào quá trình tạo và kiểm chứng phần mềm.
+
+Nhưng SDD chỉ phù hợp với Agile nếu spec:
+
+* Được tạo cho một phạm vi nhỏ;
+* Có thể thay đổi;
+* Được kiểm chứng sớm bằng phần mềm hoạt động;
+* Là sản phẩm của collaboration;
+* Không được xem là chân lý hoàn chỉnh;
+* Không thay thế phản hồi thực tế.
+
+Ngược lại, SDD trở thành **Waterfall được tăng tốc bằng AI** nếu:
+
+* Toàn bộ sản phẩm được đặc tả từ đầu;
+* Spec được đóng băng;
+* Agent chỉ thực thi theo kế hoạch;
+* Thay đổi bị xem là sai lệch;
+* Stakeholder chỉ nhìn thấy kết quả cuối cùng.
+
+Một câu kết mạnh cho phần này:
+
+> Vấn đề không nằm ở số lượng tài liệu, mà ở việc chúng ta tin specification hay bằng chứng từ phần mềm hoạt động hơn khi hai thứ mâu thuẫn.
+
+---
+
+# Phần III — How Scrum Turns AI Speed into Learning
+
+## 7. Scrum không chỉ biến ý tưởng thành phần mềm
+
+Vòng lặp thực sự cần quan sát là:
+
+```mermaid
+flowchart TD
+    A["Giả định về giá trị"] --> B["Specification"]
+    B --> C["Working Increment"]
+    C --> D["Phản hồi thực tế"]
+    D --> E["Quyết định thích ứng"]
+    E --> A
+```
+
+AI có thể tăng tốc mạnh từ specification đến Increment. Nhưng nếu tổ chức không cải thiện ba đoạn còn lại, AI chỉ giúp tạo output nhanh hơn.
+
+Scrum chuyển tốc độ của AI thành learning thông qua:
+
+* **Product Goal**: xác định hướng cần học;
+* **Sprint Goal**: giới hạn phạm vi thử nghiệm;
+* **Increment**: biến giả định thành thứ có thể kiểm chứng;
+* **Sprint Review**: thu nhận bằng chứng;
+* **Retrospective**: cải thiện hệ thống người–AI;
+* **Transparency**: làm rõ AI đã tạo ra gì và dựa trên context nào;
+* **Inspection**: không mặc nhiên tin agent output;
+* **Adaptation**: sửa cả sản phẩm lẫn cách sử dụng AI.
+
+Case Mars của anh có thể minh họa tốt:
+
+> Testing Agent phát hiện lỗi → Support Agent phân tích root cause → Development Agent tạo thay đổi → Spec Agent tổng hợp tri thức → con người review, quyết định và chia sẻ kết quả.
+
+Năng suất không chỉ nằm ở thời gian sửa lỗi, mà còn ở việc rút ngắn:
+
+* Thời gian từ triệu chứng đến nguyên nhân;
+* Thời gian từ nguyên nhân đến giải pháp;
+* Thời gian từ giải pháp đến bằng chứng;
+* Thời gian từ tri thức cá nhân đến tri thức chung.
+
+## 8. Measuring What Actually Improves
+
+Thay vì chỉ đo “AI giúp coding nhanh bao nhiêu”, có thể chia vòng đời thành bốn khoảng thời gian:
+
+| Khoảng thời gian     | Câu hỏi                                                         |
+| -------------------- | --------------------------------------------------------------- |
+| Intent → Spec        | Team mất bao lâu để biến vấn đề thành giả định có thể thực thi? |
+| Spec → Increment     | Mất bao lâu để tạo ra một Increment đạt Definition of Done?     |
+| Increment → Evidence | Mất bao lâu để nhận được phản hồi đáng tin cậy?                 |
+| Evidence → Decision  | Mất bao lâu để điều chỉnh Product Backlog hoặc hướng sản phẩm?  |
+
+Chỉ số trung tâm có thể gọi là:
+
+> **Validated Learning Lead Time** — thời gian từ khi hình thành một giả định đến khi có đủ bằng chứng để giữ lại, điều chỉnh hoặc bác bỏ nó.
+
+Các chỉ số bảo vệ:
+
+* Rework rate;
+* Escaped defects;
+* Human review load;
+* Change failure rate;
+* Spec–implementation divergence;
+* Technical debt;
+* Khả năng giải thích và làm chủ code của Developers.
+
+---
+
+# Phần IV — AI có thay thế các Scrum accountabilities?
+
+## 9. AI có thay thế Scrum Master?
+
+### Những hoạt động AI có thể thay thế
+
+* Chuẩn bị và tổng hợp Scrum events;
+* Theo dõi impediments;
+* Phân tích flow metrics;
+* Phát hiện pattern trong Retrospective;
+* Nhắc nhở timebox;
+* Đề xuất facilitation technique;
+* Kiểm tra tính minh bạch của artifacts;
+* Cung cấp kiến thức Scrum theo tình huống.
+
+### Những gì AI khó thay thế
+
+Scrum Master không chỉ tổ chức meeting. Scrum Master chịu trách nhiệm về việc thiết lập Scrum và cải thiện effectiveness của Scrum Team. [Scrum Guide](https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf)
+
+Điều này thường đòi hỏi:
+
+* Nhận ra xung đột không được nói ra;
+* Xây dựng trust;
+* Coaching mà không áp đặt;
+* Thách thức cấu trúc quyền lực;
+* Tác động đến management và organization;
+* Giúp con người tự quản lý;
+* Đánh giá khi nào không nên làm theo một quy trình.
+
+Kết luận nên có điều kiện:
+
+> AI có thể thay thế phần lớn công việc hành chính và phân tích của Scrum Master. Trong team trưởng thành, điều đó có thể làm giảm nhu cầu về một Scrum Master toàn thời gian. Nhưng AI chưa thay thế được accountability liên quan đến coaching, leadership và thay đổi tổ chức.
+
+Nói cách khác: **AI có thể làm biến mất một Scrum Master như một chức danh toàn thời gian, nhưng chưa làm biến mất Scrum Master accountability.**
+
+## 10. AI có thay thế Product Owner?
+
+### Những hoạt động AI có thể thực hiện
+
+* Tổng hợp nhu cầu stakeholder;
+* Phân tích usage data;
+* Đề xuất Product Backlog Items;
+* Viết và làm rõ requirement;
+* So sánh lựa chọn;
+* Mô phỏng tác động;
+* Hỗ trợ ordering;
+* Theo dõi giả định và bằng chứng.
+
+### Giới hạn căn bản
+
+Maximizing value không chỉ là bài toán tính toán. Nó bao gồm:
+
+* Lựa chọn giữa các nhóm stakeholder;
+* Chấp nhận một số rủi ro và từ chối số khác;
+* Quyết định chiến lược khi bằng chứng chưa đầy đủ;
+* Đánh đổi ngắn hạn và dài hạn;
+* Chịu trách nhiệm về hệ quả;
+* Có thẩm quyền đại diện cho sản phẩm.
+
+AI có thể đề xuất thứ tự Product Backlog, nhưng không có quyền chính danh để quyết định ai sẽ được ưu tiên và ai phải chờ.
+
+Kết luận:
+
+> AI có thể trở thành một hệ thống hỗ trợ quyết định rất mạnh cho Product Owner, nhưng không phải chủ thể chịu trách nhiệm về giá trị. Một người vẫn phải sở hữu quyết định cuối cùng.
+
+Tuy nhiên, AI có thể làm thay đổi cấu trúc product management: một PO có thể xử lý phạm vi lớn hơn với ít Business Analyst hoặc Product Operations support hơn.
+
+## 11. AI có thay thế Developers?
+
+Đây là câu hỏi khó nhất vì AI trực tiếp tạo ra Increment.
+
+AI có thể:
+
+* Thiết kế;
+* Viết code;
+* Viết test;
+* Review;
+* Debug;
+* Refactor;
+* Deploy;
+* Quan sát hệ thống;
+* Cập nhật tài liệu.
+
+Nhưng Developers trong Scrum không được định nghĩa là “những người gõ code”. Họ chịu trách nhiệm:
+
+* Tạo Sprint Backlog;
+* Bảo đảm chất lượng qua Definition of Done;
+* Điều chỉnh kế hoạch hướng đến Sprint Goal;
+* Giữ nhau accountable như những người chuyên nghiệp.
+
+Vì vậy:
+
+> AI có thể thay thế ngày càng nhiều development activities, nhưng chưa tự mình gánh được Developers accountability.
+
+Dù vậy, khác Scrum Master và PO, số lượng Developers có khả năng giảm rõ rệt. Một Developer giàu kinh nghiệm có thể điều phối nhiều Agent để đảm nhiệm công việc trước đây cần nhiều chuyên môn khác nhau.
+
+Nhưng điều đó dẫn thẳng đến câu hỏi cuối.
+
+---
+
+# Phần V — Có còn cần Scrum Team?
+
+## 12. Một người cộng với nhiều AI Agent có phải Scrum Team không?
+
+Về năng lực thực thi, câu trả lời có thể là **có trong một số loại sản phẩm**.
+
+Một người có thể điều phối:
+
+* Product Agent;
+* Business Analysis Agent;
+* Architecture Agent;
+* Development Agent;
+* Testing Agent;
+* Security Agent;
+* Operations Agent.
+
+Nhưng theo nghĩa Scrum chặt chẽ, các Agent không phải là những con người có accountability. Do đó, “một người cùng nhiều Agent” không thực sự tạo thành một Scrum Team chỉ vì các Agent được đặt tên theo ba accountability.
+
+Câu hỏi đúng hơn là:
+
+> Một cá nhân được AI khuếch đại có thể thay thế giá trị từng được tạo ra bởi một Scrum Team hay không?
+
+### Có thể, khi
+
+* Product nhỏ;
+* Một người hiểu rõ domain;
+* Stakeholder ít;
+* Rủi ro thấp;
+* Feedback dễ tiếp cận;
+* Quyết định tập trung;
+* Kiến trúc có thể được một người kiểm soát;
+* Sai lầm có thể đảo ngược với chi phí thấp.
+
+### Khó, khi
+
+* Product có nhiều stakeholder xung đột;
+* Domain phức tạp;
+* Quyết định có hệ quả pháp lý hoặc xã hội;
+* Tacit knowledge nằm ở nhiều người;
+* Hệ thống cần nhiều góc nhìn độc lập;
+* Sai lầm khó đảo ngược;
+* Việc một người kiểm soát toàn bộ tạo ra key-person risk;
+* Cần sự đồng thuận và cam kết từ tổ chức.
+
+AI Agent có thể tạo ra nhiều “vai diễn”, nhưng chúng có thể cùng phụ thuộc vào:
+
+* Một nguồn context;
+* Một foundation model;
+* Một tập giả định;
+* Một người điều phối.
+
+Vì vậy, nhiều Agent không nhất thiết tạo ra sự đa dạng nhận thức giống như nhiều con người độc lập.
+
+Một luận điểm phản biện mạnh:
+
+> Một người điều phối mười Agent có thể có nhiều năng lực thực thi, nhưng vẫn chỉ có một điểm nhìn, một quyền quyết định và một điểm chịu trách nhiệm.
+
+## 13. Kết luận có thể để mở
+
+Không nên kết luận đơn giản rằng “AI không thay thế được con người”. Kết luận đó quá an toàn và có thể nhanh chóng lỗi thời.
+
+Kết luận sâu hơn:
+
+> AI có thể làm Scrum Team nhỏ hơn, thay đổi cách ba accountabilities được thực hiện, và khiến một Scrum Master toàn thời gian hoặc một nhóm Developers đông người không còn cần thiết trong một số bối cảnh. Nhưng chừng nào phát triển sản phẩm vẫn là một vấn đề phức tạp liên quan đến bất định, nhiều góc nhìn, xung đột lợi ích và trách nhiệm, nhu cầu về một nhóm người tự quản lý vẫn chưa biến mất.
+
+Và câu hỏi cuối bài:
+
+> Nếu một người cùng nhiều AI Agent có thể tạo ra phần mềm, Scrum còn là framework để quản lý quá trình phát triển — hay trở thành framework để bảo đảm rằng một hệ thống người–AI vẫn học đúng, quyết định đúng và chịu trách nhiệm đúng?
+

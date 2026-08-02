@@ -843,6 +843,13 @@ var mainMenu = [
                                 subItems: [],
                             },
                             {
+                                title: "7. AI, Scrum, and the Future of Product Development",
+                                route: "pages/information-technology/agile-software-development/scrum-agile-and-more/7-scrum-AI-and-developer-productivity.html",
+                                hash: "#/scrum-AI-and-developer-productivity",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
                                 title: "10. Effective Discussion at Work",
                                 route: "pages/information-technology/agile-software-development/scrum-agile-and-more/10-effective-conversation-discussion.html",
                                 hash: "#/scrum-agile-and-more-effective-discussion",

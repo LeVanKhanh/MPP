@@ -34,12 +34,13 @@ Với nguồn tiếng Việt: kiểm xem nó có dẫn lại nguồn nước ngo
 
 ## 3. Đánh giá từng nguồn
 
-Với mỗi nguồn định gắn, trả lời bốn câu:
+Với mỗi nguồn định gắn, trả lời năm câu:
 
 - **Ai nói, có lợi ích gì trong chuyện này?**
 - **Nói khi nào?** Tuyên bố về công cụ, thị trường, công nghệ phải có mốc thời gian. Nguồn 2015 nói về một thứ đã đổi ba lần từ đó thì không dùng được.
 - **Số liệu này đo cái gì, trên mẫu nào?** Một khảo sát 200 người ở một công ty không nói được gì về "người đi làm Việt Nam".
 - **Có nguồn nào nói ngược lại không?** Tìm chủ động. Nếu có, bài phải nhắc tới, không được lờ đi.
+- **Câu mình định trích có mệnh đề đi kèm không?** Đọc cả đoạn chứa nó, không chỉ câu. Tài liệu quảng bá và tài liệu của chính dự án hay đặt tuyên ngôn mạnh ở đầu rồi thu hẹp nó ngay sau đó. Trích tuyên ngôn mà bỏ điều kiện là trích sai, kể cả khi từng chữ đều đúng nguyên văn. Cùng loại lỗi: một kết quả nghiên cứu được tác giả gắn nhãn "hết hạn" không phải là một kết quả bị chứng minh sai, và bài không được dùng lẫn hai thứ đó.
 
 ## 4. Gắn nguồn đúng chỗ
 

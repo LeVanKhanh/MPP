@@ -1,422 +1,901 @@
-# AI, Scrum, and the Future of Product Development
- *How AI challenges Agile documentation, Scrum accountabilities, team productivity, and the assumption that complex products require a team.*
-
-> Khi AI có thể đảm nhận ngày càng nhiều công việc phát triển sản phẩm, những giả định nền tảng của Scrum — đội nhóm, các accountability, Sprint và empiricism — còn đúng đến đâu?
-
-Như vậy, “developer productivity” chỉ là điểm xuất phát; câu hỏi cuối cùng là **AI có làm thay đổi cấu trúc của Scrum hay không**.
-
-## 1. Luận đề trung tâm
-
-Tôi đề xuất luận đề:
-
-> AI không đơn thuần làm Scrum Team nhanh hơn. Nó chuyển điểm khan hiếm từ năng lực thực thi sang năng lực xác định ý định, cung cấp context, đánh giá kết quả, ra quyết định và chịu trách nhiệm. Vì vậy, AI có thể thu nhỏ Scrum Team và thay đổi cách Scrum vận hành, nhưng chưa đương nhiên loại bỏ nhu cầu về Scrum Team.
-
-Điểm quan trọng ở đây là phân biệt:
-
-* **Capability**: AI có thể thực hiện công việc nào?
-* **Accountability**: Ai chịu trách nhiệm về kết quả?
-* **Authority**: Ai có quyền quyết định?
-* **Legitimacy**: Stakeholder chấp nhận quyết định của ai?
-
-AI đang tiến rất nhanh ở tầng capability. Nhưng PO, Scrum Master và Developers trong Scrum được định nghĩa chủ yếu bằng **accountability**, không phải danh sách tác vụ. [Scrum Guide 2020](https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf)
-
-Đây sẽ là chìa khóa để trả lời ba câu hỏi “AI có thay thế được…?”.
-
----
-
-# Phần I — AI đang thay đổi Scrum như thế nào?
-
-## 2. AI thay đổi đơn vị cơ bản của năng suất
-
-Trước AI, giới hạn thường nằm ở khả năng thực thi:
-
-* Phân tích;
-* Thiết kế;
-* Viết code;
-* Viết test;
-* Tìm lỗi;
-* Viết tài liệu.
-
-Với AI Agent, chi phí thực hiện các hoạt động này giảm xuống. Nhưng những thứ khác không giảm tương ứng:
-
-* Mức độ rõ ràng của vấn đề;
-* Chất lượng của Product Goal;
-* Khả năng đánh giá một giải pháp;
-* Tốc độ phản hồi của người dùng;
-* Xung đột lợi ích giữa stakeholder;
-* Trách nhiệm đối với quyết định;
-* Hiểu biết ngầm về tổ chức và domain.
-
-Do đó, AI tạo ra một sự dịch chuyển:
-
-> Từ “Ai có thể xây dựng giải pháp?” sang “Ai biết nên xây dựng điều gì, vì sao, dựa trên bằng chứng nào và ai chịu trách nhiệm nếu sai?”
-
-Scrum vốn được thiết kế cho complex problems. Khi việc tạo giải pháp trở nên rẻ, **việc chọn đúng vấn đề và kiểm chứng giả định** càng trở nên quan trọng.
-
-## 3. AI thay đổi Scrum artifacts
-
-### Product Backlog
-
-Product Backlog không nên trở thành hàng đợi khổng lồ gồm các đặc tả chi tiết cho AI thực thi.
-
-AI có thể giúp:
-
-* Tổng hợp feedback;
-* Phân tích dữ liệu sử dụng;
-* Phát hiện mâu thuẫn;
-* Đề xuất Product Backlog Items;
-* Làm rõ acceptance criteria;
-* Tìm quan hệ với code và tài liệu hiện có.
-
-Nhưng Product Backlog vẫn nên thể hiện:
-
-* Vấn đề;
-* Mục tiêu;
-* Giả định;
-* Giá trị kỳ vọng;
-* Điều chưa biết.
-
-Nếu mọi item được đặc tả hoàn chỉnh từ đầu, Product Backlog dễ trở lại thành một project plan cố định.
-
-### Sprint Backlog
-
-Sprint Backlog có thể chuyển từ danh sách task thủ công thành một **execution context**:
-
-* Sprint Goal;
-* Feature specification;
-* Constraints;
-* Architecture context;
-* Acceptance criteria;
-* Agent plan;
-* Test strategy;
-* Trạng thái thực thi.
-
-AI có thể liên tục điều chỉnh implementation plan, nhưng Developers vẫn cần kiểm tra và thích ứng kế hoạch hướng đến Sprint Goal.
-
-### Definition of Done
-
-Definition of Done có thể trở nên quan trọng hơn vì tốc độ tạo output tăng mạnh.
-
-Nhiều tiêu chuẩn có thể được chuyển thành kiểm tra tự động:
-
-* Unit và integration tests;
-* Security scanning;
-* Architectural constraints;
-* Coding conventions;
-* Traceability giữa spec và code;
-* Documentation requirements;
-* Deployment validation.
-
-Khi AI tạo code nhanh hơn khả năng con người kiểm tra, Definition of Done trở thành **hệ thống kiểm soát tốc độ**, không chỉ là một danh sách chất lượng.
-
-## 4. AI thay đổi Scrum events
-
-| Scrum event     | Khi có AI Agent                                                                                     |
-| --------------- | --------------------------------------------------------------------------------------------------- |
-| Sprint Planning | Tập trung vào mục tiêu, giả định, constraint và chiến lược kiểm chứng hơn là chia nhỏ task thủ công |
-| Daily Scrum     | Kiểm tra agent output, integration, divergence, rủi ro và tiến độ hướng đến Sprint Goal             |
-| Sprint Review   | Quan trọng hơn vì cần chuyển output nhanh thành phản hồi thực tế                                    |
-| Retrospective   | Đánh giá toàn bộ hệ thống người–AI: context, prompt, spec, kiểm soát chất lượng và điểm nghẽn       |
-| Sprint          | Có thể không còn là “batch thực thi”, mà trở thành nhịp inspection và adaptation                    |
-
-Một insight đáng phát triển:
-
-> AI có thể nén thời gian implementation, nhưng không nén được tương ứng thời gian quan sát người dùng, thương lượng với stakeholder và hình thành sự tin cậy.
-
-Vì vậy, Sprint có thể vẫn cần thiết, nhưng lý do tồn tại chuyển dần từ **tổ chức công việc** sang **tổ chức vòng phản hồi và ra quyết định**.
-
----
-
-# Phần II — Agile Manifesto có mâu thuẫn với SDD?
-
-## 5. “Working software over comprehensive documentation” không có nghĩa là không cần tài liệu
-
-Tuyên ngôn nói rằng các yếu tố bên phải vẫn có giá trị, nhưng yếu tố bên trái được coi trọng hơn. [Agile Manifesto](https://agilemanifesto.org/)
-
-Bối cảnh mà Agile phản ứng lại là:
-
-* Tài liệu lớn được tạo trước;
-* Dùng làm hợp đồng chuyển giao;
-* Dựa trên giả định rằng có thể dự đoán đầy đủ;
-* Chỉ được kiểm chứng khi implementation gần hoàn tất;
-* Khó thay đổi khi đã được phê duyệt.
-
-Trong khi đó, Spec-Driven Development hiện nay định vị specification như đầu vào có cấu trúc để AI tạo plan và implementation; GitHub Spec Kit thậm chí mô tả specification và implementation plan như những artifact có khả năng dẫn dắt việc thực thi. [GitHub Spec Kit](https://github.com/github/spec-kit), [mô tả SDD](https://github.com/github/spec-kit/blob/main/spec-driven.md)
-
-Như vậy, “documentation” trong Agile Manifesto và “specification” trong SDD không hoàn toàn là cùng một thứ.
-
-## 6. Với AI, specification không chỉ là tài liệu
-
-Specification có thể đồng thời là:
-
-* Phương tiện trao đổi giữa con người;
-* Context cung cấp cho AI;
-* Input để lập implementation plan;
-* Nguồn sinh test case;
-* Tiêu chuẩn kiểm tra kết quả;
-* Dấu vết giải thích vì sao hệ thống được xây dựng như vậy.
-
-Tức là specification bắt đầu có tính **operational**, gần với source artifact hơn tài liệu tham khảo.
-
-Từ đó có thể đặt một luận điểm khá mới:
-
-> AI không nhất thiết đưa chúng ta quay lại thời kỳ documentation-driven development. Nó làm mờ ranh giới giữa documentation và working software, bởi specification có thể trực tiếp tham gia vào quá trình tạo và kiểm chứng phần mềm.
-
-Nhưng SDD chỉ phù hợp với Agile nếu spec:
-
-* Được tạo cho một phạm vi nhỏ;
-* Có thể thay đổi;
-* Được kiểm chứng sớm bằng phần mềm hoạt động;
-* Là sản phẩm của collaboration;
-* Không được xem là chân lý hoàn chỉnh;
-* Không thay thế phản hồi thực tế.
-
-Ngược lại, SDD trở thành **Waterfall được tăng tốc bằng AI** nếu:
-
-* Toàn bộ sản phẩm được đặc tả từ đầu;
-* Spec được đóng băng;
-* Agent chỉ thực thi theo kế hoạch;
-* Thay đổi bị xem là sai lệch;
-* Stakeholder chỉ nhìn thấy kết quả cuối cùng.
-
-Một câu kết mạnh cho phần này:
-
-> Vấn đề không nằm ở số lượng tài liệu, mà ở việc chúng ta tin specification hay bằng chứng từ phần mềm hoạt động hơn khi hai thứ mâu thuẫn.
-
----
-
-# Phần III — How Scrum Turns AI Speed into Learning
-
-## 7. Scrum không chỉ biến ý tưởng thành phần mềm
-
-Vòng lặp thực sự cần quan sát là:
-
-```mermaid
-flowchart TD
-    A["Giả định về giá trị"] --> B["Specification"]
-    B --> C["Working Increment"]
-    C --> D["Phản hồi thực tế"]
-    D --> E["Quyết định thích ứng"]
-    E --> A
-```
-
-AI có thể tăng tốc mạnh từ specification đến Increment. Nhưng nếu tổ chức không cải thiện ba đoạn còn lại, AI chỉ giúp tạo output nhanh hơn.
-
-Scrum chuyển tốc độ của AI thành learning thông qua:
-
-* **Product Goal**: xác định hướng cần học;
-* **Sprint Goal**: giới hạn phạm vi thử nghiệm;
-* **Increment**: biến giả định thành thứ có thể kiểm chứng;
-* **Sprint Review**: thu nhận bằng chứng;
-* **Retrospective**: cải thiện hệ thống người–AI;
-* **Transparency**: làm rõ AI đã tạo ra gì và dựa trên context nào;
-* **Inspection**: không mặc nhiên tin agent output;
-* **Adaptation**: sửa cả sản phẩm lẫn cách sử dụng AI.
-
-Case Mars của anh có thể minh họa tốt:
-
-> Testing Agent phát hiện lỗi → Support Agent phân tích root cause → Development Agent tạo thay đổi → Spec Agent tổng hợp tri thức → con người review, quyết định và chia sẻ kết quả.
-
-Năng suất không chỉ nằm ở thời gian sửa lỗi, mà còn ở việc rút ngắn:
-
-* Thời gian từ triệu chứng đến nguyên nhân;
-* Thời gian từ nguyên nhân đến giải pháp;
-* Thời gian từ giải pháp đến bằng chứng;
-* Thời gian từ tri thức cá nhân đến tri thức chung.
-
-## 8. Measuring What Actually Improves
-
-Thay vì chỉ đo “AI giúp coding nhanh bao nhiêu”, có thể chia vòng đời thành bốn khoảng thời gian:
-
-| Khoảng thời gian     | Câu hỏi                                                         |
-| -------------------- | --------------------------------------------------------------- |
-| Intent → Spec        | Team mất bao lâu để biến vấn đề thành giả định có thể thực thi? |
-| Spec → Increment     | Mất bao lâu để tạo ra một Increment đạt Definition of Done?     |
-| Increment → Evidence | Mất bao lâu để nhận được phản hồi đáng tin cậy?                 |
-| Evidence → Decision  | Mất bao lâu để điều chỉnh Product Backlog hoặc hướng sản phẩm?  |
-
-Chỉ số trung tâm có thể gọi là:
-
-> **Validated Learning Lead Time** — thời gian từ khi hình thành một giả định đến khi có đủ bằng chứng để giữ lại, điều chỉnh hoặc bác bỏ nó.
-
-Các chỉ số bảo vệ:
-
-* Rework rate;
-* Escaped defects;
-* Human review load;
-* Change failure rate;
-* Spec–implementation divergence;
-* Technical debt;
-* Khả năng giải thích và làm chủ code của Developers.
-
----
-
-# Phần IV — AI có thay thế các Scrum accountabilities?
-
-## 9. AI có thay thế Scrum Master?
-
-### Những hoạt động AI có thể thay thế
-
-* Chuẩn bị và tổng hợp Scrum events;
-* Theo dõi impediments;
-* Phân tích flow metrics;
-* Phát hiện pattern trong Retrospective;
-* Nhắc nhở timebox;
-* Đề xuất facilitation technique;
-* Kiểm tra tính minh bạch của artifacts;
-* Cung cấp kiến thức Scrum theo tình huống.
-
-### Những gì AI khó thay thế
-
-Scrum Master không chỉ tổ chức meeting. Scrum Master chịu trách nhiệm về việc thiết lập Scrum và cải thiện effectiveness của Scrum Team. [Scrum Guide](https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf)
-
-Điều này thường đòi hỏi:
-
-* Nhận ra xung đột không được nói ra;
-* Xây dựng trust;
-* Coaching mà không áp đặt;
-* Thách thức cấu trúc quyền lực;
-* Tác động đến management và organization;
-* Giúp con người tự quản lý;
-* Đánh giá khi nào không nên làm theo một quy trình.
-
-Kết luận nên có điều kiện:
-
-> AI có thể thay thế phần lớn công việc hành chính và phân tích của Scrum Master. Trong team trưởng thành, điều đó có thể làm giảm nhu cầu về một Scrum Master toàn thời gian. Nhưng AI chưa thay thế được accountability liên quan đến coaching, leadership và thay đổi tổ chức.
-
-Nói cách khác: **AI có thể làm biến mất một Scrum Master như một chức danh toàn thời gian, nhưng chưa làm biến mất Scrum Master accountability.**
-
-## 10. AI có thay thế Product Owner?
-
-### Những hoạt động AI có thể thực hiện
-
-* Tổng hợp nhu cầu stakeholder;
-* Phân tích usage data;
-* Đề xuất Product Backlog Items;
-* Viết và làm rõ requirement;
-* So sánh lựa chọn;
-* Mô phỏng tác động;
-* Hỗ trợ ordering;
-* Theo dõi giả định và bằng chứng.
-
-### Giới hạn căn bản
-
-Maximizing value không chỉ là bài toán tính toán. Nó bao gồm:
-
-* Lựa chọn giữa các nhóm stakeholder;
-* Chấp nhận một số rủi ro và từ chối số khác;
-* Quyết định chiến lược khi bằng chứng chưa đầy đủ;
-* Đánh đổi ngắn hạn và dài hạn;
-* Chịu trách nhiệm về hệ quả;
-* Có thẩm quyền đại diện cho sản phẩm.
-
-AI có thể đề xuất thứ tự Product Backlog, nhưng không có quyền chính danh để quyết định ai sẽ được ưu tiên và ai phải chờ.
-
-Kết luận:
-
-> AI có thể trở thành một hệ thống hỗ trợ quyết định rất mạnh cho Product Owner, nhưng không phải chủ thể chịu trách nhiệm về giá trị. Một người vẫn phải sở hữu quyết định cuối cùng.
-
-Tuy nhiên, AI có thể làm thay đổi cấu trúc product management: một PO có thể xử lý phạm vi lớn hơn với ít Business Analyst hoặc Product Operations support hơn.
-
-## 11. AI có thay thế Developers?
-
-Đây là câu hỏi khó nhất vì AI trực tiếp tạo ra Increment.
-
-AI có thể:
-
-* Thiết kế;
-* Viết code;
-* Viết test;
-* Review;
-* Debug;
-* Refactor;
-* Deploy;
-* Quan sát hệ thống;
-* Cập nhật tài liệu.
-
-Nhưng Developers trong Scrum không được định nghĩa là “những người gõ code”. Họ chịu trách nhiệm:
-
-* Tạo Sprint Backlog;
-* Bảo đảm chất lượng qua Definition of Done;
-* Điều chỉnh kế hoạch hướng đến Sprint Goal;
-* Giữ nhau accountable như những người chuyên nghiệp.
-
-Vì vậy:
-
-> AI có thể thay thế ngày càng nhiều development activities, nhưng chưa tự mình gánh được Developers accountability.
-
-Dù vậy, khác Scrum Master và PO, số lượng Developers có khả năng giảm rõ rệt. Một Developer giàu kinh nghiệm có thể điều phối nhiều Agent để đảm nhiệm công việc trước đây cần nhiều chuyên môn khác nhau.
-
-Nhưng điều đó dẫn thẳng đến câu hỏi cuối.
-
----
-
-# Phần V — Có còn cần Scrum Team?
-
-## 12. Một người cộng với nhiều AI Agent có phải Scrum Team không?
-
-Về năng lực thực thi, câu trả lời có thể là **có trong một số loại sản phẩm**.
-
-Một người có thể điều phối:
-
-* Product Agent;
-* Business Analysis Agent;
-* Architecture Agent;
-* Development Agent;
-* Testing Agent;
-* Security Agent;
-* Operations Agent.
-
-Nhưng theo nghĩa Scrum chặt chẽ, các Agent không phải là những con người có accountability. Do đó, “một người cùng nhiều Agent” không thực sự tạo thành một Scrum Team chỉ vì các Agent được đặt tên theo ba accountability.
-
-Câu hỏi đúng hơn là:
-
-> Một cá nhân được AI khuếch đại có thể thay thế giá trị từng được tạo ra bởi một Scrum Team hay không?
-
-### Có thể, khi
-
-* Product nhỏ;
-* Một người hiểu rõ domain;
-* Stakeholder ít;
-* Rủi ro thấp;
-* Feedback dễ tiếp cận;
-* Quyết định tập trung;
-* Kiến trúc có thể được một người kiểm soát;
-* Sai lầm có thể đảo ngược với chi phí thấp.
-
-### Khó, khi
-
-* Product có nhiều stakeholder xung đột;
-* Domain phức tạp;
-* Quyết định có hệ quả pháp lý hoặc xã hội;
-* Tacit knowledge nằm ở nhiều người;
-* Hệ thống cần nhiều góc nhìn độc lập;
-* Sai lầm khó đảo ngược;
-* Việc một người kiểm soát toàn bộ tạo ra key-person risk;
-* Cần sự đồng thuận và cam kết từ tổ chức.
-
-AI Agent có thể tạo ra nhiều “vai diễn”, nhưng chúng có thể cùng phụ thuộc vào:
-
-* Một nguồn context;
-* Một foundation model;
-* Một tập giả định;
-* Một người điều phối.
-
-Vì vậy, nhiều Agent không nhất thiết tạo ra sự đa dạng nhận thức giống như nhiều con người độc lập.
-
-Một luận điểm phản biện mạnh:
-
-> Một người điều phối mười Agent có thể có nhiều năng lực thực thi, nhưng vẫn chỉ có một điểm nhìn, một quyền quyết định và một điểm chịu trách nhiệm.
-
-## 13. Kết luận có thể để mở
-
-Không nên kết luận đơn giản rằng “AI không thay thế được con người”. Kết luận đó quá an toàn và có thể nhanh chóng lỗi thời.
-
-Kết luận sâu hơn:
-
-> AI có thể làm Scrum Team nhỏ hơn, thay đổi cách ba accountabilities được thực hiện, và khiến một Scrum Master toàn thời gian hoặc một nhóm Developers đông người không còn cần thiết trong một số bối cảnh. Nhưng chừng nào phát triển sản phẩm vẫn là một vấn đề phức tạp liên quan đến bất định, nhiều góc nhìn, xung đột lợi ích và trách nhiệm, nhu cầu về một nhóm người tự quản lý vẫn chưa biến mất.
-
-Và câu hỏi cuối bài:
-
-> Nếu một người cùng nhiều AI Agent có thể tạo ra phần mềm, Scrum còn là framework để quản lý quá trình phát triển — hay trở thành framework để bảo đảm rằng một hệ thống người–AI vẫn học đúng, quyết định đúng và chịu trách nhiệm đúng?
-
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>AI, Scrum, and the Future of Product Development - My Personal Planet</title>
+	<link rel="stylesheet" href="../../../pages-styles.css">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta
+		content="AI makes execution cheaper and shifts the constraint toward defining intent, evaluating outcomes, making decisions, and bearing responsibility. This article examines how that shift changes Scrum artifacts and events, the relationship between the Agile Manifesto and Spec-Driven Development, Scrum's three accountabilities, and whether one person working with multiple AI agents can replace a Scrum Team."
+		name="description">
+	<style>
+		:root {
+			--diagram-bg-start: #f7fbff;
+			--diagram-bg-end: #f9f7ff;
+			--diagram-border: #d7e6f6;
+			--diagram-node-bg: #ffffff;
+			--diagram-node-stroke: #4b5f77;
+			--diagram-accent-bg: #e7f0ff;
+			--diagram-accent-stroke: #245ca6;
+			--diagram-arrow: #58779c;
+			--diagram-text: #1f2a37;
+			--diagram-muted: #5a6b80;
+		}
+
+		body.dark-theme {
+			--diagram-bg-start: #16202e;
+			--diagram-bg-end: #121a26;
+			--diagram-border: #2c3d51;
+			--diagram-node-bg: #1a2534;
+			--diagram-node-stroke: #90a4be;
+			--diagram-accent-bg: #213956;
+			--diagram-accent-stroke: #8fc0ff;
+			--diagram-arrow: #9bb4cf;
+			--diagram-text: #e7edf5;
+			--diagram-muted: #aebdd0;
+		}
+
+		.scrum-visual {
+			margin: 1.5rem 0 2rem;
+			padding: 1.2rem;
+			border: 1px solid var(--diagram-border);
+			border-radius: 14px;
+			overflow-x: auto;
+			background:
+				radial-gradient(circle at 100% -10%, rgba(81, 140, 255, 0.12), transparent 48%),
+				radial-gradient(circle at 0% 110%, rgba(49, 189, 149, 0.1), transparent 44%),
+				linear-gradient(160deg, var(--diagram-bg-start), var(--diagram-bg-end));
+			box-shadow: 0 10px 24px rgba(18, 33, 53, 0.08);
+		}
+
+		.scrum-visual svg {
+			min-width: 780px;
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		.scrum-visual .node {
+			fill: var(--diagram-node-bg);
+			stroke: var(--diagram-node-stroke);
+			stroke-width: 1.55;
+		}
+
+		.scrum-visual .accent-node {
+			fill: var(--diagram-accent-bg);
+			stroke: var(--diagram-accent-stroke);
+			stroke-width: 1.8;
+		}
+
+		.scrum-visual .arrow,
+		.scrum-visual path[marker-end] {
+			fill: none;
+			stroke: var(--diagram-arrow);
+			stroke-width: 1.8;
+		}
+
+		.scrum-visual text {
+			fill: var(--diagram-text);
+			font-family: inherit;
+			font-size: 14px;
+			font-weight: 600;
+			letter-spacing: 0.1px;
+			text-anchor: middle;
+			dominant-baseline: middle;
+		}
+
+		.scrum-visual .small {
+			font-size: 12px;
+			font-weight: 500;
+			fill: var(--diagram-muted);
+		}
+
+		.scrum-visual figcaption {
+			margin-top: 0.9rem;
+			font-style: italic;
+			color: var(--diagram-muted);
+			line-height: 1.65;
+		}
+
+		@media (max-width: 768px) {
+			.scrum-visual {
+				padding: 0.9rem;
+				border-radius: 12px;
+			}
+
+			.scrum-visual svg {
+				min-width: 760px;
+			}
+
+			.scrum-visual text {
+				font-size: 13px;
+			}
+
+			.scrum-visual .small {
+				font-size: 11px;
+			}
+		}
+
+		sup a {
+			font-size: .8em;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<article class="content-article">
+		<header class="article-header">
+			<h1 class="page-title">AI, Scrum, and the Future of Product Development</h1>
+			<p class="page-subtitle">AI makes execution cheaper and shifts the constraint toward defining intent,
+				evaluating outcomes, and bearing responsibility. That may make a Scrum Team smaller, but it does not
+				automatically make the team obsolete.</p>
+			<p class="page-meta">Published: <time datetime="2026-08-02">August 2, 2026</time></p>
+		</header>
+
+		<section class="content-section">
+			<p>From February through June 2025, a research team at METR measured the actual working time of 16
+				experienced developers in repositories they had worked in for an average of five years. There were 246
+				issues. Each issue was randomly assigned to one of two conditions: AI tools allowed or AI tools prohibited.</p>
+			<p>Before starting, the participants predicted that AI would reduce their completion time by 24%. After
+				finishing, they still believed it had made them about 20% faster. The measurements pointed in the opposite
+				direction: when allowed to use AI, they took 19% longer.<sup><a href="#ref-1">[1]</a></sup></p>
+			<p>That 19% figure remains valid within its scope: those people, that kind of work, and the tools available in
+				early 2025. What it cannot do is represent 2026, and METR was the first to say so explicitly. In February
+				2026, the organization announced a change to its experimental design. Once AI had become a default tool,
+				people no longer wanted to join a study that required them to work without it; moreover, 30% to 50% of
+				participants avoided submitting precisely the tasks they believed AI would help with most. The subsequent
+				run therefore did not yield a reliable current estimate: its confidence interval crossed zero.<sup><a
+					href="#ref-2">[2]</a></sup></p>
+			<p>In other words, the earlier result was not proven wrong. It expired. What remains worth preserving from
+				that experiment is a gap, not a number.</p>
+			<p>Skilled practitioners working in their own codebases still misjudged even the direction of the effect of a
+				tool they had used for four months. If self-assessment can be that distorted at the easiest layer to
+				measure—the time required to close an issue—then the familiar question “Does AI make the team faster?” is
+				a question aimed at the wrong target.</p>
+			<p class="intro-text">The thesis of this article is that AI does not simply make a Scrum Team faster. It
+				shifts the constraint from execution toward defining intent, supplying context, evaluating outcomes,
+				making decisions, and bearing responsibility. AI may therefore make a Scrum Team smaller and change how
+				Scrum operates, but it does not automatically eliminate the need for a Scrum Team.</p>
+			<p>That thesis has a safe version and a debatable one. The safe version is “AI cannot replace people.” Nobody
+				objects, and nobody learns anything. The debatable version lies elsewhere: the capacity for judgment on
+				which the thesis relies does not arise by itself. It has historically been a by-product of personally
+				making the thing being evaluated. If AI removes the making, it may gradually erode the judgment as well.
+				The final section returns to precisely this point, because this is where the argument may fail.</p>
+			<p>This article concerns product development inside an organization: there are stakeholders outside the
+				team, someone pays for the work, and someone bears the consequences when the product is wrong. In a
+				personal project where the author is both the user and the risk bearer, much of this argument does not
+				apply. That is not a minor exception; it is one of the article’s two boundaries.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Four Layers Are Being Collapsed into One</h2>
+			<p class="intro-text">The three most common questions in discussions about AI and Scrum are “Can AI replace
+				the Scrum Master?”, “Can AI replace the Product Owner?”, and “Can AI replace Developers?” None can be
+				answered as stated, because each compresses four different things into the word “replace.”</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Layer</th>
+						<th>Its real question</th>
+						<th>Where AI stands as of August 2026</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><strong>Capability</strong></td>
+						<td>Can this work be done, and what can do it?</td>
+						<td>Advancing rapidly, far faster than the other three layers</td>
+					</tr>
+					<tr>
+						<td><strong>Accountability</strong></td>
+						<td>Who is answerable for the outcome, including when it is wrong?</td>
+						<td>Ultimate accountability has not shifted. A model cannot bear consequences</td>
+					</tr>
+					<tr>
+						<td><strong>Authority</strong></td>
+						<td>Who has the right to decide, and who granted that right?</td>
+						<td>Operational authority can be—and is being—delegated: automatic deployment and rollback,
+							transactions approved within limits, algorithmic pricing. The source of that authority has not
+							shifted; it still originates in the organization</td>
+					</tr>
+					<tr>
+						<td><strong>Legitimacy</strong></td>
+						<td>Why do stakeholders accept living with that decision?</td>
+						<td>An automated process may be accepted for use, but it does not generate the legitimacy of the
+							underlying goals and trade-offs. This is the least discussed layer</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>These four layers do not stack in an order where the upper ones are harder than the lower ones. They
+				answer four different questions, and a system can be powerful at one layer while empty at another.</p>
+			<p>The connection to Scrum lies in one sentence from the 2020 Scrum Guide: <em>“Scrum defines three specific
+					accountabilities within the Scrum Team: the Developers, the Product Owner, and the Scrum
+					Master.”</em><sup><a href="#ref-3">[3]</a></sup> The canonical document does not define these three by
+				lists of tasks. It defines them by what each holder is accountable for.</p>
+			<p>The Product Owner is accountable for maximizing the value of the product resulting from the work of the
+				Scrum Team. The Scrum Master is accountable for establishing Scrum and for the Scrum Team’s effectiveness.
+				Developers are <em>always accountable for</em> four things: creating the Sprint Backlog, instilling quality
+				by adhering to the Definition of Done, adapting their plan each day toward the Sprint Goal, and holding one
+				another accountable as professionals.<sup><a href="#ref-3">[3]</a></sup></p>
+			<p>The wording matters because this article depends on that distinction. In the Scrum Guide,
+				<em>commitment</em> is the term associated with an artifact: the Product Goal with the Product Backlog, the
+				Sprint Goal with the Sprint Backlog, and the Definition of Done with the Increment. The four items above
+				are not four commitments. They are four things for which Developers are always accountable.<sup><a
+					href="#ref-3">[3]</a></sup></p>
+			<p>Read carefully, none of those four is described as the act of generating code. They concern planning,
+				quality, adaptation, and mutual accountability. This is why a claim such as “AI can write code, therefore
+				AI can replace Developers” misses nearly the entire definition.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">The Weakness in This Distinction Itself</h3>
+				<p>The four-layer distinction carries a risk that must be stated before it is used throughout the rest of
+					the article.</p>
+				<p>It can easily become a conceptual fortress. Each time AI acquires another ability, defenders of human
+					roles retreat behind the wall of “that is capability, but accountability is different.” Used this way,
+					the thesis can never be false. A thesis that can never be false also says nothing.</p>
+				<p>This article therefore sets its own falsification conditions. Its argument collapses if either of two
+					things occurs: the cost for one person to verify reliably a product they did not make falls close to
+					zero; or organizations and the law begin to recognize an automated system as a genuine accountable
+					subject rather than as a tool used by an accountable person. Both conditions are observable, and neither
+					had occurred when this article was written.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">AI Moves the Constraint; It Does Not Remove It</h2>
+			<p class="intro-text">Before AI agents, most teams were constrained by execution: analysis, design, coding,
+				testing, debugging, and documentation. When the cost of those activities drops sharply, “How much more can
+				the team do?” becomes easy to answer and leads nowhere. A more useful question is: what does not fall with
+				it?</p>
+			<p>The list of things that do not fall is short and stubborn:</p>
+			<ul class="outline-list">
+				<li>The clarity of the problem being solved.</li>
+				<li>The quality of the Product Goal.</li>
+				<li>The speed of genuine user feedback, which is constrained by users’ lives rather than by team capacity.</li>
+				<li>Conflicting interests among stakeholder groups. This is not a shortage of computational capacity; it is
+					a problem with multiple correct answers under different criteria.</li>
+				<li>Tacit knowledge of the organization, the domain, and what nobody has written down.</li>
+				<li>The ability to judge whether a solution is actually good.</li>
+			</ul>
+			<p>Fred Brooks named this divide in 1986 in his essay about two kinds of difficulty in software: difficulty
+				inherent in the problem itself, and difficulty that belongs only to the way we express that problem so a
+				machine can understand it. He argued that even if the second kind vanished entirely, the first would remain,
+				because design complexity is essential rather than accidental.<sup><a href="#ref-4">[4]</a></sup></p>
+			<p>Fairness requires acknowledging the opposing case. Brooks wrote before he could imagine a tool that turns
+				natural-language intent directly into a working system, and his most famous claim was a quantitative
+				prediction over ten years, made forty years ago. Saying “Brooks already answered this” uses a quotation to
+				avoid thinking. This article borrows only a distinction from Brooks, not a verdict.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">What Industry-Scale Evidence Says</h3>
+				<p>The 2025 DORA report surveyed nearly 5,000 technology professionals and was published in September 2025.
+					Ninety percent of respondents said they used AI at work, more than 80% believed it made them more
+					productive, and 30% reported little or no trust in AI-generated code.<sup><a
+						href="#ref-5">[5]</a></sup></p>
+				<p>More interesting are two relationships pointing in opposite directions. Greater AI use correlated
+					positively with delivery throughput and negatively with delivery stability. The report explains that
+					much of the time saved in code generation flows into testing and validation; when the volume of change
+					rises faster than control systems can keep up, instability follows.<sup><a
+						href="#ref-5">[5]</a></sup></p>
+				<blockquote>
+					<p>AI does not fix a team. It amplifies what the team already has.</p>
+				</blockquote>
+				<p>This was a correlational survey, not an experiment, so it cannot establish causality. It is nevertheless
+					enough to reframe the question. If output creation accelerates while stability declines, the constraint
+					has shifted from making something to knowing whether the thing just made is correct.</p>
+			</div>
+			<blockquote>
+				<p>The question shifts from “Who can build this solution?” to “Who knows what should be built, why, on what
+					evidence, and who is accountable if it is wrong?”</p>
+			</blockquote>
+			<p>Scrum was designed for complex problems where the answer is not known in advance and must be learned.
+				When generating solutions becomes cheaper but choosing the right problem and validating assumptions do
+				not, those activities consume a growing share of the total cost.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">The Three Artifacts Carry the Load Differently</h2>
+			<p class="intro-text">Scrum has three artifacts, each with an associated commitment. As output generation
+				accelerates, their definitions remain unchanged, but where each bears the load shifts.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Product Backlog: The Risk of Becoming a Specification Queue</h3>
+				<p>The appeal of an agent that is always ready to execute encourages people to feed it a large volume of
+					pre-specified work. The Product Backlog can then drift into a queue of detailed specifications—a fixed
+					project plan under a different name.</p>
+				<p>AI performs many Product Backlog-adjacent tasks well: consolidating scattered feedback, analyzing usage
+					data, detecting contradictions between requirements, drafting Product Backlog Items, clarifying
+					acceptance criteria, and tracing relationships between a new requirement and the existing codebase.</p>
+				<p>But what the Product Backlog must preserve is not on that list. It must continue to express the problem,
+					the goal, untested assumptions, expected value, and even what the team knows it does not know. A backlog
+					in which every item is fully specified up front has discarded its record of uncertainty—and uncertainty
+					is why Scrum exists.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Sprint Backlog: From Task List to Execution Context</h3>
+				<p>In the Scrum Guide, the Sprint Backlog consists of the Sprint Goal, the Product Backlog items selected
+					for the Sprint, and a plan for delivering the Increment. When agents perform most execution, the actual
+					shape of that “plan” changes: it resembles a manually decomposed task list less and a body of context
+					sufficient for both humans and agents to work more.</p>
+				<p>That context usually includes the Sprint Goal, the specification of the work in progress, constraints,
+					architectural context, acceptance criteria, the test strategy, the plan the agent is executing, and its
+					current execution state.</p>
+				<p>What does not change is ownership. An agent may continuously revise its own implementation plan, but
+					“adapting their plan each day toward the Sprint Goal” remains something for which Developers are
+					accountable.<sup><a href="#ref-3">[3]</a></sup> A self-modifying plan that nobody checks against the
+					Sprint Goal has ceased to be a Sprint Backlog, even if it remains in the same place in the tool.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Definition of Done: From Quality List to Governing System</h3>
+				<p>The Definition of Done is where the role change is clearest.</p>
+				<p>Previously, it was primarily a shared commitment to quality, checked largely through human inspection
+					and team habit. When code-generation speed exceeds human code-reading speed, it becomes a governing
+					mechanism.</p>
+				<p>It does not stand alone. Between speed and consequences sit release authority, architectural and
+					platform guardrails, observability, progressive delivery, feature flags and rollback capability, and the
+					full set of security and compliance controls. DORA itself names a cluster of capabilities that must keep
+					pace with the volume of change: strong automated testing, mature version control, and fast feedback
+					loops.<sup><a href="#ref-5">[5]</a></sup> What makes the Definition of Done distinctive is that it sits at
+					the center of this cluster and is the only element Scrum requires.</p>
+				<p>Most of its standards can and should become automated checks: unit and integration tests, security
+					scanning, architectural constraints, coding conventions, specification-to-code traceability,
+					documentation requirements, and deployment checks. Anything that still requires human reading must be
+					chosen deliberately, because that is precisely the expensive part.</p>
+				<p>There is a reason older than AI to do this. In 1983, Lisanne Bainbridge described a paradox of
+					automation: when machines assume nearly all the work, the remaining human work does not become lighter; it
+					changes into monitoring, something humans perform poorly over long periods. Worse, because operators no
+					longer do the work directly, they gradually lose the skills needed for the rare but decisive
+					interventions. Her conclusion was counterintuitive: the more automated the system, the more—not less—
+					training its human operators require.<sup><a href="#ref-6">[6]</a></sup></p>
+				<p>That paper concerned factories and cockpits, not software, so this is an analogy rather than evidence for
+					the present case. The limits of the analogy also matter: code reviewers are not as passive as people
+					watching an instrument panel; they must still read actively and ask questions. Yet DORA’s finding that
+					saved time flows into validation shows that the monitoring burden is genuinely expanding—and that is
+					exactly what Bainbridge warned about.<sup><a href="#ref-5">[5]</a></sup></p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">The Events Change Their Reason for Existing</h2>
+			<p class="intro-text">The four Scrum events within a Sprint do not change purpose when AI agents are
+				introduced. What changes is the kind of information inspected and the balance of time between planning and
+				validation.</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Event</th>
+						<th>Where emphasis shifts when agents perform execution</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Sprint Planning</td>
+						<td>Less time manually decomposing tasks; more time on the goal, assumptions to test, constraints,
+							and how the team will know what it learned during the Sprint</td>
+					</tr>
+					<tr>
+						<td>Daily Scrum</td>
+						<td>Still the Developers’ 15-minute event for adapting toward the Sprint Goal, but inspection now
+							also covers agent output, integration state, and where actual results are diverging from intent</td>
+					</tr>
+					<tr>
+						<td>Sprint Review</td>
+						<td>Carries a heavier load because the volume requiring comparison with reality grows faster than
+							the volume of real-world feedback available</td>
+					</tr>
+					<tr>
+						<td>Sprint Retrospective</td>
+						<td>The improvement target expands to the human-and-AI system: context supplied to agents,
+							specification practices, quality escapes, and new review bottlenecks</td>
+					</tr>
+					<tr>
+						<td>Sprint</td>
+						<td>Its reason for existing shifts gradually from batching work toward maintaining a fixed cadence
+							for inspection and adaptation</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>The last row is the most debatable, because it is where people often conclude that the Sprint has become
+				obsolete.</p>
+			<blockquote>
+				<p>AI can compress implementation time. It cannot proportionally compress the time required to observe real
+					users, negotiate with stakeholders, or earn an organization’s trust in a result.</p>
+			</blockquote>
+			<p>If a Sprint is merely a box for batching work, then it does lose its purpose as work begins to flow
+				continuously. But if it is a cadence for stopping to ask “What have we just learned?”, then its length is
+				determined not by coding speed but by the speed at which reality answers. Users and the market determine
+				that speed, and they do not care what tools the team uses.</p>
+			<p>Article 6 in this series established a related point: an event is a mechanism of empiricism, not a required
+				meeting on a calendar. When purpose disappears, the ceremony can continue on schedule while the team learns
+				nothing. AI agents do not reduce that risk; they merely make it run faster.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Does the Agile Manifesto Conflict with Spec-Driven Development?</h2>
+			<p class="intro-text">Both sides now invoke “working software over comprehensive documentation.” One says
+				AI returns us to documentation-driven development. The other says the Manifesto was never anti-
+				documentation. Both readings are incomplete.</p>
+			<p>The Manifesto ends with a sentence explaining exactly how to read its four value pairs: <em>“That is,
+					while there is value in the items on the right, we value the items on the left
+					more.”</em><sup><a href="#ref-7">[7]</a></sup> The right-hand side has value. It simply does not prevail
+				when the two sides conflict.</p>
+			<p>The context to which Agile reacted in 2001 was specific: large documents written up front, used as handoff
+				contracts between departments, built on the assumption that the future could be predicted far enough
+				ahead, tested only when implementation was nearly complete, and difficult to change after approval.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">What Spec-Driven Development Says about Itself</h3>
+				<p>It is worth reading SDD’s own materials rather than guessing. GitHub Spec Kit describes its approach in
+					direct terms: <em>“Spec-Driven Development (SDD) inverts this power structure. Specifications don't
+						serve code, code serves specifications.”</em> It continues: <em>“The specification becomes the primary
+						artifact. Code becomes its expression in a particular language and framework.”</em><sup><a
+							href="#ref-8">[8]</a></sup></p>
+				<p>This is not an outsider’s inference. It is the document’s own claim, and it creates direct tension with
+					the Manifesto’s second value pair. Anyone claiming that “SDD does not conflict with Agile at all” must
+					first address that language.</p>
+				<p>But tension is not yet contradiction. We should slow down here because two relationships are easily
+					collapsed into one. “Which artifact generates which?” is one relationship. “Which artifact do we trust
+					when the two disagree?” is another. Spec Kit makes a claim about the first; the Manifesto concerns the
+					second. A specification can generate code and still yield to evidence produced when that code runs.</p>
+				<p>If we read the whole document rather than only its declaration, SDD stands closer to Agile than it first
+					appears. It says code generation begins once the specification and implementation plan are <em>“stable
+						enough, but they do not have to be ‘complete’”</em>; that <em>“early generations might be exploratory,
+						testing whether the specification makes sense in practice”</em>; and that incidents and production data
+					<em>“don't just trigger hotfixes, they update specifications for the next
+						regeneration.”</em><sup><a href="#ref-8">[8]</a></sup></p>
+				<p>The last sentence is the important one. It describes exactly the direction Agile requires: reality
+					corrects the specification; the specification does not overrule reality. If SDD preserves that direction,
+					then “code serves specifications” describes only the order of generation and does not violate the second
+					value pair.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">A Specification Is No Longer Merely Documentation</h3>
+				<p>There is another reason not to read an SDD “specification” as the “documentation” discussed by the
+					Manifesto: the specification now performs a different set of jobs.</p>
+				<p>In an AI context, a specification simultaneously serves as a medium for human communication, context for
+					an agent, input to implementation planning, a source for generating test cases, a standard against which
+					results are evaluated, and an audit trail explaining why the system was built as it was.</p>
+				<p>The middle of that list was not invented by AI. Executable specifications, formal methods, model-based
+					code generation, and acceptance tests serving as specifications all predate the Manifesto. Brooks devoted
+					an entire section to <em>“automatic” programming</em> in 1986 and concluded that it worked only for
+					problems compactly described by a small number of parameters.<sup><a
+						href="#ref-4">[4]</a></sup> AI changes the cost, the prevalence, and—for the first time—the ability to
+					use natural language rather than a formal representation as input.</p>
+				<blockquote>
+					<p>AI does not necessarily return us to documentation-driven development. It blurs the boundary between
+						documentation and working software because the specification now participates directly in creating and
+						validating the software.</p>
+				</blockquote>
+				<p>Read this way, SDD is compatible with Agile when the specification covers a sufficiently small scope,
+					remains editable, is validated early through working software, results from collaboration, and is not
+					treated as truth.</p>
+				<p>It becomes AI-powered waterfall when the entire product is specified up front, the specification is
+					frozen, agents only execute, every change is treated as a deviation, and stakeholders see only the final
+					result.</p>
+				<p>Those two lists look clear, but they are not a usable test because every team believes it belongs to the
+					first. The real test appears at one precise moment.</p>
+				<blockquote>
+					<p>The question has never been how much documentation is written. The question is what the team changes
+						when the specification and evidence from running software disagree.</p>
+				</blockquote>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Where Scrum Turns Speed into Learning</h2>
+			<p class="intro-text">The loop that a product organization actually runs extends beyond the path from idea
+				to software. It closes only when evidence leads to a decision.</p>
+			<figure class="scrum-visual">
+				<svg aria-label="A five-step loop: value assumption, specification, working Increment, real-world evidence, adaptive decision"
+					role="img" viewbox="0 0 1120 250">
+					<defs>
+						<marker id="arrow-loop" markerheight="10" markerunits="strokeWidth" markerwidth="10"
+							orient="auto" refx="9" refy="3">
+							<path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+						</marker>
+					</defs>
+					<rect class="node" height="64" rx="10" width="185" x="20" y="50"></rect>
+					<text x="112" y="82">Value Assumption</text>
+					<rect class="accent-node" height="64" rx="10" width="185" x="245" y="50"></rect>
+					<text x="337" y="82">Specification</text>
+					<rect class="accent-node" height="64" rx="10" width="185" x="470" y="50"></rect>
+					<text x="562" y="82">Working Increment</text>
+					<rect class="node" height="64" rx="10" width="185" x="695" y="50"></rect>
+					<text x="787" y="82">Real-World Evidence</text>
+					<rect class="node" height="64" rx="10" width="185" x="920" y="50"></rect>
+					<text x="1012" y="82">Adaptive Decision</text>
+					<path class="arrow" d="M205 82 H245" marker-end="url(#arrow-loop)"></path>
+					<path class="arrow" d="M430 82 H470" marker-end="url(#arrow-loop)"></path>
+					<path class="arrow" d="M655 82 H695" marker-end="url(#arrow-loop)"></path>
+					<path class="arrow" d="M880 82 H920" marker-end="url(#arrow-loop)"></path>
+					<path class="arrow" d="M1012 114 V190 H112 V114" marker-end="url(#arrow-loop)"></path>
+					<text class="small" x="450" y="30">AI strongly compresses this segment</text>
+					<text class="small" x="562" y="212">The other three do not shrink proportionally</text>
+				</svg>
+				<figcaption>
+					<strong>Figure 1.</strong> AI accelerates the path from specification to Increment most clearly. If the
+					other three segments keep the same length, only the amount of unvalidated output increases.
+				</figcaption>
+			</figure>
+			<p>Scrum contributes to this loop in the three segments outside the middle one. The claim must be stated
+				carefully: Scrum creates a cadence and formal opportunities for those segments to occur; it does not
+				guarantee that they will. The Product Goal sets the direction for learning. The Sprint Goal limits the
+				scope of an experiment. The Increment turns an assumption into something that can be compared with
+				reality. The Sprint Review gathers evidence. The Sprint Retrospective changes the human-and-AI system that
+				produces all these things.</p>
+			<p>The gap between “an opportunity exists” and “it actually happens” is where most teams fall. A team may run
+				all four events in the Sprint, within their timeboxes, while spending the entire Sprint comparing output
+				only against its own specification. Scrum turns speed into learning only when the Product Goal and Sprint
+				Goal contain testable assumptions, when the Increment is exposed to reality rather than merely shown to
+				the team, and when the Sprint Review returns evidence credible enough to change a decision.</p>
+			<p>The three pillars change content without changing names. Transparency now includes visibility into what
+				agents produced and the context on which they relied. Inspection includes refusing to trust agent output by
+				default. Adaptation includes changing how AI is used, not only changing the product.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Four Time Intervals Worth Measuring</h3>
+				<p>“How much faster does AI make coding?” measures exactly one segment—the one already being compressed.
+					Dividing the lifecycle into four intervals makes it clearer where improvement actually occurs.</p>
+				<table class="content-table">
+					<thead>
+						<tr>
+							<th>Time interval</th>
+							<th>The question it answers</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Intent to Spec</td>
+							<td>How long does it take to turn an ambiguous problem into an assumption clear enough to act on?</td>
+						</tr>
+						<tr>
+							<td>Spec to Increment</td>
+							<td>How long does it take to produce an Increment that meets the Definition of Done?</td>
+						</tr>
+						<tr>
+							<td>Increment to Evidence</td>
+							<td>How long does it take to receive reliable real-world feedback?</td>
+						</tr>
+						<tr>
+							<td>Evidence to Decision</td>
+							<td>How long does it take to adapt the Product Backlog or product direction?</td>
+						</tr>
+					</tbody>
+				</table>
+				<blockquote>
+					<p><strong>Validated Learning Lead Time:</strong> the time from forming an assumption to obtaining enough
+						evidence to retain, revise, or reject it.</p>
+				</blockquote>
+				<p>This metric has not been validated elsewhere. It is a proposal made by this article, not a research-
+					backed measure, and should be treated accordingly.</p>
+				<p>A single metric can always be gamed, so it needs guardrail metrics: rework rate, production escapes,
+					human review load, change failure rate, divergence between specifications and actual code, technical
+					debt, and the Developers’ ability to explain what is running in their system. The last is the hardest to
+					measure and the first to disappear.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Why Measuring the Wrong Segment Is Worse than Not Measuring</h3>
+				<p>In May 2026, METR separated “uplift” into three different concepts: improvement on tasks people would
+					previously have performed, improvement on the set of tasks they now choose to perform, and the increase
+					in real value after accounting for time shifting among kinds of work. Their rankings differ, and the
+					measure over the new task set is the highest of the three.<sup><a href="#ref-9">[9]</a></sup></p>
+				<p>The reason is task substitution: when AI makes certain work much cheaper, people shift time toward
+					precisely that work—including low-value tasks that previously were not worth doing—simply because those
+					tasks have become cheap enough.<sup><a href="#ref-9">[9]</a></sup></p>
+				<p>Translated into Scrum, this mechanism has a familiar shape. The Product Backlog begins filling with cheap
+					items rather than valuable ones, and it still looks highly productive on every chart. This is the hardest
+					form of waste to see because every indicator is green.</p>
+				<p>Self-assessment fares no better. A METR survey of 349 technical workers, conducted from February through
+					April 2026, found median self-reported increases of 1.4 to 2 times in work value and three times in speed.
+					The researchers explicitly warned that self-reported figures do not necessarily reflect reality, cited
+					their earlier finding that people overestimated the true effect by as much as 40 percentage points, and
+					found no corresponding trace in public output when they inspected cases claiming improvements of tenfold
+					or more.<sup><a href="#ref-10">[10]</a></sup></p>
+				<p>This is why a Sprint Review that brings in feedback from outside the team is both more expensive and more
+					valuable than any self-assessment of productivity. The Scrum Guide requires key stakeholders, not end
+					users, to attend.<sup><a href="#ref-3">[3]</a></sup> But for the issue under discussion, the distance
+					between those two groups is the distance between an opinion and evidence. This is therefore my
+					recommendation, not a Scrum requirement.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">What an Agent Chain Looks Like in Operation</h3>
+				<p>Many teams are experimenting with a chain like this: one agent detects a defect through tests; another
+					traces the symptom back to a cause; another creates a change; another updates specifications and
+					documentation; and then people review, decide, and share the outcome with the rest of the team.</p>
+				<!-- NEEDS VERIFICATION: the author mentions a “Mars case” in the raw material. In the repository, “Mars AI Support Tool” appears only in Article 6 as an example meeting name; no real case is described. This paragraph presents a general pattern and does not attach it to a specific case. The author must provide actual details before a source can be added. -->
+				<p>What matters in this chain is not merely how much faster the defect is fixed. Four other gaps also shrink:
+					from symptom to cause, from cause to solution, from solution to evidence that the solution is correct, and
+					from one person’s knowledge to the whole team’s knowledge.</p>
+				<p>The last is the only one of the four that is not a technical problem—and the one the agent chain helps
+					least.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Can AI Replace the Three Accountabilities?</h2>
+			<p class="intro-text">We must answer separately for each accountability and distinguish two questions: what
+				activities can AI perform, and can AI bear the corresponding accountability?</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Scrum Master</h3>
+				<p>The portion of Scrum Master work AI can perform is already broad: preparing and summarizing events,
+					tracking impediments, analyzing flow metrics, finding recurring patterns across Retrospectives, keeping
+					timeboxes visible, suggesting facilitation techniques, checking artifact transparency, and supplying
+					Scrum knowledge at the point of need.</p>
+				<p>The remainder is far harder, but not for technical reasons. The Scrum Master is accountable for
+					establishing Scrum and for the Scrum Team’s effectiveness.<sup><a href="#ref-3">[3]</a></sup> This often
+					requires recognizing an unspoken conflict, building trust, coaching without imposing, challenging existing
+					power structures, influencing management and the wider organization, and knowing when not to follow a
+					process literally.</p>
+				<p>Three things on that list require something AI does not have: a relationship with particular people,
+					sustained over time, with personal risk attached to saying what is difficult to hear.</p>
+				<blockquote>
+					<p>AI may eliminate Scrum Master as a full-time title in a mature team. It has not eliminated the Scrum
+						Master accountability.</p>
+				</blockquote>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Product Owner</h3>
+				<p>At the activity layer, AI can support nearly everything: consolidating stakeholder needs, analyzing usage
+					data, proposing Product Backlog Items, drafting and clarifying requirements, comparing options, simulating
+					impacts, supporting ordering, and tracking which assumptions have evidence and which do not.</p>
+				<p>The limit lies in the nature of maximizing value. It is not an optimization problem with a supplied
+					objective function. It involves choosing among stakeholder groups, accepting one risk and rejecting
+					another, deciding when evidence is incomplete, trading short-term against long-term outcomes, and bearing
+					the consequences of a wrong choice.</p>
+				<p>A model can propose an ordering for the Product Backlog. It lacks the legitimacy to decide which customer
+					group is served first and which must wait another quarter. This is the legitimacy layer in the opening
+					table, and it does not reside in technical capability. It resides in whom the organization empowers.</p>
+				<blockquote>
+					<p>AI can become a powerful decision-support system for a Product Owner. It does not become the subject
+						accountable for value.</p>
+				</blockquote>
+				<p>The practical consequence lies elsewhere. If AI assumes most of the analysis and drafting around a PO,
+					what shrinks is the support layer around the PO—not the number of POs: Business Analysts, Product
+					Operations, and roles centered on consolidating information.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Developers</h3>
+				<p>This is the hardest question because AI acts directly on what Developers produce.</p>
+				<p>The list of things AI can do is long and still growing: design, coding, testing, review, debugging,
+					refactoring, deployment, production observation, and documentation updates.</p>
+				<p>Return, however, to the four things for which the Scrum Guide says Developers are always accountable:
+					creating the Sprint Backlog, instilling quality by adhering to the Definition of Done, adapting the plan
+					each day toward the Sprint Goal, and holding one another accountable as professionals.<sup><a
+						href="#ref-3">[3]</a></sup> The fourth has no automated equivalent. The reason is not technical: it is
+					a relationship between people, and it has meaning only when both sides bear the consequences.</p>
+				<p>Even so, we must state something that does not apply equally to the preceding two sections: the number of
+					Developers can clearly decline. An experienced person coordinating multiple agents can cover a scope that
+					once required several specialties. This is not a bold prediction. It is already happening.</p>
+				<blockquote>
+					<p>AI replaces an increasing share of development activities. It cannot yet bear the Developers’
+						accountability by itself. But the number of people needed to bear that accountability is shrinking.</p>
+				</blockquote>
+				<p>That final sentence leads directly to the question toward which the whole article has been moving.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Can One Person with Multiple Agents Replace a Scrum Team?</h2>
+			<p class="intro-text">As a matter of terminology, the answer is immediate: one person working with multiple
+				agents is not a Scrum Team, because agents are not people with accountabilities, and naming them after the
+				three accountabilities does not give them accountability. But that is an answer by definition, and answering
+				by definition evades the question.</p>
+			<blockquote>
+				<p>The real question is whether an AI-amplified individual can replace the value a Scrum Team once created.</p>
+			</blockquote>
+			<div class="sub-section">
+				<h3 class="sub-point-1">The Strongest Version of the “Yes” Case</h3>
+				<p>Before responding, we should construct the opposing case in its strongest form, because that form is
+					persuasive.</p>
+				<p>A multi-person Scrum Team existed because skills were both scarce and specialized; no single person could
+					cover the entire product. Cross-functionality is a response to that scarcity, not an intrinsic good. In
+					return, every added person brings synchronization costs, another place for misunderstanding, and another
+					wait state. Brooks himself wrote that adding people to a late project makes it later.</p>
+				<p>This side has an even stronger move on accountability: one person owning the whole product has clearer
+					accountability than five people sharing ownership, not weaker accountability. Responsibility divided among
+					many people can drift away. If one person and a set of agents can build the entire product, then the team
+					was never the goal. The team was the price.</p>
+				<p>This argument is correct across a fairly broad range, and this article does not dispute it there.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Where One Person Is Enough—and Where One Is Not</h3>
+				<p>One person with multiple agents is likely enough when the product is small, that person genuinely
+					understands the domain, there are few stakeholders, risk is low, user feedback is easy to obtain, the
+					architecture still fits in one person’s head, and mistakes can be reversed cheaply.</p>
+				<p>It becomes much harder when stakeholder groups have conflicting interests, the domain is complex,
+					decisions carry legal or social consequences, tacit knowledge is distributed across people, the system
+					needs multiple independent perspectives to detect errors, mistakes are difficult to reverse, one-person
+					control creates key-person risk, and implementation requires commitment from the whole organization rather
+					than merely a correct decision.</p>
+				<p>These lists are not two kinds of company. They are the endpoints of a continuum, and most products fall
+					somewhere between them, moving gradually from one end toward the other as they grow.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Ten Agents and Ten Standpoints Are Different Things</h3>
+				<p>One objection often disappears from discussions of multi-agent teams, and it does not arise from model
+					limitations.</p>
+				<p>Technically, diversity can be purchased to a degree. Agents can run on different foundation models,
+					receive different context sources, use different tools and data, and include a dedicated critic of the
+					others. Ten agents configured this way can produce more than one analytical approach, and that is genuine
+					diversity.</p>
+				<p>What cannot be purchased lies elsewhere. None of those agents occupies a separate social position in the
+					organization. None must live with the consequences of a decision differently from the coordinator. None
+					holds the tacit knowledge available only in another department. None has independent authority to veto
+					the person coordinating it.</p>
+				<p>Hong and Page demonstrated in a mathematical model that a group of problem solvers with diverse approaches
+					can outperform a group composed entirely of the highest-performing individuals. The reason is
+					counterintuitive: when the best performers are selected from a sufficiently large pool, their approaches
+					tend to resemble one another, and their additional ability may not compensate for the lost diversity.<sup><a
+						href="#ref-11">[11]</a></sup> This was a formal model, not an empirical study of real teams, and it has
+					itself drawn mathematical criticism. It is therefore grounds for doubt, not proof.</p>
+				<p>In another direction, Kleinberg and Raghavan showed that when multiple decision makers converge on the same
+					algorithm, collective decision quality may decline even when the algorithm is more accurate for each party
+					considered separately, and even without shocks or correlated errors.<sup><a
+						href="#ref-12">[12]</a></sup> Their study concerned multiple firms screening candidates, not multiple
+					agents on a team, so applying it directly would overreach. The mechanism is similar: similarity creates
+					shared blind spots.</p>
+				<blockquote>
+					<p>Ten agents can produce ten analytical approaches. They do not automatically create ten independent
+						standpoints in an organization—and standpoint determines who is willing and able to disagree.</p>
+				</blockquote>
+				<p>Cognitive diversity is not a soft value. It is an error-detection mechanism. Diversity of method can be
+					purchased through configuration; diversity of interests and authority cannot, because those do not reside
+					in the technical system.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">The Limits of This Argument</h2>
+			<p class="intro-text">Everything so far rests on an untested premise: that people retain the ability to
+				evaluate outcomes, make decisions, and bear responsibility even when they no longer directly make what they
+				evaluate. That premise may be wrong. If it is, much of this article is wrong with it.</p>
+			<p>Bainbridge identified the mechanism of failure forty-three years ago in another industry. Operators lose
+				skill because they no longer practice it in daily work, precisely when that skill is needed most: rare and
+				decisive interventions.<sup><a href="#ref-6">[6]</a></sup></p>
+			<p>Applied here, the story takes an uncomfortable shape. The ability to evaluate a software solution is not
+				an independent skill. It has historically been a by-product of personally building similar things and
+				personally bearing the consequences of getting them wrong. If AI takes away the building, judgment does not
+				remain stationary; it erodes with it.</p>
+			<p>At that point, “people still retain accountability” remains formally true and becomes substantively empty.</p>
+			<p>Madeleine Clare Elish named this condition the <em>moral crumple zone</em>. A vehicle’s crumple zone is
+				designed to protect its occupants. The moral crumple zone in an automated system does the reverse: it
+				protects the integrity of the technical system by concentrating responsibility on the nearest human, who
+				often has only limited understanding, capacity, and control over the system’s behavior.<sup><a
+					href="#ref-13">[13]</a></sup></p>
+			<p>Read the section “Can AI Replace the Three Accountabilities?” again in that light, and its conclusion gains
+				a darker side. Saying “one person must still own the final decision” sounds like a defense of the human role.
+				It may also describe the deliberate design of a place to assign blame.</p>
+			<p>The boundary between these readings is not a declaration but a testable question: does the accountable
+				person have enough information, enough time, and enough authority to say no? If an Increment is generated in
+				two hours and its reviewer has fifteen minutes, that signature is not accountability. It is procedure.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Two Gaps This Article Cannot Fill</h3>
+				<p>The article has no data on the very thing it asserts. Nobody has measured whether an AI-enabled Scrum Team
+					learns faster or slower than an AI-enabled individual. What the article has is data on individual
+					productivity, industry-scale throughput and stability, and two theoretical models of diversity. Joining
+					them into a conclusion about the Scrum Team is the work of argument rather than data, and the reader is
+					entitled to part company at precisely that connection.</p>
+				<p>The second gap is me. I work in a Scrum environment and therefore have an interest in concluding that
+					Scrum remains necessary.</p>
+				<p>Finally, every claim here about AI capability is tied to August 2026. We need not wait long to see why that
+					date matters: the strongest quantitative evidence used by this article became obsolete within seven
+					months.<sup><a href="#ref-2">[2]</a></sup></p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">This Cannot Yet Be Closed</h2>
+			<p>The most comforting conclusion for an article like this is “AI cannot replace people.” It is safe, it is
+				true at the time of writing, and it may expire sooner than we expect.</p>
+			<p>The conclusion that survives the article’s own objections is narrower and stronger.</p>
+			<blockquote>
+				<p>AI can make a Scrum Team smaller, change how the three accountabilities are fulfilled, and make a full-
+					time Scrum Master or a large group of Developers unnecessary in many contexts. As long as product
+					development remains a complex problem involving uncertainty, multiple perspectives, conflicting
+					interests, and real consequences, the need for a self-managing group of people has not disappeared. How
+					long that need survives, however, depends on whether we can preserve the capacity for judgment—and that
+					capacity is being eroded by the very tools that make the work more convenient.</p>
+			</blockquote>
+			<p>One question remains unanswered, and it is the question worth carrying forward:</p>
+			<blockquote>
+				<p>If one person working with multiple AI agents can produce software, is Scrum still a framework for
+					managing development, or has it become a framework for ensuring that a human-and-AI system continues to
+					learn well, decide well, and remain genuinely accountable?</p>
+			</blockquote>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">References</h2>
+			<ol class="outline-list">
+				<li id="ref-1">METR (2025). <em>Measuring the Impact of Early-2025 AI on Experienced Open-Source
+						Developer Productivity</em>. A randomized controlled trial involving 16 developers and 246 issues
+					from February through June 2025; the source for the gap between participants’ perceived productivity
+					increase and the measured result. <a
+						href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/"
+						rel="noopener noreferrer" target="_blank">Published article</a>, <a
+						href="https://arxiv.org/abs/2507.09089" rel="noopener noreferrer" target="_blank">arXiv
+						version</a>.</li>
+				<li id="ref-2">METR (February 24, 2026). <em>We are Changing our Developer Productivity Experiment
+						Design</em>. The researchers explain why the design ceased to operate reliably once AI became a default
+					tool: participants refused to work without AI, and 30% to 50% avoided submitting precisely the tasks for
+					which AI helped most. This explains why the earlier result no longer represents the present; it is not
+					evidence that the result was wrong. This article uses it to avoid presenting the 19% figure as a current
+					estimate. <a href="https://metr.org/blog/2026-02-24-uplift-update/" rel="noopener noreferrer"
+						target="_blank">Read the update</a>.</li>
+				<li id="ref-3">Schwaber, K. &amp; Sutherland, J. (2020). <em>The Scrum Guide</em>. The canonical source
+					for Scrum’s definition of three accountabilities rather than three task lists; for the accountabilities
+					of the Product Owner and Scrum Master; for the four things Developers are <em>always accountable
+						for</em>; and for <em>commitment</em> as a term associated with artifacts rather than Developers. It is
+					also the source for the Sprint Review involving key stakeholders rather than requiring end users. <a
+						href="https://scrumguides.org/scrum-guide.html" rel="noopener noreferrer" target="_blank">Read the
+						guide</a>.</li>
+				<li id="ref-4">Brooks, F. P. (1987). <em>No Silver Bullet: Essence and Accidents of Software
+						Engineering</em>. IEEE Computer, 20(4), 10–19. The source for dividing software difficulty into what
+					belongs to the problem’s essence and what belongs only to its expression; this article borrows that
+					distinction while stating the limits of citing a 1986 prediction. Its precursor was UNC technical report
+					TR86-020. <a href="https://www.cs.unc.edu/techreports/86-020.pdf" rel="noopener noreferrer"
+						target="_blank">Technical report</a>.</li>
+				<li id="ref-5">DORA / Google Cloud (September 24, 2025). <em>2025 DORA Report: State of AI-Assisted
+						Software Development</em>. A survey of nearly 5,000 technology professionals; the source for the 90%
+					AI adoption figure, the 30% with little or no trust in AI-generated code, and the positive relationship
+					with throughput alongside the negative relationship with stability. These are correlational data, not an
+					experiment. <a
+						href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report"
+						rel="noopener noreferrer" target="_blank">Release announcement</a>, <a
+						href="https://dora.dev/insights/balancing-ai-tensions/" rel="noopener noreferrer"
+						target="_blank">DORA analysis</a>.</li>
+				<li id="ref-6">Bainbridge, L. (1983). <em>Ironies of Automation</em>. Automatica, 19(6), 775–779. The
+					original source for the paradox that greater automation makes the remaining human work harder and causes
+					operators to lose the skills needed for decisive interventions. This article uses it in two places: the
+					Definition of Done as a governing mechanism, and the final self-critique. <a
+						href="https://www.sciencedirect.com/science/article/abs/pii/0005109883900468"
+						rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+				<li id="ref-7">Beck, K. et al. (2001). <em>Manifesto for Agile Software Development</em>. This article
+					quotes its closing explanation that the items on the right still have value, distinguishing the Manifesto
+					from the common reading that Agile opposes documentation. <a href="https://agilemanifesto.org/"
+						rel="noopener noreferrer" target="_blank">Read the original</a>.</li>
+				<li id="ref-8">GitHub. <em>Spec Kit</em> and <em>Spec-Driven Development</em>. The source for SDD’s own
+					claims that code serves the specification and that the specification is the primary artifact; also the
+					source for three statements that resist the “SDD is waterfall” reading: generation begins when the
+					specification is <em>stable enough</em>, not necessarily <em>complete</em>; early generations can be
+					exploratory; and production incidents update the specification. This article uses SDD’s own materials
+					because they are the subject under discussion. <a href="https://github.com/github/spec-kit"
+						rel="noopener noreferrer" target="_blank">Repository</a>, <a
+						href="https://github.com/github/spec-kit/blob/main/spec-driven.md" rel="noopener noreferrer"
+						target="_blank">SDD document</a>.</li>
+				<li id="ref-9">METR (May 8, 2026). <em>Task Substitution and Uplift</em>. Separates three measures of
+					uplift and shows that uplift measured over the tasks people now choose to perform is the highest because
+					people shift time toward work AI makes cheaper, including low-value work. This supports the argument that
+					“How much faster does AI make coding?” measures the wrong segment. <a
+						href="https://metr.org/blog/2026-05-08-task-substitution-and-uplift/" rel="noopener noreferrer"
+						target="_blank">Read the article</a>.</li>
+				<li id="ref-10">METR (May 11, 2026). <em>Measuring the Self-Reported Impact of Early-2026 AI on
+						Technical Worker Productivity</em>. A survey of 349 technical workers conducted from February through
+					April 2026. This article uses both the self-reported figures and the researchers’ own warnings about their
+					reliability. <a href="https://metr.org/blog/2026-05-11-ai-usage-survey/" rel="noopener noreferrer"
+						target="_blank">Read the article</a>.</li>
+				<li id="ref-11">Hong, L. &amp; Page, S. E. (2004). <em>Groups of Diverse Problem Solvers Can
+						Outperform Groups of High-Ability Problem Solvers</em>. PNAS, 101(46), 16385–16389. A mathematical
+					model supporting the claim that diversity of approaches can outperform greater individual ability. This
+					article uses it as a reason to question multi-agent teams sharing the same foundation, while stating that
+					it is a formal model rather than an empirical team study. <a
+						href="https://www.pnas.org/doi/10.1073/pnas.0403723101" rel="noopener noreferrer"
+						target="_blank">Original paper</a>.</li>
+				<li id="ref-12">Kleinberg, J. &amp; Raghavan, M. (2021). <em>Algorithmic Monoculture and Social
+						Welfare</em>. PNAS, 118(22). Shows that multiple decision makers converging on one algorithm can reduce
+					collective decision quality even when the algorithm is more accurate for each party. This article uses
+					that mechanism analogically and states that the original research concerns applicant screening, not AI
+					agents. <a href="https://www.pnas.org/doi/10.1073/pnas.2018340118" rel="noopener noreferrer"
+						target="_blank">PNAS version</a>, <a href="https://arxiv.org/abs/2101.05853"
+						rel="noopener noreferrer" target="_blank">arXiv version</a>.</li>
+				<li id="ref-13">Elish, M. C. (2019). <em>Moral Crumple Zones: Cautionary Tales in Human-Robot
+						Interaction</em>. Engaging Science, Technology, and Society, 5, 40–60. The source of the moral crumple
+					zone concept: responsibility is concentrated on the person nearest an automated system, often the person
+					with the least control. This article uses it to challenge its own conclusion about accountability. <a
+						href="https://estsjournal.org/index.php/ests/article/view/260" rel="noopener noreferrer"
+						target="_blank">Read the article</a>.</li>
+			</ol>
+		</section>
+	</article>
+
+	<script src="../../../pages-scripts.js"></script>
+</body>
+
+</html>

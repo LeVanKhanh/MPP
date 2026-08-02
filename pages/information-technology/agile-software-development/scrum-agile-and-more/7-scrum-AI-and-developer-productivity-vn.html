@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<title>AI, Scrum Và Tương Lai Của Phát Triển Sản Phẩm - My Personal Planet</title>
+	<link rel="stylesheet" href="../../../pages-styles.css">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta
+		content="AI làm rẻ đi năng lực thực thi và đẩy điểm khan hiếm sang năng lực xác định ý định, đánh giá kết quả và chịu trách nhiệm. Bài này xem xét điều đó thay đổi gì trong Scrum artifacts, Scrum events, quan hệ giữa Agile Manifesto và Spec-Driven Development, ba accountability, và câu hỏi liệu một người cùng nhiều AI Agent có thay được một Scrum Team."
+		name="description">
+	<style>
+		:root {
+			--diagram-bg-start: #f7fbff;
+			--diagram-bg-end: #f9f7ff;
+			--diagram-border: #d7e6f6;
+			--diagram-node-bg: #ffffff;
+			--diagram-node-stroke: #4b5f77;
+			--diagram-accent-bg: #e7f0ff;
+			--diagram-accent-stroke: #245ca6;
+			--diagram-arrow: #58779c;
+			--diagram-text: #1f2a37;
+			--diagram-muted: #5a6b80;
+		}
+
+		body.dark-theme {
+			--diagram-bg-start: #16202e;
+			--diagram-bg-end: #121a26;
+			--diagram-border: #2c3d51;
+			--diagram-node-bg: #1a2534;
+			--diagram-node-stroke: #90a4be;
+			--diagram-accent-bg: #213956;
+			--diagram-accent-stroke: #8fc0ff;
+			--diagram-arrow: #9bb4cf;
+			--diagram-text: #e7edf5;
+			--diagram-muted: #aebdd0;
+		}
+
+		.scrum-visual {
+			margin: 1.5rem 0 2rem;
+			padding: 1.2rem;
+			border: 1px solid var(--diagram-border);
+			border-radius: 14px;
+			overflow-x: auto;
+			background:
+				radial-gradient(circle at 100% -10%, rgba(81, 140, 255, 0.12), transparent 48%),
+				radial-gradient(circle at 0% 110%, rgba(49, 189, 149, 0.1), transparent 44%),
+				linear-gradient(160deg, var(--diagram-bg-start), var(--diagram-bg-end));
+			box-shadow: 0 10px 24px rgba(18, 33, 53, 0.08);
+		}
+
+		.scrum-visual svg {
+			min-width: 780px;
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		.scrum-visual .node {
+			fill: var(--diagram-node-bg);
+			stroke: var(--diagram-node-stroke);
+			stroke-width: 1.55;
+		}
+
+		.scrum-visual .accent-node {
+			fill: var(--diagram-accent-bg);
+			stroke: var(--diagram-accent-stroke);
+			stroke-width: 1.8;
+		}
+
+		.scrum-visual .arrow,
+		.scrum-visual path[marker-end] {
+			fill: none;
+			stroke: var(--diagram-arrow);
+			stroke-width: 1.8;
+		}
+
+		.scrum-visual text {
+			fill: var(--diagram-text);
+			font-family: inherit;
+			font-size: 14px;
+			font-weight: 600;
+			letter-spacing: 0.1px;
+			text-anchor: middle;
+			dominant-baseline: middle;
+		}
+
+		.scrum-visual .small {
+			font-size: 12px;
+			font-weight: 500;
+			fill: var(--diagram-muted);
+		}
+
+		.scrum-visual figcaption {
+			margin-top: 0.9rem;
+			font-style: italic;
+			color: var(--diagram-muted);
+			line-height: 1.65;
+		}
+
+		@media (max-width: 768px) {
+			.scrum-visual {
+				padding: 0.9rem;
+				border-radius: 12px;
+			}
+
+			.scrum-visual svg {
+				min-width: 760px;
+			}
+
+			.scrum-visual text {
+				font-size: 13px;
+			}
+
+			.scrum-visual .small {
+				font-size: 11px;
+			}
+		}
+
+		sup a {
+			font-size: .8em;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<article class="content-article">
+		<header class="article-header">
+			<h1 class="page-title">AI, Scrum Và Tương Lai Của Phát Triển Sản Phẩm</h1>
+			<p class="page-subtitle">AI làm rẻ năng lực thực thi và đẩy điểm khan hiếm sang năng lực xác định ý định,
+				đánh giá kết quả và chịu trách nhiệm. Điều đó có thể thu nhỏ Scrum Team, nhưng chưa đương nhiên xoá bỏ
+				nó.</p>
+			<p class="page-meta">Đăng ngày: <time datetime="2026-08-02">2 Tháng 8, 2026</time></p>
+		</header>
+
+		<section class="content-section">
+			<p>Từ tháng 2 đến tháng 6 năm 2025, một nhóm nghiên cứu ở METR đo thời gian làm việc thật của 16 lập trình
+				viên giàu kinh nghiệm, trên chính những repository mà trung bình họ đã làm năm năm. 246 issue. Mỗi issue
+				được bốc ngẫu nhiên vào một trong hai nhóm: được phép dùng công cụ AI, hoặc không.</p>
+			<p>Trước khi bắt đầu, những người tham gia dự đoán AI sẽ giúp họ rút ngắn 24% thời gian. Sau khi làm xong,
+				họ vẫn tin AI đã giúp họ nhanh hơn khoảng 20%. Số liệu đo được đi ngược lại: khi được phép dùng AI, họ
+				mất thêm 19% thời gian.<sup><a href="#ref-1">[1]</a></sup></p>
+			<p>Con số 19% đó vẫn đúng, trong đúng phạm vi của nó: nhóm người đó, loại công việc đó, bộ công cụ của đầu
+				năm 2025. Thứ nó không làm được là đại diện cho năm 2026, và METR là bên nói rõ điều đó trước. Tháng 2
+				năm 2026 họ thông báo đổi thiết kế thí nghiệm, vì khi AI đã thành công cụ mặc định thì người ta không
+				còn muốn tham gia một nghiên cứu bắt mình làm việc không có AI, và 30 tới 50% người tham gia tránh nộp
+				vào thí nghiệm đúng những task mà họ tin AI giúp nhiều nhất. Lần chạy sau vì vậy không cho một ước
+				lượng hiện hành đáng tin, khoảng tin cậy vắt qua số không.<sup><a href="#ref-2">[2]</a></sup></p>
+			<p>Nói cách khác, kết quả cũ không bị chứng minh là sai. Nó chỉ hết hạn. Và thứ đáng giữ lại từ thí nghiệm
+				đó là một khoảng cách, chứ không phải con số.</p>
+			<p>Những người trong cuộc, giỏi nghề, làm trên code của chính mình, vẫn ước lượng sai cả chiều tác động của
+				công cụ mà họ vừa dùng suốt bốn tháng. Nếu năng lực tự đánh giá lệch tới mức đó ngay ở tầng dễ đo nhất,
+				tức là thời gian đóng một issue, thì câu hỏi quen thuộc "AI có làm team nhanh hơn không" là câu hỏi đặt
+				sai chỗ.</p>
+			<p class="intro-text">Luận đề của bài này: AI không đơn thuần làm Scrum Team nhanh hơn. Nó chuyển điểm khan
+				hiếm từ năng lực thực thi sang năng lực xác định ý định, cung cấp context, đánh giá kết quả, ra quyết
+				định và chịu trách nhiệm. Vì vậy AI có thể thu nhỏ Scrum Team và đổi cách Scrum vận hành, nhưng chưa
+				đương nhiên xoá bỏ nhu cầu về Scrum Team.</p>
+			<p>Luận đề đó có một phiên bản an toàn và một phiên bản đáng tranh cãi. Phiên bản an toàn là "AI không thay
+				được con người", nói xong thì không ai phản đối và cũng không ai học được gì. Phiên bản đáng tranh cãi
+				nằm ở chỗ khác: năng lực đánh giá mà luận đề này dựa vào không tự có. Nó vốn là sản phẩm phụ của việc
+				đích thân làm ra thứ mình đang đánh giá. Nếu AI lấy đi phần làm, nó cũng bào mòn dần phần đánh giá. Phần
+				cuối bài quay lại đúng chỗ này, và đó là chỗ lập luận ở đây có thể sai.</p>
+			<p>Bài viết cho bối cảnh phát triển sản phẩm trong tổ chức: có stakeholder ngoài team, có người trả tiền, và
+				có người gánh hậu quả khi sản phẩm sai. Với một dự án cá nhân mà tác giả vừa là người dùng vừa là người
+				chịu rủi ro, phần lớn lập luận ở đây không áp dụng, và điều đó không phải là ngoại lệ nhỏ. Nó là một
+				trong hai biên của bài.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Bốn tầng đang bị gộp làm một</h2>
+			<p class="intro-text">Ba câu hỏi thường gặp nhất khi bàn về AI và Scrum là "AI thay được Scrum Master
+				không", "AI thay được Product Owner không", "AI thay được Developers không". Cả ba đều không trả lời
+				được, vì chúng gộp bốn thứ khác nhau vào một chữ "thay".</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Tầng</th>
+						<th>Câu hỏi thật của nó</th>
+						<th>AI đang ở đâu, tính tới tháng 8 năm 2026</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><strong>Capability</strong></td>
+						<td>Công việc này có làm được không, và làm bởi cái gì?</td>
+						<td>Tiến rất nhanh, và nhanh hơn hẳn ba tầng còn lại</td>
+					</tr>
+					<tr>
+						<td><strong>Accountability</strong></td>
+						<td>Ai chịu trách nhiệm về kết quả, kể cả khi kết quả sai?</td>
+						<td>Trách nhiệm cuối cùng chưa dịch chuyển. Một mô hình không gánh được hậu quả</td>
+					</tr>
+					<tr>
+						<td><strong>Authority</strong></td>
+						<td>Ai có quyền chốt, và quyền đó ai trao?</td>
+						<td>Quyền vận hành thì uỷ được, và đang được uỷ thật: tự động triển khai, tự động rollback,
+							duyệt giao dịch trong hạn mức, định giá theo thuật toán. Nguồn của quyền thì chưa dịch
+							chuyển, nó vẫn xuất phát từ tổ chức</td>
+					</tr>
+					<tr>
+						<td><strong>Legitimacy</strong></td>
+						<td>Vì sao stakeholder chấp nhận sống với quyết định đó?</td>
+						<td>Một quy trình tự động có thể được chấp nhận cho dùng, nhưng nó không tự tạo ra tính chính
+							danh cho mục tiêu và cho các đánh đổi đằng sau. Đây là tầng ít được bàn nhất</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Bốn tầng này không xếp chồng theo kiểu tầng trên khó hơn tầng dưới. Chúng trả lời bốn câu hỏi khác nhau,
+				và một hệ thống có thể mạnh ở tầng này mà trống rỗng ở tầng kia.</p>
+			<p>Chỗ nối với Scrum nằm ở một câu trong Scrum Guide 2020: <em>"Scrum defines three specific accountabilities
+					within the Scrum Team: the Developers, the Product Owner, and the Scrum
+					Master."</em><sup><a href="#ref-3">[3]</a></sup> Tài liệu chuẩn không định nghĩa ba thứ đó bằng danh
+				sách tác vụ. Nó định nghĩa chúng bằng thứ mà người giữ vị trí đó chịu trách nhiệm.</p>
+			<p>Product Owner chịu trách nhiệm tối đa hoá giá trị sản phẩm sinh ra từ công việc của Scrum Team. Scrum
+				Master chịu trách nhiệm thiết lập Scrum và chịu trách nhiệm về effectiveness của Scrum Team. Còn
+				Developers thì <em>always accountable for</em> bốn nội dung: tạo Sprint Backlog, bảo đảm chất lượng
+				bằng Definition of Done, điều chỉnh kế hoạch mỗi ngày hướng tới Sprint Goal, và giữ nhau accountable
+				như những người chuyên nghiệp.<sup><a href="#ref-3">[3]</a></sup></p>
+			<p>Cần giữ đúng chữ ở đây, vì bài này sống bằng chính sự phân biệt đó. Trong Scrum Guide, <em>commitment</em>
+				là thuật ngữ dành cho artifact: Product Goal gắn với Product Backlog, Sprint Goal gắn với Sprint
+				Backlog, Definition of Done gắn với Increment. Bốn nội dung của Developers không phải bốn commitment.
+				Chúng là bốn thứ Developers luôn chịu trách nhiệm.<sup><a href="#ref-3">[3]</a></sup></p>
+			<p>Và đọc kỹ bốn nội dung đó thì không nội dung nào được mô tả bằng hành vi sinh code. Lập kế hoạch, cam kết
+				chất lượng, thích ứng, và giữ nhau chịu trách nhiệm. Đây là lý do một câu như "AI viết được code nên AI
+				thay được Developers" hụt gần hết định nghĩa.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Chỗ yếu của chính cách phân biệt này</h3>
+				<p>Cách tách bốn tầng ở trên có một rủi ro phải nói ngay, trước khi nó được dùng suốt phần còn lại của
+					bài.</p>
+				<p>Nó rất dễ biến thành một pháo đài khái niệm. Mỗi lần AI làm thêm được một việc, người bênh vực con
+					người lại lùi về sau bức tường "nhưng đó là capability, còn accountability thì khác". Cứ như vậy thì
+					luận điểm không bao giờ sai được. Một luận điểm không bao giờ sai được cũng là một luận điểm không
+					nói được gì.</p>
+				<p>Nên bài này tự đặt điều kiện để mình sai. Lập luận ở đây sụp nếu xảy ra một trong hai điều: hoặc chi
+					phí để một người kiểm chứng đáng tin một sản phẩm mà mình không tự làm giảm xuống gần bằng không,
+					hoặc tổ chức và pháp luật bắt đầu chấp nhận một hệ thống tự động là chủ thể chịu trách nhiệm thật,
+					chứ không phải công cụ của một người chịu trách nhiệm. Cả hai điều kiện đều quan sát được, và cả hai
+					đều chưa xảy ra tính tới lúc bài này được viết.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">AI đổi chỗ điểm khan hiếm, không xoá nó</h2>
+			<p class="intro-text">Trước khi có AI Agent, giới hạn của phần lớn team nằm ở khả năng thực thi: phân tích,
+				thiết kế, viết code, viết test, tìm lỗi, viết tài liệu. Khi chi phí của những hoạt động đó giảm mạnh,
+				câu hỏi "team làm được nhiều hơn bao nhiêu" trả lời được rất nhanh và không dẫn tới đâu. Câu hỏi có ích
+				hơn: cái gì không giảm theo?</p>
+			<p>Danh sách những thứ không giảm theo khá ngắn và khá cứng đầu:</p>
+			<ul class="outline-list">
+				<li>Mức độ rõ ràng của vấn đề đang giải.</li>
+				<li>Chất lượng của Product Goal.</li>
+				<li>Tốc độ phản hồi thật từ người dùng, thứ bị chặn bởi lịch sinh hoạt của họ chứ không phải bởi năng
+					lực của team.</li>
+				<li>Xung đột lợi ích giữa các nhóm stakeholder. Cái này không phải một bài toán thiếu năng lực tính
+					toán, nó là một bài toán có nhiều đáp án đúng theo những tiêu chí khác nhau.</li>
+				<li>Hiểu biết ngầm về tổ chức, về domain, về những thứ chưa ai viết ra.</li>
+				<li>Khả năng đánh giá xem một giải pháp có thật sự tốt hay không.</li>
+			</ul>
+			<p>Fred Brooks đặt tên cho sự phân đôi này từ năm 1986, trong bài viết về hai loại khó khăn trong phần mềm:
+				loại thuộc về bản chất của bài toán, và loại chỉ thuộc về cách chúng ta diễn đạt bài toán đó thành máy
+				hiểu được. Ông lập luận rằng dù xoá sạch loại thứ hai, loại thứ nhất không suy suyển, vì độ phức tạp của
+				thiết kế là thuộc tính bản chất chứ không phải tai nạn.<sup><a href="#ref-4">[4]</a></sup></p>
+			<p>Cần công bằng với phe ngược lại ở đây. Brooks viết câu đó khi chưa hình dung được một công cụ có thể dịch
+				thẳng ý định bằng ngôn ngữ tự nhiên thành hệ thống chạy được, và luận điểm nổi tiếng nhất của ông là một
+				dự đoán định lượng về mười năm, đã bốn mươi năm trôi qua kể từ đó. Nói "Brooks đã trả lời rồi" là dùng
+				một câu trích để khỏi phải suy nghĩ. Điều bài này lấy từ Brooks chỉ là một cách chia, không phải một
+				phán quyết.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Số liệu ở quy mô ngành nói gì</h3>
+				<p>Báo cáo DORA 2025 khảo sát gần 5.000 người làm công nghệ, công bố tháng 9 năm 2025. 90% người trả lời
+					nói đang dùng AI trong công việc, hơn 80% tin nó làm họ làm việc hiệu quả hơn, và 30% nói họ tin
+					tưởng rất ít hoặc không tin tưởng code do AI sinh ra.<sup><a href="#ref-5">[5]</a></sup></p>
+				<p>Phần đáng chú ý hơn là hai quan hệ ngược chiều nhau. Mức độ dùng AI có quan hệ thuận với throughput
+					của việc giao hàng, và có quan hệ nghịch với độ ổn định của việc giao hàng. Báo cáo giải thích rằng
+					thời gian tiết kiệm được ở khâu tạo code phần lớn chảy sang khâu kiểm tra và thẩm định, còn khi
+					lượng thay đổi tăng lên mà hệ thống kiểm soát chưa theo kịp thì hệ quả là bất
+					ổn.<sup><a href="#ref-5">[5]</a></sup></p>
+				<blockquote>
+					<p>AI không sửa một team. Nó khuếch đại thứ team đó đang có sẵn.</p>
+				</blockquote>
+				<p>Đây là một khảo sát tương quan, không phải một thí nghiệm, nên nó không chứng minh được chiều nhân
+					quả. Nhưng nó đủ để đặt lại câu hỏi. Nếu tốc độ tạo output tăng còn độ ổn định giảm, thì điểm khan
+					hiếm đã dịch từ chỗ tạo ra thứ gì đó sang chỗ biết thứ vừa tạo ra có đúng không.</p>
+			</div>
+			<blockquote>
+				<p>Câu hỏi đổi từ "ai có thể xây được giải pháp này" thành "ai biết nên xây cái gì, vì sao, dựa trên
+					bằng chứng nào, và ai chịu trách nhiệm nếu sai".</p>
+			</blockquote>
+			<p>Scrum vốn được thiết kế cho những bài toán phức tạp, nơi câu trả lời không có sẵn và phải học ra. Khi
+				việc tạo giải pháp trở nên rẻ, phần chọn đúng vấn đề và kiểm chứng giả định không rẻ theo, nên nó chiếm
+				tỉ trọng ngày càng lớn trong tổng chi phí.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Ba artifact chịu tải khác đi</h2>
+			<p class="intro-text">Scrum có ba artifact và một cam kết gắn với mỗi cái. Khi tốc độ tạo output tăng, cả ba
+				không đổi định nghĩa, nhưng đổi chỗ chịu lực.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Product Backlog: rủi ro biến thành hàng đợi đặc tả</h3>
+				<p>Sức hấp dẫn của việc có một Agent luôn sẵn sàng thực thi là nó khiến người ta muốn nạp cho nó thật
+					nhiều việc đã được đặc tả sẵn. Product Backlog khi đó trượt dần thành một hàng đợi các bản đặc tả
+					chi tiết, tức là một project plan cố định được đổi tên.</p>
+				<p>AI làm tốt nhiều việc quanh Product Backlog: tổng hợp feedback rải rác, phân tích dữ liệu sử dụng,
+					phát hiện chỗ hai yêu cầu mâu thuẫn nhau, soạn nháp Product Backlog Item, làm rõ acceptance
+					criteria, dò ra quan hệ giữa một yêu cầu mới và phần code đang có.</p>
+				<p>Nhưng thứ Product Backlog cần giữ lại thì không nằm trong danh sách đó. Nó cần tiếp tục thể hiện vấn
+					đề đang giải, mục tiêu, giả định chưa được kiểm chứng, giá trị kỳ vọng, và cả những điều team biết
+					là mình chưa biết. Một backlog mà mọi item đều đã đặc tả xong từ đầu là một backlog đã bỏ mất phần
+					ghi nhận sự chưa biết, và sự chưa biết là lý do Scrum tồn tại.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Sprint Backlog: từ danh sách task sang execution context</h3>
+				<p>Sprint Backlog trong Scrum Guide gồm Sprint Goal, phần Product Backlog được chọn cho Sprint, và kế
+					hoạch để giao Increment. Khi phần lớn việc thực thi do Agent làm, hình dạng thực tế của "kế hoạch"
+					đó đổi: nó ít giống một danh sách task chia nhỏ bằng tay, và giống hơn một tập context đủ để cả
+					người lẫn Agent cùng làm việc được.</p>
+				<p>Tập context đó thường gồm Sprint Goal, đặc tả của phần đang làm, các ràng buộc, bối cảnh kiến trúc,
+					acceptance criteria, chiến lược test, kế hoạch mà Agent đang chạy, và trạng thái thực thi hiện tại.
+				</p>
+				<p>Điều không đổi là ai sở hữu nó. Agent có thể liên tục sửa kế hoạch triển khai của chính nó, nhưng
+					việc "điều chỉnh kế hoạch mỗi ngày hướng tới Sprint Goal" vẫn là thứ Developers chịu trách
+					nhiệm.<sup><a href="#ref-3">[3]</a></sup> Một kế hoạch tự sửa mà không ai kiểm tra xem nó còn
+					hướng về Sprint Goal hay không thì đã thôi là Sprint Backlog, dù vẫn nằm đúng chỗ cũ trong công cụ.
+				</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Definition of Done: từ danh sách chất lượng sang hệ thống điều tốc</h3>
+				<p>Definition of Done là chỗ đổi vai rõ nhất.</p>
+				<p>Trước đây nó chủ yếu là một cam kết chung về chất lượng, được kiểm phần lớn bằng mắt người và bằng
+					thói quen của team. Khi tốc độ sinh code vượt quá tốc độ người đọc code, nó thành một bộ điều tốc.
+				</p>
+				<p>Nó không đứng một mình. Giữa tốc độ và hậu quả còn có quyền quyết định release, guardrail ở tầng
+					kiến trúc và platform, observability, progressive delivery, feature flag và khả năng rollback, cùng
+					toàn bộ phần governance về bảo mật và tuân thủ. Chính DORA cũng nói tới cả một cụm khi liệt kê thứ
+					phải theo kịp lượng thay đổi: kiểm thử tự động mạnh, quản lý phiên bản chín, vòng phản hồi
+					nhanh.<sup><a href="#ref-5">[5]</a></sup> Chỗ đặc biệt của Definition of Done là nó nằm ở trung tâm
+					cụm đó và là thứ duy nhất trong cụm mà Scrum bắt buộc phải có.</p>
+				<p>Phần lớn tiêu chuẩn trong đó có thể và nên chuyển thành kiểm tra tự động: unit test và integration
+					test, quét bảo mật, ràng buộc kiến trúc, quy ước code, truy vết giữa đặc tả và code, yêu cầu tài
+					liệu, kiểm tra triển khai. Cái nào còn phải đọc bằng mắt thì phải được chọn có chủ ý, vì đó chính là
+					phần đắt.</p>
+				<p>Có một lý do cũ hơn AI để làm chuyện này. Năm 1983, Lisanne Bainbridge mô tả một nghịch lý của tự
+					động hoá: khi máy đảm nhận gần hết công việc, phần còn lại của con người không nhẹ đi mà đổi bản
+					chất, thành việc giám sát, thứ mà con người làm rất kém trong thời gian dài. Tệ hơn, vì không còn
+					trực tiếp làm nữa, người vận hành mất dần chính kỹ năng cần cho những lần can thiệp hiếm hoi nhưng
+					quyết định. Kết luận của bà đi ngược trực giác: hệ thống càng tự động thì người vận hành càng cần
+					được huấn luyện nhiều hơn, không phải ít đi.<sup><a href="#ref-6">[6]</a></sup></p>
+				<p>Bài viết đó nói về nhà máy và buồng lái, không nói về phần mềm, nên đây là một phép loại suy chứ chưa
+					phải bằng chứng cho trường hợp này. Chỗ phép loại suy hỏng cũng đáng nói: người review code không bị
+					động như người ngồi canh một bảng đồng hồ, họ vẫn phải chủ động đọc và đặt câu hỏi. Nhưng số liệu
+					DORA về việc thời gian tiết kiệm chảy sang khâu thẩm định cho thấy phần giám sát đang phình ra thật,
+					và đó đúng là thứ Bainbridge cảnh báo.<sup><a href="#ref-5">[5]</a></sup></p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Các event đổi lý do tồn tại</h2>
+			<p class="intro-text">Bốn Scrum event nằm trong Sprint không đổi mục đích khi có AI Agent. Thứ đổi là loại
+				thông tin được đưa ra kiểm tra, và tỉ trọng thời gian giữa việc lập kế hoạch với việc thẩm định.</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Event</th>
+						<th>Trọng tâm dịch về đâu khi phần thực thi do Agent làm</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Sprint Planning</td>
+						<td>Ít thời gian chia nhỏ task bằng tay hơn, nhiều thời gian hơn cho mục tiêu, giả định cần kiểm
+							chứng, ràng buộc, và cách biết được Sprint này đã học ra điều gì</td>
+					</tr>
+					<tr>
+						<td>Daily Scrum</td>
+						<td>Vẫn là 15 phút của Developers để điều chỉnh hướng tới Sprint Goal, nhưng thứ đem ra kiểm tra
+							thêm phần output của Agent, tình trạng tích hợp, và chỗ kết quả thực tế đang lệch khỏi ý
+							định</td>
+					</tr>
+					<tr>
+						<td>Sprint Review</td>
+						<td>Chịu tải nặng hơn, vì lượng thứ cần đem ra đối chiếu với thực tế tăng nhanh hơn lượng phản
+							hồi thực tế thu về được</td>
+					</tr>
+					<tr>
+						<td>Sprint Retrospective</td>
+						<td>Đối tượng cải tiến mở rộng ra cả hệ thống người và AI: context đang cấp cho Agent, cách viết
+							đặc tả, chỗ chất lượng bị lọt, và điểm nghẽn mới sinh ra ở khâu review</td>
+					</tr>
+					<tr>
+						<td>Sprint</td>
+						<td>Lý do tồn tại dịch dần từ việc gom công việc thành lô sang việc giữ một nhịp cố định để kiểm
+							tra và thích ứng</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Dòng cuối của bảng là dòng đáng bàn nhất, vì nó là chỗ người ta hay kết luận rằng Sprint đã hết thời.</p>
+			<blockquote>
+				<p>AI nén được thời gian implementation. Nó không nén được tương ứng thời gian quan sát người dùng thật,
+					thời gian thương lượng với stakeholder, và thời gian để một tổ chức tin một kết quả.</p>
+			</blockquote>
+			<p>Nếu Sprint chỉ là một cái hộp để gom việc thì đúng là nó mất dần lý do tồn tại khi việc chảy ra liên tục.
+				Nhưng nếu Sprint là một nhịp để dừng lại và hỏi "chúng ta vừa học được gì", thì thứ quyết định độ dài
+				của nó không phải tốc độ code, mà là tốc độ mà thực tế trả lời lại. Tốc độ đó do người dùng và thị
+				trường quy định, và họ không quan tâm team đang dùng công cụ gì.</p>
+			<p>Bài 6 trong series này đã chốt một điều liên quan: event là cơ chế của empiricism, không phải một lịch
+				họp bắt buộc. Khi purpose mất đi thì ceremony vẫn chạy đúng lịch và team vẫn không học được gì. Với AI
+				Agent, rủi ro đó không giảm, nó chỉ chạy nhanh hơn.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Agile Manifesto có mâu thuẫn với Spec-Driven Development không</h2>
+			<p class="intro-text">Câu "working software over comprehensive documentation" đang được cả hai phe dùng. Phe
+				thứ nhất bảo AI đưa chúng ta quay về thời documentation-driven development. Phe thứ hai bảo Manifesto
+				chưa bao giờ chống tài liệu. Cả hai đều đọc thiếu.</p>
+			<p>Bản Manifesto kết thúc bằng đúng một câu làm rõ cách đọc bốn cặp giá trị: <em>"That is, while there is
+					value in the items on the right, we value the items on the left
+					more."</em><sup><a href="#ref-7">[7]</a></sup> Vế phải có giá trị. Nó chỉ không thắng vế trái khi hai
+				bên xung đột.</p>
+			<p>Bối cảnh mà Agile phản ứng lại vào năm 2001 khá cụ thể: những bộ tài liệu lớn viết trước, dùng như hợp
+				đồng bàn giao giữa các phòng ban, dựa trên giả định rằng có thể dự đoán đủ xa, chỉ được kiểm chứng khi
+				implementation gần xong, và rất khó sửa sau khi đã được phê duyệt.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Spec-Driven Development nói gì về chính nó</h3>
+				<p>Đáng đọc trực tiếp tài liệu của phía SDD thay vì đoán. GitHub Spec Kit mô tả cách tiếp cận của họ
+					bằng những câu rất thẳng: <em>"Spec-Driven Development (SDD) inverts this power structure.
+						Specifications don't serve code, code serves specifications."</em> Và tiếp:
+					<em>"The specification becomes the primary artifact. Code becomes its expression in a particular
+						language and framework."</em><sup><a href="#ref-8">[8]</a></sup>
+				</p>
+				<p>Đây không phải một cách đọc suy diễn từ bên ngoài. Đó là tuyên bố của chính tài liệu, và nó tạo ra
+					một sức căng trực tiếp với cặp giá trị thứ hai của Manifesto. Ai muốn nói "SDD không hề mâu thuẫn
+					với Agile" thì phải đối mặt với câu đó trước.</p>
+				<p>Nhưng sức căng chưa phải mâu thuẫn, và chỗ này đáng chậm lại một nhịp, vì hai quan hệ rất dễ bị gộp
+					làm một. "Artifact nào sinh ra artifact nào" là một quan hệ. "Khi hai artifact nói ngược nhau thì
+					tin cái nào" là một quan hệ khác. Spec Kit tuyên bố về quan hệ thứ nhất. Manifesto nói về quan hệ
+					thứ hai. Một bản đặc tả hoàn toàn có thể sinh ra code mà vẫn phải chịu thua bằng chứng từ chính
+					code đó khi chạy.</p>
+				<p>Và nếu đọc hết tài liệu thay vì đọc mỗi câu tuyên ngôn, phía SDD lại đứng gần Agile hơn là thoạt
+					nhìn. Họ viết rằng việc sinh code bắt đầu ngay khi đặc tả và implementation plan
+					<em>"stable enough, but they do not have to be 'complete'"</em>, rằng
+					<em>"early generations might be exploratory, testing whether the specification makes sense in
+						practice"</em>, và rằng sự cố cùng số liệu từ production
+					<em>"don't just trigger hotfixes, they update specifications for the next
+						regeneration"</em>.<sup><a href="#ref-8">[8]</a></sup></p>
+				<p>Câu cuối mới là câu đáng chú ý. Nó mô tả đúng chiều mà Agile đòi hỏi: thực tế sửa đặc tả, chứ không
+					phải đặc tả bác bỏ thực tế. Nếu SDD giữ được chiều đó thì tuyên bố "code phục vụ specification" chỉ
+					nói về thứ tự sinh ra, và không chạm tới cặp giá trị thứ hai.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Specification bây giờ không còn chỉ là tài liệu</h3>
+				<p>Còn một lý do nữa để không đọc "specification" của SDD như "documentation" mà Manifesto nói tới, và
+					lý do này thuộc về công việc mà bản đặc tả phải làm.</p>
+				<p>Một bản đặc tả trong ngữ cảnh AI đồng thời làm nhiều việc: nó là phương tiện để người trao đổi với
+					nhau, là context nạp cho Agent, là đầu vào để lập kế hoạch triển khai, là nguồn sinh test case, là
+					tiêu chuẩn để đối chiếu kết quả, và là dấu vết giải thích vì sao hệ thống được xây như vậy.</p>
+				<p>Khoảng giữa của danh sách đó không phải phát minh của AI. Executable specification, formal methods,
+					sinh code từ mô hình và acceptance test đóng vai đặc tả đều có trước Manifesto; Brooks đã dành hẳn
+					một mục cho <em>"automatic" programming</em> từ năm 1986 và kết luận rằng nó chỉ chạy được với
+					những bài toán mô tả gọn bằng ít tham số.<sup><a href="#ref-4">[4]</a></sup> Thứ AI đổi là chi phí,
+					mức phổ dụng, và việc lần đầu tiên đầu vào có thể là ngôn ngữ tự nhiên thay vì một hình thức hoá.
+				</p>
+				<blockquote>
+					<p>AI không nhất thiết kéo chúng ta về documentation-driven development. Nó làm mờ ranh giới giữa
+						documentation và working software, vì đặc tả bây giờ tham gia trực tiếp vào việc tạo ra và kiểm
+						chứng phần mềm.</p>
+				</blockquote>
+				<p>Với cách đọc đó, SDD hợp với Agile khi bản đặc tả được viết cho một phạm vi đủ nhỏ, sửa được, được
+					kiểm chứng sớm bằng phần mềm chạy được, là sản phẩm của việc làm chung, và không được coi là chân
+					lý.</p>
+				<p>Và nó thành waterfall chạy bằng AI khi toàn bộ sản phẩm được đặc tả từ đầu, đặc tả bị đóng băng,
+					Agent chỉ thi hành, mọi thay đổi bị coi là sai lệch, và stakeholder chỉ nhìn thấy kết quả cuối cùng.
+				</p>
+				<p>Hai danh sách trên nhìn thì rõ ràng, nhưng chúng không phải là bài kiểm tra dùng được, vì team nào
+					cũng tin mình thuộc danh sách thứ nhất. Bài kiểm tra thật chỉ hiện ra vào đúng một thời điểm.</p>
+				<blockquote>
+					<p>Vấn đề chưa bao giờ là viết bao nhiêu tài liệu. Vấn đề là khi đặc tả và bằng chứng từ phần mềm
+						đang chạy nói ngược nhau, team sửa cái nào.</p>
+				</blockquote>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Scrum biến tốc độ thành learning ở chỗ nào</h2>
+			<p class="intro-text">Vòng lặp mà một tổ chức phát triển sản phẩm thật sự chạy dài hơn đoạn từ ý tưởng tới
+				phần mềm. Nó chỉ khép lại khi có một quyết định được đưa ra dựa trên bằng chứng thu về.</p>
+			<figure class="scrum-visual">
+				<svg aria-label="Vòng lặp năm bước: giả định về giá trị, specification, working Increment, bằng chứng thực tế, quyết định thích ứng"
+					role="img" viewbox="0 0 1120 250">
+					<defs>
+						<marker id="arrow-loop" markerheight="10" markerunits="strokeWidth" markerwidth="10"
+							orient="auto" refx="9" refy="3">
+							<path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+						</marker>
+					</defs>
+					<rect class="node" height="64" rx="10" width="185" x="20" y="50"></rect>
+					<text x="112" y="82">Giả định về giá trị</text>
+					<rect class="accent-node" height="64" rx="10" width="185" x="245" y="50"></rect>
+					<text x="337" y="82">Specification</text>
+					<rect class="accent-node" height="64" rx="10" width="185" x="470" y="50"></rect>
+					<text x="562" y="82">Working Increment</text>
+					<rect class="node" height="64" rx="10" width="185" x="695" y="50"></rect>
+					<text x="787" y="82">Bằng chứng thực tế</text>
+					<rect class="node" height="64" rx="10" width="185" x="920" y="50"></rect>
+					<text x="1012" y="82">Quyết định thích ứng</text>
+					<path class="arrow" d="M205 82 H245" marker-end="url(#arrow-loop)"></path>
+					<path class="arrow" d="M430 82 H470" marker-end="url(#arrow-loop)"></path>
+					<path class="arrow" d="M655 82 H695" marker-end="url(#arrow-loop)"></path>
+					<path class="arrow" d="M880 82 H920" marker-end="url(#arrow-loop)"></path>
+					<path class="arrow" d="M1012 114 V190 H112 V114" marker-end="url(#arrow-loop)"></path>
+					<text class="small" x="450" y="30">AI nén mạnh đúng đoạn này</text>
+					<text class="small" x="562" y="212">Ba đoạn còn lại không ngắn lại theo</text>
+				</svg>
+				<figcaption>
+					<strong>Sơ đồ 1.</strong> AI tăng tốc rõ nhất ở đoạn từ specification tới Increment. Nếu ba đoạn còn
+					lại giữ nguyên độ dài, thứ tăng lên chỉ là lượng output chưa được kiểm chứng.
+				</figcaption>
+			</figure>
+			<p>Đóng góp của Scrum vào vòng lặp này nằm ở ba đoạn ngoài đoạn giữa. Nhưng cần nói cho đúng mức: Scrum
+				tạo ra nhịp và các cơ hội chính thức để ba đoạn đó xảy ra, nó không bảo đảm chúng xảy ra. Product Goal
+				quy định hướng cần học. Sprint Goal giới hạn phạm vi của một lần thử. Increment biến giả định thành
+				thứ đối chiếu được với thực tế. Sprint Review thu bằng chứng về. Sprint Retrospective sửa chính hệ
+				thống người và AI đang tạo ra những thứ đó.</p>
+			<p>Khoảng cách giữa "có cơ hội" và "có thật" là chỗ phần lớn team rơi xuống. Một team có thể chạy đủ bốn
+				event trong Sprint, đúng timebox, và cả Sprint chỉ đối chiếu output với chính đặc tả của mình. Scrum chỉ biến tốc độ
+				thành learning khi Product Goal và Sprint Goal chứa giả định kiểm chứng được, khi Increment được đưa ra
+				trước thực tế chứ không chỉ trước team, và khi Sprint Review mang về bằng chứng đủ tin để đổi được một
+				quyết định.</p>
+			<p>Ba pillar cũng đổi nội dung mà không đổi tên. Transparency bây giờ gồm cả việc thấy được Agent đã sinh ra
+				gì và dựa trên context nào. Inspection gồm cả việc không mặc nhiên tin output của Agent. Adaptation gồm
+				cả việc sửa cách dùng AI, không chỉ sửa sản phẩm.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Bốn khoảng thời gian đáng đo</h3>
+				<p>Câu hỏi "AI giúp code nhanh hơn bao nhiêu phần trăm" đo đúng một đoạn, và là đoạn đã được nén sẵn.
+					Chia vòng đời thành bốn khoảng thì thấy rõ hơn chỗ nào thật sự cải thiện.</p>
+				<table class="content-table">
+					<thead>
+						<tr>
+							<th>Khoảng thời gian</th>
+							<th>Câu hỏi nó trả lời</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Intent tới Spec</td>
+							<td>Mất bao lâu để biến một vấn đề mơ hồ thành một giả định đủ rõ để làm được?</td>
+						</tr>
+						<tr>
+							<td>Spec tới Increment</td>
+							<td>Mất bao lâu để tạo ra một Increment đạt Definition of Done?</td>
+						</tr>
+						<tr>
+							<td>Increment tới Evidence</td>
+							<td>Mất bao lâu để nhận được phản hồi đáng tin từ thực tế?</td>
+						</tr>
+						<tr>
+							<td>Evidence tới Decision</td>
+							<td>Mất bao lâu để điều chỉnh Product Backlog hoặc hướng sản phẩm?</td>
+						</tr>
+					</tbody>
+				</table>
+				<blockquote>
+					<p><strong>Validated Learning Lead Time:</strong> thời gian từ lúc hình thành một giả định đến lúc
+						có đủ bằng chứng để giữ lại, điều chỉnh hoặc bác bỏ nó.</p>
+				</blockquote>
+				<p>Chỉ số này chưa được kiểm chứng ở đâu, nó là một đề xuất của bài viết chứ không phải một thước đo đã
+					có nghiên cứu đứng sau, và nên được đối xử như vậy.</p>
+				<p>Một chỉ số đơn lẻ luôn bị lách, nên nó cần đi kèm các chỉ số bảo vệ: tỉ lệ làm lại, số lỗi lọt ra
+					production, tải review của con người, tỉ lệ thay đổi gây sự cố, độ lệch giữa đặc tả và code thật, nợ
+					kỹ thuật, và khả năng Developers giải thích được thứ đang chạy trong hệ thống của mình. Cái cuối
+					cùng khó đo nhất và cũng là cái mất trước.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Vì sao đo sai đoạn lại nguy hiểm hơn không đo</h3>
+				<p>Tháng 5 năm 2026, METR tách khái niệm "uplift" thành ba thứ khác nhau: mức cải thiện trên những task
+					mà trước đây ta vẫn làm, mức cải thiện trên tập task mà bây giờ ta chọn làm, và mức tăng của giá trị
+					thật sau khi tính cả việc dịch chuyển thời gian giữa các loại công việc. Thứ tự của chúng không
+					giống nhau, và mức đo trên tập task mới là mức cao nhất trong
+					ba.<sup><a href="#ref-9">[9]</a></sup></p>
+				<p>Lý do là một cơ chế thay thế công việc: khi AI làm một số việc rẻ đi rất nhiều, người ta dồn thời
+					gian sang đúng những việc đó, kể cả những việc giá trị thấp mà trước kia không đáng làm, đơn giản vì
+					bây giờ chúng đã đủ rẻ để làm.<sup><a href="#ref-9">[9]</a></sup></p>
+				<p>Dịch sang ngôn ngữ của Scrum thì cơ chế này có một cái tên quen thuộc. Product Backlog bắt đầu đầy
+					lên bằng những item rẻ thay vì những item có giá trị, và nó vẫn trông rất năng suất trên mọi biểu
+					đồ. Đây là dạng lãng phí khó nhìn ra nhất, vì mọi chỉ số đều xanh.</p>
+				<p>Ở phía tự đánh giá thì tình hình cũng không khá hơn. Một khảo sát của METR trên 349 người làm kỹ
+					thuật, thực hiện từ tháng 2 đến tháng 4 năm 2026, ghi nhận mức tự báo cáo trung vị là giá trị công
+					việc tăng 1,4 tới 2 lần và tốc độ tăng 3 lần. Chính nhóm nghiên cứu nói rõ rằng con số tự báo cáo
+					không đương nhiên phản ánh thực tế, dẫn lại kết quả trước đó cho thấy người ta ước lượng vượt tác
+					động thật tới 40 điểm phần trăm, và khi họ soi các trường hợp tự nhận tăng từ 10 lần trở lên thì
+					không tìm thấy dấu vết tương ứng trong sản phẩm công khai của những người
+					đó.<sup><a href="#ref-10">[10]</a></sup></p>
+				<p>Đây là lý do một Sprint Review mang về được phản hồi từ bên ngoài team đắt hơn và cũng đáng hơn mọi
+					bản tự đánh giá về năng suất. Scrum Guide chỉ yêu cầu key stakeholders có mặt, không bắt buộc phải
+					có người dùng cuối.<sup><a href="#ref-3">[3]</a></sup> Nhưng với thứ đang bàn ở đây, khoảng cách
+					giữa hai nhóm đó là khoảng cách giữa một ý kiến và một bằng chứng, nên phần này là khuyến nghị của
+					tôi chứ không phải yêu cầu của Scrum.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Một chuỗi Agent trông như thế nào khi chạy</h3>
+				<p>Hình dạng mà nhiều team đang thử có dạng một chuỗi: một Agent phát hiện lỗi qua test, một Agent khác
+					lần lại triệu chứng để tìm nguyên nhân, một Agent tạo thay đổi, một Agent nữa cập nhật lại đặc tả và
+					tài liệu, rồi con người review, quyết định, và chia sẻ lại kết quả cho những người còn lại.</p>
+				<!-- CẦN XÁC MINH: tác giả nhắc "case Mars" trong nội dung thô. Trong repo, "Mars AI Support Tool" chỉ xuất hiện ở bài 6 như một ví dụ đặt tên meeting, không có mô tả ca thật. Đoạn này đang viết ở dạng mô tả pattern chung, chưa gắn vào một ca cụ thể. Cần tác giả cung cấp chi tiết thật để gắn nguồn. -->
+				<p>Điều đáng chú ý ở chuỗi này không nằm ở việc sửa lỗi nhanh hơn bao nhiêu. Nó nằm ở bốn khoảng cách
+					khác cùng bị rút ngắn: từ triệu chứng tới nguyên nhân, từ nguyên nhân tới giải pháp, từ giải pháp
+					tới bằng chứng rằng giải pháp đúng, và từ tri thức của một người tới tri thức của cả team.</p>
+				<p>Khoảng cách cuối cùng là khoảng cách duy nhất trong bốn cái không phải bài toán kỹ thuật, và cũng là
+					khoảng cách mà chuỗi Agent giúp được ít nhất.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">AI có thay thế ba accountability không</h2>
+			<p class="intro-text">Trả lời riêng cho từng accountability, và tách rõ hai câu hỏi: AI làm được những hoạt
+				động nào, và AI có gánh được phần chịu trách nhiệm hay không.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Scrum Master</h3>
+				<p>Phần công việc của Scrum Master mà AI làm được đã khá rộng: chuẩn bị và tổng hợp event, theo dõi
+					impediment, phân tích flow metrics, dò pattern lặp lại qua nhiều Retrospective, nhắc timebox, gợi ý
+					kỹ thuật facilitation, kiểm tra tính minh bạch của artifact, và cung cấp kiến thức Scrum đúng lúc
+					đúng chỗ.</p>
+				<p>Phần còn lại thì khó hơn nhiều, và nó không khó vì lý do kỹ thuật. Scrum Master chịu trách nhiệm
+					thiết lập Scrum và chịu trách nhiệm về effectiveness của Scrum
+					Team.<sup><a href="#ref-3">[3]</a></sup> Việc đó thường đòi hỏi nhận ra một xung đột chưa ai nói ra,
+					xây dựng lòng tin, coaching mà không áp đặt, thách thức cấu trúc quyền lực đang có, tác động đến
+					management và tổ chức, và biết lúc nào thì không nên làm theo đúng quy trình.</p>
+				<p>Ba việc trong danh sách đó cần một thứ AI chưa có: quan hệ với những người cụ thể, kéo dài qua thời
+					gian, có rủi ro cá nhân khi nói ra điều khó nghe.</p>
+				<blockquote>
+					<p>AI có thể làm biến mất Scrum Master như một chức danh toàn thời gian trong một team đã trưởng
+						thành. Nó chưa làm biến mất Scrum Master accountability.</p>
+				</blockquote>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Product Owner</h3>
+				<p>Ở tầng hoạt động, AI hỗ trợ được gần hết: tổng hợp nhu cầu stakeholder, phân tích dữ liệu sử dụng, đề
+					xuất Product Backlog Item, viết và làm rõ yêu cầu, so sánh phương án, mô phỏng tác động, hỗ trợ sắp
+					thứ tự, theo dõi giả định nào đã có bằng chứng và giả định nào chưa.</p>
+				<p>Giới hạn nằm ở bản chất của việc tối đa hoá giá trị. Nó không phải một bài toán tối ưu có hàm mục
+					tiêu cho sẵn. Nó gồm việc chọn giữa các nhóm stakeholder, chấp nhận rủi ro này và từ chối rủi ro
+					kia, quyết định khi bằng chứng chưa đủ, đánh đổi ngắn hạn với dài hạn, và gánh hậu quả khi chọn sai.
+				</p>
+				<p>Một mô hình có thể đề xuất thứ tự Product Backlog. Nó không có tư cách chính danh để quyết định nhóm
+					khách hàng nào được phục vụ trước và nhóm nào phải chờ thêm một quý. Đây là tầng legitimacy trong
+					bảng ở đầu bài, và tầng đó không nằm trong năng lực kỹ thuật, nó nằm trong việc tổ chức trao quyền
+					cho ai.</p>
+				<blockquote>
+					<p>AI có thể trở thành hệ thống hỗ trợ quyết định rất mạnh cho Product Owner. Nó không trở thành chủ
+						thể chịu trách nhiệm về giá trị.</p>
+				</blockquote>
+				<p>Hệ quả thực tế thì lại nằm ở chỗ khác. Nếu phần lớn công việc phân tích và soạn thảo quanh một PO
+					được AI đảm nhận, thì thứ co lại là lớp hỗ trợ quanh PO chứ không phải số lượng PO: Business Analyst,
+					Product Operations, và những vị trí sống bằng việc tổng hợp thông tin.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Developers</h3>
+				<p>Đây là câu hỏi khó nhất, vì AI can thiệp trực tiếp vào chính thứ Developers tạo ra.</p>
+				<p>Danh sách việc AI làm được dài và vẫn đang dài thêm: thiết kế, viết code, viết test, review, debug,
+					refactor, deploy, quan sát hệ thống đang chạy, cập nhật tài liệu.</p>
+				<p>Nhưng quay lại bốn nội dung mà Scrum Guide nói Developers luôn chịu trách nhiệm: tạo Sprint Backlog,
+					bảo đảm chất lượng bằng Definition of Done, điều chỉnh kế hoạch mỗi ngày hướng tới Sprint Goal, và
+					giữ nhau accountable như những người chuyên nghiệp.<sup><a href="#ref-3">[3]</a></sup> Nội dung thứ
+					tư không có phiên bản tự động hoá. Lý do không nằm ở kỹ thuật: đó là một quan hệ giữa người với
+					người, và nó chỉ có nghĩa khi hai bên cùng gánh hậu quả.</p>
+				<p>Dù vậy, cần nói thẳng một điều mà hai mục trên không có: khác Scrum Master và Product Owner, số lượng
+					Developers có khả năng giảm rõ rệt. Một người có kinh nghiệm điều phối nhiều Agent có thể phủ được
+					phạm vi công việc mà trước đây cần vài chuyên môn khác nhau. Đó không phải một dự đoán táo bạo, đó
+					là thứ đang xảy ra.</p>
+				<blockquote>
+					<p>AI thay thế ngày càng nhiều development activities. Nó chưa tự mình gánh được Developers
+						accountability. Nhưng số người cần thiết để gánh accountability đó thì giảm.</p>
+				</blockquote>
+				<p>Và câu cuối cùng đó dẫn thẳng tới câu hỏi mà cả bài đang đi tới.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Một người cùng nhiều Agent có thay được một Scrum Team không</h2>
+			<p class="intro-text">Về mặt danh xưng, câu trả lời rõ ngay: một người cùng nhiều Agent không phải là một
+				Scrum Team, vì các Agent không phải những con người có accountability, và đặt tên chúng theo ba
+				accountability không làm chúng có accountability. Nhưng đó là câu trả lời bằng định nghĩa, và trả lời
+				bằng định nghĩa là cách né câu hỏi.</p>
+			<blockquote>
+				<p>Câu hỏi thật: một cá nhân được AI khuếch đại có thay thế được giá trị mà một Scrum Team từng tạo ra
+					hay không?</p>
+			</blockquote>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Phiên bản mạnh nhất của phe nói "có"</h3>
+				<p>Trước khi phản bác, cần dựng lập luận đối lập ở dạng khoẻ nhất của nó, vì phiên bản khoẻ đó khá thuyết
+					phục.</p>
+				<p>Scrum Team nhiều người tồn tại vì kỹ năng trước đây vừa khan hiếm vừa chuyên biệt, nên không ai một
+					mình ôm được cả sản phẩm. Cross-functional là một cách xử lý sự khan hiếm đó, không phải một giá trị
+					tự thân. Đổi lại, mỗi người thêm vào là thêm chi phí đồng bộ, thêm chỗ hiểu nhầm, thêm một vòng chờ.
+					Chính Brooks là người viết rằng thêm người vào một dự án đang trễ làm nó trễ thêm.</p>
+				<p>Và về accountability thì phe này còn có một đòn mạnh hơn: một người sở hữu toàn bộ sản phẩm có
+					accountability rõ ràng hơn năm người cùng sở hữu, chứ không phải mờ hơn. Trách nhiệm chia cho nhiều
+					người là trách nhiệm dễ trôi. Vậy nếu một người cùng Agent làm được cả sản phẩm, thì team chưa bao
+					giờ là mục đích. Team là cái giá phải trả.</p>
+				<p>Lập luận này đúng trong một vùng khá rộng, và bài này không phản bác nó ở vùng đó.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Vùng nào một người là đủ, vùng nào thì không</h3>
+				<p>Một người cùng nhiều Agent nhiều khả năng là đủ khi sản phẩm nhỏ, khi người đó thật sự hiểu domain,
+					khi số stakeholder ít, khi rủi ro thấp, khi phản hồi từ người dùng dễ lấy, khi kiến trúc còn nằm gọn
+					trong đầu một người, và khi sai lầm sửa được với chi phí thấp.</p>
+				<p>Nó khó hơn nhiều khi sản phẩm có nhiều nhóm stakeholder mà lợi ích của họ xung đột nhau, khi domain
+					phức tạp, khi quyết định có hệ quả pháp lý hoặc xã hội, khi tacit knowledge nằm rải ở nhiều người,
+					khi hệ thống cần nhiều góc nhìn độc lập để phát hiện sai sót, khi sai lầm khó đảo ngược, khi việc
+					một người kiểm soát toàn bộ tạo ra rủi ro phụ thuộc cá nhân, và khi việc triển khai cần sự cam kết
+					của cả tổ chức chứ không chỉ một quyết định đúng.</p>
+				<p>Hai danh sách này không phải hai loại công ty. Chúng là hai đầu của một dải, và phần lớn sản phẩm nằm
+					đâu đó ở giữa, dịch dần từ đầu này sang đầu kia khi chúng lớn lên.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Mười Agent và mười chỗ đứng là hai chuyện khác nhau</h3>
+				<p>Có một phản biện thường bị bỏ qua trong các cuộc thảo luận về đội hình nhiều Agent, và nó không đến
+					từ giới hạn năng lực của mô hình.</p>
+				<p>Về mặt kỹ thuật, đa dạng là thứ mua được ở một mức nhất định. Có thể cho các Agent chạy trên những
+					foundation model khác nhau, nạp cho chúng những nguồn context khác nhau, cho chúng công cụ và dữ
+					liệu khác nhau, và dựng hẳn một Agent có nhiệm vụ phản biện những Agent còn lại. Làm vậy thì mười
+					Agent cho ra nhiều hơn một cách phân tích, và đó là đa dạng thật.</p>
+				<p>Thứ không mua được nằm ở chỗ khác. Không Agent nào trong số đó đứng ở một vị trí xã hội riêng trong
+					tổ chức, không cái nào phải sống với hệ quả của quyết định theo cách khác với người điều phối,
+					không cái nào giữ phần tacit knowledge mà chỉ một phòng ban khác mới có, và không cái nào có thẩm
+					quyền độc lập để phủ quyết chính người đang điều phối nó.</p>
+				<p>Hong và Page chứng minh bằng mô hình toán rằng một nhóm người giải bài toán có cách tiếp cận đa dạng
+					có thể thắng một nhóm gồm toàn những người giỏi nhất, và lý do khá phản trực giác: khi lấy những
+					người giỏi nhất từ một tập đủ lớn, họ có xu hướng giống nhau, và phần giỏi hơn của họ không bù nổi
+					phần thiếu đa dạng.<sup><a href="#ref-11">[11]</a></sup> Cần nói rõ đây là một mô hình hình thức
+					chứ không phải một nghiên cứu thực nghiệm trên team thật, và bản thân nó cũng từng bị phản biện về
+					mặt toán học, nên nó là một lý do để nghi ngờ chứ chưa phải một bằng chứng.</p>
+				<p>Ở một hướng khác, Kleinberg và Raghavan cho thấy khi nhiều bên ra quyết định cùng hội tụ về một thuật
+					toán, chất lượng quyết định của cả tập thể có thể giảm, kể cả khi thuật toán đó chính xác hơn với
+					từng bên xét riêng, và kể cả khi không có cú sốc hay lỗi tương quan
+					nào.<sup><a href="#ref-12">[12]</a></sup> Nghiên cứu đó bàn về nhiều công ty cùng sàng lọc ứng viên,
+					không bàn về nhiều Agent trong một team, nên áp thẳng vào đây là quá đà. Cơ chế thì tương tự: sự
+					giống nhau tạo ra những điểm mù trùng nhau.</p>
+				<blockquote>
+					<p>Mười Agent tạo ra được mười cách phân tích. Chúng chưa đương nhiên tạo ra mười chỗ đứng độc lập
+						trong tổ chức, và chỗ đứng mới là thứ quyết định ai dám nói ngược.</p>
+				</blockquote>
+				<p>Đa dạng nhận thức không phải là một giá trị mềm. Nó là cơ chế phát hiện sai sót. Phần đa dạng về
+					phương pháp thì mua được bằng cấu hình; phần đa dạng về lợi ích và về quyền thì không, vì nó không
+					nằm trong hệ thống kỹ thuật.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Giới hạn của chính lập luận này</h2>
+			<p class="intro-text">Cả bài đến đây dựa vào một tiền đề chưa được đem ra kiểm tra: rằng con người vẫn giữ
+				được năng lực đánh giá kết quả, ra quyết định và chịu trách nhiệm, ngay cả khi không còn trực tiếp làm
+				ra thứ mình đánh giá. Tiền đề đó có thể sai, và nếu nó sai thì phần lớn bài này sai theo.</p>
+			<p>Bainbridge đã chỉ đúng cơ chế làm nó sai, bốn mươi ba năm trước và trong một ngành khác. Người vận hành
+				mất dần kỹ năng vì không còn thực hành nó trong công việc hằng ngày, và mất đúng vào lúc kỹ năng đó cần
+				nhất, tức là ở những lần can thiệp hiếm hoi và quyết định.<sup><a href="#ref-6">[6]</a></sup></p>
+			<p>Áp vào đây thì câu chuyện có hình dạng khó chịu. Năng lực đánh giá một giải pháp phần mềm không phải một
+				kỹ năng độc lập. Nó vốn là sản phẩm phụ của việc đã tự tay xây những thứ tương tự và đã tự chịu hậu quả
+				khi làm sai. Nếu AI lấy đi phần xây, phần đánh giá không đứng yên, nó mòn theo.</p>
+			<p>Khi đó, câu "con người vẫn giữ accountability" vẫn đúng về mặt hình thức, và trở thành rỗng về mặt thực
+				chất.</p>
+			<p>Madeleine Clare Elish đặt tên cho đúng tình trạng này: <em>moral crumple zone</em>. Vùng hấp thụ va chạm
+				trong xe hơi được thiết kế để bảo vệ người lái. Vùng hấp thụ đạo đức trong một hệ thống tự động thì làm
+				điều ngược lại: nó bảo vệ sự toàn vẹn của hệ thống kỹ thuật bằng cách dồn trách nhiệm về phía con người
+				đứng gần nhất, người thường chỉ có hiểu biết, năng lực và quyền kiểm soát rất
+				hạn chế đối với hành vi của hệ thống.<sup><a href="#ref-13">[13]</a></sup></p>
+			<p>Đọc lại phần "AI có thay thế ba accountability không" dưới ánh sáng đó thì kết luận ở đó có một mặt tối.
+				Nói "một người vẫn phải sở hữu quyết định cuối cùng" nghe như đang bảo vệ vai trò của con người. Nó cũng
+				có thể đang mô tả việc thiết kế sẵn một chỗ để đổ lỗi.</p>
+			<p>Ranh giới giữa hai cách đọc không nằm ở lời tuyên bố, mà nằm ở một câu hỏi kiểm tra được: người chịu
+				trách nhiệm có đủ thông tin, đủ thời gian và đủ quyền để nói không hay không? Nếu một Increment được
+				sinh ra trong hai giờ và người duyệt có mười lăm phút, thì chữ ký đó không phải accountability. Nó là
+				thủ tục.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Và hai chỗ trống mà bài này không lấp được</h3>
+				<p>Bài không có số liệu về chính thứ nó khẳng định. Chưa ai đo xem một Scrum Team dùng AI học nhanh hơn
+					hay chậm hơn một cá nhân dùng AI. Thứ bài có trong tay là số liệu về năng suất cá nhân, số liệu về
+					throughput và stability ở quy mô ngành, và hai mô hình lý thuyết về sự đa dạng. Nối chúng lại thành
+					một kết luận về Scrum Team là việc của lập luận, không phải của dữ liệu, và người đọc có quyền
+					không đi cùng ở đúng chỗ nối đó.</p>
+				<p>Chỗ trống thứ hai là tôi. Tôi đang làm trong môi trường có Scrum, nên có lợi ích trong việc kết luận
+					rằng Scrum vẫn cần thiết.</p>
+				<p>Cuối cùng, mọi tuyên bố về năng lực AI ở đây gắn với tháng 8 năm 2026, và không cần chờ lâu để thấy
+					vì sao mốc đó quan trọng: bằng chứng định lượng chắc nhất mà bài dùng đã hết hạn trong bảy
+					tháng.<sup><a href="#ref-2">[2]</a></sup></p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Chỗ này chưa khép lại được</h2>
+			<p>Kết luận dễ chịu nhất cho một bài như thế này là "AI không thay thế được con người". Nó an toàn, nó đúng
+				vào lúc viết, và nó có thể hết hạn nhanh hơn ta tưởng.</p>
+			<p>Kết luận mà bài này đứng được sau khi đã tự phản biện thì hẹp hơn và cũng chắc hơn.</p>
+			<blockquote>
+				<p>AI có thể làm Scrum Team nhỏ lại, đổi cách ba accountability được thực hiện, và khiến một Scrum
+					Master toàn thời gian hoặc một nhóm Developers đông người không còn cần thiết trong nhiều bối cảnh.
+					Chừng nào phát triển sản phẩm còn là một bài toán phức tạp có bất định, nhiều góc nhìn, lợi ích xung
+					đột và hậu quả thật, nhu cầu về một nhóm người tự quản lý chưa biến mất. Nhưng nhu cầu đó tồn tại
+					được bao lâu thì phụ thuộc vào việc chúng ta có giữ được năng lực đánh giá hay không, và năng lực đó
+					đang bị chính công cụ làm cho tiện lợi hơn bào mòn.</p>
+			</blockquote>
+			<p>Còn câu hỏi mà bài này không trả lời được, và cũng là câu đáng mang theo:</p>
+			<blockquote>
+				<p>Nếu một người cùng nhiều AI Agent có thể tạo ra phần mềm, thì Scrum còn là framework để quản lý quá
+					trình phát triển, hay đã thành framework để bảo đảm một hệ thống gồm người và AI vẫn học đúng, quyết
+					đúng, và chịu trách nhiệm thật?</p>
+			</blockquote>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Tài Liệu Tham Khảo</h2>
+			<ol class="outline-list">
+				<li id="ref-1">METR (2025). <em>Measuring the Impact of Early-2025 AI on Experienced Open-Source
+						Developer Productivity</em>. Thí nghiệm ngẫu nhiên có đối chứng trên 16 lập trình viên và 246
+					issue trong khoảng tháng 2 tới tháng 6 năm 2025; đây là nguồn cho khoảng cách giữa mức tăng năng
+					suất mà người tham gia tin là mình có và mức đo được. <a
+						href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/"
+						rel="noopener noreferrer" target="_blank">Bài công bố</a>, <a
+						href="https://arxiv.org/abs/2507.09089" rel="noopener noreferrer" target="_blank">bản
+						arXiv</a>.</li>
+				<li id="ref-2">METR (24/02/2026). <em>We are Changing our Developer Productivity Experiment Design</em>.
+					Chính nhóm nghiên cứu giải thích vì sao thiết kế đó không còn vận hành đáng tin khi AI đã thành công
+					cụ mặc định: người tham gia từ chối làm việc không có AI, và 30 tới 50% tránh nộp đúng những task mà
+					AI giúp nhiều nhất. Lưu ý: đây là lý do kết quả cũ không còn đại diện cho hiện tại, không phải bằng
+					chứng rằng kết quả cũ sai. Bài này dùng nó để không trình bày con số 19% như một ước lượng hiện
+					hành. <a
+						href="https://metr.org/blog/2026-02-24-uplift-update/" rel="noopener noreferrer"
+						target="_blank">Đọc bản cập nhật</a>.</li>
+				<li id="ref-3">Schwaber, K. &amp; Sutherland, J. (2020). <em>The Scrum Guide</em>. Nguồn chuẩn cho việc
+					Scrum định nghĩa ba accountability chứ không phải ba danh sách tác vụ, cho phần Product Owner và
+					Scrum Master chịu trách nhiệm về cái gì, cho bốn nội dung mà Developers <em>always accountable
+						for</em>, và cho việc <em>commitment</em> trong Scrum Guide là thuật ngữ gắn với artifact chứ
+					không gắn với Developers. Cũng là nguồn cho việc Sprint Review yêu cầu key stakeholders chứ không
+					yêu cầu người dùng cuối. <a href="https://scrumguides.org/scrum-guide.html"
+						rel="noopener noreferrer" target="_blank">Đọc tài liệu</a>.</li>
+				<li id="ref-4">Brooks, F. P. (1987). <em>No Silver Bullet: Essence and Accidents of Software
+						Engineering</em>. IEEE Computer, 20(4), 10-19. Nguồn cho cách chia độ khó của phần mềm thành
+					phần thuộc bản chất bài toán và phần chỉ thuộc cách diễn đạt; bài này dùng cách chia đó rồi nêu luôn
+					giới hạn của việc dẫn lại một dự đoán năm 1986. Bản tiền thân là tech report TR86-020 của UNC. <a
+						href="https://www.cs.unc.edu/techreports/86-020.pdf" rel="noopener noreferrer"
+						target="_blank">Bản tech report</a>.</li>
+				<li id="ref-5">DORA / Google Cloud (24/09/2025). <em>2025 DORA Report: State of AI-Assisted Software
+						Development</em>. Khảo sát gần 5.000 người làm công nghệ; là nguồn cho tỉ lệ 90% đang dùng AI,
+					30% ít hoặc không tin code do AI sinh, và cho quan hệ thuận với throughput đi cùng quan hệ nghịch
+					với độ ổn định. Đây là dữ liệu tương quan, không phải thí nghiệm. <a
+						href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report"
+						rel="noopener noreferrer" target="_blank">Thông báo phát hành</a>, <a
+						href="https://dora.dev/insights/balancing-ai-tensions/" rel="noopener noreferrer"
+						target="_blank">phân tích của DORA</a>.</li>
+				<li id="ref-6">Bainbridge, L. (1983). <em>Ironies of Automation</em>. Automatica, 19(6), 775-779. Nguồn
+					gốc cho nghịch lý rằng tự động hoá càng nhiều thì phần việc còn lại của con người càng khó, và người
+					vận hành mất dần kỹ năng cần cho những lần can thiệp quyết định. Bài này dùng nó ở hai chỗ: Definition
+					of Done như bộ điều tốc, và phần tự phản biện ở cuối. <a
+						href="https://www.sciencedirect.com/science/article/abs/pii/0005109883900468"
+						rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+				<li id="ref-7">Beck, K. và cộng sự (2001). <em>Manifesto for Agile Software Development</em>. Bài này
+					dẫn nguyên văn câu kết về việc các mục bên phải vẫn có giá trị, để tách nó khỏi cách đọc phổ biến
+					rằng Agile chống tài liệu. <a href="https://agilemanifesto.org/" rel="noopener noreferrer"
+						target="_blank">Đọc bản gốc</a>.</li>
+				<li id="ref-8">GitHub. <em>Spec Kit</em> và tài liệu <em>Spec-Driven Development</em>. Nguồn cho các câu
+					tuyên bố của chính phía SDD rằng code phục vụ specification và specification là artifact chính, và
+					cũng là nguồn cho ba câu đi ngược lại cách đọc "SDD là waterfall": sinh code bắt đầu khi đặc tả
+					<em>stable enough</em> chứ không cần <em>complete</em>, các lần sinh sớm có thể mang tính thăm dò,
+					và sự cố từ production cập nhật ngược lại đặc tả. Bài này dùng tài liệu của họ vì nó chính là đối
+					tượng đang bàn. <a
+						href="https://github.com/github/spec-kit" rel="noopener noreferrer" target="_blank">Kho mã</a>,
+					<a href="https://github.com/github/spec-kit/blob/main/spec-driven.md" rel="noopener noreferrer"
+						target="_blank">tài liệu SDD</a>.</li>
+				<li id="ref-9">METR (08/05/2026). <em>Task Substitution and Uplift</em>. Tách ba cách đo uplift khác
+					nhau và chỉ ra rằng mức đo trên tập task mà người ta bây giờ chọn làm là mức cao nhất trong ba, vì
+					người ta dồn thời gian sang những việc AI làm rẻ, kể cả việc giá trị thấp. Đây là nguồn cho lập luận
+					rằng "AI giúp code nhanh bao nhiêu" là câu hỏi đo sai đoạn. <a
+						href="https://metr.org/blog/2026-05-08-task-substitution-and-uplift/" rel="noopener noreferrer"
+						target="_blank">Đọc bài</a>.</li>
+				<li id="ref-10">METR (11/05/2026). <em>Measuring the Self-Reported Impact of Early-2026 AI on Technical
+						Worker Productivity</em>. Khảo sát 349 người làm kỹ thuật, thực hiện tháng 2 tới tháng 4 năm
+					2026. Bài này dùng cả con số tự báo cáo lẫn phần chính nhóm nghiên cứu tự nêu giới hạn về độ tin cậy
+					của tự báo cáo. <a href="https://metr.org/blog/2026-05-11-ai-usage-survey/" rel="noopener noreferrer"
+						target="_blank">Đọc bài</a>.</li>
+				<li id="ref-11">Hong, L. &amp; Page, S. E. (2004). <em>Groups of Diverse Problem Solvers Can Outperform
+						Groups of High-Ability Problem Solvers</em>. PNAS, 101(46), 16385-16389. Mô hình toán cho luận
+					điểm rằng sự đa dạng trong cách tiếp cận có thể thắng năng lực cá nhân cao hơn; bài này dùng nó như
+					lý do để nghi ngờ đội hình nhiều Agent cùng gốc, và nêu rõ đây là mô hình hình thức chứ không phải
+					nghiên cứu thực nghiệm. <a href="https://www.pnas.org/doi/10.1073/pnas.0403723101"
+						rel="noopener noreferrer" target="_blank">Bản gốc</a>.</li>
+				<li id="ref-12">Kleinberg, J. &amp; Raghavan, M. (2021). <em>Algorithmic Monoculture and Social
+						Welfare</em>. PNAS, 118(22). Cho thấy việc nhiều bên ra quyết định cùng hội tụ về một thuật toán
+					có thể làm giảm chất lượng quyết định của cả tập thể, kể cả khi thuật toán đó chính xác hơn với từng
+					bên. Bài này dùng cơ chế đó theo lối loại suy, và nói rõ nghiên cứu gốc bàn về sàng lọc ứng viên chứ
+					không bàn về AI Agent. <a href="https://www.pnas.org/doi/10.1073/pnas.2018340118"
+						rel="noopener noreferrer" target="_blank">Bản PNAS</a>, <a
+						href="https://arxiv.org/abs/2101.05853" rel="noopener noreferrer" target="_blank">bản
+						arXiv</a>.</li>
+				<li id="ref-13">Elish, M. C. (2019). <em>Moral Crumple Zones: Cautionary Tales in Human-Robot
+						Interaction</em>. Engaging Science, Technology, and Society, 5, 40-60. Nguồn của khái niệm vùng
+					hấp thụ đạo đức: trách nhiệm bị dồn về phía con người đứng gần hệ thống tự động nhất, người có ít
+					quyền kiểm soát nhất. Bài này dùng nó để tự phản biện chính kết luận của mình về accountability. <a
+						href="https://estsjournal.org/index.php/ests/article/view/260" rel="noopener noreferrer"
+						target="_blank">Đọc bài</a>.</li>
+			</ol>
+		</section>
+	</article>
+
+	<script src="../../../pages-scripts.js"></script>
+</body>
+
+</html>

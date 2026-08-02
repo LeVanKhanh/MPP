@@ -1107,6 +1107,13 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "10. Thảo Luận Hiệu Quả Trong Công Việc",
+                                route: "pages/information-technology/agile-software-development/scrum-agile-and-more/10-effective-conversation-discussion-vn.html",
+                                hash: "#/scrum-agile-and-more-effective-discussion",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
                         ],
                     },
                 ],

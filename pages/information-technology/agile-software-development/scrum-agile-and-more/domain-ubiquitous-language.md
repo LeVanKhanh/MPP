@@ -51,6 +51,6 @@ Series giữ nguyên tên tiếng Anh của thuật ngữ Scrum và thuật ng�
 
 ## Chưa chốt
 
-- **Danh sách nguồn của bài 5 khác hẳn nhau giữa hai bản ngôn ngữ.** Bản VN: Scrum Guide, Edmondson, Meadows *Thinking in Systems*, Skelton &amp; Pais *Team Topologies*, Scrum.org *EBM Guide*. Bản EN: Scrum Guide, Forsgren *SPACE*, Fowler *An Appropriate Use of Metrics*, Noda &amp; Cochran, Edmondson. Ba nguồn đầu của bản EN trùng khớp `ref-1`, `ref-2`, `ref-3` của **bài 3 bản EN**, nên nhiều khả năng đây là khối bị dán nhầm từ bài 3. Hai bản cũng gắn `[2]` và `[5]` vào những câu khác nhau. Cần tác giả quyết dùng danh sách nào trước khi sửa; cấu trúc section đã đồng bộ ngày 2026-08-02 nhưng phần nguồn thì chưa.
+- **Bài 1 và bài 2 không có `page-meta` theo định dạng hiện hành** (còn `dd/mm/yyyy` và nhãn `Published on:` ở bản EN). Chưa chuẩn hoá vì hai bài đó chưa được sửa nội dung.
 - **Bài 1 và bài 2 không có section tham khảo** ở cả hai bản ngôn ngữ. Chưa rõ là chủ ý hay thiếu sót.
 - **Chưa rà bài 0, 1, 2, 3, 4.** Thuật ngữ về Product Owner, Scrum Master và Developers gần như chắc chắn đã được định nghĩa ở đó và chưa có mặt trong bảng trên.

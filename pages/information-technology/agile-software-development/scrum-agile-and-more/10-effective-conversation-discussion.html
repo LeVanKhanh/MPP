@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Effective Discussion at Work - My Personal Planet</title>
+	<link rel="stylesheet" href="../../../pages-styles.css">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta
+		content="A five-step architecture for effective discussion at work: name the purpose, establish common ground, locate the layer of disagreement, test the positions, and close the loop with a decision that has an owner. Plus listening, clarifying questions, the limits of the method itself, and how it applies in Scrum."
+		name="description">
+	<style>
+		sup a {
+			font-size: .8em;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<article class="content-article">
+		<header class="article-header">
+			<h1 class="page-title">Effective Discussion at Work</h1>
+			<p class="page-subtitle">A discussion ends only when everyone shares the same understanding of what is
+				settled, what was decided, and what happens next</p>
+			<p class="page-meta">Published: <time datetime="2026-08-02">August 2, 2026</time></p>
+		</header>
+
+		<section class="content-section">
+			<p>A sixty-minute meeting, eight people, everyone gets to speak. Nobody raises their voice. At the end
+				everyone nods and leaves.</p>
+			<p>Two weeks later, two of those people have built two different things, and both believe they are building
+				exactly what was agreed that day.</p>
+			<p>Nobody is at fault in this story. Nobody was lazy, nobody withheld information, nobody deliberately
+				misread anything. The meeting went smoothly and still failed to produce the thing it existed to
+				produce.</p>
+			<p>What it did produce was the feeling of mutual understanding. That is the most expensive false signal in
+				knowledge work, because it arrives exactly when the cost of fixing things is still lowest, and it makes
+				people stop asking.</p>
+			<p class="intro-text">The effectiveness of a discussion does not depend only on the skill and goodwill of
+				the individuals in the room. It is largely a property that emerges from how the discussion is designed:
+				the output it needs to create, the common ground, the nature of the disagreement, where decision rights
+				sit, and how the loop is closed into action.</p>
+			<p>The common instinct runs the other way. When discussion inside a team goes nowhere, the reflex is to
+				blame people: this one does not listen, that one is stubborn, the team lacks soft skills. Communication
+				training follows. After the training people are genuinely more polite, and discussions still end with
+				nobody certain what they are supposed to do.</p>
+			<p>Individual skill matters. But it is not the bottleneck. The bottleneck sits in four questions that almost
+				no meeting finishes answering: what is this discussion trying to produce, which layer are we actually
+				disagreeing on, who gets to decide, and once decided, who does what.</p>
+			<p>This piece is about discussions at work, where the result of the conversation has to turn into something
+				somebody does on Monday morning. The last section deals specifically with Scrum, because Scrum is an
+				environment that has already paid part of the cost of everything described here.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">What counts as an effective discussion</h2>
+			<p class="intro-text">The three criteria most often used to judge a meeting are not enough to conclude
+				anything: it finished on time, everyone got to speak, nobody objected at the end. The meeting in the
+				opening scene met all three.</p>
+			<p>There is a different test, cheap and hard to game. The moment people leave the room, each person writes
+				down their own answer to three questions, without looking at anyone else and without asking again:</p>
+			<ol class="numbered-outline">
+				<li>What was the problem we just discussed, stated in one sentence.</li>
+				<li>What did we just decide, and who decided it.</li>
+				<li>What is my next task, when is it due, and what signal tells me it is done.</li>
+			</ol>
+			<p>If eight answers to the first question fall into three different groups, the discussion never happened.
+				What happened was eight parallel monologues sharing a time slot.</p>
+			<p>Not every discussion needs to reach a decision. In a session whose purpose is shared understanding, a
+				valid answer to the second question is "nothing was decided, and that was deliberate," and a valid
+				answer to the third can be "go find more evidence," "wait until we know X," or "deliberately close this
+				question." Things break when the purpose was never stated out loud, so half the room answers "we locked
+				in option A" while the other half answers "we just heard about option A."</p>
+			<p>There is one thing worth being suspicious of that few people treat as suspicious: agreement that arrives
+				quickly at the end. At the abstract level, agreeing is cheap. Nobody can object to "we need to improve
+				quality." Disagreement only shows up once that sentence is lowered to something concrete, once someone
+				has to say whether quality means fewer defects escaping to production or lower response times, and who
+				will stop what they are doing to buy it. A discussion that ends in complete agreement is usually a
+				discussion that never got low enough.</p>
+			<div class="summary-box">
+				<p>A discussion does not end when time runs out. It ends when each person can answer those three
+					questions without turning to ask someone else.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">The architecture of an effective discussion</h2>
+			<p class="intro-text">The five steps below are not a ritual to be performed in full at every exchange. They
+				are a diagnostic checklist. When a discussion gets stuck, it is almost always possible to point at which
+				step it is stuck on.</p>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">Step one: name the purpose</h3>
+				<p>A discussion can aim at understanding, at a decision, or at action. These three outputs need three
+					different endings. An understanding session ends with a shared statement of the problem that
+					everyone can sign. A decision session ends with a choice and the name of whoever made it. An action
+					session ends with a list of tasks that have owners.</p>
+				<p>The most common failure in technical work is a session called a "design review." The organizer thinks
+					it is a session for gathering input. The attendees think it is an approval gate. Both sides leave
+					with different conclusions about whether the design was signed off, and nobody notices until the
+					code is written. The name of the meeting carries none of that information, and nobody asks.</p>
+				<p>The first sentence of the session should be: what do we need to have in hand when this ends. If the
+					person who called the meeting cannot answer, the meeting should stop right there.</p>
+				<p><a href="6-scrum-events-and-activities.html">6 Scrum Events and Activities</a> splits exactly this
+					work into two separate fields in its meeting brief, Objective and Expected Result, then makes it the
+					first design principle: outcome before agenda. That is the written-down version of this step, for
+					when a discussion is large enough to be worth writing down.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">Step two: establish common ground</h3>
+				<p>Most drawn-out arguments are arguments about words that nobody notices are about words. "Done" is the
+					classic case. To a Developer, done may mean the code is merged. To QA, done means it has been tested
+					on staging. To a Product Owner, done means a user can actually use it. Those three people can argue
+					about progress for half an hour without realising they are using three different units of
+					measurement.</p>
+				<p>Scrum handles this exact problem with the Definition of Done: a written definition the whole team
+					commits to, so the word "done" does not have to be renegotiated in every conversation. <sup><a
+							href="#ref-1">[1]</a></sup></p>
+				<p>Constraints belong in the same group as definitions: a deadline already committed to an outside
+					party, a budget, a legal requirement, an architectural decision locked in last quarter. These have
+					to be on the table from the start. If they surface at minute fifty, the previous forty-nine minutes
+					were wasted.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">Step three: locate the difference</h3>
+				<p>Disagreement has four layers: facts, assumptions, values, solutions. The longest arguments usually
+					take place at the solution layer while the real disagreement sits one layer below. A separate
+					section further down covers this in detail.</p>
+				<p>At this step one question is enough: where exactly do we not agree, on the numbers, on the
+					conditions, or on the priorities.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">Step four: test the positions</h3>
+				<p>Every option has to survive four questions: what evidence supports it, is there a counterexample,
+					what does it cost and who pays, and how does it fail.</p>
+				<p>There is a fifth question, the strongest and the least often asked: what would change your mind.</p>
+				<p>This one only works on claims that can be checked, meaning statements about facts or predictions. For
+					those, a person who can answer holds a view; a person who cannot holds a position, and positions
+					cannot be discussed, only negotiated. For a value or a principle there is usually no single piece of
+					evidence that changes anyone's mind, and that does not turn it into a position. There the question
+					has to be a different one: what would you accept in exchange for this value, and up to what
+					point.</p>
+				<p>That question has a valuable side effect: it turns a disagreement into something testable. When
+					someone says "I will drop my option if response time goes past 200ms at double the load," the
+					argument has just become a measurement. Measurement is cheaper than argument, and nobody loses
+					face.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">Step five: close the loop</h3>
+				<p>Five things have to be said out loud before people stand up: what was agreed, what is still open, the
+					decision, who is doing it, and when it gets reviewed.</p>
+				<p>The item dropped most often is "what is still open," and it is the item with the most value. A
+					discussion that ends with three unanswered questions written down explicitly is far better than a
+					discussion that ends with a feeling of completion.</p>
+				<p>The person who reads this part out loud is the one who called the meeting. The person who writes it
+					down is someone named at the start of the session, not whoever happens to be free at the last
+					minute.</p>
+				<p>The Action, Owner, Deadline, Dependency table in <a
+						href="6-scrum-events-and-activities.html">6 Scrum Events and Activities</a> is where three of
+					those five items get recorded. The other two, what is still open and when it gets reviewed, usually
+					have no column to go into. That is part of why they tend to disappear.</p>
+			</div>
+
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Step</th>
+						<th>Question that must be answered</th>
+						<th>Sign this step is being skipped</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Name the purpose</td>
+						<td>What do we need to have in hand when this ends?</td>
+						<td>Attendees do not know whether they are advising or approving</td>
+					</tr>
+					<tr>
+						<td>Establish common ground</td>
+						<td>Are we using the key words to mean the same thing?</td>
+						<td>The argument keeps returning to its starting point</td>
+					</tr>
+					<tr>
+						<td>Locate the difference</td>
+						<td>Which layer are we disagreeing on?</td>
+						<td>Both sides repeat their existing arguments, louder</td>
+					</tr>
+					<tr>
+						<td>Test the positions</td>
+						<td>What would change your mind?</td>
+						<td>No option is asked what it costs</td>
+					</tr>
+					<tr>
+						<td>Close the loop</td>
+						<td>Who does what, by when, reviewed when?</td>
+						<td>The meeting ends because time ran out</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>These five steps have a price. Running all of them for a decision that can be reversed in half a day is
+				waste. What you spend on a discussion should scale with the cost of reversing its decision, not with the
+				number of people in the room. The section "When this architecture backfires" goes into that.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Listening is more than waiting for your turn</h2>
+			<p>There is a familiar state in meetings: the other person is talking, and by second ten you have already
+				composed your reply. For the rest of their turn you are just waiting for a gap long enough to step into.
+				That state has a more accurate name than listening. It is queuing.</p>
+			<p>The term <strong>active listening</strong> was coined in 1957, in a slim pamphlet by Carl Rogers and
+				Richard Farson written for business supervisors rather than for therapists. <sup><a
+						href="#ref-2">[2]</a></sup> The original idea is simple: the listener's job is to verify whether
+				they have understood correctly, and to verify by restating, not by nodding.</p>
+			<p>The test that comes with it is equally simple. Can you restate the other person's view, in your own
+				words, well enough that they say "yes, that is what I meant"? Until you can, every rebuttal risks
+				rebutting a version you constructed yourself. This is also the "Rapoport rule" mentioned in <a
+					href="../../../reading-studying/fallacy-bias-debate/debate/21-debate.html">Debate: Both Sides
+					Win</a>.</p>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">How speaking turns are distributed says more than we expect</h3>
+				<p>In 2010, a research group published results in Science from 699 people working in 192 small groups
+					across a range of task types. They found a general factor they called collective intelligence. It
+					correlated weakly with the average and maximum intelligence of members, but more strongly with the
+					group's social sensitivity and with speaking turns being distributed evenly rather than dominated by
+					a few people. <sup><a href="#ref-3">[3]</a></sup></p>
+				<p>This result should be read at its actual strength. It is laboratory research on short tasks, and it
+					measures correlation across groups rather than proving that forcing turns to be even makes a group
+					smarter. Turn distribution is a symptom before it is a cause. Its value lies elsewhere: it is a
+					symptom you can observe during the meeting itself, with the naked eye, and symptoms like that are
+					rare.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">Power and silence</h3>
+				<p>Silence does not mean agreement.</p>
+				<p>Detert and Edmondson studied this across four studies, combining interviews at a large corporation
+					with broad survey work. They found what they call implicit voice theories: rules nobody teaches but
+					almost everyone carries. Do not make a senior person lose face in public. Do not speak before you
+					have enough data. Do not bring a problem without a solution. Do not go around your direct manager.
+					<sup><a href="#ref-4">[4]</a></sup>
+				</p>
+				<p>These rules operate before a person has consciously weighed whether to speak. That is why "any
+					thoughts?" in the last minute of a meeting almost never reaches them. It only reaches people who
+					were already prepared to talk.</p>
+				<p>Several mechanisms are far cheaper than urging people to be braver:</p>
+				<ul class="outline-list">
+					<li>The person with the most authority speaks last. Once the decision-maker has stated a view at
+						minute three, most of what follows is commentary on that view.</li>
+					<li>Collect input in writing before the meeting, then meet. Writing cannot be interrupted, and slow
+						writers get a place too.</li>
+					<li>Ask one named person one specific question, instead of asking the whole room one general
+						question.</li>
+					<li>Go back to whoever stayed quiet, after the meeting and in private. What you get this way is
+						usually the most valuable information available, and it also tells you what the meeting just
+						missed.</li>
+				</ul>
+				<p>Do not overcorrect in the other direction either. A facilitator who forces everyone to speak will
+					collect noise: someone with nothing to say still has to produce a sentence for form's sake, and that
+					sentence takes the place of someone who did have something. What to aim at is that whoever holds the
+					most important information in the room has a route to say it, and that route does not run through
+					personal courage. Even turn-taking is a possible consequence of that, not the target itself.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">The craft of the clarifying question</h2>
+			<p class="intro-text">In a discussion, a question is far cheaper than an assertion. A wrong assertion forces
+				someone else to push back, and pushing back costs relationship. A good question lets the person
+				answering see the hole in their own view, and nobody has to lose.</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Type of question</th>
+						<th>Example</th>
+						<th>What it opens up</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Asking for facts</td>
+						<td>"How many users is that number measured across, and over what period?"</td>
+						<td>Moves the argument from impression to something checkable</td>
+					</tr>
+					<tr>
+						<td>Asking to surface assumptions</td>
+						<td>"For this option to be right, what has to be true first?"</td>
+						<td>Puts the assumption layer on the table where it can be tested</td>
+					</tr>
+					<tr>
+						<td>Asking what would change a mind</td>
+						<td>"What would you have to see to drop this option?"</td>
+						<td>Separates a view from a position</td>
+					</tr>
+					<tr>
+						<td>Asking for the concrete</td>
+						<td>"If we do exactly that, who starts on Monday morning, and where?"</td>
+						<td>Exposes agreements that exist only at the abstract level</td>
+					</tr>
+					<tr>
+						<td>Asking about the cost</td>
+						<td>"How does this option fail, and who feels it first?"</td>
+						<td>Forces every option to carry its own risk</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Three kinds of question to avoid:</p>
+			<ul class="outline-list">
+				<li>The question with the answer built in. "Shouldn't we just do it the old way?" is an assertion
+					wearing a question mark, and the listener knows it, so they answer the assertion rather than the
+					question.</li>
+				<li>The double question. Ask two things in one sentence and the person answering will pick the easier
+					one, and the hard one quietly leaves the discussion.</li>
+				<li>The gotcha question that carries no way forward. <a
+						href="5-collaboration-across-scrum-accountabilities.html">5. Collaboration Across Scrum
+						Accountabilities</a> names this pattern. It differs from a clarifying question on one testable
+					point: whether the person asking is willing to take on part of the work if the answer shows the risk
+					is real.</li>
+			</ul>
+			<p>A good clarifying question leaves the person answering knowing more about their own view than before they
+				were asked. If the question only leaves the asker feeling they won, it is a different kind of question
+				doing a different job.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Finding what the disagreement actually is</h2>
+			<p>Two people argue for forty minutes about whether to write automated tests for a module. One says it takes
+				too long and this quarter will not fit it. The other says that without tests every change is
+				frightening.</p>
+			<p>Both are talking about the solution. The real disagreement sits in two other places. They do not agree on
+				the facts: how many defects have actually escaped to production from this module in the past six months,
+				and nobody in the room knows that number. They also do not agree on priorities: this quarter's delivery
+				speed set against next year's maintenance cost. Until those two are pulled apart, the two of them can
+				get louder without getting closer.</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Layer of disagreement</th>
+						<th>What it sounds like</th>
+						<th>How to resolve it, and what it costs</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Facts</td>
+						<td>"That is not what the number says," "That never happened"</td>
+						<td>Go find the data, reread the logs, ask someone who knows. Cheapest, and most often skipped
+							because both sides assume they already know.</td>
+					</tr>
+					<tr>
+						<td>Assumptions</td>
+						<td>"If traffic grows tenfold in six months, then..."</td>
+						<td>Write the condition out as a sentence, then check whether it is likely. Often ends with the
+							discovery that both options are right, in two different worlds.</td>
+					</tr>
+					<tr>
+						<td>Values and priorities</td>
+						<td>"That matters more than this"</td>
+						<td>More data will not resolve it. You have to make explicit which value is actually being
+							protected, negotiate the trade-off, then settle it with a decision mechanism agreed in
+							advance. Very expensive if mistaken for a factual disagreement and argued further.</td>
+					</tr>
+					<tr>
+						<td>Solutions</td>
+						<td>"We should do it option A's way"</td>
+						<td>List both, compare against one agreed set of criteria. Cheap, provided the three layers
+							above are settled.</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>These four layers are not a staircase that has to be climbed in order. A discussion can be stuck on two
+				or three of them at once, and the list is not exhaustive either: disagreement can also sit in how the
+				problem is defined, in the criteria used to compare options, or in who holds the right to decide. The
+				word "layer" is here to preserve exactly one thing: asking where the disagreement sits before arguing
+				further is cheaper than arguing first and asking afterwards.</p>
+			<p>Of the four layers named above, values is the only one that more data cannot resolve. But it is wrong to
+				say that further discussion is useless there. At this layer discussion can still do three things: make
+				explicit which value is actually being protected, discover that both sides in fact hold the same value
+				but judge the consequences differently (at which point the disagreement drops to the assumption layer
+				and becomes solvable), and negotiate a trade-off both sides can live with.</p>
+			<p>What discussion cannot do by itself at this layer is arrive at a correct answer. That requires a decision
+				mechanism agreed in advance: the Product Owner decides, the group gives consent, or a time-boxed
+				experiment answers it. Saying "mechanism" rather than "the person with authority" matters, because a
+				mechanism is the thing you can agree on before the disagreement exists. The worst outcome is a value
+				disagreement mistaken for a factual one, because then both sides go looking for more data to answer a
+				question that data cannot answer.</p>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">Root cause analysis and its limits</h3>
+				<p>The most familiar tool for getting from symptom down to cause is asking "why" five times, the
+					practice Taiichi Ohno described as part of the scientific attitude behind the Toyota production
+					system. <sup><a href="#ref-5">[5]</a></sup> Its advantages are real: cheap, teachable in five
+					minutes, and it forces people not to stop at the first layer of symptoms.</p>
+				<p>The drawbacks are just as real and get discussed less. John Allspaw, who writes extensively about
+					systems operations and incident investigation, points out three problems. <sup><a
+							href="#ref-6">[6]</a></sup> A linear chain of "why" quietly assumes there is a single root
+					cause, whereas incidents in complex systems are usually several conditions occurring together. Ask
+					"why" enough times and the answer tends to slide towards "who." And the analyst, already knowing how
+					it ended, easily judges the decisions of the time as wrong when they were entirely reasonable given
+					the information available then.</p>
+				<p>Allspaw's proposal is to replace "why" with "how." The question "what made that decision look
+					reasonable at the time?" opens up context. The question "why did you do that?" opens up
+					defensiveness.</p>
+				<p>Applied directly to handling disagreement: instead of "why do you object to this option," ask "what
+					risk are you seeing that I am not." The second question assumes the other person has a reason, and
+					in most cases that assumption is correct.</p>
+				<p>Layering disagreement can also be misused. Assigning someone else's disagreement to the values layer
+					is a polite way of saying they have no argument, only a preference. The sign to watch for: the
+					person doing the layering is usually the one with more authority in the room, and the layer assigned
+					to their own view is usually the facts layer.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Arguing without turning the other person into an opponent</h2>
+			<p>Disagreement and confrontation are separable, but they stick together fast. Usually around minute ten,
+				when someone starts saying "your option" instead of "option A."</p>
+			<p>Roger Fisher and William Ury, working out of the Harvard Negotiation Project, offer two principles that
+				apply directly in a technical meeting: separate the people from the problem, and talk about interests
+				rather than positions. <sup><a href="#ref-7">[7]</a></sup> A position is "I want to use a message
+				queue." An interest is "I need the system to survive peak load without losing data." Two people with
+				opposing positions often still have overlapping interests, and the overlap is where a solution is
+				easiest to find.</p>
+			<p>A few concrete mechanisms, ordered by how easy they are to apply:</p>
+			<ul class="outline-list">
+				<li>Strip possessive pronouns out of option names. "The queue-based option," not "Nam's option."</li>
+				<li>Write both options on the same board, side by side. Geometrically, the two people are now looking in
+					the same direction instead of at each other. This sounds like a trick but it changes how the
+					conversation runs more than we expect.</li>
+				<li>Swap roles before rebutting. Each person presents the other's option until the other agrees they
+					were understood correctly.</li>
+				<li>Separate the option-generating session from the option-choosing session, if the decision is large
+					enough. When both happen at once, people defend the option they just voiced instead of looking for a
+					better one, because the option they voiced is now attached to their name in front of the room.</li>
+			</ul>
+			<p><a href="../../../reading-studying/fallacy-bias-debate/debate/21-debate.html">Debate: Both Sides Win</a>
+				goes further into the positive-sum frame and into the role ego plays in dragging an exchange back to
+				win-lose. It also has a section for the hardest case, when the other person does not want both sides to
+				win.</p>
+			<p>There is a common misreading of all this: the belief that avoiding confrontation means being gentle.
+				Excessive politeness pushes disagreement under the surface rather than removing it. It resurfaces at the
+				most expensive moment, usually once the code is written. Saying something hard to hear, saying it early,
+				and saying it about the option rather than the person, respects a colleague far more than nodding
+				through a meeting.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">From discussion to decision to action</h2>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">There has to be more than one option</h3>
+				<p>A single option presented to a group is not a choice, it is an announcement. And a group handed
+					exactly one option will spend all its energy finding faults in it, because that is the only thing
+					they can do with it.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">But not too many, and for a reason worth stating correctly</h3>
+				<p>In 2000, Sheena Iyengar and Mark Lepper published three experiments on the effect of the number of
+					options. The most frequently repeated one took place in a California supermarket: at a jam tasting
+					table, the purchase rate was markedly higher when six varieties were displayed than when twenty-four
+					were. In the other two experiments, participants were also more satisfied with their choices and
+					wrote better essays when the initial set of options had been limited. <sup><a
+							href="#ref-8">[8]</a></sup></p>
+				<p>This study has been cited so often that it has nearly become self-evident, which is exactly why
+					something far less often cited needs adding. In 2010, Benjamin Scheibehenne, Rainer Greifeneder and
+					Peter Todd pooled 63 experimental conditions from 50 published and unpublished studies, 5,036
+					participants in total. The mean effect size was virtually zero, with very large variance between
+					studies. They could not identify sufficient conditions for predicting when increasing the number of
+					options would reduce the motivation to choose. <sup><a href="#ref-9">[9]</a></sup></p>
+				<p>The story does not stop there, and the next part is cited just as rarely. In 2015, Alexander Chernev,
+					Ulf Böckenholt and Joseph Goodman pooled 99 observations with 7,202 participants and identified four
+					moderating factors: choice set complexity, decision task difficulty, preference uncertainty, and the
+					goal the chooser brings to the task. Once those four are accounted for, the effect of assortment
+					size becomes statistically significant again, counter to the 2010 pooled result. <sup><a
+							href="#ref-10">[10]</a></sup></p>
+				<p>In other words, "too many options make people unable to decide" is not a universal law, but it is
+					also not a myth that has been debunked. It is a context-dependent effect, and the question worth
+					asking is which kind of context you are in. If you want to limit the number of options in a meeting,
+					limit them for a reason you can state and check inside that meeting.</p>
+				<p>The statable reason, in a work context, is this. Every option that is to be considered seriously has
+					to go through step four above: evidence, counterexample, cost, risk, what would change your mind.
+					Meeting time is finite. Six options in an hour means ten minutes each, and ten minutes is not enough
+					for those five questions. The binding constraint here is the meeting's attention budget, something
+					you can count in the room.</p>
+				<p>That reason lines up with exactly one of the four factors Chernev's group identified: decision task
+					difficulty. The firmest ground for limiting options is the amount of work each option requires, not
+					whether people feel overwhelmed.</p>
+				<p>In practice, two to four options examined seriously tend to beat eight skimmed. If you have eight,
+					the first job is to cut some using an agreed criterion, and to record why they were cut.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">By what mechanism is it decided</h3>
+				<p>Consensus is not the only way to reach a decision, and in many situations it is not the best one.
+					What is mandatory is that the decision mechanism is settled before the discussion, not hunted for
+					after the discussion has deadlocked. The mechanism can be one person deciding, it can be consent, it
+					can be a vote, it can be a time-boxed experiment that answers the question on the group's behalf.
+				</p>
+				<p>Saying "mechanism" rather than "the person with authority" is not about avoiding names. It is because
+					a mechanism can be agreed while nobody yet disagrees, whereas a person only gets named once
+					disagreement exists, and by then naming them is too late.</p>
+				<p>Three things to settle before the discussion: where the decision right sits, by what mechanism the
+					decision will be made, and who is accountable for making sure it is carried out. The third does not
+					have to be the same as the first two. When the mechanism is only raised at deadlock, everyone in the
+					room has an incentive to keep talking, because whoever takes the decider's role is the one who will
+					carry the responsibility.</p>
+				<p>After the decision: state whatever disagreement you still hold, get it into the record, then execute.
+					Someone who argued against an option can still carry it out properly, and that should be treated as
+					normal rather than as a sacrifice deserving credit.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">Actions have to be concrete enough to be hard to misread</h3>
+				<p>Four components: what the task is, who does it, when it is due, and what signal shows it is done.</p>
+				<p>"Nam will look into the caching" is not an action. "Nam measures the response time of the three
+					slowest endpoints on staging, done before Friday, results posted to the team channel" is an action.
+				</p>
+				<p>A task with no name on it is a task nobody is doing. A task with two names on it usually is too.</p>
+				<p>That line is about an action item, not about how work gets done. Two people can absolutely work on
+					one thing together, and often should. What needs exactly one name is the coordination
+					responsibility: who answers when someone asks how far along this is, and what signal the group uses
+					to confirm it is finished.</p>
+			</div>
+
+			<div class="sub-section">
+				<h3 class="sub-point-1">Record the decision, and record what was rejected</h3>
+				<p>Michael Nygard proposes a lightweight format for recording architecture decisions, each record one to
+					two pages, covering context, decision, status and consequences. He stresses that the consequences
+					section must list the negative ones and not only the positive. <sup><a href="#ref-11">[11]</a></sup>
+					The format works for most decisions at work, not only software architecture.</p>
+				<p>The part with the most long-term value is the part most often dropped: the options that were rejected
+					and the reason each was rejected. Six months later, when context has shifted, a reader needs to know
+					whether option B was rejected because no suitable library existed at the time, or because it was
+					wrong in principle. Those two reasons lead to entirely different actions, and without the record the
+					whole team meets again from scratch.</p>
+				<table class="content-table">
+					<thead>
+						<tr>
+							<th>What usually gets recorded</th>
+							<th>What should be recorded as well</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>The final decision</td>
+							<td>The options considered and why each was rejected</td>
+						</tr>
+						<tr>
+							<td>The task list</td>
+							<td>The assumptions the decision rests on</td>
+						</tr>
+						<tr>
+							<td>The attendee list</td>
+							<td>The mechanism used to decide, and who is accountable for execution</td>
+						</tr>
+						<tr>
+							<td>The meeting date</td>
+							<td>The date the decision will be reviewed</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">After the discussion, what happens next</h2>
+			<p>A decision does not execute itself. And a decision that was right on the day it was made can still be
+				wrong next week, because what it rested on has changed.</p>
+			<p>There are three things to track, and they differ in difficulty:</p>
+			<ol class="numbered-outline">
+				<li>Whether the action was done. Easiest, and the only one most organizations actually track.</li>
+				<li>Whether the assumption behind the decision still holds. If option A was chosen assuming traffic
+					would triple this quarter, then the actual traffic number is what to look at, not the task progress.
+				</li>
+				<li>Whether the desired outcome has appeared. Slowest, hardest to measure, and the thing the two items
+					above exist to serve.</li>
+			</ol>
+			<p>The review date should be treated as part of the decision. "Choose option A, review at the end of
+				September" is a very different sentence from "choose option A." The first turns the decision into a
+				time-boxed experiment. The second turns it into a settled matter, and settled matters are hard to
+				reopen, because reopening one means somebody was wrong.</p>
+			<p>When an assumption turns out to be false, reversing the decision is not evidence that the earlier
+				discussion was pointless. The opposite is more worrying: if an organization has not reversed a single
+				decision all year, the likely explanation is that it is not tracking anything. The learning loop
+				described in <a href="5-collaboration-across-scrum-accountabilities.html">5. Collaboration Across Scrum
+					Accountabilities</a> starts exactly here.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">When this architecture backfires</h2>
+			<p class="intro-text">This section is for the strongest objection I know of, and I do not have a complete
+				answer to it.</p>
+			<p>The objection runs like this. The best teams do not go through any five steps. They stand up from their
+				desks, talk for three minutes, and go back to work. Discussion architecture is what people add after
+				trust has already been lost, and it cannot rebuild trust. Worse, once every disagreement has to be
+				layered and minuted, speed dies. The winner in a system like that is whoever has the most patience for
+				process, not necessarily whoever is most right.</p>
+			<p>Most of this objection is correct. Those three minutes beside the desk actually do pass through all five
+				steps, just fast and implicitly: the two people already know the purpose, share a vocabulary, know
+				exactly where they disagree, check against shared experience, and finish with who does what. The
+				five-step architecture adds nothing to that conversation. It only helps when one of those five implicit
+				steps is missing, and it helps as a diagnostic tool rather than as a ritual.</p>
+			<p>Three contexts where it should not be used:</p>
+			<ul class="outline-list">
+				<li>Cheap, reversible decisions. Try it for half a day and find out, do not spend an hour in a meeting.
+					The cost of deliberating has to stay below the cost of being wrong.</li>
+				<li>An incident in progress. While the system is broken you need one commander and a clear chain of
+					instruction. Real discussion happens afterwards, at the incident review, and there it is worth doing
+					properly.</li>
+				<li>Organizations where the decision right genuinely sits outside the room. There the five steps become
+					theatre: everyone performs a discussion whose result is already fixed. That state is worse than not
+					discussing at all, because it burns time and erodes trust at the same time.</li>
+			</ul>
+			<p>The argument of this piece has its own limit, and the limit sits in its founding assumption. All of this
+				assumes the people in the room have the right to decide something. That is a large assumption and it is
+				false in many places. Where that right is absent, even the best discussion produces only shared
+				understanding, and shared understanding is a much smaller result than what the opening promised.</p>
+			<p>One more thing: process does not create trust. It can hold trust and protect it from being eroded by
+				misunderstanding, but a team that does not trust each other will run all five steps and still get
+				nowhere.</p>
+			<p>And this piece is itself a one-way discussion. The reader cannot interrupt, cannot ask back, cannot say
+				that at their company everything works differently. By the three-question test from the opening, it
+				fails: once you have read it, there is nobody sitting there to check whether we understand this the same
+				way.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Effective discussion in a Scrum environment</h2>
+			<p>Scrum does not teach discussion. The Scrum Guide contains no section called "how to argue." <sup><a
+						href="#ref-1">[1]</a></sup> But Scrum has prepaid part of the cost of the architecture above, by
+				attaching a purpose to each event in advance. Step one, the step most often skipped, is written into the
+				definition of each session before the session begins.</p>
+			<p>The table below only maps the purpose of each event to its corresponding step. The detailed design of
+				each session, including the meeting brief, who needs to attend, what input to prepare, the agenda and
+				the follow-up mechanism, lives in <a href="6-scrum-events-and-activities.html">6 Scrum Events and
+					Activities</a>. The two pieces divide the work along this line: that one builds the frame of the
+				meeting, this one deals with what happens inside the frame.</p>
+			<p>A note on terminology before reading the table. The Scrum Guide 2020 has four events inside the Sprint,
+				and the Sprint is the event that contains all four. Product Backlog Refinement is not an event; the
+				Scrum Guide describes it as an ongoing activity. The table below groups all five together because all
+				five are where discussion actually happens. The Sprint is absent from the table because it is not itself
+				a discussion. <sup><a href="#ref-1">[1]</a></sup></p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Event or activity</th>
+						<th>Purpose per the Scrum Guide</th>
+						<th>Step already framed for you</th>
+						<th>How it fails</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Sprint Planning</td>
+						<td>Answer three questions: why this Sprint is valuable, what can be Done this Sprint, and how
+							the chosen work will get done</td>
+						<td>Steps 1 and 5</td>
+						<td>Turns into a work-assignment session. Step 1 is then decided by one person and the other
+							four steps never happen</td>
+					</tr>
+					<tr>
+						<td>Daily Scrum</td>
+						<td>Inspect progress toward the Sprint Goal and adapt the Sprint Backlog as needed, in fifteen
+							minutes</td>
+						<td>Step 5, repeated daily</td>
+						<td>Turns into a status report to one person. At that point it closes no loop at all</td>
+					</tr>
+					<tr>
+						<td>Product Backlog Refinement</td>
+						<td>Break down and further define Product Backlog items</td>
+						<td>Steps 2 and 3</td>
+						<td>Turns into a point-estimation session. Disagreements about definitions and assumptions get
+							deferred until the code is being written</td>
+					</tr>
+					<tr>
+						<td>Sprint Review</td>
+						<td>Inspect the outcome of the Sprint and determine future adaptations. The Scrum Guide states
+							explicitly that this is a working session and the team should avoid limiting it to a
+							presentation</td>
+						<td>Step 4</td>
+						<td>Turns into a one-way demo. No position gets tested, nobody changes their mind about anything
+						</td>
+					</tr>
+					<tr>
+						<td>Sprint Retrospective</td>
+						<td>Plan ways to increase quality and effectiveness. The most impactful improvements are
+							addressed as soon as possible, and may go straight into the next Sprint Backlog</td>
+						<td>Step 5</td>
+						<td>Stops at voicing feelings. No concrete action, no owner</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Of those five, Refinement is the only one the Scrum Guide gives no timebox, no fixed cadence, and no
+				required set of attendees; the other four have all three. <sup><a href="#ref-1">[1]</a></sup> It is also
+				the only one with no compliance signal to look at: no session anyone missed, no timebox anyone overran.
+				An organization can do refinement perfunctorily for months while still believing it is running Scrum
+				properly, and that perfunctory version leaves no trace to measure what it cost.</p>
+			<p>The cost of skipping it can still be estimated. Refinement is the earliest of the five where a
+				disagreement about meaning can surface, and the cost of a misreading grows with the amount of work built
+				on top of it. The same question, say "does notify the user here mean email or push," takes two minutes
+				in Refinement; if it only surfaces at Sprint Review the price is everything built on the wrong
+				reading.</p>
+			<p>Scrum also institutionalizes step two through the Definition of Done. This is one of very few cases where
+				an organization takes the trouble to write down the definition of a word and commit to it collectively,
+				instead of renegotiating it in every conversation.</p>
+			<p>And the precondition mentioned earlier, that the decision right has to be in the room, is precisely what
+				the Scrum Guide states as a requirement: the Scrum Team is self-managing and internally decides who does
+				what, when, and how, typically at ten people or fewer. If that holds in practice and not only on paper,
+				a Scrum Team is one of the environments where the discussion architecture described here has something
+				to grip.</p>
+			<p>But having the events does not mean having discussion. Events only supply time and seating. A team can
+				run all four events and keep refinement going steadily for years without a single discussion ever
+				reaching step four, simply because nobody has ever asked "what would change your mind." This is where a
+				Scrum Master has real work to do, and that work is not in the scheduling.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">References</h2>
+			<ol class="outline-list">
+				<li id="ref-1">Schwaber, K. &amp; Sutherland, J. (2020). <em>The Scrum Guide</em>. The official source
+					for the purpose of each Scrum event, the Definition of Done, the Sprint Goal, and the
+					self-management requirement for the Scrum Team; this piece uses it to map each event to a step in
+					the discussion architecture. <a href="https://scrumguides.org/scrum-guide.html"
+						rel="noopener noreferrer" target="_blank">Read the guide</a>.</li>
+				<li id="ref-2">Rogers, C. R. &amp; Farson, R. E. (1957). <em>Active Listening</em>. Industrial Relations
+					Center, University of Chicago. The pamphlet that coined the term "active listening," written for
+					business supervisors; this piece takes from it the idea that the listener is responsible for
+					verifying their own understanding by restating it.</li>
+				<li id="ref-3">Woolley, A. W., Chabris, C. F., Pentland, A., Hashmi, N. &amp; Malone, T. W. (2010).
+					<em>Evidence for a Collective Intelligence Factor in the Performance of Human Groups</em>. Science,
+					330(6004), 686-688. A study of 699 people in 192 groups, the basis for the argument about turn
+					distribution and social sensitivity; the full text sits behind a paywall, the summary below is
+					freely accessible. <a href="https://doi.org/10.1126/science.1193147" rel="noopener noreferrer"
+						target="_blank">Original (DOI)</a>, <a
+						href="https://gap.hks.harvard.edu/evidence-collective-intelligence-factor-performance-human-groups"
+						rel="noopener noreferrer" target="_blank">Harvard Kennedy School summary</a>.</li>
+				<li id="ref-4">Detert, J. R. &amp; Edmondson, A. C. (2011). <em>Implicit Voice Theories:
+						Taken-for-Granted Rules of Self-Censorship at Work</em>. Academy of Management Journal, 54(3),
+					461-488. Four studies on the unspoken rules that keep people from speaking up at work; this piece
+					uses it to explain why "any thoughts?" at the end of a meeting does not work. The full text sits
+					behind a paywall. <a href="https://doi.org/10.5465/amj.2011.61967925" rel="noopener noreferrer"
+						target="_blank">Article page (DOI)</a>.</li>
+				<li id="ref-5">Ohno, T. (1988). <em>Toyota Production System: Beyond Large-Scale Production</em>.
+					Productivity Press. The classic source describing and popularizing the practice of asking "why" five
+					times; who actually originated it remains disputed. This piece uses it as a starting point before
+					setting out the limits of the method.</li>
+				<li id="ref-6">Allspaw, J. (2014). <em>The Infinite Hows (or, the Dangers Of The Five Whys)</em>. A
+					technical critique of the Five Whys from a complex-systems operations perspective: the single-cause
+					assumption, the drift towards individual blame, and hindsight bias. This is the source for replacing
+					"why" with "how." <a
+						href="https://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/"
+						rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+				<li id="ref-7">Fisher, R. &amp; Ury, W. (1981). <em>Getting to Yes: Negotiating Agreement Without Giving
+						In</em>. Houghton Mifflin. The work of the Harvard Negotiation Project; this piece applies its
+					principles of "separate the people from the problem" and "focus on interests, not positions" to
+					argument inside a team.</li>
+				<li id="ref-8">Iyengar, S. S. &amp; Lepper, M. R. (2000). <em>When Choice is Demotivating: Can One
+						Desire Too Much of a Good Thing?</em> Journal of Personality and Social Psychology, 79(6),
+					995-1006. Three experiments on the effect of the number of options, including the jam study; this
+					piece cites it and places it directly beside [9] and [10], the two sources that followed, so the
+					reader can see the argument is still open. <a
+						href="https://faculty.washington.edu/jdb/345/345%20Articles/Iyengar%20&amp;%20Lepper%20(2000).pdf"
+						rel="noopener noreferrer" target="_blank">Read the PDF</a>.</li>
+				<li id="ref-9">Scheibehenne, B., Greifeneder, R. &amp; Todd, P. M. (2010). <em>Can There Ever Be Too
+						Many Options? A Meta-Analytic Review of Choice Overload</em>. Journal of Consumer Research,
+					37(3), 409-425. Pools 63 experimental conditions from 50 studies, N = 5,036, mean effect size
+					virtually zero. A source running counter to [8]. This meta-analysis did record very large variance
+					between studies but could not identify what moderated it; [10] found those moderators and reached
+					the opposite conclusion. <a href="https://scheibehenne.com/ScheibehenneGreifenederTodd2010.pdf"
+						rel="noopener noreferrer" target="_blank">Read the PDF</a>.</li>
+				<li id="ref-10">Chernev, A., Böckenholt, U. &amp; Goodman, J. (2015). <em>Choice Overload: A Conceptual
+						Review and Meta-Analysis</em>. Journal of Consumer Psychology, 25(2), 333-358. Pools 99
+					observations, N = 7,202, identifies four moderators of the choice overload effect and shows that
+					once they are accounted for the effect is statistically significant, counter to [9]. This piece
+					places [8], [9] and [10] side by side because each source alone leads the reader to a wrong
+					conclusion. <a href="https://chernev.com/wp-content/uploads/2017/02/ChoiceOverload_JCP_2015.pdf"
+						rel="noopener noreferrer" target="_blank">Read the PDF</a>.</li>
+				<li id="ref-11">Nygard, M. (2011). <em>Documenting Architecture Decisions</em>. Cognitect. A decision
+					record format covering context, decision, status and consequences, with the requirement to record
+					negative consequences too; this piece uses it for the section on recording decisions and rejected
+					options. <a href="https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions.html"
+						rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+			</ol>
+			<p>These sources support specific claims made here; they do not support the five-step architecture as a
+				whole. That architecture is one way of arranging things, and arrangements have to be tested in the
+				context of each team.</p>
+		</section>
+	</article>
+
+	<script src="../../../pages-scripts.js"></script>
+</body>
+
+</html>

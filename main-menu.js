@@ -850,6 +850,13 @@ var mainMenu = [
                                 subItems: [],
                             },
                             {
+                                title: "8. Scrum Beyond One Team",
+                                route: "pages/information-technology/agile-software-development/scrum-agile-and-more/8-scrum-beyond-one-team-dependencies-team-design-and-scaling.html",
+                                hash: "#/scrum-agile-and-more-beyond-one-team",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
                                 title: "10. Effective Discussion at Work",
                                 route: "pages/information-technology/agile-software-development/scrum-agile-and-more/10-effective-conversation-discussion.html",
                                 hash: "#/scrum-agile-and-more-effective-discussion",

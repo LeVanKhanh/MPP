@@ -1,507 +1,322 @@
-Scrum Beyond One Team: Scale the Product, Not the Process
-
-## Định hướng trung tâm
-
-Bài viết nên tránh biến thành phần giới thiệu các framework mở rộng như SAFe, LeSS hay Nexus. Luận điểm sắc hơn có thể là:
-
-> Khi Scrum vượt ra ngoài phạm vi một team, vấn đề cốt lõi thường không phải là “làm sao mở rộng Scrum”, mà là “làm sao thiết kế hệ thống làm việc để các team không phải liên tục chờ nhau”.
-
-Từ đó, bài viết đi theo ba lớp:
-
-1. **Dependencies** – Team đang phụ thuộc nhau ở đâu?
-2. **Team design** – Cấu trúc team có đang tạo ra các phụ thuộc đó không?
-3. **Scaling** – Khi không thể loại bỏ phụ thuộc, cần phối hợp ở cấp độ nào?
-
-Mối quan hệ giữa ba lớp này là:
-
-> Dependencies là triệu chứng.
-> Team design thường là nguyên nhân.
-> Scaling framework chỉ là một trong các cách xử lý.
-
----
-
-# Scrum Beyond One Team: Dependencies, Team Design, and Scaling
-
-## 1. Scrum hoạt động tốt nhất khi một team có thể tạo ra giá trị
-
-Mở đầu bằng một tình huống quen thuộc:
-
-Một Scrum Team muốn hoàn thành một tính năng, nhưng phải:
-
-* chờ team UX thiết kế;
-* chờ platform team cung cấp API;
-* chờ database team sửa schema;
-* chờ security phê duyệt;
-* chờ release team triển khai;
-* chờ một Product Owner khác xác nhận ưu tiên.
-
-Trên Jira, tất cả các team vẫn “hoàn thành Sprint”. Nhưng người dùng chưa nhận được gì.
-
-Câu hỏi trung tâm:
-
-> Nếu một team hoàn thành tất cả công việc của mình nhưng Increment vẫn chưa usable, team đó có thực sự tạo ra giá trị không?
-
-Điểm cần làm rõ:
-
-* Scrum Team được kỳ vọng là **cross-functional** và **self-managing**.
-* Nhưng self-managing không đồng nghĩa với hoàn toàn độc lập.
-* Trong tổ chức lớn, dependency là không thể tránh khỏi.
-* Vấn đề không phải là có dependency hay không, mà là dependency đó có thường xuyên biến thành **waiting, handoff và mất khả năng thích nghi** hay không.
-
----
-
-## 2. Khi “Done” của một team chưa tạo ra một Increment
-
-Một team có thể đạt Sprint Goal cục bộ nhưng sản phẩm tổng thể vẫn chưa hoạt động.
-
-Có thể phân biệt ba cấp độ:
-
-| Cấp độ               | Team hoàn thành gì?                                  | Giá trị thực tế                   |
-| -------------------- | ---------------------------------------------------- | --------------------------------- |
-| Task completion      | Hoàn thành phần việc được giao                       | Chưa chắc tích hợp được           |
-| Component completion | Hoàn thành một component                             | Chưa chắc người dùng sử dụng được |
-| Product Increment    | Tính năng tích hợp, usable và đạt Definition of Done | Có thể kiểm chứng giá trị         |
-
-Điểm phản biện quan trọng:
-
-> Khi mỗi team chỉ tối ưu phần việc của mình, tổ chức có thể đạt hiệu suất cục bộ rất cao nhưng tốc độ tạo ra giá trị tổng thể lại rất thấp.
-
-Đây là nơi có thể nối với tư duy hệ thống:
-
-* tăng utilization không nhất thiết giảm lead time;
-* team luôn bận không có nghĩa sản phẩm đang tiến nhanh;
-* nhiều work in progress tạo ra nhiều phụ thuộc và thời gian chờ hơn.
-
----
-
-## 3. Không phải mọi dependency đều giống nhau
-
-Nên xây dựng một taxonomy đủ thực dụng.
-
-### Product dependency
-
-Hai team cùng tác động đến một customer journey hoặc một Product Goal.
-
-Ví dụ: team Checkout cần thay đổi từ team Payment để hoàn thành trải nghiệm thanh toán.
-
-### Technical dependency
-
-Một tính năng cần thay đổi nhiều component do các team khác nhau sở hữu.
-
-Ví dụ: frontend, API, database và identity thuộc bốn team khác nhau.
-
-### Knowledge dependency
-
-Team có quyền sửa code nhưng không có đủ kiến thức để sửa an toàn.
-
-Đây là loại dependency thường bị bỏ qua vì không xuất hiện rõ trên backlog.
-
-### Process dependency
-
-Công việc phải qua một bộ phận kiểm thử, bảo mật, kiến trúc hoặc phê duyệt tập trung.
-
-### Environment and release dependency
-
-Team hoàn thành code nhưng không thể tự kiểm thử, tích hợp hoặc triển khai.
-
-### Priority dependency
-
-Hai team cần phối hợp nhưng Product Owners hoặc stakeholders của họ theo đuổi các mục tiêu khác nhau.
-
-Điểm đáng nhấn mạnh:
-
-> Dependency kỹ thuật có thể nhìn thấy trong architecture. Dependency về ưu tiên thường nguy hiểm hơn vì không thể giải quyết chỉ bằng API contract hay automation.
-
----
-
-## 4. Dependency không chỉ là vấn đề lập kế hoạch
-
-Các tổ chức thường xử lý dependency bằng:
-
-* dependency board;
-* cross-team planning;
-* Scrum of Scrums;
-* thêm coordinator;
-* thêm program manager;
-* họp đồng bộ thường xuyên hơn.
-
-Những biện pháp này có thể giúp nhìn thấy dependency, nhưng không nhất thiết làm giảm nó.
-
-Một câu có thể dùng làm luận điểm:
-
-> Coordination makes dependencies more manageable. Team design determines how many dependencies must exist in the first place.
-
-Hay bằng tiếng Việt:
-
-> Điều phối giúp tổ chức sống chung với phụ thuộc; thiết kế team quyết định tổ chức phải sống chung với bao nhiêu phụ thuộc.
-
-Từ đây chuyển tự nhiên sang phần team design.
-
----
-
-## 5. Team structure đang phản chiếu hay phá vỡ dòng giá trị?
-
-### Component teams
-
-Team được tổ chức quanh tầng kỹ thuật:
-
-* frontend team;
-* backend team;
-* database team;
-* QA team;
-* DevOps team.
-
-Ưu điểm:
-
-* tập trung chuyên môn;
-* dễ duy trì tiêu chuẩn kỹ thuật;
-* phù hợp với một số subsystem phức tạp.
-
-Hạn chế:
-
-* một feature phải đi qua nhiều team;
-* tăng handoff và thời gian chờ;
-* khó xác lập ownership đối với outcome;
-* mỗi team có thể có backlog và ưu tiên riêng.
-
-### Feature teams
-
-Một team có phần lớn năng lực cần thiết để đưa một lát cắt giá trị từ ý tưởng đến người dùng.
-
-Ưu điểm:
-
-* giảm dependency;
-* feedback nhanh hơn;
-* ownership gần với outcome;
-* dễ xây dựng Sprint Goal có ý nghĩa.
-
-Hạn chế:
-
-* kiến thức chuyên môn có thể bị phân tán;
-* nguy cơ duplication;
-* cần đầu tư vào architecture, automation và chia sẻ kiến thức;
-* không phải subsystem nào cũng dễ phân chia.
-
-Điều quan trọng là tránh kết luận đơn giản rằng feature team luôn tốt, component team luôn xấu.
-
-Luận điểm cân bằng hơn:
-
-> Mục tiêu không phải tạo ra những team hoàn toàn độc lập, mà là làm cho phần lớn thay đổi có giá trị có thể được hoàn thành trong một team với mức phối hợp chấp nhận được.
-
----
-
-## 6. Team Topologies như một góc nhìn bổ trợ
-
-Có thể giới thiệu ngắn gọn bốn kiểu team:
-
-* **Stream-aligned team**: gắn với một dòng giá trị hoặc nhóm người dùng.
-* **Platform team**: cung cấp capability để các team khác có thể tự phục vụ.
-* **Enabling team**: giúp team khác tiếp nhận năng lực mới.
-* **Complicated-subsystem team**: sở hữu phần hệ thống cần chuyên môn sâu.
-
-Nhưng phần quan trọng hơn là cách các team tương tác:
-
-* **Collaboration**: cùng làm trong thời gian giới hạn để khám phá hoặc giải quyết vấn đề.
-* **X-as-a-Service**: một team cung cấp capability ổn định cho team khác.
-* **Facilitating**: một team giúp team khác nâng cao năng lực.
-
-Có thể đưa ra cảnh báo:
-
-> Platform team không làm giảm dependency nếu mọi yêu cầu vẫn phải gửi ticket và chờ xử lý. Khi đó, tổ chức chỉ đổi tên component team thành platform team.
-
-Một platform thực sự hữu ích khi tạo được self-service, contract rõ ràng và giảm cognitive load cho stream-aligned teams.
-
----
-
-## 7. Bốn chiến lược xử lý dependency
-
-Thay vì bắt đầu bằng scaling framework, bài viết có thể đề xuất thứ tự sau.
-
-### 1. Eliminate — Loại bỏ
-
-Hỏi liệu dependency có thực sự cần thiết không.
-
-Ví dụ:
-
-* chuyển một capability vào team;
-* loại bỏ bước phê duyệt không tạo thêm giá trị;
-* tự động hóa kiểm thử và deployment;
-* chia sẻ kiến thức để bỏ phụ thuộc vào chuyên gia duy nhất.
-
-### 2. Internalize — Đưa năng lực vào team
-
-Nếu dependency xuất hiện thường xuyên, team có thể cần thêm năng lực thay vì tiếp tục điều phối với team khác.
-
-Không nhất thiết phải tuyển thêm một vai trò cố định; có thể:
-
-* luân chuyển thành viên;
-* pair programming;
-* embedded specialist;
-* đào tạo T-shaped skills.
-
-### 3. Stabilize — Tạo giao diện ổn định
-
-Khi dependency cần tồn tại:
-
-* API contract;
-* service boundary;
-* platform self-service;
-* Definition of Done chung;
-* quy tắc versioning;
-* integration automation.
-
-Mục tiêu là chuyển từ phụ thuộc vào con người sang phụ thuộc vào một capability có thể dự đoán.
-
-### 4. Coordinate — Điều phối có chủ đích
-
-Chỉ khi không thể loại bỏ hoặc ổn định dependency mới cần tăng coordination:
-
-* joint refinement;
-* shared planning;
-* cross-team synchronization;
-* integrated review;
-* multi-team retrospective.
-
-Ý chính:
-
-> Eliminate before you coordinate. Stabilize before you scale.
-
----
-
-## 8. Một Product hay nhiều Product?
-
-Đây có thể là phần lý luận quan trọng nhất của bài.
-
-Trước khi chọn mô hình scaling, tổ chức cần hỏi:
-
-> Các team này đang cùng tạo ra một Product, hay chỉ đang làm việc trong cùng một hệ thống kỹ thuật?
-
-Các câu hỏi nhận diện:
-
-* Có cùng một nhóm người dùng hoặc khách hàng không?
-* Có cùng Product Goal không?
-* Giá trị có thể được đánh giá riêng cho từng team không?
-* Một thay đổi có thường xuyên cần nhiều team cùng tham gia không?
-* Có một Product Backlog chung hay nhiều backlog cạnh tranh?
-* Có một người chịu trách nhiệm tối đa hóa giá trị tổng thể không?
-
-Nếu thực chất là một Product nhưng tổ chức chia thành nhiều backlog và nhiều Product Owner độc lập, dependency ưu tiên sẽ xuất hiện một cách có hệ thống.
-
-Ngược lại, không nên gộp mọi hệ thống có liên hệ kỹ thuật thành “một Product” khổng lồ. Khi ranh giới Product quá rộng:
-
-* Product Goal trở nên mơ hồ;
-* Product Owner không thể thực sự quản lý giá trị;
-* backlog trở thành danh sách mọi thứ trong tổ chức;
-* scaling tạo thêm tầng quản trị thay vì tăng khả năng thích nghi.
-
----
-
-## 9. Scaling Scrum nên giải quyết vấn đề gì?
-
-Scaling không đơn giản là áp dụng Scrum cho nhiều team.
-
-Một mô hình scaling có ý nghĩa khi nó giúp:
-
-* nhiều team cùng hướng đến một Product Goal;
-* quản lý một Product Backlog;
-* tạo ra một Increment tích hợp;
-* phát hiện dependency sớm;
-* kiểm tra kết quả ở cấp Product;
-* thích nghi dựa trên feedback chung.
-
-Một định nghĩa sắc gọn:
-
-> Scaling Scrum is not multiplying teams, roles, and events. It is preserving empiricism when multiple teams contribute to the same product.
-
-Có thể phân biệt:
-
-| Scaling có ích                  | Scaling mang tính hình thức  |
-| ------------------------------- | ---------------------------- |
-| Một Product Goal rõ ràng        | Nhiều roadmap cạnh tranh     |
-| Increment tích hợp thường xuyên | Tích hợp cuối release        |
-| Dependency được giảm dần        | Dependency chỉ được theo dõi |
-| Decision gần nơi có thông tin   | Thêm tầng phê duyệt          |
-| Feedback ở cấp sản phẩm         | Mỗi team demo phần riêng     |
-| Shared outcome                  | Tổng hợp output của các team |
-
----
-
-## 10. Các Scrum Event thay đổi thế nào khi có nhiều team?
-
-Không nên đơn giản nhân đôi số cuộc họp.
-
-### Sprint Planning
-
-Các team cần hiểu:
-
-* Product Goal chung;
-* thứ tự ưu tiên chung;
-* dependency có thể ảnh hưởng đến Sprint Goal;
-* cách tạo ra Increment tích hợp.
-
-Nhưng mỗi team vẫn cần khả năng tự lập kế hoạch cho công việc của mình.
-
-### Daily Scrum và cross-team synchronization
-
-Daily Scrum phục vụ Developers trong một team. Cross-team sync chỉ nên được dùng khi có vấn đề tích hợp thực sự.
-
-Cảnh báo:
-
-> Scrum of Scrums dễ trở thành cuộc họp báo cáo trạng thái nếu người tham dự chỉ kể team mình đã làm gì.
-
-Nó nên tập trung vào:
-
-* điều gì đang ngăn cản Increment tích hợp;
-* dependency nào vừa xuất hiện hoặc thay đổi;
-* quyết định nào cần được đưa ra giữa các team.
-
-### Sprint Review
-
-Không nên có nhiều demo rời rạc rồi gọi đó là Product Review.
-
-Review cần kiểm tra:
-
-* Increment tổng thể;
-* thay đổi trong thị trường hoặc nhu cầu người dùng;
-* tiến độ hướng đến Product Goal;
-* điều gì nên được làm tiếp theo.
-
-### Retrospective
-
-Ngoài retrospective của từng team, cần có cơ chế xem xét vấn đề ở cấp hệ thống:
-
-* dependency lặp lại;
-* thời gian chờ;
-* lỗi tích hợp;
-* policy tổ chức;
-* ranh giới ownership;
-* bottleneck nằm ngoài quyền kiểm soát của một team.
-
----
-
-## 11. Vai trò của PO, Scrum Master và Developers
-
-### Product Owner
-
-Khi nhiều team cùng làm một Product, thách thức không phải là chia backlog thành nhiều phần, mà là giữ được một trật tự ưu tiên dựa trên giá trị tổng thể.
-
-Có thể phản biện mô hình “mỗi team một PO”:
-
-* Ai chịu trách nhiệm cho trade-off giữa các team?
-* Ai quyết định ưu tiên khi mục tiêu xung đột?
-* Product Owners là người quyết định hay chỉ là backlog administrators?
-
-### Scrum Master
-
-Scrum Master không chỉ xử lý impediment bên trong team.
-
-Ở cấp độ nhiều team, họ cần giúp tổ chức nhìn thấy:
-
-* dependency do cấu trúc tổ chức tạo ra;
-* policy làm chậm dòng giá trị;
-* local optimization;
-* sự khác biệt giữa coordination problem và organizational design problem.
-
-### Developers
-
-Developers cần ownership vượt qua biên giới repository hoặc component:
-
-* tích hợp sớm;
-* chia sẻ kiến thức;
-* thống nhất Definition of Done;
-* cùng chịu trách nhiệm cho chất lượng Product Increment.
-
----
-
-## 12. Đo dependency bằng tác động, không bằng số đường nối
-
-Không phải dependency nào cũng xấu. Bài viết có thể đề xuất các chỉ số:
-
-* thời gian công việc bị blocked;
-* dependency waiting time;
-* tuổi của dependency chưa giải quyết;
-* số handoff trước khi giá trị đến người dùng;
-* tỷ lệ Sprint Goal bị ảnh hưởng bởi team khác;
-* thời gian từ code complete đến integrated;
-* integration frequency;
-* lead time từ ý tưởng đến usable Increment;
-* tỷ lệ công việc cần thay đổi từ ba team trở lên;
-* số dependency lặp lại qua nhiều Sprint.
-
-Điểm quan trọng:
-
-> Mục tiêu không phải giảm số dependency về 0, mà giảm chi phí phối hợp và mức độ dependency làm gián đoạn dòng giá trị.
-
-Không nên dùng velocity để so sánh các team hoặc chứng minh mô hình scaling thành công.
-
----
-
-## 13. Khi nào thực sự cần một scaling framework?
-
-Một framework có thể đáng cân nhắc khi:
-
-* nhiều team thực sự cùng phát triển một Product;
-* các team dùng chung Product Goal và Product Backlog;
-* cần một Increment tích hợp thường xuyên;
-* dependency không thể xử lý chỉ bằng thay đổi ranh giới team;
-* quy mô coordination đã vượt khả năng xử lý không chính thức.
-
-Nhưng framework sẽ không tự sửa được:
-
-* kiến trúc kết nối quá chặt;
-* backlog phân mảnh;
-* Product Ownership không rõ;
-* team thiếu kỹ năng;
-* quy trình phê duyệt tập trung;
-* integration diễn ra quá muộn;
-* ưu tiên xung đột giữa các đơn vị.
-
-Có thể nhắc ngắn:
-
-* **Nexus** tập trung vào integration giữa các Scrum Team.
-* **LeSS** nhấn mạnh một Product, một Product Backlog và feature teams.
-* **Scrum@Scale** tách góc nhìn product và delivery coordination.
-* **SAFe** giải quyết phạm vi tổ chức rộng hơn nhưng kéo theo nhiều cấu trúc và vai trò hơn.
-
-Không cần biến phần này thành so sánh framework chi tiết. Kết luận nên là:
-
-> Chọn framework sau khi hiểu dependency; đừng dùng framework để tránh phải đặt lại câu hỏi về cấu trúc tổ chức.
-
----
-
-## 14. Một mô hình chẩn đoán thực dụng
-
-Bài viết có thể đưa ra chuỗi câu hỏi:
-
-1. Các team có thực sự cùng phát triển một Product không?
-2. Họ có cùng Product Goal và Product Backlog không?
-3. Một team có thể tạo ra lát cắt giá trị end-to-end không?
-4. Dependency nào xuất hiện thường xuyên nhất?
-5. Dependency đó đến từ bản chất sản phẩm hay cấu trúc tổ chức?
-6. Có thể loại bỏ bằng cách thay đổi team boundary không?
-7. Có thể chuyển nó thành self-service hoặc interface ổn định không?
-8. Nếu vẫn cần coordination, cơ chế tối thiểu nào là đủ?
-9. Scaling framework giải quyết vấn đề cụ thể nào?
-10. Làm sao biết thay đổi đó thực sự giảm lead time và tăng khả năng học hỏi?
-
-Mô hình tóm tắt:
-
-> **Product boundary → Team boundary → Technical boundary → Coordination mechanism → Scaling framework**
-
-Thứ tự này rất quan trọng. Nếu đi ngược lại, tổ chức có thể chọn framework trước rồi ép sản phẩm và team vào cấu trúc của framework.
-
----
-
-## 15. Kết luận đề xuất
-
-Có thể kết bằng một ý mạnh:
-
-> Một tổ chức không trở nên Agile hơn chỉ vì có nhiều Scrum Team. Nếu mỗi team phải chờ nhiều team khác để tạo ra giá trị, việc nhân rộng Scrum có thể chỉ nhân rộng cả sự phụ thuộc.
-
-Sau đó chốt:
-
-> Scaling tốt không được đo bằng số team có thể cùng lập kế hoạch. Nó được đo bằng khả năng nhiều team cùng tạo ra một Product Increment, nhận feedback và thay đổi hướng đi mà không bị bộ máy phối hợp làm chậm lại.
-
-Và câu cuối:
-
-> Trước khi hỏi “Chúng ta nên scale Scrum bằng framework nào?”, hãy hỏi: “Chúng ta có thể thiết kế Product, architecture và team differently để cần ít scaling hơn không?”
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Scrum Beyond One Team - My Personal Planet</title>
+	<link rel="stylesheet" href="../../../pages-styles.css">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="When multiple Scrum Teams work on one product, what is called a scaling problem is often the cost of making a valuable change pass through people who have the authority to say no. This article separates three kinds of waiting, revisits the relationship between team and system structure, and asks whether each scaling framework adds or removes decision gates." name="description">
+	<style>
+		sup a {
+			font-size: .8em;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<article class="content-article">
+		<header class="article-header">
+			<h1 class="page-title">Scrum Beyond One Team</h1>
+			<p class="page-subtitle">The most expensive problem when multiple teams work on the same product is not found in the software architecture, but in the map of who is allowed to say no. Before asking which scaling framework to adopt, ask how many approvals from outside the team a valuable change must pass through.</p>
+			<p class="page-meta">Published: <time datetime="2026-08-03">August 3, 2026</time></p>
+		</header>
+
+		<section class="content-section">
+			<p>In 1967, Melvin Conway submitted a paper to <em>Harvard Business Review</em> and was rejected. The reason, as Conway himself later recorded, was that he had not proved his thesis. In April of the following year, <em>Datamation</em> published the paper, and that unproven thesis became a sentence almost everyone in software has heard: an organization that designs a system will produce a design whose structure mirrors the communication structure of the organization itself.<sup><a href="#ref-1">[1]</a></sup></p>
+			<p>The detail worth preserving is not the sentence. It is the rejection, and the reason for it.</p>
+			<p>Fifty-eight years after the paper appeared in print, Conway's observation has become a fixture in discussions about organizational design. Yet the evidence behind it remains much thinner than the confidence with which it is invoked. A 2016 systematic review of large-scale agile transformations screened 1,875 papers and retained 52 publications describing 42 industrial cases. Nearly 90 percent of those publications were experience reports rather than rigorously designed studies. The authors themselves described this as evidence of a lack of sound academic research in the field.<sup><a href="#ref-2">[2]</a></sup></p>
+			<p>That means both camps are standing on the same soft ground: the one saying “redesign the teams” and the one saying “choose a framework”. So is this article, and it will return to that limitation near the end.</p>
+			<p class="intro-text">The article's thesis is this: when Scrum extends beyond one team, much of what organizations call a “scaling problem” is the cost of making a valuable change pass through multiple people who have the authority to say no. Redesigning teams is expensive because it can change that number. A scaling framework is cheaper because, much of the time, it merely makes that number visible on a board, and in some cases adds to it.</p>
+			<p>There is a safe version of this thesis and a controversial one. The safe version is that “dependencies are symptoms; team structure is the cause.” Almost no one objects to that statement, and almost no one does anything differently after hearing it. The controversial version lies in the phrase “the authority to say no.” It claims that the things occupying most of a dependency board, the technical artifacts waiting to be delivered by another team, are the cheapest of three kinds of waiting. The most expensive kind does not live in the software architecture. It lives in the map of who is allowed to decide what.</p>
+			<p>One phrase needs a precise definition before it is used throughout the article. A <strong>decision gate</strong> is a point at which work cannot proceed without permission, prioritization, or risk acceptance from someone outside the team. It is not the same as the number of people who must communicate to complete the work, nor is it the same as the number of technical boundaries the work must cross. Someone who is consulted is not necessarily a decision gate. Two approval gates running in parallel, each with a clear response deadline, may cost less than a single gate sitting in the queue of one overloaded person. This article is concerned with the number of decision gates and the total time for which they hold work back, not with the number of people in the room.</p>
+			<p>The context here is multiple teams developing one software product inside an organization with at least some freedom to rearrange its team structure. Almost none of the argument applies to a single team. In an organization locked into headcount-based outsourcing contracts, or into legally mandated separation of duties across departments, the recommendations narrow considerably. That is a real boundary, not a disclaimer added for safety.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point" id="when-five-teams-are-done-but-no-one-can-use-anything">When Five Teams Are Done but No One Can Use Anything</h2>
+			<p class="intro-text">A team wants to complete a payment feature. It waits for a design from the UX group, an endpoint from the platform team, a new schema column from the data governance group, a security review, a deployment window from operations, and confirmation from another Product Owner that the corresponding change on their side belongs in this Sprint.</p>
+			<p>At the end of the Sprint, every team has closed all the items it accepted. No team has missed its commitment. There is no one to blame. And users still cannot make a payment.</p>
+			<p>The 2020 Scrum Guide closes off the familiar escape route with three concise rules: an Increment must be usable to provide value; work that does not meet the Definition of Done is not part of an Increment; and multiple Scrum Teams working on the same product must jointly define and follow the same Definition of Done.<sup><a href="#ref-3">[3]</a></sup></p>
+			<p>Read those sentences carefully and the Guide offers no concept of “Done at team level.” The Definition of Done belongs to the Increment, and when multiple teams work on one product, the Definition of Done must be shared. A team that reports Done on a piece that has not been integrated is using the word in a sense that the Scrum Guide does not provide.</p>
+			<p>Care is needed not to overcorrect in the opposite direction. The Scrum Guide allows multiple Increments within a Sprint, so an intermediate slice can still be a valid Increment if it is integrated, usable, and meets the Definition of Done, even when users cannot yet complete the whole payment journey. The fact that users cannot yet do what they ultimately need does not prove that no Increment exists. The error is calling an unintegrated piece Done. And an Increment goes no further than being thoroughly verified and usable: it creates the conditions for asking the market a question; it is not evidence that the market has already answered.<sup><a href="#ref-3">[3]</a></sup></p>
+			<table class="content-table">
+			<thead>
+			<tr class="header">
+			<th>Level</th>
+			<th>What the team has completed</th>
+			<th>What remains unknown</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr class="odd">
+			<td>Work completed</td>
+			<td>All assigned items have been closed during the Sprint</td>
+			<td>Whether they will work when combined with everything else</td>
+			</tr>
+			<tr class="even">
+			<td>Component completed</td>
+			<td>A service, screen, or data layer meets its internal standard</td>
+			<td>Whether users can accomplish anything with it</td>
+			</tr>
+			<tr class="odd">
+			<td>An Increment</td>
+			<td>An integrated, usable slice that meets the shared Definition of Done</td>
+			<td>Its real value remains unknown, but there is now something that can be put in front of users</td>
+			</tr>
+			</tbody>
+			</table>
+			<p>This is where the argument can easily slip into a lecturing tone, so it is worth pausing. A team cannot integrate on its own when no integration environment exists, and an integration environment is not something a team can create within one Sprint through goodwill. Saying “that team is misusing the word Done” often identifies the right error in the wrong person. The distorted use of Done is exposing something outside the team's authority. The task of the rest of this article is to name that thing precisely enough that someone can change it.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point" id="three-things-you-may-be-waiting-for">Three Things You May Be Waiting For</h2>
+			<p class="intro-text">The familiar way of classifying dependencies groups them by where they arise: product, technical, knowledge, process, environment and deployment, or priority dependencies. That classification is not wrong. It simply does not answer the question that matters to someone who is blocked: what will it cost to remove this dependency?</p>
+			<p>Classifying by what is being awaited provides a better answer, because each kind of waiting carries a different removal cost and requires a different group of people to address it.</p>
+			<table class="content-table">
+			<thead>
+			<tr class="header">
+			<th>What is being awaited?</th>
+			<th>What it looks like</th>
+			<th>Who can remove it</th>
+			<th>Cost of removal</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr class="odd">
+			<td>An artifact</td>
+			<td>An endpoint, schema column, design, or test environment</td>
+			<td>Engineering: contracts, versioning, stubs, self-service, and automation</td>
+			<td>Usually the cheapest. Money and tooling can buy progress here most quickly</td>
+			</tr>
+			<tr class="even">
+			<td>A capability</td>
+			<td>The team is allowed to make the change but lacks enough knowledge to do so safely</td>
+			<td>People: rotation, pairing, enabling teams, and living architecture documentation</td>
+			<td>Moderate, usually measured in quarters. More meetings do not shorten it</td>
+			</tr>
+			<tr class="odd">
+			<td>A decision</td>
+			<td>Approval concerning priority, architecture, risk, or money</td>
+			<td>The person holding the authority, or the person able to delegate it</td>
+			<td>Usually the most expensive. It cannot simply be purchased or automated away</td>
+			</tr>
+			</tbody>
+			</table>
+			<p>The cost order in the final column is a proposal made by this article, not a measured result. I have not found research that ranks these three kinds of waiting by removal cost, so the table should be read as a hypothesis for choosing where to act, not as a finding. It may be wrong in a specific direction: in an organization whose architecture is so entangled that every change propagates across four services, waiting for an artifact may be the largest cost. Discussing decision rights in that situation would mean discussing the wrong problem. The way to find out is to measure, not to agree with the table.</p>
+			<p>The central difference between the first two kinds and the third is that, when an artifact or capability is missing, someone has usually begun the work and the remaining question is when it will be finished. When a decision is missing, the work may not have begun at all. It may never begin, because the person with authority has not found a reason to care.</p>
+			<p>The six familiar dependency types fit these three axes reasonably well. Technical and environment dependencies generally involve waiting for artifacts. Process and priority dependencies generally involve waiting for decisions. Knowledge dependencies involve waiting for capability and are the easiest to hide: they rarely appear on a backlog under their real name, instead appearing in the phrase “let the other team do it; it will be faster.” Product dependencies can slide between categories. They may look like artifact dependencies, but when two teams serve customer groups with competing interests, the apparent technical dependency is often a decision dependency in disguise.</p>
+			<p>Technical dependencies are visible in the architecture. Priority dependencies are more dangerous because they cannot be resolved with an API contract or a pipeline.</p>
+			<p>One test helps identify the kind of dependency involved. Ask the other side: “If I do this part myself, am I allowed to?” If the answer is “yes, but you do not yet know how,” the missing thing is capability. If it is “yes, but you must follow this contract,” the dependency concerns an artifact. If it is “no, because no one has approved it,” then no investment in tooling over the next six months will touch the actual problem.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point" id="why-waiting-costs-more-than-the-number-on-a-dependency-board">Why Waiting Costs More Than the Number on a Dependency Board</h2>
+			<p class="intro-text">A dependency board presents dependencies as a list: eleven connecting lines, three of them red. That presentation implies that cost is proportional to the number of lines. Two bodies of work suggest otherwise, and neither is research about Scrum.</p>
+			<p>The first comes from queueing theory. Kingman's formula, published in 1961 for a single-server queue, approximates average waiting time as the product of three factors: the utilization term <span class="math inline"><em>ρ</em>/(1−<em>ρ</em>)</span>, variability in the flow of work, and service time.<sup><a href="#ref-4">[4]</a></sup> The first term is the striking one. At 80 percent utilization, it equals 4. At 90 percent, it equals 9. At 95 percent, it equals 19. Raising a group's utilization from 80 to 90 percent does not increase waiting time by one-eighth; it more than doubles it.</p>
+			<p>That is why assigning more work to a platform team “so its capacity is not wasted” can slow down all five teams behind it, while every utilization chart for the platform team looks better than before.</p>
+			<p>The queueing analogy breaks in a place that should be stated immediately. Kingman describes a single server processing comparable jobs, and the server learns nothing. A team learns: the third time it receives the same kind of request, it may complete it much faster. Teams can also refuse work, prioritize it, and respond more quickly to people they know. What survives the analogy is the shape of the curve, not the precise numbers on it.</p>
+			<p>The second source is an empirical study. Herbsleb and Mockus analyzed data from the source-code change management system of one distributed software organization, then repeated the analysis in another organization with a different product and different locations. They found that distributed work items took roughly two and a half times as long as comparable co-located items. Their proposed mechanism was that distributed items involved more people, while the number of participants was strongly associated with the MR interval.<sup><a href="#ref-5">[5]</a></sup></p>
+			<p>In that quotation, MR interval is the time from opening to closing a source-code modification request: the study's measure of completion time.</p>
+			<p>The limitation matters because this article will draw on the study more than once. Herbsleb and Mockus measured geographic distance, not team boundaries. Two people sitting beside each other but belonging to teams with different backlogs and managers are not equivalent to two people separated by time zones. This article does not borrow the two-and-a-half-times figure. It borrows the proposed mechanism: as the number of people involved in a work item rises, the time required to complete it rises as well. That mechanism does not depend on where those people sit.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point" id="team-structure-prewrites-much-of-the-dependency-list">Team Structure Prewrites Much of the Dependency List</h2>
+			<p class="intro-text">Herbsleb and Mockus measured the number of people involved, while this article is concerned with the number of decision gates. Those are not the same number, but both are shaped by how the organization draws boundaries. A boundary adds people who may need to communicate and creates another place where a “no” may appear. The next question is therefore where those boundaries sit. Most of the time, that was decided long before the current change arrived.</p>
+			<p>Conway made another observation, quoted less often than the famous one but arguably sharper: every act of delegation narrows someone's field of inquiry and therefore reduces the range of designs that can realistically be pursued.<sup><a href="#ref-1">[1]</a></sup> Every organizational boundary does more than divide work. It removes some designs from the space of ideas that anyone can realistically pursue, because no one can see enough of both sides to imagine them.</p>
+			<p>MacCormack, Rusnak, and Baldwin tested this hypothesis with an ingenious design. They compared pairs of functionally similar products: one developed by a tightly coordinated commercial organization and the other by a loosely organized open-source community. They then measured coupling among components in the source code. Their abstract reports that products produced by loosely coupled organizations were considerably more modular, with as much as an eightfold difference in the potential for a change in one component to propagate to others.<sup><a href="#ref-6">[6]</a></sup></p>
+			<p>The same paper makes another observation worth putting on the wall of an architecture room: commercial managers commonly believe their designs are highly modular, while their immaculate whiteboard boxes fail to match the file-level interactions in the actual code.<sup><a href="#ref-6">[6]</a></sup> The whiteboard diagram represents what the organization wants to believe. The real dependency list lives in the source code, and it is reflecting the organization chart rather than the architecture diagram.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1" id="component-teams-and-feature-teams-are-not-good-and-evil">Component Teams and Feature Teams Are Not Good and Evil</h3>
+				<p>LeSS defines a feature team as “a long-lived, cross-functional, cross-component team that completes many end-to-end customer features, one by one.” It contrasts this with a component team optimized to produce more code within its own boundary rather than to deliver customer value.<sup><a href="#ref-7">[7]</a></sup></p>
+				<p>That framing is persuasive, but it comes from one side of the debate. Component teams exist for real reasons. Some subsystems demand such deep expertise that distributing the specialists across six teams is a reliable way to break them. The price is that every feature must cross several teams, each team has its own priorities, and no one owns the end result.</p>
+				<p>Feature teams reduce dependencies, but they introduce the risk of duplication, diluted expertise, and a mandatory investment in architecture, automated testing, and knowledge sharing. LeSS acknowledges that many organizations stop at a hybrid model and describes that model as carrying the disadvantages of both sides.<sup><a href="#ref-7">[7]</a></sup> That warning is more useful than an advertisement for the pure form.</p>
+				<p>A more balanced position is this: the goal is not to create completely independent teams. The goal is for most valuable changes to be completed within one team, at a coordination cost the organization can afford every week.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1" id="what-team-topologies-adds">What Team Topologies Adds</h3>
+				<p>Skelton and Pais propose four team types and three interaction modes. The team types are stream-aligned teams oriented around a flow of value; platform teams that provide capabilities other teams can consume through self-service; enabling teams that help other teams acquire new capabilities; and complicated-subsystem teams that own parts of the system requiring deep specialist knowledge.<sup><a href="#ref-8">[8]</a></sup></p>
+				<p>The less frequently repeated but more useful part is the three interaction modes. <strong>Collaboration</strong> means working together for a limited period to explore or resolve a problem whose shape is not yet clear. <strong>X-as-a-Service</strong> means one side provides a stable capability for the other to consume. <strong>Facilitating</strong> means one side helps the other develop a capability and then withdraws.<sup><a href="#ref-8">[8]</a></sup></p>
+				<p>These modes map reasonably well to the three kinds of waiting described earlier. Collaboration helps when no one yet knows what is actually missing. X-as-a-Service is the appropriate shape for recurring artifact dependencies. Facilitating is appropriate when capability is missing. None of the three interaction modes resolves the absence of a decision. That is not a gap in Team Topologies; the third kind of waiting belongs to a different layer of the problem.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1" id="team-boundaries-are-not-a-free-variable">Team Boundaries Are Not a Free Variable</h3>
+				<p>This is where most writing on the subject stops, and where much of it stops being useful.</p>
+				<p>“Redesign the teams” sounds like an action. In an organization of two hundred people, it is a multi-quarter project. Productivity falls while it is under way. It touches employment arrangements, individual career paths, departmental budgets, and the position of every direct manager. It also collides with the existing architecture, which has already hardened into the shape of the old organization exactly as Conway described. Change the teams without changing the architecture and the result may be teams that cannot modify the work they have just been assigned.</p>
+				<p>Windows for changing team boundaries usually open only at a few moments: when a new product begins, when a new leader has enough political capital to pay the price, or after a failure large enough that no one can continue defending the status quo. Outside those windows, telling a Scrum Master to redesign the organization gives them a task they have no authority to perform and then blames them for failing to perform it.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point" id="eliminate-internalize-stabilize-then-coordinate">Eliminate, Internalize, Stabilize, Then Coordinate</h2>
+			<p class="intro-text">There are four ways to address a dependency, presented here in the order they should usually be tried. Unlike common presentations of the subject, each method targets a particular kind of waiting. Choosing the wrong method is therefore not merely less efficient; it fails to touch the problem.</p>
+			<p><strong>Eliminate it.</strong> Ask whether the dependency needs to exist. An approval step that has not returned “no” in eighteen months deserves scrutiny, although the answer is not obvious. The step may be controlling nothing, or it may be working so well that no one submits requests that would be rejected. Distinguish the two possibilities by asking the people who submit work, not the people who approve it. This primarily addresses decision dependencies.</p>
+			<p><strong>Internalize it.</strong> If the same dependency returns Sprint after Sprint, the team needs that capability inside its boundary. This does not necessarily require hiring a permanent specialist. Rotation, pair programming, a specialist embedded for several Sprints, and T-shaped skill development can all work. This addresses capability dependencies and is the only method that directly builds the missing capability.</p>
+			<p><strong>Create a stable interface.</strong> When a dependency must continue to exist, move it from dependence on a person to dependence on a predictable capability: versioned contracts, clear service boundaries, self-service, a shared Definition of Done, and automated integration. This addresses artifact dependencies.</p>
+			<p><strong>Coordinate deliberately.</strong> Use joint refinement for items that cross teams, enough shared planning to expose collisions, a synchronization session when integration is failing, and a Review focused on one Increment rather than six separate demonstrations. This addresses the decision waiting that remains after everything removable has been eliminated.</p>
+			<p><em>Eliminate before you coordinate. Stabilize before you scale.</em></p>
+			<p>The order matters because reversing it is politically cheaper. Adding a synchronization meeting requires no budget approval, removes no position, and creates a feeling that the problem is being addressed within the week. Coordination makes dependencies easier to live with. Team design determines how many dependencies the organization must live with.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1" id="between-changing-who-holds-authority-and-adding-another-meeting">Between Changing Who Holds Authority and Adding Another Meeting</h3>
+				<p>The four methods expose a gap directly beneath the article's central argument. Artifact dependencies have technical remedies. Capability dependencies have people-centered remedies. But the argument so far appears to imply that decision dependencies can be removed only by changing who holds authority: that is, through restructuring. That would be an overstatement.</p>
+				<p>There is another layer between restructuring authority and adding meetings: changing the decision mechanism without changing the person who ultimately holds authority. <a href="10-effective-conversation-discussion.html">An earlier article in this series on discussion and disagreement</a> argued that the mechanism should be agreed before disagreement occurs. It may take several forms: one person decides, the group uses consent, or the parties run a time-bounded experiment. Threshold-based mechanisms are discussed less often but attack waiting time directly: a spending limit below which the team decides, an architecture decision published with a deadline for objections, or a list of pre-approved cases for recurring changes. <a href="5-collaboration-across-scrum-accountabilities.html">The article in this series on collaboration across Scrum accountabilities</a> calls the thing being rearranged here a <strong>decision right</strong>.</p>
+				<p>This layer is much cheaper than redesigning teams. No one needs to lose a position, so it deserves to be tried first. It is also the easiest layer to fake. A threshold set so low that no meaningful decision falls beneath it is delegation on paper and an approval gate under a new name in practice.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1" id="renaming-a-team-platform-does-not-reduce-dependencies">Renaming a Team “Platform” Does Not Reduce Dependencies</h3>
+				<p>If every request still has to be submitted as a ticket and wait for scheduling, the newly named platform team is the old component team with a better sign on the door, plus an additional queue with a more fashionable name.</p>
+				<p>Team Topologies calls the appropriate form the <strong>thinnest viable platform</strong>: the smallest platform that is still useful. Its criterion is whether it reduces cognitive load for stream-aligned teams, the amount a team must hold in its collective head to do its work, rather than creating more dependencies for them.<sup><a href="#ref-8">[8]</a></sup></p>
+				<p>A more concrete test comes from DORA's work on loosely coupled architecture. The question is not whether the organization has something called a platform team. The questions are whether teams can perform most testing without a shared integration environment and whether they can deploy their services “on demand, independently of the services [they] depend on.”<sup><a href="#ref-9">[9]</a></sup> Both can be answered yes or no, and neither answer depends on what the team is called.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point" id="one-product-or-several-products-sharing-a-name">One Product, or Several Products Sharing a Name?</h2>
+			<p class="intro-text">Before selecting a scaling model, there is a cheaper question with greater consequences: are these teams producing one Product, or are they merely working inside the same technical system?</p>
+			<p>The Scrum Guide answers the easier part by recommending that an oversized Scrum Team reorganize into several cohesive teams focused on the same product, with a shared Product Goal, Product Backlog, and Product Owner.<sup><a href="#ref-3">[3]</a></sup></p>
+			<p>The strength of that wording matters. The Scrum Guide says <strong>should share</strong>, not <strong>must share</strong>. An organization does not cease to have Scrum Teams merely because four Product Owners work on the same product. It is a configuration that departs from the recommended design, not one the Guide explicitly prohibits.</p>
+			<p>Departing from the recommendation at this particular point is nevertheless expensive. Four teams working on the same product with four competing backlogs operate more like four zones of local optimization than one coherent Product, even when an executive slide gives all four zones the same name. In that configuration, priority dependencies are not a risk but an inevitable result of the design. Whenever two teams need each other, two different people must agree, and neither person is accountable for total product value.</p>
+			<p>A few questions can expose the configuration in a forty-five-minute conversation:</p>
+			<ul class="outline-list">
+			<li>Do the teams serve the same users, or do they merely work in the same system?</li>
+			<li>Can everyone state the same Product Goal in roughly the same sentence?</li>
+			<li>How many teams does an average valuable change require?</li>
+			<li>Is there one backlog ordered by total value, or several backlogs ordered by local value?</li>
+			<li>When two objectives conflict, who decides, and does that person actually decide, or merely forward the request?</li>
+			</ul>
+			<p>The final question is the most important and the least frequently asked. If the Product Owners are effectively backlog administrators rather than decision-makers about value, merging four backlogs into one will repair nothing. It merely moves the queue to a higher level.</p>
+			<p>The opposite boundary is real as well. Combining every technically connected system into one enormous Product dilutes the Product Goal until it no longer guides anything. The backlog becomes a list of all work in the organization, and no individual can manage the value of something too broad to understand. LeSS acknowledges this boundary directly: beyond the scale that one Product Owner can handle, it introduces Area Product Owners.<sup><a href="#ref-7">[7]</a></sup> Even the framework most committed to one Product acknowledges that “one Product, one backlog, one decision-maker” does not scale without limit.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point" id="is-the-framework-adding-or-removing-decision-gates">Is the Framework Adding or Removing Decision Gates?</h2>
+			<p class="intro-text">Scaling frameworks are usually compared by their number of roles, number of events, weight, or popularity. Another axis is used less often but speaks directly to the argument here: after adoption, must a valuable change pass through more or fewer decision gates than before?</p>
+			<table class="content-table">
+			<thead>
+			<tr class="header">
+			<th>Framework</th>
+			<th>Direction in which its design tends to push decision gates</th>
+			<th>What it says about itself</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr class="odd">
+			<td>Nexus</td>
+			<td>Keeps the number of priority decision points unchanged and adds an accountability focused on integration</td>
+			<td>Organizes roughly three to nine Scrum Teams around one Product Owner and one Product Backlog to produce an Integrated Increment<sup><a href="#ref-10">[10]</a></sup></td>
+			</tr>
+			<tr class="even">
+			<td>LeSS</td>
+			<td>Attempts to remove gates through one Product Owner, one backlog, and feature teams. Fewer gates do not guarantee less waiting: an overloaded Product Owner can become a single gate with a long queue</td>
+			<td>Uses one Product Owner and one Product Backlog to preserve a whole-product view and avoid local optimization<sup><a href="#ref-7">[7]</a></sup></td>
+			</tr>
+			<tr class="odd">
+			<td>Scrum@Scale</td>
+			<td>Adds two leadership groups, one focused on what is produced and one on how to produce it faster. Its stated goal is to concentrate decisions in an empowered place rather than leave them scattered, so the direction of decision latency may differ from the increase in visible layers</td>
+			<td>Calls this structure a “minimum viable bureaucracy”: the smallest set of governing bodies and processes able to operate without obstructing value delivery. The Guide explicitly identifies reduced decision latency as an objective<sup><a href="#ref-11">[11]</a></sup></td>
+			</tr>
+			<tr class="even">
+			<td>SAFe</td>
+			<td>Adds the most: a new organizational layer with its own planning cadence and set of roles</td>
+			<td>Defines an Agile Release Train as a long-lived team of Agile Teams, typically involving 50 to 125 people<sup><a href="#ref-12">[12]</a></sup></td>
+			</tr>
+			</tbody>
+			</table>
+			<p>This axis does not rank the frameworks from best to worst. The four frameworks address different problems, and an organization that chooses the wrong one will pay for the solution to a problem it does not have.</p>
+			<p>The axis is admittedly loose. The middle column uses the number of added governance layers as a proxy for decision gates, and a proxy is not the thing itself. The failure mode is clear: SAFe can consolidate many priority decisions into a shared planning event. An organization that previously sought approval from ten departments at different times during a quarter may face fewer actual approvals after adding another visible layer to its structure. The only reliable way to know is to trace a completed change and count the real gates it encountered, rather than counting boxes on a framework diagram.</p>
+			<p>The most candid statement on this subject appears in the guide of a scaling framework itself. The Nexus Guide notes that delivering more value does not always require adding people: a larger product group increases complexity, dependencies, collaboration needs, and decision paths. Reducing the number of people working on something can therefore be a legitimate way to improve value delivery.<sup><a href="#ref-10">[10]</a></sup></p>
+			<p>The guide to a scaling framework places scaling down on the table as an equally legitimate option.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1" id="the-strongest-case-for-just-use-a-framework">The Strongest Case for “Just Use a Framework”</h3>
+				<p>The argument in this article is easy to hear and difficult to implement. The opposing position is more reasonable than it first appears.</p>
+				<p>Redesigning teams takes several quarters and lowers productivity while the change is under way. A full framework implementation also takes several quarters, so claiming that a framework can be adopted on Monday would be an overstatement. Three things can nevertheless be used from the following week: a shared vocabulary for naming dependencies, a cadence that exposes them before they explode, and a way to place them where the whole organization can see the same picture. More importantly, the 2016 systematic review identified management support as one of the most prominent success factors.<sup><a href="#ref-2">[2]</a></sup> A named framework with certifications and vendors can attract that support more easily than a quiet organizational redesign proposed by a few internal practitioners.</p>
+				<p>This article therefore does not conclude that organizations should avoid frameworks. Its narrower and testable conclusion is that an organization should ask what a proposed framework will do to the number and latency of its decision gates before asking which framework is better than another. If the answer is “add to them,” the organization should understand that it is buying coordination with speed, and should say so explicitly rather than discover it after three quarters.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point" id="measure-the-impact-not-the-number-of-lines">Measure the Impact, Not the Number of Lines</h2>
+			<p class="intro-text">The number of dependencies on a board is easy to measure and almost useless. Ten dependencies resolved within a day cost less than one dependency suspended for six weeks. The important question is how severely dependencies interrupt the flow of value.</p>
+			<p>The two cheapest metrics are usually already available to organizations that do not use them:</p>
+			<ol class="outline-list">
+			<li>The proportion of a work item's total lifetime spent in a blocked state. This states directly what percentage of the work's existence was spent waiting.</li>
+			<li>The time from source-code completion until the code is part of an integrated Increment. Technical dependencies appear clearly here, and this is usually the easiest part to improve.</li>
+			</ol>
+			<p>The first metric fails predictably when it becomes a performance score: teams stop marking work as blocked. Waiting does not disappear; it moves into an “in progress” state and becomes invisible. The signal is a steadily falling blocked-time ratio while lead time remains unchanged. When those two signals appear together, the recording practice has improved, not the flow of work.</p>
+			<p>There is a larger gap in those two metrics, and it is a gap in this article's own measurement logic. Both begin counting only after work has entered the system. They measure artifact waiting well, but they cannot see the category this article has called the most expensive: the time a need spends waiting for someone to decide that it is worth addressing.</p>
+			<p>A measurement system aligned with the thesis needs at least two more numbers:</p>
+			<ul class="outline-list">
+			<li><strong>Decision latency:</strong> the time from the moment a decision is requested until an answer is given, including an answer of no.</li>
+			<li><strong>Commitment latency:</strong> the time from the moment a need is recorded until it appears in an ordered backlog. This is the only measure that captures work no one has begun, and it is almost never tracked.</li>
+			</ul>
+			<p>Two cheaper measures are also useful: the number of external decision gates encountered by a valuable item, and the proportion of decision requests that are overdue or have no named owner. The second often exposes the most uncomfortable failure. Many decision queues are not blocked by a busy person; they are blocked because no one knows whom to ask.</p>
+			<p>Other metrics become useful after the basic measures are stable: the age of unresolved dependencies, the proportion of Sprint Goals affected by work outside the team, the proportion of items requiring three or more teams, actual integration frequency, and the number of dependencies repeated across Sprints. The last is the strongest signal that a team boundary may be in the wrong place, because a dependency appearing for the fourth time is no longer an incident.</p>
+			<p>These measures have a boundary of use. They are for identifying where the system is stuck, not for comparing teams. A team with more dependencies often occupies a more difficult position in the architecture; it is not necessarily performing worse. Velocity serves neither purpose: it cannot be compared across teams and cannot demonstrate that a scaling model is working.</p>
+			<p>The goal is not to reduce dependencies to zero. An organization with no dependencies among teams may simply have divided the product into pieces that no longer relate to one another, and that is another way to lose.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point" id="where-this-argument-may-be-wrong">Where This Argument May Be Wrong</h2>
+			<p class="intro-text">There are four weaknesses, ordered by how damaging they would be if they proved decisive.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1" id="the-evidence-is-thinner-than-the-voice">The Evidence Is Thinner Than the Voice</h3>
+				<p>The four principal sources supporting the argument come from four different domains, and none measures exactly what this article is discussing. Kingman is a mathematical model of a single-server queue, not of people. Herbsleb and Mockus measured geographic distance, not team boundaries. MacCormack and colleagues studied only five matched pairs of products and explicitly noted both the limited sample and the fact that their design “does not disentangle which of these dimensions are most critical in driving the phenomenon.”<sup><a href="#ref-6">[6]</a></sup> The 2016 systematic review is, more precisely, evidence of the lack of evidence.<sup><a href="#ref-2">[2]</a></sup></p>
+				<p>Connecting those four sources produces a chain of analogies and inferences. Such a chain can be useful for thinking, but it is not a substitute for direct evidence. The reader should treat this article accordingly.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1" id="fewer-people-with-the-authority-to-say-no-is-a-value-judgment">“Fewer People with the Authority to Say No” Is a Value Judgment</h3>
+				<p>The article presents fewer decision gates as though they were self-evidently desirable. They are not. Some forms of “no” are genuine safeguards: security, privacy, operational safety, and stewardship of other people's money. An argument like this can easily become a pretext for removing controls. That is its most dangerous failure mode because the consequences emerge later and fall on someone else.</p>
+				<p>One test helps distinguish a real safeguard from a time-collection booth. For each approval point, ask two questions: does it ever answer no, and when it does, can it state the conditions under which the answer would become yes? A gate that always approves is not controlling anything. A gate that rejects without identifying acceptable conditions is not exercising control either; it is merely creating delay. Only a gate willing to refuse and able to explain the path to acceptance is doing its job.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1" id="coordination-may-be-ranked-too-low">Coordination May Be Ranked Too Low</h3>
+				<p>This article places coordination last. One real-world case points in the opposite direction.</p>
+				<p>Jeremiah Lee, who worked as a product manager at Spotify after the company tripled to roughly three thousand employees, wrote that the famous squad model “was only ever aspirational and never fully implemented.” Yet the cause he emphasized was not incorrectly drawn team boundaries. It was that “Spotify did not define a common process for cross-team collaboration.”<sup><a href="#ref-13">[13]</a></sup></p>
+				<p>Read carefully, the case suggests that an organization can draw team boundaries close to the theoretical ideal and still fail because it never designs how teams work together. The fourth intervention in this article may therefore be something that must not be omitted, even if it should come later. Lee's account is an insider narrative, not a controlled study, so it is not enough to reverse the order. It is enough to make the order uncertain.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1" id="two-conditions-that-would-defeat-the-argument">Two Conditions That Would Defeat the Argument</h3>
+				<p>The argument collapses if either of the following is measured and produces the opposite result.</p>
+				<p>First, suppose organizations that keep team boundaries unchanged but invest heavily in contracts, automation, and self-service achieve lead times comparable to organizations that redesign their teams. In that case, artifact waiting accounts for most of the real cost, and the article has exaggerated the role of decision rights.</p>
+				<p>Second, suppose the full cost of redesigning teams, including the productivity lost during the transition and the departure of highly capable people, exceeds the savings from reduced waiting. In that case, the right advice is the advice this article has treated as secondary: leave the structure alone and coordinate more effectively.</p>
+				<p>Both conditions can be measured using data many organizations already possess. I have not found published results that do so.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point" id="this-cannot-yet-be-closed">This Cannot Yet Be Closed</h2>
+			<p>Conway's paper was rejected because he had not proved his thesis. Fifty-eight years later, the software industry has turned that unproven statement into a catchphrase and still has not proved it. During the same period, scaling frameworks have been created, standardized, certified, and widely sold.</p>
+			<p>In fairness, researchers have measured organizations before and after large-scale transformations. Olszewska and colleagues built a quantitative metrics model for that purpose and applied it in a large telecommunications company.<sup><a href="#ref-14">[14]</a></sup> But that is one case, and it evaluates a broad agile and lean transformation rather than isolating the contribution of a particular scaling framework. The much easier number to find remains the number of organizations that have adopted one.</p>
+			<p>An organization does not become more agile merely because it has more Scrum Teams. If each team must wait for several others before producing anything usable, scaling Scrum also scales the waiting, and does so with a vocabulary that makes everyone feel as though progress is being made.</p>
+			<p>One question remains unanswered. If team boundaries really do prewrite much of the dependency list, why do so few organizations change them, including organizations that have read Conway and Team Topologies and paid for a complete transformation?</p>
+			<p>The comfortable answer is that they do not understand. The less comfortable answer is that they understand perfectly and are making a rational choice according to their own criteria. What they optimize may not be the time required to deliver a change to users, but budget predictability and organizational stability. If so, this article is answering a question the organization is not asking, and every metric above is useful only to people who already care about flow.</p>
+			<p>Before asking “which scaling framework should we use?”, there is a question that comes first: <strong>what is this organization optimizing for, and who has the authority to change the answer?</strong></p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point" id="references">References</h2>
+			<ol class="outline-list">
+			<li id="ref-1"><p><strong>Conway, M. E. (April 1968). “How Do Committees Invent?” <em>Datamation</em>, 14(5), 28-31.</strong> The original source of the thesis that a system's structure mirrors the communication structure of the organization that created it; the observation that the number of possible communication paths is approximately half the square of the number of people; and the statement that every act of delegation narrows the space of designs that can effectively be pursued. Conway's own note supplies the chronology: he submitted the article to <em>Harvard Business Review</em> in 1967 and it was rejected because he had not proved his thesis; <em>Datamation</em> published it in April 1968. <a href="https://www.melconway.com/research/committees.html" rel="noopener noreferrer" target="_blank">Original paper</a> and <a href="https://www.melconway.com/Home/Conways_Law.html" rel="noopener noreferrer" target="_blank">author's note</a>.</p></li>
+			<li id="ref-2"><p><strong>Dikert, K., Paasivaara, M., &amp; Lassenius, C. (2016). “Challenges and Success Factors for Large-Scale Agile Transformations: A Systematic Literature Review.” <em>Journal of Systems and Software</em>, 119, 87-108.</strong> The review screened 1,875 papers, retained 52 publications describing 42 industrial cases, and identified 35 challenges and 29 success factors. This article uses it in two opposite ways: as evidence that the field's research base remains thin because nearly 90 percent of the retained literature consisted of experience reports, and as evidence that management support is among the most prominent success factors, a legitimate reason an organization may choose a recognizable framework. <a href="https://research.aalto.fi/en/publications/challenges-and-success-factors-for-large-scale-agile-transformati/" rel="noopener noreferrer" target="_blank">Publication page</a> and <a href="https://doi.org/10.1016/j.jss.2016.06.013" rel="noopener noreferrer" target="_blank">DOI</a>.</p></li>
+			<li id="ref-3"><p><strong>Schwaber, K., &amp; Sutherland, J. (2020). <em>The Scrum Guide</em>.</strong> The authoritative source for three propositions used here: an Increment must be usable to provide value; work that does not meet the Definition of Done is not part of an Increment; and multiple Scrum Teams working on one product <strong>must</strong> share and comply with the same Definition of Done. The statement that they <strong>should</strong> share a Product Goal, Product Backlog, and Product Owner uses a deliberately weaker level of obligation, a distinction preserved in this article. <a href="https://scrumguides.org/scrum-guide.html" rel="noopener noreferrer" target="_blank">Read the Guide</a>.</p></li>
+			<li id="ref-4"><p><strong>Kingman, J. F. C. (October 1961). “The Single Server Queue in Heavy Traffic.” <em>Mathematical Proceedings of the Cambridge Philosophical Society</em>, 57(4), 902.</strong> The source of the approximation for average waiting time in a single-server queue, including the utilization term <span class="math inline"><em>ρ</em>/(1−<em>ρ</em>)</span>. This article uses that term to calculate values of 4, 9, and 19 at utilization levels of 80, 90, and 95 percent. The application to teams is the author's analogy, not a claim made by the original paper. <a href="https://doi.org/10.1017/S0305004100036094" rel="noopener noreferrer" target="_blank">Original paper via DOI</a>.</p></li>
+			<li id="ref-5"><p><strong>Herbsleb, J. D., &amp; Mockus, A. (2003). “An Empirical Study of Speed and Communication in Globally Distributed Software Development.” <em>IEEE Transactions on Software Engineering</em>, 29(6), 481-494.</strong> The source for two observations: distributed work items took approximately two and a half times as long as comparable co-located items, and they involved more people, while the number of people involved was strongly related to completion time. The study measured geographic distribution rather than team boundaries. This article borrows the proposed mechanism rather than the two-and-a-half-times figure. <a href="https://herbsleb.org/web-pubs/pdfs/Herbsleb-Empirical-2003.pdf" rel="noopener noreferrer" target="_blank">Author's full text</a>.</p></li>
+			<li id="ref-6"><p><strong>MacCormack, A., Rusnak, J., &amp; Baldwin, C. (2011). “Exploring the Duality Between Product and Organizational Architectures: A Test of the ‘Mirroring’ Hypothesis.” Harvard Business School Working Paper 08-039; formally published in <em>Research Policy</em>, 41(8), 2012, 1309-1324.</strong> The study tests the mirroring hypothesis by comparing functionally matched products built by tightly coordinated organizations and loosely organized open-source communities, finding differences of up to eightfold in the potential for a change to propagate. This article also uses two limitations identified by the authors: the sample contains only five matched pairs, and the study cannot isolate which organizational dimension drives the effect. <a href="https://www.hbs.edu/ris/Publication%20Files/08-039_1861e507-1dc1-4602-85b8-90d71559d85b.pdf" rel="noopener noreferrer" target="_blank">Working paper</a>.</p></li>
+			<li id="ref-7"><p><strong>The LeSS Company B.V. <em>Large-Scale Scrum</em>: “Feature Teams” and “Product Owner.”</strong> The source for LeSS's definitions of feature and component teams, its warning that a hybrid structure can carry the disadvantages of both, its argument for one Product Owner and one Product Backlog to avoid local optimization, and its introduction of Area Product Owners at larger scales. These are materials from one side of the debate, and this article uses them as such. <a href="https://less.works/less/structure/feature-teams" rel="noopener noreferrer" target="_blank">Feature Teams</a> and <a href="https://less.works/less/framework/product-owner" rel="noopener noreferrer" target="_blank">Product Owner</a>.</p></li>
+			<li id="ref-8"><p><strong>Skelton, M., &amp; Pais, M. (2019). <em>Team Topologies: Organizing Business and Technology Teams for Fast Flow</em>. IT Revolution Press.</strong> The source for the four team types, three interaction modes, cognitive load, and the thinnest viable platform. This article relies more heavily on the interaction modes than on the team types and observes that none of the three modes directly resolves the absence of a decision. <a href="https://teamtopologies.com/key-concepts" rel="noopener noreferrer" target="_blank">Concept summary</a> and <a href="https://teamtopologies.com/book" rel="noopener noreferrer" target="_blank">book page</a>.</p></li>
+			<li id="ref-9"><p><strong>DORA. “Loosely Coupled Architecture.”</strong> The source for two practical tests that matter more than team labels: whether teams can conduct most testing without a shared integration environment, and whether they can deploy services independently of the services on which they depend. The findings are based on multi-year survey data and are correlational. <a href="https://dora.dev/capabilities/loosely-coupled-architecture/" rel="noopener noreferrer" target="_blank">Capability documentation</a>.</p></li>
+			<li id="ref-10"><p><strong>Schwaber, K., &amp; Scrum.org (January 2021). <em>The Nexus Guide</em>.</strong> The source for the definition of Nexus as approximately three to nine Scrum Teams organized around one Product Owner and Product Backlog; the Integrated Increment; and the passage quoted here arguing that delivering more value does not always require more people and that scaling down can be an important practice. <a href="https://scrumorg-website-prod.s3.amazonaws.com/drupal/2021-01/NexusGuide%202021.pdf" rel="noopener noreferrer" target="_blank">2021 PDF</a> and <a href="https://www.scrum.org/resources/nexus-guide" rel="noopener noreferrer" target="_blank">overview page</a>.</p></li>
+			<li id="ref-11"><p><strong>Sutherland, J., &amp; Scrum Inc. <em>The Scrum@Scale Guide</em>.</strong> The source for Scrum@Scale's stated objective of linear scalability; minimum viable bureaucracy; and the Executive MetaScrum and Executive Action Team. This article notes both the deliberate use of the word <em>bureaucracy</em> with <em>minimum</em> before it and the Guide's stated goal of reducing decision latency, something a table that merely counts structural layers would miss. <a href="https://www.scrumatscale.com/scrum-at-scale-guide-online/" rel="noopener noreferrer" target="_blank">Online guide</a>.</p></li>
+			<li id="ref-12"><p><strong>Scaled Agile, Inc. “Agile Release Train.”</strong> The source for the typical size of an Agile Release Train, 50 to 125 people, used here to position SAFe on the axis of decision gates. <a href="https://framework.scaledagile.com/agile-release-train" rel="noopener noreferrer" target="_blank">Framework documentation</a>.</p></li>
+			<li id="ref-13"><p><strong>Lee, J. (2020). “Spotify's Failed #SquadGoals.”</strong> An insider account by a former Spotify product manager. It supplies two points used for self-criticism in this article: the squad model was never fully implemented as described, and the author identified the absence of a shared cross-team collaboration process as a central problem. This is a personal account, not a controlled study, and it is used at that level. <a href="https://www.jeremiahlee.com/posts/failed-squad-goals/" rel="noopener noreferrer" target="_blank">Read the article</a>.</p></li>
+			<li id="ref-14"><p><strong>Olszewska, M., Heidenberg, J., Weijola, M., Mikkonen, K., &amp; Porres, I. (2016). “Quantitatively Measuring a Large-Scale Agile Transformation.” <em>Journal of Systems and Software</em>, 117, 258-273.</strong> Cited near the conclusion as evidence that before-and-after measurement of a large-scale transformation is possible and has been attempted. I was unable to access the full paper, so this article does not repeat its findings; it cites only the study's existence and scope. <a href="https://doi.org/10.1016/j.jss.2016.03.029" rel="noopener noreferrer" target="_blank">DOI</a> and <a href="https://research.abo.fi/en/publications/quantitatively-measuring-a-large-scale-agile-transformation" rel="noopener noreferrer" target="_blank">publication page</a>.</p></li>
+			</ol>
+		</section>
+	</article>
+
+	<script src="../../../pages-scripts.js"></script>
+</body>
+
+</html>

@@ -1115,6 +1115,13 @@ var mainMenuVn = [
                                 subItems: [],
                             },
                             {
+                                title: "8. Scrum Khi Vượt Khỏi Một Team",
+                                route: "pages/information-technology/agile-software-development/scrum-agile-and-more/8-scrum-beyond-one-team-dependencies-team-design-and-scaling-vn.html",
+                                hash: "#/scrum-agile-and-more-beyond-one-team",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
                                 title: "10. Thảo Luận Hiệu Quả Trong Công Việc",
                                 route: "pages/information-technology/agile-software-development/scrum-agile-and-more/10-effective-conversation-discussion-vn.html",
                                 hash: "#/scrum-agile-and-more-effective-discussion",

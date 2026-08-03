@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Scrum Khi Vượt Khỏi Một Team - My Personal Planet</title>
+	<link rel="stylesheet" href="../../../pages-styles.css">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta
+		content="Khi nhiều Scrum Team cùng làm một sản phẩm, thứ được gọi là vấn đề scaling thường là chi phí của việc một thay đổi phải đi qua nhiều người có quyền nói không. Bài này tách ba loại chờ, xem lại quan hệ giữa cấu trúc team và cấu trúc hệ thống, và hỏi mỗi scaling framework đang thêm hay bớt số điểm chặn."
+		name="description">
+	<style>
+		sup a {
+			font-size: .8em;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<article class="content-article">
+		<header class="article-header">
+			<h1 class="page-title">Scrum Khi Vượt Khỏi Một Team</h1>
+			<p class="page-subtitle">Thứ đắt nhất khi nhiều team cùng làm một sản phẩm không nằm trong kiến trúc phần
+				mềm, mà nằm trong sơ đồ ai được phép nói không. Trước khi hỏi nên scale bằng framework nào, hỏi xem một
+				thay đổi có giá trị đang phải đi qua bao nhiêu cái gật đầu từ bên ngoài team.</p>
+			<p class="page-meta">Đăng ngày: <time datetime="2026-08-03">3 Tháng 8, 2026</time></p>
+		</header>
+
+		<section class="content-section">
+			<p>Năm 1967, Melvin Conway gửi một bài viết cho <em>Harvard Business Review</em> và bị từ chối. Lý do được
+				chính ông ghi lại: ông chưa chứng minh được luận đề của mình. Tháng 4 năm sau, <em>Datamation</em> đăng
+				bài đó, và cái luận đề chưa được chứng minh ấy là câu mà gần như mọi người làm phần mềm đều đã nghe: một
+				tổ chức thiết kế hệ thống sẽ tạo ra thiết kế có cấu trúc sao chép cấu trúc giao tiếp của chính tổ chức
+				đó.<sup><a href="#ref-1">[1]</a></sup></p>
+			<p>Chi tiết đáng giữ lại không phải câu nói. Là lời từ chối, và lý do của nó.</p>
+			<p>Năm mươi tám năm sau ngày bài đó lên mặt báo, câu của Conway đã thành thứ được trích trong mọi buổi bàn
+				về tổ chức đội ngũ, nhưng
+				nền bằng chứng phía sau nó vẫn mỏng hơn nhiều so với độ tự tin mà người ta dùng nó. Một tổng quan hệ
+				thống năm 2016 về các cuộc chuyển đổi agile quy mô lớn lọc 1.875 bài, giữ lại 52 công bố mô tả 42 ca
+				công nghiệp, và ghi nhận rằng gần 90% số bài được giữ lại là experience report chứ không phải nghiên cứu
+				có thiết kế chặt. Chính nhóm tác giả gọi đó là dấu hiệu của việc thiếu nghiên cứu học thuật vững về chủ
+				đề này.<sup><a href="#ref-2">[2]</a></sup></p>
+			<p>Nghĩa là cả phe nói "hãy tái thiết kế team" lẫn phe nói "hãy chọn một framework" đều đang đứng trên cùng
+				một nền đất mềm. Bài này cũng vậy, và sẽ quay lại đúng chỗ đó ở gần cuối.</p>
+			<p class="intro-text">Luận đề của bài: khi Scrum vượt khỏi phạm vi một team, phần lớn thứ tổ chức gọi là
+				"vấn đề scaling" là chi phí của việc một thay đổi có giá trị phải đi qua nhiều người có quyền nói không.
+				Thiết kế lại team đắt vì nó đổi được con số đó. Scaling framework rẻ hơn vì phần lớn thời gian nó chỉ
+				làm con số đó hiện lên bảng, và trong vài trường hợp còn cộng thêm vào.</p>
+			<p>Luận đề này có một phiên bản an toàn và một phiên bản đáng tranh cãi. Phiên bản an toàn là "phụ thuộc là
+				triệu chứng, cấu trúc team là nguyên nhân". Nói xong thì không ai phản đối, và cũng không ai làm gì khác
+				đi. Phiên bản đáng tranh cãi nằm ở cụm "quyền nói không": nó khẳng định rằng thứ chiếm gần hết diện
+				tích các dependency board, tức là những chỗ đang chờ một mẩu công việc kỹ thuật của team khác, lại là
+				loại rẻ nhất trong ba loại; còn loại đắt nhất thì không nằm trong kiến trúc phần mềm mà nằm trong sơ đồ
+				ai được phép quyết cái gì.</p>
+			<p>Cần chốt nghĩa một cụm trước khi dùng nó suốt bài. <strong>Điểm chặn quyết định</strong> là chỗ mà công
+				việc không đi tiếp được nếu chưa có sự cho phép, sự xếp ưu tiên, hoặc sự chấp nhận rủi ro từ một người
+				bên ngoài team. Nó khác với số người phải trao đổi để làm xong việc, và khác với số ranh giới kỹ thuật
+				phải vượt qua. Một người được hỏi ý kiến không phải một điểm chặn. Hai cửa duyệt chạy song song, mỗi cửa
+				có hạn trả lời rõ ràng, có thể rẻ hơn một cửa duy nhất nằm trong hàng đợi của một người đang quá tải.
+				Bài này quan tâm tới số điểm chặn và tổng thời gian chúng giữ công việc lại, không quan tâm tới số người
+				có mặt.</p>
+			<p>Bài viết cho bối cảnh nhiều team cùng phát triển một sản phẩm phần mềm trong một tổ chức có ít nhiều
+				quyền tự sắp xếp lại đội hình của mình. Với một team duy nhất, gần như toàn bộ bài không áp dụng. Với
+				một tổ chức bị khoá cứng bởi hợp đồng gia công tính theo đầu người, hoặc bởi quy định pháp lý bắt buộc
+				phân tách trách nhiệm giữa các bộ phận, phần khuyến nghị co lại rất nhiều. Đó là một biên thật, không
+				phải một lời rào đón.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Khi năm team đều Done mà chưa ai dùng được gì</h2>
+			<p class="intro-text">Một team muốn hoàn thành một tính năng thanh toán. Họ chờ thiết kế từ nhóm UX, chờ một
+				endpoint từ platform team, chờ một cột mới trong schema từ nhóm quản trị dữ liệu, chờ một buổi rà soát
+				bảo mật, chờ cửa sổ triển khai của nhóm vận hành, và chờ một Product Owner khác xác nhận rằng thay đổi
+				bên phía họ có nằm trong Sprint này hay không.</p>
+			<p>Cuối Sprint, trên bảng, tất cả các team đều đóng đủ số item đã nhận. Không team nào trượt cam kết. Không
+				có ai để trách. Và người dùng vẫn chưa thanh toán được.</p>
+			<p>Scrum Guide 2020 đóng cửa lối thoát quen thuộc ở đây bằng hai câu rất ngắn. <em>"In order to provide
+					value, the Increment must be usable."</em> Và <em>"Work cannot be considered part of an Increment
+					unless it meets the Definition of Done."</em><sup><a href="#ref-3">[3]</a></sup> Câu thứ ba thì cắt
+				thẳng vào tình huống nhiều team: <em>"If there are multiple Scrum Teams working together on a product,
+					they must mutually define and comply with the same Definition of
+					Done."</em><sup><a href="#ref-3">[3]</a></sup></p>
+			<p>Đọc kỹ ba câu đó thì thấy tài liệu chuẩn không có khái niệm "Done cấp team". Definition of Done gắn với
+				Increment, và khi nhiều team cùng một sản phẩm thì Definition of Done phải là một. Một team báo Done
+				trên một mảnh chưa tích hợp được là đang dùng chữ Done theo một nghĩa mà Scrum Guide không cấp.</p>
+			<p>Cần cẩn thận để không kết luận quá tay theo chiều ngược lại. Scrum Guide viết <em>"Multiple Increments
+					may be created within a Sprint"</em>, nên một lát cắt trung gian vẫn là một Increment hợp lệ nếu nó
+				đã tích hợp, dùng được và đạt Definition of Done, kể cả khi người dùng chưa thanh toán được. Chuyện
+				người dùng chưa làm được việc mình cần không tự nó chứng minh rằng không có Increment nào. Thứ sai là
+				gọi một mảnh <em>chưa tích hợp</em> là Done. Và Increment cũng chỉ dừng ở chỗ <em>"thoroughly
+					verified"</em> và <em>"usable"</em>; nó là điều kiện để đi hỏi thị trường, không phải bằng chứng
+				rằng thị trường đã trả lời.<sup><a href="#ref-3">[3]</a></sup></p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Cấp độ</th>
+						<th>Team hoàn thành cái gì</th>
+						<th>Điều gì còn chưa biết</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><strong>Xong phần việc</strong></td>
+						<td>Đóng hết item được giao trong Sprint</td>
+						<td>Chưa biết ghép vào chỗ khác có chạy không</td>
+					</tr>
+					<tr>
+						<td><strong>Xong một component</strong></td>
+						<td>Một service, một màn hình, một lớp dữ liệu đạt chuẩn nội bộ</td>
+						<td>Chưa biết người dùng có làm được việc gì với nó không</td>
+					</tr>
+					<tr>
+						<td><strong>Một Increment</strong></td>
+						<td>Lát cắt đã tích hợp, dùng được, đạt Definition of Done chung</td>
+						<td>Giá trị thật vẫn chưa biết. Nhưng đã có thứ để đưa ra hỏi</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Đây là chỗ dễ trượt sang giọng lên lớp, nên cần dừng lại một nhịp. Một team không thể tự tích hợp nếu môi
+				trường tích hợp không tồn tại, và môi trường tích hợp không phải thứ một team dựng ra trong một Sprint
+				bằng thiện chí. Nói "team đó dùng sai chữ Done" thường là bắt đúng lỗi ở sai người. Chữ Done bị dùng
+				lệch đang tố cáo một thứ nằm ngoài quyền của team, và việc của phần còn lại bài này là gọi tên thứ đó
+				cho đủ chính xác để ai đó có thể sửa.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Ba thứ có thể đang bị chờ</h2>
+			<p class="intro-text">Cách phân loại phụ thuộc quen thuộc chia theo nơi phụ thuộc phát sinh: phụ thuộc sản
+				phẩm, phụ thuộc kỹ thuật, phụ thuộc kiến thức, phụ thuộc quy trình, phụ thuộc môi trường và triển khai,
+				phụ thuộc ưu tiên. Cách chia đó không sai. Nó chỉ không trả lời được câu hỏi mà người đang bị chặn thật
+				sự cần: gỡ cái này tốn gì.</p>
+			<p>Chia theo <strong>thứ đang bị chờ</strong> thì trả lời được, vì mỗi loại chờ có một loại chi phí khác
+				nhau và một nhóm người khác nhau có thể gỡ.</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Đang chờ gì</th>
+						<th>Trông như thế nào</th>
+						<th>Ai gỡ được</th>
+						<th>Chi phí gỡ</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><strong>Chờ một artifact</strong></td>
+						<td>Một endpoint, một cột trong schema, một bản thiết kế, một môi trường test</td>
+						<td>Kỹ thuật: contract, versioning, stub, self-service, automation</td>
+						<td>Rẻ nhất. Là loại mà tiền và công cụ mua được tiến bộ nhanh nhất</td>
+					</tr>
+					<tr>
+						<td><strong>Chờ một năng lực</strong></td>
+						<td>Team có quyền sửa nhưng không đủ hiểu để sửa mà không làm hỏng thứ khác</td>
+						<td>Người: luân chuyển, pairing, enabling team, tài liệu kiến trúc còn sống</td>
+						<td>Trung bình, tính bằng quý. Không rút ngắn được bằng cách thêm cuộc họp</td>
+					</tr>
+					<tr>
+						<td><strong>Chờ một quyết định</strong></td>
+						<td>Một cái gật đầu về ưu tiên, về kiến trúc, về rủi ro, về tiền</td>
+						<td>Chỉ người đang giữ quyền đó, hoặc người trao quyền đó cho họ</td>
+						<td>Đắt nhất. Không mua được, không tự động hoá được</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Thứ tự chi phí ở cột cuối là đề xuất của bài này, không phải kết quả đo. Tôi chưa tìm được nghiên cứu
+				nào xếp hạng ba loại chờ đó theo chi phí gỡ, nên cột đó nên được đọc như một giả thuyết dùng để chọn
+				việc, không phải một phát hiện. Nó có thể sai theo một hướng khá cụ thể: ở tổ chức mà kiến trúc đã rối
+				tới mức mọi thay đổi đều lan ra bốn service, chờ artifact mới là khoản đắt nhất, và bàn về quyền quyết
+				định lúc đó là bàn sai chỗ. Cách kiểm là đo, không phải là gật đầu với bảng.</p>
+			<p>Khác biệt cốt lõi giữa hai loại đầu và loại thứ ba: khi chờ một artifact hoặc chờ một năng lực, thứ đang
+				chờ là một việc <em>đã có người bắt đầu làm</em>, và câu hỏi chỉ là bao giờ xong. Khi chờ một quyết
+				định, thứ đang chờ có thể chưa ai bắt đầu, và có thể không bao giờ được bắt đầu, vì người có quyền quyết
+				chưa thấy lý do để quan tâm.</p>
+			<p>Sáu loại quen thuộc rơi vào ba trục này khá gọn. Phụ thuộc kỹ thuật và phụ thuộc môi trường nằm ở chờ
+				artifact. Phụ thuộc quy trình và phụ thuộc ưu tiên nằm ở chờ quyết định. Phụ thuộc kiến thức là chờ năng
+				lực, và đây là loại hay tàng hình nhất, vì nó không bao giờ xuất hiện trên backlog dưới tên thật của nó,
+				mà xuất hiện dưới dạng câu "để bên kia làm cho nhanh". Còn phụ thuộc sản phẩm thì trượt: nhìn thì giống
+				chờ artifact, nhưng khi hai team phục vụ hai nhóm khách hàng có lợi ích khác nhau, nó là chờ quyết định
+				đội lốt kỹ thuật.</p>
+			<blockquote>
+				<p>Dependency kỹ thuật nhìn thấy được trong kiến trúc. Dependency về ưu tiên nguy hiểm hơn, vì nó không
+					giải được bằng một API contract hay một pipeline.</p>
+			</blockquote>
+			<p>Phép thử để biết mình đang ở loại nào: hỏi người bên kia câu "nếu tôi tự làm phần đó thì có được không".
+				Nếu câu trả lời là "được, nhưng anh chưa biết cách", đó là chờ năng lực. Nếu là "được, nhưng phải theo
+				contract này", đó là chờ artifact. Nếu là "không, vì chưa ai đồng ý", thì mọi khoản đầu tư vào công cụ
+				trong sáu tháng tới sẽ không chạm được vào vấn đề.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Vì sao chờ đắt hơn con số trên dependency board</h2>
+			<p class="intro-text">Dependency board trình bày phụ thuộc như một danh sách: mười một đường nối, ba cái màu
+				đỏ. Cách trình bày đó ngầm nói rằng chi phí tỉ lệ với số đường. Hai thứ nói ngược lại điều đó, và cả hai
+				đều không phải nghiên cứu về Scrum.</p>
+			<p>Thứ nhất là hàng đợi. Công thức Kingman, công bố năm 1961 cho hàng đợi một trạm phục vụ, cho thời gian
+				chờ trung bình tỉ lệ với ba thứ nhân nhau: hệ số ρ/(1-ρ) theo mức bận, mức biến thiên của luồng việc,
+				và thời gian phục vụ.<sup><a href="#ref-4">[4]</a></sup> Phần đáng chú ý là hệ số đầu. Ở mức bận 80%, nó
+				bằng 4. Ở 90%, bằng 9. Ở 95%, bằng 19. Đẩy một nhóm từ chỗ bận 80% lên bận 90% không làm thời gian chờ
+				tăng thêm một phần tám, nó làm thời gian chờ hơn gấp đôi.</p>
+			<p>Đó là lý do một platform team được giao thêm việc cho "đỡ phí năng lực" lại làm cả năm team phía sau nó
+				chậm đi, trong khi mọi biểu đồ về nhóm đó đều đẹp hơn trước.</p>
+			<p>Ẩn dụ hàng đợi hỏng ở một chỗ cần nói ngay. Kingman mô tả một trạm phục vụ với các công việc đồng nhất và
+				một máy không học được gì. Một team thì học: lần thứ ba nhận cùng loại yêu cầu, họ làm nhanh hơn hẳn.
+				Họ cũng biết từ chối, biết ưu tiên, và biết trả lời nhanh cho người quen. Thứ mô hình giữ được là hình
+				dạng của đường cong, không phải con số trên đó.</p>
+			<p>Thứ hai là một nghiên cứu thực nghiệm. Herbsleb và Mockus phân tích dữ liệu từ hệ thống quản lý thay đổi
+				mã nguồn của một tổ chức phát triển phần mềm phân tán, rồi lặp lại phân tích đó trên một tổ chức khác
+				với sản phẩm khác và các địa điểm khác. Kết quả trong tóm tắt của họ: <em>"distributed work items appear
+					to take about two and one-half times as long to complete as similar items where all the work is
+					co-located."</em> Và cơ chế mà chính họ nêu ra: <em>"distributed work items involve more people than
+					comparable same-site work items, and the number of people involved is strongly related to MR
+					interval."</em><sup><a href="#ref-5">[5]</a></sup></p>
+			<p><em>MR interval</em> trong câu trên là khoảng thời gian từ lúc mở tới lúc đóng một yêu cầu sửa đổi mã
+				nguồn, tức thước đo thời gian hoàn thành mà nhóm nghiên cứu dùng.</p>
+			<p>Phải nói rõ giới hạn ở đây, vì bài này sẽ dựa vào nó nhiều lần. Nghiên cứu đó đo khoảng cách địa lý, chứ
+				không đo ranh giới team. Hai người ngồi cạnh nhau nhưng thuộc hai team có hai backlog và hai người quản
+				lý khác nhau không phải là hai người ở hai múi giờ. Thứ bài này lấy từ đó không phải con số hai lần
+				rưỡi, mà là cơ chế: số người phải tham gia vào một hạng mục công việc tăng lên thì thời gian hoàn thành
+				nó tăng theo. Cơ chế đó không phụ thuộc vào việc những người kia ngồi ở đâu.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Cấu trúc team viết sẵn phần lớn danh sách phụ thuộc</h2>
+			<p class="intro-text">Herbsleb và Mockus đo số người phải tham gia, còn bài này quan tâm tới số điểm chặn.
+				Hai con số đó không giống nhau, nhưng cùng chịu một thứ chi phối: cách tổ chức vẽ ranh giới. Mỗi ranh
+				giới vừa thêm người phải trao đổi, vừa thêm một chỗ có thể nói không. Nên câu hỏi lùi thêm một bước là
+				ranh giới nằm ở đâu, và phần lớn thời gian nó đã được vẽ từ trước.</p>
+			<p>Conway viết một câu ít được trích hơn câu nổi tiếng kia, nhưng sắc hơn: <em>"Every time a delegation is
+					made and somebody's scope of inquiry is narrowed, the class of design alternatives which can be
+					effectively pursued is also narrowed."</em><sup><a href="#ref-1">[1]</a></sup> Nghĩa là mỗi lần vẽ
+				một đường ranh giới trong tổ chức, ta không chỉ chia việc. Ta còn xoá bớt những thiết kế mà từ nay không
+				ai nghĩ tới nữa, vì không ai còn nhìn thấy đủ hai bên để nghĩ ra chúng.</p>
+			<p>MacCormack, Rusnak và Baldwin kiểm giả thuyết này bằng một thiết kế khéo: so từng cặp sản phẩm cùng chức
+				năng, một bên do một tổ chức thương mại gắn kết chặt làm ra, một bên do một cộng đồng nguồn mở lỏng lẻo
+				làm ra, rồi đo mức độ ràng buộc giữa các thành phần trong mã nguồn. Kết quả trong tóm tắt của họ: sản
+				phẩm từ tổ chức lỏng lẻo module hoá cao hơn hẳn, và độ chênh <em>"up to a factor of eight, in terms of
+					the potential for a design change in one component to propagate to
+					others."</em><sup><a href="#ref-6">[6]</a></sup></p>
+			<p>Một câu khác trong cùng bài báo đó đáng dán lên tường phòng kiến trúc: <em>"the commercial managers we
+					work with almost always think their designs are highly modular. Unfortunately, the pristine black
+					boxes they draw on their whiteboards rarely reflect the actual file-to-file interactions embedded in
+					the source code."</em><sup><a href="#ref-6">[6]</a></sup> Sơ đồ trên bảng trắng là bản mà tổ chức
+				muốn tin. Danh sách phụ thuộc thật nằm trong mã nguồn, và nó đang phản chiếu sơ đồ tổ chức chứ không
+				phản chiếu sơ đồ kiến trúc.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Component team và feature team, không phải một cặp thiện ác</h3>
+				<p>LeSS định nghĩa feature team là <em>"a long-lived, cross-functional, cross-component team that
+						completes many end-to-end customer features, one by one"</em>, đối lập với component team vốn
+					được tối ưu cho việc tạo ra nhiều mã nhất trong phạm vi của mình chứ không phải cho việc giao giá
+					trị.<sup><a href="#ref-7">[7]</a></sup></p>
+				<p>Cách trình bày đó có sức thuyết phục, nhưng nó là cách trình bày của một phía. Component team tồn tại
+					vì có lý do thật: một số hệ con đòi chuyên môn sâu tới mức rải mỏng người ra sáu team là cách chắc
+					chắn để hỏng nó. Đổi lại, mỗi feature phải đi qua nhiều team, mỗi team có thứ tự ưu tiên riêng, và
+					không ai sở hữu kết quả cuối.</p>
+				<p>Feature team giảm phụ thuộc, nhưng đổi lấy nguy cơ trùng lặp, kiến thức chuyên sâu bị pha loãng, và
+					một khoản đầu tư bắt buộc vào kiến trúc, kiểm thử tự động và chia sẻ kiến thức. LeSS thừa nhận rằng
+					nhiều tổ chức dừng lại ở dạng lai, và mô tả dạng lai đó là mang nhược điểm của cả hai
+					phía.<sup><a href="#ref-7">[7]</a></sup> Đó là lời cảnh báo đáng nghe hơn là lời quảng cáo cho mô
+					hình thuần.</p>
+				<p>Luận điểm cân bằng hơn cả hai phía: mục tiêu không phải là những team hoàn toàn độc lập. Mục tiêu là
+					để phần lớn thay đổi có giá trị hoàn thành được bên trong một team, với mức phối hợp mà tổ chức trả
+					nổi hàng tuần.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Team Topologies bổ sung phần bị bỏ quên</h3>
+				<p>Skelton và Pais đề xuất bốn kiểu team và ba kiểu tương tác. Bốn kiểu team là stream-aligned team gắn
+					với một dòng giá trị, platform team cung cấp năng lực cho các team khác tự phục vụ, enabling team
+					giúp team khác tiếp nhận năng lực mới, và complicated-subsystem team giữ phần hệ thống cần chuyên
+					môn sâu.<sup><a href="#ref-8">[8]</a></sup></p>
+				<p>Phần ít được nhắc lại nhưng có ích hơn là ba kiểu tương tác: collaboration, tức cùng làm trong một
+					khoảng thời gian có hạn để khám phá hoặc gỡ một vấn đề chưa rõ hình thù; X-as-a-Service, tức một
+					bên cung cấp một năng lực ổn định cho bên kia dùng; và facilitating, tức một bên giúp bên kia nâng
+					năng lực rồi rút đi.<sup><a href="#ref-8">[8]</a></sup></p>
+				<p>Ba kiểu này ánh xạ khá sát vào ba loại chờ ở phần trước. Collaboration là cách xử lý khi chưa biết
+					mình đang chờ gì. X-as-a-Service là hình thái đúng cho chờ artifact. Facilitating là hình thái đúng
+					cho chờ năng lực. Không có kiểu tương tác nào trong ba kiểu đó xử lý được việc chờ một quyết định,
+					và điều đó không phải thiếu sót của Team Topologies. Loại chờ thứ ba thuộc về một lớp bài toán khác,
+					và bài này quay lại nó ở phần bốn cách xử lý.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Ranh giới team không phải một biến tự do</h3>
+				<p>Đây là chỗ phần lớn bài viết về chủ đề này dừng lại, và cũng là chỗ chúng mất tác dụng.</p>
+				<p>"Hãy thiết kế lại team" nghe như một hành động. Trong một tổ chức hai trăm người, nó là một dự án kéo
+					dài nhiều quý, làm rơi năng suất trong suốt thời gian diễn ra, đụng vào hợp đồng lao động, đường sự
+					nghiệp của từng người, ngân sách từng phòng, và vị trí của từng người quản lý trực tiếp. Nó cũng
+					đụng vào kiến trúc đang có, thứ đã được đúc theo hình dạng tổ chức cũ đúng như Conway mô tả, nên đổi
+					team mà không đổi kiến trúc thì chỉ tạo ra những team không sửa nổi phần việc vừa được giao.</p>
+				<p>Cửa sổ để đổi ranh giới team thường chỉ mở vào vài thời điểm: khi bắt đầu một sản phẩm mới, khi có
+					người lãnh đạo mới đủ vốn chính trị để trả giá, hoặc sau một sự cố đủ lớn để không ai bảo vệ được
+					hiện trạng. Ngoài những lúc đó, khuyên một Scrum Master đi tái thiết kế tổ chức là giao cho họ một
+					việc mà họ không có quyền làm, rồi trách họ vì không làm được.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Gỡ, nuốt vào, dựng giao diện, rồi mới điều phối</h2>
+			<p class="intro-text">Bốn cách xử lý phụ thuộc, xếp theo thứ tự nên thử. Điểm khác so với cách trình bày phổ
+				biến: mỗi cách chỉ ăn vào một loại chờ nhất định, nên chọn sai cách không phải là chọn kém hiệu quả, mà
+				là không chạm vào vấn đề.</p>
+			<ul class="outline-list">
+				<li><strong>Gỡ bỏ.</strong> Hỏi phụ thuộc này có cần tồn tại không. Một bước phê duyệt chưa bao giờ trả
+					về kết quả "không" trong mười tám tháng đáng bị hỏi lại, nhưng câu trả lời không hiển nhiên: nó có
+					thể đang không kiểm soát gì, mà cũng có thể đang làm việc của mình tốt tới mức không ai còn nộp thứ
+					sẽ bị từ chối. Phân biệt hai khả năng đó bằng cách hỏi người nộp, đừng hỏi người duyệt. Chủ yếu ăn
+					vào chờ quyết định.</li>
+				<li><strong>Nuốt vào.</strong> Nếu cùng một phụ thuộc quay lại Sprint này qua Sprint khác, team cần năng
+					lực đó ở bên trong. Không nhất thiết phải tuyển thêm một vị trí cố định: luân chuyển người, pair
+					programming, một chuyên gia ngồi cùng team vài Sprint, đào tạo theo hình chữ T. Ăn vào chờ năng lực,
+					và là cách duy nhất ăn được vào loại đó.</li>
+				<li><strong>Dựng giao diện ổn định.</strong> Khi phụ thuộc phải tồn tại, chuyển nó từ chỗ phụ thuộc vào
+					một người sang chỗ phụ thuộc vào một năng lực dự đoán được: contract có phiên bản, ranh giới service
+					rõ, self-service, Definition of Done chung, tích hợp tự động. Ăn vào chờ artifact.</li>
+				<li><strong>Điều phối có chủ đích.</strong> Refinement chung cho những item chạm nhiều team, kế hoạch
+					chung ở mức đủ để thấy va chạm, một buổi đồng bộ khi tích hợp đang gãy, Review nhìn vào một Increment
+					chứ không nhìn vào sáu bản demo. Ăn vào phần chờ quyết định còn lại sau khi đã gỡ hết những gì gỡ
+					được.</li>
+			</ul>
+			<blockquote>
+				<p>Eliminate before you coordinate. Stabilize before you scale.</p>
+			</blockquote>
+			<p>Thứ tự này quan trọng vì cách đi ngược lại rẻ hơn về mặt chính trị. Thêm một buổi họp đồng bộ không cần
+				ai phê duyệt ngân sách, không làm ai mất chỗ, và tạo ra cảm giác đang xử lý vấn đề ngay trong tuần. Điều
+				phối làm phụ thuộc dễ sống chung hơn. Thiết kế team quyết định tổ chức phải sống chung với bao nhiêu
+				phụ thuộc.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Giữa đổi người giữ quyền và đi họp thêm còn một lớp nữa</h3>
+				<p>Bốn cách ở trên để lộ một chỗ trống, và chỗ trống đó nằm ngay dưới luận điểm chính của bài. Chờ
+					artifact có cách gỡ bằng kỹ thuật. Chờ năng lực có cách gỡ bằng người. Còn chờ quyết định thì bài
+					này vừa ngầm nói là chỉ gỡ được bằng cách đổi ai giữ quyền, tức là bằng một cuộc tái cấu trúc. Nói
+					vậy là nói quá.</p>
+				<p>Còn một lớp nằm giữa: đổi <strong>cơ chế</strong> ra quyết định mà không đổi người giữ quyền. <a
+						href="10-effective-conversation-discussion-vn.html">Bài về thảo luận và bất đồng</a> trong series
+					này chốt rằng cơ chế phải được thoả thuận trước khi bất đồng xảy ra, và nó có nhiều dạng: một người
+					quyết, cả nhóm consent, hoặc một thử nghiệm có thời hạn. Thêm vào đó là các dạng có ngưỡng, thứ ít
+					được bàn hơn nhưng ăn thẳng vào thời gian chờ: một hạn mức mà dưới đó team tự quyết, một quyết định
+					kiến trúc được công bố kèm thời hạn phản đối, một danh sách trường hợp đã duyệt trước cho những thay
+					đổi lặp lại. <a href="5-collaboration-across-scrum-accountabilities-vn.html">Bài về phối hợp giữa các
+						accountability</a> gọi thứ đang được sắp xếp lại ở đây là decision-right.</p>
+				<p>Lớp này rẻ hơn tái thiết kế team rất nhiều, không cần ai mất chỗ, và vì vậy đáng thử trước. Nó cũng
+					là lớp dễ giả vờ nhất: một hạn mức đặt thấp tới mức không việc nào lọt qua thì trên giấy là uỷ
+					quyền, trên thực tế là một cửa phê duyệt vừa được đổi tên.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Platform team đổi tên không làm giảm phụ thuộc</h3>
+				<p>Nếu mọi yêu cầu vẫn phải gửi ticket rồi chờ xếp lịch, thì cái vừa được đặt tên platform team chính là
+					component team cũ với một tấm biển mới, cộng thêm một hàng đợi mà giờ đây có tên đẹp hơn.</p>
+				<p>Team Topologies gọi hình thái đúng là thinnest viable platform, tức là platform mỏng nhất còn đủ dùng,
+					và đặt tiêu chí ở chỗ nó giảm cognitive load, tức lượng thứ mà một team phải giữ trong đầu để làm
+					được việc, cho các stream-aligned team, thay vì tạo thêm phụ thuộc
+					mới.<sup><a href="#ref-8">[8]</a></sup></p>
+				<p>Phép thử cụ thể hơn nằm ở nghiên cứu DORA về kiến trúc lỏng lẻo. Câu hỏi không phải "chúng ta có
+					platform team không", mà là các team có thể kiểm thử phần lớn công việc của mình mà không cần một
+					môi trường tích hợp dùng chung, và có thể triển khai dịch vụ của mình <em>"on demand, independently
+						of the services it depends on"</em> hay không.<sup><a href="#ref-9">[9]</a></sup> Hai câu đó trả
+					lời được bằng có hoặc không, và câu trả lời không phụ thuộc vào việc đặt tên team ra sao.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Một Product hay nhiều Product được gọi bằng một cái tên</h2>
+			<p class="intro-text">Trước khi chọn mô hình mở rộng, có một câu hỏi rẻ hơn và quyết định nhiều hơn: những
+				team này đang cùng làm ra một Product, hay chỉ đang cùng làm việc trong một hệ thống kỹ thuật.</p>
+			<p>Scrum Guide trả lời phần dễ bằng một câu: <em>"If Scrum Teams become too large, they should consider
+					reorganizing into multiple cohesive Scrum Teams, each focused on the same product. Therefore, they
+					should share the same Product Goal, Product Backlog, and Product
+					Owner."</em><sup><a href="#ref-3">[3]</a></sup></p>
+			<p>Cần đọc đúng mức ràng buộc của câu này. Scrum Guide dùng <em>should share</em>, không dùng
+				<em>must</em>, nên một tổ chức có bốn Product Owner trên cùng một sản phẩm không vì thế mà mất tư cách
+				Scrum Team. Đó là một cấu hình lệch khỏi thiết kế được khuyến nghị, chứ không phải một cấu hình bị cấm.
+			</p>
+			<p>Nhưng lệch khỏi khuyến nghị ở đúng chỗ này thì đắt. Bốn team làm cùng một sản phẩm với bốn backlog cạnh
+				tranh nhau vận hành như bốn vùng tối ưu cục bộ hơn là một Product thống nhất, và trên slide của lãnh đạo
+				thì bốn vùng đó vẫn dùng chung một cái tên. Khi cấu hình đó tồn tại, phụ
+				thuộc về ưu tiên không phải rủi ro, nó là kết quả tất yếu của thiết kế: mỗi lần hai team cần nhau, hai
+				người khác nhau phải đồng ý, và không ai trong hai người đó chịu trách nhiệm về tổng giá trị.</p>
+			<p>Vài câu hỏi nhận diện, dùng được trong một buổi bốn mươi lăm phút:</p>
+			<ul class="outline-list">
+				<li>Có cùng một nhóm người dùng, hay chỉ cùng một hệ thống?</li>
+				<li>Có một Product Goal mà cả nhóm nêu lại được bằng cùng một câu không?</li>
+				<li>Một thay đổi có giá trị trung bình cần bao nhiêu team tham gia?</li>
+				<li>Có một backlog được xếp thứ tự theo giá trị tổng thể, hay nhiều backlog được xếp thứ tự theo giá trị
+					cục bộ?</li>
+				<li>Khi hai mục tiêu xung đột, ai là người quyết, và người đó có thật sự quyết hay chỉ chuyển tiếp yêu
+					cầu?</li>
+			</ul>
+			<p>Câu cuối là câu quan trọng nhất, và cũng là câu ít được hỏi nhất. Nếu các Product Owner trên thực tế đang
+				làm công việc quản trị backlog chứ không phải công việc quyết định giá trị, thì việc gộp bốn backlog
+				thành một sẽ không sửa được gì. Nó chỉ chuyển hàng đợi lên một tầng cao hơn.</p>
+			<p>Biên phía ngược lại cũng thật. Gộp mọi hệ thống có liên hệ kỹ thuật vào một Product khổng lồ thì Product
+				Goal loãng tới mức không định hướng được gì, backlog thành danh sách mọi việc trong tổ chức, và một
+				người không thể quản lý giá trị của một thứ mà chính họ không hình dung nổi. LeSS tự nhận biên này khá
+				thẳng: khi vượt quá quy mô mà một Product Owner giữ nổi, nó buộc phải thêm vai trò Area Product
+				Owner.<sup><a href="#ref-7">[7]</a></sup> Chính phía đề cao mô hình một Product thừa nhận rằng "một
+				Product, một backlog, một người quyết" không co giãn vô hạn.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Framework đang thêm hay bớt số điểm chặn</h2>
+			<p class="intro-text">Các framework mở rộng thường được so sánh theo số vai trò, số sự kiện, độ nặng, độ phổ
+				biến. Có một trục so sánh khác ít được dùng hơn và trả lời thẳng câu hỏi của bài này: sau khi áp dụng,
+				một thay đổi có giá trị phải đi qua nhiều hay ít điểm chặn hơn trước.</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Framework</th>
+						<th>Thiết kế của nó đẩy số điểm chặn theo hướng nào</th>
+						<th>Nó nói gì về chính nó</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><strong>Nexus</strong></td>
+						<td>Giữ nguyên số điểm quyết định về ưu tiên. Thêm một accountability chuyên lo tích hợp</td>
+						<td>Nhóm ba tới chín Scrum Team quanh một Product Owner và một Product Backlog, để tạo một
+							Integrated Increment<sup><a href="#ref-10">[10]</a></sup></td>
+					</tr>
+					<tr>
+						<td><strong>LeSS</strong></td>
+						<td>Rút bớt, bằng cách ép về một Product Owner, một backlog và feature team. Rút bớt số điểm
+							chặn không đồng nghĩa với rút ngắn thời gian chờ: một Product Owner quá tải là một điểm chặn
+							có hàng đợi dài</td>
+						<td>Một Product Owner với một Product Backlog để giữ được góc nhìn toàn sản phẩm và tránh tối ưu
+							cục bộ<sup><a href="#ref-7">[7]</a></sup></td>
+					</tr>
+					<tr>
+						<td><strong>Scrum@Scale</strong></td>
+						<td>Thêm hai nhóm lãnh đạo, một lo cái gì được làm và một lo làm sao nhanh hơn. Nhưng mục tiêu
+							tuyên bố của hai nhóm đó là gom quyết định về một chỗ có thẩm quyền thay vì rải ra, nên
+							hướng đi có thể ngược với số tầng</td>
+						<td>Tự gọi cấu trúc đó là <em>minimum viable bureaucracy</em>, định nghĩa là lượng bộ máy ít
+							nhất còn đủ vận hành mà không cản trở việc giao giá trị. Chính tài liệu này đặt việc giảm
+							<em>decision latency</em>, tức thời gian để ra được một quyết định, làm một trong các đích
+							ngắm<sup><a href="#ref-11">[11]</a></sup></td>
+					</tr>
+					<tr>
+						<td><strong>SAFe</strong></td>
+						<td>Thêm nhiều nhất: một tầng tổ chức mới với nhịp lập kế hoạch riêng và một bộ vai trò riêng</td>
+						<td>Agile Release Train là một đội hình dài hạn gồm nhiều Agile Team, thường 50 tới 125
+							người<sup><a href="#ref-12">[12]</a></sup></td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Trục này không xếp hạng framework theo tốt xấu. Nó chỉ nói rằng bốn thứ đó đang giải bốn bài toán khác
+				nhau, và một tổ chức chọn nhầm sẽ trả tiền cho lời giải của bài toán mình không có.</p>
+			<p>Phải thành thật về chỗ trục này lỏng. Cột giữa đang đếm số tầng quản trị mà framework thêm vào, và số
+				tầng quản trị chỉ là một đại lượng thay thế cho số điểm chặn, không phải chính nó. Đại lượng
+				thay thế nào cũng có chỗ sai, và chỗ sai ở đây khá rõ: SAFe gom rất nhiều quyết định về ưu tiên vào một
+				sự kiện lập kế hoạch chung, nên một tổ chức trước đó phải đi xin từng phòng ban mười lần rải rác trong
+				quý có thể thấy số lần phải xin giảm hẳn, dù số tầng trên sơ đồ tăng lên. Muốn biết thật thì lấy một
+				thay đổi đã đi hết chặng và đếm trên chính nó, chứ đừng đếm trên sơ đồ framework.</p>
+			<p>Đoạn thẳng thắn nhất về chủ đề này lại nằm trong tài liệu của một framework mở rộng. Nexus Guide viết:
+				<em>"While often counterintuitive, scaling the value that is delivered does not always require adding
+					more people. Increasing the number of people and the size of a product increases complexity and
+					dependencies, the need for collaboration, and the number of communication pathways involved in
+					making decisions. Scaling-down, reducing the number of people who work on something, can be an
+					important practice in delivering more value."</em><sup><a href="#ref-10">[10]</a></sup> Chính tài
+				liệu hướng dẫn mở rộng đặt việc thu nhỏ lên bàn như một lựa chọn ngang hàng.
+			</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Phiên bản mạnh nhất của phe nói "cứ dùng framework đi"</h3>
+				<p>Lập luận của bài này dễ nghe nhưng khó thi hành, và phe ngược lại có lý hơn vẻ ngoài.</p>
+				<p>Tái thiết kế team mất nhiều quý và làm rơi năng suất trong lúc diễn ra. Triển khai trọn một
+					framework cũng mất nhiều quý, nên nói framework dùng được ngay là nói quá. Nhưng ba thứ của nó thì
+					dùng được từ tuần sau: một bộ từ vựng chung để gọi tên phụ thuộc, một nhịp để chúng lộ ra trước khi
+					nổ, và một cách bày chúng lên tường để cả tổ chức nhìn cùng một bức. Quan trọng
+					hơn: tổng quan hệ thống năm 2016 xếp management support vào nhóm yếu tố thành công nổi bật
+					nhất<sup><a href="#ref-2">[2]</a></sup>, và một framework có tên tuổi, có chứng chỉ, có người bán,
+					giành được sự ủng hộ đó dễ hơn nhiều so với một cuộc tái thiết kế âm thầm do vài người trong nội bộ
+					đề xuất.</p>
+				<p>Vì vậy bài này không kết luận rằng đừng dùng framework. Kết luận hẹp hơn và kiểm chứng được: hỏi
+					framework đang định áp dụng sẽ làm gì với số điểm chặn, trước khi hỏi framework nào tốt hơn
+					framework nào. Nếu câu trả lời là "thêm vào", thì tổ chức nên biết mình đang mua sự phối hợp bằng
+					tốc độ, và nên nói ra điều đó thành lời thay vì để nó lộ ra sau ba quý.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Đo tác động, đừng đếm đường nối</h2>
+			<p class="intro-text">Số phụ thuộc trên bảng là một con số dễ đo và gần như vô dụng. Mười phụ thuộc được xử
+				lý trong ngày không đắt bằng một phụ thuộc treo sáu tuần. Điều đáng đo là phụ thuộc làm gãy dòng giá trị
+				ở mức nào.</p>
+			<p>Hai chỉ số rẻ nhất, và phần lớn tổ chức đã có sẵn dữ liệu cho chúng mà không dùng:</p>
+			<ul class="outline-list">
+				<li>Tỉ lệ giữa thời gian một hạng mục ở trạng thái bị chặn và tổng thời gian nó tồn tại. Con số này nói
+					thẳng phần trăm vòng đời của công việc dành cho việc chờ.</li>
+				<li>Khoảng cách từ lúc mã nguồn hoàn thành tới lúc nó nằm trong một Increment đã tích hợp. Đây là chỗ
+					phụ thuộc kỹ thuật hiện hình rõ nhất, và cũng là chỗ dễ cải thiện nhất.</li>
+			</ul>
+			<p>Chỉ số thứ nhất hỏng theo một cách rất dễ đoán nếu nó bị dùng để chấm điểm: team ngừng đánh dấu công
+				việc là bị chặn. Thời gian chờ không mất đi, nó chỉ chuyển sang trạng thái "đang làm" và không ai còn
+				nhìn thấy. Dấu hiệu nhận ra là tỉ lệ bị chặn giảm đều trong khi lead time đứng yên. Khi thấy cặp tín
+				hiệu đó, thứ vừa được cải thiện là cách ghi nhận, không phải dòng công việc.</p>
+			<p>Có một chỗ hụt lớn hơn trong hai chỉ số đó, và nó là chỗ hụt của chính bài này. Cả hai chỉ số chỉ bắt
+				đầu đếm từ lúc công việc đã vào hệ thống. Chúng đo rất tốt phần chờ artifact, còn phần mà bài này vừa
+				gọi là đắt nhất thì chúng không thấy: khoảng thời gian một nhu cầu nằm chờ ai đó quyết định rằng nó
+				đáng làm. Một hệ đo khớp với luận đề phải có thêm ít nhất hai con số:</p>
+			<ul class="outline-list">
+				<li><strong>Decision latency.</strong> Từ lúc một yêu cầu quyết định được nêu ra tới lúc có câu trả
+					lời, kể cả câu trả lời là không.</li>
+				<li><strong>Commitment latency.</strong> Từ lúc một nhu cầu được ghi nhận tới lúc nó nằm trong một
+					backlog đã được xếp thứ tự. Đây là con số duy nhất bắt được phần công việc chưa ai bắt đầu, và nó
+					gần như không bao giờ được đo.</li>
+			</ul>
+			<p>Hai con số nữa rẻ hơn và cũng đủ dùng: số điểm chặn bên ngoài team trên một hạng mục có giá trị, và tỉ
+				lệ yêu cầu quyết định đang quá hạn hoặc không có ai đứng tên. Con số thứ hai thường lộ ra thứ khó chịu
+				nhất, vì phần lớn hàng đợi quyết định không tắc ở người bận, mà tắc ở chỗ không ai biết phải hỏi ai.</p>
+			<p>Vài chỉ số khác đáng theo dõi khi hai chỉ số trên đã ổn định: tuổi của các phụ thuộc chưa được giải
+				quyết, tỉ lệ Sprint Goal bị ảnh hưởng bởi công việc nằm ngoài team, tỉ lệ hạng mục cần từ ba team trở
+				lên mới xong, tần suất tích hợp thật, và số phụ thuộc lặp lại qua nhiều Sprint. Cái cuối cùng là tín
+				hiệu tốt nhất cho việc một ranh giới team đang đặt sai chỗ, vì một phụ thuộc quay lại lần thứ tư không
+				còn là sự cố nữa.</p>
+			<div class="summary-box">
+				<p><strong>Ranh giới sử dụng.</strong> Những con số này dùng để tìm chỗ hệ thống đang kẹt, không dùng để
+					so sánh các team với nhau. Một team có nhiều phụ thuộc hơn thường vì họ đang đứng ở chỗ khó hơn
+					trong kiến trúc, không phải vì họ làm việc kém hơn. Và velocity thì không dùng được cho cả hai mục
+					đích: nó không so sánh được giữa các team, và nó không chứng minh được một mô hình mở rộng đang có
+					tác dụng.</p>
+			</div>
+			<p>Mục tiêu cũng không phải đưa số phụ thuộc về không. Một tổ chức không có phụ thuộc nào giữa các team
+				thường là một tổ chức đã chia sản phẩm thành những mảnh không còn liên quan tới nhau, và đó là một cách
+				thua khác.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Chỗ lập luận này có thể sai</h2>
+			<p class="intro-text">Bốn chỗ, xếp theo mức độ nghiêm trọng nếu chúng đúng.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Bằng chứng mỏng hơn giọng văn</h3>
+				<p>Bốn nguồn chính đỡ cho lập luận ở trên thuộc bốn loại khác nhau, và không nguồn nào đo đúng thứ bài
+					này đang bàn. Kingman là một mô hình toán về hàng đợi một trạm phục vụ, không phải về con người.
+					Herbsleb và Mockus đo khoảng cách địa lý, không đo ranh giới team. MacCormack và cộng sự chỉ có năm
+					cặp sản phẩm, và chính họ ghi rõ giới hạn đó cùng với việc thiết kế nghiên cứu <em>"does not
+						disentangle which of these dimensions are most critical in driving the
+						phenomenon"</em><sup><a href="#ref-6">[6]</a></sup>. Tổng quan 2016 thì đúng ra là bằng chứng về
+					việc thiếu bằng chứng.<sup><a href="#ref-2">[2]</a></sup></p>
+				<p>Nối bốn nguồn đó lại thành một lập luận là một chuỗi loại suy. Loại suy có ích để nghĩ, và không thay
+					được bằng chứng. Người đọc nên đối xử với bài này đúng như vậy.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">"Bớt người có quyền nói không" là một phán đoán giá trị</h3>
+				<p>Bài này trình bày việc giảm số điểm chặn như một cái tốt hiển nhiên. Nó không hiển nhiên. Một
+					số cái "không" là hàng rào thật: bảo mật, quyền riêng tư, an toàn vận hành, tiền của người khác. Bài
+					viết theo hướng này rất dễ bị dùng làm cớ để dẹp kiểm soát, và đó là cách hỏng nguy hiểm nhất của
+					nó, vì hậu quả xuất hiện muộn và rơi vào người khác.</p>
+				<p>Một phép thử để phân biệt hàng rào thật với trạm thu phí thời gian, hỏi về từng điểm phê duyệt: nó có
+					bao giờ trả lời "không" không, và khi nói "không" thì có nêu được điều kiện để thành "có" không? Một
+					cửa luôn gật là một cửa không kiểm soát gì. Một cửa nói không mà không nêu được điều kiện thì cũng
+					không kiểm soát, nó chỉ trì hoãn. Chỉ cửa vừa dám từ chối vừa nói được điều kiện mới đang làm việc
+					của mình.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Thứ tự bốn bước có thể đang xếp sai chỗ cho phần phối hợp</h3>
+				<p>Bài này xếp coordination xuống cuối. Có một ca thực tế nói ngược lại.</p>
+				<p>Jeremiah Lee, người từng làm quản lý sản phẩm ở Spotify sau giai đoạn công ty tăng gấp ba lên khoảng
+					ba nghìn người, viết rằng mô hình squad nổi tiếng <em>"was only ever aspirational and never fully
+						implemented"</em>. Nhưng điều ông chỉ ra như nguyên nhân không phải ranh giới team vẽ sai. Đó là
+					<em>"Spotify did not define a common process for cross-team
+						collaboration."</em><sup><a href="#ref-13">[13]</a></sup>
+				</p>
+				<p>Nếu đọc đúng, ca đó nói rằng một tổ chức có thể vẽ ranh giới team gần như đúng lý thuyết mà vẫn hỏng,
+					vì phần cách các team nói chuyện với nhau chưa bao giờ được thiết kế. Nghĩa là thứ bài này vừa xếp
+					xuống hạng tư có thể là thứ không được bỏ qua, chỉ được làm sau. Đây là một bản kể lại từ một người
+					trong cuộc, không phải một nghiên cứu, nên nó không đủ để lật thứ tự. Nó đủ để không tự tin về thứ
+					tự đó.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Hai điều kiện khiến bài này sai</h3>
+				<p>Lập luận ở đây sụp nếu một trong hai điều sau được đo và cho kết quả ngược lại.</p>
+				<p>Thứ nhất: nếu các tổ chức giữ nguyên ranh giới team nhưng đầu tư mạnh vào contract, tự động hoá và
+					self-service đạt được lead time tương đương các tổ chức đã tái thiết kế team. Khi đó chờ artifact là
+					phần lớn chi phí thật, và toàn bộ phần bài này nói về quyền quyết định là chuyện phụ được thổi
+					phồng.</p>
+				<p>Thứ hai: nếu chi phí thật của một cuộc tái thiết kế team, tính đủ cả phần năng suất rơi trong lúc
+					diễn ra và phần người giỏi nghỉ việc, lớn hơn khoản tiết kiệm được từ việc bớt chờ. Khi đó lời
+					khuyên đúng lại chính là lời khuyên bài này đang xem nhẹ: đừng đụng vào cấu trúc, hãy điều phối cho
+					khéo.</p>
+				<p>Cả hai đều đo được, bằng dữ liệu mà nhiều tổ chức đã có. Tôi chưa thấy ai công bố kết quả đo.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Chỗ này chưa khép lại được</h2>
+			<p>Conway bị từ chối vì chưa chứng minh được luận đề của mình. Năm mươi tám năm sau, ngành phần mềm đã biến
+				câu chưa được chứng minh đó thành câu cửa miệng, và vẫn chưa chứng minh nó. Trong khoảng thời gian ấy,
+				các framework mở rộng đã ra đời, được chuẩn hoá, được cấp chứng chỉ và được bán rộng rãi.</p>
+			<p>Công bằng mà nói, nghiên cứu đo trước và sau một cuộc chuyển đổi quy mô lớn thì có. Olszewska và cộng sự
+				dựng hẳn một mô hình chỉ số cho việc đó rồi áp vào một công ty viễn thông
+				lớn.<sup><a href="#ref-14">[14]</a></sup> Nhưng đó là một ca, và nó đo một cuộc chuyển đổi agile và lean
+				nói chung chứ không tách riêng phần đóng góp của một framework mở rộng cụ thể nào. Con số dễ tìm hơn
+				hẳn vẫn là bao nhiêu tổ chức đã áp dụng.</p>
+			<p>Một tổ chức không trở nên linh hoạt hơn chỉ vì có thêm Scrum Team. Nếu mỗi team phải chờ nhiều team khác
+				mới tạo ra được thứ gì đó dùng được, thì nhân rộng Scrum là nhân rộng luôn cả sự chờ đợi, và làm điều đó
+				với một bộ từ vựng khiến ai cũng thấy mình đang tiến bộ.</p>
+			<p>Câu tôi chưa trả lời được: nếu ranh giới team thật sự viết sẵn phần lớn danh sách phụ thuộc, vì sao rất
+				ít tổ chức đổi nó, kể cả những tổ chức đã đọc Conway, đã đọc Team Topologies, và đã trả tiền cho một
+				cuộc chuyển đổi trọn gói?</p>
+			<p>Câu trả lời dễ chịu là họ chưa hiểu. Câu trả lời khó chịu hơn: họ hiểu, và họ đang chọn đúng theo tiêu
+				chí của họ, vì thứ họ tối ưu không phải thời gian đưa một thay đổi tới người dùng mà là khả năng dự đoán
+				của ngân sách và sự yên ổn của bộ máy. Nếu đúng vậy thì bài này đang trả lời một câu hỏi mà tổ chức
+				không hỏi, và mọi chỉ số ở phần trên chỉ hữu ích với những người vốn đã quan tâm.</p>
+			<p>Nên câu đáng hỏi trước, trước cả câu "nên scale bằng framework nào": tổ chức này đang tối ưu cho cái gì,
+				và ai là người có quyền đổi câu trả lời đó.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Tài Liệu Tham Khảo</h2>
+			<ol class="outline-list">
+				<li id="ref-1">Conway, M. E. (04/1968). <em>How Do Committees Invent?</em> Datamation, 14(5), 28-31.
+					Nguồn gốc cho luận đề rằng cấu trúc hệ thống sao chép cấu trúc giao tiếp của tổ chức làm ra nó, cho
+					nhận xét rằng số đường giao tiếp khả dĩ xấp xỉ một nửa bình phương số người, và cho câu về việc mỗi
+					lần uỷ quyền là một lần thu hẹp không gian thiết kế còn nghĩ tới được. Ghi chú của chính Conway trên
+					trang riêng là nguồn cho niên đại: ông gửi bài cho Harvard Business Review năm 1967 và bị từ chối vì
+					chưa chứng minh được luận đề, sau đó Datamation đăng vào tháng 4 năm 1968. <a
+						href="https://www.melconway.com/research/committees.html" rel="noopener noreferrer"
+						target="_blank">Toàn văn bài báo</a>, <a href="https://www.melconway.com/Home/Conways_Law.html"
+						rel="noopener noreferrer" target="_blank">ghi chú của tác giả</a>.</li>
+				<li id="ref-2">Dikert, K., Paasivaara, M. &amp; Lassenius, C. (2016). <em>Challenges and success factors
+						for large-scale agile transformations: A systematic literature review</em>. Journal of Systems
+					and Software, 119, 87-108. Tổng quan hệ thống lọc 1.875 bài, giữ 52 công bố mô tả 42 ca công nghiệp,
+					rút ra 35 thách thức và 29 yếu tố thành công. Bài này dùng nó cho hai việc trái chiều nhau: cho thấy
+					nền bằng chứng của cả chủ đề còn mỏng vì gần 90% tài liệu là experience report, và cho thấy
+					management support nằm trong nhóm yếu tố thành công nổi bật nhất, tức là một lý do thật để chọn
+					framework có tên tuổi. <a
+						href="https://research.aalto.fi/en/publications/challenges-and-success-factors-for-large-scale-agile-transformati/"
+						rel="noopener noreferrer" target="_blank">Trang công bố</a>, <a
+						href="https://doi.org/10.1016/j.jss.2016.06.013" rel="noopener noreferrer"
+						target="_blank">DOI</a>.</li>
+				<li id="ref-3">Schwaber, K. &amp; Sutherland, J. (2020). <em>The Scrum Guide</em>. Nguồn chuẩn cho ba
+					câu mà bài này dựa vào: Increment phải dùng được mới tạo ra giá trị, công việc chưa đạt Definition of
+					Done thì không thuộc về Increment, và nhiều Scrum Team cùng một sản phẩm thì <em>must</em> dùng chung
+					một Definition of Done. Câu về việc chung Product Goal, Product Backlog và Product Owner dùng
+					<em>should</em>, tức là một mức ràng buộc nhẹ hơn, và bài này giữ nguyên sự khác biệt đó. <a
+						href="https://scrumguides.org/scrum-guide.html" rel="noopener noreferrer" target="_blank">Đọc
+						tài liệu</a>.</li>
+				<li id="ref-4">Kingman, J. F. C. (10/1961). <em>The single server queue in heavy traffic</em>.
+					Mathematical Proceedings of the Cambridge Philosophical Society, 57(4), 902. Nguồn của công thức
+					xấp xỉ thời gian chờ trung bình cho hàng đợi một trạm phục vụ, trong đó hệ số theo mức bận là
+					ρ/(1-ρ). Bài này dùng đúng hệ số đó và tự tính ra các giá trị 4, 9 và 19 tại mức bận 80%, 90% và
+					95%; phần diễn giải sang bối cảnh team là loại suy của tác giả, không phải nội dung của bài báo gốc.
+					<a href="https://doi.org/10.1017/S0305004100036094" rel="noopener noreferrer" target="_blank">Bản
+						gốc qua DOI</a>.
+				</li>
+				<li id="ref-5">Herbsleb, J. D. &amp; Mockus, A. (2003). <em>An Empirical Study of Speed and
+						Communication in Globally Distributed Software Development</em>. IEEE Transactions on Software
+					Engineering, 29(6), 481-494. Nguồn cho hai điều: các hạng mục công việc phân tán mất khoảng gấp hai
+					lần rưỡi thời gian so với hạng mục tương đương làm tại một chỗ, và cơ chế đi kèm là chúng kéo theo
+					nhiều người hơn, trong khi số người tham gia có quan hệ mạnh với thời gian hoàn thành. Nghiên cứu đo
+					khoảng cách địa lý chứ không đo ranh giới team, và bài này chỉ mượn cơ chế thứ hai. <a
+						href="https://herbsleb.org/web-pubs/pdfs/Herbsleb-Empirical-2003.pdf" rel="noopener noreferrer"
+						target="_blank">Bản toàn văn của tác giả</a>.</li>
+				<li id="ref-6">MacCormack, A., Rusnak, J. &amp; Baldwin, C. (2011). <em>Exploring the Duality between
+						Product and Organizational Architectures: A Test of the "Mirroring" Hypothesis</em>. Harvard
+					Business School Working Paper 08-039; bản đăng chính thức trên Research Policy, 41(8), 2012,
+					1309-1324. Kiểm nghiệm giả thuyết mirroring bằng cách so từng cặp sản phẩm cùng chức năng do tổ chức
+					gắn kết chặt và cộng đồng nguồn mở lỏng lẻo làm ra, với độ chênh về khả năng lan truyền thay đổi lên
+					tới tám lần. Bài này cũng lấy từ đây hai giới hạn mà chính nhóm tác giả nêu: mẫu chỉ gồm năm cặp, và
+					thiết kế nghiên cứu không tách được yếu tố tổ chức nào là yếu tố quyết định. <a
+						href="https://www.hbs.edu/ris/Publication%20Files/08-039_1861e507-1dc1-4602-85b8-90d71559d85b.pdf"
+						rel="noopener noreferrer" target="_blank">Bản working paper</a>.</li>
+				<li id="ref-7">The LeSS Company B.V. <em>Large-Scale Scrum: Feature Teams</em> và <em>Product
+						Owner</em>. Nguồn cho định nghĩa feature team và component team theo cách LeSS trình bày, cho
+					cảnh báo rằng mô hình lai mang nhược điểm của cả hai phía, cho lập luận về việc giữ một Product Owner
+					với một Product Backlog để tránh tối ưu cục bộ, và cho việc chính LeSS phải thêm vai trò Area Product
+					Owner khi vượt quá quy mô. Đây là tài liệu của một phía trong cuộc tranh luận, và bài này dùng nó
+					như vậy. <a href="https://less.works/less/structure/feature-teams" rel="noopener noreferrer"
+						target="_blank">Feature teams</a>, <a href="https://less.works/less/framework/product-owner"
+						rel="noopener noreferrer" target="_blank">Product Owner</a>.</li>
+				<li id="ref-8">Skelton, M. &amp; Pais, M. (2019). <em>Team Topologies: Organizing Business and
+						Technology Teams for Fast Flow</em>. IT Revolution Press. Nguồn cho bốn kiểu team, ba kiểu tương
+					tác, khái niệm cognitive load và mẫu thinnest viable platform. Bài này dùng phần ba kiểu tương tác
+					nhiều hơn phần bốn kiểu team, và chỉ ra rằng không kiểu nào trong ba xử lý được việc chờ một quyết
+					định. <a href="https://teamtopologies.com/key-concepts" rel="noopener noreferrer"
+						target="_blank">Tóm tắt khái niệm</a>, <a href="https://teamtopologies.com/book"
+						rel="noopener noreferrer" target="_blank">trang sách</a>.</li>
+				<li id="ref-9">DORA. <em>Loosely coupled architecture</em>. Nguồn cho phép thử cụ thể thay cho việc đặt
+					tên team: các team có kiểm thử được phần lớn công việc mà không cần môi trường tích hợp dùng chung,
+					và có triển khai được dịch vụ của mình độc lập với những dịch vụ nó phụ thuộc hay không. Đây là kết
+					quả từ dữ liệu khảo sát nhiều năm, mang tính tương quan. <a
+						href="https://dora.dev/capabilities/loosely-coupled-architecture/" rel="noopener noreferrer"
+						target="_blank">Đọc tài liệu năng lực</a>.</li>
+				<li id="ref-10">Schwaber, K. và Scrum.org (01/2021). <em>The Nexus Guide</em>. Nguồn cho định nghĩa
+					Nexus gồm khoảng ba tới chín Scrum Team quanh một Product Owner và một Product Backlog, cho khái
+					niệm Integrated Increment, và cho đoạn đáng chú ý nhất mà bài này trích: chính tài liệu hướng dẫn mở
+					rộng nói rằng thu nhỏ số người làm một việc có thể là cách tạo thêm giá trị, vì thêm người làm tăng
+					số đường giao tiếp tham gia vào việc ra quyết định. <a
+						href="https://scrumorg-website-prod.s3.amazonaws.com/drupal/2021-01/NexusGuide%202021.pdf"
+						rel="noopener noreferrer" target="_blank">Bản PDF 2021</a>, <a
+						href="https://www.scrum.org/resources/nexus-guide" rel="noopener noreferrer"
+						target="_blank">trang giới thiệu</a>.</li>
+				<li id="ref-11">Sutherland, J. và Scrum Inc. <em>The Scrum@Scale Guide</em>. Nguồn cho định nghĩa
+					Scrum@Scale, cho mục tiêu tuyên bố là linear scalability, và cho khái niệm minimum viable bureaucracy
+					cùng hai nhóm lãnh đạo Executive MetaScrum và Executive Action Team. Bài này chú ý tới việc chính
+					tài liệu chọn chữ bureaucracy và đặt chữ minimum lên trước nó, và cũng lấy từ đây việc chính tài
+					liệu đặt mục tiêu giảm <em>decision latency</em>, thứ mà một bảng chỉ đếm số tầng sẽ bỏ sót. <a
+						href="https://www.scrumatscale.com/scrum-at-scale-guide-online/" rel="noopener noreferrer"
+						target="_blank">Đọc bản trực tuyến</a>.</li>
+				<li id="ref-12">Scaled Agile, Inc. <em>Agile Release Train</em>. Nguồn cho quy mô điển hình 50 tới 125
+					người của một Agile Release Train, con số bài này dùng để định vị SAFe trên trục số điểm chặn. <a
+						href="https://framework.scaledagile.com/agile-release-train" rel="noopener noreferrer"
+						target="_blank">Trang tài liệu khung</a>.</li>
+				<li id="ref-13">Lee, J. (2020). <em>Spotify's Failed #SquadGoals</em>. Bản kể lại từ một người từng làm
+					quản lý sản phẩm tại Spotify, là nguồn cho hai điều bài này dùng để tự phản biện: mô hình squad chưa
+					bao giờ được triển khai đầy đủ như tài liệu mô tả, và vấn đề mà tác giả chỉ ra nằm ở chỗ công ty
+					không định nghĩa một quy trình chung cho việc phối hợp giữa các team. Đây là bản kể lại cá nhân,
+					không phải nghiên cứu, và bài này dùng nó đúng ở mức đó. <a
+						href="https://www.jeremiahlee.com/posts/failed-squad-goals/" rel="noopener noreferrer"
+						target="_blank">Đọc bài</a>.</li>
+				<li id="ref-14">Olszewska, M., Heidenberg, J., Weijola, M., Mikkonen, K. &amp; Porres, I. (2016).
+					<em>Quantitatively measuring a large-scale agile transformation</em>. Journal of Systems and
+					Software, 117, 258-273. Bài này dẫn nó ở đoạn kết như bằng chứng rằng việc đo trước và sau một cuộc
+					chuyển đổi quy mô lớn là làm được và đã có người làm. Tôi không truy cập được toàn văn nên không
+					dẫn lại kết quả của nghiên cứu, chỉ dẫn sự tồn tại và phạm vi của nó. <a
+						href="https://doi.org/10.1016/j.jss.2016.03.029" rel="noopener noreferrer"
+						target="_blank">DOI</a>, <a
+						href="https://research.abo.fi/en/publications/quantitatively-measuring-a-large-scale-agile-transformation"
+						rel="noopener noreferrer" target="_blank">trang công bố</a>.</li>
+			</ol>
+		</section>
+	</article>
+
+	<script src="../../../pages-scripts.js"></script>
+</body>
+
+</html>

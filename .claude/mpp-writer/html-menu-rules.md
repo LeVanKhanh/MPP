@@ -6,6 +6,7 @@
 |---|---|---|
 | Bài luận, quan điểm | `pages/template-notes.html` | |
 | Bài kỹ thuật | `pages/template-notes.html` | Cùng template, khác giọng văn |
+| Bài trong series mục lục kiến thức | `pages/template-notes.html` | Cùng template, nhưng bố cục section đã chốt sẵn ở `catalog-series.md` |
 | Thơ | `pages/template-poetry.html` | Dùng custom element `<stanza>` / `<line>`, cần thêm `poetry-style.css` |
 
 Đọc template trước khi viết. Không tự sáng tác cấu trúc mới.

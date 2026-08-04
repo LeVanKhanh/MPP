@@ -504,6 +504,19 @@ var mainMenuVn = [
                 ],
             },
             {
+                title: "Công Cụ Và Kỹ Thuật Quản Lý",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "5S",
+                        route: "pages/reading-studying/management-tools-and-techniques/5s-methodology-vn.html",
+                        hash: "#/5s-methodology",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
+            {
                 title: "Hướng Dẫn PMBOK",
                 icon: "fas fa-folder",
                 subItems: [

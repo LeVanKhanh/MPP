@@ -59,6 +59,27 @@ Kiểm thêm: bài có mắc chính ngụy biện nào không? Repo có cả ser
 
 ---
 
+## 1b. Đọc lại trục 1 và trục 4 khi chấm bài mục lục kiến thức
+
+Năm trục ở trên viết cho bài luận, nơi giá trị nằm ở góc nhìn riêng của tác giả. Bài thuộc series mục lục (`catalog-series.md`) là bài học tập: người đọc tìm kiến thức dùng được, không tìm trải nghiệm người viết. Chấm hai trục dưới đây theo bảng này thay cho bảng ở mục 1, ba trục còn lại giữ nguyên.
+
+**Trục 1 với bài mục lục: độ sắc của việc chọn và đọc kiến thức**
+
+| Điểm | Mô tả |
+|---|---|
+| 0-5 | Chép lại định nghĩa phổ thông. Không có nghiên cứu nào được tả đủ để biết nó đo gì. |
+| 6-10 | Đúng và đầy đủ, nhưng trùng với kết quả tìm kiếm đầu tiên về chủ đề đó. |
+| 11-15 | Có nghiên cứu thật, tả đủ mẫu và con số, và có nói tới giới hạn của nó. |
+| 16-20 | Thêm được thứ các bài phổ thông cùng chủ đề bỏ qua hoặc kể sai: một đính chính lịch sử có nguồn, một chỗ bằng chứng mỏng hơn danh tiếng, một điều kiện mà ngoài nó thì công cụ không chạy. |
+
+**Trục 4 với bài mục lục: giọng văn**
+
+Vẫn đếm đủ mọi dấu hiệu máy hoá ở `voice-guide.md` mục 4, không nới. Bỏ đúng một yêu cầu: **không trừ điểm vì bài thiếu câu "chỉ tác giả này viết được"**, và không trừ vì bài không có quan sát cá nhân. Ngược lại, **trừ** nếu bài chèn "theo tôi" hay một câu chuyện cá nhân chỉ để tạo giọng. Trần 16-20 ở thể loại này đạt được bằng câu chính xác, nhịp không đều đặn, và thuật ngữ dùng đúng chỗ.
+
+Ba thứ vòng lặp không tự tạo ra được ở mục 5 cũng đổi theo: với bài mục lục, thứ thiếu gần như luôn là **một nguồn tốt hơn** hoặc **một nghiên cứu chưa tìm ra**, không phải một quan sát của tác giả.
+
+---
+
 ## 2. Phân cấp theo tổng điểm
 
 | Cấp | Điểm | Nghĩa |

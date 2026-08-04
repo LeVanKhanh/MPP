@@ -16,6 +16,7 @@ Yêu cầu người dùng: **$ARGUMENTS**
    - `.claude/mpp-writer/refine-loop.md` - giao thức vòng lặp review → sửa (đọc khi mode là `review`, `refine` hoặc `feedback`)
    - `.claude/mpp-writer/guide-maintenance.md` - luật sửa chính bộ hướng dẫn (đọc khi mode là `feedback`, hoặc khi định đề xuất đổi một file quy tắc)
    - `.claude/mpp-writer/ubiquitous-language.md` - cách dùng và cách nuôi file từ điển của từng series (đọc khi mode là `draft`, `refine`, `feedback` hoặc `translate`, tức mọi mode có ghi file nội dung)
+   - `.claude/mpp-writer/catalog-series.md` - khung sáu section của bài mục lục kiến thức (đọc khi thể loại ở bước 3 là mục lục, ở mọi mode)
 2. Xác định **mode** từ yêu cầu. Nếu người dùng không nói rõ, tự suy ra:
    - Chỉ có chủ đề, chưa có nội dung → `outline`
    - Có nội dung thô hoặc outline đã duyệt → `draft`
@@ -25,7 +26,9 @@ Yêu cầu người dùng: **$ARGUMENTS**
    - Nói "dịch", "bản tiếng Anh", "EN version" → `translate`
    - Nói "đưa vào menu", "publish" → `publish`
    - Chỉ hỏi "bài X nằm ở đâu" → `find`
-3. Xác định **thể loại**: luận (essay) / kỹ thuật (technical) / thơ (poetry). Thể loại quyết định giọng văn và template.
+3. Xác định **thể loại**: luận (essay) / kỹ thuật (technical) / thơ (poetry) / mục lục kiến thức (catalog). Thể loại quyết định giọng văn và template.
+   - Là **mục lục** khi chủ đề là một danh mục nhiều mục ngang hàng, người đọc tra một mục chứ không đọc tuần tự, và mọi mục trả lời cùng một bộ câu hỏi. Bản mẫu: `pages/reading-studying/fallacy-bias-debate/bias/`. Khi đó khung bài đã cố định sẵn ở `catalog-series.md`, đọc file đó trước khi lên outline và theo đúng khung; không tự dựng bố cục mới.
+   - Series nhiều kỳ mà mỗi kỳ có bố cục riêng (như series Scrum) là **luận**, không phải mục lục.
 4. Đọc các **lens** cần cho mode đang chạy (bảng ở mục kế). Chỉ đọc lens sẽ dùng, đừng nạp cả tám.
 
 Nếu yêu cầu mơ hồ tới mức hai cách hiểu dẫn tới hai bài khác hẳn nhau, hỏi đúng một câu rồi tiếp tục. Còn lại thì tự quyết và nói rõ giả định đang dùng.
@@ -77,6 +80,7 @@ Lens dùng ở mode này: `develop-argument` → `structure-essay` → `research
    - Bài có tự mâu thuẫn với bài nào đã đăng trong repo không? Grep menu để kiểm tra các bài cùng chủ đề.
 3. **Kiểm tra trùng lặp**: grep `main-menu-vn.js` xem chủ đề đã có bài chưa. Nếu có, đề xuất viết tiếp/đối thoại với bài cũ thay vì viết lại.
 4. **Đề xuất outline** theo `structure-essay`, gồm:
+   - *Nếu thể loại là mục lục:* bỏ qua toàn bộ danh sách dưới đây. Khung đã chốt ở `catalog-series.md` mục 3 (trang mục) hoặc mục 4 (trang tổng quan). Việc của outline lúc này là điền vào khung đó: phép đối chiếu của bảng, ba ví dụ ở ba tầng kèm nguồn dự kiến, nghiên cứu chính, cơ chế và bốn chiến lược suy ra từ nó. Vẫn giữ nguyên bước 2 phản biện và bước 3 kiểm trùng lặp ở trên.
    - Tiêu đề (2-3 phương án) và subtitle
    - Câu mở: một tình huống cụ thể, một trích dẫn, hoặc một nghịch lý quan sát được. Không mở bằng định nghĩa từ điển, không mở bằng "Trong thế giới ngày nay".
    - 4-7 section chính, mỗi section ghi rõ: luận điểm của nó, bằng chứng dự kiến, và câu hỏi nó để lại cho section sau.

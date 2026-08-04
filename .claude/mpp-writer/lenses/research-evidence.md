@@ -46,6 +46,9 @@ Với mỗi nguồn định gắn, trả lời năm câu:
 
 - Nguồn phải đứng cạnh **câu nó đỡ**, không dồn hết xuống cuối bài.
 - Một nguồn chỉ đỡ đúng điều nó nói. Đừng dùng một paper về A để đỡ một tuyên bố về B chỉ vì hai chuyện nghe liên quan.
+- **Phạm vi của câu phải khớp phạm vi của nguồn, và phải nói ra trong chính câu đó.** Một tổng quan giới hạn ở một ngành chỉ đỡ được kết luận về ngành ấy; viết "bằng chứng đứng sau X rất mỏng" khi nguồn chỉ đếm trong y tế là mở rộng phạm vi mà không mở rộng bằng chứng. Cùng loại lỗi: khẳng định một con số "không thể giải thích bằng sai số" khi chưa đọc nghiên cứu gốc và không biết cỡ mẫu, thiết kế hay khoảng tin cậy.
+- **Không viết "nhất", "duy nhất", "không thể", "luôn luôn" nếu nguồn không nói vậy.** Đây là chỗ văn hay kéo bài đi quá xa nhất, vì tuyệt đối hoá đọc lên nghe sắc hơn. Hạ xuống mức nguồn đỡ nổi thì câu vẫn còn sức, chỉ mất phần không có thật.
+- **Danh sách từ trên chỉ là điểm khởi đầu, vì cách lách nó là viết tuyệt đối bằng chữ khác.** "Gần như không nói lên điều gì", "hầu như chẳng bao giờ", "có ai mà không" đều là tuyệt đối không mang từ nào bị cấm. Phép kiểm thật không nằm ở mặt chữ: đọc câu rồi tự dựng **một** phản ví dụ. Dựng được thì câu đang quá mạnh, hạ xuống đúng mức phản ví dụ đó không phá được. Dựng không nổi thì giữ. Chạy phép kiểm này ở mọi câu mang giọng khẳng định mạnh, kể cả câu đã sửa một lần rồi, vì bản sửa vội hay chỉ đổi cách nói mà giữ nguyên độ mạnh.
 - Markup theo `html-menu-rules.md`: `<sup><a href="#ref-N">[N]</a></sup>` trong bài, mục tương ứng trong section Tài Liệu Tham Khảo, `rel="noopener noreferrer"` cho link ngoài.
 - Mỗi mục tham khảo kèm một câu nói nó đóng góp gì cho bài. Không liệt kê thư mục suông.
 

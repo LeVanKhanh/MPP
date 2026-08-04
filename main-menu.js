@@ -497,6 +497,19 @@ var mainMenu = [
                 ],
             },
             {
+                title: "Management Tools and Techniques",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "5S",
+                        route: "pages/reading-studying/management-tools-and-techniques/5s-methodology.html",
+                        hash: "#/5s-methodology",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
+            {
                 title: "PMBOK Guide",
                 icon: "fas fa-folder",
                 subItems: [

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Manager Và Những Điều Kiện Chỉ Manager Đổi Được - My Personal Planet</title>
+	<link rel="stylesheet" href="../../../pages-styles.css">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta
+		content="Scrum Guide không có chữ manager. Nó chỉ nói Scrum làm hiện rõ hiệu lực của management. Bài này bàn về thứ nằm sau câu đó: sáu lớp điều kiện mà team không tự đổi được, phép thử rẻ nhất để biết một vấn đề thuộc con người hay thuộc hệ thống, và vì sao câu đó là vấn đề hệ thống lại dễ được cả phòng họp chấp nhận."
+		name="description">
+	<style>
+		sup a {
+			font-size: .8em;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<article class="content-article">
+		<header class="article-header">
+			<h1 class="page-title">Manager Và Những Điều Kiện Chỉ Manager Đổi Được</h1>
+			<p class="page-subtitle">Câu "đó là vấn đề hệ thống" chỉ có giá trị khi nó nêu được một điều kiện cụ thể,
+				một người có quyền đổi điều kiện đó, và một ngày. Thiếu ba thứ ấy, nó là cách quy trách nhiệm cho không
+				ai cả, và đó chính là lý do nó dễ được cả phòng họp chấp nhận.</p>
+			<p class="page-meta">Đăng ngày: <time datetime="2026-08-03">3 Tháng 8, 2026</time></p>
+		</header>
+
+		<section class="content-section">
+			<p>Trong toàn bộ Scrum Guide 2020, chữ <em>manager</em> không xuất hiện một lần nào. Chữ <em>management</em>
+				xuất hiện ba lần, trong đó hai lần nằm trong cụm <em>"Product Backlog management"</em>, tức là một nghĩa
+				khác hẳn. Lần còn lại nằm ở phần đầu tài liệu: <em>"Scrum makes visible the relative efficacy of current
+					management, environment, and work techniques, so that improvements can be
+					made."</em><sup><a href="#ref-1">[1]</a></sup></p>
+			<p>Đọc kỹ câu đó thì lập trường của Scrum về management không phải là "management không quan trọng", cũng
+				không phải "management hãy tránh ra". Nó lạ hơn cả hai. Management là một trong ba thứ mà Scrum làm hiện
+				rõ, xếp cùng hạng mục với môi trường làm việc và kỹ thuật làm việc. Một đối tượng để kiểm tra, không phải
+				một người tham gia.</p>
+			<p>Phần còn lại của tài liệu mô tả ai chịu trách nhiệm về cái gì bên trong một nhóm mười người. Câu duy nhất
+				nói về management thì nói rằng framework này sẽ cho bạn thấy management của bạn đang hiệu lực tới đâu.
+				Rồi tài liệu dừng lại. Nó không nói ai đọc kết quả đó, và ai có quyền làm gì với kết quả đó.</p>
+			<p class="intro-text">Luận đề của bài này có hai phiên bản, và phần lớn giá trị nằm ở phiên bản thứ hai.</p>
+			<p>Phiên bản an toàn: phần lớn thứ được gọi là "vấn đề con người" trong một tổ chức phần mềm thực ra là biểu
+				hiện của điều kiện tổ chức, và điều kiện tổ chức là thứ management sở hữu. Câu này gần như không ai phản
+				đối. Nó cũng gần như không làm ai đổi hành vi. Nó đã được nói suốt bốn mươi năm.</p>
+			<p>Phiên bản đáng tranh cãi nằm ở chỗ khác. Câu "đó là vấn đề hệ thống" chỉ có giá trị khi nó nêu được ba thứ
+				cùng lúc: một điều kiện cụ thể, một người có quyền đổi điều kiện đó, và một ngày. Thiếu bất kỳ thứ nào
+				trong ba, câu đó không phải một chẩn đoán. Nó là một cách quy trách nhiệm cho không ai cả. Và đó chính là
+				lý do nó được chấp nhận dễ dàng trong phòng họp: nó là câu duy nhất không làm ai mất mặt, kể cả manager.
+			</p>
+			<p>Nói cách khác, systems thinking có thể được dùng đúng theo cách mà chính nó lên án. "Cá nhân phải chịu
+				trách nhiệm" dùng để che những thứ chỉ management mới đổi được. "Đó là vấn đề hệ thống" dùng để che việc
+				không ai định đổi gì cả. Hai câu ấy trông đối lập nhau, nhưng trong một cuộc họp cụ thể chúng thường phục
+				vụ cùng một chức năng là kết thúc cuộc họp.</p>
+			<p>Bài viết cho tổ chức phát triển phần mềm có ít nhất một cấp quản lý bên trên Scrum Team, và có ít nhiều
+				quyền tự sắp xếp lại cách mình vận hành. Chữ "manager" trong bài không chỉ một người, và sẽ có một phần
+				riêng cho chuyện đó. Gộp engineering manager, people manager, delivery manager và ban lãnh đạo vào cùng
+				một danh từ là chỗ hỏng đầu tiên của gần như mọi bài viết cùng chủ đề, kể cả những bài đúng ở phần còn
+				lại. Bài này nối tiếp <a href="8-scrum-beyond-one-team-dependencies-team-design-and-scaling-vn.html">Scrum
+					Khi Vượt Khỏi Một Team</a>, nơi đã chốt rằng thứ đắt nhất khi nhiều team cùng làm một sản phẩm là số
+				điểm chặn quyết định mà một thay đổi phải đi qua. Bài đó dừng ở chỗ chỉ ra cái giá. Bài này hỏi ai là
+				người có quyền hạ nó xuống.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Cùng một vấn đề, đến người thứ ba</h2>
+			<p class="intro-text">Một team trượt Sprint Goal ba Sprint liên tiếp.</p>
+			<p>Phản ứng quen thuộc gần như tự động: yêu cầu estimate chính xác hơn, thêm một buổi theo dõi tiến độ giữa
+				tuần, hỏi riêng người đóng ít item nhất, thêm một cột trạng thái vào báo cáo. Nếu vẫn không đổi thì bàn
+				tới chuyện thay người.</p>
+			<p>Danh sách đó có một đặc điểm chung mà ít ai để ý. Mọi biện pháp trong đó đều nằm trong thẩm quyền của
+				người đang bực mình, và đều thực hiện được ngay trong tuần này.</p>
+			<p>Bây giờ nhìn cùng team ấy từ một góc khác. Trong ba Sprint vừa rồi, hai developer bị chia sang một team
+				khác từ giữa Sprint thứ nhất. Mọi thay đổi schema phải chờ một nhóm nền tảng đang có hàng đợi bốn tuần.
+				Ba stakeholder khác nhau đưa việc khẩn thẳng vào team mà không đi qua Product Owner. Và Product Owner
+				không có quyền từ chối yêu cầu đến từ một giám đốc.</p>
+			<p>Không mục nào trong danh sách thứ hai mà team tự đổi được. Cũng không mục nào trong danh sách thứ nhất
+				chạm tới danh sách thứ hai.</p>
+			<p>Đây là chỗ mọi bài viết về chủ đề này đều dẫn Deming ra. Nên dẫn, nhưng phải dẫn cho đúng.</p>
+			<p>Deming viết: <em>"I should estimate that in my experience most troubles and most possibilities for
+					improvement add up to the proportions something like this: 94% belongs to the system (responsibility
+					of management), 6% special."</em><sup><a href="#ref-2">[2]</a></sup></p>
+			<p>Chú ý ba chữ đầu, <em>I should estimate</em>, và ba chữ tiếp theo, <em>in my experience</em>. Deming không
+				nói ông đã đo. Ông nói đây là ước lượng của ông, rút ra từ kinh nghiệm của ông. Con số 94/6 sau đó được
+				trích lại hàng chục nghìn lần, phần lớn đã rụng mất hai mệnh đề ấy, và dần được nói ra như thể nó là kết
+				quả của một nghiên cứu.</p>
+			<p>Điều này cắt về cả hai phía. Người muốn bênh vực cách nhìn hệ thống mất đi con số họ hay dùng. Người muốn
+				bác bỏ cũng chẳng có gì để bác, vì chưa từng có phép đo nào để mà sai.</p>
+			<p>Lập luận trong bài này không cần con số đó. Nó cần một phép thử.</p>
+			<blockquote>
+				<p>Một vấn đề thuộc về con người hay thuộc về hệ thống: cách phân biệt rẻ nhất là xem nó có lặp lại qua
+					nhiều người khác nhau trong cùng một vị trí hay không.</p>
+			</blockquote>
+			<p>Nếu ba Product Owner lần lượt bị đánh giá là "chưa quyết đoán" trong cùng một vai trò, tại cùng một tổ
+				chức, thì giả thuyết "cả ba người đều thiếu quyết đoán" đòi hỏi một sự trùng hợp lớn hơn nhiều so với
+				giả thuyết "vị trí đó không được cấp quyền quyết định gì đáng kể".</p>
+			<p>Phép thử này có ba tính chất đáng nói ra.</p>
+			<p>Nó rẻ. Tổ chức nào cũng đã có sẵn dữ liệu cho nó, nằm trong lịch sử nhân sự của chính mình.</p>
+			<p>Nó không đòi ai thừa nhận điều gì. Không cần hỏi manager có can thiệp quá sâu không, không cần ai tự nhận
+				lỗi. Chỉ cần đếm.</p>
+			<p>Và nó đắt theo một cách không được ghi vào sổ nào. Để chạy được phép thử này, tổ chức đã phải đốt qua vài
+				người. Mỗi người trong số đó rời đi mang theo một bản đánh giá nói rằng họ chưa đủ năng lực. Cái giá của
+				việc học theo cách ấy không nằm trong bảng chi phí nào cả, vì nó rơi vào người đã đi khỏi.</p>
+			<p>Đó cũng là chỗ mà một bài viết về hệ thống rất dễ nghe hay mà vẫn vô ích. Nói rằng nên nhìn hệ thống thì
+				dễ. Chấp nhận rằng ta thường chỉ nhận ra vấn đề hệ thống sau khi đã đổ lỗi cho ba người thì khó hơn
+				nhiều, và cũng thành thật hơn.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Sáu lớp được gọi chung bằng một chữ</h2>
+			<p class="intro-text">Chữ "hệ thống" trong các bài viết quản trị hay bị dùng như một cái túi. Cái gì không
+				giải thích được thì bỏ vào đó. Để bài này không làm điều tương tự, cần tách nó ra thành các lớp có thể
+				chỉ tay vào được, và với mỗi lớp, hỏi thẳng ai là người thật sự đổi được nó.</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Lớp</th>
+						<th>Câu hỏi chẩn đoán</th>
+						<th>Thường ai mới đổi được</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><strong>Cấu trúc</strong></td>
+						<td>Team được dựng quanh một sản phẩm hay quanh một chuyên môn? Một người có bị chia cho nhiều
+							team không? Team có đủ năng lực để tự tạo ra một Increment không?</td>
+						<td>Cấp quản lý sở hữu ngân sách và biên chế</td>
+					</tr>
+					<tr>
+						<td><strong>Quyền quyết định</strong></td>
+						<td>Ai được xếp thứ tự công việc? Quyết định nào bắt buộc phải đi lên? Trách nhiệm có đi kèm
+							quyền không?</td>
+						<td>Người đang giữ quyền đó, và cấp trên của người ấy</td>
+					</tr>
+					<tr>
+						<td><strong>Dòng chảy công việc</strong></td>
+						<td>Một thay đổi đi qua bao nhiêu lần bàn giao? Thời gian thực sự làm việc chiếm bao nhiêu phần
+							trong tổng thời gian trôi qua? Nút thắt nằm ở người, ở quy trình, hay ở một chính sách?</td>
+						<td>Nửa nằm trong tay team, nửa nằm ở chính sách bên ngoài</td>
+					</tr>
+					<tr>
+						<td><strong>Cơ chế khuyến khích</strong></td>
+						<td>Tổ chức nói cần hợp tác nhưng xếp hạng cá nhân? Team được thưởng vì output hay vì outcome?
+							Điều gì đang được thưởng khi ai đó giấu một vấn đề?</td>
+						<td>Nhân sự và ban lãnh đạo, gần như không bao giờ là manager trực tiếp</td>
+					</tr>
+					<tr>
+						<td><strong>Nền tảng kỹ thuật</strong></td>
+						<td>Kiến trúc có phản ánh ranh giới sản phẩm hợp lý không? Release có an toàn và thường xuyên
+							được không? Team có quyền cải thiện công cụ mình đang dùng không?</td>
+						<td>Người cấp được ngân sách cho việc không tạo ra tính năng nào</td>
+					</tr>
+					<tr>
+						<td><strong>Đường đi của tin xấu</strong></td>
+						<td>Một rủi ro nhìn thấy sớm có đi lên được không, và người báo nó nhận lại gì? Manager đang nhận
+							tín hiệu thật hay bản báo cáo đã được dọn dẹp?</td>
+						<td>Manager trực tiếp, và chỉ bằng hành vi lặp lại chứ không bằng tuyên bố</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Cột thứ ba mới là cột đáng đọc, và nó phá luôn một giả định mà phần lớn bài viết cùng chủ đề để nguyên.
+			</p>
+			<p>Sáu lớp trên không thuộc về cùng một người. Một engineering manager có thể đổi được đường đi của tin xấu
+				trong nhóm mình từ tuần sau, có thể tác động lên dòng chảy, và gần như không đổi được gì trong cơ chế
+				khuyến khích của cả công ty. Trao cả sáu lớp cho một chức danh rồi bảo "đây là việc của anh" không tạo
+				ra trách nhiệm. Nó tạo ra sáu cái cớ, vì với năm trong sáu lớp, người đó nói thật khi bảo rằng mình không
+				có quyền.</p>
+			<p>Vì vậy, phiên bản dùng được của luận đề không phải "manager sở hữu hệ thống". Nó là: <strong>với mỗi điều
+					kiện đang cản trở, tồn tại đúng một người hoặc một nhóm có quyền đổi nó, và việc gọi tên người đó là
+					bước đầu tiên không thể bỏ qua.</strong> Nếu bước ấy bị bỏ, cuộc thảo luận về hệ thống sẽ luôn kết
+				thúc bằng sự đồng thuận dễ chịu rằng vấn đề nằm ở hệ thống.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Quyền phủ quyết mọc lên nhanh hơn quyền quyết định</h3>
+				<p>Trong lớp thứ hai, có một chi tiết đáng tách riêng vì nó nối thẳng vào bài trước của series.</p>
+				<p>Rogers và Blenko mô tả năm vai trò trong một quyết định, trong đó vai trò <em>agree</em> được định
+					nghĩa rất gọn: <em>"Individuals in this role have veto power."</em> Và họ nói rõ điều kiện để bộ máy
+					chạy được: <em>"For decision making to function smoothly, only a few people should have such veto
+						power."</em><sup><a href="#ref-3">[3]</a></sup></p>
+				<p>Câu tiếp theo mới là câu đáng dán lên tường: <em>"If a company has too many people in the 'agree'
+						role, it usually means that decisions are not pushed down far enough in the
+						organization."</em><sup><a href="#ref-3">[3]</a></sup></p>
+				<p>Đây chính là điểm chặn quyết định của bài trước, nhìn từ một truyền thống khác hẳn. Bài 8 đến với nó
+					từ phía chi phí chờ đợi. Rogers và Blenko đến với nó từ phía thiết kế tổ chức. Cả hai gặp nhau ở một
+					kết luận: số người có quyền nói không là một đại lượng có thể đếm, và nó thường lớn hơn số người có
+					quyền nói có.</p>
+				<p>Cần ghi rõ đây là kinh nghiệm tư vấn được hệ thống hoá, không phải nghiên cứu có nhóm đối chứng. Nó
+					đáng dùng như một khung để hỏi, không đáng dùng như một bằng chứng.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Tự quản không phải là vắng mặt</h2>
+			<p class="intro-text">Scrum Guide định nghĩa tự quản bằng một câu, và câu đó hẹp hơn nhiều so với cách nó
+				thường được trích.</p>
+			<p><em>"They are also self-managing, meaning they internally decide who does what, when, and
+					how."</em><sup><a href="#ref-1">[1]</a></sup></p>
+			<p>Ai làm gì, khi nào, bằng cách nào. Đó là toàn bộ phạm vi. Nó không nói team quyết định ngân sách của mình,
+				không nói team quyết định ai được tuyển vào, không nói team quyết định chính sách phê duyệt của công ty.
+				Đây là một câu về phạm vi, không phải một tuyên ngôn về quyền lực.</p>
+			<p>Series này đã chốt từ <a href="5-collaboration-across-scrum-accountabilities-vn.html">bài về sự phối hợp
+					giữa các accountability</a> rằng Managers không phải accountability thứ tư trong Scrum. Điều đó vẫn
+				đúng, và bài này không mở lại. Nhưng nằm ngoài Scrum không có nghĩa là nằm ngoài kết quả.</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Team quyết được</th>
+						<th>Team không quyết được, dù cố gắng đến đâu</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Cách thực hiện công việc và thực hành kỹ thuật</td>
+						<td>Cách các team được hình thành và ai thuộc về team nào</td>
+					</tr>
+					<tr>
+						<td>Phân chia công việc trong nội bộ team</td>
+						<td>Việc một người bị chia cho hai team cùng lúc</td>
+					</tr>
+					<tr>
+						<td>Cải tiến quy trình bên trong phạm vi của mình</td>
+						<td>Chính sách phê duyệt bắt buộc từ bên ngoài</td>
+					</tr>
+					<tr>
+						<td>Điều chỉnh kế hoạch trong Sprint để giữ Sprint Goal</td>
+						<td>Việc Sprint Goal bị đổi giữa Sprint bởi một người có quyền hơn Product Owner</td>
+					</tr>
+					<tr>
+						<td>Cách nói chuyện với nhau và cách xử lý bất đồng nội bộ</td>
+						<td>Cơ chế đánh giá và tưởng thưởng đang khiến việc nói thật trở nên tốn kém</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Đọc cột phải thì thấy một nghịch lý đủ sắc để đáng nói thành câu:</p>
+			<blockquote>
+				<p>Không thể yêu cầu một team tự quản trong một hệ thống mà mọi quyết định đáng kể vẫn phải chờ chữ ký từ
+					bên ngoài. Khi đó, "hãy chủ động hơn" là một mệnh lệnh mà người nhận không có cách nào thi hành, và
+					việc họ không thi hành được lại trở thành bằng chứng cho lần đánh giá sau.</p>
+			</blockquote>
+			<p>Cần công bằng với chiều ngược lại. Có những team dùng đúng lập luận này để không làm phần việc rõ ràng
+				thuộc về mình. Một team đổ cho chính sách phê duyệt trong khi vấn đề thật là họ chưa bao giờ ngồi lại
+				viết ra Definition of Done chung, đó là một team đang mượn ngôn ngữ hệ thống để tránh một việc khó nhưng
+				nằm trong tầm tay. Phép thử ở phần trước cũng chạy được theo chiều này: nếu đổi cả team mà vấn đề biến
+				mất, nó không phải vấn đề hệ thống.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Sáu cách phản ứng khi có chuyện bất thường</h2>
+			<p class="intro-text">Phần khó nhất của chủ đề này không phải nhận ra rằng nên sửa hệ thống. Là biết mình
+				đang ở đâu trên một cái thang, khi cái thang đó có nhiều bậc hơn hai bậc mà người ta hay nói.</p>
+			<p>Ron Westrum, khi nghiên cứu văn hoá tổ chức trong y tế và hàng không, đề xuất một thang sáu bậc cho cách
+				một tổ chức phản ứng với tín hiệu bất thường. Nguyên văn định nghĩa của ông:<sup><a
+						href="#ref-4">[4]</a></sup></p>
+			<ol class="numbered-outline">
+				<li><strong>Suppression.</strong> <em>"Harming or stopping the person bringing the anomaly to light;
+						'shooting the messenger'"</em></li>
+				<li><strong>Encapsulation.</strong> <em>"Isolating the messenger, so that the message is not heard"</em>
+				</li>
+				<li><strong>Public relations.</strong> <em>"Putting the message 'in context' to minimise its
+						impact"</em></li>
+				<li><strong>Local fix.</strong> <em>"Responding to the presenting case, but ignoring the possibility of
+						others elsewhere"</em></li>
+				<li><strong>Global fix.</strong> <em>"An attempt to respond to the problem wherever it exists"</em></li>
+				<li><strong>Inquiry.</strong> <em>"Attempting to get at the 'root causes' of the problem"</em></li>
+			</ol>
+			<p>Thang này có ích hơn cặp đối lập "xử lý sự cố" và "sửa hệ thống", vì nó cho thấy ba bậc đầu tiên tồn tại,
+				và chúng không hiếm. Trong ba bậc ấy, vấn đề không được xử lý dở. Nó được xử lý theo hướng làm cho tín
+				hiệu ngừng phát ra.</p>
+			<p>Bậc ba đáng chú ý nhất, vì nó là bậc dễ nhầm với sự chín chắn. Đặt một tin xấu "vào bối cảnh" nghe rất
+				giống tư duy hệ thống. Câu nói ra có thể là: chuyện này xảy ra ở mọi tổ chức, quý này ai cũng khó, chúng
+				ta cần nhìn bức tranh rộng hơn. Mỗi câu đều có thể đúng. Và tác dụng của chúng là để mọi người ra khỏi
+				phòng mà không ai phải làm gì.</p>
+			<p>Áp thang này vào ca ở đầu bài thì mỗi phản ứng có một chỗ đứng rõ ràng:</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Bậc</th>
+						<th>Trông ra sao trong ca team trượt Sprint Goal</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Local fix</td>
+						<td>Sprint này thêm người vào, làm thêm giờ, kịp giao hàng. Sprint sau lặp lại.</td>
+					</tr>
+					<tr>
+						<td>Global fix</td>
+						<td>Thống nhất một đường vào duy nhất cho việc khẩn, áp cho cả ba stakeholder chứ không riêng
+							người ồn ào nhất, và có người chịu trách nhiệm khi đường đó bị đi vòng.</td>
+					</tr>
+					<tr>
+						<td>Inquiry</td>
+						<td>Hỏi vì sao ba stakeholder đều thấy việc đi vòng qua Product Owner là hợp lý, và điều gì trong
+							cách họ bị đánh giá khiến đó là lựa chọn đúng của họ.</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Chỗ đắt là bậc năm và bậc sáu đều đòi một thứ mà bậc bốn không đòi: đụng vào quyền của một người khác.
+				Việc thêm người vào Sprint chỉ cần quyết định của manager trực tiếp. Việc buộc một giám đốc đi qua Product
+				Owner thì không.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Bảng đối chiếu, kèm chỗ nó tự hỏng</h3>
+				<p>Cách nhìn theo điều kiện thường được trình bày bằng một bảng hai cột, trong đó cột trái sai và cột
+					phải đúng. Bảng dạng đó dễ nhớ và dễ dùng sai, vì nó biến một loạt phán đoán phụ thuộc bối cảnh thành
+					một danh sách khẩu hiệu. Nên bảng dưới đây có ba cột.</p>
+				<table class="content-table">
+					<thead>
+						<tr>
+							<th>Phản xạ quen thuộc</th>
+							<th>Cách nhìn theo điều kiện</th>
+							<th>Chỗ cột giữa tự hỏng</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Tăng áp lực để đi nhanh hơn</td>
+							<td>Bỏ bớt những chỗ phải chờ</td>
+							<td>Có việc chậm chỉ vì không ai thấy nó gấp. Một câu hỏi đúng lúc từ cấp trên khi đó là thứ
+								cần thiết, không phải áp lực thừa.</td>
+						</tr>
+						<tr>
+							<td>Theo dõi mức độ bận rộn</td>
+							<td>Theo dõi thời gian một thay đổi đi từ ý tưởng tới người dùng</td>
+							<td>Với một team đang bị bỏ đói việc, mức bận là tín hiệu thật và có khi là tín hiệu duy nhất
+								đang phát ra.</td>
+						</tr>
+						<tr>
+							<td>Tìm người chịu trách nhiệm</td>
+							<td>Tìm cơ chế đã tạo ra kết quả</td>
+							<td>Có trường hợp một người thật sự đã làm sai. Không gọi tên là bất công với phần còn lại
+								của team, những người đã làm đúng.</td>
+						</tr>
+						<tr>
+							<td>Tối ưu năng suất từng người</td>
+							<td>Tối ưu dòng chảy của cả hệ thống</td>
+							<td>Dòng chảy hoàn hảo trên một sản phẩm không ai cần vẫn là lãng phí. Chữ "toàn hệ thống"
+								không tự trả lời câu hỏi hệ thống nào.</td>
+						</tr>
+						<tr>
+							<td>Ra quyết định thay team</td>
+							<td>Làm rõ ai được quyết cái gì</td>
+							<td>Trao cho một team quyền quyết định thị trường khi họ chưa có đường tiếp cận dữ liệu thị
+								trường thì đó không phải trao quyền, đó là bỏ mặc.</td>
+						</tr>
+						<tr>
+							<td>Xử lý từng sự cố</td>
+							<td>Đổi thứ làm sự cố lặp lại</td>
+							<td>Một số sự cố chỉ là ngẫu nhiên. Đi tìm nguyên nhân hệ thống cho mọi sự cố là một dạng
+								lãng phí khác, và nó tạo ra quy trình mới sau mỗi lần vấp.</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>Cột thứ ba không làm cột giữa mất giá trị. Nó chỉ nói rằng cột giữa là một phán đoán mặc định tốt,
+					không phải một quy tắc, và người dùng nó phải biết mình đang ở trường hợp nào.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Bận rộn không phải là dòng chảy</h2>
+			<p class="intro-text">Trong sáu lớp ở trên, lớp dòng chảy là lớp duy nhất có một mô hình toán đứng phía sau,
+				và mô hình đó nói một điều phản trực giác đủ mạnh để đáng nhắc lại.</p>
+			<p>Với một hàng đợi có một trạm phục vụ, thời gian chờ trung bình tỉ lệ với hệ số ρ/(1-ρ), trong đó ρ là mức
+				bận.<sup><a href="#ref-5">[5]</a></sup> Ở mức bận 80%, hệ số là 4. Ở 90%, là 9. Ở 95%, là 19. Nghĩa là
+				đẩy mức sử dụng từ 80% lên 95% không làm hệ thống nhanh hơn 15%. Nó làm thời gian chờ tăng khoảng năm
+				lần.</p>
+			<p>Đây là phần đã được dùng ở bài trước của series và không cần dựng lại. Chỗ đáng thêm vào là ý nghĩa của nó
+				đối với một manager cụ thể, chứ không phải đối với "tổ chức" nói chung.</p>
+			<p>Một manager được đánh giá bằng mức sử dụng nhân sự sẽ tối ưu đúng thứ mình bị đo. Người đó không ngu dốt
+				và cũng không tham lam. Người đó đang làm đúng việc mà hệ thống bên trên yêu cầu, bằng cách làm hỏng dòng
+				chảy của hệ thống bên dưới. Đây là ví dụ sạch nhất cho ý chính của cả bài: manager vừa là người sở hữu
+				điều kiện của người khác, vừa là người đang sống trong điều kiện do người khác đặt ra.</p>
+			<p>Phép loại suy từ hàng đợi sang tổ chức có một chỗ hỏng cần nói rõ. Kingman mô hình hoá một trạm phục vụ
+				với công việc đồng nhất. Người thì học được, người thì gộp việc lại làm một lượt, người thì từ chối bớt
+				việc khi thấy quá tải. Con số ở trên vì vậy không phải một dự báo. Nó là một lời cảnh báo về hình dạng
+				của đường cong: phi tuyến, và đoạn dốc nhất nằm đúng chỗ mà một bảng theo dõi năng suất coi là thành
+				tích.</p>
+			<p>Với lớp nền tảng kỹ thuật, Skelton và Pais đưa ra một tiêu chí gọn cho cùng loại vấn đề: một nền tảng dùng
+				chung chỉ có ích khi nó làm giảm cognitive load, tức là lượng phức tạp mà một team phải gánh. Và họ nói
+				thẳng chỗ dễ tự lừa mình: một platform team mà mọi yêu cầu vẫn phải gửi ticket rồi chờ xếp lịch không
+				phải là platform, đó là một component team đã đổi biển.<sup><a href="#ref-6">[6]</a></sup> Từ góc nhìn
+				của bài này, câu ấy có thể phát biểu lại thành: một nền tảng dùng chung mà vẫn là một điểm chặn thì nó
+				chưa giải quyết gì, nó chỉ đổi tên người đang giữ hàng đợi.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Đo để hệ thống học được, không phải để chấm điểm ai</h2>
+			<p class="intro-text">Phê phán velocity là chuyện dễ và đã có nhiều người làm. Phần khó là đưa ra thứ thay
+				thế mà không rơi vào đúng cái bẫy vừa mô tả.</p>
+			<p>Cái bẫy đó có tên. Năm 1979, Donald Campbell viết: <em>"The more any quantitative social indicator is used
+					for social decision-making, the more subject it will be to corruption pressures and the more apt it
+					will be to distort and corrupt the social processes it is intended to
+					monitor."</em><sup><a href="#ref-7">[7]</a></sup></p>
+			<p>Chú ý cấu trúc câu. Campbell không nói chỉ số nào tốt chỉ số nào xấu. Ông nói mức độ méo mó tỉ lệ với mức
+				độ chỉ số ấy được dùng để ra quyết định về con người. Cùng một con số có thể vô hại khi team tự nhìn, và
+				trở nên độc hại khi nó xuất hiện trong một bảng so sánh giữa các team.</p>
+			<p>Velocity là ví dụ điển hình. Nó hữu ích cho một team dự báo phần việc Sprint tới của chính mình. Nó trở
+				nên nguy hiểm ngay khi management dùng nó để so sánh hai team hoặc áp một mức tăng trưởng, vì cách rẻ
+				nhất để tăng velocity là đổi cách ước lượng, và cách đó luôn sẵn có.</p>
+			<p>Bốn câu hỏi dưới đây là một cách nhóm các tín hiệu sao cho chúng khó bị tối ưu trên báo cáo hơn, tuy không
+				miễn nhiễm.</p>
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th>Câu hỏi</th>
+						<th>Tín hiệu quan sát được</th>
+						<th>Cách nó vẫn bị bóp méo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Giá trị có được tạo ra không?</td>
+						<td>Outcome, mức độ sử dụng thật, tác động lên người dùng</td>
+						<td>Chọn chỉ số nào để báo cáo sau khi đã biết kết quả</td>
+					</tr>
+					<tr>
+						<td>Giá trị có chảy đều không?</td>
+						<td>Lead time, cycle time, thời gian một hạng mục bị chặn</td>
+						<td>Chia nhỏ hạng mục để mọi thứ trông nhanh hơn</td>
+					</tr>
+					<tr>
+						<td>Hệ thống có đáng tin không?</td>
+						<td>Change fail rate, thời gian phục hồi, xu hướng lỗi</td>
+						<td>Định nghĩa lại thế nào là một sự cố</td>
+					</tr>
+					<tr>
+						<td>Hệ thống có đang học không?</td>
+						<td>Số giả định được kiểm chứng, độ trễ của phản hồi, số vấn đề tái diễn</td>
+						<td>Gọi mọi việc đã làm là một thử nghiệm</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Với nhóm câu hỏi thứ hai và thứ ba, DORA hiện dùng năm chỉ số cho hiệu năng giao hàng phần mềm: change
+				lead time, deployment frequency, change fail rate, failed deployment recovery time, và deployment rework
+				rate.<sup><a href="#ref-8">[8]</a></sup> Con số thứ năm là bổ sung so với mô hình bốn chỉ số quen thuộc
+				hơn, và nó đo tỉ lệ những lần triển khai ngoài kế hoạch phát sinh do sự cố trên môi trường thật. Chính
+				tài liệu của DORA cũng dặn rằng các chỉ số này áp ở mức ứng dụng hoặc dịch vụ, và so sánh giữa những ứng
+				dụng khác loại nhau thì dễ dẫn tới kết luận sai.<sup><a href="#ref-8">[8]</a></sup></p>
+			<p>Còn nhóm câu hỏi thứ tư thì không có chỉ số nào tử tế, và đây là chỗ nên thành thật thay vì bịa ra một con
+				số. Cách quan sát khả dĩ nhất vẫn là định tính, và Westrum đã mô tả nó gọn hơn bất kỳ dashboard nào.
+				Trong bảng ba loại văn hoá của ông, cột về người mang tin có ba giá trị: ở tổ chức pathological, <em>"messengers
+					shot"</em>; ở tổ chức bureaucratic, <em>"messengers neglected"</em>; ở tổ chức generative,
+				<em>"messengers trained"</em>.<sup><a href="#ref-4">[4]</a></sup></p>
+			<p>Chữ <em>trained</em> mới là chữ đáng dừng lại. Nó không nói tin xấu được khoan dung. Nó nói tổ chức bỏ
+				công dạy người ta cách mang tin xấu lên: nói với ai, vào lúc nào, kèm theo cái gì để câu chuyện dùng được
+				ngay. Khoan dung là một thái độ và không tốn gì. Huấn luyện là một khoản đầu tư, và nó nằm đúng trong
+				thẩm quyền của manager trực tiếp, tức là lớp thứ sáu trong bảng ở trên, lớp duy nhất mà gần như manager
+				nào cũng đổi được ngay tuần sau.</p>
+			<p>Westrum còn nói một câu giải thích vì sao lớp ấy khó hơn vẻ ngoài của nó: <em>"leaders, by their
+					preoccupations, shape a unit's culture. Through their symbolic actions, as well as rewards and
+					punishments, leaders communicate what they feel is important."</em><sup><a
+						href="#ref-4">[4]</a></sup> Nghĩa là văn hoá thông tin không được đặt bằng lời tuyên bố trong
+				buổi họp toàn công ty. Nó được đặt bằng việc mọi người quan sát xem chuyện gì đã xảy ra với người báo tin
+				xấu lần trước.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Sở hữu không có nghĩa là điều khiển</h2>
+			<p class="intro-text">Đến đây cần quay lại chính chữ đã đặt tên cho bài, vì nó là chữ dễ gây hại nhất trong
+				toàn bộ lập luận.</p>
+			<p>"System owner" gợi ra hình ảnh một người đứng trên sơ đồ tổ chức, nhìn thấy toàn bộ các tương tác, và kéo
+				đúng cái đòn bẩy cần kéo. Hình ảnh đó sai, và nó sai theo một hướng nguy hiểm: nó biến systems thinking
+				thành một phiên bản mới của command-and-control, lần này có thêm từ vựng đẹp hơn.</p>
+			<p>Không manager nào hiểu được toàn bộ các tương tác trong tổ chức của mình. Một phần lớn thứ giữ cho công
+				việc chạy được nằm trong những thoả thuận không viết ra giữa những người ngồi cạnh nhau, và chúng không
+				xuất hiện trên bất kỳ sơ đồ nào. Thiết kế lại từ trên xuống, với niềm tin rằng mình nhìn thấy đủ, là cách
+				phổ biến nhất để phá vỡ những thứ ấy mà không biết mình vừa phá cái gì.</p>
+			<p>Cách gọi chính xác hơn là <strong>system steward</strong>: người chịu trách nhiệm chăm sóc, quan sát và
+				cải tiến hệ thống, không phải kiến trúc sư toàn năng thiết kế mọi thứ từ trên xuống. Ba việc của vai trò
+				đó:</p>
+			<ol class="numbered-outline">
+				<li>Làm cho hệ thống nhìn thấy được, trước hết là với chính những người đang sống trong nó.</li>
+				<li>Tạo điều kiện để những người ấy tham gia việc sửa, vì họ biết những thứ không có trên sơ đồ.</li>
+				<li>Đổi những ràng buộc mà không team riêng lẻ nào có quyền đổi, và chỉ mình việc này là không uỷ quyền
+					được.</li>
+			</ol>
+			<p>Rogers và Blenko nói cùng một điều từ phía thực hành: <em>"It's crucial for the people who will live with
+					the new system to help design it."</em><sup><a href="#ref-3">[3]</a></sup> Câu này thường bị đọc như
+				một lời khuyên về sự tử tế. Nó không phải. Nó là một tuyên bố về giới hạn nhận thức của người thiết kế.
+			</p>
+			<p>Và việc thứ ba trong ba việc trên có một hệ quả mà ít bài viết chịu nói ra. Manager cũng nằm trong một hệ
+				thống lớn hơn. Với những ràng buộc vượt quá thẩm quyền của mình, việc đúng đắn không phải là im lặng chịu
+				đựng rồi bảo team hãy chủ động hơn, mà là đưa nó lên và nói rõ cái giá. Nếu chuỗi ấy đứt ở đâu đó, thì
+				chỗ đứt là chỗ cần sửa, và nó thường nằm cao hơn nhiều so với chỗ mọi người đang nhìn.</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Chỗ lập luận này có thể sai</h2>
+			<p class="intro-text">Bốn chỗ, xếp theo mức độ nghiêm trọng nếu chúng đúng.</p>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Cùng một hệ thống, hai team khác nhau rất xa</h3>
+				<p>Đây là phản đề mạnh nhất, và nó không đến từ những người ghét tư duy hệ thống. Nó đến từ quan sát.</p>
+				<p>Trong cùng một công ty, cùng chính sách phê duyệt, cùng cơ chế lương, cùng nền tảng kỹ thuật, vẫn luôn
+					có team làm được nhiều hơn hẳn team khác. Nếu điều kiện quyết định kết quả, khoảng chênh lệch đó
+					không nên tồn tại ở mức mà ai làm trong ngành cũng đã thấy.</p>
+				<p>Câu trả lời thông thường là hệ thống quyết định phân phối chứ không quyết định từng lần rút. Câu ấy
+					đúng về mặt logic. Nhưng cần thừa nhận thẳng rằng nó cũng khiến luận điểm hệ thống trở nên khó bác
+					bỏ: mọi team làm tốt đều được giải thích là ngoại lệ trong phân phối, mọi team làm kém đều được giải
+					thích là hệ quả của điều kiện. Một luận điểm mà quan sát nào cũng vừa khớp là một luận điểm đáng ngờ.
+				</p>
+				<p>Phép thử lặp lại qua nhiều người ở đầu bài tồn tại chính vì lý do này. Nó là cách duy nhất trong bài
+					khiến luận điểm có thể sai được: nếu đổi người mà vấn đề biến mất, luận điểm sai ở ca đó. Bài này
+					đứng hay đổ theo phép thử ấy, không theo con số của Deming.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Bằng chứng mỏng hơn giọng văn</h3>
+				<p>Bốn nguồn chính đỡ cho lập luận trên thuộc bốn loại khác nhau, và không nguồn nào đo đúng thứ bài này
+					bàn.</p>
+				<p>Deming đưa ra một ước lượng và tự gọi nó là ước lượng. Westrum tự viết rằng mối tương quan của ông
+					<em>"is a hypothesis"</em>, rằng quan hệ giữa climate và performance là <em>"statistical, not
+						deterministic"</em>, và rằng <em>"there are many organisations that are effective but are not
+						generative, and whose performance is based on other features, such as a brilliant algorithm or a
+						charismatic leader."</em><sup><a href="#ref-4">[4]</a></sup> Rogers và Blenko viết từ kinh nghiệm
+					tư vấn. Kingman mô hình hoá một hàng đợi, không mô hình hoá con người.</p>
+				<p>Và nền bằng chứng của cả chủ đề tổ chức quy mô lớn thì mỏng theo cách đã được đo: một tổng quan hệ
+					thống năm 2016 lọc 1.875 bài, giữ lại 52 công bố, và ghi nhận gần 90% trong số đó là experience
+					report chứ không phải nghiên cứu có thiết kế chặt.<sup><a href="#ref-9">[9]</a></sup> Cùng tổng quan
+					ấy xếp management support vào nhóm yếu tố thành công nổi bật, nên nó vừa là nguồn đỡ cho bài vừa là
+					lời nhắc rằng nguồn đỡ ấy đứng trên nền đất mềm.</p>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">"Đặt accountability đúng cấp" là một phán đoán giá trị</h3>
+				<p>Bài này trình bày việc chuyển trách nhiệm từ cá nhân sang điều kiện tổ chức như một điều chỉnh hiển
+					nhiên đúng. Nó không hiển nhiên, và nó có một cách hỏng cụ thể.</p>
+				<p>Trong một tổ chức đã quen đổ lỗi cho hệ thống, ngôn ngữ này trở thành lớp bảo vệ cho những người thật
+					sự đang làm việc kém, và cái giá rơi vào đồng nghiệp của họ chứ không rơi vào hệ thống. Series này
+					đã ghi lại phép thử tương tự ở bài trước, dành cho các điểm phê duyệt: một cửa luôn gật là một cửa
+					không kiểm soát gì. Phiên bản của nó ở đây là: một tổ chức chưa bao giờ kết luận rằng vấn đề nằm ở
+					một cá nhân cụ thể thì không phải một tổ chức trưởng thành về tư duy hệ thống, đó là một tổ chức
+					không dám nói.</p>
+				<p>Ba cấp trách nhiệm dưới đây là cách bài này giữ cả hai đầu, và nó là một lựa chọn, không phải một sự
+					thật:</p>
+				<ul class="outline-list">
+					<li>Cá nhân chịu trách nhiệm về hành vi, cam kết nghề nghiệp và những quyết định nằm trong phạm vi
+						của mình.</li>
+					<li>Team chịu trách nhiệm về cách phối hợp và chất lượng của Increment.</li>
+					<li>Management chịu trách nhiệm về những điều kiện mà cả hai cấp trên không tự đổi được, và về việc
+						nói rõ cái giá của những điều kiện mà chính mình cũng không đổi được.</li>
+				</ul>
+			</div>
+			<div class="sub-section">
+				<h3 class="sub-point-1">Điều kiện khiến bài này sai</h3>
+				<p>Lập luận ở đây sụp nếu quan sát được điều sau: các tổ chức giữ nguyên cơ cấu quyền quyết định nhưng
+					đầu tư mạnh vào năng lực và tuyển chọn cá nhân đạt kết quả tương đương những tổ chức đã phân bổ lại
+					quyền quyết định. Khi đó, phần bài này nói về điều kiện là chuyện phụ được thổi phồng, và lời khuyên
+					đúng lại chính là lời khuyên bài này đang xem nhẹ: hãy tìm người giỏi hơn.</p>
+				<p>Điều đó đo được, bằng dữ liệu mà nhiều tổ chức đã có. Tôi chưa thấy ai công bố kết quả đo.</p>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Chỗ này chưa khép lại được</h2>
+			<p>Năm 2007, một nhóm nghiên cứu phân tích 286 quả phạt đền ở các giải hàng đầu thế giới. Bóng được sút sang
+				trái 32,2% số lần, vào giữa 28,7%, sang phải 39,2%. Thủ môn bay sang trái 49,3%, sang phải 44,4%, và
+				đứng yên ở giữa 6,3%. Tỉ lệ cản được bóng: 14,2% khi bay sang trái, 12,6% khi bay sang phải, và 33,3% khi
+				đứng yên.<sup><a href="#ref-10">[10]</a></sup></p>
+			<p>Nghĩa là lựa chọn tốt nhất của thủ môn là đứng yên, và họ gần như không bao giờ đứng yên. Nhóm tác giả
+				giải thích bằng norm theory: chuẩn mực của vị trí thủ môn là phải bay, nên một bàn thua sau khi đứng yên
+				gây cảm giác tệ hơn hẳn một bàn thua sau khi đã bay hết sức, dù kết quả như nhau. Họ gọi đó là <em>action
+					bias</em>.<sup><a href="#ref-10">[10]</a></sup></p>
+			<p>Phép loại suy này hỏng ở một chỗ phải nói rõ. Quả phạt đền là một bài toán lặp lại, có kết quả đo được
+				ngay, và chỉ có ba lựa chọn. Điều kiện tổ chức thì không có thứ nào trong ba đặc điểm đó. Nên đây là một
+				cách để nghĩ, không phải một bằng chứng.</p>
+			<p>Nhưng cơ chế thì giống nhau đến mức khó bỏ qua. Một manager thêm buổi họp theo dõi, thêm cột báo cáo, hỏi
+				riêng người làm chậm nhất, đó là hành động nhìn thấy được, làm được trong tuần này, và nếu kết quả vẫn
+				xấu thì ít nhất không ai trách được rằng anh ta đã không làm gì. Một manager bỏ ba tháng để thương lượng
+				lại quyền của Product Owner với một giám đốc thì tiêu tốn vốn chính trị ngay bây giờ, để đổi lấy một lợi
+				ích xuất hiện muộn và có hình dạng của một chuyện đã không xảy ra. Không ai được khen vì một sự cố không
+				bao giờ diễn ra.</p>
+			<p>Rogers và Blenko nói phần còn lại bằng một câu ngắn: <em>"decision-making authority is power, and people
+					are often reluctant to give it up."</em><sup><a href="#ref-3">[3]</a></sup></p>
+			<p>Gộp lại thì bài này rơi vào đúng cái bẫy mà nó vừa mô tả suốt bảy phần. Nó nói với từng manager rằng hãy
+				nghĩ theo hệ thống, hãy sửa điều kiện, hãy chịu chi phí ngắn hạn cho một lợi ích dài hạn vô hình. Đó
+				chính xác là kiểu lời khuyên mà bài này vừa bảo đừng dùng với team: một mệnh lệnh gửi tới cá nhân, đòi
+				họ tự vượt qua một điều kiện đang đẩy họ theo hướng ngược lại.</p>
+			<p>Nếu lập luận trong bài đúng thì nó phải đúng cả với người đọc nó. Manager thúc ép từng người không phải vì
+				chưa ai giải thích cho họ nghe về tư duy hệ thống. Họ làm vậy vì hệ thống bên trên đo họ bằng những thứ
+				nhìn thấy được trong quý này. Sửa chỗ đó thì không phải việc của họ, mà là việc của người ở trên nữa. Và
+				chuỗi ấy chạy lên tới đâu đó rồi dừng, tại một chỗ mà không còn ai ở trên để đẩy tiếp.</p>
+			<p>Nên câu hỏi cuối cùng của bài không phải "manager nên đổi gì". Với một manager vừa đọc xong và thấy đúng,
+				câu hỏi dùng được hơn là: điều kiện nào tôi đang muốn đổi, ai phải gật đầu trước khi tôi đổi được nó, và
+				người ấy có bao giờ nói không hay chưa?</p>
+			<p>Còn với cả tổ chức, câu hỏi vẫn là câu cũ, chỉ khác ở chỗ bây giờ nó đã có một phép thử đi kèm: khi cùng
+				một vấn đề tiếp tục xuất hiện với những con người khác nhau, chúng ta còn đang quản lý hiệu suất, hay đã
+				chuyển sang từ chối nhìn vào thứ tạo ra nó?</p>
+		</section>
+
+		<section class="content-section">
+			<h2 class="main-point">Tài Liệu Tham Khảo</h2>
+			<ol class="outline-list">
+				<li id="ref-1">Schwaber, K. &amp; Sutherland, J. (2020). <em>The Scrum Guide</em>. Nguồn chuẩn cho ba
+					điều bài này dựa vào: chữ <em>manager</em> không xuất hiện trong tài liệu; chữ <em>management</em>
+					xuất hiện ba lần, hai lần trong cụm "Product Backlog management" và một lần trong câu nói Scrum làm
+					hiện rõ hiệu lực tương đối của management, môi trường và kỹ thuật làm việc hiện tại; và định nghĩa
+					self-managing giới hạn ở việc team tự quyết ai làm gì, khi nào, bằng cách nào. Kiểm trực tiếp ngày
+					3/8/2026. <a href="https://scrumguides.org/scrum-guide.html" rel="noopener noreferrer"
+						target="_blank">Đọc tài liệu</a>.</li>
+				<li id="ref-2">Deming, W. E. <em>Out of the Crisis</em>. MIT Press (xuất bản lần đầu 1982). Nguồn của tỉ
+					lệ 94/6 mà gần như mọi bài viết về "manager sở hữu hệ thống" đều dẫn lại. Bài này dùng nó theo hướng
+					ngược với thông lệ: để chỉ ra rằng chính Deming trình bày con số ấy như một ước lượng từ kinh nghiệm
+					<em>("I should estimate that in my experience")</em>, không phải một kết quả đo, và phần lớn các lần
+					trích lại đã làm rụng mất hai mệnh đề đó. Nguyên văn câu trích được The W. Edwards Deming Institute
+					công bố trên trang quotes của họ; trang này chặn truy cập tự động nên không dẫn liên kết trực tiếp ở
+					đây. <a href="https://archive.org/details/outofcrisis0000demi" rel="noopener noreferrer"
+						target="_blank">Bản lưu sách tại Internet Archive</a>.</li>
+				<li id="ref-3">Rogers, P. &amp; Blenko, M. (01/2006). <em>Who Has the D? How Clear Decision Roles Enhance
+						Organizational Performance</em>. Harvard Business Review. Nguồn cho khung RAPID và cho ba câu bài
+					này dùng: định nghĩa vai trò <em>agree</em> là vai trò có quyền phủ quyết, nhận xét rằng quá nhiều
+					người ở vai trò đó là dấu hiệu quyết định chưa được đẩy xuống đủ sâu, và câu về việc quyền quyết định
+					là quyền lực nên người ta thường không muốn nhường. Đây là kinh nghiệm tư vấn đã được hệ thống hoá,
+					không phải nghiên cứu có nhóm đối chứng, và bài này dùng nó như một khung để hỏi chứ không như bằng
+					chứng. <a href="https://hbr.org/2006/01/who-has-the-d-how-clear-decision-roles-enhance-organizational-performance"
+						rel="noopener noreferrer" target="_blank">Trang bài trên HBR</a>, <a
+						href="https://ceo.usc.edu/wp-content/uploads/2018/03/5-Who-has-the-D_HBR.pdf"
+						rel="noopener noreferrer" target="_blank">bản in lại đầy đủ</a>.</li>
+				<li id="ref-4">Westrum, R. (2004). <em>A typology of organisational cultures</em>. Quality &amp; Safety
+					in Health Care, 13(Suppl II), ii22-ii27. Nguồn cho hai thứ bài này dùng nhiều nhất: thang sáu bậc
+					phản ứng với tín hiệu bất thường, từ suppression tới inquiry, và bảng ba loại văn hoá trong đó người
+					mang tin lần lượt bị bắn, bị làm ngơ, hoặc được huấn luyện. Cũng là nguồn cho câu về việc mối bận tâm
+					của người lãnh đạo định hình văn hoá của đơn vị. Bài này dẫn thêm chính phần tự giới hạn của Westrum,
+					nơi ông gọi tương quan của mình là một giả thuyết và nói rõ quan hệ giữa climate và performance là
+					thống kê chứ không tất định. <a
+						href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1765804/" rel="noopener noreferrer"
+						target="_blank">Toàn văn tại PubMed Central</a>.</li>
+				<li id="ref-5">Kingman, J. F. C. (10/1961). <em>The single server queue in heavy traffic</em>.
+					Mathematical Proceedings of the Cambridge Philosophical Society, 57(4), 902. Nguồn của công thức xấp
+					xỉ thời gian chờ trung bình cho hàng đợi một trạm phục vụ, với hệ số theo mức bận là ρ/(1-ρ). Series
+					đã dùng đúng hệ số này ở bài 8 và tự tính ra các giá trị 4, 9 và 19 tại mức bận 80%, 90% và 95%; phần
+					chuyển sang bối cảnh tổ chức là loại suy của tác giả, không phải nội dung bài báo gốc. <a
+						href="https://doi.org/10.1017/S0305004100036094" rel="noopener noreferrer" target="_blank">Bản
+						gốc qua DOI</a>.</li>
+				<li id="ref-6">Skelton, M. &amp; Pais, M. (2019). <em>Team Topologies: Organizing Business and Technology
+						Teams for Fast Flow</em>. IT Revolution. Nguồn cho khái niệm cognitive load như tiêu chí đánh giá
+					một nền tảng dùng chung, và cho nhận xét rằng một platform team mà mọi yêu cầu vẫn phải gửi ticket và
+					chờ xếp lịch chỉ là component team đã đổi tên. Series đã chốt cách dùng hai điểm này ở bài 8. <a
+						href="https://teamtopologies.com/book" rel="noopener noreferrer" target="_blank">Trang sách</a>.
+				</li>
+				<li id="ref-7">Campbell, D. T. (1979). <em>Assessing the Impact of Planned Social Change</em>. Evaluation
+					and Program Planning, 2(1), 67-90. Nguồn nguyên văn cho phát biểu về việc một chỉ số định lượng càng
+					được dùng nhiều để ra quyết định xã hội thì càng chịu áp lực bị bóp méo, và càng có xu hướng làm méo
+					chính quá trình mà nó được lập ra để theo dõi. Bài này dùng nó để giải thích vì sao cùng một con số
+					có thể vô hại khi team tự nhìn và độc hại khi nó vào bảng so sánh giữa các team. <a
+						href="https://doi.org/10.1016/0149-7189(79)90048-X" rel="noopener noreferrer"
+						target="_blank">Bản gốc qua DOI</a>.</li>
+				<li id="ref-8">DORA. <em>DORA's software delivery performance metrics</em>. Nguồn cho danh sách năm chỉ
+					số hiện hành, gồm change lead time, deployment frequency, change fail rate, failed deployment recovery
+					time và deployment rework rate, và cho cảnh báo rằng các chỉ số này áp ở mức ứng dụng hoặc dịch vụ nên
+					so sánh giữa những ứng dụng khác loại nhau dễ gây hiểu sai. Đây là tài liệu sống, kiểm ngày 3/8/2026;
+					mô hình bốn chỉ số quen thuộc hơn là phiên bản cũ của cùng dòng nghiên cứu này. <a
+						href="https://dora.dev/guides/dora-metrics/" rel="noopener noreferrer" target="_blank">Đọc hướng
+						dẫn</a>.</li>
+				<li id="ref-9">Dikert, K., Paasivaara, M. &amp; Lassenius, C. (2016). <em>Challenges and success factors
+						for large-scale agile transformations: A systematic literature review</em>. Journal of Systems and
+					Software, 119, 87-108. Bài này dùng nó cho hai việc trái chiều nhau, giống bài 8: cho thấy nền bằng
+					chứng của cả chủ đề còn mỏng vì gần 90% tài liệu được giữ lại là experience report, và cho thấy
+					management support nằm trong nhóm yếu tố thành công nổi bật nhất. <a
+						href="https://doi.org/10.1016/j.jss.2016.06.013" rel="noopener noreferrer"
+						target="_blank">DOI</a>.</li>
+				<li id="ref-10">Bar-Eli, M., Azar, O. H., Ritov, I., Keidar-Levin, Y. &amp; Schein, G. (2007). <em>Action
+						bias among elite soccer goalkeepers: The case of penalty kicks</em>. Journal of Economic
+					Psychology, 28(5), 606-621. Nguồn cho toàn bộ số liệu ở phần kết: mẫu 286 quả phạt đền, phân bố hướng
+					sút và hướng bay của thủ môn, và tỉ lệ cản được bóng theo từng lựa chọn. Cũng là nguồn cho cách giải
+					thích bằng norm theory, rằng một kết quả xấu sau khi không hành động gây cảm giác tệ hơn sau khi đã
+					hành động. Bài này dùng nó như một phép loại suy và đã nói rõ chỗ phép loại suy hỏng. <a
+						href="https://doi.org/10.1016/j.joep.2006.12.001" rel="noopener noreferrer"
+						target="_blank">Bản gốc qua DOI</a>.</li>
+			</ol>
+		</section>
+	</article>
+
+	<script src="../../../pages-scripts.js"></script>
+</body>
+
+</html>

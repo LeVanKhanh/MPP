@@ -162,7 +162,7 @@ Sáu bước:
 3. **Báo bảng phân loại ra chat trước khi sửa bất cứ thứ gì.** Mọi mục xếp "Sai" và "Không nên theo" phải kèm bằng chứng ngược lại trích nguyên văn. Đây là phần tác giả cần nhất; đừng rút gọn nó để nhảy sang phần sửa.
 4. **Sửa**, theo giao thức `refine-loop.md` mục 2 bước 3 tới bước 5: phân loại A/B, gom câu hỏi loại B thành một lượt tối đa 3 câu, sửa thật, rồi qua cửa `preserve-author-voice`. Cập nhật `page-meta` theo `html-menu-rules.md` mục 2.1.
 5. **Chạy `review` rút gọn trên bản đã sửa.** Hai việc: dò phần bản đánh giá bỏ sót, và bắt lỗi mới do chính việc sửa vừa rồi tạo ra. Chấm lại 5 trục, báo delta so với trước khi nhận đánh giá.
-6. **Rút bài học vào hướng dẫn**, theo `guide-maintenance.md`. Chỉ với lỗi có khả năng lặp ở bài sau. Tối đa 2 chỗ mỗi lượt. Đề xuất bản vá theo mẫu mục 5 của file đó rồi hỏi; tác giả đồng ý thì sửa ngay trong cùng lượt, và ghi một dòng vào nhật ký mục 6.
+6. **Rút bài học vào hướng dẫn**, theo `guide-maintenance.md`. Chỉ với lỗi có khả năng lặp ở bài sau. Tối đa 2 chỗ mỗi lượt. Đề xuất bản vá theo mẫu mục 5 của file đó rồi hỏi; tác giả đồng ý thì sửa ngay trong cùng lượt.
 
 Không tự sửa file hướng dẫn khi chưa hỏi. Không commit, không `publish`.
 

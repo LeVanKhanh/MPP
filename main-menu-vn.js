@@ -509,8 +509,15 @@ var mainMenuVn = [
                 subItems: [
                     {
                         title: "5S",
-                        route: "pages/reading-studying/management-tools-and-techniques/5s-methodology-vn.html",
+                        route: "pages/reading-studying/management-tools-and-techniques/02-5s-methodology-vn.html",
                         hash: "#/5s-methodology",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Biểu Đồ Gantt",
+                        route: "pages/reading-studying/management-tools-and-techniques/12-gantt-charts-vn.html",
+                        hash: "#/gantt-charts",
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Page Title - My Personal Planet</title>
     <link rel="stylesheet" href="../pages-styles.css">
+    <!-- Only when the page contains a <figure class="tool-diagram"> illustration.
+         Delete this line if the page has no diagram. Same ../ depth as pages-styles.css. -->
+    <link rel="stylesheet" href="../diagram-styles.css">
 </head>
 <body>
     <!-- Page Title -->
@@ -111,6 +114,37 @@
                     <li>Document and share</li>
                 </ol>
             </div>
+        </section>
+
+        <!-- Inline SVG Diagram Example.
+             Requires the diagram-styles.css link in <head>. Delete this whole
+             section if the page has no diagram. Never paste a <style> block for
+             it here, and never hardcode colours into fill/stroke: the classes
+             below already switch with body.dark-theme. -->
+        <section class="content-section">
+            <h2 class="main-point">Diagram Example</h2>
+            <figure class="tool-diagram">
+                <svg role="img" aria-label="One full sentence describing the diagram for screen reader users."
+                    viewBox="0 0 1120 200">
+                    <defs>
+                        <marker id="tpl-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                            orient="auto" refX="9" refY="3">
+                            <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                        </marker>
+                    </defs>
+                    <text class="rowlabel" x="190" y="86">Row label</text>
+                    <rect class="bar" x="220" y="68" width="300" height="36" rx="6"></rect>
+                    <text x="370" y="86">Solid block</text>
+                    <path class="arrow" d="M520 86 H600" marker-end="url(#tpl-arrow)"></path>
+                    <rect class="band" x="620" y="68" width="300" height="36" rx="6"></rect>
+                    <text class="small" x="770" y="86">Uncertain range</text>
+                    <text class="small note" x="940" y="86">side note</text>
+                </svg>
+                <figcaption>
+                    <strong>Figure 1.</strong> Say what the diagram shows. Do not repeat the section heading, and do not
+                    introduce a fact that does not appear anywhere in the body text.
+                </figcaption>
+            </figure>
         </section>
 
         <!-- YouTube Video Embed Example -->

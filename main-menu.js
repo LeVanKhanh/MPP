@@ -502,8 +502,15 @@ var mainMenu = [
                 subItems: [
                     {
                         title: "5S",
-                        route: "pages/reading-studying/management-tools-and-techniques/5s-methodology.html",
+                        route: "pages/reading-studying/management-tools-and-techniques/02-5s-methodology.html",
                         hash: "#/5s-methodology",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Gantt Charts",
+                        route: "pages/reading-studying/management-tools-and-techniques/12-gantt-charts.html",
+                        hash: "#/gantt-charts",
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },

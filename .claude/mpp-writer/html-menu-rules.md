@@ -11,6 +11,8 @@
 
 Đọc template trước khi viết. Không tự sáng tác cấu trúc mới.
 
+Stylesheet phụ chỉ link ở trang thật sự dùng tới nó: `poetry-style.css` cho trang thơ, `diagram-styles.css` cho trang có hình (mục 3.1).
+
 ## 2. Khung file cho bài luận / kỹ thuật
 
 ```html
@@ -20,6 +22,8 @@
     <meta charset="UTF-8">
     <title>Tiêu Đề Bài - My Personal Planet</title>
     <link rel="stylesheet" href="../../../pages-styles.css">
+    <!-- Chỉ thêm dòng dưới khi bài có hình, xem mục 3.1 -->
+    <link rel="stylesheet" href="../../../diagram-styles.css">
 </head>
 <body>
     <article class="content-article">
@@ -53,7 +57,7 @@
   - `pages/a/x.html` → `../pages-styles.css`
   - `pages/a/b/x.html` → `../../pages-styles.css`
   - `pages/a/b/c/x.html` → `../../../pages-styles.css`
-  - Cả `pages-styles.css` và `pages-scripts.js` dùng cùng số cấp.
+  - `pages-styles.css`, `pages-scripts.js`, và các stylesheet phụ (`diagram-styles.css`, `poetry-style.css`) đều dùng cùng số cấp, vì cả bốn file đều nằm ngay trong `pages/`.
 - `<time datetime="YYYY-MM-DD">` giữ nguyên định dạng ISO ở thuộc tính, phần hiển thị viết theo ngôn ngữ của bài.
 - Ngày viết theo ngày thật, không viết ngày tương lai.
 
@@ -86,6 +90,60 @@ Chỉ dùng class đã có style trong `pages/pages-styles.css`:
 `content-article`, `article-header`, `page-title`, `page-subtitle`, `page-meta`, `author`, `content-section`, `main-point`, `intro-text`, `sub-section`, `sub-point-1`, `sub-section-nested`, `sub-point-2`, `outline-list`, `nested-list`, `numbered-outline`, `nested-numbered`, `content-table`, `summary-box`, `helper-text`, `video-container`.
 
 Cần thứ khác thì phải kèm `<style>` inline trong chính file đó (cách các trang trong `values-creation/` làm với `mm-text-tree`). Không sửa `pages-styles.css` cho một bài lẻ.
+
+### 3.1 Hình minh hoạ: SVG nội tuyến, không phải ảnh tải về
+
+Khi bài cần một hình, vẽ bằng SVG nội tuyến đặt thẳng trong file. **Không tải ảnh biểu đồ từ nguồn khác về.** Ảnh sơ đồ trên internet gần như luôn có bản quyền, và một ảnh raster thì không đổi màu theo dark theme, không phóng to được, không đọc được bằng trình đọc màn hình.
+
+**Style nằm ở `pages/diagram-styles.css`, không chép vào từng bài.** Trang nào có hình thì thêm một dòng link ngay sau dòng link `pages-styles.css`, số cấp `../` đếm y hệt:
+
+```html
+<link rel="stylesheet" href="../../pages-styles.css">
+<link rel="stylesheet" href="../../diagram-styles.css">
+```
+
+Trang không có hình thì không link, đúng như cách `poetry-style.css` chỉ xuất hiện ở trang thơ. Không viết khối `<style>` inline cho hình: mọi class dưới đây đã có sẵn trong `diagram-styles.css`, và một series nhiều bài mà mỗi bài giữ một bản sao của bộ biến màu thì sẽ trôi khỏi nhau.
+
+Bản mẫu đang chạy: `pages/reading-studying/management-tools-and-techniques/12-gantt-charts-vn.html`.
+
+```html
+<figure class="tool-diagram">
+    <svg role="img" aria-label="Mô tả hình bằng một câu đầy đủ" viewBox="0 0 1120 320">
+        <rect class="node" x="30" y="38" width="150" height="52" rx="10"></rect>
+        <text x="105" y="64">Nhãn</text>
+        <path class="arrow" d="M180 64 H235"></path>
+    </svg>
+    <figcaption><strong>Hình 1.</strong> Câu này nói ra điều hình cho thấy, không lặp lại tiêu đề hình.</figcaption>
+</figure>
+```
+
+Bắt buộc:
+
+- Đã link `diagram-styles.css`, đúng số cấp `../`.
+- `role="img"` cộng `aria-label` một câu đầy đủ. Chữ nằm trong `<text>` của SVG không thay được `aria-label`.
+- Có `viewBox`, không đặt `width` và `height` cố định trên thẻ `<svg>`.
+- **Không viết mã màu thẳng vào `fill` hay `stroke`.** Màu đến từ class, class lấy màu từ biến CSS, nhờ vậy hình đổi theo `body.dark-theme`. Ngoại lệ duy nhất là `fill="currentColor"` trong `<marker>`.
+- Đánh số `Hình 1.`, `Hình 2.` theo thứ tự xuất hiện. Bản EN dùng `Figure 1.`.
+
+Class có sẵn trong `diagram-styles.css`:
+
+| Class | Dùng cho |
+|---|---|
+| `bar`, `node` | Khối đặc: một đầu việc, một bước, một ô đã xác định |
+| `band` | Dải mờ viền đứt: một khoảng bất định, một phạm vi chưa chốt |
+| `ghost` | Khối rỗng viền đứt: vị trí cũ, phương án đã bỏ |
+| `axis`, `tick` | Trục và vạch chia |
+| `edge`, `edge-ghost` | Vạch nhấn hai đầu của một khối |
+| `today` | Vạch mốc cần chú ý, màu cảnh báo |
+| `arrow` | Đường nối, dùng kèm `marker-end` |
+| `small` | Chữ phụ, nhỏ và nhạt hơn |
+| `rowlabel` | Nhãn cột trái, canh phải |
+| `note` | Ghi chú bên phải một khối, canh trái |
+| `alert` | Chữ màu cảnh báo |
+
+Cần một hình thù không nằm trong bảng này thì thêm class vào `diagram-styles.css`, đừng đặt style riêng trong bài.
+
+Ảnh raster (`.png`, `.jpg`, `.webp`) chỉ dùng khi thứ cần cho xem là một vật có thật không vẽ lại được, ví dụ ảnh chụp một tài liệu gốc. Khi đó đặt trong `images/` cùng thư mục, luôn có `alt`, và ghi nguồn cùng tình trạng bản quyền ngay trong `figcaption`.
 
 ## 4. Tài liệu tham khảo và trích dẫn
 
@@ -196,10 +254,12 @@ Trang thơ cần cả hai stylesheet: `pages-styles.css` và `poetry-style.css`,
 - [ ] `lang` đúng ngôn ngữ
 - [ ] Đường dẫn CSS và script đúng số cấp `../`
 - [ ] Chỉ dùng class có sẵn, hoặc có `<style>` inline kèm theo
+- [ ] Bài có hình thì đã link `diagram-styles.css` đúng số cấp `../`, và không còn khối `<style>` inline nào cho hình (mục 3.1)
+- [ ] Hình minh hoạ là SVG nội tuyến, có `role="img"` và `aria-label`, không có mã màu viết thẳng vào `fill`/`stroke` nên đổi được cả ở dark theme (mục 3.1)
 - [ ] `<time datetime>` đúng ISO, ngày không nằm ở tương lai
 - [ ] `page-meta` đã đổi sang ngày của lần sửa này, cả `datetime` lẫn phần hiển thị (mục 2.1)
 - [ ] Nhãn đúng loại: `Đăng ngày:` cho bài mới, `Cập nhật:` cho bài đã sửa
-- [ ] Mọi `<sup><a href="#ref-N">` đều có `id="ref-N"` tương ứng, và ngược lại
+- [ ] Mọi `<sup><a href="#ref-N">` đều có `id="ref-N"` tương ứng, và ngược lại. Số phải chạy theo đúng thứ tự xuất hiện lần đầu trong bài, và thứ tự các `<li>` trong danh sách tham khảo phải khớp với số
 - [ ] Mọi link ngoài có `rel="noopener noreferrer" target="_blank"`, và còn sống
 - [ ] Đã đăng ký menu đúng file theo ngôn ngữ, `hash` khớp với bản ngôn ngữ kia
 - [ ] Không còn ghi chú `CẦN XÁC MINH` sót lại

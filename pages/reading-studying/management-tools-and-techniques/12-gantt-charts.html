@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gantt Charts - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="A Gantt chart pushes time into the foreground and everything else into the background. This piece looks at the mechanism, the tangled history behind the name, the six assumptions built into the tool, and how to use it without being led by it."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Gantt Charts</h1>
+            <p class="page-subtitle">A bar has two sharp ends; the work behind it does not</p>
+            <p class="page-meta">Published: <time datetime="2026-08-05">August 5, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Definition</h2>
+            <p class="intro-text">Open any project management software and the thing filling most of the screen is almost always the same picture: a column of tasks on the left, a calendar on the right, and horizontal bars laid across that calendar. Each bar is one task, starting on the day the work kicks off, running exactly as long as the estimate, ending on the promised date. That is a Gantt chart. In the Monday morning stand-up, when somebody points at the blue bar straddling the last two weeks of the month and says "this will be done before the 28th", what they are pointing at is a drawing; what the room hears is a promise.</p>
+
+            <p>The mechanism of the tool lies in what it puts in the foreground. A bar on its own directly encodes two points and one length: which day it starts, which day it ends, and therefore how much time it occupies. Whether two tasks overlap already has to be read by comparing two bars against each other. The frame around them can carry a good deal more, and today's software carries quite a lot: dependency links, milestones, the name of whoever owns the task, percent complete. <sup><a href="#ref-9">[9]</a></sup> But all of it is optional, somebody has to put it there deliberately, and it sits in the background of a picture where the bar is what takes the reader's eye. Three things have no ready-made field at all, so in practice they are almost always absent: how certain the estimate is, why a bar slipped when it slipped, and whether this piece of work has to be done over and over.</p>
+
+            <p>And because a bar has two sharp ends, what the viewer takes away is a picture that looks far more certain than the information used to draw it. Elaine Yakura, watching how teams used schedule charts inside a technology consulting firm, recorded exactly that: participants assign these drawings a permanence they do not have, and although they are only sketches of an uncertain future, they get treated as concrete realities. <sup><a href="#ref-1">[1]</a></sup></p>
+
+            <figure class="tool-diagram">
+                <svg role="img"
+                    aria-label="Three rows compared against a single day axis. Row one: a Testing bar running from day 6 to day 17 with sharp ends, and the today line at day 11, halfway along it. Row two: the real estimate behind the number 17, spanning day 15 to day 26. Row three: the same bar slipped by four days, with no field recording why."
+                    viewBox="0 0 1120 360">
+                    <defs>
+                        <marker id="gantt-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                            orient="auto" refX="9" refY="3">
+                            <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                        </marker>
+                    </defs>
+
+                    <text class="small rowlabel" x="190" y="42">Day</text>
+                    <path class="axis" d="M200 58 H1084"></path>
+                    <path class="tick" d="M268 52 V58"></path>
+                    <path class="tick" d="M438 52 V58"></path>
+                    <path class="tick" d="M642 52 V58"></path>
+                    <path class="tick" d="M948 52 V58"></path>
+                    <text class="small" x="268" y="40">6</text>
+                    <text class="small" x="438" y="40">11</text>
+                    <text class="small" x="642" y="40">17</text>
+                    <text class="small" x="948" y="40">26</text>
+
+                    <text class="rowlabel" x="190" y="102">The bar on the chart</text>
+                    <path class="edge" d="M268 76 V128"></path>
+                    <path class="edge" d="M642 76 V128"></path>
+                    <rect class="bar" x="268" y="84" width="374" height="36" rx="6"></rect>
+                    <text x="455" y="102">Testing</text>
+                    <path class="today" d="M438 70 V132"></path>
+                    <text class="small alert" x="438" y="146">today</text>
+                    <text class="small note" x="664" y="95">the today line sits mid-bar,</text>
+                    <text class="small note" x="664" y="111">so it reads as half done</text>
+
+                    <text class="rowlabel" x="190" y="218">The estimate behind it</text>
+                    <text class="small" x="642" y="176">17 is the number picked to go on the chart</text>
+                    <path class="edge-ghost" d="M642 186 V246"></path>
+                    <rect class="band" x="574" y="200" width="374" height="36" rx="6"></rect>
+                    <text class="small" x="761" y="218">real range: day 15 to day 26</text>
+                    <text class="small" x="574" y="258">earliest</text>
+                    <text class="small" x="948" y="258">latest</text>
+
+                    <text class="rowlabel" x="190" y="314">When the bar slips</text>
+                    <path class="arrow" d="M268 278 H398" marker-end="url(#gantt-arrow)"></path>
+                    <text class="small" x="333" y="264">slipped 4 days</text>
+                    <rect class="ghost" x="268" y="296" width="374" height="36" rx="6"></rect>
+                    <rect class="bar" x="404" y="296" width="374" height="36" rx="6"></rect>
+                    <text x="591" y="314">Testing</text>
+                    <text class="small note alert" x="800" y="314">field for why: none</text>
+                </svg>
+                <figcaption>
+                    <strong>Figure 1.</strong> One task, seen three ways. The bar has sharp ends at day 6 and day 17, so
+                    the today line at day 11 produces the answer "half done" all by itself. The number 17 was in fact
+                    picked out of a range eleven days wide, and that range has nowhere to live on the picture. When the
+                    bar slips, the only thing that changes is its position; the reason has no field to go in.
+                </figcaption>
+            </figure>
+
+            <p>The name obscures a history messier than itself, because three separate things are being run together. First, Henry Laurence Gantt (1861-1919), an American mechanical engineer working in Frederick Taylor's orbit, did not invent the bar chart. Second, he did build a system of production management charts of his own, and Wallace Clark, a colleague at his consulting firm, put Gantt's name on that system in a book published in the early 1920s, after Gantt had died. <sup><a href="#ref-8">[8]</a></sup> Third, and this is where the name goes to the wrong address: the picture everyone now calls a Gantt chart is a time-scaled bar chart, quite far removed from the system that carries his name. The charts Gantt actually used were production control tools for the machine shop, with most of the information filled in <em>after</em> the shift ended, to set actual output against promised output and trace why a worker had missed his bonus. A record of the past, not a drawing of the future. It was not until the 1930s that people began calling any picture with bars and a time axis a Gantt chart. <sup><a href="#ref-2">[2]</a></sup></p>
+
+            <p>The horizontal bar chart itself predates Gantt by a century. Patrick Weaver traces it back to Joseph Priestley's <em>Chart of Biography</em> of 1765, and closer to hand to the harmonogram built by the Polish engineer Karol Adamiecki in 1896, which goes further than the modern Gantt chart in one respect: the header of each paper strip listed the activities that had to precede it, and it is that tabulation of what comes before what which makes it a direct ancestor of CPM and PERT, methods that would not arrive for another sixty years. By 1912 a full bar chart with accompanying manpower histograms was in use on a railway bridge in Bavaria, and the way the German engineering report describes it suggests this was routine rather than novel. <sup><a href="#ref-2">[2]</a></sup></p>
+
+            <p>The two main sources behind this piece do not entirely agree on that history, but where they meet is the interesting part: both lead back to the same book by Clark, and the version in it has a column the modern one has lost. Beside every departure from plan, a letter recorded why the work had slipped: W for waiting on set-up, M for lack of material, H for lack of help. Joana Geraldi and Thomas Lechter say plainly that the only significant difference between that version and ours is that reason column. <sup><a href="#ref-3">[3]</a></sup> What fell out of the tool over the past hundred years is therefore not a decorative detail; it was the place set aside for learning from deviation.</p>
+
+            <table class="content-table">
+                <thead><tr><th scope="col">What a bar tells you</th><th scope="col">What it does not tell you by itself</th></tr></thead>
+                <tbody>
+                    <tr><td>This task runs from day 6 to day 17</td><td>Whether 17 is a solid estimate or a guess</td></tr>
+                    <tr><td>Two tasks run side by side for three weeks</td><td>Whether they are competing for the same person</td></tr>
+                    <tr><td>Today is day seven of a fourteen-day bar</td><td>How much of the work is actually finished</td></tr>
+                    <tr><td>Task B starts right after task A ends</td><td>Whether B must wait for A, or merely got queued behind it</td></tr>
+                    <tr><td>This bar has slipped by four days</td><td>Why it slipped</td></tr>
+                </tbody>
+            </table>
+
+            <!-- YouTube Video Container -->
+            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                <iframe
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                    src="https://www.youtube.com/embed/fB0wsdmV3Sw"
+                    title="Project Management in Under 5: What is a Gantt Chart?"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Examples</h2>
+            <p class="intro-text">The tool shows itself at three different levels: a meeting anybody who has worked on a project has sat through, an experiment showing how powerful it is when used in the right place, and a building showing what it costs to draw a schedule before anyone knows what they are about to build.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">The Blue Bar Marked Testing, Two Weeks Long</h3>
+                <p>Monday of the second week. The project manager puts the chart up, the cursor stops on the bar marked "Testing" running from the 6th to the 17th, and asks the familiar question: are we on track. The today line sits halfway along the bar, so the answer more or less produces itself: about half done.</p>
+                <p>But that half is half of the elapsed time, not half of the work. The test team has only worked through the easy cases, found fourteen defects, and one of them cannot be fixed without touching a part signed off last month, which means retesting from the start once it is fixed. Nowhere on the chart is there room for that sentence. The bar is still two weeks long, the today line still sits halfway, and the room leaves the meeting with the impression that everything is running exactly as drawn.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Three Hundred Students and a Problem Only Three Could Solve</h3>
+                <p>In 1951, E. H. MacNeice set three hundred management students a complex production planning problem. Asked to solve it by intuition, only 1% managed it, roughly three of them. Given a Gantt chart, all three hundred produced a solution, within fifteen minutes. <sup><a href="#ref-3">[3]</a></sup></p>
+                <p>That figure passes through two relays before reaching this page: Geraldi and Lechter take it from Wilson's 2003 review, and Wilson takes it from MacNeice's book. This piece could not trace the original experimental design, does not know what "solved" was scored against, and does not know how correct those fifteen-minute solutions were. But the figure says one thing on its own account: the problem MacNeice used was a production planning problem, which is precisely the setting Gantt's charts were built to serve. The most convincing quantitative evidence for this tool's power comes from the place it belongs to.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">The Sydney Opera House: Four Years Becomes Fourteen</h3>
+                <p>The Sydney Opera House was estimated at $7 million and four years of construction. It took fourteen years, cost $102 million, and was opened by Queen Elizabeth II on 20 October 1973. <sup><a href="#ref-4">[4]</a></sup></p>
+                <p>What is worth learning here is not the overrun but the order of events. The ground-breaking took place on 2 March 1959, in the rain, at a point when the roof anchor positions were only vaguely discernible on the drawings and nobody knew what load they would carry. <sup><a href="#ref-5">[5]</a></sup> Between 1958 and 1962 the geometry of the roof went through a parabolic scheme, then an ellipsoid, then finally a sphere; by late 1961 there was still no solution, and Jørn Utzon only submitted the document setting out the spherical solution in January 1962. <sup><a href="#ref-6">[6]</a></sup> The podium, stage one, was completed in February 1963, two years behind schedule, and had to be substantially reworked to carry a roof whose shape nobody knew when the foundations were poured. <sup><a href="#ref-5">[5]</a></sup></p>
+                <p>The limits of this example need stating, because it is easy to read too much into it. The reasons the final cost reached roughly fourteen and a half times the estimate are many, mostly political, and no document shows that any particular Gantt chart caused anything here. What it does show is one thing only, and it holds for every picture made of bars and dates: a plan laying out phases end to end can still be drawn, printed, taken into a meeting, and still look thoroughly convincing, even when the work in the very first phase is a problem nobody yet knows how to solve.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Some Research on Gantt Charts</h2>
+            <p class="intro-text">The research worth reading on this tool does not measure whether it works. It asks a different question: what assumptions does a tool built for repetitive production carry with it when it is moved across to projects.</p>
+            <div class="sub-section">
+                <p><strong>The study:</strong> In 2012, Joana Geraldi (University College London) and Thomas Lechter (Stevens Institute of Technology) published a conceptual analysis of the roots of the Gantt chart in the <em>International Journal of Managing Projects in Business</em>. They went back to the original sources, including Gantt's own two books and Clark's, reconstructed the tool's journey from the machine shop to the project, extracted the principles built into how it operates, then tested each principle against the real conditions of projects today. What made the exercise worth doing is a 2008 survey by Besner and Hobbs of 750 project managers: among the 70 tools and techniques asked about, the Gantt chart ranked fourth by usage. <sup><a href="#ref-7">[7]</a></sup> <sup><a href="#ref-3">[3]</a></sup></p>
+                <p><strong>Findings:</strong> They extract six principles the tool carries over from the Scientific Management era: it takes time as its only axis, it assumes there is one objective and uniquely correct description of the work, it assumes everything that will happen can be determined in advance, it assumes the whole is the sum of its parts, it assumes each part can be traced to one accountable person, and it assumes the parts follow one another linearly, one finished before the next begins, with no going back. Two historical findings come with it: the first recorded use of the chart in a project context is in the 1940s, nearly twenty years after the tool took shape, and the only significant difference between Clark's version and today's is the column recording why each departure from plan happened. On the authors' account, that last principle has a very concrete consequence: controlling progress with a Gantt chart runs on the assumption that effort is linear in time, so a bar half elapsed means the work is taken to be half done.</p>
+                <p><strong>What it shows:</strong> This is a conceptual analysis, so it does not measure and cannot measure whether projects fail more or less often when a Gantt chart is used; the authors themselves record that the link between misapplying the tool and project outcomes is still only a hypothesis. What it does establish fits in one sentence: this tool is not neutral. It was designed for work that is repetitive, low in uncertainty, divisible into separate parts and not subject to rework; move it to a different kind of work and those assumptions travel with it, even when nobody in the room says them out loud.</p>
+                <p><strong>The counter-case:</strong> The argument for the Gantt chart is a good deal stronger than a list of six assumptions makes it look. Among the evidence Geraldi and Lechter themselves survey, the most substantial quantitative result runs in its favour: the MacNeice experiment showed that a problem 99% of people could not crack by intuition became solvable by everyone within fifteen minutes once they had the chart in hand. On top of that, a century on it still ranks fourth among the most-used tools, which very few management tools manage. <sup><a href="#ref-7">[7]</a></sup> Yakura's research goes further and shows that in practice the chart tends to work as an intermediary object rather than an instruction: precisely because it is simple and interpretively flexible, groups that understand time differently can negotiate with each other on one sheet of paper. <sup><a href="#ref-1">[1]</a></sup> And Geraldi and Lechter say themselves that they are not proposing the tool be dropped; most of the problem lies in using it by default.</p>
+                <p>All three strands need a caveat. The MacNeice experiment solved a problem handed over complete with all its data, which is exactly the kind of problem the Gantt chart was born to solve, so it says nothing about projects where even the list of tasks is not fully known. Usage measures habit and how widespread the software is, not results. The intermediary argument is sound, but it defends using the chart as a place to negotiate, not using it as a measure of progress, and in plenty of places it is being used the second way. As for "the problem is the usage, not the tool", that is the easiest sentence to say and the hardest to test, because it defends every tool ever made. When a tool is persistently misused in the same way, that pattern of misuse is also a fact about the tool, not only about the people using it.</p>
+                <p><strong>Why this is useful:</strong> It changes the question you ask when looking at a schedule chart. "Are we on track" only measures the distance between today and a number somebody wrote down months ago, and it always has an answer, including when that answer is meaningless. Three questions are worth asking instead: which bars are grounded estimates and which are numbers entered to fill a field, which task is waiting on which for a real technical reason, and where the reason was recorded the last time a bar slipped. The third is hardest to answer, because on most projects the reason is not recorded anywhere at all.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">How to Apply It</h2>
+            <p class="intro-text">A Gantt chart works by pushing time into the foreground and everything else into the background, so using it well means deliberately pulling back up the things that got pushed down. It suits work that is divisible, reasonably stable, and needs several parties looking at the same handover date. The further you get from those three conditions, the more it should be treated as a place to negotiate rather than a measure. <sup><a href="#ref-3">[3]</a></sup></p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Record the reason next to every bar that slips:</strong> this is the column Clark's original had and the modern version dropped. A short line like "slipped four days, waiting on data from operations" accumulates over three months into a map of where the organisation actually jams, whereas a chart showing only bars that have moved tells you nothing</li>
+                    <li><strong>Measure progress by something deliverable rather than reading it off the today line:</strong> the today line only says how much time has passed. To know how much work is done, every bar has to be tied to something externally checkable, along the lines of "the report runs on real data" rather than "60% complete"</li>
+                    <li><strong>Mark which bars are estimates and which are guesses:</strong> every bar looks identically certain, while some rest on ten similar jobs and others on an afternoon of guessing. Shade the second group differently, or write an earliest and a latest date on them</li>
+                    <li><strong>Know in advance that it cannot draw loops whose count is unknown:</strong> a scheduled sprint or a review round already booked in still draws as a bar. What will not draw is the test, fix, retest cycle, where neither the number of rounds nor the outcome of each is known yet; for those, an unbroken bar is a wrong description of the shape of the work rather than a wrong estimate of its length. Chopping the bar into smaller ones does not rescue it either, because chopping still requires knowing the number of rounds in advance. What does work is tracking that piece separately by a different quantity, open defects instead of days remaining</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Summary</h2>
+            <div class="summary-box">
+                <p><strong>Key Point:</strong> A Gantt chart is not restricted to holding time, but it does push time into the foreground and everything else into the background. Dependencies, milestones, owners and percent complete can all be drawn in, provided somebody puts them there deliberately; the uncertainty in an estimate, the reason behind each slip and the looping nature of the work have no ready-made field at all. Because a bar has two sharp ends, what the viewer takes away is a picture that looks far more certain than the information used to draw it, and in the absence of real progress data the today line very easily gets read as the share of work completed. The most counter-intuitive part sits in its own history: the bar chart predates Henry Gantt by a century, the system that carries his name was a record of the past in a machine shop rather than a project schedule, and the version from the 1920s had a column recording why each departure from plan happened that today's version no longer has. The way to use it worth trusting is therefore to pull back up, deliberately, whatever the picture has pushed into the background.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">References</h2>
+            <ol class="outline-list">
+                <li id="ref-1">Yakura, E. K. (2002). Charting Time: Timelines as Temporal Boundary Objects. <em>Academy of Management Journal</em>, 45(5), 956-970. An observational study inside a technology consulting firm, and the source for two opposing points in this piece: that users assign the chart a permanence it does not have, and that its very simplicity is what lets groups with different views negotiate with each other. <a href="https://journals.aom.org/doi/10.5465/3069324" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-2">Weaver, P. (2012). Henry L Gantt, 1861-1919: Debunking the myths, a retrospective view of his work. <em>PM World Journal</em>, Vol. I, Issue V, December 2012. Traced back from three digitised original books; the source for Gantt's charts being production records filled in after the shift, and for the history of the bar chart from Priestley (1765) through Adamiecki's harmonogram (1896) to the Bavarian bridge chart of 1912. <a href="https://pmworldlibrary.net/wp-content/uploads/2013/01/PMWJ5-Dec2012-WEAVER-Henry-Gantt-Debunking-Myths-Featured-Paper.pdf" rel="noopener noreferrer" target="_blank">Read the full text</a>.</li>
+                <li id="ref-3">Geraldi, J., &amp; Lechter, T. (2012). Gantt charts revisited: A critical analysis of its roots and implications to the management of projects today. <em>International Journal of Managing Projects in Business</em>, 5(4), 578-594. The source for the six principles built into the tool, the 1940s date for its first project use, the lost deviation-reason column, the reading of progress from elapsed time, and the relayed account of the MacNeice experiment (1951) via Wilson's 2003 review. <a href="https://www.emerald.com/insight/content/doi/10.1108/17538371211268889/full/html" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-4">Sydney Opera House. <em>Interesting facts about Sydney Opera House</em>. The building's official site, the source for the $7 million estimate, the $102 million actual cost, four years planned against fourteen years built, and the opening date of 20 October 1973. <a href="https://www.sydneyoperahouse.com/building/interesting-facts-about-sydney-opera-house" rel="noopener noreferrer" target="_blank">Read the original page</a>.</li>
+                <li id="ref-5">Sydney Opera House. <em>Construction begins</em>, Our Story. The source for the 2 March 1959 ground-breaking, for the roof anchor points and their loads being undetermined at that moment, and for stage one completing in February 1963, two years behind schedule. <a href="https://www.sydneyoperahouse.com/our-story/construction-begins" rel="noopener noreferrer" target="_blank">Read the original page</a>.</li>
+                <li id="ref-6">Sydney Opera House. <em>The spherical solution</em>, Our Story. The source for the sequence of roof geometries from 1958 to 1962 and for Utzon submitting the document setting out the spherical solution in January 1962. <a href="https://www.sydneyoperahouse.com/our-story/the-spherical-solution" rel="noopener noreferrer" target="_blank">Read the original page</a>.</li>
+                <li id="ref-7">Besner, C., &amp; Hobbs, B. (2008). Project Management Practice, Generic or Contextual: A Reality Check. <em>Project Management Journal</em>, 39(1), 16-33. A survey of 750 project managers on how far they use 70 tools and techniques; the Gantt chart's ranking is relayed here via Geraldi and Lechter. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/pmj.20033" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-8">Clark, W., Polakov, W., &amp; Trabold, F. <em>The Gantt Chart: A Working Tool of Management</em>. The Ronald Press Company, New York. The book that established the name "Gantt chart"; Geraldi and Lechter date it to 1922, while the digitised copy hosted by Mosaic Projects gives 1923. <a href="https://mosaicprojects.com.au/Resources_Papers_158.html" rel="noopener noreferrer" target="_blank">Download the digitised copy along with Gantt's two books</a>.</li>
+                <li id="ref-9">Microsoft. <em>Format the bar chart of a Gantt chart view</em>, Microsoft Project documentation, checked 5 August 2026. Official vendor documentation, the source for a Gantt chart in current software being able to draw dependency links, milestones, owner names and percent complete. <a href="https://support.microsoft.com/en-us/project/format-the-bar-chart-of-a-gantt-chart-view" rel="noopener noreferrer" target="_blank">Read the documentation</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

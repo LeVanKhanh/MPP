@@ -20,12 +20,21 @@ Thiếu một trong ba thì đó là series bài luận nhiều kỳ (như serie
 
 ## 2. Hai loại trang
 
-| Loại | Đánh số | Vai trò | Độ dài |
-|---|---|---|---|
-| Trang tổng quan | `01-` | Định nghĩa chung, mục lục, đặt lịch sử và giới hạn của cả lĩnh vực | 2500-2900 từ |
-| Trang mục | `02-` trở đi | Một mục, đủ sáu section | 1800-3000 từ |
+| Loại | Đánh số | Vai trò |
+|---|---|---|
+| Trang tổng quan | `01-` | Định nghĩa chung, mục lục, đặt lịch sử và giới hạn của cả lĩnh vực |
+| Trang mục | `02-` trở đi | Một mục, đủ sáu section |
 
-Đếm từ tính trên phần chữ, sau khi bỏ thẻ HTML. Ngắn hơn cận dưới thường là bài thiếu một ví dụ hoặc thiếu phần "vì sao hữu ích"; dài hơn cận trên thường là bài đang lấn sang phần của một mục khác.
+**Không có trần số từ, và cũng không có sàn.** Đây là bài tra cứu: người đọc tới để lấy kiến thức dùng được, nên tiêu chí là cô đọng và đủ, chứ không phải ngắn. Một bài dài mà mỗi đoạn làm một việc riêng thì đang đúng độ dài của nó. Một bài ngắn mà có ba đoạn nói lại cùng một ý thì đã dài quá rồi.
+
+Vì bỏ con số nên phải có cách kiểm khác, và nó chạy **trên từng đoạn**, không chạy trên tổng số chữ:
+
+- Mỗi đoạn viết được một câu "đoạn này làm gì" **khác với đoạn liền trước** không? Không viết được thì gộp hoặc bỏ.
+- Câu nào tóm tắt lại thứ vừa nói ở trên thì bỏ, theo `voice-guide.md` mục 4.3.
+- Section nào đang giải thích giúp một mục khác trong danh mục thì cắt về, để dành chỗ cho bài của mục đó.
+- Phần nào cắt đi mà người đọc vẫn trả lời được đủ bốn câu hỏi của thể loại (nó là gì, trông ra sao trong đời thật, ai đã đo được nó, làm gì với nó) thì phần đó là phần thừa.
+
+Bốn phép kiểm này thay hẳn cho việc đếm từ. **Cắt một đoạn vì lý do độ dài, khi cả bốn phép trên đều không chỉ ra được nó thừa ở chỗ nào, là cắt vào nội dung.** Ngược lại, một bài ngắn không phải là lỗi nếu đã trả lời đủ và không đoạn nào lặp; đừng viết thêm cho dày.
 
 ## 3. Khung trang mục
 
@@ -33,7 +42,7 @@ Sáu section, đúng thứ tự này, không thêm không bớt:
 
 | # | `<h2 class="main-point">` | Bắt buộc có |
 |---|---|---|
-| 1 | `Định Nghĩa` | `intro-text`, một đoạn cơ chế, một `content-table`, một video |
+| 1 | `Định Nghĩa` | `intro-text`, một đoạn cơ chế, một hình khi công cụ là một hình (mục 3.1), một `content-table`, một video |
 | 2 | `Ví Dụ` | `intro-text`, ba `sub-section` với `sub-point-1` |
 | 3 | `Một Vài Nghiên Cứu Về <Tên Mục>` | `intro-text`, một `sub-section` với bốn đoạn nhãn, cộng đoạn `Phản biện:` khi có (mục 3.4) |
 | 4 | `Chiến Lược Giảm Thiểu` hoặc `Cách Áp Dụng` | `intro-text`, một `ul class="outline-list"` bốn mục |
@@ -55,7 +64,16 @@ Tiêu đề section 4 phụ thuộc vào thứ mà danh mục nói tới, và ch
 
 - `intro-text` làm hai việc trong một đoạn: nói mục này là gì bằng ngôn ngữ thường, rồi **hạ cánh xuống một tình huống cụ thể ngay trong cùng đoạn đó**. Bản mẫu: định nghĩa neo giá xong là tới ngay cái áo khoác có giá gạch chéo. Không kết thúc đoạn mở ở tầng trừu tượng.
 - Đoạn kế nói **cơ chế**: nó chạy bằng cách nào, tên kỹ thuật của cơ chế nếu có, ai đặt tên và năm nào, kèm `<sup><a href="#ref-1">[1]</a></sup>`.
-- Rồi tới bảng, rồi tới video. Thứ tự này cố định.
+- Rồi tới hình (nếu có, xem ngay dưới), rồi tới bảng, rồi tới video. Thứ tự này cố định.
+
+**Khi tên công cụ là tên một hình, bài phải có hình đó.** Biểu đồ Gantt, biểu đồ burndown, biểu đồ Pareto, sơ đồ xương cá, lưu đồ, sơ đồ chuỗi giá trị, ma trận rủi ro, ma trận quyết định, ma trận RACI: người đọc không nắm được công cụ nếu chưa thấy hình dạng của nó, và không đoạn văn nào thay được việc nhìn một lần. Đặt hình **ngay sau đoạn cơ chế và trước bảng đối chiếu**, vì bảng đối chiếu đã ngầm giả định người đọc hình dung được cái hình rồi. Markup và ràng buộc kỹ thuật ở `html-menu-rules.md` mục 3.1.
+
+Công cụ là một quy trình chứ không phải một hình thì không cần: 5S, PDCA, SOP, A3, OKR. Cố thêm hình cho chúng thường ra một sơ đồ năm ô nối bằng mũi tên, tức là chép lại đề mục dưới dạng đồ hoạ.
+
+Hai luật cho nội dung hình, vì đây là chỗ hình dễ tụt xuống thành trang trí:
+
+- **Hình phải có nội dung thật, không phải khung rỗng.** Một ma trận rủi ro bốn ô ghi "Cao", "Thấp" thì không dạy được gì; cùng ma trận đó với bốn rủi ro cụ thể đặt đúng ô mới cho thấy công cụ phân loại theo cái gì.
+- **Hình phải minh hoạ đúng cơ chế bài vừa nêu**, không phải một hình chung chung về công cụ. Nếu cơ chế là "thanh có hai đầu sắc nét trong khi ước lượng đứng sau nó thì không", hình phải cho thấy được chỗ đó, chứ không phải một biểu đồ mẫu lấy từ phần mềm.
 
 ### 3.2 `content-table` phải là một phép đối chiếu
 
@@ -207,8 +225,10 @@ Chạy sau checklist ở `html-menu-rules.md` mục 8, không thay thế nó.
 - [ ] Đúng sáu section trang mục, hoặc bảy section trang tổng quan, đúng thứ tự
 - [ ] Tiêu đề section 3 có tên đầy đủ của mục
 - [ ] Tiêu đề section 4 đúng một trong hai tên chuẩn, không thêm mệnh đề nào
+- [ ] Công cụ là một hình thì bài có hình đó, đặt sau đoạn cơ chế và trước bảng, có nội dung thật chứ không phải khung rỗng (mục 3.1)
 - [ ] `content-table` là một phép đối chiếu, không phải danh sách định nghĩa
 - [ ] Ba ví dụ ở ba tầng khác nhau, tầng 2 và tầng 3 có nguồn, tầng 3 có con số
+- [ ] Không gọi ví dụ nào là thí nghiệm tự nhiên hay "cô lập được" tác động của công cụ. Trước khi viết câu đó, đọc lại nguồn xem nó có liệt kê biến nào cùng thay đổi không; có thì đưa các biến ấy vào bài
 - [ ] Đủ bốn đoạn nhãn, và đoạn "Vì sao điều này hữu ích" kết ở một việc làm được
 - [ ] Bài có nêu bằng chứng yếu thì phải có đoạn `Phản biện:`, dựng phe bênh ở phiên bản mạnh nhất và nói rõ vế nào bài chấp nhận
 - [ ] `intro-text` của section 4 nối cơ chế với cách khắc phục hoặc cách triển khai

@@ -508,9 +508,23 @@ var mainMenuVn = [
                 icon: "fas fa-folder",
                 subItems: [
                     {
+                        title: "Tổng Quan Công Cụ Và Kỹ Thuật Quản Lý",
+                        route: "pages/reading-studying/management-tools-and-techniques/01-management-tools-and-techniques-vn.html",
+                        hash: "#/management-tools-and-techniques",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "5S",
                         route: "pages/reading-studying/management-tools-and-techniques/02-5s-methodology-vn.html",
                         hash: "#/5s-methodology",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Chu Trình PDCA",
+                        route: "pages/reading-studying/management-tools-and-techniques/03-pdca-cycle-vn.html",
+                        hash: "#/pdca-cycle",
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },

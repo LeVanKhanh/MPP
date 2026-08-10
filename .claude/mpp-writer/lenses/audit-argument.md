@@ -42,6 +42,7 @@ Ghi dạng: `"khái niệm" - đoạn 3 nghĩa là X, đoạn 9 nghĩa là Y, ch
 - **Phạm vi.** Bằng chứng lấy từ một ngành, một thế hệ, một nền văn hoá, kết luận nói về con người nói chung?
 - **Thời gian.** Quan sát ở một thời điểm bị viết thành quy luật lâu dài?
 - **Chuẩn tắc lén.** Bài mô tả cái đang là, rồi kết luận cái nên là, mà không có bước cầu nối giá trị nào.
+- **Tự mâu thuẫn với cảnh báo của chính bài.** Đọc ngược: mỗi khẳng định ở section đầu có sống sót qua đúng những cảnh báo mà section bằng chứng đưa ra không? Chỗ không sống sót là chỗ phải hạ, không phải chỗ để người đọc tự phát hiện.
 
 Mỗi kết luận quá mức phải kèm bản viết lại đúng tầm, không chỉ báo lỗi.
 

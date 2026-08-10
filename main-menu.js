@@ -501,9 +501,23 @@ var mainMenu = [
                 icon: "fas fa-folder",
                 subItems: [
                     {
+                        title: "Management Tools and Techniques Overview",
+                        route: "pages/reading-studying/management-tools-and-techniques/01-management-tools-and-techniques.html",
+                        hash: "#/management-tools-and-techniques",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "5S",
                         route: "pages/reading-studying/management-tools-and-techniques/02-5s-methodology.html",
                         hash: "#/5s-methodology",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "PDCA Cycle",
+                        route: "pages/reading-studying/management-tools-and-techniques/03-pdca-cycle.html",
+                        hash: "#/pdca-cycle",
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },

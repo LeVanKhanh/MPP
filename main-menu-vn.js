@@ -529,6 +529,13 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
+                        title: "Giải Quyết Vấn Đề A3",
+                        route: "pages/reading-studying/management-tools-and-techniques/04-a3-problem-solving-vn.html",
+                        hash: "#/a3-problem-solving",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Biểu Đồ Gantt",
                         route: "pages/reading-studying/management-tools-and-techniques/12-gantt-charts-vn.html",
                         hash: "#/gantt-charts",

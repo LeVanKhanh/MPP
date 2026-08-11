@@ -522,6 +522,13 @@ var mainMenu = [
                         subItems: [],
                     },
                     {
+                        title: "A3 Problem Solving",
+                        route: "pages/reading-studying/management-tools-and-techniques/04-a3-problem-solving.html",
+                        hash: "#/a3-problem-solving",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Gantt Charts",
                         route: "pages/reading-studying/management-tools-and-techniques/12-gantt-charts.html",
                         hash: "#/gantt-charts",

@@ -34,13 +34,15 @@ Với nguồn tiếng Việt: kiểm xem nó có dẫn lại nguồn nước ngo
 
 ## 3. Đánh giá từng nguồn
 
-Với mỗi nguồn định gắn, trả lời năm câu:
+Với mỗi nguồn định gắn, trả lời bảy câu:
 
 - **Ai nói, có lợi ích gì trong chuyện này?**
 - **Nói khi nào?** Tuyên bố về công cụ, thị trường, công nghệ phải có mốc thời gian. Nguồn 2015 nói về một thứ đã đổi ba lần từ đó thì không dùng được.
 - **Số liệu này đo cái gì, trên mẫu nào?** Một khảo sát 200 người ở một công ty không nói được gì về "người đi làm Việt Nam".
 - **Có nguồn nào nói ngược lại không?** Tìm chủ động. Nếu có, bài phải nhắc tới, không được lờ đi.
 - **Câu mình định trích có mệnh đề đi kèm không?** Đọc cả đoạn chứa nó, không chỉ câu. Tài liệu quảng bá và tài liệu của chính dự án hay đặt tuyên ngôn mạnh ở đầu rồi thu hẹp nó ngay sau đó. Trích tuyên ngôn mà bỏ điều kiện là trích sai, kể cả khi từng chữ đều đúng nguyên văn. Cùng loại lỗi: một kết quả nghiên cứu được tác giả gắn nhãn "hết hạn" không phải là một kết quả bị chứng minh sai, và bài không được dùng lẫn hai thứ đó.
+- **Danh mục tham khảo của chính bài đã nói gì về chuyện này chưa?** Trước khi viết bất kỳ câu nào nói một chuyện "không có nguồn" hay "không tài liệu nào nhắc tới", đọc lại toàn bộ danh mục tham khảo của chính bài: nguồn đang dẫn cho việc khác vẫn có thể đã nói đúng chuyện đó ở một đoạn khác. Và phát biểu đúng phạm vi, vì "hai nguồn X và Y không nhắc tới" khác hẳn "chưa có nguồn".
+- **Hai nguồn nói giống nhau có phải hai phép kiểm không?** Mở danh mục tham khảo của từng nguồn xem nguồn này có dẫn nguồn kia không. Có thì viết "nhất quán với nhau", đừng viết "kiểm chéo được".
 
 ## 4. Gắn nguồn đúng chỗ
 

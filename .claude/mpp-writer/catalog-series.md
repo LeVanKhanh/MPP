@@ -23,7 +23,7 @@ Thiếu một trong ba thì đó là series bài luận nhiều kỳ (như serie
 | Loại | Đánh số | Vai trò |
 |---|---|---|
 | Trang tổng quan | `01-` | Định nghĩa chung, mục lục, đặt lịch sử và giới hạn của cả lĩnh vực |
-| Trang mục | `02-` trở đi | Một mục, đủ sáu section |
+| Trang mục | `02-` trở đi | Một mục, đủ sáu hoặc bảy section (mục 3) |
 
 **Không có trần số từ, và cũng không có sàn.** Đây là bài tra cứu: người đọc tới để lấy kiến thức dùng được, nên tiêu chí là cô đọng và đủ, chứ không phải ngắn. Một bài dài mà mỗi đoạn làm một việc riêng thì đang đúng độ dài của nó. Một bài ngắn mà có ba đoạn nói lại cùng một ý thì đã dài quá rồi.
 
@@ -38,16 +38,19 @@ Bốn phép kiểm này thay hẳn cho việc đếm từ. **Cắt một đoạn
 
 ## 3. Khung trang mục
 
-Sáu section, đúng thứ tự này, không thêm không bớt:
+Sáu section với danh mục lỗi tư duy, bảy section với danh mục công cụ (thêm `Tình Huống Áp Dụng`). Đúng thứ tự này, không thêm không bớt:
 
 | # | `<h2 class="main-point">` | Bắt buộc có |
 |---|---|---|
-| 1 | `Định Nghĩa` | `intro-text`, một đoạn cơ chế, một hình khi công cụ là một hình (mục 3.1), một `content-table`, một video |
-| 2 | `Ví Dụ` | `intro-text`, ba `sub-section` với `sub-point-1` |
+| 1 | `Định Nghĩa` | Lỗi tư duy: `intro-text`, một đoạn cơ chế, một `content-table`, một video. Công cụ: ba `sub-section` là gì / tại sao cần / giới hạn (mục 3.1) |
+| 2 | `Ví Dụ` | `intro-text`, một tới ba `sub-section` với `sub-point-1` (mục 3.3) |
 | 3 | `Một Vài Nghiên Cứu Về <Tên Mục>` | `intro-text`, một `sub-section` với bốn đoạn nhãn, cộng đoạn `Phản biện:` khi có (mục 3.4) |
 | 4 | `Chiến Lược Giảm Thiểu` hoặc `Cách Áp Dụng` | `intro-text`, một `ul class="outline-list"` bốn mục |
+| 4b | `Tình Huống Áp Dụng` (chỉ danh mục công cụ) | `intro-text` nêu tình huống, `ol class="outline-list"` các bước, một đoạn kết quả (mục 3.6) |
 | 5 | `Tóm Tắt` | `summary-box` chứa `<strong>Điểm Chính:</strong>` |
 | 6 | `Tài Liệu Tham Khảo` | `ol class="outline-list"` |
+
+Với danh mục công cụ, người đọc là người đi làm muốn dùng công cụ cho đúng, và mỗi bài trả lời năm câu: là gì, vì sao cần và không làm được gì; người ta dùng nó thật ra sao; nó tạo ra giá trị tới đâu theo những gì đã đo; dùng thế nào cho đúng và hỏng khi nào; áp vào một vấn đề cụ thể từng bước ra sao. **Cơ chế là sợi chỉ của cả bài**: nêu ở phần "tại sao cần", Cách Áp Dụng suy ra từ nó, Tình Huống Áp Dụng cho thấy nó chạy.
 
 Tiêu đề section 3 mang tên mục ở dạng đầy đủ: `Một Vài Nghiên Cứu Về Thiên Kiến Neo Giá`. Đây là chỗ duy nhất trong khung có tên riêng.
 
@@ -66,7 +69,17 @@ Tiêu đề section 4 phụ thuộc vào thứ mà danh mục nói tới, và ch
 - Đoạn kế nói **cơ chế**: nó chạy bằng cách nào, tên kỹ thuật của cơ chế nếu có, ai đặt tên và năm nào, kèm `<sup><a href="#ref-1">[1]</a></sup>`.
 - Rồi tới hình (nếu có, xem ngay dưới), rồi tới bảng, rồi tới video. Thứ tự này cố định.
 
-**Khi tên công cụ là tên một hình, bài phải có hình đó.** Biểu đồ Gantt, biểu đồ burndown, biểu đồ Pareto, sơ đồ xương cá, lưu đồ, sơ đồ chuỗi giá trị, ma trận rủi ro, ma trận quyết định, ma trận RACI: người đọc không nắm được công cụ nếu chưa thấy hình dạng của nó, và không đoạn văn nào thay được việc nhìn một lần. Đặt hình **ngay sau đoạn cơ chế và trước bảng đối chiếu**, vì bảng đối chiếu đã ngầm giả định người đọc hình dung được cái hình rồi. Markup và ràng buộc kỹ thuật ở `html-menu-rules.md` mục 3.1.
+**Danh mục công cụ** thay ba gạch đầu dòng trên bằng ba `sub-section`, tiêu đề cố định, không `intro-text`, không câu dẫn nhập lặp lại tiêu đề:
+
+| `sub-point-1` | Nội dung |
+|---|---|
+| `<Tên Công Cụ> Là Gì` | Là gì bằng ngôn ngữ thường, hạ xuống một hình ảnh cụ thể, ai đặt ra và năm nào kèm nguồn; rồi hình (nếu có), rồi video |
+| `Tại Sao Ta Cần Dùng Nó` | Mở bằng tình huống thiếu công cụ thì hỏng, rồi cơ chế công cụ xử lý nó. Lý do phải truy về được một con số ở section Nghiên Cứu |
+| `Giới Hạn Của Công Cụ Này Là Gì` | Điều công cụ không làm được, rồi bảng đối chiếu (mục 3.2) |
+
+Lịch sử chi tiết, tranh cãi niên đại và danh sách biến thể không nằm trong section này.
+
+**Khi tên công cụ là tên một hình, bài phải có hình đó.** Biểu đồ Gantt, biểu đồ burndown, biểu đồ Pareto, sơ đồ xương cá, lưu đồ, sơ đồ chuỗi giá trị, ma trận rủi ro, ma trận quyết định, ma trận RACI: người đọc không nắm được công cụ nếu chưa thấy hình dạng của nó, và không đoạn văn nào thay được việc nhìn một lần. Đặt hình **ngay sau đoạn cơ chế và trước bảng đối chiếu** (danh mục công cụ: trong sub-section `Là Gì`), vì bảng đối chiếu đã ngầm giả định người đọc hình dung được cái hình rồi. Markup và ràng buộc kỹ thuật ở `html-menu-rules.md` mục 3.1.
 
 Công cụ là một quy trình chứ không phải một hình thì không cần: 5S, PDCA, SOP, A3, OKR. Cố thêm hình cho chúng thường ra một sơ đồ năm ô nối bằng mũi tên, tức là chép lại đề mục dưới dạng đồ hoạ.
 
@@ -91,21 +104,30 @@ Số dòng thân bảng do nội dung quyết định, không có trần: một 
 
 Nếu không nghĩ ra được phép đối chiếu nào cho mục này, đó là dấu hiệu cơ chế của mục chưa được hiểu rõ. Quay lại section 1 trước khi dựng bảng.
 
-### 3.3 Ba ví dụ phải ở ba tầng khác nhau
+### 3.3 Ví dụ: liên quan và dùng được trước, đủ tầng sau
 
-`intro-text` của section Ví Dụ nói thẳng ra ba tầng đó là gì, để người đọc biết mình sắp đọc gì:
+Ví dụ ở đây chỉ có một việc: cho người đọc thấy mục đang bàn **trông ra sao khi nó được dùng hoặc xảy ra thật**, đủ cụ thể để họ nhận ra hoặc làm theo. Mỗi ví dụ phải qua hai phép kiểm dưới đây trước mọi yêu cầu khác của mục này:
 
-> Thiên kiến này thể hiện ở ba mức độ khác nhau: một tình huống bạn có thể hình dung, một nghiên cứu đã đo lường được nó, và một sai lầm doanh nghiệp mà nó góp phần lý giải.
+1. **Liên quan.** Mục đang bàn có mặt rõ ràng trong ví dụ không? Với ví dụ có nguồn, nguồn phải gọi đích danh mục đó: công cụ đã được dùng, thiên kiến đã được đo. Dấu hiệu trượt: bài phải viết một đoạn để giải thích rằng ví dụ không thật sự nói gì về mục này ("không có tài liệu nào cho thấy công cụ đã được dùng", "nguồn không nhắc tới X lấy một lần"). Trượt thì bỏ ví dụ, không rào thêm.
+2. **Dùng được.** Đọc xong, người đọc có biết thêm một điều cụ thể về cách dùng (danh mục công cụ) hoặc cách nhận ra (danh mục lỗi tư duy) không? Với danh mục công cụ, ví dụ phải cho thấy được: ai dùng, dùng cho vấn đề gì, đã làm hoặc điền ra sao, và ra kết quả gì.
+
+**Ba tầng là khung nên hướng tới, không phải điều kiện bắt buộc.**
 
 | Tầng | Nội dung | Chức năng |
 |---|---|---|
-| 1 | Tình huống đời thường, viết ở thể "hãy tưởng tượng" hoặc kể như một cảnh quen thuộc | Người đọc nhận ra chính mình |
-| 2 | Thí nghiệm hoặc nghiên cứu, thường là cái đã đặt tên cho mục này | Chứng minh nó có thật và đo được |
-| 3 | Một hậu quả thật, quy mô lớn, có con số: một vụ sập giá, một thảm hoạ, một khoản lỗ | Chứng minh nó đắt |
+| 1 | Tình huống đời thường, kể như một cảnh quen thuộc, trong đó mục đang bàn là trung tâm | Người đọc nhận ra chính mình, hoặc thấy công cụ được dùng từng bước |
+| 2 | Thí nghiệm hoặc nghiên cứu trên chính mục này | Chứng minh nó có thật và đo được |
+| 3 | Một ca thật, quy mô lớn, có con số, mà nguồn ghi rõ mục này có mặt | Với lỗi tư duy: chứng minh nó đắt. Với công cụ: cho thấy nó chạy hoặc hỏng ra sao khi dùng thật |
 
-Tầng 1 **không cần nguồn** vì nó không tuyên bố một sự kiện đã xảy ra; nó là một tình huống dựng lên. Đừng gắn số liệu vào tầng 1 rồi phải đi tìm nguồn cho một chuyện chưa từng xảy ra. Tầng 2 và tầng 3 **bắt buộc có nguồn**, và mọi con số trong tầng 3 phải kiểm chứng được từng cái một.
+Số ví dụ từ một tới ba. Không tìm được ví dụ qua cả hai phép kiểm cho một tầng thì bỏ tầng đó: **một ví dụ trượt phép kiểm tệ hơn không có ví dụ**, vì người đọc mất một đoạn mà không học thêm được gì về mục này. Hai ví dụ cùng tầng được phép khi mỗi cái cho thấy một mặt khác nhau của việc dùng.
 
-Ba ví dụ ở ba tầng, không được hai cái cùng tầng. Hai nghiên cứu và một tình huống là bài thiếu tầng hậu quả.
+`intro-text` của section nói ra những ví dụ sắp đọc là gì, theo đúng số ví dụ thật có. Không chép câu mẫu "thể hiện ở ba mức độ khác nhau".
+
+Tầng 1 **không cần nguồn** vì nó không tuyên bố một sự kiện đã xảy ra; nó là một tình huống dựng lên. Đừng gắn số liệu vào tầng 1 rồi phải đi tìm nguồn cho một chuyện chưa từng xảy ra. Ví dụ có nguồn thì mọi con số phải kiểm chứng được từng cái một.
+
+**Rào đón tối đa một đoạn, và ngắn hơn phần kể sự kiện.** Ví dụ cần nhiều hơn thế để khỏi bị đọc sai là ví dụ chọn sai.
+
+Với danh mục công cụ: kiểu ví dụ dạy được nhiều nhất là cùng một công cụ, hai cách dùng, hai kết quả. Kiểu trượt hay gặp nhất là một thảm hoạ gần chủ đề mà nguồn không nhắc tới công cụ (Concorde, Boeing 737 MAX, Nhà hát Opera Sydney đều đã phải gỡ hoặc rào). Ví dụ tầng 1 mở bằng "Tình huống minh hoạ:" và tự đứng được, không dựa vào cảnh đã kể ở Định Nghĩa.
 
 `sub-point-1` đặt tên cho từng ví dụ như một cái tít, không phải như một nhãn phân loại: `Đêm Trước Ngày Challenger Cất Cánh`, `21 Môi Giới Bất Động Sản, Một Căn Nhà`, `Cách J.C. Penney Mất Gần 1 Tỷ Đô Vì Bỏ Neo Giá`. Không đặt là `Ví Dụ Trong Nghiên Cứu` hay `Trường Hợp Thực Tế`.
 
@@ -124,6 +146,8 @@ Trong một `sub-section`, bốn đoạn `<p>`, mỗi đoạn mở bằng một 
 - **Kết quả:** con số thật. Không phải "kết quả cho thấy có sự khác biệt đáng kể".
 - **Kết luận:** điều nghiên cứu này chứng minh, và **chỉ điều đó**. Đây là chỗ dễ kết luận quá tay nhất trong cả bài.
 - **Vì sao điều này hữu ích:** đoạn quan trọng nhất và cũng là đoạn hay bị viết rỗng nhất. Nó phải đổi được thứ người đọc để ý từ ngày mai, và kết ở một thói quen cụ thể hoặc một câu tự hỏi cụ thể. Không được là bản tóm tắt lại ba đoạn trên bằng chữ khác.
+
+Với danh mục công cụ, section này trước hết cho thấy **giá trị và tầm ảnh hưởng** của công cụ: cải thiện được gì, bao nhiêu, ở đâu, rồi mới tới bằng chứng chắc tới đâu. Chọn nghiên cứu theo thứ tự: đo trực tiếp công cụ khi dùng đúng mục đích, rồi mức phổ biến, rồi nghiên cứu ở tầng trên một bậc (cả phương pháp mà công cụ là một phần). Nói giá trị không có nghĩa là bỏ mục 7.2.
 
 Khi mục này có nhiều nghiên cứu quan trọng ngang nhau hoặc có tranh cãi chưa ngã ngũ, được phép đổi nhãn cho đúng thực tế (`Hiện trạng tranh luận:`, `Điểm phức tạp:`). Đổi vì nội dung đòi, không đổi cho đỡ lặp.
 
@@ -154,13 +178,23 @@ Kiểm bốn mục bằng hai câu hỏi:
 
 Có ít nhất một mục nói rõ **cách này hỏng khi nào** hoặc **vì sao cách hiển nhiên lại không chạy**. Bản mẫu: "cách phòng vệ thực sự không phải là cố lờ con số đó đi".
 
-### 3.6 Tóm tắt
+### 3.6 Tình huống áp dụng (chỉ danh mục công cụ)
+
+Ví Dụ cho thấy người khác đã dùng công cụ ra sao, Cách Áp Dụng nêu nguyên tắc; section này ghép hai thứ đó vào một vấn đề người đọc có thể làm theo, từng bước tới khi ra kết quả.
+
+- **Tình huống gần gũi, được phép giả định**: việc văn phòng hoặc đời sống hằng ngày, không cần kiến thức chuyên ngành. Không cần nguồn, không gắn số liệu thật; số trong tình huống là số minh hoạ.
+- **Hợp với công cụ, và là cảnh dùng đúng.** Đừng ép công cụ vào vấn đề mà công cụ khác hợp hơn. Khác tình huống tầng 1 ở Ví Dụ, nơi công cụ thường bị dùng sai.
+- **`intro-text` nêu vấn đề cụ thể tới mức đo được**, rồi các bước theo đúng trình tự thật của công cụ, mỗi bước là việc làm cụ thể trong tình huống. Ít nhất một bước cho thấy một nguyên tắc ở Cách Áp Dụng đang được dùng.
+- **Tình huống phải tự áp đúng chuẩn bằng chứng bài đang dạy**: so nhóm lỗi với nhóm không lỗi trước khi quy nguyên nhân, kiểm đối sách với chính dữ kiện đã nêu, tách chỉ số kết quả thật khỏi chỉ số đo.
+- **Đoạn kết nêu kết quả và điều kiện để đạt được nó.** Không viết "cách tốt nhất", "luôn giải quyết được": một tình huống dựng lên không chứng minh được điều đó.
+
+### 3.7 Tóm tắt
 
 Một đoạn duy nhất trong `summary-box`, mở bằng `<strong>Điểm Chính:</strong>`. Ba việc, theo thứ tự: nhắc lại cơ chế, nhắc lại điều phản trực giác nhất trong bài, chốt bằng nguyên tắc phòng vệ. Không đưa vào đây bất kỳ dữ kiện, con số hay ví dụ nào chưa xuất hiện ở trên.
 
-### 3.7 Tham khảo
+### 3.8 Tham khảo
 
-Theo markup ở `html-menu-rules.md` mục 4. Không có trần số nguồn: bài cần bao nhiêu nguồn để đỡ hết các tuyên bố của nó thì liệt kê bấy nhiêu. Sàn thì có, và tự nhiên là 3, vì mỗi ví dụ tầng 2 và tầng 3 phải có nguồn riêng, cộng nguồn cho phần định nghĩa. Nguồn thừa là nguồn không đứng cạnh câu nào, không phải nguồn thứ năm.
+Theo markup ở `html-menu-rules.md` mục 4. Không có trần số nguồn: bài cần bao nhiêu nguồn để đỡ hết các tuyên bố của nó thì liệt kê bấy nhiêu. Sàn thì có: mỗi ví dụ có nguồn cần nguồn riêng của nó, cộng nguồn cho phần định nghĩa. Nguồn thừa là nguồn không đứng cạnh câu nào, không phải nguồn thứ năm.
 
 Video nhúng phải là video có thật, đã kiểm bằng cách mở URL. Không suy ra ID YouTube từ tên chủ đề. Không tìm được video đúng thì bỏ khối video, đừng nhét một video gần đúng vào cho đủ khung.
 
@@ -204,7 +238,7 @@ Trước khi viết, đọc `domain-ubiquitous-language.md` và mục lục ở 
 `voice-guide.md` mục 4 áp đủ cho thể loại này. Thêm bốn luật chỉ có ở đây:
 
 - **Không dùng em dash và en dash trong văn xuôi**, đúng `voice-guide.md` mục 4.1. Series thiên kiến hiện có viết trước khi luật này ra đời và dùng em dash dày đặc; **đó là chỗ duy nhất trong bản mẫu không được chép lại**. Chỗ duy nhất còn được dùng em dash là dấu phân cách giữa tên mục và câu móc trong mục lục trang tổng quan, vì đó là ký hiệu trình bày chứ không phải câu văn.
-- **Khung lặp, câu mở thì không.** Khung sáu section giống nhau đã đủ đều rồi. Câu đầu tiên của mỗi section phải khác kiểu với câu đầu tiên của cùng section đó ở bài liền trước: đừng để hai mươi bài cùng mở section Định Nghĩa bằng "X là xu hướng...".
+- **Khung lặp, câu mở thì không.** Khung giống nhau đã đủ đều rồi. Câu đầu tiên của mỗi section phải khác kiểu với câu đầu tiên của cùng section đó ở bài liền trước: đừng để hai mươi bài cùng mở section Định Nghĩa bằng "X là xu hướng...". Các câu đã lặp qua nhiều bài, bài mới không dùng lại: "Ranh giới của ví dụ này cần nói rõ, vì nó dễ bị đọc quá tay"; "thể hiện ở ba mức độ / lộ ra ở ba tầng khác nhau"; "Thứ nó cho thấy (đúng / chỉ) một điều"; "Không có tài liệu nào cho thấy…"; "Hãy hình dung…" để mở ví dụ tầng 1; "Lập luận bênh X mạnh hơn nhiều so với ấn tượng mà…"; "Biết trước nó không…" để mở mục cuối của section 4. Hai khuôn được lặp có chủ ý: "`<Tên>` hoạt động bằng cách…" và nhãn "Vì sao điều này hữu ích:".
 - **Không tự tham chiếu chéo trong văn xuôi.** Không viết "như đã nói ở bài thiên kiến xác nhận". Người đọc thường vào thẳng một trang mục. Cần nhắc tới mục khác thì gọi tên nó và giải thích lại trong nửa câu, hoặc để link ở mục lục làm việc đó.
 - **Không đòi quan sát riêng của tác giả.** Đây là chỗ thể loại này khác hẳn bài luận, và là ngoại lệ có chủ ý với `voice-guide.md` mục 4.4. Bài mục lục là bài học tập, người đọc tìm kiến thức dùng được chứ không tìm trải nghiệm của người viết. Không chèn "theo tôi", không dựng một câu chuyện cá nhân để bài có vẻ có giọng. Nếu tác giả có một quan sát thật và nó thật sự bổ sung thông tin thì giữ, nhưng thiếu nó không phải là lỗi.
 
@@ -222,12 +256,14 @@ Ba thứ này thay cho yêu cầu "chi tiết riêng của tác giả" ở bài 
 
 Chạy sau checklist ở `html-menu-rules.md` mục 8, không thay thế nó.
 
-- [ ] Đúng sáu section trang mục, hoặc bảy section trang tổng quan, đúng thứ tự
+- [ ] Đúng số section và thứ tự: trang mục sáu section (lỗi tư duy) hoặc bảy (công cụ), trang tổng quan bảy
+- [ ] Danh mục công cụ: Định Nghĩa đúng ba sub-section tiêu đề cố định, không `intro-text`; lý do "tại sao cần" truy về được section Nghiên Cứu; section Nghiên Cứu cho thấy giá trị và tầm ảnh hưởng
+- [ ] Danh mục công cụ: Tình Huống Áp Dụng gần gũi, là cảnh dùng đúng, các bước theo trình tự công cụ, tự áp chuẩn bằng chứng, kết quả không viết thành "tốt nhất" hay "luôn luôn" (mục 3.6)
 - [ ] Tiêu đề section 3 có tên đầy đủ của mục
 - [ ] Tiêu đề section 4 đúng một trong hai tên chuẩn, không thêm mệnh đề nào
 - [ ] Công cụ là một hình thì bài có hình đó, đặt sau đoạn cơ chế và trước bảng, có nội dung thật chứ không phải khung rỗng (mục 3.1)
 - [ ] `content-table` là một phép đối chiếu, không phải danh sách định nghĩa
-- [ ] Ba ví dụ ở ba tầng khác nhau, tầng 2 và tầng 3 có nguồn, tầng 3 có con số
+- [ ] Mỗi ví dụ qua hai phép kiểm liên quan và dùng được (mục 3.3): nguồn gọi đích danh mục đang bàn, không có đoạn nào giải thích rằng ví dụ không nói gì về mục, rào đón không quá một đoạn. Thiếu tầng thì được, ví dụ trượt thì không
 - [ ] Không gọi ví dụ nào là thí nghiệm tự nhiên hay "cô lập được" tác động của công cụ. Trước khi viết câu đó, đọc lại nguồn xem nó có liệt kê biến nào cùng thay đổi không; có thì đưa các biến ấy vào bài
 - [ ] Đủ bốn đoạn nhãn, và đoạn "Vì sao điều này hữu ích" kết ở một việc làm được
 - [ ] Bài có nêu bằng chứng yếu thì phải có đoạn `Phản biện:`, dựng phe bênh ở phiên bản mạnh nhất và nói rõ vế nào bài chấp nhận

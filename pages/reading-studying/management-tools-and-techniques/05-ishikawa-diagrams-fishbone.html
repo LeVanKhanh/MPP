@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ishikawa Diagrams (Fishbone) - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="A fishbone diagram breaks the question why into branches of causes and draws every branch the same thickness. This piece covers what the tool is, why it is needed, where its limits lie, two real cases that used it alongside data, and a step-by-step walk through one concrete situation."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Ishikawa Diagrams (Fishbone)</h1>
+            <p class="page-subtitle">Every bone on the diagram is drawn the same thickness; the causes are not</p>
+            <p class="page-meta">Published: <time datetime="2026-10-09">October 9, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Definition</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Is a Fishbone Diagram</h3>
+                <p>A fishbone diagram, also called an Ishikawa diagram or a cause-and-effect diagram, is a way of laying out the possible causes of a problem on paper: the problem sits in a box at the right-hand end, a horizontal line runs to it as the spine, and the diagonal lines running into the spine are groups of causes, such as People, Method, Measurement, Systems, Input Data and Environment. Kaoru Ishikawa devised the diagram in 1953 and applied it to the production process at Kawasaki Steel's Fukiai works. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="A fishbone diagram for the problem of invoices being reissued twelve times a week, with six branches drawn at the same thickness, plus a row showing the same six branches one week later, sorted by level of evidence, in which only the Systems branch is a solid block because it has been checked against data, and one hollow block is a new, unchecked hypothesis."
+                        viewBox="0 0 1180 620">
+                        <defs>
+                            <marker id="fish-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <text class="small note" x="20" y="40">Drawn in the meeting: six branches, six lines of the same thickness</text>
+
+                        <path class="arrow" d="M60 280 H926" marker-end="url(#fish-arrow)"></path>
+                        <rect class="node" x="934" y="238" width="214" height="84" rx="10"></rect>
+                        <text x="1041" y="264">Invoices reissued</text>
+                        <text class="small" x="1041" y="292">12 times a week since June</text>
+
+                        <path class="arrow" d="M170 130 L300 280"></path>
+                        <text x="170" y="110">People</text>
+                        <text class="small" x="195" y="170" text-anchor="end">price list not learnt</text>
+                        <text class="small" x="236" y="218" text-anchor="end">month-end overload</text>
+
+                        <path class="arrow" d="M450 130 L580 280"></path>
+                        <text x="450" y="110">Method</text>
+                        <text class="small" x="475" y="170" text-anchor="end">no cross-check step</text>
+                        <text class="small" x="516" y="218" text-anchor="end">no shared way of working</text>
+
+                        <path class="arrow" d="M730 130 L860 280"></path>
+                        <text x="730" y="110">Measurement</text>
+                        <text class="small" x="755" y="170" text-anchor="end">nobody counts reissues</text>
+                        <text class="small" x="796" y="218" text-anchor="end">reports show totals only</text>
+
+                        <path class="arrow" d="M170 430 L300 280"></path>
+                        <text x="170" y="452">Systems</text>
+                        <text class="small" x="236" y="342" text-anchor="end">no alert on mismatch</text>
+                        <text class="small" x="195" y="390" text-anchor="end">CRM out of line with list</text>
+
+                        <path class="arrow" d="M450 430 L580 280"></path>
+                        <text x="450" y="452">Input Data</text>
+                        <text class="small" x="516" y="342" text-anchor="end">customer address changes</text>
+                        <text class="small" x="475" y="390" text-anchor="end">tax IDs typed by hand</text>
+
+                        <path class="arrow" d="M730 430 L860 280"></path>
+                        <text x="730" y="452">Environment</text>
+                        <text class="small" x="796" y="342" text-anchor="end">two systems in parallel</text>
+                        <text class="small" x="755" y="390" text-anchor="end">close crammed into 3 days</text>
+
+                        <path class="axis" d="M20 486 H1160"></path>
+                        <text class="small note" x="20" y="512">One week later, after checking the CRM: the same six branches, sorted by level of evidence</text>
+
+                        <rect class="bar" x="60" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="125" y="553">Systems</text>
+                        <rect class="band" x="205" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="270" y="553">People</text>
+                        <rect class="band" x="350" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="415" y="553">Method</text>
+                        <rect class="band" x="495" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="560" y="553">Measurement</text>
+                        <rect class="band" x="640" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="705" y="553">Input Data</text>
+                        <rect class="band" x="785" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="850" y="553">Environment</text>
+
+                        <path class="edge" d="M60 522 H190"></path>
+                        <text class="small" x="125" y="598">data in hand</text>
+                        <path class="edge-ghost" d="M205 522 H915"></path>
+                        <text class="small" x="560" y="598">still only opinions from the meeting</text>
+
+                        <rect class="ghost" x="934" y="530" width="214" height="46" rx="8"></rect>
+                        <text class="small" x="1041" y="553">contract-specific prices</text>
+                        <text class="small alert" x="1041" y="598">new hypothesis, unchecked</text>
+                    </svg>
+                    <figcaption>
+                        <strong>Figure 1.</strong> The same problem at two points in time. The top half is what the meeting
+                        produced: six branches, twelve causes, and, as drawn by default, no line that tells you which cause
+                        has been checked. The bottom half is those six branches a week later, once someone has compared the
+                        price list in the CRM: one branch has data behind it, five are still opinion. This is a level of
+                        evidence, not a measure of how much each branch contributes to the errors. The hollow block on the
+                        right is a new hypothesis that came up during the investigation: sales contracts carry
+                        customer-specific prices, so an invoice raised at the standard price list may have to be reissued.
+                        It has not been checked, and it is hard to place on any of the six pre-drawn branches because it
+                        lives in the sales department, outside the invoicing process.
+                    </figcaption>
+                </figure>
+
+                <!-- YouTube Video Container -->
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                    <iframe
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        src="https://www.youtube.com/embed/JbRx5pw-efg"
+                        title="Fishbone Diagram Explained with Example"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Why We Need It</h3>
+                <p>When a fault has dragged on for weeks without anyone finding its root cause, each person in the room usually sees only their own part of the work, and the discussion tends to circle the few causes everyone already knows. Asking "why" in general is too broad for anyone to answer. A fishbone diagram breaks that question into narrow ones, along the lines of "what is worth saying about measurement alone", so that everyone has something to hold on to, and it gathers knowledge scattered across several departments onto one sheet of paper. It is cheap: no data, no software, just a whiteboard and a meeting. And it is widely used: in surveys of healthcare staff in Europe and of quality professionals in South American companies, it sits among the three most used tools. <sup><a href="#ref-2">[2]</a></sup> <sup><a href="#ref-3">[3]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Are Its Limits</h3>
+                <p>The diagram only lists <em>possible</em> causes. As drawn by default, every bone is the same thickness, so a cause backed by data and a cause someone thought of during the meeting look exactly alike, as Figure 1 above shows. The University of Cambridge's Institute for Manufacturing adds that the diagram does not handle quantities, can become very complex, and makes interrelationships between causes difficult to show or prove. <sup><a href="#ref-4">[4]</a></sup> So the diagram helps a room list many things that might be causes, but on its own it does not tell you which cause has been checked, which contributes more, or which two causes have to be present together before the fault appears. Whoever draws it can add colours, symbols or notes to mark those things; the set of branches is itself only a starting framework, not a fixed list. <sup><a href="#ref-5">[5]</a></sup> It is just that the ready-made template reminds nobody to do so.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">What the diagram records</th><th scope="col">What the default drawing leaves out</th></tr></thead>
+                    <tbody>
+                        <tr><td>Six groups of causes the room thought of</td><td>A group not drawn as a branch is rarely raised</td></tr>
+                        <tr><td>Four causes on the People branch</td><td>Which of the four contributes more</td></tr>
+                        <tr><td>One cause backed by data, one just thought of, drawn with the same line</td><td>Which has been checked and which has not</td></tr>
+                        <tr><td>Two causes on two different branches</td><td>The fault only occurs when both are present</td></tr>
+                        <tr><td>A job title on the People branch</td><td>The conditions that lead the person in that job to act that way</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Examples</h2>
+            <p class="intro-text">The three examples below move from a familiar meeting, where the diagram is drawn by the book and still leads to a countermeasure nobody has checked, to two places that used it together with data: an intensive care unit that had the people involved score each branch to decide where to investigate first, and a medical centre that turned each branch into a change and then counted the cases again.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">The People Branch Fills Up First</h3>
+                <p>An illustrative scenario: a small distribution company finds that invoices are being reissued 12 times a week, against only 3 at the start of the year. The head of accounts calls the team into a meeting room, draws a horizontal arrow on the whiteboard, writes the problem in the box at the head of the fish, and then draws six branches from the familiar template: People, Method, Measurement, Systems, Input Data, Environment.</p>
+                <p>The People branch fills up fastest. Not because that is where real causes tend to live; where the cause lives is exactly what the meeting does not know, which is why it is meeting at all. That branch fills first because everyone in the room has something ready to say about it: everyone has seen a colleague rush a job to get it done, everyone remembers an overloaded day at month end. To say anything about the Systems branch, someone has to open the price list in the CRM and compare it with the approved one, and that usually has to happen outside the meeting.</p>
+                <p>Twenty minutes later the diagram is full. The People branch has four causes, Method has three, Systems has one short line with a question mark. The countermeasure agreed at the end is to retrain the team and repeat the rules at the weekly briefing. Nobody drew anything wrong. The failure lies in the jump straight from a list of possible causes to a countermeasure before any branch has been checked: the sheet is an honest record of what the meeting already knew, not of where the problem came from. The top half of Figure 1, in the Definition section, is that very sheet. The bottom half is the same sheet a week later, when the chief accountant opened the CRM, compared it with the approved price list and found the two did not match: the first branch to have data behind it was the one the meeting had left open with a question mark.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Fifty-Eight Nurses Score Each Bone</h3>
+                <p>In 2025, a team led by Seong at Dongguk University Ilsan Hospital in South Korea published a study in the <em>Japan Journal of Nursing Science</em> on near misses by intensive care nurses using medical devices: pulse oximeters, ECG monitors, IV line sets, infusion pumps and hospital beds. A six-member committee built a fishbone diagram with near-miss events at the head and four branches: work environment, personal factors, device usability, and unit communication and education programmes. Each branch had six sub-causes. Then they did something a meeting usually skips: they turned each sub-cause into a question and had 58 nurses from a medical and a surgical ICU select the causes that applied to them. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>That made the branches comparable, by how relevant the people involved judged them to be. On a 6-point scale, work environment scored highest at 1.67, followed by personal factors at 1.24, device usability at 0.96, and communication and education at 0.62. The leading cause within work environment was having too many patients to look after (54.5%); within device usability, frequent malfunctions (41.4%); within personal factors, chronic physical and mental fatigue (38.3%). Insufficient education programmes, the countermeasure a meeting tends to reach for first, led the lowest-scoring branch at 22.1%. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>This is a use worth learning from: quantifying the views of the people involved turns a flat list into an order of priority for further investigation. But a survey score is not a measure of contribution to the incidents: the branch chosen most often does not necessarily cause the most incidents, and fixing it will not necessarily reduce them the most. The authors note the limits themselves: a single hospital, incident counts that rely on respondents' memory, and no countermeasure tested.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Five Bones at a Ghanaian Medical Centre, Eleven Cases Down to Three</h3>
+                <p>In 2018, Nyaho Medical Centre, a multispecialty medical centre in Ghana, recorded 11 needlestick injuries among its staff. After reviewing the cases one by one, the improvement team built a fishbone diagram, and its branches were not taken from a template but grew out of the cases themselves. Staffing: shift patterns and nurse-to-patient ratios that did not work. Facilities: no sharps containers near the bed, so nurses had to walk some distance to reach one. Training: no instruction on safe disposal of needles, and few people knew injuries had to be reported. Process: no reporting system and no regularly measured indicators. Behaviour: some staff still recapped needles by hand. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p>From there the team made seven changes: writing and reviewing policies and standard operating procedures, with compliance monitoring; setting indicators to measure and report injuries; training staff; building a safety culture; bringing a ratio of one nurse to two patients into shifts; running a no-recapping campaign; and placing sharps containers right next to where the work happens. The paper does not pair each change with a branch, but set the two lists side by side and every branch has at least one change aimed at it. By 2021, recorded injuries had fallen to 3. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p>This was an improvement project at a single facility, with no comparison group, and the seven changes ran at the same time, so the contribution of each cannot be separated out, including that of the diagram itself. The authors also note that they could not track injuries that happened but went unreported; on the other hand, they say the new incident reporting system increased the culture of reporting, which makes it hard to explain the fall simply by people reporting less.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Some Research on Ishikawa Diagrams</h2>
+            <p class="intro-text">Within the scope of this piece's search, no experiment turned up that measures whether a team using a fishbone diagram finds the right cause more often than a team that does not. What has been measured is usage: how widely the tool is used, and how much of their problems practitioners believe the set of tools it belongs to can solve.</p>
+            <div class="sub-section">
+                <p><strong>The study:</strong> In 2023, a team led by Olivia McDermott and Jiju Antony published an online survey in <em>The TQM Journal</em> of 168 healthcare professionals at European facilities, selected by stratified random sampling. They wanted to test a claim made by Ishikawa himself: that 95% of problems in a process can be solved with the seven basic quality control tools, of which the cause-and-effect diagram is one. <sup><a href="#ref-2">[2]</a></sup> Two years earlier, the same group had put exactly that question to 97 quality professionals at manufacturing and service companies in South America, in a pilot survey. <sup><a href="#ref-3">[3]</a></sup></p>
+                <p><strong>Findings:</strong> In Europe, the cause-and-effect diagram was among the three most used tools, alongside histograms and check sheets, and was used most on hospital wards and in administration. 62% of respondents had been trained in the seven tools, but only 3% believed the seven tools could solve more than 90% of quality problems. <sup><a href="#ref-2">[2]</a></sup> In South America, cause-and-effect analysis was also among the three most used tools, alongside Pareto analysis and histograms, in both manufacturing and services; about one respondent in five believed the seven tools could solve more than 80% of problems. <sup><a href="#ref-3">[3]</a></sup></p>
+                <p><strong>What it shows:</strong> The two surveys show the tool has wide reach: on two continents, across healthcare, manufacturing and services, it is among the most used. They do not directly measure how well it solves problems: these are practitioners reporting their own usage and beliefs, not a measurement of whether problems got solved. The 3% and the one in five refer to the whole set of seven tools, not to the fishbone diagram alone. The samples are small, each survey is confined to one region, and the South American survey is only a pilot.</p>
+                <p><strong>The counter-case:</strong> The defence has two good arguments. First, asking "how much of the problem does it solve" demands something the tool never promised: the diagram lays out <em>possible</em> causes, it does not confirm any of them, and the causes selected have to be confirmed or eliminated through data collection, experimentation or direct observation. <sup><a href="#ref-5">[5]</a></sup> Its value, if it has any, lies in opening the way to that step. Second, a tool that is cheap, needs no data, and is still this widely used after seventy years is showing, by its staying power alone, that practitioners find it useful. This piece accepts the first argument in full. The second it accepts only halfway: being widely used says the tool is easy to use and fits the way teams work, but how far a tool spreads and how solid the evidence behind it is are two different things.</p>
+                <p><strong>Why this is useful:</strong> It tells you what to expect when you pick up the pen. A fishbone diagram is quite likely to appear in the next root cause meeting you attend, because it is a popular tool; but what it produces is a list of hypotheses, not a conclusion. The question to ask yourself when the meeting ends: which hypothesis is worth checking first, what evidence would confirm or rule it out, and who is going to fetch it.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">How to Apply It</h2>
+            <p class="intro-text">A fishbone diagram works by distributing attention across a set of branches chosen in advance and drawing every branch the same thickness, so using it well means stepping in at exactly those two points: the set of branches, and the evidence that the default drawing does not record. It is strongest when the problem is clear enough to be put in one sentence, when the room holds people from different departments, and when drawing is only the first leg of a trip to fetch data.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Write the problem at the head of the fish as one measurable sentence, before drawing any branch:</strong> "Invoices reissued 12 times a week, up from 3, since June" is a problem statement; "the invoice problem" is not. Every branch afterwards is only as sharp as this sentence, because with a vague problem, every branch sounds plausible and none of them can be checked</li>
+                    <li><strong>Choose branches that follow the actual work, and when the process has clear steps, put those steps on the spine:</strong> This is the process classification type in Ishikawa's book, and it reduces the biggest trap of a fixed set of branches: when the spine is the real sequence of steps, most causes grow out of the step that produces them. But things that act on several steps at once, such as policies, contract terms or bonus rules, can still sit outside every step, so give them their own space beside the diagram</li>
+                    <li><strong>Treat each cause as a hypothesis, record its status, and check only the few most worth checking first:</strong> Four statuses are enough: unchecked; supported by some evidence, meaning worth investigating further; supported by a check of the mechanism or a trial change, meaning enough basis to act; not supported within the scope checked, meaning set aside for now or revise the hypothesis. The default drawing does not distinguish these statuses, so mark them yourself with symbols or colours. Seeing a factor only tells you it exists: two price lists that do not match have not yet been shown to cause invoices to be reissued. A survey percentage like the one in the intensive care example likewise only tells you what the people involved think. There is no need to check every branch before doing anything; with a small, cheap, reversible change, you can try it straight away and measure</li>
+                    <li><strong>Record separately the conditions that have to be present together for the fault to occur:</strong> When the fault only happens when the price list is wrong <em>and</em> it is the month-end peak, the default drawing has no line joining the two branches, which is the limit on interrelationships set out in the Definition section. <sup><a href="#ref-4">[4]</a></sup> The obvious fix of adding branches and sub-branches does not help, because what is missing here is not room to write but a link between the branches. What works is writing that joint condition as a separate line beside the diagram and testing it as a hypothesis in its own right</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Applying It to a Scenario</h2>
+            <p class="intro-text">An online homeware shop is run by three people: the owner, one person who handles messages and confirms orders, and one who packs. In September, 18 of 120 orders reached customers later than the promised date, against only 4 of 110 in July, and one-star reviews have started to mention slow delivery. The figures in this scenario are illustrative.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Write the head of the fish as one measurable sentence:</strong> "In September, 18/120 orders were delivered later than the promised date; in July, 4/110". Do not write "slow delivery", because that does not tell you when the problem counts as fixed</li>
+                    <li><strong>Draw the spine along the actual path of an order:</strong> Instead of the six template branches, the three of them draw five branches following the real steps: receiving the message, confirming the order, packing, handing over to the courier, delivery to the customer. Most causes will have a place, because they happen at a particular step; anything that acts on the whole chain, such as a promotion that makes orders spike, goes in a note beside the diagram</li>
+                    <li><strong>Each person writes causes on sticky notes alone first, then puts them on the diagram:</strong> This keeps the owner's ideas from framing the other two's. After fifteen minutes the diagram has nine causes, including "slow packing because stock is disorganised" and "the courier collects at irregular times"</li>
+                    <li><strong>Choose which hypotheses to check first:</strong> No cause has data yet. Five can be checked within the week from the existing order history; the other four are only opinions, marked separately so nobody uses them as grounds for choosing a countermeasure</li>
+                    <li><strong>Collect data on both late and on-time orders:</strong> Record the time of each step for all 120 September orders, not just the 18 late ones, and for each late order note its main delay point, the step that took longest, with a note if it was also slow at another step. By this classification, the main delay point was a missed collection for 13 orders, packing for 2 and the delivery leg for 3; all 13 that missed a collection were confirmed after 15:00. Looking only at late orders is not enough, because 20 of the 102 on-time orders were also confirmed after 15:00. Side by side: orders confirmed after 15:00 were late 13 times out of 33, orders confirmed before that 5 times out of 87</li>
+                    <li><strong>Split by two conditions at once, then check the real collection schedule:</strong> Split the 120 orders by confirmation time and by day of the week, as in the table after the steps. Orders confirmed after 15:00 on a Friday were late 9 times out of 11, against only 4 out of 22 for orders confirmed after 15:00 on other days. The courier's schedule and the shop's working rhythm explain the gap: the last collection of the day is at 16:00, each order takes about an hour to pick and pack, so orders confirmed after 15:00 usually miss it, and there is no collection on Saturday or Sunday, so an order that misses Friday afternoon's collection sits in the stockroom until Monday. The current promise is counted from confirmation and assumes every order is handed over the same day, so it leaves no room for a night in the stockroom, let alone a weekend. The two conditions sit on two different branches, order confirmation and handover; the default drawing has no line joining them, so write it as a separate line beside the diagram</li>
+                    <li><strong>Choose a countermeasure for the hypothesis that has evidence behind it, and measure what actually needs to improve:</strong> Arrange an extra courier collection at 18:00 on Fridays, late enough to catch orders confirmed up to about 17:00; it is a small, reversible change, so try it for a month straight away. The promise can also be brought into line with the real schedule, for instance by stating that orders confirmed after 15:00 go out on the next collection, but that only makes the promise match reality; it does not get goods to customers any faster. So track two measures separately: time from order confirmation to the customer receiving the goods, and the rate of promises kept. Do not choose "pack faster", even though it was the first cause all three thought of, because by the classification in step 5, packing was the main delay point for only 2 of the 18 orders</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">September orders</th><th scope="col">Confirmed before 15:00</th><th scope="col">Confirmed after 15:00</th></tr></thead>
+                    <tbody>
+                        <tr><td>Friday</td><td>Late: 1 of 14 orders</td><td>Late: 9 of 11 orders</td></tr>
+                        <tr><td>Other days</td><td>Late: 4 of 73 orders</td><td>Late: 4 of 22 orders</td></tr>
+                    </tbody>
+                </table>
+                <p>In October, the shop tracks both measures. Most orders confirmed on Friday afternoon now go out that evening instead of sitting in the stockroom until Monday, and counted against the old promise, late deliveries are down to 6 of 125. The figure to compare with 18 of 120 has to be the one counted against the old promise, because the rate of promises kept also shifts with the new promise. The diagram does not solve this problem by itself; it helps organise the investigation so the countermeasure lands on the main delay point. For that to happen, the problem has to be measurable from the start, and the team has to test its hypotheses by comparing late orders with on-time ones before choosing a countermeasure. Stop at step three, and the countermeasure could easily be "pack faster", aimed at the main delay point of 2 of the 18 late orders.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Summary</h2>
+            <div class="summary-box">
+                <p><strong>Key Point:</strong> A fishbone diagram breaks the question "why" into branches of causes so that a whole team can lay out what might be causing a problem on one sheet of paper; it is cheap, needs no data, and is among the most used quality tools. But as drawn by default, every bone is the same thickness: a cause backed by evidence and a cause just thought of look identical, and the diagram does not record contribution or which two causes have to be present together. The easiest thing to miss is that being widely used is not the same as being proven effective, and that a number on a branch, such as the share of survey respondents who chose it, is not a measure of contribution to the fault either. So the trustworthy way to use it is to choose branches that follow the actual work, pick the few hypotheses most worth checking, and find the right kind of evidence for them, compared against cases without the fault, before choosing a countermeasure.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">References</h2>
+            <ol class="outline-list">
+                <li id="ref-1">Union of Japanese Scientists and Engineers. <em>A Parallel Chronology of Prof. Kaoru Ishikawa's Life and TQC in Japan</em>. A chronology compiled by JUSE itself, the source for the 1953 entry recording that Ishikawa devised the cause-and-effect diagram and applied it to the production process at Kawasaki Steel's Fukiai works. <a href="https://www.juse.jp/ishikawa/e/man/ParallelChronology_Ver2_150717.pdf" rel="noopener noreferrer" target="_blank">Read the PDF</a>.</li>
+                <li id="ref-2">McDermott, O., Antony, J., Sony, M., Rosa, A., Hickey, M., &amp; Grant, T. A. (2023). A study on Ishikawa's original basic tools of quality control in healthcare. <em>The TQM Journal</em>, 35(7), 1686-1705. An online survey of 168 healthcare professionals in Europe, the source for the cause-and-effect diagram being among the three most used tools, and for the 62% who had been trained and the 3% who believed the seven tools could solve more than 90% of problems; the scope is European healthcare and the data are self-reported. <a href="https://doi.org/10.1108/TQM-06-2022-0187" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-3">Antony, J., McDermott, O., Sony, M., Fernandes, M. M., &amp; Ribeiro, R. V. C. (2021). A study on the Ishikawa's original basic tools of quality control in South American companies: Results from a pilot survey and directions for further research. <em>The TQM Journal</em>, 33(8), 1770-1786. A pilot survey of 97 quality professionals at South American companies, the source for cause-and-effect analysis being among the three most used tools in both manufacturing and services, and for about one in five believing the seven tools could solve more than 80% of problems. <a href="https://doi.org/10.1108/TQM-01-2021-0004" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-4">Institute for Manufacturing, University of Cambridge. <em>TQM Tools</em>, cause and effect diagram entry. A tool description from a manufacturing research institute, the source for the three limits given in the Definition section: the diagram does not handle quantities, can become very complex, and makes interrelationships between causes difficult to show or prove. <a href="https://www.ifm.eng.cam.ac.uk/research/dstools/tqm-tools/" rel="noopener noreferrer" target="_blank">Read the original page</a>.</li>
+                <li id="ref-5">Art of Lean. <em>Ishikawa Diagram</em>, entry in the TPS Encyclopedia. A description from within the lean movement, the source for the set of branches being a starting framework rather than a fixed list, and for the main argument of the defence: the diagram generates hypotheses, not conclusions, and the causes selected have to be confirmed or eliminated through data collection, experimentation or direct observation. <a href="https://artoflean.com/reference/ishikawa-diagram/" rel="noopener noreferrer" target="_blank">Read the entry</a>.</li>
+                <li id="ref-6">Seong, S. M., Oh, H., Park, J. S., Bae, S. H., Nam, K. C., Park, S. Y., Kwon, B. S., &amp; Kim, B. H. (2025). Incidence and root cause analysis of near-miss events in medical device use errors in intensive care units using Ishikawa diagram. <em>Japan Journal of Nursing Science</em>, 22(4), e70024. An observational study at one Korean hospital, the source for the diagram's four branches, the conversion of sub-causes into a questionnaire for 58 nurses, and all the scores and percentages in the second example; the study tested no countermeasure. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12434650/" rel="noopener noreferrer" target="_blank">Read the full text</a>.</li>
+                <li id="ref-7">Kumah, A., &amp; Forkuo-Minka, A. O. (2023). Advancing staff safety: Assessment of quality improvement interventions in reducing needlestick injuries among staff at Nyaho Medical Centre. <em>Global Journal on Quality and Safety in Healthcare</em>, 6(2), 55-61. An improvement project at a single facility, the source for the five branches of causes, the seven changes, the 11 injuries in 2018 and 3 in 2021, and the limits the authors state themselves. A 2024 overview by the same lead author gives the 2021 figure as 2; this piece uses the original paper's 3. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10275633/" rel="noopener noreferrer" target="_blank">Read the full text</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

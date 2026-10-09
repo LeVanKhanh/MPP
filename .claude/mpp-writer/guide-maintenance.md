@@ -27,12 +27,15 @@ Trả lời đủ ba, theo thứ tự. Dừng ở câu nào cho kết quả "kh�
 |---|---|---|
 | Cụm từ, nhịp câu, dấu hiệu máy hoá | `voice-guide.md` | mục 4 |
 | Đặc điểm riêng của một thể loại | `voice-guide.md` | mục 1, 2 hoặc 3 |
-| Khung section của bài mục lục kiến thức | `catalog-series.md` | mục tương ứng, và checklist mục 7 |
+| Khung section của bài mục lục kiến thức, kể cả biến thể của một loại danh mục | `catalog-series.md` | mục tương ứng, và checklist mục 8 |
+| Quy ước chỉ đúng cho một series (tên gọi, ví dụ đã gỡ, quyết định riêng của tác giả) | `domain-ubiquitous-language.md` của thư mục series | mục Quy ước của series |
 | Template, class, đường dẫn, `page-meta`, menu | `html-menu-rules.md` | mục tương ứng, và checklist mục 8 |
 | Cách chấm, ngưỡng, benchmark | `review-rubric.md` | |
 | Quy trình của một lượt đọc bài | lens tương ứng trong `lenses/` | |
 | Quy trình vòng lặp, luật hỏi, phân loại A/B | `refine-loop.md` | |
 | Việc chỉ thuộc về một mode | `.claude/commands/mpp-writer.md` | mục của mode đó |
+
+**Không tạo file hướng dẫn viết riêng trong thư mục series.** Thư mục series chỉ có `domain-ubiquitous-language.md`; mọi luật viết nằm trong `.claude/mpp-writer/`. Hai nguồn hướng dẫn cho cùng một việc sẽ lệch nhau ngay lượt sửa đầu tiên.
 
 Nếu một bài học không rơi gọn vào ô nào, đó thường là dấu hiệu nó chưa được diễn đạt đủ cụ thể. Viết lại cho cụ thể hơn trước khi tìm chỗ đặt.
 

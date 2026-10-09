@@ -529,6 +529,13 @@ var mainMenu = [
                         subItems: [],
                     },
                     {
+                        title: "Ishikawa Diagrams (Fishbone)",
+                        route: "pages/reading-studying/management-tools-and-techniques/05-ishikawa-diagrams-fishbone.html",
+                        hash: "#/ishikawa-diagrams-fishbone",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Gantt Charts",
                         route: "pages/reading-studying/management-tools-and-techniques/12-gantt-charts.html",
                         hash: "#/gantt-charts",

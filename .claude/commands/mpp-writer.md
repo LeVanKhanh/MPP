@@ -16,7 +16,7 @@ Yêu cầu người dùng: **$ARGUMENTS**
    - `.claude/mpp-writer/refine-loop.md` - giao thức vòng lặp review → sửa (đọc khi mode là `review`, `refine` hoặc `feedback`)
    - `.claude/mpp-writer/guide-maintenance.md` - luật sửa chính bộ hướng dẫn (đọc khi mode là `feedback`, hoặc khi định đề xuất đổi một file quy tắc)
    - `.claude/mpp-writer/ubiquitous-language.md` - cách dùng và cách nuôi file từ điển của từng series (đọc khi mode là `draft`, `refine`, `feedback` hoặc `translate`, tức mọi mode có ghi file nội dung)
-   - `.claude/mpp-writer/catalog-series.md` - khung sáu section của bài mục lục kiến thức (đọc khi thể loại ở bước 3 là mục lục, ở mọi mode)
+   - `.claude/mpp-writer/catalog-series.md` - khung trang mục và trang tổng quan của bài mục lục kiến thức, gồm biến thể danh mục lỗi tư duy và danh mục công cụ (đọc khi thể loại ở bước 3 là mục lục, ở mọi mode)
 2. Xác định **mode** từ yêu cầu. Nếu người dùng không nói rõ, tự suy ra:
    - Chỉ có chủ đề, chưa có nội dung → `outline`
    - Có nội dung thô hoặc outline đã duyệt → `draft`
@@ -80,7 +80,7 @@ Lens dùng ở mode này: `develop-argument` → `structure-essay` → `research
    - Bài có tự mâu thuẫn với bài nào đã đăng trong repo không? Grep menu để kiểm tra các bài cùng chủ đề.
 3. **Kiểm tra trùng lặp**: grep `main-menu-vn.js` xem chủ đề đã có bài chưa. Nếu có, đề xuất viết tiếp/đối thoại với bài cũ thay vì viết lại.
 4. **Đề xuất outline** theo `structure-essay`, gồm:
-   - *Nếu thể loại là mục lục:* bỏ qua toàn bộ danh sách dưới đây. Khung đã chốt ở `catalog-series.md` mục 3 (trang mục) hoặc mục 4 (trang tổng quan). Việc của outline lúc này là điền vào khung đó: phép đối chiếu của bảng, ba ví dụ ở ba tầng kèm nguồn dự kiến, nghiên cứu chính, cơ chế và bốn chiến lược suy ra từ nó. Vẫn giữ nguyên bước 2 phản biện và bước 3 kiểm trùng lặp ở trên.
+   - *Nếu thể loại là mục lục:* bỏ qua toàn bộ danh sách dưới đây. Khung đã chốt ở `catalog-series.md` mục 3 (trang mục) hoặc mục 4 (trang tổng quan). Việc của outline lúc này là điền vào khung đó: phép đối chiếu của bảng, một tới ba ví dụ kèm nguồn dự kiến, nghiên cứu chính, cơ chế và bốn chiến lược suy ra từ nó, và với danh mục công cụ thì thêm tình huống áp dụng. Vẫn giữ nguyên bước 2 phản biện và bước 3 kiểm trùng lặp ở trên.
    - Tiêu đề (2-3 phương án) và subtitle
    - Câu mở: một tình huống cụ thể, một trích dẫn, hoặc một nghịch lý quan sát được. Không mở bằng định nghĩa từ điển, không mở bằng "Trong thế giới ngày nay".
    - 4-7 section chính, mỗi section ghi rõ: luận điểm của nó, bằng chứng dự kiến, và câu hỏi nó để lại cho section sau.

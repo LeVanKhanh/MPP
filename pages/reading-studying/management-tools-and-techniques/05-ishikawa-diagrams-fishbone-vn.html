@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sơ Đồ Xương Cá Ishikawa - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="Sơ đồ xương cá chia câu hỏi vì sao thành các nhánh nguyên nhân và vẽ mọi nhánh dày bằng nhau. Bài giải thích công cụ là gì, vì sao cần, giới hạn của nó, hai ca thật dùng nó cùng số liệu, và từng bước áp nó vào một tình huống cụ thể."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Sơ Đồ Xương Cá Ishikawa</h1>
+            <p class="page-subtitle">Mọi cái xương trên hình đều dày bằng nhau, còn các nguyên nhân thì không</p>
+            <p class="page-meta">Cập nhật: <time datetime="2026-10-09">9 Tháng 10, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Định Nghĩa</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Sơ Đồ Xương Cá Là Gì</h3>
+                <p>Sơ đồ xương cá, còn gọi là sơ đồ Ishikawa hay sơ đồ nhân quả, là một cách bày các nguyên nhân có thể của một vấn đề lên giấy: vấn đề nằm trong cái ô ở đầu bên phải, một đường ngang chạy tới đó làm xương sống, và các đường chéo cắm vào xương sống là những nhóm nguyên nhân, chẳng hạn Con người, Phương pháp, Đo lường, Hệ thống, Dữ liệu vào, Môi trường. Kaoru Ishikawa dựng ra hình này năm 1953 và áp dụng nó vào quy trình sản xuất tại nhà máy Fukiai của Kawasaki Steel. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Sơ đồ xương cá cho vấn đề hoá đơn phải xuất lại mười hai lần một tuần, với sáu nhánh vẽ cùng một độ dày, kèm một hàng cho thấy sáu nhánh ấy một tuần sau, xếp theo mức bằng chứng, trong đó chỉ nhánh Hệ thống là khối đặc vì đã đối chiếu được với dữ liệu, và một khối rỗng là giả thuyết mới chưa kiểm."
+                        viewBox="0 0 1180 620">
+                        <defs>
+                            <marker id="fish-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <text class="small note" x="20" y="40">Hình vẽ trong buổi họp: sáu nhánh, sáu nét kẻ dày bằng nhau</text>
+
+                        <path class="arrow" d="M60 280 H926" marker-end="url(#fish-arrow)"></path>
+                        <rect class="node" x="934" y="238" width="214" height="84" rx="10"></rect>
+                        <text x="1041" y="264">Hoá đơn phải xuất lại</text>
+                        <text class="small" x="1041" y="292">12 lần một tuần, từ tháng 6</text>
+
+                        <path class="arrow" d="M170 130 L300 280"></path>
+                        <text x="170" y="110">Con người</text>
+                        <text class="small" x="195" y="170" text-anchor="end">chưa thuộc bảng giá</text>
+                        <text class="small" x="236" y="218" text-anchor="end">quá tải cuối tháng</text>
+
+                        <path class="arrow" d="M450 130 L580 280"></path>
+                        <text x="450" y="110">Phương pháp</text>
+                        <text class="small" x="475" y="170" text-anchor="end">thiếu bước đối chiếu</text>
+                        <text class="small" x="516" y="218" text-anchor="end">mỗi người làm một kiểu</text>
+
+                        <path class="arrow" d="M730 130 L860 280"></path>
+                        <text x="730" y="110">Đo lường</text>
+                        <text class="small" x="755" y="170" text-anchor="end">không ai đếm số lần</text>
+                        <text class="small" x="796" y="218" text-anchor="end">báo cáo chỉ có tổng tiền</text>
+
+                        <path class="arrow" d="M170 430 L300 280"></path>
+                        <text x="170" y="452">Hệ thống</text>
+                        <text class="small" x="236" y="342" text-anchor="end">không cảnh báo khi lệch</text>
+                        <text class="small" x="195" y="390" text-anchor="end">CRM lệch bảng đã duyệt</text>
+
+                        <path class="arrow" d="M450 430 L580 280"></path>
+                        <text x="450" y="452">Dữ liệu vào</text>
+                        <text class="small" x="516" y="342" text-anchor="end">khách đổi địa chỉ</text>
+                        <text class="small" x="475" y="390" text-anchor="end">mã số thuế nhập tay</text>
+
+                        <path class="arrow" d="M730 430 L860 280"></path>
+                        <text x="730" y="452">Môi trường</text>
+                        <text class="small" x="796" y="342" text-anchor="end">hai hệ thống song song</text>
+                        <text class="small" x="755" y="390" text-anchor="end">dồn chốt sổ 3 ngày cuối</text>
+
+                        <path class="axis" d="M20 486 H1160"></path>
+                        <text class="small note" x="20" y="512">Một tuần sau, khi đã đối chiếu CRM: cùng sáu nhánh, xếp theo mức bằng chứng</text>
+
+                        <rect class="bar" x="60" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="125" y="553">Hệ thống</text>
+                        <rect class="band" x="205" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="270" y="553">Con người</text>
+                        <rect class="band" x="350" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="415" y="553">Phương pháp</text>
+                        <rect class="band" x="495" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="560" y="553">Đo lường</text>
+                        <rect class="band" x="640" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="705" y="553">Dữ liệu vào</text>
+                        <rect class="band" x="785" y="530" width="130" height="46" rx="8"></rect>
+                        <text class="small" x="850" y="553">Môi trường</text>
+
+                        <path class="edge" d="M60 522 H190"></path>
+                        <text class="small" x="125" y="598">đã có số liệu</text>
+                        <path class="edge-ghost" d="M205 522 H915"></path>
+                        <text class="small" x="560" y="598">vẫn mới là ý kiến trong buổi họp</text>
+
+                        <rect class="ghost" x="934" y="530" width="214" height="46" rx="8"></rect>
+                        <text class="small" x="1041" y="553">giá riêng theo hợp đồng</text>
+                        <text class="small alert" x="1041" y="598">giả thuyết mới, chưa kiểm</text>
+                    </svg>
+                    <figcaption>
+                        <strong>Hình 1.</strong> Cùng một vấn đề ở hai thời điểm. Phần trên là thứ buổi họp tạo ra: sáu
+                        nhánh, mười hai nguyên nhân, và theo cách vẽ mặc định thì không nét kẻ nào cho biết nguyên nhân
+                        nào đã được kiểm. Phần dưới là sáu nhánh ấy một tuần sau, khi đã có người đối chiếu bảng giá trong
+                        CRM: một nhánh có dữ liệu đỡ, năm nhánh vẫn là ý kiến. Đây là mức bằng chứng, chưa phải mức đóng
+                        góp vào lỗi. Khối rỗng bên phải là một giả thuyết mới nảy ra khi điều tra: hợp đồng bán hàng
+                        có giá riêng cho từng khách, nên hoá đơn xuất theo bảng giá chung có thể phải xuất lại. Nó chưa được
+                        kiểm, và khó xếp vào nhánh nào trong sáu nhánh đã kẻ sẵn vì nó nằm ở phòng kinh doanh, ngoài quy
+                        trình xuất hoá đơn.
+                    </figcaption>
+                </figure>
+
+                <!-- YouTube Video Container -->
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                    <iframe
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        src="https://www.youtube.com/embed/JbRx5pw-efg"
+                        title="Fishbone Diagram Explained with Example"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Tại Sao Ta Cần Dùng Nó</h3>
+                <p>Khi một lỗi kéo dài nhiều tuần mà chưa tìm ra căn nguyên, mỗi người trong phòng thường chỉ thấy phần việc của mình, và cuộc bàn bạc dễ xoay quanh vài nguyên nhân quen thuộc nhất. Hỏi chung "vì sao" thì quá rộng để ai trả lời được. Sơ đồ xương cá chia câu hỏi ấy thành những câu hỏi hẹp, kiểu "riêng phần đo lường thì có gì đáng nói", để ai cũng có chỗ bám mà góp ý, và gom kiến thức nằm rải rác ở nhiều bộ phận lên cùng một mặt giấy. Việc ấy rẻ: không cần dữ liệu, không cần phần mềm, chỉ cần một tấm bảng và một buổi họp. Và nó được dùng rộng: trong các khảo sát người làm y tế ở châu Âu và người làm chất lượng ở doanh nghiệp Nam Mỹ, nó nằm trong nhóm ba công cụ được dùng nhiều nhất. <sup><a href="#ref-2">[2]</a></sup> <sup><a href="#ref-3">[3]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Giới Hạn Của Công Cụ Này Là Gì</h3>
+                <p>Sơ đồ chỉ liệt kê nguyên nhân <em>có thể</em>. Theo cách vẽ mặc định, mọi cái xương đều dày bằng nhau, nên một nguyên nhân đã có số liệu và một nguyên nhân vừa nghĩ ra trong buổi họp trông giống hệt nhau, như Hình 1 ở trên cho thấy. Bản mô tả của Viện Sản xuất thuộc Đại học Cambridge ghi thêm rằng hình này không xử lý được lượng, dễ trở nên rất phức tạp, và khó chỉ ra hoặc chứng minh các quan hệ tương hỗ giữa các nguyên nhân. <sup><a href="#ref-4">[4]</a></sup> Vì vậy sơ đồ giúp cả phòng liệt kê được nhiều điều có thể là nguyên nhân, nhưng tự nó không cho biết nguyên nhân nào đã được kiểm, nguyên nhân nào đóng góp nhiều hơn, hay hai nguyên nhân nào phải cùng có mặt thì lỗi mới xảy ra. Người vẽ có thể tự thêm màu, ký hiệu hay ghi chú để đánh dấu những điều đó; bản thân bộ nhánh cũng chỉ là một khung khởi đầu, không cố định. <sup><a href="#ref-5">[5]</a></sup> Chỉ là mẫu vẽ có sẵn không nhắc ai làm vậy.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Điều sơ đồ ghi lại được</th><th scope="col">Điều cách vẽ mặc định không ghi</th></tr></thead>
+                    <tbody>
+                        <tr><td>Sáu nhóm nguyên nhân mà cả phòng đã nghĩ tới</td><td>Nhóm nào không được kẻ thành nhánh thì thường không ai nêu</td></tr>
+                        <tr><td>Bốn nguyên nhân cùng nằm trên nhánh Con người</td><td>Nguyên nhân nào trong bốn cái đó đóng góp nhiều hơn</td></tr>
+                        <tr><td>Một nguyên nhân đã có số liệu, một nguyên nhân vừa nghĩ ra, cùng một loại nét kẻ</td><td>Cái nào đã kiểm và cái nào chưa</td></tr>
+                        <tr><td>Hai nguyên nhân nằm ở hai nhánh khác nhau</td><td>Lỗi chỉ xảy ra khi cả hai cùng có mặt</td></tr>
+                        <tr><td>Tên một vị trí công việc trên nhánh Con người</td><td>Điều kiện nào khiến người ở vị trí đó làm như vậy</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Ví Dụ</h2>
+            <p class="intro-text">Ba ví dụ dưới đây đi từ một buổi họp quen thuộc, nơi sơ đồ được vẽ đúng luật mà vẫn dẫn tới một đối sách chưa ai kiểm, tới hai nơi đã dùng nó cùng với số liệu: một khoa hồi sức cho người trong cuộc chấm điểm từng nhánh để biết nên điều tra đâu trước, và một trung tâm y tế biến từng nhánh thành một thay đổi rồi đếm lại số ca.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Nhánh Con Người Đầy Trước Tiên</h3>
+                <p>Tình huống minh hoạ: một công ty phân phối nhỏ thấy hoá đơn phải xuất lại 12 lần một tuần, trong khi đầu năm chỉ 3 lần. Trưởng phòng kế toán gọi cả nhóm vào phòng họp, kẻ một mũi tên ngang lên bảng, ghi vấn đề vào ô ở đầu cá, rồi kẻ sáu nhánh theo mẫu quen: Con người, Phương pháp, Đo lường, Hệ thống, Dữ liệu vào, Môi trường.</p>
+                <p>Nhánh đầy nhanh nhất là nhánh Con người. Không phải vì nguyên nhân thật hay nằm ở đó; nguyên nhân nằm đâu thì buổi họp chưa biết, và đó chính là lý do nó đang họp. Nhánh ấy đầy trước vì ai trong phòng cũng có sẵn cái để nói: ai cũng từng thấy một đồng nghiệp làm vội cho xong, ai cũng nhớ một hôm cuối tháng quá tải. Còn để nói được một câu về nhánh Hệ thống thì phải có người mở bảng giá trong CRM ra so với bảng giá đã duyệt, và việc đó thường phải làm ngoài buổi họp.</p>
+                <p>Hai mươi phút sau, hình đã kín. Nhánh Con người có bốn nguyên nhân, nhánh Phương pháp có ba, nhánh Hệ thống có một câu ngắn kèm dấu hỏi. Đối sách chốt cuối buổi là đào tạo lại bộ phận và nhắc quy định trong giao ban. Không ai làm sai bước vẽ nào. Chỗ hỏng nằm ở cú nhảy thẳng từ danh sách nguyên nhân có thể sang đối sách khi chưa nhánh nào được kiểm: tờ giấy ghi lại rất trung thực những gì buổi họp đã biết, chứ chưa nói được vấn đề đến từ đâu. Phần trên của Hình 1 ở phần Định Nghĩa là chính tờ giấy ấy. Phần dưới là nó một tuần sau, khi kế toán trưởng mở CRM ra so với bảng giá đã duyệt và thấy hai bảng lệch nhau: nhánh đầu tiên có dữ liệu đỡ lại là nhánh mà buổi họp để ngỏ bằng một dấu hỏi.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Năm Mươi Tám Điều Dưỡng Chấm Điểm Từng Cái Xương</h3>
+                <p>Năm 2025, nhóm của Seong ở Bệnh viện Ilsan thuộc Đại học Dongguk, Hàn Quốc, công bố trên <em>Japan Journal of Nursing Science</em> một nghiên cứu về những lần điều dưỡng hồi sức suýt gây sự cố khi dùng thiết bị y tế: máy đo SpO2, máy điện tim, bộ dây truyền dịch, bơm tiêm truyền và giường bệnh. Một hội đồng sáu người dựng sơ đồ xương cá với đầu cá là các sự cố suýt xảy ra, và bốn nhánh: môi trường làm việc, yếu tố cá nhân, khả năng sử dụng thiết bị, giao tiếp và chương trình đào tạo trong khoa. Mỗi nhánh có sáu nguyên nhân con. Rồi họ làm thêm một việc mà buổi họp thường bỏ qua: biến từng nguyên nhân con thành một câu hỏi, và cho 58 điều dưỡng ở hai khoa hồi sức nội và ngoại tự chọn những nguyên nhân đúng với mình. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>Nhờ vậy các nhánh so được với nhau, theo mức người trong cuộc cho là có liên quan. Trên thang 6 điểm, nhánh môi trường làm việc cao nhất với 1,67 điểm, tiếp theo là yếu tố cá nhân 1,24, khả năng sử dụng thiết bị 0,96, và giao tiếp, đào tạo 0,62. Nguyên nhân đứng đầu nhánh môi trường làm việc là phải phụ trách quá nhiều bệnh nhân (54,5%); đứng đầu nhánh thiết bị là máy hay trục trặc (41,4%); đứng đầu nhánh cá nhân là mệt mỏi kéo dài cả thể chất lẫn tinh thần (38,3%). Thiếu chương trình đào tạo, thứ một buổi họp hay chọn làm đối sách đầu tiên, đứng đầu nhánh có điểm thấp nhất, ở mức 22,1%. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>Đây là cách dùng đáng học: lượng hoá ý kiến của chính người trong cuộc biến một danh sách ngang hàng thành một thứ tự ưu tiên để điều tra tiếp. Nhưng điểm khảo sát chưa phải mức đóng góp vào sự cố: nhánh được chọn nhiều nhất chưa chắc gây ra nhiều sự cố nhất, và sửa nó chưa chắc giảm sự cố nhiều nhất. Chính nhóm tác giả cũng ghi các giới hạn: một bệnh viện, số sự cố dựa vào trí nhớ của người trả lời, và nghiên cứu chưa thử đối sách nào.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Năm Cái Xương Ở Một Trung Tâm Y Tế Ghana, Mười Một Ca Còn Ba</h3>
+                <p>Năm 2018, Nyaho Medical Centre, một trung tâm y tế đa khoa ở Ghana, ghi nhận 11 ca nhân viên bị kim tiêm đâm. Sau nhiều lần xem lại từng ca, nhóm cải tiến dựng sơ đồ xương cá, và bộ nhánh không lấy từ mẫu có sẵn mà mọc ra từ chính các ca đó. Nhân sự: ca trực và tỷ lệ điều dưỡng trên bệnh nhân chưa hợp lý. Cơ sở vật chất: không có hộp đựng vật sắc nhọn gần giường, điều dưỡng phải đi một quãng mới tới. Đào tạo: chưa có buổi hướng dẫn huỷ kim an toàn, ít người biết là phải báo cáo. Quy trình: không có hệ thống báo cáo, không có chỉ số đo định kỳ. Hành vi: vẫn có người đậy nắp kim lại bằng tay. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p>Từ đó nhóm đưa ra bảy thay đổi: viết và rà lại quy định, quy trình chuẩn kèm theo dõi tuân thủ; đặt chỉ số đo và báo cáo các ca; đào tạo nhân viên; xây văn hoá an toàn; đưa tỷ lệ một điều dưỡng cho hai bệnh nhân vào ca trực; chạy chiến dịch không đậy nắp kim; và đặt hộp đựng vật sắc nhọn ngay gần chỗ làm. Bài báo không ghép từng thay đổi với từng nhánh, nhưng đặt hai danh sách cạnh nhau thì nhánh nào cũng có ít nhất một thay đổi nhắm vào nó. Năm 2021, số ca ghi nhận còn 3. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p>Đây là dự án cải tiến tại một cơ sở, không có nhóm so sánh, và bảy thay đổi chạy cùng lúc nên không tách được phần đóng góp của từng cái, kể cả phần của tờ sơ đồ. Nhóm tác giả cũng ghi rằng họ không theo dõi được những ca xảy ra mà không báo; ngược lại, theo họ, hệ thống báo cáo sự cố mới làm văn hoá báo cáo tăng lên, nên khó giải thích mức giảm chỉ bằng việc người ta báo ít đi.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Một Vài Nghiên Cứu Về Sơ Đồ Xương Cá Ishikawa</h2>
+            <p class="intro-text">Trong phạm vi tìm kiếm của bài này, chưa thấy một thí nghiệm nào đo xem nhóm dùng sơ đồ xương cá có tìm ra nguyên nhân đúng hơn nhóm không dùng. Thứ đã được đo là mức độ sử dụng: công cụ này được dùng rộng tới đâu, và người làm nghề tin bộ công cụ mà nó thuộc về giải được bao nhiêu phần vấn đề.</p>
+            <div class="sub-section">
+                <p><strong>Nghiên cứu:</strong> Năm 2023, nhóm của Olivia McDermott và Jiju Antony công bố trên <em>The TQM Journal</em> một khảo sát trực tuyến với 168 người làm y tế ở các cơ sở châu Âu, chọn theo cách lấy mẫu phân tầng ngẫu nhiên. Họ muốn kiểm một tuyên bố của chính Ishikawa: 95% vấn đề trong quy trình giải được bằng bảy công cụ kiểm soát chất lượng cơ bản, mà sơ đồ nhân quả là một trong số đó. <sup><a href="#ref-2">[2]</a></sup> Hai năm trước, cùng nhóm đã đặt đúng câu hỏi ấy cho 97 người làm chất lượng ở các doanh nghiệp sản xuất và dịch vụ Nam Mỹ, trong một khảo sát thử nghiệm. <sup><a href="#ref-3">[3]</a></sup></p>
+                <p><strong>Kết quả:</strong> Ở châu Âu, sơ đồ nhân quả nằm trong ba công cụ được dùng nhiều nhất, cùng biểu đồ tần suất và phiếu kiểm tra, và được dùng nhiều nhất ở các khoa phòng và khối hành chính. 62% người trả lời từng được đào tạo về bảy công cụ, nhưng chỉ 3% tin bảy công cụ giải được trên 90% vấn đề chất lượng. <sup><a href="#ref-2">[2]</a></sup> Ở Nam Mỹ, phân tích nhân quả cũng nằm trong ba công cụ dùng nhiều nhất, cùng phân tích Pareto và biểu đồ tần suất, ở cả khối sản xuất lẫn dịch vụ; khoảng một phần năm người trả lời tin bảy công cụ giải được trên 80% vấn đề. <sup><a href="#ref-3">[3]</a></sup></p>
+                <p><strong>Kết luận:</strong> Hai khảo sát cho thấy công cụ này có tầm phủ rộng: ở hai châu lục, trong cả y tế, sản xuất và dịch vụ, nó đều nằm trong nhóm được dùng nhiều nhất. Chúng không trực tiếp đo hiệu quả giải quyết vấn đề: đây là người làm nghề tự báo cáo việc dùng và niềm tin của mình, không phải phép đo xem vấn đề có được giải hay không. Con số 3% và một phần năm nói về cả bộ bảy công cụ, không riêng sơ đồ xương cá. Mẫu nhỏ, mỗi khảo sát giới hạn ở một vùng, và khảo sát Nam Mỹ chỉ là bản thử nghiệm.</p>
+                <p><strong>Phản biện:</strong> Phe bênh có hai lý lẽ tốt. Thứ nhất, hỏi "giải được bao nhiêu phần vấn đề" là đòi ở công cụ một việc nó không hứa: sơ đồ nêu ra nguyên nhân <em>có thể</em>, không xác nhận nguyên nhân nào, và các nguyên nhân được chọn phải được xác nhận hoặc loại bỏ bằng thu số liệu, thử nghiệm hoặc quan sát trực tiếp. <sup><a href="#ref-5">[5]</a></sup> Giá trị của nó, nếu có, nằm ở chỗ mở đường cho bước thu số liệu ấy. Thứ hai, một công cụ rẻ, không cần dữ liệu, mà vẫn được dùng rộng như vậy sau bảy mươi năm thì chính sức sống ấy cho thấy người làm nghề thấy nó có ích. Bài nhận trọn vế thứ nhất. Vế thứ hai chỉ nhận một nửa: được dùng rộng nói lên rằng nó dễ dùng và hợp với cách các nhóm làm việc, nhưng sức lan của một công cụ và độ chắc của bằng chứng đứng sau nó là hai chuyện khác nhau.</p>
+                <p><strong>Vì sao điều này hữu ích:</strong> Nó cho biết nên kỳ vọng gì khi cầm bút vẽ. Sơ đồ xương cá rất có thể sẽ có mặt trong buổi phân tích nguyên nhân tiếp theo bạn tham gia, vì nó là công cụ phổ biến; nhưng thứ nó cho ra là một danh sách giả thuyết, chưa phải kết luận. Câu nên tự hỏi khi buổi họp kết thúc: giả thuyết nào đáng kiểm trước, bằng chứng gì sẽ xác nhận hoặc bác nó, và ai sẽ đi lấy.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">Cách Áp Dụng</h2>
+            <p class="intro-text">Sơ đồ xương cá hoạt động bằng cách phân phối sự chú ý theo một bộ nhánh chọn trước và vẽ mọi nhánh dày bằng nhau, nên dùng nó hiệu quả nghĩa là chủ động can thiệp vào đúng hai chỗ đó: bộ nhánh, và bằng chứng mà cách vẽ mặc định không ghi. Nó mạnh nhất khi vấn đề đủ rõ để đặt được thành một câu, khi trong phòng có người của các bộ phận khác nhau, và khi việc vẽ chỉ là chặng đầu của một lần đi lấy số liệu.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Viết đề bài ở đầu cá thành một câu đo được, trước khi kẻ nhánh nào:</strong> "Hoá đơn phải xuất lại 12 lần một tuần, tăng từ 3 lần, bắt đầu từ tháng 6" là một đề bài; "vấn đề hoá đơn" thì không. Mọi nhánh về sau chỉ sắc được đúng bằng câu này, vì với một đề bài mờ, nhánh nào nghe cũng có lý mà không nhánh nào kiểm được</li>
+                    <li><strong>Chọn bộ nhánh theo việc thật, và khi quy trình có các bước rõ ràng thì đặt chính các bước đó lên xương sống:</strong> Đây là kiểu phân loại theo quy trình trong sách của Ishikawa, và nó giảm được cái bẫy lớn nhất của bộ nhánh cố định: khi xương sống là chuỗi bước thật, phần lớn nguyên nhân mọc ra từ đúng bước sinh ra nó. Nhưng những thứ tác động lên nhiều bước cùng lúc, như chính sách, điều khoản hợp đồng hay cách tính thưởng, vẫn có thể nằm ngoài mọi bước, nên dành riêng cho chúng một chỗ bên cạnh hình</li>
+                    <li><strong>Coi mỗi nguyên nhân là một giả thuyết, ghi trạng thái của nó, rồi chỉ kiểm trước vài giả thuyết đáng kiểm nhất:</strong> Bốn trạng thái là đủ dùng: chưa kiểm; có bằng chứng hỗ trợ, tức đáng điều tra tiếp; được hỗ trợ qua kiểm cơ chế hoặc thử thay đổi, tức đủ cơ sở để hành động; không được hỗ trợ trong phạm vi đã kiểm, tức tạm loại hoặc sửa lại giả thuyết. Cách vẽ mặc định không phân biệt các trạng thái này, nên phải tự ghi bằng ký hiệu hoặc màu. Thấy một yếu tố mới chỉ cho biết nó tồn tại: hai bảng giá lệch nhau chưa chứng minh chúng làm hoá đơn phải xuất lại. Tỷ lệ khảo sát như ở khoa hồi sức trong ví dụ thứ hai cũng chỉ cho biết người trong cuộc nghĩ gì. Không cần kiểm hết mọi nhánh trước khi làm gì đó; với một thay đổi nhỏ, rẻ và đảo ngược được, có thể thử luôn rồi đo</li>
+                    <li><strong>Ghi riêng những điều kiện phải cùng có mặt thì lỗi mới xảy ra:</strong> Khi lỗi chỉ xảy ra lúc bảng giá lệch <em>và</em> đúng đợt cao điểm cuối tháng, cách vẽ mặc định không có nét nối hai nhánh lại, đúng giới hạn về quan hệ tương hỗ đã nêu ở phần Định Nghĩa. <sup><a href="#ref-4">[4]</a></sup> Cách hiển nhiên là thêm nhánh và thêm nhánh con thì không cứu được, vì cái thiếu ở đây không phải chỗ ghi mà là đường nối giữa các nhánh. Việc làm được là ghi điều kiện đồng thời ấy thành một dòng riêng bên cạnh hình, rồi kiểm nó như một giả thuyết độc lập</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Tình Huống Áp Dụng</h2>
+            <p class="intro-text">Một cửa hàng đồ gia dụng bán online có ba người: chủ cửa hàng, một người trực tin nhắn và chốt đơn, một người đóng gói. Tháng 9 có 18 trên 120 đơn tới tay khách muộn hơn ngày đã hẹn, trong khi tháng 7 chỉ có 4 trên 110, và các đánh giá một sao bắt đầu nhắc tới chuyện giao chậm. Các con số trong tình huống này là số minh hoạ.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Viết đầu cá thành một câu đo được:</strong> "Tháng 9 có 18/120 đơn giao muộn hơn ngày hẹn, tháng 7 là 4/110". Không viết "giao hàng chậm", vì câu đó không cho biết tới lúc nào thì coi là đã sửa xong</li>
+                    <li><strong>Kẻ xương sống theo đường đi thật của một đơn hàng:</strong> Thay vì sáu nhánh mẫu, cả ba kẻ năm nhánh theo đúng các bước: nhận tin nhắn, chốt đơn, đóng gói, bàn giao cho bên vận chuyển, giao tới khách. Phần lớn nguyên nhân sẽ có chỗ đặt vì chúng xảy ra ở một bước cụ thể; thứ tác động lên cả chuỗi, như một đợt khuyến mãi làm số đơn tăng vọt, thì ghi riêng bên cạnh hình</li>
+                    <li><strong>Mỗi người tự viết nguyên nhân ra giấy nhớ trước, rồi mới dán lên hình:</strong> Làm vậy để ý của chủ cửa hàng không đặt khung cho hai người còn lại. Sau mười lăm phút, hình có chín nguyên nhân, trong đó có "đóng gói chậm vì hàng để lộn xộn" và "bên vận chuyển lấy hàng giờ giấc thất thường"</li>
+                    <li><strong>Chọn giả thuyết để kiểm trước:</strong> Chưa nguyên nhân nào có dữ liệu. Năm cái kiểm được ngay trong tuần bằng lịch sử đơn hàng có sẵn; bốn cái còn lại mới là ý kiến, đánh dấu riêng để không ai lấy chúng làm căn cứ chọn đối sách</li>
+                    <li><strong>Lấy số liệu cho cả đơn trễ lẫn đơn đúng hẹn:</strong> Ghi giờ của từng bước cho cả 120 đơn tháng 9, không chỉ 18 đơn trễ, và với mỗi đơn trễ, ghi lại điểm chậm chính, tức bước mất nhiều thời gian nhất, kèm ghi chú nếu đơn còn chậm ở bước khác. Theo cách phân loại này, 13 đơn có điểm chậm chính là lỡ chuyến lấy hàng, 2 đơn là đóng gói, 3 đơn là chặng giao; cả 13 đơn lỡ chuyến đều chốt sau 15 giờ. Nhìn riêng đơn trễ thì chưa đủ, vì trong 102 đơn đúng hẹn cũng có 20 đơn chốt sau 15 giờ. Đặt cạnh nhau: đơn chốt sau 15 giờ trễ 13 trên 33, đơn chốt trước đó trễ 5 trên 87</li>
+                    <li><strong>Chia theo hai điều kiện cùng lúc, rồi kiểm lịch lấy hàng thật:</strong> Chia 120 đơn theo giờ chốt và theo ngày trong tuần, như bảng ngay sau các bước. Đơn chốt sau 15 giờ ngày thứ Sáu trễ 9 trên 11, trong khi chốt sau 15 giờ ngày khác chỉ trễ 4 trên 22. Lịch của bên vận chuyển và nhịp làm việc của cửa hàng giải thích chỗ chênh: chuyến lấy hàng cuối ngày lúc 16 giờ, mỗi đơn cần khoảng một giờ để soạn và đóng gói nên đơn chốt sau 15 giờ thường lỡ chuyến, và không có chuyến thứ Bảy, Chủ nhật, nên đơn lỡ chuyến chiều thứ Sáu nằm kho tới thứ Hai. Lời hẹn hiện tại tính từ lúc chốt đơn và mặc định đơn được bàn giao ngay trong ngày, nên không chừa chỗ cho một đêm nằm kho, càng không chừa chỗ cho hai ngày cuối tuần. Hai điều kiện nằm ở hai nhánh khác nhau, chốt đơn và bàn giao; cách vẽ mặc định không có nét nối chúng, nên ghi thành một dòng bên cạnh hình</li>
+                    <li><strong>Chọn đối sách cho giả thuyết đã có bằng chứng đỡ, và đo đúng thứ cần cải thiện:</strong> Hẹn bên vận chuyển thêm một chuyến lấy hàng lúc 18 giờ thứ Sáu, đủ muộn để kịp các đơn chốt tới khoảng 17 giờ; đây là thay đổi nhỏ, đảo ngược được, nên thử ngay một tháng. Có thể sửa lời hẹn cho khớp lịch thật, chẳng hạn ghi rằng đơn chốt sau 15 giờ sẽ đi vào chuyến lấy hàng kế tiếp, nhưng việc ấy chỉ làm lời hẹn khớp với thực tế, không làm hàng tới nhanh hơn. Vì vậy theo dõi riêng hai chỉ số: thời gian từ lúc chốt đơn tới lúc khách nhận hàng, và tỷ lệ giữ đúng lời hẹn. Không chọn "đóng gói nhanh hơn", dù đó là nguyên nhân cả ba nghĩ tới đầu tiên, vì theo cách phân loại ở bước 5, đóng gói chỉ là điểm chậm chính của 2 trong 18 đơn</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Đơn tháng 9</th><th scope="col">Chốt trước 15 giờ</th><th scope="col">Chốt sau 15 giờ</th></tr></thead>
+                    <tbody>
+                        <tr><td>Thứ Sáu</td><td>Trễ 1 trên 14 đơn</td><td>Trễ 9 trên 11 đơn</td></tr>
+                        <tr><td>Ngày khác</td><td>Trễ 4 trên 73 đơn</td><td>Trễ 4 trên 22 đơn</td></tr>
+                    </tbody>
+                </table>
+                <p>Tháng 10, cửa hàng theo dõi cả hai chỉ số. Phần lớn đơn chốt chiều thứ Sáu đi ngay trong tối hôm đó thay vì nằm kho tới thứ Hai, và đếm theo lời hẹn cũ, số đơn giao muộn còn 6 trên 125. Con số dùng để so với 18 trên 120 phải là con số đếm theo lời hẹn cũ, vì tỷ lệ giữ lời hẹn còn đổi theo cả lời hẹn mới. Sơ đồ không tự giải vấn đề này; nó giúp tổ chức việc điều tra để đối sách nhắm đúng điểm chậm chính. Điều kiện để việc đó xảy ra là đề bài đo được ngay từ đầu, và cả nhóm kiểm giả thuyết bằng cách so đơn trễ với đơn đúng hẹn trước khi chọn đối sách. Nếu dừng lại ở bước thứ ba, đối sách rất dễ là "đóng gói nhanh hơn", tức nhắm vào điểm chậm chính của 2 trên 18 đơn trễ.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Tóm Tắt</h2>
+            <div class="summary-box">
+                <p><strong>Điểm Chính:</strong> Sơ đồ xương cá chia câu hỏi "vì sao" thành các nhánh nguyên nhân để cả nhóm cùng bày những điều có thể là nguyên nhân lên một mặt giấy; nó rẻ, không cần dữ liệu, và nằm trong nhóm công cụ chất lượng được dùng nhiều nhất. Nhưng theo cách vẽ mặc định, mọi cái xương đều dày bằng nhau: một nguyên nhân đã có bằng chứng và một nguyên nhân vừa nghĩ ra trông giống hệt, và hình không ghi phần đóng góp hay hai nguyên nhân phải cùng có mặt. Điều dễ bỏ qua nhất là được dùng rộng chưa phải đã được chứng minh hiệu quả, và một con số trên nhánh, như tỷ lệ người chọn trong khảo sát, cũng chưa phải mức đóng góp vào lỗi. Cách dùng đáng tin vì vậy là chọn nhánh theo việc thật, chọn vài giả thuyết đáng kiểm nhất, và tìm cho chúng loại bằng chứng phù hợp, có so với những trường hợp không lỗi, trước khi chọn đối sách.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">Tài Liệu Tham Khảo</h2>
+            <ol class="outline-list">
+                <li id="ref-1">Union of Japanese Scientists and Engineers. <em>A Parallel Chronology of Prof. Kaoru Ishikawa's Life and TQC in Japan</em>. Biên niên do chính JUSE biên soạn, nguồn cho mục năm 1953 ghi việc Ishikawa dựng ra sơ đồ nhân quả và áp dụng nó vào quy trình sản xuất tại nhà máy Fukiai của Kawasaki Steel. <a href="https://www.juse.jp/ishikawa/e/man/ParallelChronology_Ver2_150717.pdf" rel="noopener noreferrer" target="_blank">Đọc bản PDF</a>.</li>
+                <li id="ref-2">McDermott, O., Antony, J., Sony, M., Rosa, A., Hickey, M., &amp; Grant, T. A. (2023). A study on Ishikawa's original basic tools of quality control in healthcare. <em>The TQM Journal</em>, 35(7), 1686-1705. Khảo sát trực tuyến 168 người làm y tế ở châu Âu, nguồn cho việc sơ đồ nhân quả nằm trong ba công cụ được dùng nhiều nhất, cho tỷ lệ 62% từng được đào tạo và 3% tin bảy công cụ giải được trên 90% vấn đề; phạm vi là y tế châu Âu và là dữ liệu tự báo cáo. <a href="https://doi.org/10.1108/TQM-06-2022-0187" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-3">Antony, J., McDermott, O., Sony, M., Fernandes, M. M., &amp; Ribeiro, R. V. C. (2021). A study on the Ishikawa's original basic tools of quality control in South American companies: Results from a pilot survey and directions for further research. <em>The TQM Journal</em>, 33(8), 1770-1786. Khảo sát thử nghiệm 97 người làm chất lượng ở doanh nghiệp Nam Mỹ, nguồn cho việc phân tích nhân quả nằm trong ba công cụ dùng nhiều nhất ở cả sản xuất lẫn dịch vụ, và cho tỷ lệ khoảng một phần năm tin bảy công cụ giải được trên 80% vấn đề. <a href="https://doi.org/10.1108/TQM-01-2021-0004" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-4">Institute for Manufacturing, University of Cambridge. <em>TQM Tools</em>, mục cause and effect diagram. Mô tả công cụ của một viện nghiên cứu sản xuất, nguồn cho ba giới hạn nêu ở phần định nghĩa: không xử lý được lượng, dễ trở nên rất phức tạp, khó chỉ ra hoặc chứng minh quan hệ tương hỗ giữa các nguyên nhân. <a href="https://www.ifm.eng.cam.ac.uk/research/dstools/tqm-tools/" rel="noopener noreferrer" target="_blank">Đọc trang gốc</a>.</li>
+                <li id="ref-5">Art of Lean. <em>Ishikawa Diagram</em>, mục từ trong TPS Encyclopedia. Bản mô tả từ phía những người trong phong trào lean, nguồn cho việc bộ nhánh chỉ là khung khởi đầu, không cố định, và cho lý lẽ chính của phe bênh: sơ đồ nêu ra giả thuyết chứ không phải kết luận, và các nguyên nhân được chọn phải được xác nhận hoặc loại bỏ bằng thu số liệu, thử nghiệm hoặc quan sát trực tiếp. <a href="https://artoflean.com/reference/ishikawa-diagram/" rel="noopener noreferrer" target="_blank">Đọc mục từ</a>.</li>
+                <li id="ref-6">Seong, S. M., Oh, H., Park, J. S., Bae, S. H., Nam, K. C., Park, S. Y., Kwon, B. S., &amp; Kim, B. H. (2025). Incidence and root cause analysis of near-miss events in medical device use errors in intensive care units using Ishikawa diagram. <em>Japan Journal of Nursing Science</em>, 22(4), e70024. Nghiên cứu quan sát tại một bệnh viện Hàn Quốc, nguồn cho bốn nhánh của sơ đồ, cách biến nguyên nhân con thành bảng hỏi cho 58 điều dưỡng, và toàn bộ điểm số, tỷ lệ ở ví dụ thứ hai; nghiên cứu chưa thử đối sách nào. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12434650/" rel="noopener noreferrer" target="_blank">Đọc toàn văn</a>.</li>
+                <li id="ref-7">Kumah, A., &amp; Forkuo-Minka, A. O. (2023). Advancing staff safety: Assessment of quality improvement interventions in reducing needlestick injuries among staff at Nyaho Medical Centre. <em>Global Journal on Quality and Safety in Healthcare</em>, 6(2), 55-61. Dự án cải tiến tại một cơ sở, nguồn cho năm nhánh nguyên nhân, bảy thay đổi, số ca 11 năm 2018 và 3 năm 2021, cùng các giới hạn tác giả tự nêu. Một bài tổng quan năm 2024 của cùng tác giả chính ghi con số năm 2021 là 2 ca; bài này dùng con số 3 của bài gốc. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10275633/" rel="noopener noreferrer" target="_blank">Đọc toàn văn</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

@@ -155,7 +155,7 @@ Khi mục này có nhiều nghiên cứu quan trọng ngang nhau hoặc có tran
 
 Lý do ngoại lệ tồn tại: mục 7.2 bắt mọi bài phải nêu chỗ bằng chứng yếu, nên bài nào cũng có nguy cơ thành một chiều theo hướng ngược lại, tức là chê công cụ mà không cho người đọc thấy lý do người ta vẫn dùng nó. Một bài học tập phải để người đọc tự cân được, không phải chỉ nghe một phía.
 
-Hai cái bẫy của đoạn này. Thứ nhất, **phe bênh phải được dựng ở phiên bản mạnh nhất**, lấy từ lập luận thật của người trong nghề chứ không phải một phiên bản dễ đánh. Thứ hai, **phải nói rõ vế nào trong đó bài chấp nhận**; nhận hết rồi bác hết đều là né việc.
+Ba cái bẫy của đoạn này. Thứ nhất, **phe bênh phải được dựng ở phiên bản mạnh nhất**, lấy từ lập luận thật của người trong nghề chứ không phải một phiên bản dễ đánh. Thứ hai, **phải nói rõ vế nào trong đó bài chấp nhận**; nhận hết rồi bác hết đều là né việc. Thứ ba, **câu trả lời phải đánh đúng điều phe bênh nói**: lý lẽ của họ gộp hai việc thì trả lời từng việc riêng, đừng chỉ đáp vế dễ đáp.
 
 ### 3.5 Section 4 phải mọc ra từ cơ chế
 
@@ -191,7 +191,7 @@ Ví Dụ cho thấy người khác đã dùng công cụ ra sao, Cách Áp Dụn
 
 ### 3.7 Tóm tắt
 
-Một đoạn duy nhất trong `summary-box`, mở bằng `<strong>Điểm Chính:</strong>`. Ba việc, theo thứ tự: nhắc lại cơ chế, nhắc lại điều phản trực giác nhất trong bài, chốt bằng nguyên tắc phòng vệ. Không đưa vào đây bất kỳ dữ kiện, con số hay ví dụ nào chưa xuất hiện ở trên.
+Một đoạn duy nhất trong `summary-box`, mở bằng `<strong>Điểm Chính:</strong>`. Ba việc, theo thứ tự: nhắc lại cơ chế, nhắc lại điều phản trực giác nhất trong bài, chốt bằng nguyên tắc phòng vệ. Không đưa vào đây bất kỳ dữ kiện, con số hay ví dụ nào chưa xuất hiện ở trên. Mỗi con số trong Tóm Tắt gọi tên nghiên cứu của nó; hai con số từ hai nghiên cứu không đứng chung một câu.
 
 ### 3.8 Tham khảo
 

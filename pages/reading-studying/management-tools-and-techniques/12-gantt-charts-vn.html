@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../diagram-styles.css">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta
-        content="Biểu đồ Gantt đưa thời gian lên tiền cảnh và đẩy mọi thứ khác xuống hậu cảnh. Bài phân tích cơ chế, lịch sử rối sau cái tên, sáu giả định ngầm trong công cụ, và cách dùng nó mà không bị nó dẫn."
+        content="Biểu đồ Gantt đưa thời gian lên tiền cảnh và đẩy mọi thứ khác xuống hậu cảnh. Bài phân tích cơ chế, lịch sử thật sau cái tên, sáu giả định ngầm trong công cụ, cách dùng nó mà không bị nó dẫn, và một tình huống áp dụng từng bước."
         name="description">
 </head>
 <body>
@@ -16,156 +16,257 @@
         <header class="article-header">
             <h1 class="page-title">Biểu Đồ Gantt</h1>
             <p class="page-subtitle">Hai đầu của một thanh biểu đồ thì sắc nét, hai đầu của công việc thật thì không</p>
-            <p class="page-meta">Đăng ngày: <time datetime="2026-08-05">5 Tháng 8, 2026</time></p>
+            <p class="page-meta">Cập nhật: <time datetime="2026-10-09">9 Tháng 10, 2026</time></p>
         </header>
 
         <!-- Definition -->
         <section class="content-section">
             <h2 class="main-point">Định Nghĩa</h2>
-            <p class="intro-text">Mở bất kỳ phần mềm quản lý dự án nào lên, thứ chiếm phần lớn màn hình gần như luôn là cùng một hình: bên trái một cột liệt kê đầu việc, bên phải một lịch, và trên cái lịch đó là những thanh ngang. Mỗi thanh là một đầu việc, bắt đầu ở ngày khởi động, kéo dài đúng bằng thời gian dự kiến, kết thúc ở ngày hẹn xong. Đó là biểu đồ Gantt. Trong cuộc họp giao ban sáng thứ Hai, khi ai đó chỉ vào thanh màu xanh nằm vắt qua hai tuần cuối tháng và nói "phần này xong trước ngày 28", thứ họ đang chỉ vào là một hình vẽ, còn thứ cả phòng nghe được là một lời cam kết.</p>
 
-            <p>Cơ chế của công cụ này nằm ở chỗ nó đặt cái gì lên tiền cảnh. Bản thân một thanh ngang chỉ trực tiếp mã hoá hai điểm và một độ dài: bắt đầu ngày nào, kết thúc ngày nào, và vì thế chiếm bao nhiêu thời gian. Chuyện hai việc có chồng lên nhau hay không đã phải đọc bằng cách so hai thanh với nhau. Khung hình quanh chúng thì chở thêm được nhiều, và phần mềm hiện nay chở khá nhiều: đường nối quan hệ phụ thuộc, mốc, tên người phụ trách, phần trăm hoàn thành. <sup><a href="#ref-9">[9]</a></sup> Nhưng tất cả đều là tuỳ chọn, phải có người chủ động đưa vào, và chúng nằm ở hậu cảnh của một hình mà thanh mới là thứ chiếm lấy mắt người xem. Ba thứ thì không có ô sẵn nào để điền, nên trên thực tế gần như luôn vắng mặt: độ chắc chắn của con số ngày công, lý do khi một thanh bị đẩy lùi, và việc phần này có phải làm đi làm lại mấy vòng hay không.</p>
+            <div class="sub-section">
+                <h3 class="sub-point-1">Biểu Đồ Gantt Là Gì</h3>
+                <p>Biểu đồ Gantt là cách bày một kế hoạch lên lịch: bên trái một cột liệt kê đầu việc, bên phải một trục ngày tháng, và trên trục đó mỗi đầu việc là một thanh ngang, bắt đầu ở ngày khởi động, kéo dài đúng bằng thời gian dự kiến, kết thúc ở ngày hẹn xong. Mở khung nhìn Gantt trong một phần mềm như Microsoft Project là thấy ngay hình ấy. Trong cuộc họp giao ban sáng thứ Hai, khi ai đó chỉ vào thanh màu xanh nằm vắt qua hai tuần cuối tháng và nói "phần này xong trước ngày 28", thứ họ đang chỉ vào là một hình vẽ, còn thứ cả phòng nghe được là một lời cam kết.</p>
 
-            <p>Và vì thanh có hai đầu sắc nét, thứ người xem nhận về là một hình trông chắc chắn hơn hẳn lượng thông tin đã vẽ ra nó. Elaine Yakura, khi quan sát cách các nhóm dùng biểu đồ tiến độ trong một công ty tư vấn công nghệ, ghi lại đúng hiện tượng đó: người tham gia gán cho những hình vẽ này một độ bền mà bản thân chúng không có, và dù chỉ là bản phác của một tương lai bất định, chúng được đối xử như những thực tại cụ thể. <sup><a href="#ref-1">[1]</a></sup></p>
+                <p>Cái tên gắn với Henry Laurence Gantt (1861-1919), kỹ sư cơ khí Mỹ làm việc trong quỹ đạo của Frederick Taylor, nhưng ông không phát minh ra biểu đồ thanh. Patrick Weaver truy biểu đồ thanh theo trục thời gian về <em>Chart of Biography</em> của Joseph Priestley năm 1765 và harmonogram của kỹ sư Ba Lan Karol Adamiecki năm 1896. <sup><a href="#ref-1">[1]</a></sup> Năm 1912, chương trình thi công cầu cạn Langwies trên tuyến đường sắt núi Chur-Arosa ở Thuỵ Sĩ đã là một biểu đồ thanh chia theo tuần, kèm bảng nhu cầu vật tư. <sup><a href="#ref-1">[1]</a></sup> <sup><a href="#ref-2">[2]</a></sup> Thứ Gantt thật sự dựng là một hệ biểu đồ quản trị sản xuất cho xưởng máy, phần lớn thông tin được điền vào <em>sau</em> khi ca làm kết thúc, để đối chiếu sản lượng thực tế với sản lượng đã hứa. Bản ghi quá khứ đặt cạnh lời hứa, hơn là bản vẽ tương lai. <sup><a href="#ref-1">[1]</a></sup> Wallace Clark, cộng sự trong công ty tư vấn của ông, lấy tên ông đặt cho hệ biểu đồ ấy trong cuốn sách xuất bản đầu thập niên 1920, sau khi Gantt đã mất. <sup><a href="#ref-3">[3]</a></sup> Phải tới thập niên 1930 người ta mới bắt đầu gọi bất kỳ hình nào có thanh và có trục thời gian là biểu đồ Gantt. <sup><a href="#ref-1">[1]</a></sup></p>
 
-            <figure class="tool-diagram">
-                <svg role="img"
-                    aria-label="Ba dòng so sánh trên cùng một trục ngày. Dòng một: thanh Kiểm thử chạy từ ngày 6 tới ngày 17 với hai đầu sắc nét, vạch hôm nay nằm ở ngày 11 tức giữa thanh. Dòng hai: khoảng ước lượng thật đứng sau con số 17, trải từ ngày 15 tới ngày 26. Dòng ba: cùng thanh đó bị đẩy lùi bốn ngày, không có ô nào ghi lý do."
-                    viewBox="0 0 1120 360">
-                    <defs>
-                        <marker id="gantt-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
-                            orient="auto" refX="9" refY="3">
-                            <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
-                        </marker>
-                    </defs>
+                <p>Cơ chế của công cụ này nằm ở chỗ nó đặt cái gì lên tiền cảnh. Bản thân một thanh ngang chỉ trực tiếp mã hoá hai điểm và một độ dài: bắt đầu ngày nào, kết thúc ngày nào, và vì thế chiếm bao nhiêu thời gian. Chuyện hai việc có chồng lên nhau hay không đã phải đọc bằng cách so hai thanh với nhau. Khung hình quanh chúng thì chở thêm được nhiều, và phần mềm hiện nay chở khá nhiều: đường nối quan hệ phụ thuộc, mốc, tên người phụ trách, phần trăm hoàn thành. <sup><a href="#ref-4">[4]</a></sup> Nhưng tất cả đều là tuỳ chọn, phải có người chủ động đưa vào, và chúng nằm ở hậu cảnh của một hình mà thanh mới là thứ chiếm lấy mắt người xem.</p>
 
-                    <text class="small rowlabel" x="190" y="42">Ngày</text>
-                    <path class="axis" d="M200 58 H1084"></path>
-                    <path class="tick" d="M268 52 V58"></path>
-                    <path class="tick" d="M438 52 V58"></path>
-                    <path class="tick" d="M642 52 V58"></path>
-                    <path class="tick" d="M948 52 V58"></path>
-                    <text class="small" x="268" y="40">6</text>
-                    <text class="small" x="438" y="40">11</text>
-                    <text class="small" x="642" y="40">17</text>
-                    <text class="small" x="948" y="40">26</text>
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Ba dòng so sánh trên cùng một trục ngày. Dòng một: thanh Kiểm thử chạy từ ngày 6 tới ngày 17 với hai đầu sắc nét, vạch hôm nay nằm ở ngày 11 tức giữa thanh. Dòng hai: khoảng ước lượng thật đứng sau con số 17, trải từ ngày 15 tới ngày 26. Dòng ba: cùng thanh đó bị đẩy lùi bốn ngày, không có ô nào ghi lý do."
+                        viewBox="0 0 1120 360">
+                        <defs>
+                            <marker id="gantt-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
 
-                    <text class="rowlabel" x="190" y="102">Thanh trên biểu đồ</text>
-                    <path class="edge" d="M268 76 V128"></path>
-                    <path class="edge" d="M642 76 V128"></path>
-                    <rect class="bar" x="268" y="84" width="374" height="36" rx="6"></rect>
-                    <text x="455" y="102">Kiểm thử</text>
-                    <path class="today" d="M438 70 V132"></path>
-                    <text class="small alert" x="438" y="146">hôm nay</text>
-                    <text class="small note" x="664" y="95">vạch hôm nay nằm giữa thanh,</text>
-                    <text class="small note" x="664" y="111">nên bị đọc thành đã xong một nửa</text>
+                        <text class="small rowlabel" x="190" y="42">Ngày</text>
+                        <path class="axis" d="M200 58 H1084"></path>
+                        <path class="tick" d="M268 52 V58"></path>
+                        <path class="tick" d="M438 52 V58"></path>
+                        <path class="tick" d="M642 52 V58"></path>
+                        <path class="tick" d="M948 52 V58"></path>
+                        <text class="small" x="268" y="40">6</text>
+                        <text class="small" x="438" y="40">11</text>
+                        <text class="small" x="642" y="40">17</text>
+                        <text class="small" x="948" y="40">26</text>
 
-                    <text class="rowlabel" x="190" y="218">Ước lượng đứng sau nó</text>
-                    <text class="small" x="642" y="176">con số 17 được chọn ra để ghi lên biểu đồ</text>
-                    <path class="edge-ghost" d="M642 186 V246"></path>
-                    <rect class="band" x="574" y="200" width="374" height="36" rx="6"></rect>
-                    <text class="small" x="761" y="218">khoảng thật: 15 tới 26</text>
-                    <text class="small" x="574" y="258">sớm nhất</text>
-                    <text class="small" x="948" y="258">muộn nhất</text>
+                        <text class="rowlabel" x="190" y="102">Thanh trên biểu đồ</text>
+                        <path class="edge" d="M268 76 V128"></path>
+                        <path class="edge" d="M642 76 V128"></path>
+                        <rect class="bar" x="268" y="84" width="374" height="36" rx="6"></rect>
+                        <text x="455" y="102">Kiểm thử</text>
+                        <path class="today" d="M438 70 V132"></path>
+                        <text class="small alert" x="438" y="146">hôm nay</text>
+                        <text class="small note" x="664" y="95">vạch hôm nay nằm giữa thanh,</text>
+                        <text class="small note" x="664" y="111">nên bị đọc thành đã xong một nửa</text>
 
-                    <text class="rowlabel" x="190" y="314">Khi thanh bị đẩy lùi</text>
-                    <path class="arrow" d="M268 278 H398" marker-end="url(#gantt-arrow)"></path>
-                    <text class="small" x="333" y="264">lùi 4 ngày</text>
-                    <rect class="ghost" x="268" y="296" width="374" height="36" rx="6"></rect>
-                    <rect class="bar" x="404" y="296" width="374" height="36" rx="6"></rect>
-                    <text x="591" y="314">Kiểm thử</text>
-                    <text class="small note alert" x="800" y="314">ô ghi vì sao lùi: không có</text>
-                </svg>
-                <figcaption>
-                    <strong>Hình 1.</strong> Cùng một đầu việc, nhìn theo ba cách. Thanh có hai đầu sắc nét ở ngày 6 và
-                    ngày 17, nên vạch hôm nay ở ngày 11 tự bật ra câu trả lời "xong một nửa". Con số 17 thực ra được
-                    chọn ra từ một khoảng trải mười một ngày, và cái khoảng ấy không có chỗ nào trên hình. Khi thanh bị
-                    đẩy lùi, thứ duy nhất đổi là vị trí của nó; lý do thì không có ô nào để điền.
-                </figcaption>
-            </figure>
+                        <text class="rowlabel" x="190" y="218">Ước lượng đứng sau nó</text>
+                        <text class="small" x="642" y="176">con số 17 được chọn ra để ghi lên biểu đồ</text>
+                        <path class="edge-ghost" d="M642 186 V246"></path>
+                        <rect class="band" x="574" y="200" width="374" height="36" rx="6"></rect>
+                        <text class="small" x="761" y="218">khoảng thật: 15 tới 26</text>
+                        <text class="small" x="574" y="258">sớm nhất</text>
+                        <text class="small" x="948" y="258">muộn nhất</text>
 
-            <p>Cái tên thì che khuất một lịch sử rối hơn nó, vì ba chuyện đang bị gộp làm một. Thứ nhất, Henry Laurence Gantt (1861-1919), kỹ sư cơ khí Mỹ làm việc trong quỹ đạo của Frederick Taylor, không phát minh ra biểu đồ thanh. Thứ hai, ông có dựng một hệ thống biểu đồ quản trị sản xuất của riêng mình, và Wallace Clark, cộng sự trong công ty tư vấn của ông, lấy tên ông đặt cho hệ thống ấy trong cuốn sách xuất bản đầu thập niên 1920, sau khi Gantt đã mất. <sup><a href="#ref-8">[8]</a></sup> Thứ ba là chỗ cái tên bắt đầu lạc địa chỉ: hình hôm nay ai cũng gọi là biểu đồ Gantt lại là một biểu đồ thanh theo trục thời gian, khác khá xa hệ thống mang tên ông. Những biểu đồ Gantt thật sự dùng là công cụ kiểm soát sản xuất trong xưởng máy, phần lớn thông tin được điền vào <em>sau</em> khi ca làm kết thúc, để đối chiếu sản lượng thực tế với sản lượng đã hứa và truy ra vì sao công nhân không lĩnh được tiền thưởng. Bản ghi quá khứ, không phải bản vẽ tương lai. Phải tới thập niên 1930 người ta mới bắt đầu gọi bất kỳ hình nào có thanh và có trục thời gian là biểu đồ Gantt. <sup><a href="#ref-2">[2]</a></sup></p>
+                        <text class="rowlabel" x="190" y="314">Khi thanh bị đẩy lùi</text>
+                        <path class="arrow" d="M268 278 H398" marker-end="url(#gantt-arrow)"></path>
+                        <text class="small" x="333" y="264">lùi 4 ngày</text>
+                        <rect class="ghost" x="268" y="296" width="374" height="36" rx="6"></rect>
+                        <rect class="bar" x="404" y="296" width="374" height="36" rx="6"></rect>
+                        <text x="591" y="314">Kiểm thử</text>
+                        <text class="small note alert" x="800" y="314">ô ghi vì sao lùi: không có</text>
+                    </svg>
+                    <figcaption>
+                        <strong>Hình 1.</strong> Cùng một đầu việc, nhìn theo ba cách. Thanh có hai đầu sắc nét ở ngày 6 và
+                        ngày 17, nên vạch hôm nay ở ngày 11 tự bật ra câu trả lời "xong một nửa". Con số 17 thực ra được
+                        chọn ra từ một khoảng trải mười một ngày, và cái khoảng ấy không có chỗ nào trên hình. Khi thanh bị
+                        đẩy lùi, thứ duy nhất đổi là vị trí của nó; lý do thì không có ô nào để điền.
+                    </figcaption>
+                </figure>
 
-            <p>Còn bản thân biểu đồ thanh ngang thì có trước Gantt cả trăm năm. Patrick Weaver truy nó về <em>Chart of Biography</em> của Joseph Priestley năm 1765, và gần hơn là harmonogram do kỹ sư người Ba Lan Karol Adamiecki dựng năm 1896, bản đi xa hơn biểu đồ Gantt hiện đại ở một điểm: tiêu đề mỗi dải giấy ghi rõ những việc phải làm trước nó, và chính bảng quan hệ trước sau ấy khiến nó thành tiền thân trực tiếp của CPM và PERT, hai phương pháp sáu mươi năm sau mới ra đời. Đến năm 1912, một biểu đồ thanh đầy đủ kèm biểu đồ nhu cầu nhân lực đã được dùng cho một cây cầu đường sắt ở Bavaria, và cách bài báo kỹ thuật Đức mô tả nó cho thấy đây là chuyện thường ngày chứ không phải một sáng kiến. <sup><a href="#ref-2">[2]</a></sup></p>
+                <!-- YouTube Video Container -->
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                    <iframe
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        src="https://www.youtube.com/embed/fB0wsdmV3Sw"
+                        title="Project Management in Under 5: What is a Gantt Chart?"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
 
-            <p>Hai nguồn chính của bài này không hoàn toàn đồng ý về phần lịch sử ấy, nhưng chỗ chúng gặp nhau mới đáng chú ý: cả hai đều dẫn về cùng cuốn sách của Clark, và bản trong đó có một cột mà bản hiện đại không còn. Bên cạnh mỗi lần công việc lệch khỏi kế hoạch, người ta ghi một chữ cái cho biết vì sao lệch: W cho chờ máy vào việc, M cho thiếu vật tư, H cho thiếu người. Joana Geraldi và Thomas Lechter nói thẳng rằng khác biệt đáng kể duy nhất giữa phiên bản ấy và phiên bản của chúng ta chính là cột lý do đó. <sup><a href="#ref-3">[3]</a></sup> Thứ rơi khỏi công cụ trong một trăm năm qua vì vậy không phải một chi tiết trang trí, mà là chỗ được dành sẵn cho việc học từ sai lệch.</p>
+            <div class="sub-section">
+                <h3 class="sub-point-1">Tại Sao Ta Cần Dùng Nó</h3>
+                <p>Một kế hoạch có mười lăm đầu việc chia cho bốn bộ phận, viết thành danh sách kèm ngày bắt đầu và ngày kết thúc, thì dòng nào đọc cũng đúng mà không ai thấy được toàn cục: tuần nào ba việc dồn vào cùng một nhóm, việc nào xong muộn sẽ kéo lùi cả mốc bàn giao, bộ phận mình đang chờ ai. Biểu đồ Gantt chuyển danh sách ấy thành hình. Mọi việc nằm trên cùng một trục ngày, nên chỗ chồng nhau và chỗ dồn hiện ra ngay khi nhìn, không cần ai ngồi cộng trừ ngày. Đó là mặt có ích của việc đưa thời gian lên tiền cảnh. Elaine Yakura, khi quan sát cách các nhóm dùng biểu đồ tiến độ trong một công ty tư vấn công nghệ, thấy thêm một tác dụng: chính vì hình đơn giản và để ngỏ cách diễn giải, những nhóm nghĩ về thời gian theo những cách khác nhau vẫn thương lượng được lịch với nhau trên cùng một mặt giấy. <sup><a href="#ref-5">[5]</a></sup> Với bài toán lập kế hoạch sản xuất đã cho đủ dữ kiện, khác biệt có thể rất lớn: trong thí nghiệm của MacNeice năm 1951, chỉ 1% sinh viên giải được bằng trực giác, còn khi có biểu đồ thì ai cũng đưa ra được một lời giải. <sup><a href="#ref-6">[6]</a></sup> Và sau một trăm năm, nó vẫn nằm trong nhóm công cụ được người làm dự án dùng nhiều nhất. <sup><a href="#ref-7">[7]</a></sup></p>
+            </div>
 
-            <table class="content-table">
-                <thead><tr><th scope="col">Điều một thanh biểu đồ nói ra</th><th scope="col">Điều nó không tự nói ra</th></tr></thead>
-                <tbody>
-                    <tr><td>Việc này chạy từ ngày 6 tới ngày 17</td><td>Con số 17 là một ước lượng chắc hay một phỏng đoán</td></tr>
-                    <tr><td>Hai việc cùng chạy trong ba tuần</td><td>Hai việc đó có đang giành nhau cùng một người không</td></tr>
-                    <tr><td>Hôm nay là ngày thứ bảy của một thanh dài mười bốn ngày</td><td>Đã xong được bao nhiêu phần việc thật</td></tr>
-                    <tr><td>Việc B bắt đầu ngay sau khi việc A kết thúc</td><td>B buộc phải đợi A, hay chỉ tình cờ được xếp sau</td></tr>
-                    <tr><td>Thanh này đã bị đẩy lùi bốn ngày</td><td>Vì sao nó bị đẩy lùi</td></tr>
-                </tbody>
-            </table>
+            <div class="sub-section">
+                <h3 class="sub-point-1">Giới Hạn Của Công Cụ Này Là Gì</h3>
+                <p>Mặt trái của cùng cơ chế ấy là những gì bị đẩy xuống hậu cảnh. Ba thứ không có cách thể hiện mặc định nào trên một thanh ngang: độ chắc chắn của con số ngày công, lý do khi một thanh bị đẩy lùi, và việc phần này có phải làm đi làm lại mấy vòng hay không. Phần mềm cho phép tự thêm, chẳng hạn hiện một trường văn bản tuỳ chỉnh ngay cạnh thanh, <sup><a href="#ref-4">[4]</a></sup> nhưng phải có người đặt trường ấy và quy trình cập nhật buộc phải điền; mẫu vẽ có sẵn thì không nhắc ai làm vậy. Vì thanh có hai đầu sắc nét, thứ người xem nhận về là một hình trông chắc chắn hơn hẳn lượng thông tin đã vẽ ra nó. Yakura ghi lại đúng hiện tượng đó: người tham gia gán cho những hình vẽ này một độ bền mà bản thân chúng không có, và dù chỉ là bản phác của một tương lai bất định, chúng được đối xử như những thực tại cụ thể. <sup><a href="#ref-5">[5]</a></sup> Hình 1 ở trên vẽ hai trong ba chỗ hụt ấy, độ bất định và lý do bị lùi, cùng cách vạch hôm nay bị đọc thành phần việc đã xong.</p>
 
-            <!-- YouTube Video Container -->
-            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
-                <iframe
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                    src="https://www.youtube.com/embed/fB0wsdmV3Sw"
-                    title="Project Management in Under 5: What is a Gantt Chart?"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    loading="lazy"
-                    allowfullscreen>
-                </iframe>
+                <p>Ở một chỗ, bản gốc từng giàu hơn bản hôm nay. Gantt dựng biểu đồ của mình để đo khoảng cách giữa lời hứa và kết quả, và chính ông chê những xưởng lập kế hoạch rất đẹp trên giấy mà không có cách nào biết kế hoạch ấy có được theo hay không. <sup><a href="#ref-1">[1]</a></sup> Hai nguồn chính của bài này không hoàn toàn đồng ý về phần lịch sử, nhưng cả hai đều dẫn về cùng cuốn sách của Clark, và bản trong đó có một cột mà mẫu vẽ hôm nay không còn giữ sẵn. Bên cạnh mỗi lần công việc lệch khỏi kế hoạch, người ta ghi một chữ cái cho biết vì sao lệch: W cho chờ máy vào việc, M cho thiếu vật tư, H cho thiếu người. Joana Geraldi và Thomas Lechter nói thẳng rằng khác biệt đáng kể duy nhất giữa phiên bản ấy và phiên bản của chúng ta chính là cột lý do đó. <sup><a href="#ref-6">[6]</a></sup> Thứ rơi khỏi công cụ trong một trăm năm qua vì vậy không phải một chi tiết trang trí, mà là chỗ được dành sẵn cho việc học từ sai lệch.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Điều một thanh biểu đồ nói ra</th><th scope="col">Điều nó không tự nói ra</th></tr></thead>
+                    <tbody>
+                        <tr><td>Việc này chạy từ ngày 6 tới ngày 17</td><td>Con số 17 là một ước lượng chắc hay một phỏng đoán</td></tr>
+                        <tr><td>Hai việc cùng chạy trong ba tuần</td><td>Hai việc đó có đang giành nhau cùng một người không</td></tr>
+                        <tr><td>Hôm nay là ngày thứ bảy của một thanh dài mười bốn ngày</td><td>Đã xong được bao nhiêu phần việc thật</td></tr>
+                        <tr><td>Việc B bắt đầu ngay sau khi việc A kết thúc</td><td>B buộc phải đợi A, hay chỉ tình cờ được xếp sau</td></tr>
+                        <tr><td>Thanh này đã bị đẩy lùi bốn ngày</td><td>Vì sao nó bị đẩy lùi</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
         <!-- Examples -->
         <section class="content-section">
             <h2 class="main-point">Ví Dụ</h2>
-            <p class="intro-text">Công cụ này lộ ra ở ba tầng khác nhau: một cuộc họp mà ai từng làm dự án cũng đã ngồi qua, một thí nghiệm cho thấy nó mạnh tới đâu khi dùng đúng chỗ, và một công trình cho thấy cái giá phải trả khi lịch trình được vẽ trước lúc người ta biết mình sắp xây cái gì.</p>
+            <p class="intro-text">Hai ví dụ dưới đây đặt cạnh nhau hai cách đọc cùng một loại hình: một cuộc họp tiến độ quen thuộc, nơi tiến độ được đọc từ vạch ngày hôm nay, và Cục Quân nhu Lục quân Mỹ năm 1917, nơi biểu đồ được dùng để đọc số hàng đã giao thật cùng nguyên nhân của từng chỗ trễ.</p>
 
             <div class="sub-section">
                 <h3 class="sub-point-1">Thanh Màu Xanh Ghi Kiểm Thử, Dài Hai Tuần</h3>
-                <p>Thứ Hai tuần thứ hai. Người quản lý dự án chiếu biểu đồ lên, con trỏ dừng ở thanh ghi "Kiểm thử", trải từ mùng 6 tới mùng 17, và hỏi câu quen thuộc: mình có đang đúng tiến độ không. Vạch ngày hôm nay đang nằm giữa thanh, nên câu trả lời gần như tự bật ra: được khoảng một nửa rồi.</p>
-                <p>Nhưng cái nửa ấy là nửa của khoảng thời gian, không phải nửa của công việc. Đội kiểm thử mới chạy hết các trường hợp dễ, tìm ra mười bốn lỗi, trong đó một lỗi muốn sửa thì phải đụng vào phần đã ký duyệt xong từ tháng trước, và sửa xong thì phải kiểm lại từ đầu. Không có chỗ nào trên biểu đồ chứa được câu đó. Thanh vẫn dài hai tuần, vạch hôm nay vẫn nằm giữa, và cả phòng rời cuộc họp với ấn tượng rằng mọi thứ đang trôi đúng như đã vẽ.</p>
+                <p>Tình huống minh hoạ: sáng thứ Hai tuần thứ hai của giai đoạn kiểm thử, người quản lý dự án chiếu biểu đồ lên, con trỏ dừng ở thanh ghi "Kiểm thử", trải từ mùng 6 tới mùng 17, và hỏi câu quen thuộc: mình có đang đúng tiến độ không. Vạch ngày hôm nay đang nằm giữa thanh, nên câu trả lời gần như tự bật ra: được khoảng một nửa rồi.</p>
+                <p>Nhưng cái nửa ấy là nửa của khoảng thời gian. Công việc thì đang ở chỗ khác: đội kiểm thử mới chạy hết các trường hợp dễ, tìm ra mười bốn lỗi, trong đó một lỗi muốn sửa thì phải đụng vào phần đã ký duyệt xong từ tháng trước, và sửa xong thì phải kiểm lại từ đầu. Tấm biểu đồ đang chiếu chỉ có lịch dự kiến, chưa có dữ liệu hoàn thành thật nào, nên không có chỗ nào ghi câu đó. Thanh vẫn dài hai tuần, vạch hôm nay vẫn nằm giữa, và cả phòng rời cuộc họp với ấn tượng rằng mọi thứ đang trôi đúng như đã vẽ.</p>
             </div>
 
             <div class="sub-section">
-                <h3 class="sub-point-1">Ba Trăm Sinh Viên Và Một Bài Toán Chỉ Ba Người Giải Được</h3>
-                <p>Năm 1951, E. H. MacNeice đưa cho ba trăm sinh viên quản trị một bài toán lập kế hoạch sản xuất phức tạp. Khi phải giải bằng trực giác, chỉ 1% làm được, tức khoảng ba người trong số đó. Khi được đưa cho một biểu đồ Gantt, toàn bộ ba trăm sinh viên đều đưa ra được một lời giải, trong vòng mười lăm phút. <sup><a href="#ref-3">[3]</a></sup></p>
-                <p>Con số này đi qua hai lần dẫn lại trước khi tới đây: Geraldi và Lechter dẫn nó từ bản rà soát của Wilson (2003), còn Wilson dẫn từ sách của MacNeice. Bài viết này không truy được thiết kế thí nghiệm gốc, không biết "giải được" được chấm theo tiêu chí nào, cũng không biết những lời giải làm trong mười lăm phút kia đúng tới đâu. Nhưng có một điều chính con số ấy nói ra: bài toán MacNeice dùng là bài toán lập kế hoạch sản xuất, tức đúng bối cảnh mà các biểu đồ của Gantt được tạo ra để phục vụ. Bằng chứng định lượng thuyết phục nhất về sức mạnh của công cụ này đến từ chỗ nó vốn thuộc về.</p>
-            </div>
-
-            <div class="sub-section">
-                <h3 class="sub-point-1">Nhà Hát Con Sò: Bốn Năm Thành Mười Bốn Năm</h3>
-                <p>Nhà hát Opera Sydney được ước tính 7 triệu đô la và bốn năm thi công. Công trình mất mười bốn năm, tiêu hết 102 triệu, và được Nữ hoàng Elizabeth II khánh thành ngày 20 tháng 10 năm 1973. <sup><a href="#ref-4">[4]</a></sup></p>
-                <p>Điều đáng học không nằm ở con số vượt dự toán mà ở thứ tự các sự kiện. Lễ khởi công diễn ra ngày 2 tháng 3 năm 1959, trong mưa, tại thời điểm mà các điểm neo mái mới chỉ hiện ra lờ mờ trên bản vẽ và tải trọng chúng phải chịu thì chưa ai biết. <sup><a href="#ref-5">[5]</a></sup> Từ 1958 tới 1962, hình học của bộ mái đi qua phương án parabol, rồi ellipsoid, rồi cuối cùng là mặt cầu; tới cuối năm 1961 vẫn chưa có lời giải, và Jørn Utzon chỉ nộp tập tài liệu ghi lại lời giải mặt cầu vào tháng 1 năm 1962. <sup><a href="#ref-6">[6]</a></sup> Phần bệ, tức giai đoạn một, hoàn thành tháng 2 năm 1963, chậm hai năm so với kế hoạch, và đã phải sửa đáng kể để chịu được bộ mái mà lúc đổ móng chưa ai biết hình thù. <sup><a href="#ref-5">[5]</a></sup></p>
-                <p>Ranh giới của ví dụ này cần nói rõ, vì nó dễ bị đọc quá tay. Nguyên nhân khiến chi phí cuối cùng lên tới khoảng mười bốn lần rưỡi dự toán thì nhiều, phần lớn là chính trị, và không có tài liệu nào cho thấy một biểu đồ Gantt cụ thể đã gây ra chuyện gì ở đây. Thứ nó cho thấy đúng một điều, và điều đó đúng với mọi hình vẽ có thanh và có ngày tháng: một bản kế hoạch trải các giai đoạn nối đuôi nhau vẫn vẽ ra được, in ra được, đem đi họp được, và nhìn vẫn rất thuyết phục, kể cả khi phần việc nằm ở giai đoạn đầu tiên là một bài toán chưa ai biết cách giải.</p>
+                <h3 class="sub-point-1">Cục Quân Nhu Mỹ 1917: Biểu Đồ Nói Rằng Không Thiếu Người</h3>
+                <p>Trước khi Mỹ tham chiến năm 1917, kho quân giới Frankford đã dùng một hệ biểu đồ đơn giản đặt lời hứa cạnh kết quả thực hiện. Khi Mỹ vào cuộc, tướng William Crozier, Cục trưởng Cục Quân nhu, cho mở hệ ấy ra toàn Cục để lúc nào cũng thấy từng cấp dưới đang làm phần việc được giao tới đâu. Mỗi dòng là một mặt hàng phải giao. Một đường đậm dài dần theo số hàng đã giao thật, nên khoảng cách giữa ngày hôm nay và đầu mút của đường đậm cho biết mặt hàng ấy đang sớm hay trễ so với lịch, sớm trễ bao nhiêu; những đường còn ngắn là những mặt hàng cần để ý. Theo Gantt, tới lúc Crozier bị thay khỏi chức vụ vào tháng 12 năm 1917, phần lớn hoạt động của Cục đã được vẽ theo cách này. <sup><a href="#ref-8">[8]</a></sup></p>
+                <p>Cuối tháng 11 năm 1917, Herman Schneider, trưởng khoa ở Đại học Cincinnati, được gọi về Cục để lo bài toán nhân công. Trước khi quyết định làm gì, ông xem hệ biểu đồ của ba phòng sản xuất, và đầu tháng 12 viết cho cấp trên rằng, trừ vài trường hợp lẻ, không thấy dấu hiệu thiếu người. Trong cùng lá thư, ông ghi rằng các biểu đồ cho thấy tiến độ của cả chương trình quân nhu, kể cả những chỗ trễ và nguyên nhân của chúng; gộp về một văn phòng và cập nhật đều thì chúng sẽ cho Cục biết, vào bất cứ lúc nào, mình đang và sắp cần bao nhiêu người, vật tư, phương tiện vận tải và thiết bị. Những người kế nhiệm Crozier để các phương pháp ấy mai một dần. <sup><a href="#ref-8">[8]</a></sup></p>
+                <p>Câu chuyện này đến từ sách của chính Gantt, người có lợi ích trực tiếp trong việc hệ biểu đồ được coi là thành công, và sách không đưa ra con số sản lượng nào trước và sau. Phần đáng tin hơn là phần mô tả cách dùng, vì nó đi kèm một biểu đồ thật của Cục: tiến độ đọc từ số hàng đã giao thay vì từ thời gian đã trôi, và chỗ trễ đi cùng nguyên nhân của nó, tức đúng hai thứ mà thanh Kiểm thử ở ví dụ trên không có.</p>
             </div>
         </section>
 
         <!-- Research -->
         <section class="content-section">
             <h2 class="main-point">Một Vài Nghiên Cứu Về Biểu Đồ Gantt</h2>
-            <p class="intro-text">Nghiên cứu đáng đọc nhất về công cụ này không đo xem nó có hiệu quả hay không. Nó hỏi một câu khác: một công cụ ra đời để phục vụ sản xuất lặp lại thì mang theo những giả định gì khi bị đem sang dùng cho dự án.</p>
+            <p class="intro-text">Bằng chứng về giá trị của biểu đồ Gantt mỏng hơn mức phổ biến của nó: một thí nghiệm từ năm 1951 chỉ còn đọc được qua hai lần dẫn lại, cộng các khảo sát đo xem người làm dự án dùng nó nhiều tới đâu. Phân tích của Geraldi và Lechter năm 2012 đọc lại cả hai rồi hỏi tiếp một câu khác: một công cụ sinh ra cho sản xuất lặp lại mang theo những giả định gì khi được đem sang dự án.</p>
             <div class="sub-section">
-                <p><strong>Nghiên cứu:</strong> Năm 2012, Joana Geraldi (University College London) và Thomas Lechter (Stevens Institute of Technology) công bố trên <em>International Journal of Managing Projects in Business</em> một phân tích khái niệm về nguồn gốc của biểu đồ Gantt. Họ đọc lại các nguồn gốc, gồm hai cuốn sách của chính Gantt và cuốn của Wallace Clark, dựng lại đường đi của công cụ từ xưởng máy sang dự án, rút ra các nguyên tắc nằm sẵn trong cách nó vận hành, rồi đối chiếu từng nguyên tắc với điều kiện thực tế của dự án hôm nay. Lý do việc này đáng làm nằm ở một khảo sát của Besner và Hobbs năm 2008 trên 750 nhà quản lý dự án: trong 70 công cụ và kỹ thuật được hỏi, biểu đồ Gantt đứng thứ tư về mức độ được dùng. <sup><a href="#ref-7">[7]</a></sup> <sup><a href="#ref-3">[3]</a></sup></p>
-                <p><strong>Kết quả:</strong> Họ rút ra sáu nguyên tắc mà công cụ này mang theo từ thời Quản lý Khoa học: nó lấy thời gian làm trục duy nhất, giả định có một mô tả khách quan và duy nhất đúng về công việc, giả định mọi thứ sẽ xảy ra đều định trước được, giả định toàn thể bằng tổng các phần, giả định mỗi phần quy được về một người chịu trách nhiệm, và giả định các phần nối đuôi nhau tuyến tính, xong phần này mới sang phần kia, không quay lại. Hai phát hiện lịch sử đi kèm: lần đầu tiên biểu đồ này được ghi nhận dùng trong bối cảnh dự án là thập niên 1940, gần hai mươi năm sau khi công cụ thành hình, và khác biệt đáng kể duy nhất giữa bản của Clark với bản hôm nay là cột ghi lý do mỗi lần lệch kế hoạch. Theo hai tác giả, nguyên tắc cuối cùng có một hệ quả rất cụ thể: việc kiểm soát tiến độ bằng biểu đồ Gantt chạy trên giả định công sức bỏ ra tuyến tính theo thời gian, nên thanh đi được một nửa thì công việc mặc nhiên được coi là xong một nửa.</p>
-                <p><strong>Kết luận:</strong> Đây là phân tích khái niệm, nên nó không đo và không thể đo xem dùng biểu đồ Gantt thì dự án hỏng nhiều hơn hay ít hơn; chính hai tác giả cũng ghi rõ mối liên hệ giữa việc dùng sai công cụ và kết quả dự án mới chỉ là một giả thuyết. Điều nó chứng minh gói trong một câu: công cụ này không trung tính. Nó được thiết kế cho loại công việc lặp lại, ít bất định, chia được thành phần rời và không phải quay lại; đem sang loại công việc khác thì các giả định ấy đi theo, kể cả khi không ai trong phòng họp nói ra chúng.</p>
-                <p><strong>Phản biện:</strong> Lập luận bênh biểu đồ Gantt mạnh hơn nhiều so với ấn tượng mà một danh sách sáu giả định để lại. Trong số bằng chứng mà chính Geraldi và Lechter khảo sát, kết quả định lượng đáng kể nhất lại nghiêng về phía nó: thí nghiệm MacNeice cho thấy một bài toán mà 99% người giải không nổi bằng trực giác thì ai cũng giải được sau mười lăm phút khi có biểu đồ trong tay. Thêm nữa, sau một trăm năm nó vẫn đứng thứ tư trong bảng công cụ được dùng nhiều nhất, điều mà rất ít công cụ quản trị làm được. <sup><a href="#ref-7">[7]</a></sup> Nghiên cứu của Yakura còn cho thấy trên thực tế biểu đồ thường hoạt động như một vật trung gian hơn là một mệnh lệnh: chính vì nó đơn giản và mềm về mặt diễn giải, các nhóm hiểu khác nhau về thời gian mới thương lượng được với nhau trên cùng một mặt giấy. <sup><a href="#ref-1">[1]</a></sup> Và Geraldi cùng Lechter tự nói rằng họ không đề nghị bỏ công cụ này, phần lớn vấn đề nằm ở việc dùng nó một cách mặc định.</p>
-                <p>Cả ba vế đều cần một cái ngoặc. Thí nghiệm MacNeice giải một bài toán đã cho sẵn đầy đủ dữ kiện, tức đúng loại bài biểu đồ Gantt sinh ra để giải, nên nó không nói gì về những dự án mà chính danh sách đầu việc còn chưa biết hết. Mức độ được dùng thì đo thói quen và mức phổ biến của phần mềm, không đo kết quả. Lập luận vật trung gian thì đúng, nhưng nó bênh việc dùng biểu đồ như một chỗ để bàn bạc, không bênh việc lấy nó làm thước đo tiến độ, và ở nhiều nơi nó đang được dùng theo cách thứ hai. Còn câu "vấn đề nằm ở cách dùng chứ không ở công cụ" là câu dễ nói nhất và khó kiểm nhất, vì nó bảo vệ được mọi công cụ trên đời. Khi một công cụ liên tục bị dùng sai theo cùng một kiểu, kiểu dùng sai ấy cũng là một dữ kiện về công cụ, không chỉ về người dùng.</p>
-                <p><strong>Vì sao điều này hữu ích:</strong> Nó đổi câu bạn hỏi khi nhìn vào một biểu đồ tiến độ. Câu "mình có đúng tiến độ không" chỉ đo khoảng cách giữa hôm nay và một con số ai đó viết ra từ nhiều tháng trước, và bao giờ cũng có câu trả lời, kể cả khi câu trả lời ấy vô nghĩa. Ba câu đáng hỏi thay vào đó: thanh nào là ước lượng có căn cứ và thanh nào là con số điền cho đủ ô, việc nào đang chờ việc nào vì một lý do kỹ thuật thật, và lần gần nhất một thanh bị đẩy lùi thì lý do được ghi ở đâu. Câu thứ ba khó trả lời nhất, vì ở phần lớn dự án thì lý do không được ghi ở đâu cả.</p>
+                <p><strong>Nghiên cứu:</strong> Năm 1951, E. H. MacNeice đưa cho ba trăm sinh viên quản trị một bài toán lập kế hoạch sản xuất phức tạp, và so số người giải được bằng trực giác với số người đưa ra được lời giải khi có biểu đồ Gantt trong tay. Kết quả này tới bài viết qua hai lần dẫn lại: Geraldi và Lechter dẫn từ bản rà soát của Wilson (2003), còn Wilson dẫn từ sách của MacNeice. <sup><a href="#ref-6">[6]</a></sup> Về mức phổ biến, Besner và Hobbs năm 2008 khảo sát 750 nhà quản lý dự án về mức sử dụng 70 công cụ và kỹ thuật. <sup><a href="#ref-7">[7]</a></sup> Còn Joana Geraldi (University College London) và Thomas Lechter (Stevens Institute of Technology) công bố trên <em>International Journal of Managing Projects in Business</em> một phân tích khái niệm: họ đọc lại các nguồn gốc, gồm hai cuốn sách của chính Gantt và cuốn của Wallace Clark, dựng lại đường đi của công cụ từ xưởng máy sang dự án, rút ra các nguyên tắc nằm sẵn trong cách nó vận hành, rồi đối chiếu từng nguyên tắc với điều kiện của dự án hôm nay. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p><strong>Kết quả:</strong> Bằng trực giác, chỉ 1% giải được, tức khoảng ba người. Khi có biểu đồ, cả ba trăm người đều đưa ra được một lời giải, trong vòng mười lăm phút. <sup><a href="#ref-6">[6]</a></sup> Trong khảo sát của Besner và Hobbs, biểu đồ Gantt đứng thứ tư trong 70 công cụ về mức độ được dùng. <sup><a href="#ref-7">[7]</a></sup> Geraldi và Lechter rút ra sáu nguyên tắc mà công cụ mang theo từ thời Quản lý Khoa học: nó lấy thời gian làm trục duy nhất, giả định có một mô tả khách quan và duy nhất đúng về công việc, giả định mọi thứ sẽ xảy ra đều định trước được, giả định toàn thể bằng tổng các phần, giả định mỗi phần quy được về một người chịu trách nhiệm, và giả định các phần nối đuôi nhau tuyến tính, xong phần này mới sang phần kia, không quay lại. Đây là logic quản trị mà hai tác giả đọc ra từ nguồn gốc của công cụ, không phải sáu ràng buộc kỹ thuật của mọi biểu đồ Gantt. Họ cũng ghi rằng, trong các tư liệu họ khảo sát, minh hoạ sớm nhất của một biểu đồ Gantt dùng cho dự án nằm trong sách của Koepke năm 1941, gần hai mươi năm sau khi công cụ thành hình (biểu đồ thanh năm 1912 ở Langwies không mang tên Gantt và không nằm trong phần khảo sát ấy), và rằng lối kiểm soát tiến độ bằng biểu đồ Gantt dựa trên logic công sức bỏ ra tuyến tính theo thời gian: thanh đã trôi được một nửa thì việc được đọc là xong một nửa. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p><strong>Kết luận:</strong> Nếu con số của MacNeice đứng vững, biểu đồ giúp rất nhiều ở đúng loại bài nó sinh ra để giải: lập kế hoạch sản xuất, dữ kiện cho sẵn đầy đủ. Nhưng bài viết không truy được thiết kế thí nghiệm gốc, không biết "giải được" chấm theo tiêu chí nào, cũng không biết những lời giải mười lăm phút kia đúng tới đâu. Khảo sát của Besner và Hobbs đo mức dùng, không đo kết quả dự án. Còn phân tích của Geraldi và Lechter không đo và không thể đo xem dùng biểu đồ Gantt thì dự án hỏng nhiều hơn hay ít hơn; chính hai tác giả ghi rõ mối liên hệ giữa việc dùng sai công cụ và kết quả dự án mới chỉ là một giả thuyết. Điều phân tích ấy lập luận được gói trong một câu: công cụ này không trung tính. Theo hai tác giả, nó được thiết kế cho loại công việc lặp lại, ít bất định, chia được thành phần rời và không phải quay lại; đem sang loại công việc khác thì các giả định ấy đi theo, kể cả khi không ai trong phòng họp nói ra chúng.</p>
+                <p><strong>Phản biện:</strong> Phe bênh có bốn lý lẽ, và cả bốn đều lấy từ chính các nguồn của bài. Kết quả định lượng đáng kể nhất, thí nghiệm MacNeice, nghiêng hẳn về phía công cụ. Phe bênh đọc thứ hạng thứ tư sau một trăm năm là dấu hiệu người làm nghề thấy nó có ích, chứ không chỉ quen tay. <sup><a href="#ref-7">[7]</a></sup> Theo Yakura, trên thực tế biểu đồ thường làm vật trung gian hơn là mệnh lệnh: nhờ nó đơn giản và mềm về mặt diễn giải, các nhóm hiểu khác nhau về thời gian mới thương lượng được với nhau. <sup><a href="#ref-5">[5]</a></sup> Và Geraldi cùng Lechter tự nói rằng họ không đề nghị bỏ công cụ này, phần lớn vấn đề nằm ở việc dùng nó một cách mặc định. Bài nhận cả bốn, nhưng mỗi lý lẽ chỉ đỡ được một phần. Thí nghiệm MacNeice giải một bài toán đã cho sẵn đủ dữ kiện, nên nó không nói gì về những dự án mà chính danh sách đầu việc còn chưa biết hết. Cách đọc thứ hạng ấy hợp lý, nhưng một khảo sát mức dùng không tách được ích lợi khỏi thói quen và độ phổ biến của phần mềm, và không đo kết quả. Lập luận vật trung gian thì đúng, nhưng nó bênh việc dùng biểu đồ làm chỗ để bàn bạc, còn việc lấy biểu đồ làm thước đo tiến độ, đúng lối dùng mà nguyên tắc tuyến tính ở trên mô tả, thì nó không bênh. Còn câu "vấn đề nằm ở cách dùng chứ không ở công cụ" là câu dễ nói nhất và khó kiểm nhất, vì nó bảo vệ được mọi công cụ trên đời. Bài không có số liệu cho thấy kiểu dùng sai này phổ biến tới đâu. Nhưng nếu cùng một kiểu đọc sai lặp lại ở nhiều nơi, kiểu dùng sai ấy cũng là một dữ kiện về công cụ, không chỉ về người dùng.</p>
+                <p><strong>Vì sao điều này hữu ích:</strong> Nó đổi câu bạn hỏi khi nhìn vào một biểu đồ tiến độ. Câu "mình có đúng tiến độ không", khi được trả lời bằng vạch hôm nay, chỉ đo khoảng cách giữa hôm nay và một con số ai đó viết ra từ nhiều tháng trước, và bao giờ cũng có câu trả lời, kể cả khi câu trả lời ấy vô nghĩa. Ba câu đáng hỏi thay vào đó: thanh nào là ước lượng có căn cứ và thanh nào là con số điền cho đủ ô, việc nào đang chờ việc nào vì một lý do kỹ thuật thật, và lần gần nhất một thanh bị đẩy lùi thì lý do được ghi ở đâu. Câu thứ ba thường khó trả lời nhất, vì cách vẽ mặc định không có chỗ nào dành cho nó.</p>
             </div>
         </section>
 
         <!-- Application -->
         <section class="content-section">
             <h2 class="main-point">Cách Áp Dụng</h2>
-            <p class="intro-text">Biểu đồ Gantt hoạt động bằng cách đưa thời gian lên tiền cảnh và đẩy mọi thứ khác xuống hậu cảnh, nên cách dùng nó hiệu quả là chủ động kéo ngược lên những thứ đã bị đẩy xuống. Nó hợp nhất với công việc phân rã được, tương đối ổn định, và cần nhiều bên cùng nhìn một mốc bàn giao. Càng xa ba điều kiện ấy thì càng nên coi nó là chỗ để bàn bạc chứ không phải thước đo. <sup><a href="#ref-3">[3]</a></sup></p>
+            <p class="intro-text">Biểu đồ Gantt hoạt động bằng cách đưa thời gian lên tiền cảnh và đẩy mọi thứ khác xuống hậu cảnh, nên cách dùng nó hiệu quả là chủ động kéo ngược lên những thứ đã bị đẩy xuống. Nó hợp nhất với công việc phân rã được, tương đối ổn định, và cần nhiều bên cùng nhìn một mốc bàn giao. Càng xa ba điều kiện ấy thì càng nên dùng nó làm chỗ để bàn bạc hơn là làm thước đo. <sup><a href="#ref-6">[6]</a></sup></p>
 
             <div class="sub-section">
                 <ul class="outline-list">
-                    <li><strong>Ghi lý do ngay cạnh mỗi thanh bị đẩy lùi:</strong> Đây là cột bản gốc của Clark có và bản hiện đại đã bỏ. Một dòng ngắn kiểu "lùi bốn ngày, chờ dữ liệu từ phòng vận hành" tích lại sau ba tháng sẽ chỉ ra chỗ nghẽn thật của tổ chức, còn một biểu đồ chỉ có các thanh đã dịch chỗ thì không</li>
-                    <li><strong>Đo tiến độ bằng thứ bàn giao được, đừng đọc nó từ vạch hôm nay:</strong> Vạch hôm nay chỉ nói thời gian đã trôi tới đâu. Muốn biết công việc đã xong tới đâu thì mỗi thanh phải gắn với một thứ kiểm được từ bên ngoài, kiểu "đã có bản báo cáo chạy trên dữ liệu thật" chứ không phải "đã làm được 60%"</li>
+                    <li><strong>Ghi lý do ngay cạnh mỗi thanh bị đẩy lùi, và giữ lịch gốc để so:</strong> Cột lý do là thứ bản của Clark có sẵn mà mẫu vẽ hôm nay không có; phần mềm vẫn hiện được nó cạnh thanh nếu có người đặt một trường văn bản cho việc đó và quy trình cập nhật bắt phải điền. Một dòng ngắn kiểu "lùi bốn ngày, chờ dữ liệu từ phòng vận hành" tích lại sau vài tuần sẽ cho thấy chỗ nghẽn lặp lại. Biểu đồ của Gantt vốn luôn đặt lời hứa cạnh kết quả, và lịch gốc là phần lời hứa ấy: khi thanh chỉ dịch chỗ, từng lần lùi đều có lý do mà không ai còn thấy cả kế hoạch đã trôi bao xa so với ban đầu. Trước khi kết luận chỗ nghẽn nằm ở đâu, so nhóm thanh bị lùi với nhóm không bị lùi để xem lý do ấy có gắn với việc trễ hay không, rồi tìm bằng chứng trực tiếp hơn như nhật ký chờ. Một lý do cũng gặp ở việc đúng hạn chưa hẳn là vô can: việc đó có thể chỉ kịp nhờ có khoảng dư lớn hơn</li>
+                    <li><strong>Đo tiến độ bằng thứ bàn giao được, đừng đọc nó từ vạch hôm nay:</strong> Vạch hôm nay chỉ nói thời gian đã trôi tới đâu. Muốn biết công việc đã xong tới đâu thì mỗi thanh phải gắn với một thứ kiểm được từ bên ngoài, kiểu "đã có bản báo cáo chạy trên dữ liệu thật", thay cho một con số "đã làm được 60%" mà không ai nói được tính theo gì. Tỷ lệ hoàn thành vẫn dùng được khi đã định nghĩa rõ nó đếm cái gì và kiểm bằng cách nào</li>
                     <li><strong>Đánh dấu thanh nào là ước lượng, thanh nào là phỏng đoán:</strong> Mọi thanh trông giống hệt nhau về mức độ chắc chắn, trong khi có thanh dựa trên mười lần làm việc tương tự và có thanh dựa trên một buổi chiều ngồi đoán. Tô khác màu, hoặc ghi hai ngày sớm nhất và muộn nhất cho nhóm thứ hai</li>
-                    <li><strong>Biết trước nó không vẽ được những vòng lặp chưa biết trước số vòng:</strong> Sprint đã lên lịch hay một vòng rà soát đã hẹn thì vẫn vẽ thành thanh được. Cái không vẽ được là chu trình kiểm thử rồi sửa rồi kiểm lại, nơi cả số vòng lẫn kết quả mỗi vòng đều chưa biết; với chúng, một thanh liền mạch là mô tả sai về hình dạng công việc chứ không phải ước lượng sai về độ dài. Chẻ nhỏ thanh cũng không cứu được, vì muốn chẻ thì vẫn phải biết trước số vòng. Việc làm được là theo dõi riêng phần đó bằng một đại lượng khác, chẳng hạn số lỗi còn mở thay cho số ngày còn lại</li>
+                    <li><strong>Tách riêng phần việc lặp chưa biết số vòng, và theo dõi nó bằng điều kiện bàn giao:</strong> Sprint đã lên lịch hay một vòng rà soát đã hẹn thì vẽ thành thanh được như mọi việc khác. Chu trình kiểm thử rồi sửa rồi kiểm lại thì khác: số vòng và kết quả mỗi vòng đều chưa biết trước, nên một thanh cố định không thể hiện đầy đủ cấu trúc vòng lặp lẫn mức bất định của nó. <sup><a href="#ref-6">[6]</a></sup> Vẫn vẽ được một khoảng dự kiến và những vòng đã biết, rồi cập nhật phần còn lại khi có thêm thông tin; cái không làm được là chẻ sẵn thanh thành từng vòng ngay từ đầu, vì muốn chẻ thì phải biết trước số vòng. Thước đo đi kèm cũng đừng là một con số đếm duy nhất: số lỗi còn mở có thể tăng chính vì kiểm thử đang làm tốt việc của nó, và có thể giảm vì nhiều lỗi nhẹ được đóng trong khi lỗi nặng vẫn còn. Theo dõi cùng lúc số lỗi nặng còn mở, phần kịch bản kiểm thử đã chạy, và những điều kiện chấp nhận bàn giao đã đạt hay chưa</li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Tình Huống Áp Dụng</h2>
+            <p class="intro-text">Một công ty 40 người phải dọn sang văn phòng mới trước khi hợp đồng thuê cũ hết hạn, mười tuần nữa. Việc chia cho bốn bên: phòng hành chính lo hợp đồng và nội thất, nhóm IT lo mạng và máy tính, một đơn vị vận chuyển thuê ngoài, và ban quản lý toà nhà mới lo thi công điện. Mục tiêu đo được: sáng thứ Hai đầu tiên ở văn phòng mới, trước 9 giờ, cả 40 người có chỗ ngồi, máy chạy và đăng nhập được vào hệ thống nội bộ. Các con số trong tình huống này là số minh hoạ.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Viết mỗi đầu việc thành một thứ bàn giao được:</strong> "Điện tầng mới đã nghiệm thu", "40 bàn đã lắp", "mạng chạy ở cả hai khu", thay cho "làm phần IT". Danh sách có 14 dòng, và dòng nào cũng trả lời được câu "xong thì nhìn thấy cái gì"</li>
+                    <li><strong>Ghi ước lượng kèm mức chắc chắn:</strong> 10 dòng là việc công ty hoặc nhà cung cấp đã làm nhiều lần, chẳng hạn lắp bàn mất 3 ngày như hai lần dọn trước. 4 dòng là phỏng đoán, nặng nhất là thi công điện ở toà nhà mới, nơi chưa ai trong công ty từng làm việc cùng ban quản lý. Với bốn dòng này, ghi cả ngày sớm nhất và muộn nhất, riêng việc điện là từ 8 tới 15 ngày làm việc, và tô chúng một màu riêng</li>
+                    <li><strong>Chỉ nối hai thanh khi việc sau thật sự phải chờ việc trước:</strong> Kéo cáp mạng phải chờ điện nghiệm thu, lắp máy phải chờ cáp mạng và bàn, kiểm tra đăng nhập phải chờ lắp máy. Còn đóng thùng đồ ở văn phòng cũ, đặt nội thất hay báo địa chỉ mới cho khách thì chạy song song, dù xếp chúng nối đuôi nhau trông gọn hơn. Chuỗi điện, cáp, máy, kiểm tra là chuỗi dài nhất: chậm trên nó trước hết ăn vào khoảng dư trước ngày dọn, và chỉ khi khoảng dư dùng hết thì ngày dọn mới bị đẩy</li>
+                    <li><strong>Đặt thanh lên lịch theo cả hai đầu của khoảng ước lượng, và tách ba mốc ngày:</strong> Hạn cứng là cuối tuần thứ mười, khi hợp đồng thuê cũ hết. Ngày dọn đặt sớm hơn một tuần, vào cuối tuần thứ chín, tức ngày làm việc thứ 45, để tuần cuối làm dự phòng. Còn ngày xong của chuỗi dài nhất thì tuỳ việc điện, như bảng và Hình 2 ngay sau các bước: điện mất 8 ngày thì chuỗi xong ở ngày 30, dư ba tuần trước ngày dọn; mất 15 ngày thì xong ở ngày 37, khoảng dư chỉ còn 8 ngày làm việc. Vẽ một thanh 8 ngày thì cả phòng chỉ nhìn thấy con số ba tuần, nên biểu đồ ghi cả hai</li>
+                    <li><strong>Họp mười lăm phút mỗi thứ Hai, đọc tiến độ từ thứ đã bàn giao và ghi lý do cạnh mỗi thanh bị lùi:</strong> Câu "mình có đúng tiến độ không" vẫn được hỏi, nhưng được trả lời bằng những dòng đã có thứ để bàn giao, đặt cạnh lịch gốc chốt từ tuần đầu, gồm cả hai đầu của khoảng ước lượng, chứ không bằng vạch hôm nay. Sau bốn tuần, 5 thanh đã bị lùi, và cột lý do ghi 4 lần "chờ duyệt chi", 1 lần "nhà cung cấp giao thiếu ghế". Một trong bốn lần chờ duyệt là hợp đồng thi công điện, ký trễ một tuần, nên khoảng dư của chuỗi dài nhất giảm từ 15 xuống 10 ngày nếu điện thuận lợi, và từ 8 xuống chỉ còn 3 ngày nếu điện mất trọn 15 ngày; ba lần còn lại nằm ở những việc chạy song song</li>
+                    <li><strong>So nhóm thanh bị lùi với nhóm không bị lùi trước khi kết luận:</strong> Trong 14 dòng, 6 dòng cần phòng tài chính duyệt chi trước khi bắt đầu, 8 dòng không cần. Bị lùi: 4 trên 6 ở nhóm đầu, 1 trên 8 ở nhóm sau. Mở nhật ký duyệt thì thấy cả bốn đề nghị đều nằm chờ tới buổi ký duyệt chi định kỳ chiều thứ Sáu, nên đề nghị gửi đầu tuần mất khoảng 5 ngày làm việc mới được ký. Phép so chỉ là tín hiệu để đi tìm; nhật ký mới cho thấy cơ chế: chỗ nghẽn nằm ở lịch ký duyệt, không ở các bên thi công</li>
+                    <li><strong>Sửa đúng chỗ nghẽn và đo lại bằng cùng một định nghĩa:</strong> Hành chính và tài chính thống nhất rằng các khoản chi cho việc dọn được ký trong hai ngày làm việc kể từ lúc gửi, không chờ buổi thứ Sáu. Mỗi đề nghị duyệt chi còn lại được vẽ thành một thanh "chờ duyệt" riêng, chạy từ ngày gửi tới ngày ký, để thời gian chờ hiện ra thay vì nằm lẫn trong thanh phía sau. Theo dõi riêng hai con số: số ngày từ lúc gửi tới lúc ký, đếm như bốn tuần đầu, và khoảng dư của chuỗi dài nhất so với ngày dọn</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Chuỗi dài nhất, theo ngày làm việc</th><th scope="col">Kế hoạch, điện 8 ngày</th><th scope="col">Kế hoạch, điện 15 ngày</th><th scope="col">Thực tế</th></tr></thead>
+                    <tbody>
+                        <tr><td>Ký hợp đồng thi công điện, cần duyệt chi</td><td>Xong ngày 10</td><td>Xong ngày 10</td><td>Xong ngày 15</td></tr>
+                        <tr><td>Thi công điện</td><td>Ngày 11 tới 18</td><td>Ngày 11 tới 25</td><td>Ngày 16 tới 28, mất 13 ngày</td></tr>
+                        <tr><td>Kéo cáp mạng, 5 ngày</td><td>Ngày 19 tới 23</td><td>Ngày 26 tới 30</td><td>Ngày 29 tới 33</td></tr>
+                        <tr><td>Lắp máy, 4 ngày</td><td>Ngày 24 tới 27</td><td>Ngày 31 tới 34</td><td>Ngày 34 tới 37</td></tr>
+                        <tr><td>Kiểm tra đăng nhập, 3 ngày</td><td>Ngày 28 tới 30</td><td>Ngày 35 tới 37</td><td>Ngày 38 tới 40</td></tr>
+                        <tr><td>Khoảng dư tới ngày dọn, ngày 45</td><td>15 ngày</td><td>8 ngày</td><td>5 ngày</td></tr>
+                    </tbody>
+                </table>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Biểu đồ Gantt của chuỗi dài nhất trong tình huống dọn văn phòng, trục ngày làm việc từ 0 tới 50. Mỗi việc có một khối viền đứt là lịch gốc và một khối đặc là thực tế. Ký hợp đồng điện lùi từ ngày 10 sang ngày 15 vì chờ duyệt chi. Thi công điện có dải ước lượng từ ngày 11 tới 25, thực tế chạy từ ngày 16 tới 28. Cáp mạng, lắp máy và kiểm tra đăng nhập lùi theo, chuỗi xong ở ngày 40, còn dư 5 ngày trước ngày dọn là ngày 45, và hạn hợp đồng là ngày 50."
+                        viewBox="0 0 1120 420">
+                        <defs>
+                            <marker id="gantt-arrow-2" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <text class="small rowlabel" x="250" y="42">Ngày làm việc</text>
+                        <path class="axis" d="M260 58 H1080"></path>
+                        <path class="tick" d="M260 52 V58"></path>
+                        <path class="tick" d="M420 52 V58"></path>
+                        <path class="tick" d="M580 52 V58"></path>
+                        <path class="tick" d="M740 52 V58"></path>
+                        <path class="tick" d="M900 52 V58"></path>
+                        <text class="small" x="260" y="40">0</text>
+                        <text class="small" x="420" y="40">10</text>
+                        <text class="small" x="580" y="40">20</text>
+                        <text class="small" x="740" y="40">30</text>
+                        <text class="small" x="900" y="40">40</text>
+
+                        <path class="today" d="M980 64 V372"></path>
+                        <text class="small alert" x="980" y="390">ngày dọn, 45</text>
+                        <path class="edge" d="M1060 64 V372"></path>
+                        <text class="small" x="1060" y="406">hết hợp đồng, 50</text>
+
+                        <text class="rowlabel" x="250" y="100">Ký hợp đồng điện</text>
+                        <rect class="ghost" x="340" y="84" width="80" height="32" rx="6"></rect>
+                        <rect class="bar" x="340" y="88" width="160" height="24" rx="6"></rect>
+                        <text class="small note alert" x="512" y="100">lùi 5 ngày: chờ duyệt chi</text>
+
+                        <text class="rowlabel" x="250" y="150">Điện, khoảng ước lượng</text>
+                        <rect class="band" x="420" y="134" width="240" height="32" rx="6"></rect>
+                        <path class="edge-ghost" d="M548 128 V172"></path>
+                        <text class="small" x="484" y="150">8 ngày</text>
+                        <text class="small" x="604" y="150">tới 15 ngày</text>
+
+                        <text class="rowlabel" x="250" y="200">Điện, thực tế</text>
+                        <rect class="bar" x="500" y="188" width="208" height="24" rx="6"></rect>
+                        <text class="small note" x="720" y="200">13 ngày</text>
+
+                        <text class="rowlabel" x="250" y="250">Kéo cáp mạng</text>
+                        <rect class="ghost" x="548" y="234" width="80" height="32" rx="6"></rect>
+                        <rect class="bar" x="708" y="238" width="80" height="24" rx="6"></rect>
+
+                        <text class="rowlabel" x="250" y="300">Lắp máy</text>
+                        <rect class="ghost" x="628" y="284" width="64" height="32" rx="6"></rect>
+                        <rect class="bar" x="788" y="288" width="64" height="24" rx="6"></rect>
+
+                        <text class="rowlabel" x="250" y="350">Kiểm tra đăng nhập</text>
+                        <rect class="ghost" x="692" y="334" width="48" height="32" rx="6"></rect>
+                        <rect class="bar" x="852" y="338" width="48" height="24" rx="6"></rect>
+                        <path class="arrow" d="M904 350 H974" marker-end="url(#gantt-arrow-2)"></path>
+                        <text class="small" x="940" y="334">dư 5 ngày</text>
+                    </svg>
+                    <figcaption>
+                        <strong>Hình 2.</strong> Chuỗi dài nhất của tình huống dọn văn phòng, vẽ lại ở cuối dự án. Khối viền
+                        đứt là lịch gốc theo kịch bản điện thuận lợi, khối đặc là thực tế, dải mờ là khoảng ước lượng của
+                        việc điện. Năm ngày chờ duyệt chi đẩy cả chuỗi lùi theo, nhưng chưa chạm ngày dọn: nó chỉ ăn vào
+                        khoảng dư. Ngày chuỗi xong là đầu mút của khối cuối cùng, còn ngày dọn và hạn hợp đồng là hai vạch
+                        dọc: ba mốc khác nhau, và chỉ khi khoảng dư tới ngày dọn dùng hết thì ngày dọn mới bị đẩy.
+                    </figcaption>
+                </figure>
+                <p>Hai đề nghị còn lại được ký sau 1 và 2 ngày làm việc. Thi công điện mất 13 ngày, nằm trong khoảng đã ghi, nên chuỗi dài nhất xong ở ngày 40: còn dư 5 ngày làm việc trước ngày dọn, và thêm một tuần nữa trước hạn hợp đồng. Đồ được dọn đúng cuối tuần thứ chín, và sáng thứ Hai, trước 9 giờ, cả 40 người đã ngồi vào chỗ và đăng nhập được. Biểu đồ không làm việc thi công điện nhanh hơn ngày nào. Nó giúp bốn bên nhìn chung một mốc; khoảng ước lượng của việc điện cho biết ngay từ đầu rằng thời gian dư ít hơn vẻ ngoài; và cột lý do chỉ ra chỗ nghẽn nằm ở lịch ký duyệt, thứ mà các thanh dịch chỗ tự chúng không nói. Điều kiện để có kết quả ấy là các thanh gắn với thứ bàn giao được, khoảng bất định được ghi ra thay vì giấu sau một con số, và lý do được ghi từ tuần đầu tiên, đủ sớm để còn kịp sửa.</p>
             </div>
         </section>
 
@@ -173,7 +274,7 @@
         <section class="content-section">
             <h2 class="main-point">Tóm Tắt</h2>
             <div class="summary-box">
-                <p><strong>Điểm Chính:</strong> Biểu đồ Gantt không phải chỉ chứa được thời gian, nhưng nó đưa thời gian lên tiền cảnh và đẩy mọi thứ khác xuống hậu cảnh. Quan hệ phụ thuộc, mốc, người phụ trách và phần trăm hoàn thành đều vẽ thêm được, chỉ là phải có người chủ động đưa vào; còn độ bất định của ước lượng, lý do mỗi lần lệch và bản chất vòng lặp của công việc thì không có ô sẵn nào để điền. Vì thanh có hai đầu sắc nét, thứ người xem nhận về là một hình trông chắc chắn hơn hẳn lượng thông tin đã vẽ ra nó, và khi thiếu dữ liệu tiến độ thật thì vạch ngày hôm nay rất dễ bị đọc thành phần việc đã xong. Điều phản trực giác nhất nằm ở lịch sử của chính nó: biểu đồ thanh có trước Henry Gantt cả trăm năm, hệ thống mang tên ông là bản ghi quá khứ trong xưởng máy chứ không phải lịch trình dự án, và bản từ thập niên 1920 có cột ghi lý do mỗi lần lệch kế hoạch mà bản hôm nay không còn. Cách dùng đáng tin vì vậy là chủ động kéo ngược lên những thứ đã bị đẩy xuống hậu cảnh.</p>
+                <p><strong>Điểm Chính:</strong> Biểu đồ Gantt đưa thời gian lên tiền cảnh và đẩy mọi thứ khác xuống hậu cảnh: chỗ chồng nhau và mốc bàn giao hiện ra ngay khi nhìn, còn độ bất định của ước lượng, lý do mỗi lần lệch và bản chất vòng lặp của công việc thì không có cách thể hiện mặc định nào, trong khi hai đầu sắc nét của thanh khiến hình trông chắc chắn hơn lượng thông tin đã vẽ ra nó. Điều phản trực giác nhất nằm ở lịch sử của chính nó: biểu đồ của Gantt là bản ghi đặt lời hứa cạnh kết quả, và bản trong sách của Clark có cột ghi lý do mỗi lần lệch mà mẫu vẽ hôm nay không còn giữ sẵn. Cách dùng đáng tin vì vậy là kéo ngược những thứ ấy lên: lý do của từng lần lệch, lịch gốc để so, mức chắc chắn của từng ước lượng, và thứ đã thật sự bàn giao.</p>
             </div>
         </section>
 
@@ -181,15 +282,14 @@
         <section class="content-section">
             <h2 class="main-point">Tài Liệu Tham Khảo</h2>
             <ol class="outline-list">
-                <li id="ref-1">Yakura, E. K. (2002). Charting Time: Timelines as Temporal Boundary Objects. <em>Academy of Management Journal</em>, 45(5), 956-970. Nghiên cứu quan sát tại một công ty tư vấn công nghệ, nguồn cho hai điều trái chiều nhau trong bài: người dùng gán cho biểu đồ một độ bền mà nó không có, và chính sự đơn giản của nó khiến các nhóm khác quan điểm thương lượng được với nhau. <a href="https://journals.aom.org/doi/10.5465/3069324" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
-                <li id="ref-2">Weaver, P. (2012). Henry L Gantt, 1861-1919: Debunking the myths, a retrospective view of his work. <em>PM World Journal</em>, Vol. I, Issue V, tháng 12 năm 2012. Bài truy lại từ ba cuốn sách gốc đã số hoá; nguồn cho việc biểu đồ của Gantt vốn là bản ghi sản xuất điền sau ca làm, và cho lịch sử biểu đồ thanh từ Priestley (1765) qua harmonogram của Adamiecki (1896) tới biểu đồ thi công cầu ở Bavaria năm 1912. <a href="https://pmworldlibrary.net/wp-content/uploads/2013/01/PMWJ5-Dec2012-WEAVER-Henry-Gantt-Debunking-Myths-Featured-Paper.pdf" rel="noopener noreferrer" target="_blank">Đọc toàn văn</a>.</li>
-                <li id="ref-3">Geraldi, J., & Lechter, T. (2012). Gantt charts revisited: A critical analysis of its roots and implications to the management of projects today. <em>International Journal of Managing Projects in Business</em>, 5(4), 578-594. Nguồn cho sáu nguyên tắc nằm sẵn trong công cụ, mốc thập niên 1940 khi biểu đồ lần đầu được dùng cho dự án, cột lý do lệch kế hoạch đã mất, lối đọc tiến độ theo thời gian đã trôi, và là nguồn dẫn lại thí nghiệm MacNeice (1951) qua bản rà soát của Wilson (2003). <a href="https://www.emerald.com/insight/content/doi/10.1108/17538371211268889/full/html" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
-                <li id="ref-4">Sydney Opera House. <em>Interesting facts about Sydney Opera House</em>. Trang chính thức của công trình, nguồn cho dự toán 7 triệu đô la, chi phí thực tế 102 triệu, kế hoạch bốn năm so với mười bốn năm thi công, và ngày khánh thành 20 tháng 10 năm 1973. <a href="https://www.sydneyoperahouse.com/building/interesting-facts-about-sydney-opera-house" rel="noopener noreferrer" target="_blank">Đọc trang gốc</a>.</li>
-                <li id="ref-5">Sydney Opera House. <em>Construction begins</em>, mục Our Story. Nguồn cho ngày khởi công 2 tháng 3 năm 1959, cho việc các điểm neo mái và tải trọng của chúng chưa được xác định tại thời điểm đó, và cho việc giai đoạn một hoàn thành tháng 2 năm 1963, chậm hai năm so với kế hoạch. <a href="https://www.sydneyoperahouse.com/our-story/construction-begins" rel="noopener noreferrer" target="_blank">Đọc trang gốc</a>.</li>
-                <li id="ref-6">Sydney Opera House. <em>The spherical solution</em>, mục Our Story. Nguồn cho chuỗi phương án hình học của bộ mái từ 1958 tới 1962 và cho việc Utzon nộp tập tài liệu ghi lời giải mặt cầu vào tháng 1 năm 1962. <a href="https://www.sydneyoperahouse.com/our-story/the-spherical-solution" rel="noopener noreferrer" target="_blank">Đọc trang gốc</a>.</li>
-                <li id="ref-7">Besner, C., & Hobbs, B. (2008). Project Management Practice, Generic or Contextual: A Reality Check. <em>Project Management Journal</em>, 39(1), 16-33. Khảo sát 750 nhà quản lý dự án về mức độ sử dụng 70 công cụ và kỹ thuật; bài này dẫn lại qua Geraldi và Lechter cho thứ hạng của biểu đồ Gantt. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/pmj.20033" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
-                <li id="ref-8">Clark, W., Polakov, W., & Trabold, F. <em>The Gantt Chart: A Working Tool of Management</em>. The Ronald Press Company, New York. Cuốn sách đặt ra cái tên "Gantt chart"; Geraldi và Lechter ghi năm xuất bản là 1922, bản số hoá do Mosaic Projects cung cấp ghi năm 1923. <a href="https://mosaicprojects.com.au/Resources_Papers_158.html" rel="noopener noreferrer" target="_blank">Tải bản số hoá cùng hai cuốn sách của Gantt</a>.</li>
-                <li id="ref-9">Microsoft. <em>Format the bar chart of a Gantt chart view</em>, tài liệu hướng dẫn Microsoft Project, kiểm ngày 5 tháng 8 năm 2026. Tài liệu chính thức của nhà cung cấp, nguồn cho việc một biểu đồ Gantt trong phần mềm hiện nay vẽ được thêm đường nối quan hệ phụ thuộc, mốc, tên người phụ trách và phần trăm hoàn thành. <a href="https://support.microsoft.com/en-us/project/format-the-bar-chart-of-a-gantt-chart-view" rel="noopener noreferrer" target="_blank">Đọc tài liệu</a>.</li>
+                <li id="ref-1">Weaver, P. (2012). Henry L Gantt, 1861-1919: Debunking the myths, a retrospective view of his work. <em>PM World Journal</em>, Vol. I, Issue V, tháng 12 năm 2012. Bài truy lại từ ba cuốn sách gốc đã số hoá; nguồn cho lịch sử biểu đồ thanh từ Priestley (1765) qua harmonogram của Adamiecki (1896), cho hình chương trình thi công năm 1912 in lại từ tạp chí <em>Armierter Beton</em>, cho việc biểu đồ của Gantt vốn là bản ghi sản xuất điền sau ca làm, cho lời Gantt chê những kế hoạch chỉ đẹp trên giấy, và cho mốc thập niên 1930. Bài ghi nhầm vị trí công trình năm 1912 là Bavaria, xem [2]. <a href="https://pmworldlibrary.net/wp-content/uploads/2013/01/PMWJ5-Dec2012-WEAVER-Henry-Gantt-Debunking-Myths-Featured-Paper.pdf" rel="noopener noreferrer" target="_blank">Đọc toàn văn</a>.</li>
+                <li id="ref-2">Schürch, H. (1916). <em>Der Bau des Talüberganges bei Langwies an der elektrischen Bahn Chur-Arosa</em>. Julius Springer, Berlin. Bản in riêng từ tạp chí <em>Armierter Beton</em> 1915-1916, do chính kỹ sư của hãng thầu Ed. Züblin &amp; Cie. viết; nguồn gốc của biểu đồ thanh mà Weaver in lại (Fig. 33, "Auszug aus dem Bauprogramm"), và nguồn cho việc công trình nằm ở bang Graubünden, Thuỵ Sĩ, kèm bảng nhu cầu vật tư (Fig. 32). Bản số hoá của Thư viện Đại học Bách khoa Wrocław. <a href="https://dbc.wroc.pl/Content/8365/PDF/009267.pdf" rel="noopener noreferrer" target="_blank">Đọc bản số hoá</a>.</li>
+                <li id="ref-3">Clark, W., Polakov, W., &amp; Trabold, F. <em>The Gantt Chart: A Working Tool of Management</em>. The Ronald Press Company, New York. Cuốn sách đặt ra cái tên "Gantt chart"; Geraldi và Lechter ghi năm xuất bản là 1922, bản số hoá do Mosaic Projects cung cấp ghi năm 1923. <a href="https://mosaicprojects.com.au/Resources_Papers_158.html" rel="noopener noreferrer" target="_blank">Tải bản số hoá cùng hai cuốn sách của Gantt</a>.</li>
+                <li id="ref-4">Microsoft. <em>Format the bar chart of a Gantt chart view</em>, tài liệu hướng dẫn Microsoft Project, kiểm ngày 5 tháng 8 năm 2026, kiểm lại ngày 9 tháng 10 năm 2026. Tài liệu chính thức của nhà cung cấp, nguồn cho việc một biểu đồ Gantt trong phần mềm hiện nay vẽ được thêm đường nối quan hệ phụ thuộc, mốc, tên người phụ trách và phần trăm hoàn thành, và hiện được một trường văn bản tuỳ chỉnh như Text1 ngay cạnh thanh. <a href="https://support.microsoft.com/en-us/project/format-the-bar-chart-of-a-gantt-chart-view" rel="noopener noreferrer" target="_blank">Đọc tài liệu</a>.</li>
+                <li id="ref-5">Yakura, E. K. (2002). Charting Time: Timelines as Temporal Boundary Objects. <em>Academy of Management Journal</em>, 45(5), 956-970. Nghiên cứu quan sát tại một công ty tư vấn công nghệ, nguồn cho hai điều trái chiều nhau trong bài: chính sự đơn giản của biểu đồ khiến các nhóm khác quan điểm thương lượng được với nhau, và người dùng gán cho biểu đồ một độ bền mà nó không có. <a href="https://journals.aom.org/doi/10.5465/3069324" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-6">Geraldi, J., &amp; Lechter, T. (2012). Gantt charts revisited: A critical analysis of its roots and implications to the management of projects today. <em>International Journal of Managing Projects in Business</em>, 5(4), 578-594. Nguồn cho sáu nguyên tắc nằm sẵn trong công cụ, cho minh hoạ sớm nhất của biểu đồ Gantt dùng cho dự án trong tư liệu hai tác giả khảo sát (Koepke, 1941), cột lý do lệch kế hoạch đã mất, lối đọc tiến độ theo thời gian đã trôi, và là nguồn dẫn lại thí nghiệm MacNeice (1951) qua bản rà soát của Wilson (2003). <a href="https://www.emerald.com/insight/content/doi/10.1108/17538371211268889/full/html" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-7">Besner, C., &amp; Hobbs, B. (2008). Project Management Practice, Generic or Contextual: A Reality Check. <em>Project Management Journal</em>, 39(1), 16-33. Khảo sát 750 nhà quản lý dự án về mức độ sử dụng 70 công cụ và kỹ thuật; bài này dẫn lại qua Geraldi và Lechter cho thứ hạng của biểu đồ Gantt. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/pmj.20033" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-8">Gantt, H. L. (1919). <em>Organizing for Work</em>. Harcourt, Brace and Howe, New York, tr. 78-82. Lời kể của chính Gantt về hệ biểu đồ ở kho quân giới Frankford và Cục Quân nhu Lục quân Mỹ năm 1917, gồm cách đọc đường tích luỹ, lá thư của Herman Schneider về chuyện không thiếu người, và việc phương pháp bị bỏ dần sau khi Crozier rời chức vụ. Là nguồn của người trong cuộc, nên bài chỉ dùng nó cho phần mô tả cách dùng. <a href="https://archive.org/details/organizingforwor00gant" rel="noopener noreferrer" target="_blank">Đọc bản số hoá</a>.</li>
             </ol>
         </section>
     </article>

@@ -187,6 +187,7 @@ Ví Dụ cho thấy người khác đã dùng công cụ ra sao, Cách Áp Dụn
 - **Hợp với công cụ, và là cảnh dùng đúng.** Đừng ép công cụ vào vấn đề mà công cụ khác hợp hơn. Khác tình huống tầng 1 ở Ví Dụ, nơi công cụ thường bị dùng sai.
 - **`intro-text` nêu vấn đề cụ thể tới mức đo được**, rồi các bước theo đúng trình tự thật của công cụ, mỗi bước là việc làm cụ thể trong tình huống. Ít nhất một bước cho thấy một nguyên tắc ở Cách Áp Dụng đang được dùng.
 - **Tình huống phải tự áp đúng chuẩn bằng chứng bài đang dạy**: so nhóm lỗi với nhóm không lỗi trước khi quy nguyên nhân, kiểm đối sách với chính dữ kiện đã nêu, tách chỉ số kết quả thật khỏi chỉ số đo, đo trước và sau bằng đúng một định nghĩa chỉ số, và không gạch một giả thuyết khi dữ liệu mới chỉ ủng hộ giả thuyết khác. Số trong tình huống là số minh hoạ, nên chọn sao cho tình huống đạt mục tiêu nó đặt ra; không dựng một kết quả hụt rồi phải rào lại.
+- **Phép tính trong tình huống phải kiểm lại được.** Kết quả nào dựa vào một phép tính (lịch, khoảng dư, tỷ lệ, chi phí) thì đưa đủ đầu vào, thường bằng một bảng nhỏ; các mốc khác nhau (ngày xong việc, ngày đã chọn, hạn cứng) phải mang tên riêng và không dùng lẫn cho nhau.
 - **Đoạn kết nêu kết quả và điều kiện để đạt được nó.** Không viết "cách tốt nhất", "luôn giải quyết được": một tình huống dựng lên không chứng minh được điều đó.
 
 ### 3.7 Tóm tắt
@@ -263,6 +264,7 @@ Chạy sau checklist ở `html-menu-rules.md` mục 8, không thay thế nó.
 - [ ] Tiêu đề section 3 có tên đầy đủ của mục
 - [ ] Tiêu đề section 4 đúng một trong hai tên chuẩn, không thêm mệnh đề nào
 - [ ] Công cụ là một hình thì bài có hình đó, đặt sau đoạn cơ chế và trước bảng, có nội dung thật chứ không phải khung rỗng (mục 3.1)
+- [ ] Danh mục công cụ: câu nào nói công cụ "không chứa được", "không vẽ được", "đã bỏ" một thứ phải nói rõ đang nói về mẫu vẽ mặc định, về phần mềm, hay về cách người ta thường dùng; thứ người vẽ hoặc phần mềm thêm được thì viết "mẫu mặc định không có", không viết "không thể"
 - [ ] `content-table` là một phép đối chiếu, không phải danh sách định nghĩa
 - [ ] Mỗi ví dụ qua hai phép kiểm liên quan và dùng được (mục 3.3): nguồn gọi đích danh mục đang bàn, không có đoạn nào giải thích rằng ví dụ không nói gì về mục, rào đón không quá một đoạn. Thiếu tầng thì được, ví dụ trượt thì không
 - [ ] Không gọi ví dụ nào là thí nghiệm tự nhiên hay "cô lập được" tác động của công cụ. Trước khi viết câu đó, đọc lại nguồn xem nó có liệt kê biến nào cùng thay đổi không; có thì đưa các biến ấy vào bài

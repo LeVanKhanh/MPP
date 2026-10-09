@@ -186,7 +186,7 @@ Ví Dụ cho thấy người khác đã dùng công cụ ra sao, Cách Áp Dụn
 - **Tình huống gần gũi, được phép giả định**: việc văn phòng hoặc đời sống hằng ngày, không cần kiến thức chuyên ngành. Không cần nguồn, không gắn số liệu thật; số trong tình huống là số minh hoạ.
 - **Hợp với công cụ, và là cảnh dùng đúng.** Đừng ép công cụ vào vấn đề mà công cụ khác hợp hơn. Khác tình huống tầng 1 ở Ví Dụ, nơi công cụ thường bị dùng sai.
 - **`intro-text` nêu vấn đề cụ thể tới mức đo được**, rồi các bước theo đúng trình tự thật của công cụ, mỗi bước là việc làm cụ thể trong tình huống. Ít nhất một bước cho thấy một nguyên tắc ở Cách Áp Dụng đang được dùng.
-- **Tình huống phải tự áp đúng chuẩn bằng chứng bài đang dạy**: so nhóm lỗi với nhóm không lỗi trước khi quy nguyên nhân, kiểm đối sách với chính dữ kiện đã nêu, tách chỉ số kết quả thật khỏi chỉ số đo.
+- **Tình huống phải tự áp đúng chuẩn bằng chứng bài đang dạy**: so nhóm lỗi với nhóm không lỗi trước khi quy nguyên nhân, kiểm đối sách với chính dữ kiện đã nêu, tách chỉ số kết quả thật khỏi chỉ số đo, đo trước và sau bằng đúng một định nghĩa chỉ số, và không gạch một giả thuyết khi dữ liệu mới chỉ ủng hộ giả thuyết khác. Số trong tình huống là số minh hoạ, nên chọn sao cho tình huống đạt mục tiêu nó đặt ra; không dựng một kết quả hụt rồi phải rào lại.
 - **Đoạn kết nêu kết quả và điều kiện để đạt được nó.** Không viết "cách tốt nhất", "luôn giải quyết được": một tình huống dựng lên không chứng minh được điều đó.
 
 ### 3.7 Tóm tắt

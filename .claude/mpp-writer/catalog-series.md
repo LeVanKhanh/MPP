@@ -171,10 +171,11 @@ Bốn mục `<li>`, mỗi mục mở bằng `<strong>` là một **mệnh lệnh
 <li><strong>Tự ước tính độc lập trước khi thấy con số của người khác:</strong> Viết ra con số của riêng bạn trước khi nhìn vào giá niêm yết, để con số đó không thể âm thầm trở thành cái neo của bạn</li>
 ```
 
-Kiểm bốn mục bằng hai câu hỏi:
+Kiểm bốn mục bằng ba câu hỏi:
 
 1. Mục này có suy ra được từ cơ chế đã nêu không? Không suy ra được thì đó là lời khuyên chung dán vào, bỏ.
 2. Mục này có làm được vào sáng mai không? "Hãy khách quan hơn", "hãy nhận thức được thiên kiến của mình" thì không làm được, bỏ.
+3. Mục này có lấy một con số đếm (số món đã bỏ, số lần kiểm, điểm chấm) làm thước đo thành công không? Có thì hỏi con số đó có tự thành chỉ tiêu hình thức mới không; thường phải thay bằng một phép kiểm về lý do, hoặc bằng chỉ số kết quả đo trước và sau.
 
 Có ít nhất một mục nói rõ **cách này hỏng khi nào** hoặc **vì sao cách hiển nhiên lại không chạy**. Bản mẫu: "cách phòng vệ thực sự không phải là cố lờ con số đó đi".
 

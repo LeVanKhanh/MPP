@@ -93,26 +93,111 @@
             elements.body.classList.add(this.classes[normalized]);
             localStorage.setItem('font-size', normalized);
             this.pushToIframe(normalized);
-            this.updateSelectClass(normalized);
-        },
-
-        updateSelectClass(size) {
-            const select = document.getElementById('font-size-select');
-            if (!select) return;
-            select.classList.remove(...Object.values(this.classes));
-            select.classList.add(`font-size-${size}`);
+            settingsDialog.check('font-size', normalized);
         },
 
         init() {
-            const select = document.getElementById('font-size-select');
-            if (!select) return;
+            this.apply(this.getCurrent());
+            settingsDialog.onChange('font-size', (value) => this.apply(value));
+        }
+    };
 
-            const current = this.getCurrent();
-            select.value = current;
-            this.apply(current);
+    // ========== Color Palette Management ==========
+    // Same flow as font size: body class on the shell and the iframe, saved in localStorage
+    const paletteManager = {
+        palettes: ['paper', 'indigo', 'sage', 'clay'],
 
-            select.addEventListener('change', () => this.apply(select.value || 'default'));
-            select.addEventListener('input',  () => this.apply(select.value || 'default')); // fallback for Samsung/Android
+        getCurrent() {
+            return localStorage.getItem('palette') || 'paper';
+        },
+
+        pushToIframe(palette) {
+            try {
+                const iframeBody = elements.iframe?.contentDocument?.body;
+                if (iframeBody) {
+                    iframeBody.classList.remove(...this.palettes.map(p => `palette-${p}`));
+                    iframeBody.classList.add(`palette-${palette}`);
+                }
+            } catch { /* cross-origin, fall through to postMessage */ }
+
+            elements.iframe?.contentWindow?.postMessage({ type: 'set-palette', palette }, '*');
+        },
+
+        apply(palette) {
+            const normalized = this.palettes.includes(palette) ? palette : 'paper';
+            elements.body.classList.remove(...this.palettes.map(p => `palette-${p}`));
+            elements.body.classList.add(`palette-${normalized}`);
+            localStorage.setItem('palette', normalized);
+            this.pushToIframe(normalized);
+            settingsDialog.check('palette', normalized);
+        },
+
+        init() {
+            this.apply(this.getCurrent());
+            settingsDialog.onChange('palette', (value) => this.apply(value));
+        }
+    };
+
+    // ========== Settings Dialog ==========
+    const settingsDialog = {
+        dialog: document.getElementById('settings-dialog'),
+        toggle: document.getElementById('settings-toggle'),
+
+        labels: {
+            en: {
+                settings: 'Settings', close: 'Close', language: 'Language', darkMode: 'Dark mode',
+                fontSize: 'Font size', sizeDefault: 'Default', sizeLarger: 'Larger', sizeLarge: 'Large',
+                colorTheme: 'Color theme', palettePaper: 'Ink and paper', paletteIndigo: 'Soft indigo',
+                paletteSage: 'Sage', paletteClay: 'Terracotta'
+            },
+            vn: {
+                settings: 'Cài đặt', close: 'Đóng', language: 'Ngôn ngữ', darkMode: 'Chế độ tối',
+                fontSize: 'Cỡ chữ', sizeDefault: 'Mặc định', sizeLarger: 'Lớn hơn', sizeLarge: 'Lớn',
+                colorTheme: 'Màu chủ đạo', palettePaper: 'Mực và giấy', paletteIndigo: 'Xanh chàm',
+                paletteSage: 'Xanh rêu', paletteClay: 'Đất nung'
+            }
+        },
+
+        check(name, value) {
+            const input = this.dialog?.querySelector(`input[name="${name}"][value="${value}"]`);
+            if (input) input.checked = true;
+        },
+
+        onChange(name, handler) {
+            this.dialog?.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+                input.addEventListener('change', () => input.checked && handler(input.value));
+            });
+        },
+
+        translate(lang) {
+            const dict = this.labels[lang] || this.labels.en;
+            this.dialog?.querySelectorAll('[data-i18n]').forEach(el => {
+                el.textContent = dict[el.dataset.i18n] ?? el.textContent;
+            });
+            this.dialog?.querySelectorAll('[data-i18n-label]').forEach(el => {
+                el.setAttribute('aria-label', dict[el.dataset.i18nLabel]);
+            });
+            this.toggle?.setAttribute('aria-label', dict.settings);
+            this.toggle?.setAttribute('title', dict.settings);
+        },
+
+        init() {
+            if (!this.dialog || !this.toggle) return;
+
+            this.toggle.addEventListener('click', () => {
+                this.dialog.showModal();
+                this.toggle.setAttribute('aria-expanded', 'true');
+            });
+
+            this.dialog.addEventListener('close', () => {
+                this.toggle.setAttribute('aria-expanded', 'false');
+                this.toggle.focus();
+            });
+
+            // Click on the backdrop (outside the panel) closes the dialog
+            this.dialog.addEventListener('click', (e) => {
+                if (e.target === this.dialog) this.dialog.close();
+            });
         }
     };
 
@@ -294,6 +379,7 @@
         set(lang) {
             elements.langToggle?.setAttribute('data-lang', lang);
             utils.updateUrlParam('lang', lang);
+            settingsDialog.translate(lang);
             this.loadScript(lang);
         },
 
@@ -302,6 +388,7 @@
             
             const currentLang = this.getCurrent();
             elements.langToggle.setAttribute('data-lang', currentLang);
+            settingsDialog.translate(currentLang);
             this.loadScript(currentLang);
             
             elements.langToggle.addEventListener('click', () => {
@@ -396,8 +483,10 @@
 
     // ========== Application Initialization ==========
     window.addEventListener('DOMContentLoaded', () => {
+        settingsDialog.init();
         themeManager.init();
         fontSizeManager.init();
+        paletteManager.init();
         languageManager.init();
         uiControls.initSidebarToggle();
         uiControls.initExpandMain();
@@ -410,6 +499,7 @@
         elements.iframe?.addEventListener('load', () => {
             themeManager.pushToIframe(themeManager.getCurrent());
             fontSizeManager.pushToIframe(fontSizeManager.getCurrent());
+            paletteManager.pushToIframe(paletteManager.getCurrent());
         });
     });
 })();

@@ -1,58 +1,146 @@
+/* Be Vietnam Pro cho tiêu đề (thiết kế riêng cho dấu tiếng Việt), Inter cho thân bài.
+   Mất mạng thì rơi về font hệ thống, trang vẫn đọc được. */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
 :root {
-    --bg-color: #ffffff;
-    --text-color: #1a1a1a;
-    --text-muted: #666666;
-    --link-color: #0052a3;
-    --link-hover: #003d7a;
-    --accent-color: #0052a3;
-    --accent-light: #e3f2fd;
-    --border-color: #e0e0e0;
-    --header-bg: #fff;
-    --header-text: #000;
-    --nav-bg: #f4f4f4;
-    --nav-text: #333;
-    --menu-hover-bg: #e0e0e0;
-    --highlight-bg: #f8f9fa;
-    --code-bg: #f5f5f5;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /* Bảng "Mực và giấy": nền giấy ngà, chữ xám than, nhấn xanh mòng két chuyển sang xanh mực.
+       Chữ thân bài 13.5:1 trên nền, đủ rõ mà không gắt như đen trên trắng tinh. */
+    --bg-color: #faf8f3;
+    --text-color: #2b2a27;
+    --text-muted: #6b665d;
+    --link-color: #0f6e66;
+    --link-hover: #0a4f49;
+    --accent-color: #0f6e66;
+    --accent-2: #2a6f97;
+    --accent-light: #e1f1ee;
+    --accent-2-light: #e4eef4;
+    --border-color: #e6e1d6;
+    --header-bg: #faf8f3;
+    --header-text: #2b2a27;
+    --nav-bg: #f3f0e8;
+    --nav-text: #2b2a27;
+    --menu-hover-bg: #e6e1d6;
+    --highlight-bg: #f3f0e8;
+    --surface: #fdfcf8;
+    --code-bg: #f2efe7;
+    --shadow-sm: 0 1px 2px rgba(60, 50, 30, 0.04), 0 1px 3px rgba(60, 50, 30, 0.06);
+    --shadow-md: 0 4px 8px -2px rgba(60, 50, 30, 0.06), 0 12px 24px -6px rgba(60, 50, 30, 0.08);
+    --radius: 14px;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --font-heading: 'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Cascadia Code', Consolas, 'Monaco', 'Menlo', monospace;
     --base-font-size: 17px;
 }
 
-/* Dark theme overrides */
+/* Dark theme overrides: cùng sắc độ, sáng và nhạt hơn để không chói trên nền tối */
 body.dark-theme {
-    --bg-color: #0f1419;
-    --text-color: #e8e8e8;
-    --text-muted: #a0a0a0;
-    --link-color: #64b5f6;
-    --link-hover: #90caf9;
-    --accent-color: #64b5f6;
-    --accent-light: #1a2332;
-    --border-color: #2d3748;
-    --header-bg: #1a1f26;
-    --header-text: #fff;
-    --nav-bg: #1a1f26;
-    --nav-text: #eee;
-    --menu-hover-bg: #2d3748;
-    --highlight-bg: #1a1f26;
-    --code-bg: #1a1f26;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --bg-color: #171a1f;
+    --text-color: #e2ded6;
+    --text-muted: #a39e94;
+    --link-color: #7fd0c3;
+    --link-hover: #a6e0d6;
+    --accent-color: #6fc3b6;
+    --accent-2: #8ab8d8;
+    --accent-light: #1a2b2a;
+    --accent-2-light: #1a2430;
+    --border-color: #2a2f37;
+    --header-bg: #1c2026;
+    --header-text: #e2ded6;
+    --nav-bg: #1c2026;
+    --nav-text: #e2ded6;
+    --menu-hover-bg: #2a2f37;
+    --highlight-bg: #1d2127;
+    --surface: #1c2026;
+    --code-bg: #1f2329;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 8px -2px rgba(0, 0, 0, 0.4), 0 12px 24px -6px rgba(0, 0, 0, 0.45);
 }
 
-/* Base Typography */
+/* ---- Bảng màu (palette) --------------------------------------------------
+   Chọn trong hộp Cài đặt của trang chính; pages-scripts.js gắn class
+   palette-<tên> lên body. Mực và giấy là mặc định nên nằm sẵn trong :root.
+   Chỉ màu nhấn đổi theo bảng; nền và chữ giữ tông giấy cho mọi bảng. */
+
+body.palette-indigo {
+    --link-color: #3f4fb8;
+    --link-hover: #2c3888;
+    --accent-color: #3f4fb8;
+    --accent-2: #6a48c9;
+    --accent-light: #e8eaf8;
+    --accent-2-light: #efe9fb;
+}
+
+body.dark-theme.palette-indigo {
+    --link-color: #a3adf5;
+    --link-hover: #c9cffa;
+    --accent-color: #a3adf5;
+    --accent-2: #c3a9f3;
+    --accent-light: #1f2340;
+    --accent-2-light: #241e36;
+}
+
+body.palette-sage {
+    --link-color: #3d6b4f;
+    --link-hover: #2a4d38;
+    --accent-color: #3d6b4f;
+    --accent-2: #5b6a2a;
+    --accent-light: #e5efe7;
+    --accent-2-light: #eef0e0;
+}
+
+body.dark-theme.palette-sage {
+    --link-color: #9cc7a7;
+    --link-hover: #c3e0ca;
+    --accent-color: #9cc7a7;
+    --accent-2: #c2cf8f;
+    --accent-light: #1e2b23;
+    --accent-2-light: #262a1c;
+}
+
+body.palette-clay {
+    --link-color: #a8502c;
+    --link-hover: #7a3519;
+    --accent-color: #a8502c;
+    --accent-2: #9a3f5a;
+    --accent-light: #f6e6dd;
+    --accent-2-light: #f6e3ea;
+}
+
+body.dark-theme.palette-clay {
+    --link-color: #e3a07c;
+    --link-hover: #f0c4ab;
+    --accent-color: #e3a07c;
+    --accent-2: #e5a0b4;
+    --accent-light: #33241e;
+    --accent-2-light: #33202a;
+}
+
+/* Base Typography
+   Mọi font-size bên dưới dùng em (không dùng rem): rem tính theo <html>, còn lựa chọn
+   cỡ chữ chỉ đổi --base-font-size trên <body>, nên rem sẽ đứng yên. */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    /* Khai báo trên body chứ không trên :root: biến lồng biến được tính tại nơi khai báo,
+       đặt ở đây thì gradient mới đổi theo dark-theme và palette-* */
+    --gradient-brand: linear-gradient(120deg, var(--accent-color) 0%, var(--accent-2) 100%);
+    --shadow-glow: 0 4px 14px -4px color-mix(in srgb, var(--accent-color) 45%, transparent);
+    font-family: var(--font-body);
     font-size: var(--base-font-size);
     line-height: 1.75;
-    margin: 0;
     padding: 2.5rem 3rem;
     color: var(--text-color);
     background: var(--bg-color);
     max-width: 900px;
     margin: 0 auto;
     transition: background 0.3s, color 0.3s;
-    text-align: justify;
+    /* Căn trái: căn đều hai bên tạo khoảng trắng loang lổ với tiếng Việt vì trình duyệt không ngắt âm tiết được */
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    background: color-mix(in srgb, var(--accent-color) 22%, transparent);
 }
 
 body.font-size-default{
@@ -68,18 +156,28 @@ body.font-size-large {
     --base-font-size: 24px;
 }
 
-#font-size-select .default{
-    font-size: 16px ;
-}
 
-#font-size-select .larger{
-    font-size: 20px ;
-}
+/* Thanh tiến độ đọc ở mép trên. Chỉ hiện ở trình duyệt hỗ trợ scroll-driven animation; nơi khác bỏ qua. */
+@supports (animation-timeline: scroll()) {
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient-brand);
+        transform-origin: 0 50%;
+        transform: scaleX(0);
+        z-index: 100;
+        animation: reading-progress linear both;
+        animation-timeline: scroll(root);
+    }
 
-#font-size-select .large{
-    font-size: 24px ;
+    @keyframes reading-progress {
+        to { transform: scaleX(1); }
+    }
 }
-
 
 /* Article Container */
 .content-article {
@@ -89,34 +187,101 @@ body.font-size-large {
 
 /* Article Header */
 .article-header {
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 3px solid var(--accent-color);
-    background: linear-gradient(to bottom, var(--accent-light), transparent);
-    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 2.75rem 3rem 2.25rem;
     margin: -2.5rem -3rem 3rem -3rem;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0 0 24px 24px;
+    background:
+        radial-gradient(120% 140% at 0% 0%, var(--accent-light) 0%, transparent 55%),
+        radial-gradient(90% 120% at 100% 0%, var(--accent-2-light) 0%, transparent 60%),
+        var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Vệt sáng trang trí góc phải */
+.article-header::before {
+    content: '';
+    position: absolute;
+    top: -90px;
+    right: -60px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: var(--gradient-brand);
+    opacity: 0.12;
+    filter: blur(40px);
+    z-index: -1;
+}
+
+/* Đường gradient mảnh chạy dọc mép dưới */
+.article-header::after {
+    content: '';
+    position: absolute;
+    left: 3rem;
+    right: 3rem;
+    bottom: 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: var(--gradient-brand);
 }
 
 .page-title {
-    font-size: 2.75rem;
+    font-family: var(--font-heading);
+    font-size: 2.75em;
     font-weight: 800;
-    line-height: 1.2;
+    line-height: 1.25;
+    /* padding dọc để dấu chồng (Ấ, Ỗ, ặ) không bị cắt khi chữ dùng background-clip */
+    padding: 0.08em 0;
     margin: 0 0 0.75rem 0;
     color: var(--text-color);
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, var(--accent-color), var(--link-hover));
+    letter-spacing: -0.02em;
+    /* Ôm sát chữ để gradient chạy hết từ xanh sang tím trên chính dòng chữ */
+    width: fit-content;
+    max-width: 100%;
+    background: var(--gradient-brand);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .page-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.15em;
     color: var(--text-muted);
     margin: 0;
     line-height: 1.6;
     font-weight: 400;
+    max-width: 42em;
+}
+
+.page-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 1.25rem 0 0;
+    padding: 0.3rem 0.85rem;
+    font-size: 0.82em;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--text-muted);
+    background: color-mix(in srgb, var(--surface) 70%, transparent);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+}
+
+.page-meta::before {
+    content: '';
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--gradient-brand);
+    flex-shrink: 0;
+}
+
+.page-meta time {
+    color: var(--text-color);
 }
 
 /* Content Sections */
@@ -129,24 +294,45 @@ body.font-size-large {
     margin-bottom: 2rem;
 }
 
+/* Mỗi phần hiện dần khi cuộn tới. Dừng ở 0.35 chứ không về 0 để chữ không bao giờ biến mất hẳn. */
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+        .content-section {
+            animation: section-reveal linear both;
+            animation-timeline: view();
+            /* Tính theo px chứ không theo %: phần dài cũng hiện đủ sau ~200px cuộn */
+            animation-range: entry 0px entry 220px;
+        }
+
+        @keyframes section-reveal {
+            from {
+                opacity: 0.35;
+                transform: translateY(18px);
+            }
+        }
+    }
+}
+
 /* Heading Hierarchy */
 h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.3;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.01em;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
 h2.main-point {
-    font-size: 2rem;
+    font-size: 2em;
     font-weight: 700;
     color: var(--text-color);
     margin-top: 3rem;
     margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border-color);
     position: relative;
+    letter-spacing: -0.02em;
 }
 
 h2.main-point::before {
@@ -154,34 +340,36 @@ h2.main-point::before {
     position: absolute;
     bottom: -2px;
     left: 0;
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent-color), transparent);
+    width: 72px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--gradient-brand);
 }
 
-h3.sub-point-1 {
-    font-size: 1.5rem;
+h3.sub-point-1,
+summary.sub-point-1 {
+    font-size: 1.45em;
     font-weight: 600;
     color: var(--accent-color);
     margin-top: 2rem;
     margin-bottom: 1rem;
-    padding-left: 1rem;
+    padding: 0.35rem 1rem;
     border-left: 4px solid var(--accent-color);
+    border-radius: 0 10px 10px 0;
+    background: linear-gradient(90deg, var(--accent-light), transparent 85%);
 }
 
 summary.sub-point-1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--accent-color);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    border-left: 4px solid var(--accent-color);
     list-style: none;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+summary.sub-point-1:hover {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--accent-color) 16%, transparent), transparent 90%);
 }
 
 summary.sub-point-1::before {
@@ -190,9 +378,11 @@ summary.sub-point-1::before {
 
 summary.sub-point-1::after {
     content: "▸";
-    font-size: 1.2rem;
+    margin-left: auto;
+    /* em ở đây tính theo chính tiêu đề (đã 1.45em), nên nhỏ hơn 1 */
+    font-size: 0.85em;
     color: var(--text-muted);
-    transition: transform 0.15s ease, color 0.15s ease;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 details[open] > summary.sub-point-1::after {
@@ -205,13 +395,13 @@ summary.sub-point-1::-webkit-details-marker {
 }
 
 h4.sub-point-2 {
-    font-size: 1.25rem;
+    font-size: 1.2em;
     font-weight: 600;
     color: var(--text-color);
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
-    padding-left: 0.75rem;
-    border-left: 3px solid var(--border-color);
+    padding-left: 0.85rem;
+    border-left: 3px solid color-mix(in srgb, var(--accent-2) 55%, transparent);
 }
 
 /* Paragraphs */
@@ -222,11 +412,16 @@ p {
 }
 
 .intro-text {
-    font-size: 1.1rem;
+    font-size: 1.1em;
     line-height: 1.75;
     color: var(--text-muted);
     margin: 1.5rem 0;
     font-weight: 400;
+}
+
+.helper-text {
+    font-size: 0.92em;
+    color: var(--text-muted);
 }
 
 /* Sub-sections */
@@ -255,6 +450,10 @@ li {
     color: var(--text-color);
 }
 
+li::marker {
+    color: var(--accent-color);
+}
+
 ul.outline-list {
     list-style: none;
     padding-left: 0;
@@ -262,17 +461,21 @@ ul.outline-list {
 
 ul.outline-list > li {
     position: relative;
-    padding-left: 2rem;
-    margin: 1rem 0;
+    padding-left: 1.75rem;
+    margin: 0.9rem 0;
 }
 
+/* Hạt kim cương gradient, căn giữa dòng đầu tiên (line-height 1.7 → tâm ở 0.85em) */
 ul.outline-list > li::before {
-    content: '▸';
+    content: '';
     position: absolute;
-    left: 0.5rem;
-    color: var(--accent-color);
-    font-size: 1.1rem;
-    font-weight: bold;
+    left: 0.4rem;
+    top: calc(0.85em - 0.22em);
+    width: 0.44em;
+    height: 0.44em;
+    border-radius: 2px;
+    background: var(--gradient-brand);
+    transform: rotate(45deg);
 }
 
 /* Citation markers */
@@ -289,7 +492,7 @@ ol.numbered-outline {
 
 ol.numbered-outline > li {
     position: relative;
-    padding-left: 3rem;
+    padding-left: 3em;
     margin: 1.25rem 0;
     counter-increment: item;
 }
@@ -299,16 +502,22 @@ ol.numbered-outline > li::before {
     position: absolute;
     left: 0;
     top: 0;
-    width: 2rem;
-    height: 2rem;
-    background: var(--accent-color);
+    width: 2.2em;
+    height: 2.2em;
+    background: var(--gradient-brand);
     color: white;
-    border-radius: 50%;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.9em;
+    box-shadow: var(--shadow-glow);
+}
+
+body.dark-theme ol.numbered-outline > li::before {
+    color: var(--bg-color);
 }
 
 /* Nested Lists */
@@ -349,27 +558,53 @@ li strong {
     color: var(--accent-color);
 }
 
-/* Links */
+/* Links: gạch chân gradient chạy ra khi rê chuột */
 a {
     color: var(--link-color);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: all 0.2s ease;
+    background-image: linear-gradient(90deg, var(--accent-color), var(--accent-2));
+    background-size: 0% 1.5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: color 0.2s ease, background-size 0.3s ease;
 }
 
 a:hover {
     color: var(--link-hover);
-    border-bottom-color: var(--link-hover);
+    background-size: 100% 1.5px;
 }
 
-/* Summary Box */
+a:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* Summary Box: thẻ có viền gradient */
 .summary-box {
-    background: var(--highlight-bg);
-    border-left: 5px solid var(--accent-color);
-    padding: 1.75rem 2rem;
+    position: relative;
+    padding: 1.75rem 2rem 1.75rem 2rem;
     margin: 2rem 0;
-    border-radius: 0 8px 8px 0;
-    box-shadow: var(--shadow-sm);
+    border: 1.5px solid transparent;
+    border-radius: var(--radius);
+    background:
+        linear-gradient(135deg, var(--accent-light), var(--surface) 60%) padding-box,
+        var(--gradient-brand) border-box;
+    box-shadow: var(--shadow-md);
+}
+
+.summary-box::before {
+    content: '✦';
+    position: absolute;
+    top: 0.9rem;
+    right: 1.1rem;
+    font-size: 1.4em;
+    line-height: 1;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.8;
 }
 
 .summary-box p {
@@ -381,23 +616,74 @@ a:hover {
     margin-bottom: 0;
 }
 
+/* Blockquote */
+blockquote {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem 1.25rem 3.25rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    border-left: 4px solid transparent;
+    border-image: var(--gradient-brand) 1;
+    background: var(--highlight-bg);
+    color: var(--text-color);
+    font-style: italic;
+}
+
+blockquote::before {
+    content: '“';
+    position: absolute;
+    left: 0.9rem;
+    top: 0.35rem;
+    font-family: Georgia, serif;
+    font-size: 3.2em;
+    line-height: 1;
+    font-style: normal;
+    color: var(--accent-color);
+    opacity: 0.35;
+}
+
+blockquote p:first-child { margin-top: 0; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* Divider */
+hr {
+    border: none;
+    height: 1px;
+    margin: 2.5rem 0;
+    background: linear-gradient(90deg, transparent, var(--border-color) 20%, var(--border-color) 80%, transparent);
+}
+
+/* Media */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.video-container {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
 /* Code blocks */
 code {
-    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-    font-size: 0.9em;
+    font-family: var(--font-mono);
+    font-size: 0.88em;
     background: var(--code-bg);
-    padding: 0.2em 0.5em;
-    border-radius: 4px;
+    padding: 0.15em 0.45em;
+    border-radius: 6px;
     border: 1px solid var(--border-color);
 }
 
 pre {
     background: var(--code-bg);
-    padding: 1.25rem;
-    border-radius: 8px;
+    padding: 1.25rem 1.4rem;
+    border-radius: var(--radius);
     overflow-x: auto;
     border: 1px solid var(--border-color);
-    line-height: 1.5;
+    line-height: 1.6;
+    box-shadow: var(--shadow-sm);
 }
 
 pre code {
@@ -413,25 +699,37 @@ pre code {
     border-spacing: 0;
     margin: 1.5rem 0 2rem;
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: var(--radius);
     overflow: hidden;
-    background: var(--bg-color);
+    background: var(--surface);
     box-shadow: var(--shadow-md);
+    font-size: 0.95em;
+}
+
+/* Gradient đặt trên cả hàng, không trên từng ô, để không bị lặp lại ở mỗi cột */
+.content-table thead tr {
+    background: var(--gradient-brand);
 }
 
 .content-table thead th {
-    background: linear-gradient(135deg, var(--accent-color), var(--link-hover));
+    background: transparent;
     color: #ffffff;
-    font-weight: 700;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.01em;
     border: none;
 }
 
 .content-table th,
 .content-table td {
-    padding: 0.8rem 0.9rem;
+    padding: 0.8rem 1rem;
     text-align: left;
     vertical-align: top;
     border-bottom: 1px solid var(--border-color);
+}
+
+.content-table tbody tr {
+    transition: background 0.15s ease;
 }
 
 .content-table tbody tr:nth-child(even) {
@@ -447,60 +745,70 @@ pre code {
 }
 
 body.dark-theme .content-table thead th {
-    color: #eaf4ff;
+    color: var(--bg-color);
 }
 
 body.dark-theme .content-table tbody tr:nth-child(even) {
-    background: rgba(100, 181, 246, 0.08);
+    background: color-mix(in srgb, var(--accent-color) 5%, transparent);
 }
 
 body.dark-theme .content-table tbody tr:hover {
-    background: rgba(100, 181, 246, 0.15);
+    background: color-mix(in srgb, var(--accent-color) 10%, transparent);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
         padding: 1.5rem 1.25rem;
-        font-size: 16px;
     }
-    
+
     .article-header {
         margin: -1.5rem -1.25rem 2rem -1.25rem;
-        padding: 1.5rem 1.25rem;
+        padding: 2rem 1.25rem 1.75rem;
+        border-radius: 0 0 18px 18px;
     }
-    
+
+    .article-header::after {
+        left: 1.25rem;
+        right: 1.25rem;
+    }
+
     .page-title {
-        font-size: 2rem;
+        font-size: 2em;
     }
-    
+
     h2.main-point {
-        font-size: 1.6rem;
+        font-size: 1.6em;
     }
-    
-    h3.sub-point-1 {
-        font-size: 1.3rem;
+
+    h3.sub-point-1,
+    summary.sub-point-1 {
+        font-size: 1.25em;
     }
-    
+
     h4.sub-point-2 {
-        font-size: 1.15rem;
+        font-size: 1.12em;
     }
-    
+
     .sub-section-nested {
         margin-left: 0;
         padding-left: 1rem;
     }
-    
+
     ul, ol {
         padding-left: 1.5rem;
     }
-    
+
     ul.outline-list > li {
         padding-left: 1.5rem;
     }
-    
+
     ol.numbered-outline > li {
-        padding-left: 2.5rem;
+        padding-left: 2.6em;
+    }
+
+    .summary-box {
+        padding: 1.4rem 1.25rem;
     }
 
     .content-table {
@@ -513,48 +821,38 @@ body.dark-theme .content-table tbody tr:hover {
     .content-table th,
     .content-table td {
         padding: 0.68rem 0.75rem;
-        font-size: 0.94rem;
+        font-size: 1em;
     }
 }
 
-/* Custom Scrollbar Styles - matching sidebar menu style */
-html::-webkit-scrollbar,
-body::-webkit-scrollbar,
+/* Custom Scrollbar Styles: xám ấm trung tính để hợp với mọi bảng màu */
 *::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
-html::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track,
 *::-webkit-scrollbar-track {
     background: transparent;
 }
 
-html::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb,
 *::-webkit-scrollbar-thumb {
-    background: rgba(0, 82, 163, 0.3);
+    background: rgba(107, 102, 93, 0.35);
     border-radius: 4px;
     transition: background 0.2s ease;
 }
 
-html::-webkit-scrollbar-thumb:hover,
-body::-webkit-scrollbar-thumb:hover,
 *::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 82, 163, 0.5);
+    background: rgba(107, 102, 93, 0.55);
 }
 
-body.dark-theme html::-webkit-scrollbar-thumb,
-body.dark-theme body::-webkit-scrollbar-thumb,
-body.dark-theme *::-webkit-scrollbar-thumb {
-    background: rgba(100, 181, 246, 0.3);
+body.dark-theme *::-webkit-scrollbar-thumb,
+html:has(body.dark-theme)::-webkit-scrollbar-thumb {
+    background: rgba(163, 158, 148, 0.3);
 }
 
-body.dark-theme html::-webkit-scrollbar-thumb:hover,
-body.dark-theme body::-webkit-scrollbar-thumb:hover,
-body.dark-theme *::-webkit-scrollbar-thumb:hover {
-    background: rgba(100, 181, 246, 0.5);
+body.dark-theme *::-webkit-scrollbar-thumb:hover,
+html:has(body.dark-theme)::-webkit-scrollbar-thumb:hover {
+    background: rgba(163, 158, 148, 0.5);
 }
 
 /* Firefox scrollbar styling */
@@ -562,13 +860,13 @@ html,
 body,
 * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 82, 163, 0.3) transparent;
+    scrollbar-color: rgba(107, 102, 93, 0.35) transparent;
 }
 
-body.dark-theme html,
-body.dark-theme body,
+html:has(body.dark-theme),
+body.dark-theme,
 body.dark-theme * {
-    scrollbar-color: rgba(100, 181, 246, 0.3) transparent;
+    scrollbar-color: rgba(163, 158, 148, 0.3) transparent;
 }
 
 /* Print Styles */
@@ -578,14 +876,31 @@ body.dark-theme * {
         color: black;
         font-size: 12pt;
     }
-    
+
+    body::before,
+    .article-header::before,
+    .article-header::after {
+        display: none;
+    }
+
+    .content-section {
+        animation: none;
+    }
+
     .article-header {
         background: none;
         border-bottom: 2px solid black;
     }
-    
+
+    .page-title {
+        -webkit-text-fill-color: black;
+        color: black;
+        background: none;
+    }
+
     a {
         color: black;
         text-decoration: underline;
+        background: none;
     }
 }

@@ -557,6 +557,13 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
+                        title: "Quy Trình Thao Tác Chuẩn (SOP)",
+                        route: "pages/reading-studying/management-tools-and-techniques/08-sop-standard-operating-procedure-vn.html",
+                        hash: "#/sop-standard-operating-procedure",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Biểu Đồ Gantt",
                         route: "pages/reading-studying/management-tools-and-techniques/12-gantt-charts-vn.html",
                         hash: "#/gantt-charts",

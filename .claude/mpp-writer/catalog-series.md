@@ -266,7 +266,7 @@ Chạy sau checklist ở `html-menu-rules.md` mục 8, không thay thế nó.
 - [ ] Tiêu đề section 3 có tên đầy đủ của mục
 - [ ] Tiêu đề section 4 đúng một trong hai tên chuẩn, không thêm mệnh đề nào
 - [ ] Công cụ là một hình thì bài có hình đó, đặt sau đoạn cơ chế và trước bảng, có nội dung thật chứ không phải khung rỗng (mục 3.1)
-- [ ] Danh mục công cụ: câu nào nói công cụ "không chứa được", "không vẽ được", "đã bỏ" một thứ phải nói rõ đang nói về mẫu vẽ mặc định, về phần mềm, hay về cách người ta thường dùng; thứ người vẽ hoặc phần mềm thêm được thì viết "mẫu mặc định không có", không viết "không thể"
+- [ ] Danh mục công cụ: câu nào nói công cụ "không chứa được", "không vẽ được", "đã bỏ" một thứ phải nói rõ đang nói về mẫu vẽ mặc định, về phần mềm, hay về cách người ta thường dùng; thứ người vẽ hoặc phần mềm thêm được thì viết "mẫu mặc định không có", không viết "không thể"; ở mọi công cụ, mỗi giới hạn nêu trong `Giới Hạn` phải nói rõ là giới hạn vốn có hay lỗi của cách viết, cách dùng, cách cập nhật; lỗi cách dùng thì viết "có thể bỏ sót", không viết "không ghi được", và cách sửa thuộc về `Cách Áp Dụng`
 - [ ] `content-table` là một phép đối chiếu, không phải danh sách định nghĩa
 - [ ] Mỗi ví dụ qua hai phép kiểm liên quan và dùng được (mục 3.3): nguồn gọi đích danh mục đang bàn, không có đoạn nào giải thích rằng ví dụ không nói gì về mục, rào đón không quá một đoạn. Thiếu tầng thì được, ví dụ trượt thì không
 - [ ] Không gọi ví dụ nào là thí nghiệm tự nhiên hay "cô lập được" tác động của công cụ. Trước khi viết câu đó, đọc lại nguồn xem nó có liệt kê biến nào cùng thay đổi không; có thì đưa các biến ấy vào bài

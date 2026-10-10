@@ -1,9 +1,10 @@
 window.addEventListener('DOMContentLoaded', () => {
     applyTheme(localStorage.getItem('theme'));
     applyFontSize(localStorage.getItem('font-size'));
+    applyPalette(localStorage.getItem('palette'));
 });
 
-// Listen for theme and font size change messages from parent
+// Listen for theme, font size and palette change messages from parent
 window.addEventListener('message', ({ data }) => {
     if (!data?.type) return;
 
@@ -11,6 +12,8 @@ window.addEventListener('message', ({ data }) => {
         applyTheme(data.theme);
     } else if (data.type === 'set-font-size') {
         applyFontSize(data.size);
+    } else if (data.type === 'set-palette') {
+        applyPalette(data.palette);
     }
 });
 
@@ -23,4 +26,11 @@ function applyFontSize(size) {
     const normalized = valid.includes(size) ? size : 'default';
     document.body.classList.remove('font-size-default', 'font-size-larger', 'font-size-large');
     document.body.classList.add(`font-size-${normalized}`);
+}
+
+function applyPalette(palette) {
+    const valid = ['paper', 'indigo', 'sage', 'clay'];
+    const normalized = valid.includes(palette) ? palette : 'paper';
+    document.body.classList.remove(...valid.map(p => `palette-${p}`));
+    document.body.classList.add(`palette-${normalized}`);
 }

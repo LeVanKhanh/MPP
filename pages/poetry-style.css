@@ -21,7 +21,7 @@
 }
 
 .poem-title {
-    font-size: 2.5rem;
+    font-size: 2.5em;
     font-weight: 800;
     line-height: 1.2;
     margin: 0 0 1rem 0;
@@ -35,7 +35,7 @@
 }
 
 .poem-author {
-    font-size: 1.1rem;
+    font-size: 1.1em;
     color: var(--text-muted);
     margin: 0.5rem 0;
     font-style: italic;
@@ -44,7 +44,7 @@
 }
 
 .poem-meta {
-    font-size: 0.95rem;
+    font-size: 0.95em;
     color: var(--text-muted);
     margin: 0.5rem 0 0 0;
     opacity: 0.8;
@@ -75,7 +75,7 @@
 /* Line Styling */
 .poem-line {
     display: block;
-    font-size: 1.1rem;
+    font-size: 1.1em;
     line-height: 1.9;
     margin: 0.8rem 0;
     color: var(--text-color);
@@ -105,7 +105,7 @@
 
 .poem-notes {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 0.95em;
     line-height: 1.7;
     color: var(--text-muted);
     font-family: 'Noto Serif', 'Merriweather', 'Georgia', 'Times New Roman', serif;
@@ -135,11 +135,11 @@ body.dark-theme .poem-line:first-child {
 /* Responsive Typography */
 @media (max-width: 768px) {
     .poem-title {
-        font-size: 2rem;
+        font-size: 2em;
     }
 
     .poem-line {
-        font-size: 1rem;
+        font-size: 1em;
         line-height: 1.8;
     }
 
@@ -168,15 +168,15 @@ body.dark-theme .poem-line:first-child {
     }
 
     .poem-title {
-        font-size: 1.75rem;
+        font-size: 1.75em;
     }
 
     .poem-author {
-        font-size: 1rem;
+        font-size: 1em;
     }
 
     .poem-line {
-        font-size: 0.95rem;
+        font-size: 0.95em;
         line-height: 1.7;
         margin: 0.6rem 0;
     }

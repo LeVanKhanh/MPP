@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mpp-static",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8765"],
+      "port": 8765
+    },
+    {
+      "name": "mpp-nocache",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["C:/Users/levan/AppData/Local/Temp/claude/D--Work-Projects-Me-GitHub-MPP/19ec573f-44fd-46e5-8c44-411afc9e5352/scratchpad/nocache_server.py", "8766"],
+      "port": 8766
+    }
+  ]
+}

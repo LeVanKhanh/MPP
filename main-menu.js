@@ -543,6 +543,13 @@ var mainMenu = [
                         subItems: [],
                     },
                     {
+                        title: "FMEA",
+                        route: "pages/reading-studying/management-tools-and-techniques/07-fmea-failure-mode-and-effects-analysis.html",
+                        hash: "#/fmea-failure-mode-and-effects-analysis",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Gantt Charts",
                         route: "pages/reading-studying/management-tools-and-techniques/12-gantt-charts.html",
                         hash: "#/gantt-charts",

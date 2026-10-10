@@ -261,6 +261,7 @@ Chạy sau checklist ở `html-menu-rules.md` mục 8, không thay thế nó.
 - [ ] Đúng số section và thứ tự: trang mục sáu section (lỗi tư duy) hoặc bảy (công cụ), trang tổng quan bảy
 - [ ] Danh mục công cụ: Định Nghĩa đúng ba sub-section tiêu đề cố định, không `intro-text`; lý do "tại sao cần" truy về được section Nghiên Cứu; section Nghiên Cứu cho thấy giá trị và tầm ảnh hưởng
 - [ ] Danh mục công cụ: Tình Huống Áp Dụng gần gũi, là cảnh dùng đúng, các bước theo trình tự công cụ, tự áp chuẩn bằng chứng, kết quả không viết thành "tốt nhất" hay "luôn luôn" (mục 3.6)
+- [ ] Công cụ có chấm điểm: Tình Huống Áp Dụng nêu mốc của từng thang và ghi đủ căn cứ cho ít nhất một dòng (nguyên nhân, kiểm soát hiện có, lý do từng điểm, người chịu trách nhiệm); mọi dòng khác phải khớp với mốc đã nêu
 - [ ] Mọi số minh hoạ (ví dụ dựng lên, hình, tình huống) đã được cộng lại: các nhóm khớp tổng, phần trăm khớp số, và thứ hạng nói trong chữ khớp với chính các con số đó
 - [ ] Tiêu đề section 3 có tên đầy đủ của mục
 - [ ] Tiêu đề section 4 đúng một trong hai tên chuẩn, không thêm mệnh đề nào

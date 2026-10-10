@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phân Tích Pareto - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="Phân tích Pareto xếp các nhóm nguyên nhân theo độ lớn của một thước đo, nên kết luận của nó nằm sẵn trong hai lựa chọn có trước khi vẽ: đếm cái gì, và chia nhóm thế nào. Bài phân tích cơ chế, cái tên mà chính người đặt đã nhận là nhầm, bằng chứng về sự dồn lỗi, và một tình huống áp dụng từng bước."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Phân Tích Pareto</h1>
+            <p class="page-subtitle">Cột cao nhất là cột bạn đếm nhiều nhất, chưa chắc là cột đắt nhất</p>
+            <p class="page-meta">Cập nhật: <time datetime="2026-10-10">10 Tháng 10, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Định Nghĩa</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Phân Tích Pareto Là Gì</h3>
+                <p>Phân tích Pareto là cách xếp hạng các nhóm vấn đề, hoặc các nhóm nguyên nhân, theo độ lớn của một thước đo như số lần xảy ra, chi phí hay thời gian mất đi: gom dữ liệu vào từng nhóm, vẽ mỗi nhóm thành một cột, đặt cột cao nhất ở bên trái rồi thấp dần sang phải, và kéo thêm một đường phần trăm cộng dồn đi từ cột đầu tiên lên tới 100%. Một tháng lỗi ở một xưởng in bao bì, xếp như vậy, cho ra một hình mà ai nhìn cũng đọc được ngay: lệch màu đứng đầu, nhăn giấy thứ hai, hai cột này cộng lại đã gần bảy phần mười số lỗi. Hình ấy khác sơ đồ xương cá ở chỗ nó xếp hạng những nhóm đã đếm được, còn sơ đồ xương cá liệt kê những nguyên nhân có thể; và một nhóm lỗi trên biểu đồ Pareto vẫn chưa phải là một nguyên nhân đã được xác minh. Nó cũng khác biểu đồ tần suất (histogram): trục ngang của nó là các nhóm không có thứ tự tự nhiên, được xếp theo độ lớn, chứ không phải các khoảng giá trị liền nhau của một biến số.</p>
+
+                <p>Cái tên do Joseph Juran đặt, và chính Juran về sau nhận là đặt nhầm. Từ giữa thập niên 1920, khi còn là một kỹ sư trẻ, ông để ý rằng các loại lỗi chất lượng không đều nhau về tần suất: xếp một danh sách dài theo tần suất thì một số ít loại lỗi chiếm phần lớn. Cuối thập niên 1940, khi soạn ấn bản đầu của <em>Quality Control Handbook</em> (1951), ông cần một cái tên ngắn cho nguyên lý mà ông gọi là "số ít quan trọng và số đông vụn vặt", và mượn tên Vilfredo Pareto, nhà kinh tế người Ý đã nghiên cứu sự phân bố không đều của của cải. Bị chất vấn, Juran đọc lại Pareto và thừa nhận rằng công trình của Pareto chỉ nằm trong kinh tế học, mô hình của ông không nhằm áp sang lĩnh vực khác, và những đường cộng dồn trong cuốn sổ tay lẽ ra phải mang tên Lorenz. Lời thú nhận không đổi được gì: cái tên ở lại. Theo phần tóm tắt của Juran Institute đi kèm bài viết ấy, ông về sau còn đổi "số đông vụn vặt" thành "số đông hữu ích". <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <p>Cơ chế của công cụ nằm ở phép xếp hạng. Từ một danh sách nguyên nhân ngang hàng, nơi ai cũng có thể cho rằng nguyên nhân của bộ phận mình quan trọng nhất, nó dựng ra một thứ tự ưu tiên có căn cứ: cột nào cao, cột ấy được xem trước. Nhưng độ cao của cột phụ thuộc hai lựa chọn có trước khi vẽ. Thứ nhất là đếm cái gì: số lần xảy ra, chi phí, thời gian mất đi, hay mức nghiêm trọng. Thứ hai là chia nhóm thế nào: gộp hay tách, nhóm theo thiết bị hay theo nguyên nhân, và để bao nhiêu vào cột "khác". Biểu đồ chỉ hiện kết quả của hai lựa chọn ấy, không hiện bản thân chúng.</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Hai biểu đồ Pareto vẽ từ cùng một tháng lỗi ở một xưởng in bao bì. Bên trái xếp theo số lần trên tổng 160 lỗi: lệch màu 60, nhăn giấy 50, sai kích thước cắt 30, sai nội dung 12, bong keo 8; hai cột đầu chiếm gần 69%. Bên phải xếp theo chi phí làm lại trên tổng 100 triệu đồng: sai nội dung 48, bong keo 20, sai kích thước cắt 15, lệch màu 12, nhăn giấy 5. Lỗi sai nội dung đứng thứ tư theo số lần nhưng đứng đầu theo chi phí."
+                        viewBox="0 0 1120 400">
+
+                        <text x="300" y="44">Xếp theo số lần (160 lỗi)</text>
+                        <text x="840" y="44">Xếp theo chi phí (100 triệu đồng)</text>
+
+                        <path class="axis" d="M70 320 H530"></path>
+                        <path class="axis" d="M70 100 V320"></path>
+                        <path class="edge-ghost" d="M70 144 H530"></path>
+                        <text class="small rowlabel" x="64" y="144">80%</text>
+                        <text class="small rowlabel" x="64" y="100">100%</text>
+
+                        <rect class="bar" x="80" y="237.5" width="70" height="82.5"></rect>
+                        <rect class="bar" x="168" y="251.25" width="70" height="68.75"></rect>
+                        <rect class="bar" x="256" y="278.75" width="70" height="41.25"></rect>
+                        <rect class="bar" x="344" y="303.5" width="70" height="16.5"></rect>
+                        <rect class="bar" x="432" y="309" width="70" height="11"></rect>
+                        <text class="small" x="115" y="226">60</text>
+                        <text class="small" x="203" y="240">50</text>
+                        <text class="small" x="291" y="267">30</text>
+                        <text class="small alert" x="379" y="292">12</text>
+                        <text class="small" x="467" y="297">8</text>
+                        <path class="arrow" d="M115 237.5 L203 168.75 L291 127.5 L379 111 L467 100"></path>
+                        <text class="small" x="125" y="252">38%</text>
+                        <text class="small" x="203" y="156">69%</text>
+                        <text class="small" x="291" y="115">88%</text>
+                        <text class="small" x="115" y="340">Lệch màu</text>
+                        <text class="small" x="203" y="340">Nhăn giấy</text>
+                        <text class="small" x="291" y="340">Sai cắt</text>
+                        <text class="small alert" x="379" y="340">Sai nội dung</text>
+                        <text class="small" x="467" y="340">Bong keo</text>
+
+                        <path class="axis" d="M610 320 H1070"></path>
+                        <path class="axis" d="M610 100 V320"></path>
+                        <path class="edge-ghost" d="M610 144 H1070"></path>
+                        <text class="small rowlabel" x="604" y="144">80%</text>
+                        <text class="small rowlabel" x="604" y="100">100%</text>
+
+                        <rect class="bar" x="620" y="214.4" width="70" height="105.6"></rect>
+                        <rect class="bar" x="708" y="276" width="70" height="44"></rect>
+                        <rect class="bar" x="796" y="287" width="70" height="33"></rect>
+                        <rect class="bar" x="884" y="293.6" width="70" height="26.4"></rect>
+                        <rect class="bar" x="972" y="309" width="70" height="11"></rect>
+                        <text class="small alert" x="655" y="203">48</text>
+                        <text class="small" x="743" y="265">20</text>
+                        <text class="small" x="831" y="276">15</text>
+                        <text class="small" x="919" y="282">12</text>
+                        <text class="small" x="1007" y="297">5</text>
+                        <path class="arrow" d="M655 214.4 L743 170.4 L831 137.4 L919 111 L1007 100"></path>
+                        <text class="small" x="665" y="229">48%</text>
+                        <text class="small" x="743" y="158">68%</text>
+                        <text class="small" x="831" y="125">83%</text>
+                        <text class="small alert" x="655" y="340">Sai nội dung</text>
+                        <text class="small" x="743" y="340">Bong keo</text>
+                        <text class="small" x="831" y="340">Sai cắt</text>
+                        <text class="small" x="919" y="340">Lệch màu</text>
+                        <text class="small" x="1007" y="340">Nhăn giấy</text>
+
+                        <text class="small note alert" x="610" y="375">Hiếm, nhưng mỗi lần phải in lại cả lô: thứ tư theo số lần, đứng đầu theo chi phí</text>
+                    </svg>
+                    <figcaption>
+                        <strong>Hình 1.</strong> Cùng một tháng lỗi ở một xưởng in bao bì, xếp hai lần. Đếm theo số lần,
+                        lệch màu và nhăn giấy chiếm gần bảy phần mười; tính theo chi phí làm lại, hai cột ấy rơi xuống cuối,
+                        còn lỗi sai nội dung, hiếm nhưng mỗi lần phải in lại cả lô, chiếm gần một nửa. Dữ liệu không đổi;
+                        chỉ câu hỏi đặt cho nó là khác. Số liệu minh hoạ.
+                    </figcaption>
+                </figure>
+
+                <!-- YouTube Video Container -->
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                    <iframe
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        src="https://www.youtube.com/embed/ltBw6kwD3_o"
+                        title="How to use a Pareto chart"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Tại Sao Ta Cần Dùng Nó</h3>
+                <p>Một nhóm cải tiến có mười hai loại lỗi trên bảng. Trưởng mỗi bộ phận đều có lý do để tin lỗi của bộ phận mình đáng sửa trước, và cuộc họp kết thúc bằng việc chia đều người và tiền cho cả mười hai. Phân tích Pareto chặn kết cục ấy bằng một phép đếm: khi lỗi dồn vào vài nhóm, chia đều nguồn lực là chia không theo chỗ lỗi nằm. Sự dồn ấy không chỉ là ấn tượng. Trên phần mềm, nó đã được kiểm lặp lại ở ba môi trường viễn thông khác nhau: một số ít module, tức các khối chương trình, chứa phần lớn lỗi, và ở nghiên cứu gốc, kích thước của module không giải thích được điều đó. <sup><a href="#ref-2">[2]</a></sup> <sup><a href="#ref-3">[3]</a></sup> <sup><a href="#ref-4">[4]</a></sup> Nghiên cứu lặp lại gần nhất kết luận đúng điều công cụ này dạy: phân bố lỗi không đều thì nỗ lực đảm bảo chất lượng cũng nên phân bổ không đều. <sup><a href="#ref-4">[4]</a></sup> Công cụ cũng rẻ, chỉ cần dữ liệu đã có và một bảng tính, nên được dùng rộng: trong một khảo sát 97 người làm chất lượng ở doanh nghiệp Nam Mỹ, phân tích Pareto nằm trong nhóm công cụ được dùng nhiều nhất ở cả sản xuất lẫn dịch vụ. <sup><a href="#ref-5">[5]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Giới Hạn Của Công Cụ Này Là Gì</h3>
+                <p>Biểu đồ trả lời đúng câu hỏi nó được đặt, và chỉ câu hỏi ấy. Đếm theo số lần thì nó cho biết lỗi nào hay xảy ra, không cho biết lỗi nào đắt, như Hình 1 ở trên cho thấy. Đổi cách chia nhóm thì thứ hạng đổi theo: tách một loại lỗi thành ba cột con có thể đủ để nó biến khỏi nhóm đầu, còn một cột "khác" to thường là dấu hiệu bộ nhóm đã bỏ sót một loại lỗi thật. Nó chỉ xếp những gì đã được ghi lại, và cái gì được ghi lại thì còn tuỳ có ai đi tìm: Fenton và Ohlsson nhắc rằng một module không được kiểm thử hay không được dùng thì sẽ không lộ ra lỗi nào, bất kể nó thế nào. <sup><a href="#ref-2">[2]</a></sup> Ở phòng mổ Bệnh viện Nhi Seattle, phiếu báo lỗi dù đã tăng từ 26% vẫn chỉ được nộp cho khoảng 47% số ca, và chính các tác giả không biết phần còn lại là những ca không có lỗi hay những lỗi không được ghi. <sup><a href="#ref-6">[6]</a></sup> Và nó dừng ở chỗ chỉ ra cột nào lớn: tại sao cột ấy lớn, sửa nó tốn bao nhiêu, thứ hạng có giữ được sang kỳ sau, là những câu hỏi phải trả lời bằng công cụ và dữ liệu khác. Con số 80/20 cũng không nằm trong định nghĩa của công cụ; dữ liệu có lệch không, lệch tới đâu, phải đếm mới biết. Trong nghiên cứu phần mềm mà bài dẫn ở phần dưới, 20% module chứa gần 60% lỗi tìm thấy khi kiểm thử, chứ không phải 80%. <sup><a href="#ref-2">[2]</a></sup></p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Điều biểu đồ cho thấy</th><th scope="col">Điều nó không cho thấy</th></tr></thead>
+                    <tbody>
+                        <tr><td>Lệch màu là cột cao nhất</td><td>Lệch màu có phải lỗi đắt nhất không</td></tr>
+                        <tr><td>Ba cột đầu chiếm 88% số lỗi</td><td>Ba cột ấy có còn đứng đầu nếu chia nhóm theo cách khác</td></tr>
+                        <tr><td>Cột "khác" chiếm 15%</td><td>Trong cột "khác" có một loại lỗi lớn chưa được đặt tên hay không</td></tr>
+                        <tr><td>Thứ hạng của tháng này</td><td>Thứ hạng ấy có giữ được sang tháng sau</td></tr>
+                        <tr><td>Những lỗi đã được ghi lại</td><td>Những lỗi đã xảy ra mà không ai ghi</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Ví Dụ</h2>
+            <p class="intro-text">Mỗi ví dụ dưới đây cho thấy một trong hai lựa chọn trước khi vẽ đã quyết định cột đứng đầu: một tổ bảo trì chung cư chia phiếu báo hỏng theo hai cách, và khoa tiệt khuẩn dụng cụ ở Bệnh viện Nhi Seattle, nơi chính nhóm làm dự án viết rằng họ đã nhìn số lần mà chưa nhìn mức tác động.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Thang Máy Biến Mất Khỏi Nhóm Đầu</h3>
+                <p>Tình huống minh hoạ: tổ bảo trì của một toà chung cư nhận 300 phiếu báo hỏng trong một quý, và trưởng ban quản lý muốn biết nên dồn tiền sửa chữa quý tới vào đâu. Biểu đồ Pareto vẽ thẳng từ phần mềm, theo đúng bộ nhóm có sẵn, xếp đèn hành lang đứng đầu với 70 phiếu, rồi tới cột "khác" với 60 phiếu, rồi vòi nước và bồn cầu 40, ổ cắm 30, cửa sổ 25, sơn tường 15, khoá cửa căn hộ 15. Thang máy bị chia làm ba cột rải ở nửa dưới bảng: kẹt cửa 16, báo lỗi 15, dừng lệch tầng 14, không cột nào lọt vào năm cột đầu.</p>
+                <p>Không phiếu nào bị đếm sai. Nhưng khi gộp ba cột thang máy lại thì thang máy có 45 phiếu, nhảy lên thứ ba, ngay sau cột "khác". Và khi có người chịu đọc 60 phiếu "khác", 38 phiếu trong đó cùng là một lỗi: cửa từ ở sảnh không nhận thẻ, một hệ thống mới lắp nên phần mềm chưa có nhóm cho nó. Vẽ lại với bộ nhóm mới, thứ tự là đèn hành lang 70, thang máy 45, vòi nước và bồn cầu 40, cửa từ 38, và cột "khác" chỉ còn 22. Hai trong bốn cột đầu của biểu đồ mới không hề có mặt ở nhóm đầu của biểu đồ cũ, và một trong hai thứ ấy là chỗ người ta có thể bị mắc kẹt.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Ba Cột Đầu Ở Seattle, Không Cột Nào Đụng Tới Vô Khuẩn</h3>
+                <p>Tháng 11 năm 2016, bác sĩ phòng mổ ở Bệnh viện Nhi Seattle báo rằng có nhiều trục trặc trong ca mổ, và tin rằng phần lớn đến từ khoa tiệt khuẩn dụng cụ. Bệnh viện có 15 phòng mổ, mỗi ngày 40 tới 60 ca, nhưng lỗi chưa từng được định nghĩa hay ghi lại. Khoa tiệt khuẩn và phòng mổ dựng một phiếu báo lỗi điền ngay trong ca, rà phiếu trong một buổi giao ban mười lăm phút mỗi ngày, rồi vẽ biểu đồ Pareto cho các lỗi thuộc khoa tiệt khuẩn từ tháng 10 tới tháng 12 năm 2017. Ba cột đầu là thiếu dụng cụ, dụng cụ hỏng, và dụng cụ bị lẫn hoặc đặt sai trong bộ. Cả ba đều thuộc nhóm lỗi không ảnh hưởng tới vô khuẩn. Loại lỗi ảnh hưởng tới vô khuẩn xảy ra nhiều nhất, rách lớp giấy gói dụng cụ, chỉ đứng thứ năm. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>Nhóm đặt mục tiêu tới tháng 12 năm 2018: giảm lỗi không ảnh hưởng tới vô khuẩn từ 46,8 xuống dưới 38 trên 1.000 ca, và lỗi ảnh hưởng tới vô khuẩn từ 6,2 xuống dưới 6,0 trên 1.000 ca. Lỗi không ảnh hưởng tới vô khuẩn giảm còn 26,5 trên 1.000 ca; từ hai giá trị được báo cáo, mức giảm tính được là khoảng 43,4%, và con số cải thiện 56% ghi trong bài báo không khớp với phép tính này. Lỗi ảnh hưởng tới vô khuẩn thì không có chuyển biến đáng kể. Rách giấy gói, khi cuối cùng được xử lý, giảm từ 8 lần xuống 1 lần, nhờ chuyển phần lớn dụng cụ sang hộp cứng: số món còn gói giấy giảm từ 336 xuống 38. Nhưng trong lúc đó các lỗi ảnh hưởng tới vô khuẩn khác lại tăng nhẹ. Chính các tác giả ghi điều này là một giới hạn: họ dành nhiều thời gian cho ba cột đầu của biểu đồ, cả ba đều là lỗi không ảnh hưởng tới vô khuẩn, trong khi loại kia mới gây tác động lớn hơn trong phòng mổ, vì phải phá trường vô khuẩn và có khi làm trễ ca. Bài học họ rút ra là phải nhìn mức tác động chứ không chỉ nhìn số lần xảy ra. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>Đây là một dự án tại một bệnh viện, không có nhóm so sánh, nhiều thay đổi chạy cùng lúc, và phiếu báo lỗi chỉ phủ chưa tới một nửa số ca, nên không tách được phần đóng góp của riêng tấm biểu đồ. Điều chắc chắn hơn là thứ tự công việc: nhóm đã làm theo đúng thứ tự biểu đồ đếm theo số lần đưa ra, và chính họ nói thứ tự ấy đã làm chậm việc xử lý loại lỗi có tác động lớn hơn.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Một Vài Nghiên Cứu Về Phân Tích Pareto</h2>
+            <p class="intro-text">Bài này không tìm được thí nghiệm nào so nhóm dùng biểu đồ Pareto với nhóm không dùng, xem nhóm nào chọn đúng việc hơn. Thứ đã được kiểm kỹ là tiền đề của nó: lỗi có thật sự dồn vào số ít hay không, và số ít ấy có giữ nguyên qua các giai đoạn hay không. Bằng chứng chặt nhất mà bài tìm được đến từ phần mềm, nơi lỗi được đếm theo từng module.</p>
+            <div class="sub-section">
+                <p><strong>Nghiên cứu:</strong> Năm 2000, Norman Fenton và Niclas Ohlsson công bố trên <em>IEEE Transactions on Software Engineering</em> một phân tích định lượng về lỗi trong hai lần phát hành liên tiếp của một hệ thống chuyển mạch viễn thông lớn ở Ericsson Telecom. Họ kiểm một loạt giả thuyết, trong đó có nguyên lý Pareto về phân bố lỗi, và câu hỏi lỗi tìm thấy sớm có dự báo được lỗi về sau hay không. <sup><a href="#ref-2">[2]</a></sup> Năm 2007, Carina Andersson và Per Runeson lặp lại nghiên cứu trên ba dự án viễn thông liên tiếp, ở một môi trường khác về quy mô hệ thống, thời gian dự án và ngôn ngữ lập trình. <sup><a href="#ref-3">[3]</a></sup> Năm 2013, Tihana Galinac Grbac, Per Runeson và Darko Huljenić lặp lại thêm một lần nữa, đúng theo phương pháp gốc, trên năm lần phát hành liên tiếp của một hệ thống viễn thông lớn. <sup><a href="#ref-4">[4]</a></sup></p>
+                <p><strong>Kết quả:</strong> Nghiên cứu gốc tìm thấy bằng chứng mạnh rằng một số ít module chứa phần lớn lỗi phát hiện trong kiểm thử trước phát hành, cụ thể là 20% module chứa gần 60% lỗi, và một số rất ít module chứa phần lớn lỗi phát hiện khi vận hành: ở lần phát hành đầu, toàn bộ lỗi khi vận hành nằm trong những module chỉ chiếm 12% kích thước hệ thống; trong cả hai trường hợp, kích thước hay độ phức tạp của module không giải thích được sự dồn ấy. Kết quả mà hai tác giả gọi là quan trọng nhất đi ngược trực giác: những module nhiều lỗi nhất trước phát hành nằm trong số ít lỗi nhất sau phát hành, và ngược lại. <sup><a href="#ref-2">[2]</a></sup> Bản lặp lại năm 2007 xác nhận nguyên lý Pareto, nhưng không thấy sự đảo chiều ấy: module nhiều lỗi ở giai đoạn kiểm thử trước thì cũng nhiều lỗi ở giai đoạn sau, kể cả từ trước sang sau phát hành. <sup><a href="#ref-3">[3]</a></sup> Bản lặp lại năm 2013 xác nhận lỗi phân bố không đều giữa các module và mức dễ lỗi giữ nguyên qua các giai đoạn kiểm thử, đồng thời thấy kích thước module không dùng được để dự báo module nào dễ lỗi. <sup><a href="#ref-4">[4]</a></sup></p>
+                <p><strong>Kết luận:</strong> Trong ba môi trường phần mềm, sự dồn lỗi vào một số ít module là kết quả lặp lại được. Điều chưa ổn định là danh tính của số ít ấy giữa các giai đoạn: nghiên cứu gốc thấy nó đảo chiều, hai bản lặp lại thấy nó giữ nguyên. Nói cách khác, với cùng một cách đếm, sự tập trung chắc hơn thứ hạng. Phạm vi của cả ba hẹp hơn vẻ ngoài: cả ba đều là hệ thống phần mềm viễn thông lớn, đều đếm cùng một thứ là lỗi trên mỗi module, không đo trực tiếp việc dùng biểu đồ Pareto, và không nói gì về lỗi trong dịch vụ hay sản xuất. Chính nghiên cứu gốc cũng ghi rằng kết quả của nó chưa thể coi là quy luật, vì không tính tới nỗ lực kiểm thử và mức sử dụng của từng module. <sup><a href="#ref-2">[2]</a></sup></p>
+                <p><strong>Phản biện:</strong> Có hai lý do để tin công cụ này hơn những gì phần trên gợi ý. Thứ nhất, sự dồn lỗi đã được lặp lại ở ba môi trường, và chính nhóm lặp lại gần nhất kết luận rằng phân bố lỗi không đều thì nỗ lực đảm bảo chất lượng cũng nên phân bổ không đều, đúng điều phân tích Pareto dạy. <sup><a href="#ref-4">[4]</a></sup> Thứ hai, chọn thước đo và chia nhóm là việc của người dùng; một biểu đồ cột đã sắp xếp thì tự nó không sai được. Bài nhận trọn lý lẽ thứ nhất. Lý lẽ thứ hai chỉ nhận một nửa. Đúng là người dùng chọn, và trục dọc có ghi đang đếm gì. Nhưng không có chỗ nào trên hình cho biết một cách đếm khác, hay một bộ nhóm khác, sẽ xếp ra thứ tự nào, nên kết quả của một lựa chọn rất dễ được đọc như một sự thật về dữ liệu. Nhóm ở Seattle đã dùng cả một bộ công cụ cải tiến bài bản, vẫn làm theo thứ tự đếm theo số lần, và tự ghi điều đó thành một giới hạn trong báo cáo của mình. <sup><a href="#ref-6">[6]</a></sup> Cũng chính nhóm lặp lại năm 2013 ghi rằng những thứ dùng để dự báo nên dồn nỗ lực vào đâu vẫn chưa đủ chính xác. <sup><a href="#ref-4">[4]</a></sup></p>
+                <p><strong>Vì sao điều này hữu ích:</strong> Nó cho bạn biết nên nghi ngờ ở đâu. Với dữ liệu và bộ nhóm đã cố định, thứ hạng là kết quả của một phép tính, không có gì phải nghi. Chỗ phải nghi nằm ở hai bên phép tính ấy: bộ nhóm và thước đo được chọn trước đó, và việc coi thứ hạng hôm nay là dự báo cho kỳ sau, hay là danh sách việc phải làm, sau đó. Trước khi dồn người và tiền vào cột đầu tiên, tự hỏi hai câu: nếu đếm theo thứ mình thật sự muốn giảm thì cột này còn đứng đầu không, và nó có còn đứng đầu ở kỳ dữ liệu sau không.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">Cách Áp Dụng</h2>
+            <p class="intro-text">Phân tích Pareto hoạt động bằng cách xếp các nhóm theo độ lớn của một thước đo đã chọn, nên dùng nó hiệu quả là chốt đúng thước đo và cách chia nhóm trước khi vẽ, rồi kiểm xem thứ hạng có đứng vững không trước khi dồn lực. Nó hợp nhất khi dữ liệu đã được ghi lại đều đặn, khi các nhóm định nghĩa được rõ ràng, và khi cần chọn một hai việc làm trước trong một danh sách dài.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Đếm theo đúng thứ cần giảm, không chỉ theo số lần:</strong> Nếu thứ cần giảm là tiền làm lại, thời gian dừng máy hay rủi ro cho người bệnh, vẽ thêm một biểu đồ theo đúng thước đo ấy, hoặc nhân số lần với mức tác động của mỗi lần. Số lần dễ đếm nhất nên thường là thứ được vẽ đầu tiên, và cũng vì vậy mà nó hay chiếm chỗ của thứ đáng vẽ hơn</li>
+                    <li><strong>Chốt bộ nhóm từ chính dữ liệu trước khi đếm, và mở cột "khác" ra đọc:</strong> Đọc một mẫu phiếu rồi mới đặt tên nhóm, thay vì nhận nguyên bộ nhóm có sẵn trong phần mềm. Một loại lỗi bị tách thành nhiều cột con sẽ trông nhỏ hơn thực tế; một cột "khác" cao ngang các cột đầu thường đang giấu một nhóm chưa có tên</li>
+                    <li><strong>Kiểm thứ hạng trên một kỳ dữ liệu thứ hai trước khi dồn lực:</strong> Một nhóm có thể đứng đầu trong một tháng chỉ vì dao động, và danh tính của "số ít" có thể đổi giữa các giai đoạn đo, như nghiên cứu gốc về lỗi phần mềm cho thấy. Cách hiển nhiên là gom thêm nhiều tháng vào một biểu đồ cho số liệu dày hơn, nhưng gộp lại thì che mất chính điều cần biết: thứ hạng có đổi giữa các kỳ hay không. Vẽ riêng từng kỳ rồi đặt cạnh nhau. Kiểm thêm xem dữ liệu đã phủ được bao nhiêu phần trăm số trường hợp, vì biểu đồ chỉ xếp hạng những gì đã được ghi lại</li>
+                    <li><strong>Sửa xong cột đầu thì vẽ lại với đúng bộ nhóm và cách đếm cũ, và nhìn cả tổng chứ không chỉ cột đã sửa:</strong> Cột vừa sửa giảm chưa chắc là vấn đề giảm: ở Seattle, rách giấy gói giảm từ 8 xuống 1 lần trong khi các lỗi ảnh hưởng tới vô khuẩn khác lại tăng nhẹ. Những nhóm nhỏ còn lại không phải đồ bỏ đi; khi cột đầu đã thấp xuống, chúng thành cột đầu của lần vẽ sau</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Tình Huống Áp Dụng</h2>
+            <p class="intro-text">Một khách sạn nhỏ 30 phòng nhận 120 lời phàn nàn trong quý 3, qua quầy lễ tân và qua các trang đặt phòng, và đã chi 46 triệu đồng tiền đền bù và giảm giá vì chúng. Chủ khách sạn muốn đưa khoản tiền này xuống dưới 20 triệu trong quý 4 mà không để số lời phàn nàn tăng lên. Các con số trong tình huống này là số minh hoạ.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Chốt thứ cần giảm và mẫu số trước khi đếm:</strong> Thứ cần giảm là tiền đền bù và giảm giá, theo dõi bằng số tuyệt đối vì đó là mục tiêu tài chính. Số lời phàn nàn vẫn được đếm, vì nó kéo điểm đánh giá trên các trang đặt phòng, nhưng tính trên 1.000 đêm phòng bán được, để một quý vắng khách không trông như một quý chất lượng tốt lên. Quý 3 bán được 2.300 đêm phòng</li>
+                    <li><strong>Đặt bộ nhóm từ chính các lời phàn nàn:</strong> Quản lý đọc cả 120 lời rồi mới đặt nhóm, thay vì dùng mẫu phân loại có sẵn. Được sáu nhóm: wifi chậm, ồn từ ngoài đường, điều hoà hỏng hoặc kém, phòng chưa dọn kịp, nước nóng yếu, và "khác". Cột "khác" có 8 lời, đủ nhỏ để tin rằng bộ nhóm không bỏ sót loại lớn nào</li>
+                    <li><strong>Vẽ hai biểu đồ, một theo số lần, một theo tiền:</strong> Theo số lần, wifi chậm đứng đầu với 42 lời, gần 35%. Theo tiền, điều hoà đứng đầu với 27 trong 46 triệu, gần 59%, vì mỗi lần điều hoà hỏng là một lần đổi phòng hoặc giảm nửa giá đêm đó; wifi chậm chỉ tốn 2 triệu, chủ yếu là lời xin lỗi</li>
+                    <li><strong>Kiểm thứ hạng trên quý trước:</strong> Ở quý 2, điều hoà cũng đứng đầu theo tiền, với 21 trong 38 triệu, nên đây không phải chuyện riêng của một quý</li>
+                    <li><strong>So những phòng bị phàn nàn với những phòng không bị, trước khi quy nguyên nhân:</strong> 16 trong 18 lời phàn nàn về điều hoà đến từ 7 phòng còn dùng máy lắp năm 2015; 23 phòng đã thay máy năm 2021 chỉ có 2 lời. Phép so mới chỉ là tín hiệu. Nhật ký bảo trì cho thấy bảy máy cũ được bảo dưỡng cùng lịch với các máy khác, nên chỗ chênh khó quy cho lịch bảo trì; kỹ thuật viên kiểm cả bảy máy thì thấy năm máy rò gas ở dàn đồng đã mục và hai máy hỏng quạt. Hai phép kiểm này chưa loại hết được điều kiện lắp đặt hay cách khách dùng, nhưng đủ để đặt đúng câu hỏi tiếp theo: sửa hay thay</li>
+                    <li><strong>Chọn đối sách cho cả cột đắt nhất lẫn cột nhiều nhất, sau khi đặt chi phí của đối sách cạnh chi phí của vấn đề:</strong> Sửa cả bảy máy hết khoảng 12 triệu, nhưng thợ chỉ bảo đảm tới hết mùa nóng vì dàn đồng đã mục; thay bảy máy mới hết khoảng 70 triệu, bằng tiền đền bù vì điều hoà của chưa tới ba quý như quý 3. Khách sạn chọn thay, ngay đầu tháng 10. Wifi chậm không tốn nhiều tiền đền bù nhưng chiếm hơn một phần ba số lời phàn nàn, và nâng gói mạng thì rẻ, nên làm luôn. Ồn từ ngoài đường thì chưa có cách sửa rẻ, để lại cho lần vẽ sau</li>
+                    <li><strong>Đo lại quý 4 bằng đúng bộ nhóm, cách tính tiền và kênh tiếp nhận cũ, và so với quý 4 năm trước:</strong> Trời mát hơn có thể tự làm giảm lời phàn nàn về điều hoà, và lượng khách có thể đổi giữa các quý, nên phải so theo tỷ lệ trên 1.000 đêm phòng, và so với cùng mùa năm ngoái chứ không chỉ với quý 3. Lời phàn nàn vẫn được nhận qua đúng quầy lễ tân và đúng các trang đặt phòng như trước</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Nhóm phàn nàn</th><th scope="col">Quý 3: số lần</th><th scope="col">Quý 3: tiền (triệu đồng)</th><th scope="col">Quý 4: số lần</th><th scope="col">Quý 4: tiền (triệu đồng)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Wifi chậm</td><td>42</td><td>2</td><td>9</td><td>0,5</td></tr>
+                        <tr><td>Ồn từ ngoài đường</td><td>25</td><td>3</td><td>24</td><td>3</td></tr>
+                        <tr><td>Điều hoà hỏng hoặc kém</td><td>18</td><td>27</td><td>3</td><td>4</td></tr>
+                        <tr><td>Phòng chưa dọn kịp</td><td>15</td><td>4,5</td><td>16</td><td>4,5</td></tr>
+                        <tr><td>Nước nóng yếu</td><td>12</td><td>6</td><td>11</td><td>5</td></tr>
+                        <tr><td>Khác</td><td>8</td><td>3,5</td><td>7</td><td>2</td></tr>
+                        <tr><td>Tổng</td><td>120</td><td>46</td><td>70</td><td>19</td></tr>
+                        <tr><td>Đêm phòng bán được</td><td>2.300</td><td></td><td>2.200</td><td></td></tr>
+                        <tr><td>Phàn nàn trên 1.000 đêm phòng</td><td>52</td><td></td><td>32</td><td></td></tr>
+                    </tbody>
+                </table>
+                <p>Quý 4, tiền đền bù và giảm giá còn 19 triệu, đạt mục tiêu dưới 20 triệu. Lượng khách gần như giữ nguyên, 2.200 so với 2.300 đêm phòng, nên phần giảm của lời phàn nàn, từ 52 xuống 32 trên 1.000 đêm phòng, không đến từ chuyện vắng khách. Lời phàn nàn về điều hoà còn 3, khoảng 1,4 trên 1.000 đêm phòng, trong khi quý 4 năm trước có 11 trên 2.250 đêm phòng, khoảng 4,9; cùng mùa, cùng kênh tiếp nhận, nên phần giảm khó quy hết cho thời tiết, dù cơ cấu khách giữa hai năm thì bài không kiểm. Điều kiện để có kết quả ấy là thước đo được chốt trước khi vẽ, bộ nhóm mọc ra từ chính lời của khách, và thứ hạng được kiểm trên một quý khác trước khi bỏ tiền. Nếu chỉ vẽ biểu đồ theo số lần, khách sạn rất có thể đã chỉ nâng gói mạng, thấy số lời phàn nàn giảm, và vẫn tiếp tục trả phần lớn tiền đền bù cho bảy chiếc điều hoà cũ. Ồn từ ngoài đường giờ là cột đầu theo số lần, và là việc của lần vẽ tới.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Tóm Tắt</h2>
+            <div class="summary-box">
+                <p><strong>Điểm Chính:</strong> Phân tích Pareto xếp các nhóm theo độ lớn của một thước đo, nên kết luận của nó nằm sẵn trong hai lựa chọn có trước khi vẽ: đếm cái gì, và chia nhóm thế nào; trục dọc ghi lựa chọn thứ nhất, nhưng hình không cho biết một lựa chọn khác sẽ xếp ra thứ tự nào. Điều phản trực giác nhất là một thứ hạng tính đúng vẫn chỉ đúng cho thước đo, bộ nhóm và kỳ dữ liệu đã chọn: ở Seattle, ba cột đầu đếm theo số lần không có cột nào đụng tới vô khuẩn, và trong dữ liệu phần mềm, nhóm module nhiều lỗi nhất trước phát hành không chắc là nhóm nhiều lỗi nhất sau phát hành. Cách dùng đáng tin vì vậy là đếm theo thứ thật sự cần giảm, đặt nhóm từ chính dữ liệu, so qua thời gian bằng tỷ lệ trên một mẫu số, và kiểm thứ hạng trên một kỳ khác trước khi dồn lực vào cột đầu tiên.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">Tài Liệu Tham Khảo</h2>
+            <ol class="outline-list">
+                <li id="ref-1">Juran, J. M. <em>The Non-Pareto Principle; Mea Culpa</em>. Bản lưu của Juran Institute ghi năm 1974; một số thư mục ghi bài đăng trên <em>Quality Progress</em> tháng 5 năm 1975. Lời kể của chính Juran về việc ông đặt tên "nguyên lý Pareto" trong ấn bản đầu <em>Quality Control Handbook</em> (1951) và về sau thừa nhận đã gắn nhầm tên; nguồn cho phần lịch sử cái tên, cho chuyện đường cộng dồn lẽ ra mang tên Lorenz, và, qua phần tóm tắt của Juran Institute, cho chữ "số đông hữu ích". <a href="https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf" rel="noopener noreferrer" target="_blank">Đọc bản lưu</a>.</li>
+                <li id="ref-2">Fenton, N. E., &amp; Ohlsson, N. (2000). Quantitative analysis of faults and failures in a complex software system. <em>IEEE Transactions on Software Engineering</em>, 26(8), 797-814. Nghiên cứu gốc về phân bố lỗi trong hai lần phát hành liên tiếp của một hệ thống chuyển mạch viễn thông ở Ericsson Telecom; nguồn cho sự dồn lỗi vào số ít module, cho tỷ lệ 20% module chứa gần 60% lỗi, cho việc kích thước module không giải thích được sự dồn ấy, cho kết quả đảo chiều giữa lỗi trước và sau phát hành, và cho lời cảnh báo rằng số lỗi quan sát được phụ thuộc vào nỗ lực kiểm thử và mức sử dụng. Bài đọc toàn văn. <a href="https://doi.org/10.1109/32.879815" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-3">Andersson, C., &amp; Runeson, P. (2007). A replicated quantitative analysis of fault distributions in complex software systems. <em>IEEE Transactions on Software Engineering</em>, 33(5), 273-286. Bản lặp lại trên ba dự án viễn thông liên tiếp; nguồn cho việc nguyên lý Pareto được xác nhận ở môi trường khác, và cho kết quả lỗi giữ nguyên chứ không đảo chiều giữa các giai đoạn. Bài đọc qua tóm tắt. <a href="https://doi.org/10.1109/TSE.2007.1005" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-4">Galinac Grbac, T., Runeson, P., &amp; Huljenić, D. (2013). A second replicated quantitative analysis of fault distributions in complex software systems. <em>IEEE Transactions on Software Engineering</em>, 39(4), 462-476. Bản lặp lại thứ hai trên năm lần phát hành của một hệ thống viễn thông; nguồn cho việc lỗi phân bố không đều và giữ nguyên qua các giai đoạn kiểm thử, cho kết luận rằng phân bố không đều biện minh cho việc phân bổ nỗ lực không đều, và cho nhận xét rằng các yếu tố dự báo chưa đủ chính xác. Bài đọc qua tóm tắt. <a href="https://doi.org/10.1109/TSE.2012.46" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-5">Antony, J., McDermott, O., Sony, M., Fernandes, M. M., &amp; Ribeiro, R. V. C. (2021). A study on the Ishikawa's original basic tools of quality control in South American companies: Results from a pilot survey and directions for further research. <em>The TQM Journal</em>, 33(8), 1770-1786. Khảo sát thử nghiệm 97 người làm chất lượng ở doanh nghiệp Nam Mỹ; nguồn cho việc phân tích Pareto nằm trong nhóm công cụ được dùng nhiều nhất ở cả sản xuất lẫn dịch vụ. Dữ liệu tự báo cáo, mẫu nhỏ. <a href="https://doi.org/10.1108/TQM-01-2021-0004" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-6">Palo, R. J., Dulaney Bumpers, Q., &amp; Mohsenian, Y. (2021). Improvement initiative to ensure quality instrumentation in the OR. <em>Pediatric Quality &amp; Safety</em>, 6(1), e371. Báo cáo cải tiến của khoa tiệt khuẩn dụng cụ ở Bệnh viện Nhi Seattle; nguồn cho ba cột đầu của biểu đồ Pareto, các con số trên 1.000 ca, tỷ lệ phiếu báo lỗi được nộp, và nhận xét của chính các tác giả về việc nhìn số lần thay vì mức tác động. Toàn văn mở. <a href="https://doi.org/10.1097/pq9.0000000000000371" rel="noopener noreferrer" target="_blank">Đọc toàn văn</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

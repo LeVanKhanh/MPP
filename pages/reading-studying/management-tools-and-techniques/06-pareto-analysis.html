@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pareto Analysis - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="Pareto analysis ranks groups by the size of a chosen measure, so its conclusion is already built into two choices made before anything is drawn: what to count, and how to group. This piece looks at the mechanism, a name its own coiner admitted was a mistake, the evidence on how defects concentrate, and a step-by-step scenario."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Pareto Analysis</h1>
+            <p class="page-subtitle">The tallest bar is the one you counted most, not necessarily the one that costs most</p>
+            <p class="page-meta">Published: <time datetime="2026-10-10">October 10, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Definition</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Is Pareto Analysis</h3>
+                <p>Pareto analysis is a way of ranking groups of problems, or groups of causes, by the size of a measure such as how often they occur, what they cost or how much time they lose: sort the data into groups, draw each group as a bar, put the tallest bar on the left and step down to the right, and add a cumulative percentage line climbing from the first bar to 100%. A month of defects at a packaging print shop, laid out that way, produces a picture anyone can read at a glance: colour shift first, creasing second, the two together already close to seven in ten defects. That picture differs from a fishbone diagram in that it ranks groups that have been counted, whereas a fishbone diagram lists causes that are possible; and a defect group on a Pareto chart is still not a verified cause. It also differs from a histogram: its horizontal axis holds groups with no natural order, sorted by size, rather than adjacent ranges of a single variable.</p>
+
+                <p>The name was given by Joseph Juran, and Juran himself later admitted it was the wrong one. From the mid-1920s, as a young engineer, he noticed that quality defects were unequal in frequency: arrange a long list by frequency and a relative few account for most of it. In the late 1940s, preparing the first edition of the <em>Quality Control Handbook</em> (1951), he needed a short name for the principle he called "the vital few and the trivial many", and borrowed the name of Vilfredo Pareto, the Italian economist who had studied the unequal distribution of wealth. When challenged, Juran went back to Pareto and conceded that Pareto's work lay only in economics, that his models were never meant for other fields, and that the cumulative curves in the handbook should have carried Lorenz's name. The confession changed nothing: the name stayed. According to the Juran Institute's summary that accompanies the piece, he later changed "trivial many" to "useful many". <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <p>The mechanism of the tool lies in the ranking. Out of a flat list of causes, where anyone can argue that their own department's cause matters most, it builds an order of priority with a basis behind it: the tallest bar gets looked at first. But the height of a bar depends on two choices made before anything is drawn. The first is what to count: occurrences, cost, time lost, or severity. The second is how to group: merge or split, group by equipment or by cause, and how much to leave in "other". The chart shows the result of those two choices, never the choices themselves.</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Two Pareto charts drawn from the same month of defects at a packaging print shop. On the left, ranked by count out of 160 defects: colour shift 60, creasing 50, mis-cut 30, wrong content 12, glue failure 8; the first two bars account for almost 69%. On the right, ranked by reprint cost out of 100 million dong: wrong content 48, glue failure 20, mis-cut 15, colour shift 12, creasing 5. Wrong content is fourth by count but first by cost."
+                        viewBox="0 0 1120 400">
+
+                        <text x="300" y="44">Ranked by count (160 defects)</text>
+                        <text x="840" y="44">Ranked by cost (100 million dong)</text>
+
+                        <path class="axis" d="M70 320 H530"></path>
+                        <path class="axis" d="M70 100 V320"></path>
+                        <path class="edge-ghost" d="M70 144 H530"></path>
+                        <text class="small rowlabel" x="64" y="144">80%</text>
+                        <text class="small rowlabel" x="64" y="100">100%</text>
+
+                        <rect class="bar" x="80" y="237.5" width="70" height="82.5"></rect>
+                        <rect class="bar" x="168" y="251.25" width="70" height="68.75"></rect>
+                        <rect class="bar" x="256" y="278.75" width="70" height="41.25"></rect>
+                        <rect class="bar" x="344" y="303.5" width="70" height="16.5"></rect>
+                        <rect class="bar" x="432" y="309" width="70" height="11"></rect>
+                        <text class="small" x="115" y="226">60</text>
+                        <text class="small" x="203" y="240">50</text>
+                        <text class="small" x="291" y="267">30</text>
+                        <text class="small alert" x="379" y="292">12</text>
+                        <text class="small" x="467" y="297">8</text>
+                        <path class="arrow" d="M115 237.5 L203 168.75 L291 127.5 L379 111 L467 100"></path>
+                        <text class="small" x="125" y="252">38%</text>
+                        <text class="small" x="203" y="156">69%</text>
+                        <text class="small" x="291" y="115">88%</text>
+                        <text class="small" x="115" y="340">Colour shift</text>
+                        <text class="small" x="203" y="340">Creasing</text>
+                        <text class="small" x="291" y="340">Mis-cut</text>
+                        <text class="small alert" x="379" y="340">Wrong content</text>
+                        <text class="small" x="467" y="340">Glue failure</text>
+
+                        <path class="axis" d="M610 320 H1070"></path>
+                        <path class="axis" d="M610 100 V320"></path>
+                        <path class="edge-ghost" d="M610 144 H1070"></path>
+                        <text class="small rowlabel" x="604" y="144">80%</text>
+                        <text class="small rowlabel" x="604" y="100">100%</text>
+
+                        <rect class="bar" x="620" y="214.4" width="70" height="105.6"></rect>
+                        <rect class="bar" x="708" y="276" width="70" height="44"></rect>
+                        <rect class="bar" x="796" y="287" width="70" height="33"></rect>
+                        <rect class="bar" x="884" y="293.6" width="70" height="26.4"></rect>
+                        <rect class="bar" x="972" y="309" width="70" height="11"></rect>
+                        <text class="small alert" x="655" y="203">48</text>
+                        <text class="small" x="743" y="265">20</text>
+                        <text class="small" x="831" y="276">15</text>
+                        <text class="small" x="919" y="282">12</text>
+                        <text class="small" x="1007" y="297">5</text>
+                        <path class="arrow" d="M655 214.4 L743 170.4 L831 137.4 L919 111 L1007 100"></path>
+                        <text class="small" x="665" y="229">48%</text>
+                        <text class="small" x="743" y="158">68%</text>
+                        <text class="small" x="831" y="125">83%</text>
+                        <text class="small alert" x="655" y="340">Wrong content</text>
+                        <text class="small" x="743" y="340">Glue failure</text>
+                        <text class="small" x="831" y="340">Mis-cut</text>
+                        <text class="small" x="919" y="340">Colour shift</text>
+                        <text class="small" x="1007" y="340">Creasing</text>
+
+                        <text class="small note alert" x="610" y="375">Rare, but each one means reprinting the whole batch: fourth by count, first by cost</text>
+                    </svg>
+                    <figcaption>
+                        <strong>Figure 1.</strong> The same month of defects at a packaging print shop, ranked twice. By count,
+                        colour shift and creasing make up close to seven in ten; by reprint cost, those two bars drop to the
+                        bottom, while wrong content, rare but meaning a whole batch reprinted every time, takes almost half.
+                        The data did not change; only the question put to it did. Illustrative figures.
+                    </figcaption>
+                </figure>
+
+                <!-- YouTube Video Container -->
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                    <iframe
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        src="https://www.youtube.com/embed/ltBw6kwD3_o"
+                        title="How to use a Pareto chart"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Why We Need It</h3>
+                <p>An improvement team has twelve kinds of defect on the board. Every department head has a reason to believe their own defect should be fixed first, and the meeting ends with people and money split evenly across all twelve. Pareto analysis heads off that outcome with a count: when defects pile up in a few groups, splitting resources evenly means spending them where the defects are not. The pile-up is not just an impression. In software it has been tested repeatedly in three different telecommunications environments: a small number of modules, that is, blocks of program code, contain most of the faults, and in the original study the size of the modules did not explain it. <sup><a href="#ref-2">[2]</a></sup> <sup><a href="#ref-3">[3]</a></sup> <sup><a href="#ref-4">[4]</a></sup> The most recent replication concluded exactly what this tool teaches: when faults are distributed unevenly, quality assurance effort should be distributed unevenly too. <sup><a href="#ref-4">[4]</a></sup> The tool is also cheap, needing only data already collected and a spreadsheet, and so it is widely used: in a survey of 97 quality professionals in South American companies, Pareto analysis was among the most used tools in both manufacturing and services. <sup><a href="#ref-5">[5]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Are Its Limits</h3>
+                <p>The chart answers exactly the question it was asked, and only that question. Count by occurrence and it tells you which defects happen often, not which ones are expensive, as Figure 1 above shows. Change the grouping and the ranking changes with it: splitting one kind of defect into three sub-bars can be enough to push it out of the top group, while a large "other" bar is usually a sign that the grouping has missed a real kind of defect. It only ranks what has been recorded, and what gets recorded depends on whether anyone went looking: Fenton and Ohlsson point out that a module which has not been tested or used will reveal no faults, whatever it is like. <sup><a href="#ref-2">[2]</a></sup> In the operating rooms at Seattle Children's Hospital, defect forms, despite rising from 26%, were still submitted for only about 47% of cases, and the authors themselves did not know whether the rest were cases without defects or defects that went unrecorded. <sup><a href="#ref-6">[6]</a></sup> And the chart stops at showing which bar is large: why it is large, what fixing it would cost, and whether the ranking will hold next period are questions for other tools and other data. Nor is the figure 80/20 part of the tool's definition; whether the data is skewed, and how far, is something you only learn by counting. In the software study cited below, 20% of modules held close to 60% of the faults found in testing, not 80%. <sup><a href="#ref-2">[2]</a></sup></p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">What the chart shows</th><th scope="col">What it does not show</th></tr></thead>
+                    <tbody>
+                        <tr><td>Colour shift is the tallest bar</td><td>Whether colour shift is the most expensive defect</td></tr>
+                        <tr><td>The first three bars make up 88% of defects</td><td>Whether those three would still lead under a different grouping</td></tr>
+                        <tr><td>The "other" bar makes up 15%</td><td>Whether "other" hides a large kind of defect that has no name yet</td></tr>
+                        <tr><td>This month's ranking</td><td>Whether that ranking will hold next month</td></tr>
+                        <tr><td>The defects that were recorded</td><td>The defects that happened and nobody recorded</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Examples</h2>
+            <p class="intro-text">Each example below shows one of the two choices made before drawing deciding which bar comes first: an apartment building's maintenance team grouping repair tickets two ways, and the sterile processing department at Seattle Children's Hospital, where the project team itself wrote that they had looked at occurrences and not yet at impact.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">The Lift Drops Out of the Top Group</h3>
+                <p>An illustrative scenario: the maintenance team of an apartment building receives 300 repair tickets in a quarter, and the building manager wants to know where next quarter's repair budget should go. The Pareto chart drawn straight from the software, using its built-in groups, puts corridor lights first with 70 tickets, then "other" with 60, then taps and toilets 40, sockets 30, windows 25, wall paint 15, flat door locks 15. The lift is split into three bars scattered across the lower half: door jams 16, error alerts 15, stopping off-level 14, none of them in the top five.</p>
+                <p>Not a single ticket was miscounted. But merge the three lift bars and the lift has 45 tickets, jumping to third, right behind "other". And when somebody bothers to read the 60 "other" tickets, 38 of them turn out to be the same fault: the magnetic door in the lobby not reading key cards, a newly installed system for which the software had no group. Redrawn with the new groups, the order is corridor lights 70, lift 45, taps and toilets 40, magnetic door 38, and "other" is down to 22. Two of the top four bars on the new chart were nowhere in the top group of the old one, and one of those two is a place where people can get stuck.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">The Top Three Bars in Seattle, None of Them About Sterility</h3>
+                <p>In November 2016, operating room physicians at Seattle Children's Hospital reported a high number of problems during cases, and believed much of it came from the sterile processing department. The hospital site had 15 operating rooms and 40 to 60 cases a day, but defects had never been defined or recorded. The sterile processing department and the operating rooms set up a defect form filled in during the case, reviewed the forms at a fifteen-minute daily huddle, and drew a Pareto chart of the department's defects from October to December 2017. The top three bars were missing instruments, damaged instruments, and instruments mixed up or misplaced within sets. All three belonged to the group of defects that do not affect sterility. The most frequent defect that does affect sterility, a breach of the soft instrument wrap, came only fifth. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>The team set targets for December 2018: cut defects that do not affect sterility from 46.8 to under 38 per 1,000 cases, and defects that affect sterility from 6.2 to under 6.0 per 1,000 cases. Defects not affecting sterility fell to 26.5 per 1,000 cases; from the two reported values, the reduction works out at about 43.4%, and the 56% improvement stated in the paper does not match that calculation. Defects affecting sterility showed no significant change. Wrap breaches, once finally tackled, fell from 8 occurrences to 1, after most instruments were moved into rigid containers: the number of items still in soft wrap fell from 336 to 38. Meanwhile, though, the other defects affecting sterility rose slightly. The authors record this themselves as a limitation: they spent much of their time on the top three bars of the chart, all of them defects not affecting sterility, while the other kind is the one with the greater impact in the operating room, because it means breaking down the sterile field and sometimes delaying the case. The lesson they drew was to look at impact, not only at how often something happens. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>This was a project at one hospital, with no comparison group, many changes running at once, and defect forms covering less than half of cases, so the contribution of the chart on its own cannot be separated out. What is more certain is the order of the work: the team followed the order the count-based chart gave them, and they themselves say that order delayed their handling of the kind of defect with the greater impact.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Some Research on Pareto Analysis</h2>
+            <p class="intro-text">This piece could not find any experiment comparing teams that use a Pareto chart with teams that do not, to see which picks the right work more often. What has been tested carefully is its premise: whether faults really do pile up in a small number of places, and whether that small number stays the same across stages. The tightest evidence this piece found comes from software, where faults are counted module by module.</p>
+            <div class="sub-section">
+                <p><strong>The study:</strong> In 2000, Norman Fenton and Niclas Ohlsson published in <em>IEEE Transactions on Software Engineering</em> a quantitative analysis of faults in two consecutive releases of a large telecommunications switching system at Ericsson Telecom. They tested a series of hypotheses, among them the Pareto principle for the distribution of faults, and the question of whether faults found early predict faults found later. <sup><a href="#ref-2">[2]</a></sup> In 2007, Carina Andersson and Per Runeson replicated the study on three successive telecommunications projects, in an environment that differed in system size, project duration and programming language. <sup><a href="#ref-3">[3]</a></sup> In 2013, Tihana Galinac Grbac, Per Runeson and Darko Huljenić replicated it once more, following the original method closely, on five consecutive releases of a large telecommunications system. <sup><a href="#ref-4">[4]</a></sup></p>
+                <p><strong>Findings:</strong> The original study found strong evidence that a small number of modules contain most of the faults discovered in pre-release testing, specifically 20% of modules holding close to 60% of faults, and that a very small number of modules contain most of the faults discovered in operation: in the first release, all the operational faults sat in modules making up just 12% of the system's size; in neither case did module size or complexity explain the concentration. The result the two authors called the most important ran against intuition: the modules most fault-prone before release were among the least fault-prone after release, and the other way round. <sup><a href="#ref-2">[2]</a></sup> The 2007 replication confirmed the Pareto principle but did not find that reversal: modules with many faults in an earlier test phase also had many in a later one, including from before to after release. <sup><a href="#ref-3">[3]</a></sup> The 2013 replication confirmed that faults are unevenly distributed across modules and that fault-proneness persists across test phases, and found that module size is no use for predicting which modules will be fault-prone. <sup><a href="#ref-4">[4]</a></sup></p>
+                <p><strong>What it shows:</strong> Across three software environments, the pile-up of faults in a small number of modules is a repeatable result. What is not stable is the identity of that small number between stages: the original study found it reversed, the two replications found it persisted. In other words, for a fixed way of counting, the concentration is sturdier than the ranking. The scope of all three is narrower than it looks: all three are large telecommunications software systems, all count the same thing, faults per module, none measures the use of a Pareto chart directly, and none says anything about defects in services or manufacturing. The original study itself notes that its results cannot be taken as laws, because they do not account for the testing effort and operational usage of each module. <sup><a href="#ref-2">[2]</a></sup></p>
+                <p><strong>The counter-case:</strong> There are two reasons to trust this tool more than the section above suggests. First, the pile-up of faults has been replicated in three environments, and the most recent replication team itself concluded that uneven fault distribution justifies uneven quality assurance effort, exactly what Pareto analysis teaches. <sup><a href="#ref-4">[4]</a></sup> Second, choosing the measure and the grouping is the user's job; a sorted bar chart cannot, on its own, be wrong. This piece accepts the first argument in full. The second it accepts only in part. The user does choose, and the vertical axis does say what is being counted. But nothing on the picture shows what order a different way of counting, or a different set of groups, would produce, so the result of one choice is very easily read as a fact about the data. The Seattle team used a whole set of improvement tools properly, still worked in the order the count gave them, and recorded that as a limitation in their own report. <sup><a href="#ref-6">[6]</a></sup> And the 2013 replication team themselves note that the predictors for where to concentrate effort are still not precise enough. <sup><a href="#ref-4">[4]</a></sup></p>
+                <p><strong>Why this is useful:</strong> It tells you where to direct your doubt. With the data and the groups fixed, the ranking is the result of a calculation and there is nothing to doubt about it. The places to doubt sit on either side of that calculation: the groups and the measure chosen beforehand, and, afterwards, treating today's ranking as a forecast for next period or as a list of things to do. Before putting people and money into the first bar, ask two questions: if you counted by what you actually want to reduce, would this bar still come first, and would it still come first in the next period's data.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">How to Apply It</h2>
+            <p class="intro-text">Pareto analysis works by ranking groups by the size of a chosen measure, so using it well means settling the right measure and the right grouping before drawing anything, then checking whether the ranking holds up before committing resources. It suits best when data has been recorded consistently, when the groups can be clearly defined, and when one or two things need to be picked first from a long list.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Count by what you actually need to reduce, not only by occurrences:</strong> If what needs to come down is rework cost, machine downtime or risk to patients, draw another chart on exactly that measure, or multiply each occurrence by its impact. Occurrences are the easiest thing to count, so they are usually what gets drawn first, and for the same reason they tend to take the place of what is more worth drawing</li>
+                    <li><strong>Build the groups from the data itself before counting, and open up the "other" bar and read it:</strong> Read a sample of the records before naming groups, rather than taking the software's built-in groups as they come. A kind of defect split across several sub-bars will look smaller than it is; an "other" bar as tall as the leading bars is usually hiding a group that has no name yet</li>
+                    <li><strong>Check the ranking on a second period of data before committing resources:</strong> A group can come first in one month purely through fluctuation, and the identity of the "few" can change between stages of measurement, as the original software study showed. The obvious move is to pool several months into one chart for thicker data, but pooling hides exactly what you need to know: whether the ranking shifts between periods. Draw each period separately and set them side by side. Check, too, what share of cases the data actually covers, because the chart only ranks what has been recorded</li>
+                    <li><strong>Once the first bar is fixed, redraw with exactly the same groups and the same way of counting, and look at the total rather than just the bar you fixed:</strong> A bar that has come down does not necessarily mean the problem has come down: in Seattle, wrap breaches fell from 8 to 1 while the other defects affecting sterility rose slightly. The smaller groups left over are not waste; once the first bar is lower, they become the first bar of the next drawing</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Applying It to a Scenario</h2>
+            <p class="intro-text">A small 30-room hotel received 120 complaints in the third quarter, at the front desk and on booking sites, and paid out 46 million dong in compensation and discounts because of them. The owner wants to bring that sum below 20 million in the fourth quarter without letting the number of complaints rise. The figures in this scenario are illustrative.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Settle what needs to come down, and the denominator, before counting:</strong> What needs to come down is compensation and discounts, tracked as an absolute figure because it is a financial target. Complaints are still counted, because they drag down review scores on booking sites, but per 1,000 room-nights sold, so that a quiet quarter does not look like a quarter in which quality improved. The third quarter sold 2,300 room-nights</li>
+                    <li><strong>Build the groups from the complaints themselves:</strong> The manager reads all 120 complaints before naming any groups, rather than using a ready-made classification. Six groups emerge: slow wifi, street noise, air conditioning broken or weak, room not cleaned in time, weak hot water, and "other". "Other" holds 8 complaints, small enough to trust that the grouping has not missed any large kind</li>
+                    <li><strong>Draw two charts, one by count and one by money:</strong> By count, slow wifi comes first with 42 complaints, close to 35%. By money, air conditioning comes first with 27 of the 46 million, close to 59%, because every air conditioning failure means a room change or half off that night; slow wifi cost only 2 million, mostly in apologies</li>
+                    <li><strong>Check the ranking against the previous quarter:</strong> In the second quarter, air conditioning also came first by money, with 21 of 38 million, so this is not a one-quarter fluke</li>
+                    <li><strong>Compare the rooms that drew complaints with the rooms that did not, before assigning a cause:</strong> 16 of the 18 air conditioning complaints came from 7 rooms still using units installed in 2015; the 23 rooms whose units were replaced in 2021 produced only 2. The comparison is only a signal. The maintenance log shows the seven old units were serviced on the same schedule as the others, so the gap is hard to put down to the maintenance schedule; a technician who checks all seven finds five leaking refrigerant from corroded copper coils and two with failed fans. These two checks do not rule out installation conditions or how guests use the units, but they are enough to pose the right next question: repair or replace</li>
+                    <li><strong>Choose remedies for both the most expensive bar and the most frequent one, after setting the cost of the remedy against the cost of the problem:</strong> Repairing all seven units costs about 12 million, but the technician will only guarantee them to the end of the hot season because the coils are corroded; replacing the seven costs about 70 million, the same as under three quarters' worth of air conditioning compensation at the third-quarter rate. The hotel chooses to replace them, at the start of October. Slow wifi costs little in compensation but accounts for more than a third of complaints, and upgrading the connection is cheap, so that gets done too. Street noise has no cheap fix yet, and is left for the next drawing</li>
+                    <li><strong>Measure the fourth quarter with the same groups, the same way of counting money and the same intake channels, and compare with the fourth quarter of last year:</strong> Cooler weather can by itself reduce air conditioning complaints, and the number of guests can change between quarters, so the comparison has to be per 1,000 room-nights, and against the same season last year as well as the third quarter. Complaints are still taken through the same front desk and the same booking sites as before</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Complaint group</th><th scope="col">Q3: count</th><th scope="col">Q3: money (million dong)</th><th scope="col">Q4: count</th><th scope="col">Q4: money (million dong)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Slow wifi</td><td>42</td><td>2</td><td>9</td><td>0.5</td></tr>
+                        <tr><td>Street noise</td><td>25</td><td>3</td><td>24</td><td>3</td></tr>
+                        <tr><td>Air conditioning broken or weak</td><td>18</td><td>27</td><td>3</td><td>4</td></tr>
+                        <tr><td>Room not cleaned in time</td><td>15</td><td>4.5</td><td>16</td><td>4.5</td></tr>
+                        <tr><td>Weak hot water</td><td>12</td><td>6</td><td>11</td><td>5</td></tr>
+                        <tr><td>Other</td><td>8</td><td>3.5</td><td>7</td><td>2</td></tr>
+                        <tr><td>Total</td><td>120</td><td>46</td><td>70</td><td>19</td></tr>
+                        <tr><td>Room-nights sold</td><td>2,300</td><td></td><td>2,200</td><td></td></tr>
+                        <tr><td>Complaints per 1,000 room-nights</td><td>52</td><td></td><td>32</td><td></td></tr>
+                    </tbody>
+                </table>
+                <p>In the fourth quarter, compensation and discounts came to 19 million, meeting the target of under 20 million. The number of guests stayed nearly the same, 2,200 against 2,300 room-nights, so the fall in complaints, from 52 to 32 per 1,000 room-nights, did not come from an empty hotel. Air conditioning complaints were down to 3, about 1.4 per 1,000 room-nights, while the fourth quarter of last year had 11 over 2,250 room-nights, about 4.9; same season, same intake channels, so the fall is hard to put down entirely to the weather, though this piece did not check whether the guest mix differed between the two years. What it took to get that result: the measure settled before drawing, groups that grew out of the guests' own words, and the ranking checked against another quarter before any money was spent. Had the hotel only drawn the chart by count, it would very likely have upgraded the wifi and nothing else, watched complaints fall, and gone on paying most of its compensation for seven old air conditioners. Street noise is now the first bar by count, and the job for the next drawing.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Summary</h2>
+            <div class="summary-box">
+                <p><strong>Key Point:</strong> Pareto analysis ranks groups by the size of a measure, so its conclusion is already built into two choices made before anything is drawn: what to count, and how to group; the vertical axis records the first choice, but the picture does not say what order a different choice would produce. The most counter-intuitive part is that a correctly calculated ranking still holds only for the measure, the groups and the period that were chosen: in Seattle, the top three bars counted by occurrence included none that affected sterility, and in the software data, the modules with the most faults before release were not necessarily the ones with the most faults after it. The way to use it worth trusting is therefore to count by what actually needs to come down, build the groups from the data itself, compare across time as a rate over a denominator, and check the ranking on another period before committing to the first bar.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">References</h2>
+            <ol class="outline-list">
+                <li id="ref-1">Juran, J. M. <em>The Non-Pareto Principle; Mea Culpa</em>. The Juran Institute's archive copy is dated 1974; some bibliographies list it as published in <em>Quality Progress</em> in May 1975. Juran's own account of naming the "Pareto principle" in the first edition of the <em>Quality Control Handbook</em> (1951) and later admitting he had attached the wrong name; the source for the history of the name, for the cumulative curves that should have carried Lorenz's name, and, through the Juran Institute's summary, for the phrase "useful many". <a href="https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf" rel="noopener noreferrer" target="_blank">Read the archive copy</a>.</li>
+                <li id="ref-2">Fenton, N. E., &amp; Ohlsson, N. (2000). Quantitative analysis of faults and failures in a complex software system. <em>IEEE Transactions on Software Engineering</em>, 26(8), 797-814. The original study of fault distribution in two consecutive releases of a telecommunications switching system at Ericsson Telecom; the source for faults piling up in a small number of modules, for 20% of modules holding close to 60% of faults, for module size not explaining that pile-up, for the reversal between pre- and post-release faults, and for the warning that observed fault counts depend on testing effort and operational usage. Read in full. <a href="https://doi.org/10.1109/32.879815" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-3">Andersson, C., &amp; Runeson, P. (2007). A replicated quantitative analysis of fault distributions in complex software systems. <em>IEEE Transactions on Software Engineering</em>, 33(5), 273-286. A replication on three successive telecommunications projects; the source for the Pareto principle being confirmed in a different environment, and for faults persisting rather than reversing between stages. Read via the abstract. <a href="https://doi.org/10.1109/TSE.2007.1005" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-4">Galinac Grbac, T., Runeson, P., &amp; Huljenić, D. (2013). A second replicated quantitative analysis of fault distributions in complex software systems. <em>IEEE Transactions on Software Engineering</em>, 39(4), 462-476. A second replication on five releases of a telecommunications system; the source for faults being unevenly distributed and persisting across test phases, for the conclusion that uneven distribution justifies uneven effort, and for the note that predictors are not yet precise enough. Read via the abstract. <a href="https://doi.org/10.1109/TSE.2012.46" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-5">Antony, J., McDermott, O., Sony, M., Fernandes, M. M., &amp; Ribeiro, R. V. C. (2021). A study on the Ishikawa's original basic tools of quality control in South American companies: Results from a pilot survey and directions for further research. <em>The TQM Journal</em>, 33(8), 1770-1786. A pilot survey of 97 quality professionals in South American companies; the source for Pareto analysis being among the most used tools in both manufacturing and services. Self-reported data, small sample. <a href="https://doi.org/10.1108/TQM-01-2021-0004" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-6">Palo, R. J., Dulaney Bumpers, Q., &amp; Mohsenian, Y. (2021). Improvement initiative to ensure quality instrumentation in the OR. <em>Pediatric Quality &amp; Safety</em>, 6(1), e371. An improvement report from the sterile processing department at Seattle Children's Hospital; the source for the top three bars of the Pareto chart, the figures per 1,000 cases, the share of defect forms submitted, and the authors' own remark about looking at occurrences rather than impact. Open access. <a href="https://doi.org/10.1097/pq9.0000000000000371" rel="noopener noreferrer" target="_blank">Read the full text</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

@@ -186,7 +186,7 @@ Ví Dụ cho thấy người khác đã dùng công cụ ra sao, Cách Áp Dụn
 - **Tình huống gần gũi, được phép giả định**: việc văn phòng hoặc đời sống hằng ngày, không cần kiến thức chuyên ngành. Không cần nguồn, không gắn số liệu thật; số trong tình huống là số minh hoạ.
 - **Hợp với công cụ, và là cảnh dùng đúng.** Đừng ép công cụ vào vấn đề mà công cụ khác hợp hơn. Khác tình huống tầng 1 ở Ví Dụ, nơi công cụ thường bị dùng sai.
 - **`intro-text` nêu vấn đề cụ thể tới mức đo được**, rồi các bước theo đúng trình tự thật của công cụ, mỗi bước là việc làm cụ thể trong tình huống. Ít nhất một bước cho thấy một nguyên tắc ở Cách Áp Dụng đang được dùng.
-- **Tình huống phải tự áp đúng chuẩn bằng chứng bài đang dạy**: so nhóm lỗi với nhóm không lỗi trước khi quy nguyên nhân, kiểm đối sách với chính dữ kiện đã nêu, tách chỉ số kết quả thật khỏi chỉ số đo, đo trước và sau bằng đúng một định nghĩa chỉ số, và không gạch một giả thuyết khi dữ liệu mới chỉ ủng hộ giả thuyết khác. Số trong tình huống là số minh hoạ, nên chọn sao cho tình huống đạt mục tiêu nó đặt ra; không dựng một kết quả hụt rồi phải rào lại.
+- **Tình huống phải tự áp đúng chuẩn bằng chứng bài đang dạy**: so nhóm lỗi với nhóm không lỗi trước khi quy nguyên nhân, kiểm đối sách với chính dữ kiện đã nêu, tách chỉ số kết quả thật khỏi chỉ số đo, đo trước và sau bằng đúng một định nghĩa chỉ số, tính trên một mẫu số hoạt động (đêm phòng, ca, đơn hàng) khi lượng hoạt động có thể đổi giữa hai kỳ, và không gạch một giả thuyết khi dữ liệu mới chỉ ủng hộ giả thuyết khác. Số trong tình huống là số minh hoạ, nên chọn sao cho tình huống đạt mục tiêu nó đặt ra; không dựng một kết quả hụt rồi phải rào lại.
 - **Phép tính trong tình huống phải kiểm lại được.** Kết quả nào dựa vào một phép tính (lịch, khoảng dư, tỷ lệ, chi phí) thì đưa đủ đầu vào, thường bằng một bảng nhỏ; các mốc khác nhau (ngày xong việc, ngày đã chọn, hạn cứng) phải mang tên riêng và không dùng lẫn cho nhau.
 - **Đoạn kết nêu kết quả và điều kiện để đạt được nó.** Không viết "cách tốt nhất", "luôn giải quyết được": một tình huống dựng lên không chứng minh được điều đó.
 
@@ -261,6 +261,7 @@ Chạy sau checklist ở `html-menu-rules.md` mục 8, không thay thế nó.
 - [ ] Đúng số section và thứ tự: trang mục sáu section (lỗi tư duy) hoặc bảy (công cụ), trang tổng quan bảy
 - [ ] Danh mục công cụ: Định Nghĩa đúng ba sub-section tiêu đề cố định, không `intro-text`; lý do "tại sao cần" truy về được section Nghiên Cứu; section Nghiên Cứu cho thấy giá trị và tầm ảnh hưởng
 - [ ] Danh mục công cụ: Tình Huống Áp Dụng gần gũi, là cảnh dùng đúng, các bước theo trình tự công cụ, tự áp chuẩn bằng chứng, kết quả không viết thành "tốt nhất" hay "luôn luôn" (mục 3.6)
+- [ ] Mọi số minh hoạ (ví dụ dựng lên, hình, tình huống) đã được cộng lại: các nhóm khớp tổng, phần trăm khớp số, và thứ hạng nói trong chữ khớp với chính các con số đó
 - [ ] Tiêu đề section 3 có tên đầy đủ của mục
 - [ ] Tiêu đề section 4 đúng một trong hai tên chuẩn, không thêm mệnh đề nào
 - [ ] Công cụ là một hình thì bài có hình đó, đặt sau đoạn cơ chế và trước bảng, có nội dung thật chứ không phải khung rỗng (mục 3.1)

@@ -73,7 +73,7 @@ Tiêu đề section 4 phụ thuộc vào thứ mà danh mục nói tới, và ch
 
 | `sub-point-1` | Nội dung |
 |---|---|
-| `<Tên Công Cụ> Là Gì` | Là gì bằng ngôn ngữ thường, hạ xuống một hình ảnh cụ thể, ai đặt ra và năm nào kèm nguồn; rồi hình (nếu có), rồi video |
+| `<Tên Công Cụ> Là Gì` | Là gì bằng ngôn ngữ thường, hạ xuống một hình ảnh cụ thể (hình ảnh tự dựng thì mở bằng "Giả sử", để không đọc thành chuyện có thật), ai đặt ra và năm nào kèm nguồn; rồi hình (nếu có), rồi video |
 | `Tại Sao Ta Cần Dùng Nó` | Mở bằng tình huống thiếu công cụ thì hỏng, rồi cơ chế công cụ xử lý nó. Lý do phải truy về được một con số ở section Nghiên Cứu |
 | `Giới Hạn Của Công Cụ Này Là Gì` | Điều công cụ không làm được, rồi bảng đối chiếu (mục 3.2) |
 
@@ -275,7 +275,7 @@ Chạy sau checklist ở `html-menu-rules.md` mục 8, không thay thế nó.
 - [ ] `intro-text` của section 4 nối cơ chế với cách khắc phục hoặc cách triển khai
 - [ ] Bốn mục ở section 4 đều suy ra được từ cơ chế và đều làm được vào sáng mai
 - [ ] Có ít nhất một mục nói rõ nó hỏng khi nào, hoặc vì sao cách hiển nhiên không chạy
-- [ ] Tóm tắt không có dữ kiện mới
+- [ ] Tóm tắt không có dữ kiện mới, và điều phản trực giác trong đó đã được một nguồn trong bài đỡ, không phải khái quát từ một tình huống dựng lên
 - [ ] Có nghiên cứu tả đủ đo cái gì, mẫu nào, con số bao nhiêu (mục 7.1)
 - [ ] Có chỗ nói thẳng giới hạn của bằng chứng (mục 7.2)
 - [ ] Video đã mở thử và đúng chủ đề, hoặc đã bỏ hẳn khối video

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sơ Đồ SIPOC - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="Sơ đồ SIPOC buộc một nhóm cải tiến chốt quy trình bắt đầu ở đâu, kết thúc ở đâu, và ai đứng ngoài hai đầu ấy, trước khi đo hay vẽ chi tiết. Bài phân tích cơ chế, giới hạn của năm cột mặc định, bằng chứng hiện có về công cụ, và một tình huống áp dụng từng bước."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Sơ Đồ SIPOC</h1>
+            <p class="page-subtitle">Năm cột của SIPOC chốt quy trình bắt đầu ở đâu, kết thúc ở đâu và ai đứng ngoài hai đầu ấy, nhưng chỉ khi những người đứng ngoài được hỏi chứ không chỉ được ghi tên</p>
+            <p class="page-meta">Đăng ngày: <time datetime="2026-10-23">23 Tháng 10, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Định Nghĩa</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Sơ Đồ SIPOC Là Gì</h3>
+                <p>Năm chữ cái của SIPOC là tên năm cột của một bảng: Suppliers (nhà cung cấp), Inputs (đầu vào), Process (quy trình), Outputs (đầu ra), Customers (khách hàng). Bảng tóm một quy trình từ đầu tới cuối ở mức rất thô: ai cấp thứ gì cho nó, nó làm gì qua năm tới bảy bước, nó tạo ra gì, và ai nhận thứ nó tạo ra. Hội Chất lượng Hoa Kỳ (ASQ) gọi đây là công cụ thu thập dữ liệu mà các nhóm cải tiến Six Sigma (phương pháp cải tiến quy trình dựa trên đo lường và thống kê) dùng để gom thông tin về mọi thành phần liên quan của một quy trình, và đặt nó trước lưu đồ: chi tiết từng bước để dành cho lưu đồ vẽ sau. <sup><a href="#ref-1">[1]</a></sup> Giả sử một phòng khám nha khoa muốn biết vì sao bệnh nhân làm răng sứ thường phải tới bốn lần hẹn, trong khi lúc tư vấn phòng khám nói hai. Nhóm định bàn ngay về lịch ghế nha. SIPOC bắt nhóm trả lời hai câu khác trước: việc làm răng sứ bắt đầu và kết thúc ở đâu, và ai đứng ở hai đầu. Viết ra rồi, cột nhà cung cấp có labo răng sứ, nơi làm ra chiếc răng nhưng không nằm trong phòng khám, và có cả bệnh nhân, người mà cả nhóm vốn chỉ nghĩ tới ở cột cuối.</p>
+
+                <p>Ai đặt ra SIPOC và vào năm nào thì chưa rõ. Mô tả của ASQ trích từ <em>The Public Health Quality Improvement Handbook</em>, một sổ tay in năm 2009, và mô tả ấy không kể lịch sử công cụ. <sup><a href="#ref-1">[1]</a></sup> Mục từ SIPOC trên Wikipedia tiếng Anh ghi công cụ đã được dùng muộn nhất từ các chương trình quản lý chất lượng toàn diện (TQM) cuối thập niên 1980. Câu ấy chỉ dựa vào một ghi chú so sánh SIPOC với "mô hình quy trình" của Philip Crosby và với quy trình cải tiến chất lượng của Xerox, và chính mục từ đang được gắn cờ cần người am hiểu bổ sung phần lịch sử. <sup><a href="#ref-2">[2]</a></sup> Bài này chưa tìm được tài liệu gốc ghi ai đặt ra công cụ, nên không nêu năm ra đời.</p>
+
+                <p>SIPOC làm việc bằng cách buộc nhóm chốt hai đầu của quy trình và gọi tên những bên đứng ngoài hai đầu ấy, người cấp đầu vào và người nhận đầu ra, trước khi đi vào chi tiết bên trong. Trong bước chốt ranh giới, ASQ yêu cầu xác định rõ điểm bắt đầu và điểm kết thúc để mọi người cùng hiểu giới hạn của phép phân tích. <sup><a href="#ref-1">[1]</a></sup> Hai cột ngoài cùng làm phần việc khó thấy hơn. Một nhóm nói về quy trình của mình thì nói về những bước mình làm; cột nhà cung cấp và cột khách hàng hỏi về những bên ở hai đầu. ASQ ghi rõ nhà cung cấp có thể ở trong hay ngoài tổ chức, nên có bên đang ngồi ngay trong phòng họp <sup><a href="#ref-1">[1]</a></sup>, nhưng hai cột này thường kéo vào cả những người không có mặt, và ở phòng khám này chỗ hỏng nằm đúng ở một bên như vậy. Cột quy trình cố tình thô: ASQ gọi nó là cái nhìn "từ độ cao 35.000 bộ", năm tới bảy hoạt động cốt lõi, để buổi họp không trượt vào chuyện bước nào làm trước bước nào khi phạm vi còn chưa chốt. Thô không có nghĩa là thừa: với một nhóm liên phòng ban, riêng việc thống nhất năm bước ấy cũng có thể lộ ra một bước bị sót, hay hai cách hiểu khác nhau về cùng một quy trình.</p>
+
+                <p>Hai công cụ gần SIPOC nhất khác nó ở hướng nhìn. Lưu đồ quy trình vẽ từng bước, từng ngã rẽ, từng lần chuyển tay bên trong quy trình; SIPOC giữ phần bên trong ở năm tới bảy ô và nhìn ra ngoài, về phía nhà cung cấp và khách hàng. Sơ đồ chuỗi giá trị (value stream map) của sản xuất tinh gọn cũng trải từ lúc nhận đơn tới lúc giao hàng, nhưng nó đi vào bên trong: dòng vật liệu, dòng thông tin, và thời gian ở từng khâu. <sup><a href="#ref-3">[3]</a></sup> Năm cột mặc định của SIPOC không có chỗ cho thời gian. Nó trả lời "quy trình này là cái gì và của ai", chưa trả lời "nó chạy nhanh hay chậm ở đâu".</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Sơ đồ SIPOC cho việc làm răng sứ ở một phòng khám nha khoa, năm cột từ trái sang phải. Cột nhà cung cấp: bệnh nhân, cấp tiền sử, lịch rảnh và màu răng mong muốn; labo răng sứ, nằm bên ngoài phòng khám; nhà phân phối vật liệu. Cột đầu vào: hồ sơ và phim chụp, lịch hẹn đã xác nhận, răng sứ thành phẩm do labo làm và gửi về, vật liệu lấy dấu và gắn răng. Cột quy trình có năm bước, bắt đầu khi bệnh nhân đồng ý làm răng sứ và kết thúc khi răng gắn xong và đã hẹn tái khám: mài răng và lấy dấu, so màu và ghi phiếu, gửi labo và chờ răng, gắn thử và chỉnh khớp, gắn chính thức. Cột đầu ra: răng sứ đã gắn, lịch tái khám, phiếu bảo hành, hồ sơ điều trị đã cập nhật. Cột khách hàng: bệnh nhân, người cũng có mặt ở cột nhà cung cấp, và bác sĩ tái khám, người đọc hồ sơ điều trị. Ghi chú dưới hình nói hai cột ngoài cùng kéo vào những bên nhóm không quản: labo, và chính bệnh nhân ở vai người cung cấp."
+                        viewBox="0 0 1120 490">
+                        <defs>
+                            <marker id="sipoc-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <rect class="node" x="20" y="40" width="190" height="44" rx="8"></rect>
+                        <text x="115" y="62">Nhà cung cấp (S)</text>
+                        <rect class="node" x="235" y="40" width="190" height="44" rx="8"></rect>
+                        <text x="330" y="62">Đầu vào (I)</text>
+                        <rect class="node" x="450" y="40" width="220" height="44" rx="8"></rect>
+                        <text x="560" y="62">Quy trình (P)</text>
+                        <rect class="node" x="695" y="40" width="190" height="44" rx="8"></rect>
+                        <text x="790" y="62">Đầu ra (O)</text>
+                        <rect class="node" x="910" y="40" width="190" height="44" rx="8"></rect>
+                        <text x="1005" y="62">Khách hàng (C)</text>
+                        <path class="arrow" d="M210 62 H233" marker-end="url(#sipoc-arrow)"></path>
+                        <path class="arrow" d="M425 62 H448" marker-end="url(#sipoc-arrow)"></path>
+                        <path class="arrow" d="M670 62 H693" marker-end="url(#sipoc-arrow)"></path>
+                        <path class="arrow" d="M885 62 H908" marker-end="url(#sipoc-arrow)"></path>
+
+                        <path class="tick" d="M222 96 V432"></path>
+                        <path class="tick" d="M437 96 V432"></path>
+                        <path class="tick" d="M682 96 V432"></path>
+                        <path class="tick" d="M897 96 V432"></path>
+
+                        <text x="115" y="140">Bệnh nhân</text>
+                        <text class="small" x="115" y="158">tiền sử, lịch rảnh,</text>
+                        <text class="small" x="115" y="174">màu răng mong muốn</text>
+                        <text class="alert" x="115" y="220">Labo răng sứ</text>
+                        <text class="small alert" x="115" y="238">bên ngoài phòng khám</text>
+                        <text x="115" y="290">Nhà phân phối</text>
+                        <text class="small" x="115" y="308">vật liệu nha khoa</text>
+
+                        <text x="330" y="140">Hồ sơ, phim chụp</text>
+                        <text x="330" y="190">Lịch hẹn đã xác nhận</text>
+                        <text class="alert" x="330" y="240">Răng sứ thành phẩm</text>
+                        <text class="small alert" x="330" y="258">do labo làm và gửi về</text>
+                        <text x="330" y="300">Vật liệu</text>
+                        <text class="small" x="330" y="318">lấy dấu, xi măng gắn</text>
+
+                        <text class="small alert" x="560" y="100">Bắt đầu: bệnh nhân đồng ý làm răng sứ</text>
+                        <path class="today" d="M450 110 H670"></path>
+                        <rect class="node" x="470" y="124" width="180" height="40" rx="8"></rect>
+                        <text x="560" y="144">Mài răng, lấy dấu</text>
+                        <path class="arrow" d="M560 164 V178" marker-end="url(#sipoc-arrow)"></path>
+                        <rect class="node" x="470" y="180" width="180" height="40" rx="8"></rect>
+                        <text x="560" y="200">So màu, ghi phiếu</text>
+                        <path class="arrow" d="M560 220 V234" marker-end="url(#sipoc-arrow)"></path>
+                        <rect class="node" x="470" y="236" width="180" height="40" rx="8"></rect>
+                        <text x="560" y="256">Gửi labo, chờ răng</text>
+                        <path class="arrow" d="M560 276 V290" marker-end="url(#sipoc-arrow)"></path>
+                        <rect class="node" x="470" y="292" width="180" height="40" rx="8"></rect>
+                        <text x="560" y="312">Gắn thử, chỉnh khớp</text>
+                        <path class="arrow" d="M560 332 V346" marker-end="url(#sipoc-arrow)"></path>
+                        <rect class="node" x="470" y="348" width="180" height="40" rx="8"></rect>
+                        <text x="560" y="368">Gắn chính thức</text>
+                        <path class="today" d="M450 402 H670"></path>
+                        <text class="small alert" x="560" y="418">Kết thúc: gắn xong, đã hẹn tái khám</text>
+
+                        <text x="790" y="140">Răng sứ đã gắn</text>
+                        <text x="790" y="190">Lịch tái khám</text>
+                        <text x="790" y="240">Phiếu bảo hành</text>
+                        <text x="790" y="290">Hồ sơ điều trị</text>
+                        <text class="small" x="790" y="308">đã cập nhật</text>
+
+                        <text class="alert" x="1005" y="140">Bệnh nhân</text>
+                        <text class="small alert" x="1005" y="158">cũng có ở cột nhà cung cấp</text>
+                        <text x="1005" y="220">Bác sĩ tái khám</text>
+                        <text class="small" x="1005" y="238">đọc hồ sơ điều trị</text>
+
+                        <text class="small" x="560" y="452">Cột quy trình giữ ở năm bước và có hai đầu đã chốt; chi tiết từng bước để dành cho lưu đồ.</text>
+                        <text class="small alert" x="560" y="474">Hai cột ngoài cùng kéo vào những bên nhóm không quản: labo, và chính bệnh nhân ở vai người cung cấp.</text>
+                    </svg>
+                    <figcaption><strong>Hình 1.</strong> Ở phòng khám này, cột quy trình không cho nhóm biết thêm điều gì: năm bước ấy cả nhóm vốn đã đồng ý. Điều mới nằm ở hai cột ngoài cùng: chiếc răng được làm ở một nơi phòng khám không quản, và bệnh nhân vừa nhận răng ở cột cuối vừa cấp thông tin ở cột đầu, trong đó có màu răng họ mong muốn.</figcaption>
+                </figure>
+
+                <!-- YouTube Video Container -->
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                    <iframe
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        src="https://www.youtube.com/embed/Y6Gn0bqNSGU"
+                        title="Problem-Solve with SIPOC Diagrams"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Tại Sao Ta Cần Dùng Nó</h3>
+                <p>Tuần đầu của dự án ở phòng khám nha khoa trên, nhóm đo mức sử dụng ghế nha suốt mười ngày và không thấy ghế nào kẹt lịch. Lần hẹn thừa xảy ra ở chỗ khác: răng labo gửi về không khớp hoặc lệch màu, bệnh nhân phải hẹn lại để gắn thử lần hai. Nó nằm ở chỗ nối giữa phòng khám với labo, và phạm vi "lịch hẹn của phòng khám" mà nhóm ngầm chọn đã để nó ra ngoài từ trước khi ai kịp đo gì. Đây là kiểu hỏng SIPOC được dựng ra để chặn: một nhóm bắt tay vào đo và vẽ chi tiết khi chưa thống nhất quy trình bắt đầu ở đâu, kết thúc ở đâu, nên đo kỹ một đoạn không chứa vấn đề, hoặc nửa chừng mới cãi nhau về phạm vi.</p>
+
+                <p>Cách SIPOC chặn nó là đổi thứ tự câu hỏi. Ranh giới được viết ra thành chữ, nên ai nghĩ khác có thứ để chỉ vào mà phản đối ngay trong buổi họp đầu. Và khi labo đã có tên ở cột nhà cung cấp, câu hỏi "labo cần nhận gì từ mình để làm đúng" khó bị bỏ qua hơn, dù không phải là hết bị bỏ qua: gọi tên một bên và hỏi bên ấy là hai việc khác nhau. Khoảng cách giữa hai việc này đã được đếm ở công cụ gần SIPOC nhất. Trong 105 nghiên cứu y tế có vẽ lưu đồ quy trình, 91% xác định rõ nhóm người bệnh hay người dùng dịch vụ của quy trình, nhưng chỉ 15% ghi là có đại diện của họ tham gia. <sup><a href="#ref-4">[4]</a></sup> Phần của riêng SIPOC thì chưa được đo: trong một tổng quan về các công cụ lean (sản xuất tinh gọn) ở y tế, SIPOC có mặt ở 10 trên 33 dự án, lần nào cũng đi cùng những công cụ khác, và phần tóm tắt từng dự án ghi kết quả cho cả tổ hợp. <sup><a href="#ref-5">[5]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Giới Hạn Của Công Cụ Này Là Gì</h3>
+                <p>SIPOC cố tình bỏ đi gần hết những gì lưu đồ ghi, và đó là giới hạn vốn có của nó. Năm tới bảy ô ở cột quy trình không có ngã rẽ, không có vòng làm lại, không có lần chuyển tay, không có thời gian. Ở phòng khám, nó cho biết có một bước "gắn thử", không cho biết bước ấy lặp mấy lần. Bảng cũng chỉ là năm danh sách đặt cạnh nhau: mẫu mặc định mà ASQ mô tả là năm khối, không nối đầu vào nào với bước nào, hay đầu ra nào tới khách hàng nào. <sup><a href="#ref-1">[1]</a></sup> Mối nối đơn giản giữa một đầu vào và một bước có thể ghi thêm bằng chú thích ngay trên tờ; ngã rẽ, vòng làm lại và thời gian thì cần tới lưu đồ hoặc sơ đồ chuỗi giá trị.</p>
+
+                <p>Hai chỗ yếu khác đến từ cách người ta dùng mẫu, và sửa được. Thứ nhất, năm cột mặc định không có chỗ cho ba thứ khác nhau mà người ta hay gộp làm một: điều khách hàng cần, ràng buộc của dự án, và thước đo. Bản của ASQ thêm hai khối, +C cho ràng buộc của hệ thống và +M cho thước đo đang dùng hoặc sẽ dùng; nhóm ở Mayo Clinic trong ví dụ bên dưới thêm một cột R mà họ gọi là yêu cầu của dự án, nhưng thứ ghi trong đó (xong trong một năm, không thêm người) là ràng buộc. <sup><a href="#ref-1">[1]</a></sup> <sup><a href="#ref-6">[6]</a></sup> Điều khách hàng cần thì không khối nào trong hai bản ấy giữ chỗ sẵn, và không ghi nó ra ở đâu đó thì cột khách hàng chỉ còn là một danh sách tên. Thứ hai, ASQ mô tả SIPOC là cách ghi lại hiểu biết chung của cả nhóm, và hiểu biết chung chỉ rộng bằng những người có mặt. Một nhà cung cấp mà không ai trong phòng họp làm việc cùng có thể bị bỏ sót; vì vậy bước cuối trong quy trình của ASQ là đem sơ đồ rà lại cho đủ với các bên liên quan và người bảo trợ dự án. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Điều SIPOC ở Hình 1 ghi lại</th><th scope="col">Điều nó không trả lời, phải tìm ở chỗ khác</th></tr></thead>
+                    <tbody>
+                        <tr><td>Labo răng sứ ở cột nhà cung cấp</td><td>Labo trả răng sau mấy ngày, bao nhiêu răng phải làm lại</td></tr>
+                        <tr><td>Răng sứ thành phẩm ở cột đầu vào</td><td>Răng không khớp vì dấu răng, vì phiếu màu hay vì labo</td></tr>
+                        <tr><td>Năm bước ở cột quy trình</td><td>Bước nào lặp lại khi gắn thử không khớp, lặp mấy vòng</td></tr>
+                        <tr><td>Bệnh nhân ở cột khách hàng</td><td>Bệnh nhân cần gì nhất: ít lần hẹn, màu tự nhiên, hay giá</td></tr>
+                        <tr><td>Năm danh sách đặt cạnh nhau</td><td>Đầu vào nào đi vào bước nào, đầu ra nào tới tay ai</td></tr>
+                        <tr><td>Những bên nhóm đã gọi tên</td><td>Bên nào vắng mặt vì không ai trong phòng họp làm việc với họ</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Ví Dụ</h2>
+            <p class="intro-text">Ví dụ thứ nhất là một SIPOC điền cho xong ở buổi khởi động dự án, và cách nó dẫn cả đội đi sửa một đoạn quy trình không chứa vấn đề. Ví dụ thứ hai là một trung tâm y khoa ở Mỹ dùng SIPOC có thêm cột yêu cầu để đóng khung một dự án về trải nghiệm của trẻ đi đo giấc ngủ, và cho thấy cả chỗ công cụ giúp được lẫn chỗ một khách hàng đã có tên trong bảng vẫn rơi khỏi dự án.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Mười Bốn Bước Trong Cột P, Khách Hàng Chỉ Nằm Ở Cột C</h3>
+                <p>Tình huống minh hoạ: một cửa hàng nội thất giao và lắp đặt khoảng 60 đơn mỗi tháng, và tháng gần nhất có 11 đơn phải giao lại lần hai. Giám đốc giao cho đội giao hàng một dự án giảm số đơn giao lại. Buổi khởi động mở mẫu SIPOC có sẵn, điền trong hai mươi phút. Cột quy trình chép nguyên mười bốn bước từ quy trình nội bộ của đội giao hàng, từ "nhận lệnh xuất kho" tới "thu tiền còn lại". Cột khách hàng ghi "khách hàng". Cột nhà cung cấp ghi "kho" và "xưởng". Ranh giới được chốt theo đúng phần việc của đội: từ lúc nhận lệnh xuất kho tới lúc thu tiền còn lại. Trong ranh giới ấy, thứ đội đổi được nhiều nhất là tuyến xe, nên dự án đi vào tuyến xe. Sáu tuần sau, tuyến xe đã ngắn hơn, còn số đơn giao lại mỗi tháng vẫn quanh con số mười.</p>
+                <p>Trưởng nhóm lắp đặt đề nghị làm lại SIPOC, lần này mời thêm một nhân viên bán hàng và người điều phối lịch giao, và bắt đầu từ việc đọc lại 11 phiếu giao lại của tháng ngay trước dự án. Năm lần khách không có nhà trong khung giờ đã hẹn, vì khung giờ do điều phối chọn và khách chỉ được báo trước một ngày. Ba lần xe tải không vào được: một con hẻm nhỏ, hai toà văn phòng chỉ cho chuyển đồ sau 18 giờ. Ba lần còn lại kho xuất thiếu phụ kiện. Tám trên mười một lần hỏng vì một thông tin chỉ khách hàng có, đáng lẽ phải lấy lúc đặt hàng, tức trước điểm "nhận lệnh xuất kho" mà bản SIPOC đầu đã chọn làm điểm bắt đầu. Bản thứ hai có sáu bước, bắt đầu từ lúc khách đặt cọc và kết thúc khi khách ký biên bản nhận hàng. Cột nhà cung cấp có thêm một dòng mà bản đầu không ai nghĩ tới: khách hàng, người cấp địa chỉ, khung giờ nhận hàng và điều kiện đường vào. Dự án đổi hướng sang tờ phiếu đặt hàng của bộ phận bán hàng. Tuyến xe, thứ đã tốn sáu tuần, không phải chỗ cần sửa.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Khách Hàng Là Một Đứa Trẻ, Người Trả Lời Là Cha Mẹ</h3>
+                <p>Ở Trung tâm Y học Giấc ngủ của Mayo Clinic tại Rochester, Minnesota, một nhóm gồm bác sĩ chuyên khoa giấc ngủ, điều dưỡng, kỹ thuật viên, trợ lý lâm sàng, lãnh đạo trung tâm và một người của văn phòng trải nghiệm người bệnh muốn cải thiện trải nghiệm của trẻ đi đo đa ký giấc ngủ (polysomnography), một phép đo qua đêm với nhiều điện cực gắn lên người. Mục tiêu đặt ra là tăng tỷ lệ điểm hài lòng cao nhất (mức 5 trên thang 5, gọi là top box) thêm ít nhất 10% trong một năm, không thêm người và không tốn khoản chi lớn. Để đóng khung dự án, nhóm lập một SIPOC có thêm cột R cho yêu cầu (SIPOC-R). Theo bài báo, nhà cung cấp là các bác sĩ chuyên khoa giấc ngủ nhi, người chỉ định mọi ca đo; đầu vào không chỉ là phiếu chỉ định mà cả các khâu đứng trước nó, như liên lạc trước buổi hẹn và xếp lịch; quy trình được mô tả bằng hành trình của người bệnh; đầu ra là ấn tượng của người bệnh và người nhà, cộng ấn tượng của nhân viên làm việc với họ; cột yêu cầu ghi rằng mọi cải tiến phải xong trong một năm, không thêm người, không tốn khoản chi đáng kể. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>Cột khách hàng đòi một quyết định mà mẫu năm cột không tự đưa ra. Khách hàng chính là đứa trẻ, nhưng trẻ thường không nói hết được trải nghiệm của mình, nên nhóm lấy cha mẹ hoặc người chăm sóc làm "tiếng nói của khách hàng"; nhân viên trung tâm cũng được tính là khách hàng của chính quy trình ấy. Nhóm thiết kế một phiếu khảo sát riêng gửi cho người chăm sóc, cùng với vẽ hành trình người bệnh, động não theo nhóm và lấy ý kiến hội đồng tư vấn người bệnh và gia đình của trung tâm. Các thay đổi gồm đào tạo giao tiếp thấu cảm cho nhân viên, chuyển ca kỹ thuật viên sớm hơn để trẻ nhận phòng sớm hơn mà không thêm người, và bộ đồ chơi cho lúc gắn điện cực. Tháng 2 năm 2018, 47 người chăm sóc trả lời (85% trong 55 ca đo), tỷ lệ top box là 51%. Tháng 2 năm 2019, 50 người trả lời (63% trong 79 ca), tỷ lệ là 71%, trong khi số ca đo tăng. Video hướng dẫn cho gia đình ra mắt sau đó, vào tháng 9 năm 2019, và lần khảo sát kế tiếp cho tỷ lệ 64%. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>Mức tăng ấy là của cả một gói thay đổi triển khai cùng lúc, và chính nhóm tác giả viết rằng làm vậy khiến khó biết thay đổi nào tác động nhiều nhất; tỷ lệ phản hồi cũng giảm giữa hai lần đo. SIPOC ở đây không làm tăng điểm. Nó làm hai việc khác, cả hai đều thấy được trong bài báo. Cột yêu cầu viết ràng buộc của dự án thành chữ ngay từ đầu, và đó là ràng buộc nhóm báo cáo đã giữ: kết quả đạt được mà không thêm nhân sự. Còn cột khách hàng thì cho thấy một bài học ngược: nhân viên được ghi tên là khách hàng và ấn tượng của họ được ghi là đầu ra, nhưng nhóm viết rằng họ không theo dõi mức hài lòng của nhân viên, vì đây là dự án lấy người bệnh và gia đình làm trung tâm, dù số liệu đó lẽ ra có giá trị. <sup><a href="#ref-6">[6]</a></sup> Một khách hàng có tên trong bảng mà không có thước đo đi kèm là một khách hàng dễ rơi khỏi dự án.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Một Vài Nghiên Cứu Về Sơ Đồ SIPOC</h2>
+            <p class="intro-text">Bài này không tìm được nghiên cứu nào so nhóm dùng SIPOC với nhóm không dùng, hay đo riêng phần SIPOC đóng góp vào kết quả của một dự án. Bằng chứng hiện có thuộc ba loại: mức phổ biến của công cụ trong các dự án đã công bố, một phép đếm ở công cụ cùng họ cho thấy bước mà SIPOC nhắm tới hay bị bỏ qua ra sao, và bằng chứng cho phương pháp lớn hơn mà SIPOC thường là bước đầu, tức Six Sigma và lean. Cả ba đều đến từ y tế.</p>
+            <div class="sub-section">
+                <p><strong>Nghiên cứu:</strong> Năm 2021, de Barros và cộng sự ở Đại học Campinas, Brazil, công bố trên <em>International Journal of Environmental Research and Public Health</em> một tổng quan tích hợp về các công cụ lean dùng để đánh giá quy trình trong y tế. Nhóm tìm ở năm cơ sở dữ liệu (VHL, PubMed, Scopus, CINAHL, Embase) các bài báo toàn văn bằng tiếng Anh, tiếng Bồ Đào Nha hoặc tiếng Tây Ban Nha, công bố từ 2015 tới 2019, có áp dụng công cụ lean thật trong dịch vụ y tế, và giữ lại 33 bài. Với mỗi bài, nhóm ghi lại mục tiêu, các công cụ đã dùng và kết quả báo cáo. <sup><a href="#ref-5">[5]</a></sup> Cũng năm 2021, Antonacci và cộng sự ở Imperial College London rà 105 nghiên cứu thực nghiệm có vẽ lưu đồ quy trình trong y tế, chấm từng nghiên cứu theo mười tiêu chí chất lượng; tiêu chí đầu tiên gồm hai vế, xác định rõ những người sẽ dùng quy trình (người bệnh, người dùng dịch vụ, khách hàng) và đưa đại diện của họ vào cùng làm. <sup><a href="#ref-4">[4]</a></sup> Ở tầng trên một bậc, năm 2010, DelliFraine, Langabeer và Nembhard rà các bài báo về Six Sigma và lean trong y tế công bố trong mười năm trước đó, để xem có bằng chứng thực nghiệm nào nối hai phương pháp này với kết cục lâm sàng, quy trình chăm sóc và kết quả tài chính hay không. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p><strong>Kết quả:</strong> Trong 33 bài của de Barros, nhóm tìm thấy 30 công cụ khác nhau. Năm công cụ dùng nhiều nhất là DMAIC (chu trình năm bước định nghĩa, đo, phân tích, cải tiến, kiểm soát của Six Sigma; 18 bài), sơ đồ chuỗi giá trị (17), SIPOC (10), sơ đồ xương cá (9) và 5S (7). Theo tổng quan, SIPOC có mặt ở 30,3% số nghiên cứu, và 27,2% số nghiên cứu dùng nó cùng DMAIC. Trong phụ lục tóm tắt từng bài, cả mười bài có SIPOC đều dùng nó cùng ít nhất hai công cụ khác, và kết quả được ghi cho cả tổ hợp: thời gian chờ, thời gian nằm viện, chi phí, số lượt khám. Hơn một nửa số bài (18 trên 33) không mô tả rõ thiết kế nghiên cứu. Nhóm tác giả không đánh giá hiệu quả của từng công cụ riêng lẻ. <sup><a href="#ref-5">[5]</a></sup> Ở tổng quan của Antonacci, 91% nghiên cứu xác định rõ nhóm người dùng quy trình, nhưng chỉ 15% ghi là có đại diện người bệnh tham gia; trong bảy nghiên cứu đạt tám hoặc chín trên mười tiêu chí, năm nghiên cứu trượt đúng vế này. <sup><a href="#ref-4">[4]</a></sup> DelliFraine và cộng sự tìm được 177 bài về Six Sigma và lean, nhưng chỉ 34 bài báo cáo bất kỳ kết quả nào của dự án, và chưa tới một phần ba trong số đó có kiểm định thống kê xem thay đổi có ý nghĩa hay không. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p><strong>Kết luận:</strong> Tổng quan của de Barros cho thấy SIPOC là một công cụ quen thuộc trong các dự án lean ở y tế được công bố trong giai đoạn 2015 tới 2019, thường đi cùng DMAIC: tổng quan ghi 27,2% số nghiên cứu dùng cả hai, tức khoảng 9 trong 10 bài có SIPOC. Nó không cho thấy SIPOC góp được bao nhiêu vào kết quả, vì theo phụ lục, không bài nào trong mẫu tách riêng phần ấy, và nhóm tác giả cũng không thử. Câu trong tổng quan rằng sự kết hợp DMAIC với SIPOC "đem lại" nhiều bệnh nhân được khám hơn và thời gian ngắn hơn là một mô tả về những dự án có dùng cả hai, trong những báo cáo không có nhóm đối chứng; nó chưa nói gì về nhân quả. Tổng quan của Antonacci không nói về SIPOC, nhưng đo đúng khoảng hở mà một tờ SIPOC cũng có thể mắc: người dùng quy trình phần lớn được gọi tên, còn được mời vào cùng làm thì hiếm, kể cả ở những nghiên cứu làm tốt nhất. Nhóm tác giả cho rằng chỗ hụt này nằm cả ở cách làm, không chỉ ở cách viết báo cáo. Ở tầng phương pháp, DelliFraine và cộng sự kết luận bằng chứng rằng Six Sigma và lean cải thiện chất lượng y tế là rất yếu; đó là kết luận về giai đoạn trước năm 2010, và tổng quan của de Barros cho thấy chuyện mô tả thiết kế nghiên cứu vẫn còn hụt ở các bài về sau. Không nguồn nào ở đây nói về SIPOC ngoài y tế.</p>
+                <p><strong>Phản biện:</strong> Người bênh SIPOC có một lý lẽ mạnh. SIPOC là một bước đóng khung kéo dài một hai tiếng; sản phẩm của nó là một quyết định về phạm vi, còn kết cục của dự án đến từ những bước sau. Đòi một thử nghiệm chứng minh nó cải thiện thời gian chờ hay số ca khám là đòi sai thứ, vì giá trị của nó, nếu có, hiện ra dưới dạng những dự án không bị làm sai chỗ, thứ mà nghiên cứu đo kết cục khó thấy được. Bài nhận vế thứ nhất: một bước rẻ không cần bằng chứng nặng như một can thiệp tốn kém, và đòi thử nghiệm ngẫu nhiên cho một buổi họp hai tiếng là không cân xứng. Nhưng vế "giá trị của nó hiện ra ở những dự án không đi sai" kiểm được một phần mà không cần thử nghiệm, qua hai bước. Bước một là để lại dấu vết: buổi SIPOC đã chốt hay xác nhận điều gì, dựa trên dữ kiện nào. Bước hai là kiểm dấu vết ấy bằng dữ kiện về sau, vì một ranh giới mới chưa chắc đã đúng hơn ranh giới cũ; ở cửa hàng nội thất, chính 11 phiếu giao lại mới cho biết ranh giới thứ hai đúng hơn. Mười bài có SIPOC trong tổng quan của de Barros, theo phần tóm tắt ở phụ lục, không để lại cả bước một. <sup><a href="#ref-5">[5]</a></sup> Bài của nhóm Mayo Clinic, công bố năm 2020 nên không nằm trong mẫu ấy, đi được nửa đường: nó ghi rõ từng cột chứa gì, nên người đọc kiểm được cột nào đã được dùng tới và cột nào không. <sup><a href="#ref-6">[6]</a></sup> Lý lẽ của phe bênh đúng ở chỗ bằng chứng loại kết cục không phải thước đo hợp với công cụ này; nó chưa đúng ở chỗ coi như vậy là không cần bằng chứng nào.</p>
+                <p><strong>Vì sao điều này hữu ích:</strong> Khi đọc một báo cáo cải tiến nói "nhóm đã dùng SIPOC", hỏi một câu: buổi SIPOC đã chốt hay xác nhận được điều gì về ranh giới, nhà cung cấp, khách hàng hay thước đo của dự án? Báo cáo không trả lời được thì người đọc không có cách nào biết công cụ đã góp gì, kể cả khi buổi họp ấy có ích thật. Và hỏi thêm câu thứ hai, câu mà tổng quan của Antonacci cho thấy hay bị bỏ trống: những người đứng ở cột khách hàng có ai được mời vào phòng không, hay chỉ có tên trên giấy?</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">Cách Áp Dụng</h2>
+            <p class="intro-text">Sơ đồ SIPOC hoạt động bằng cách buộc nhóm chốt hai đầu của quy trình và gọi tên những bên đứng ngoài hai đầu ấy, người cấp đầu vào và người nhận đầu ra, trước khi đi vào chi tiết bên trong, nên cách triển khai hiệu quả là chốt ranh giới bằng những sự kiện ai cũng nhận ra, lấy yêu cầu từ chính những bên ở hai đầu, và giữ phần giữa đủ thô để buổi họp không trượt vào chi tiết. Nó hợp với những dự án mà phạm vi còn đang được hiểu mỗi người một kiểu, hoặc quy trình đi qua nhiều bộ phận hay nhiều tổ chức. Với một quy trình nằm gọn trong một nhóm, mà nhóm đã thống nhất phạm vi, SIPOC thường chỉ chép lại điều mọi người đã biết.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Chốt điểm bắt đầu và điểm kết thúc bằng một sự kiện, không bằng tên một bộ phận:</strong> "Khách đặt cọc" và "khách ký biên bản nhận hàng" là hai sự kiện ai cũng nhận ra; "phần việc của đội giao hàng" là một ranh giới vẽ quanh chính người đang ngồi họp, và nó loại sẵn ra ngoài mọi nguyên nhân nằm ở bộ phận khác. ASQ đặt việc xác định điểm đầu và điểm cuối ngay sau bước dựng khung, trước khi điền bất kỳ cột nào; nếu giữa buổi có người muốn dời ranh giới, dời trên giấy và ghi lý do <sup><a href="#ref-1">[1]</a></sup></li>
+                    <li><strong>Điền đầu ra và khách hàng trước, rồi hỏi chính người nhận, đừng đoán thay họ:</strong> Bắt đầu từ cột khách hàng thì câu hỏi đầu tiên là quy trình này để làm gì cho ai, thay vì mình đang làm những bước nào. Ghi yêu cầu của từng khách hàng, ràng buộc của dự án và thước đo thành ba thứ riêng, dù bằng cột R, khối +C và +M của ASQ hay một tờ kèm theo, vì năm cột mặc định không có chỗ cho chúng và ba thứ ấy dễ bị gộp làm một: "báo cáo tới trước giờ họp" là yêu cầu, "không thêm người" là ràng buộc, "ngày gửi báo cáo" là thước đo. Khi khách hàng không tự nói được, như một đứa trẻ, ghi rõ ai nói thay; và với mỗi khách hàng đã có tên mà chưa có thước đo nào, quyết định ngay là sẽ đo hay sẽ chủ động để ra ngoài phạm vi, vì nhân viên trong dự án ở Mayo Clinic có tên ở cột khách hàng mà mức hài lòng của họ không được theo dõi. Gọi tên rồi mà không hỏi là khoảng hở mà tổng quan của Antonacci đã đếm được ở lưu đồ quy trình <sup><a href="#ref-4">[4]</a></sup> <sup><a href="#ref-1">[1]</a></sup> <sup><a href="#ref-6">[6]</a></sup></li>
+                    <li><strong>Giữ cột quy trình ở năm tới bảy bước, và để chi tiết cho lưu đồ:</strong> Cách hiển nhiên là chép nguyên quy trình nội bộ cho đủ, và cách ấy hỏng theo hai kiểu. Mười bốn bước ở giữa kéo buổi họp vào chuyện bước nào đi trước bước nào, trong khi hai cột ngoài cùng chỉ còn vài chữ. Và một quy trình nội bộ chép lại thì mang theo luôn ranh giới của bộ phận đã viết ra nó. ASQ nói rõ cột này là năm tới bảy hoạt động cốt lõi, còn các bước chi tiết sẽ được dựng trong lưu đồ <sup><a href="#ref-1">[1]</a></sup></li>
+                    <li><strong>Đem bản nháp đi hỏi nhà cung cấp và khách hàng, rồi ghi lại buổi SIPOC đã chốt được gì:</strong> Bước cuối trong quy trình của ASQ là rà sơ đồ cho đủ với các bên liên quan và người bảo trợ, và đó là bước dễ bị bỏ, vì tờ giấy trông đã đầy đủ khi mọi ô đều có chữ. Viết vài dòng ở cuối tờ trả lời ba câu: nhóm đã chốt hay xác nhận được điều gì (một ranh giới dời đi, một bên được thêm vào, một thước đo được chọn, hay phạm vi ban đầu được xác nhận là đúng); dựa trên dữ kiện nào và đã hỏi ai; quyết định tiếp theo của dự án là gì. Mấy dòng ấy là dấu vết của phần SIPOC đóng góp, chưa phải bằng chứng rằng phạm vi mới đúng hơn; điều đó phải đợi dữ kiện của các bước sau <sup><a href="#ref-1">[1]</a></sup> <sup><a href="#ref-5">[5]</a></sup></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Tình Huống Áp Dụng</h2>
+            <p class="intro-text">Cuộc họp tháng của ban giám đốc một công ty phân phối thiết bị văn phòng diễn ra vào ngày làm việc thứ sáu của tháng, nhưng báo cáo quản trị của tháng trước, do phòng kế hoạch làm, chỉ tới tay năm người trong ban vào ngày làm việc thứ chín (trung vị của sáu tháng gần nhất; sớm nhất ngày thứ tám, muộn nhất ngày thứ mười một). Ban giám đốc giao cho phòng kế hoạch một dự án với hướng xử lý đã chọn sẵn: mua phần mềm để làm báo cáo tự động. Mục tiêu là báo cáo tới trước cuộc họp, tức chậm nhất cuối ngày làm việc thứ năm, trong ba tháng liền. Các con số trong tình huống này là số minh hoạ.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Chốt điểm bắt đầu, điểm kết thúc và thước đo trước khi điền cột nào:</strong> Điểm bắt đầu là ngày làm việc đầu tiên sau khi tháng kết thúc. Điểm kết thúc là lúc báo cáo tới hộp thư của cả năm người trong ban giám đốc. Thước đo là báo cáo được gửi vào ngày làm việc thứ mấy, tính theo cùng một cách cho mọi tháng. Phần mềm chưa được ghi vào đâu cả: nó là một giải pháp, chưa phải một phần của quy trình</li>
+                    <li><strong>Điền đầu ra và khách hàng trước, bằng cách hỏi từng người nhận:</strong> Báo cáo dài 32 trang, trong đó 20 trang là phụ lục tồn kho theo từng mã hàng. Trưởng phòng kế hoạch hỏi từng người trong ban giám đốc đã dùng trang nào ở cuộc họp gần nhất và cần gì vào lúc họp. Giám đốc vận hành dùng số lượng tồn kho theo nhóm hàng để quyết định đặt hàng, không dùng giá trị. Giám đốc tài chính cần giá trị tồn kho, và chấp nhận một con số tạm tính cho cuộc họp nếu chênh lệch so với giá trị cuối dưới 2%, với giá trị cuối được ghi lại ở báo cáo tháng sau. Không ai đã dùng phụ lục. Những yêu cầu này được ghi vào một cột riêng cạnh cột khách hàng</li>
+                    <li><strong>Giữ cột quy trình ở năm bước:</strong> Nhận số liệu từ bốn phòng, đối chiếu, tính các chỉ số, viết nhận xét, gửi báo cáo. Một chuyên viên muốn ghi đủ mười một thao tác đối chiếu; trưởng phòng để chúng lại cho một lưu đồ nếu sau này cần, vì câu hỏi lúc này là quy trình gồm những ai, chưa phải đối chiếu theo thứ tự nào</li>
+                    <li><strong>Điền đầu vào và nhà cung cấp, kèm ngày đầu vào tới, lấy từ nhật ký thư của sáu tháng:</strong> Bốn nhà cung cấp là phòng kế toán (doanh thu, chi phí), phòng kinh doanh (đơn hàng, công nợ), phòng nhân sự (nhân lực) và kho (tồn kho). Kho gửi cuối cùng ở cả sáu tháng, trung vị ngày làm việc thứ bảy; từ lúc số liệu cuối cùng tới tới lúc gửi báo cáo, phòng kế hoạch mất một tới hai ngày (bảng thứ nhất). Phép kiểm này đặt hướng xử lý đã chọn cạnh chính dữ kiện: kể cả khi phần mềm làm xong báo cáo ngay trong ngày số liệu cuối cùng tới, báo cáo vẫn tới vào ngày thứ bảy trở đi ở cả sáu tháng, sau cuộc họp ngày thứ sáu. Chỗ chậm nằm ở đầu vào, ngoài phần việc mà phòng kế hoạch được giao sửa</li>
+                    <li><strong>Đem bản nháp đi hỏi nhà cung cấp chậm nhất và khách hàng có yêu cầu liên quan:</strong> Kho giải thích rằng số lượng tồn đã có từ ngày làm việc thứ hai, nhưng họ chờ hoá đơn của nhà cung cấp cho những lô hàng nhập trong ba ngày cuối tháng để tính giá trị, và hoá đơn thường tới quanh ngày thứ sáu. Đặt cạnh yêu cầu ở bước 2, một cách làm lộ ra: kho gửi số lượng cùng giá trị tạm tính theo giá nhập gần nhất vào ngày làm việc thứ ba, gửi giá trị cuối vào ngày thứ bảy như cũ, và phần chênh được ghi ở báo cáo tháng sau. Giám đốc tài chính đồng ý, với điều kiện chênh lệch được theo dõi mỗi tháng so với ngưỡng 2%</li>
+                    <li><strong>Chốt phạm vi và ghi lại SIPOC đã đổi điều gì:</strong> Phạm vi dự án dời lên phía trước, gồm cả lần chuyển số liệu từ kho sang phòng kế hoạch. Phần mềm ra khỏi dự án này. Phụ lục tồn kho thôi gửi kèm, ai cần thì xin riêng. Thước đo thêm một dòng: chênh lệch giữa giá trị tồn kho tạm tính và giá trị cuối. Tờ SIPOC giờ tách ba thứ: yêu cầu của khách hàng (báo cáo tới trước giờ họp, giá trị tồn kho tạm tính chênh dưới 2%), ràng buộc (phòng kế hoạch không thêm người), và thước đo (ngày gửi báo cáo, mức chênh lệch). Mấy dòng cuối tờ ghi bốn thay đổi ấy, dữ kiện đã dùng (nhật ký thư sáu tháng, lời của kho và của giám đốc tài chính), và quyết định tiếp theo: chạy thử ba tháng</li>
+                    <li><strong>Đo ba tháng sau bằng đúng định nghĩa cũ, và kiểm hai kỳ có tương đương không:</strong> Cùng điểm đầu, cùng điểm cuối, cùng cách đếm ngày làm việc. Thứ giữ nguyên là cách đo thời gian; bản thân báo cáo thì đã khác, vì không còn phụ lục và giá trị tồn kho là số tạm tính, nên chất lượng của nó được canh bằng ngưỡng chênh lệch chứ không coi hai bản là một. Hai kỳ được so ở hai biến mà cách làm mới không tác động: tỷ lệ tháng cuối quý, tháng mà khối lượng khoá sổ nặng hơn (2 trên 6 tháng ở kỳ trước, 1 trên 3 tháng ở kỳ sau, cùng một phần ba), và số phiếu nhập kho trong ba ngày làm việc cuối tháng, tức số lô phải chờ hoá đơn (trung vị 39 phiếu ở kỳ trước, 41 ở kỳ sau). Nếu kỳ sau ít lô nhập cuối tháng hơn hẳn, báo cáo có thể tự tới sớm mà không nhờ thay đổi nào (bảng thứ hai)</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Sáu tháng trước dự án</th><th scope="col">Kế toán</th><th scope="col">Kinh doanh</th><th scope="col">Nhân sự</th><th scope="col">Kho</th><th scope="col">Ngày gửi báo cáo</th></tr></thead>
+                    <tbody>
+                        <tr><td>Tháng 1</td><td>3</td><td>2</td><td>2</td><td>7</td><td>8</td></tr>
+                        <tr><td>Tháng 2</td><td>3</td><td>2</td><td>2</td><td>7</td><td>9</td></tr>
+                        <tr><td>Tháng 3 (cuối quý)</td><td>4</td><td>2</td><td>3</td><td>8</td><td>10</td></tr>
+                        <tr><td>Tháng 4</td><td>3</td><td>2</td><td>2</td><td>7</td><td>9</td></tr>
+                        <tr><td>Tháng 5</td><td>3</td><td>3</td><td>2</td><td>9</td><td>11</td></tr>
+                        <tr><td>Tháng 6 (cuối quý)</td><td>3</td><td>2</td><td>2</td><td>7</td><td>9</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">Mỗi ô là ngày làm việc thứ mấy sau khi tháng kết thúc mà số liệu của phòng đó tới, hoặc mà báo cáo được gửi. Trung vị sáu tháng: kho ngày thứ 7, báo cáo ngày thứ 9.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Ba tháng sau khi đổi</th><th scope="col">Ngày đủ đầu vào cho báo cáo tạm tính</th><th scope="col">Ngày gửi báo cáo</th><th scope="col">Chênh lệch giá trị tồn kho tạm tính so với giá trị cuối</th><th scope="col">Phiếu nhập kho trong ba ngày cuối tháng</th></tr></thead>
+                    <tbody>
+                        <tr><td>Tháng 7</td><td>3</td><td>5</td><td>0,4%</td><td>36</td></tr>
+                        <tr><td>Tháng 8</td><td>3</td><td>4</td><td>0,7%</td><td>41</td></tr>
+                        <tr><td>Tháng 9 (cuối quý)</td><td>3</td><td>5</td><td>1,1%</td><td>47</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">Ở kỳ sau, kho gửi số liệu tạm tính vào ngày thứ 2 hoặc thứ 3, không còn tới sau phòng kế toán; giá trị tồn kho chính thức vẫn tới vào ngày thứ 7 và được ghi ở báo cáo tháng sau. Sáu tháng trước dự án có lần lượt 35, 38, 44, 37, 40 và 46 phiếu nhập kho trong ba ngày cuối tháng, trung vị 39.</p>
+
+                <p>Ba tháng sau, báo cáo tới vào ngày làm việc thứ năm, thứ tư rồi thứ năm, kịp cả ba cuộc họp, với chênh lệch tồn kho tạm tính dưới ngưỡng 2% ở cả ba tháng, trên một khối lượng nhập kho cuối tháng không nhỏ hơn kỳ trước. Báo cáo kỳ sau ngắn hơn và dùng số tạm tính, nên kết quả này nói rằng ban giám đốc có đủ những gì họ đã xác nhận là cần trước giờ họp, không nói rằng bản báo cáo cũ được làm nhanh hơn. SIPOC không tự làm báo cáo nhanh hơn ngày nào. Nó dời dự án tới chỗ ngày bị mất, và cuộc trò chuyện với kho và với giám đốc tài chính mới là nơi cách làm mới ra đời. Ba tháng là ngắn, không có nhóm đối chứng, và ba tháng ấy chưa có tháng nào giá nhập biến động mạnh; phòng kế hoạch giữ dòng theo dõi chênh lệch, và tháng nào vượt 2% thì kho cùng giám đốc tài chính bàn lại cách tạm tính. Điều kiện để có kết quả ấy là ranh giới được chốt bằng những sự kiện ai cũng nhận ra, yêu cầu được lấy từ chính người đọc báo cáo, hướng xử lý đã chọn sẵn được đặt cạnh ngày tới của từng đầu vào trước khi ai bỏ tiền mua gì, và kỳ sau được đo bằng đúng định nghĩa của kỳ trước.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Tóm Tắt</h2>
+            <div class="summary-box">
+                <p><strong>Điểm Chính:</strong> Năm cột của SIPOC buộc một nhóm chốt quy trình bắt đầu ở đâu, kết thúc ở đâu, và gọi tên những bên đứng ngoài hai đầu ấy, trước khi đo hay vẽ chi tiết, để phạm vi được cãi nhau ở buổi họp đầu thay vì ở giữa dự án. Điều phản trực giác nhất là một tờ SIPOC có thể đủ cả năm cột mà vẫn để lọt đúng chỗ nó được dựng ra để bắt: những bên ở hai đầu được gọi tên nhưng không được hỏi, và một cái tên ở cột khách hàng không tự biến thành một yêu cầu, cũng không tự có thước đo. Cách dùng đáng tin vì vậy là chốt ranh giới bằng sự kiện, hỏi chính những bên ở hai đầu, ghi yêu cầu, ràng buộc và thước đo thành ba thứ riêng, và ghi lại buổi SIPOC đã chốt được gì, dựa trên dữ kiện nào.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">Tài Liệu Tham Khảo</h2>
+            <ol class="outline-list">
+                <li id="ref-1">American Society for Quality. <em>SIPOC+CM Diagram</em>. ASQ Quality Resources (truy cập ngày 23/10/2026). Trang kiến thức của Hội Chất lượng Hoa Kỳ, trích từ Bialek, R., Duffy, G. L., &amp; Moran, J. W. (2009), <em>The Public Health Quality Improvement Handbook</em>, ASQ Quality Press; nguồn cho định nghĩa SIPOC là công cụ thu thập dữ liệu của nhóm cải tiến Six Sigma, cho việc dùng nó trước khi vẽ lưu đồ, cho bước xác định điểm đầu và điểm cuối, cho cột quy trình năm tới bảy hoạt động cốt lõi nhìn "từ độ cao 35.000 bộ", cho hai khối +C và +M, và cho bước rà sơ đồ với các bên liên quan. <a href="https://asq.org/quality-resources/sipoc" rel="noopener noreferrer" target="_blank">Đọc trang gốc</a>.</li>
+                <li id="ref-2">Wikipedia. <em>SIPOC</em> (truy cập ngày 23/10/2026). Mục từ được dẫn như đối tượng bàn tới, không như nguồn chứng minh sự kiện; nguồn cho việc mô tả phổ biến về gốc của SIPOC trong các chương trình TQM cuối thập niên 1980 chỉ dựa vào một ghi chú so sánh với Philip Crosby và Xerox, và cho việc mục từ được gắn cờ cần bổ sung phần lịch sử. <a href="https://en.wikipedia.org/wiki/SIPOC" rel="noopener noreferrer" target="_blank">Đọc mục từ</a>.</li>
+                <li id="ref-3">Lean Enterprise Institute. <em>Value-Stream Mapping</em>, Lean Lexicon. Mục từ điển của LEI; nguồn cho định nghĩa sơ đồ chuỗi giá trị là vẽ cả dòng vật liệu lẫn dòng thông tin từ lúc nhận đơn tới lúc giao hàng, có các ô dữ liệu thời gian, dùng để phân biệt với SIPOC. <a href="https://www.lean.org/lexicon-terms/value-stream-mapping/" rel="noopener noreferrer" target="_blank">Đọc mục từ</a>.</li>
+                <li id="ref-4">Antonacci, G., Lennox, L., Barlow, J., Evans, L., &amp; Reed, J. (2021). Process mapping in healthcare: a systematic review. <em>BMC Health Services Research</em>, 21, 342. Tổng quan hệ thống 105 nghiên cứu có vẽ lưu đồ quy trình trong y tế, chấm theo mười tiêu chí chất lượng; nguồn cho tỷ lệ 91% nghiên cứu xác định rõ nhóm người dùng quy trình so với 15% có đại diện người bệnh tham gia, cho việc năm trong bảy nghiên cứu tốt nhất trượt đúng tiêu chí này, và cho nhận định của nhóm tác giả rằng chỗ hụt nằm cả ở cách làm. Tổng quan không nói về SIPOC; bài dùng nó như phép đếm ở công cụ cùng họ. <a href="https://doi.org/10.1186/s12913-021-06254-1" rel="noopener noreferrer" target="_blank">Đọc bài báo</a>.</li>
+                <li id="ref-5">de Barros, L. B., Bassi, L. C., Caldas, L. P., Sarantopoulos, A., Zeferino, E. B. B., Minatogawa, V., &amp; Gasparino, R. C. (2021). Lean healthcare tools for processes evaluation: an integrative review. <em>International Journal of Environmental Research and Public Health</em>, 18(14), 7389. Tổng quan tích hợp 33 bài về công cụ lean trong y tế, 2015 tới 2019; nguồn cho số bài dùng từng công cụ, cho tỷ lệ SIPOC có mặt và đi cùng DMAIC, cho việc mười bài có SIPOC đều dùng nó trong tổ hợp và ghi kết quả cho cả tổ hợp, cho 18 trên 33 bài không mô tả rõ thiết kế, và cho việc tổng quan không đánh giá từng công cụ riêng lẻ. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8304063/" rel="noopener noreferrer" target="_blank">Đọc bài báo</a>.</li>
+                <li id="ref-6">Baughn, J. M., Lechner, H. G., Herold, D. L., Brown, V. A., Moore, W. R., Harris, C. D., Stehr, H. I., Sorensen, C. M., Cleveland, E. J., Akason, J. D., Morgenthaler, T. I., &amp; Lloyd, R. M. (2020). Enhancing the patient and family experience during pediatric sleep studies. <em>Journal of Clinical Sleep Medicine</em>, 16(7), 1037-1043. Báo cáo dự án cải tiến ở Trung tâm Y học Giấc ngủ của Mayo Clinic; nguồn cho nội dung từng cột của SIPOC-R, cho cách chọn người chăm sóc làm tiếng nói của khách hàng và tính nhân viên là khách hàng, cho các thay đổi, cho tỷ lệ top box 51% (n = 47) và 71% (n = 50) cùng tỷ lệ phản hồi, và cho các giới hạn nhóm tác giả tự nêu, trong đó có việc không theo dõi mức hài lòng của nhân viên. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7954068/" rel="noopener noreferrer" target="_blank">Đọc bài báo</a>.</li>
+                <li id="ref-7">DelliFraine, J. L., Langabeer, J. R., &amp; Nembhard, I. M. (2010). Assessing the evidence of Six Sigma and Lean in the health care industry. <em>Quality Management in Health Care</em>, 19(3), 211-225. Tổng quan về bằng chứng thực nghiệm của Six Sigma và lean trong y tế; nguồn cho 177 bài, 34 bài có báo cáo kết quả, chưa tới một phần ba trong đó có kiểm định thống kê, và cho kết luận bằng chứng rất yếu. Bài đọc qua phần tóm tắt. <a href="https://doi.org/10.1097/QMH.0b013e3181eb140e" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

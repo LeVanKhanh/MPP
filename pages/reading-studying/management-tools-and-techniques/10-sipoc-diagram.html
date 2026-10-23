@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIPOC Diagram - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="A SIPOC diagram makes an improvement team settle where a process starts, where it ends, and who stands beyond those two ends, before anything is measured or mapped in detail. This article covers the mechanism, the limits of the five default columns, the evidence that exists on the tool, and a worked scenario, step by step."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">SIPOC Diagram</h1>
+            <p class="page-subtitle">The five columns of a SIPOC settle where a process starts, where it ends and who stands beyond those ends, but only when the people beyond them are asked, not merely named</p>
+            <p class="page-meta">Published: <time datetime="2026-10-23">October 23, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Definition</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Is a SIPOC Diagram</h3>
+                <p>The five letters of SIPOC are the names of the five columns of a table: Suppliers, Inputs, Process, Outputs, Customers. The table sums up a process from end to end at a very coarse level: who provides what to it, what it does in five to seven steps, what it produces, and who receives what it produces. The American Society for Quality (ASQ) describes it as a data collection tool that Six Sigma improvement teams (Six Sigma being a method of process improvement built on measurement and statistics) use to gather information about every relevant element of a process, and places it before the flowchart: the step-by-step detail is left for the flowchart drawn later. <sup><a href="#ref-1">[1]</a></sup> Suppose a dental clinic wants to know why patients having a porcelain crown fitted usually need four appointments, when the clinic tells them two at the consultation. The team is about to start discussing the chair schedule. SIPOC makes them answer two other questions first: where does the crown process start and end, and who stands at each end? Once it is written down, the supplier column holds the dental lab, which makes the crown but sits outside the clinic, and it also holds the patient, whom the whole team had only ever thought of in the last column.</p>
+
+                <p>Who devised SIPOC, and when, is not clear. ASQ's description is excerpted from <em>The Public Health Quality Improvement Handbook</em>, published in 2009, and it says nothing about the tool's history. <sup><a href="#ref-1">[1]</a></sup> The English Wikipedia entry on SIPOC says the tool was in use at least as early as the total quality management (TQM) programmes of the late 1980s. That sentence rests only on a note comparing SIPOC with Philip Crosby's "process model" and with Xerox's quality improvement process, and the entry itself is flagged as needing expert attention on its history. <sup><a href="#ref-2">[2]</a></sup> This article has not found a primary source that names who devised the tool, so it gives no year of origin.</p>
+
+                <p>SIPOC works by making the team settle the two ends of the process and name the parties beyond those ends, the ones who provide the inputs and the ones who receive the outputs, before going into any detail inside. In the step that sets the boundaries, ASQ asks for the start and end points to be defined clearly so that everyone understands the limits of the analysis. <sup><a href="#ref-1">[1]</a></sup> The two outer columns do the less visible part of the work. A team talking about its own process talks about the steps it carries out; the supplier and customer columns ask about the parties at the two ends. ASQ states plainly that a supplier can be internal or external, so some of those parties may be sitting in the meeting room <sup><a href="#ref-1">[1]</a></sup>, but these two columns tend to pull in people who are not there as well, and at this clinic the fault sits with exactly such a party. The process column is coarse on purpose: ASQ calls it a "35,000-foot" view, five to seven core activities, so that the meeting does not slide into which step comes before which while the scope is still unsettled. Coarse does not mean idle: for a team drawn from several departments, simply agreeing on those five steps can expose a step someone left out, or two different understandings of the same process.</p>
+
+                <p>The two tools closest to SIPOC differ from it in the direction they look. A process flowchart draws every step, every branch and every handoff inside the process; SIPOC keeps the inside to five to seven boxes and looks outwards, towards suppliers and customers. A value stream map, from lean production, also runs from order to delivery, but it goes inside: the flow of material, the flow of information, and the time at each stage. <sup><a href="#ref-3">[3]</a></sup> The five default columns of a SIPOC have no place for time. It answers "what is this process, and whose is it", not yet "where does it run fast or slow".</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="A SIPOC diagram for fitting a porcelain crown at a dental clinic, five columns from left to right. Suppliers: the patient, who provides medical history, availability and the tooth shade they want; the dental lab, outside the clinic; the materials distributor. Inputs: records and X-rays, a confirmed appointment, the finished crown made and sent back by the lab, materials for impressions and cementing. Process, five steps, starting when the patient agrees to the crown and ending when it is fitted and a check-up is booked: prepare the tooth and take an impression, match the shade and fill in the order form, send to the lab and wait, try in and adjust the fit, fit permanently. Outputs: the fitted crown, a check-up appointment, a warranty card, updated treatment records. Customers: the patient, who also appears in the supplier column, and the dentist at the check-up, who reads the treatment records. A note under the diagram says the two outer columns pull in parties the team does not control: the lab, and the patient in the role of supplier."
+                        viewBox="0 0 1120 490">
+                        <defs>
+                            <marker id="sipoc-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <rect class="node" x="20" y="40" width="190" height="44" rx="8"></rect>
+                        <text x="115" y="62">Suppliers (S)</text>
+                        <rect class="node" x="235" y="40" width="190" height="44" rx="8"></rect>
+                        <text x="330" y="62">Inputs (I)</text>
+                        <rect class="node" x="450" y="40" width="220" height="44" rx="8"></rect>
+                        <text x="560" y="62">Process (P)</text>
+                        <rect class="node" x="695" y="40" width="190" height="44" rx="8"></rect>
+                        <text x="790" y="62">Outputs (O)</text>
+                        <rect class="node" x="910" y="40" width="190" height="44" rx="8"></rect>
+                        <text x="1005" y="62">Customers (C)</text>
+                        <path class="arrow" d="M210 62 H233" marker-end="url(#sipoc-arrow)"></path>
+                        <path class="arrow" d="M425 62 H448" marker-end="url(#sipoc-arrow)"></path>
+                        <path class="arrow" d="M670 62 H693" marker-end="url(#sipoc-arrow)"></path>
+                        <path class="arrow" d="M885 62 H908" marker-end="url(#sipoc-arrow)"></path>
+
+                        <path class="tick" d="M222 96 V432"></path>
+                        <path class="tick" d="M437 96 V432"></path>
+                        <path class="tick" d="M682 96 V432"></path>
+                        <path class="tick" d="M897 96 V432"></path>
+
+                        <text x="115" y="140">Patient</text>
+                        <text class="small" x="115" y="158">history, availability,</text>
+                        <text class="small" x="115" y="174">shade they want</text>
+                        <text class="alert" x="115" y="220">Dental lab</text>
+                        <text class="small alert" x="115" y="238">outside the clinic</text>
+                        <text x="115" y="290">Distributor</text>
+                        <text class="small" x="115" y="308">dental materials</text>
+
+                        <text x="330" y="140">Records, X-rays</text>
+                        <text x="330" y="190">Confirmed appointment</text>
+                        <text class="alert" x="330" y="240">Finished crown</text>
+                        <text class="small alert" x="330" y="258">made and sent by the lab</text>
+                        <text x="330" y="300">Materials</text>
+                        <text class="small" x="330" y="318">impression, cement</text>
+
+                        <text class="small alert" x="560" y="100">Start: patient agrees to the crown</text>
+                        <path class="today" d="M450 110 H670"></path>
+                        <rect class="node" x="470" y="124" width="180" height="40" rx="8"></rect>
+                        <text x="560" y="144">Prepare, impression</text>
+                        <path class="arrow" d="M560 164 V178" marker-end="url(#sipoc-arrow)"></path>
+                        <rect class="node" x="470" y="180" width="180" height="40" rx="8"></rect>
+                        <text x="560" y="200">Match shade, order</text>
+                        <path class="arrow" d="M560 220 V234" marker-end="url(#sipoc-arrow)"></path>
+                        <rect class="node" x="470" y="236" width="180" height="40" rx="8"></rect>
+                        <text x="560" y="256">Send to lab, wait</text>
+                        <path class="arrow" d="M560 276 V290" marker-end="url(#sipoc-arrow)"></path>
+                        <rect class="node" x="470" y="292" width="180" height="40" rx="8"></rect>
+                        <text x="560" y="312">Try in, adjust fit</text>
+                        <path class="arrow" d="M560 332 V346" marker-end="url(#sipoc-arrow)"></path>
+                        <rect class="node" x="470" y="348" width="180" height="40" rx="8"></rect>
+                        <text x="560" y="368">Fit permanently</text>
+                        <path class="today" d="M450 402 H670"></path>
+                        <text class="small alert" x="560" y="418">End: fitted, check-up booked</text>
+
+                        <text x="790" y="140">Fitted crown</text>
+                        <text x="790" y="190">Check-up booked</text>
+                        <text x="790" y="240">Warranty card</text>
+                        <text x="790" y="290">Treatment records</text>
+                        <text class="small" x="790" y="308">updated</text>
+
+                        <text class="alert" x="1005" y="140">Patient</text>
+                        <text class="small alert" x="1005" y="158">also in the supplier column</text>
+                        <text x="1005" y="220">Dentist at check-up</text>
+                        <text class="small" x="1005" y="238">reads the records</text>
+
+                        <text class="small" x="560" y="452">The process column stays at five steps with both ends settled; step-by-step detail is left for the flowchart.</text>
+                        <text class="small alert" x="560" y="474">The two outer columns pull in parties the team does not control: the lab, and the patient as a supplier.</text>
+                    </svg>
+                    <figcaption><strong>Figure 1.</strong> At this clinic, the process column tells the team nothing new: everyone had already agreed on those five steps. What is new sits in the two outer columns: the crown is made somewhere the clinic does not control, and the patient both receives the crown in the last column and supplies information in the first, including the shade they want.</figcaption>
+                </figure>
+
+                <!-- YouTube Video Container -->
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                    <iframe
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        src="https://www.youtube.com/embed/Y6Gn0bqNSGU"
+                        title="Problem-Solve with SIPOC Diagrams"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Why We Need It</h3>
+                <p>In the first week of the project at the dental clinic, the team measures chair use for ten days and finds no chair short of slots. The extra appointment comes from somewhere else: a crown sent back by the lab does not fit or is the wrong shade, and the patient has to come back for a second try-in. That happens at the join between the clinic and the lab, and the scope the team had quietly chosen, "the clinic's appointment schedule", had left it outside before anyone measured anything. This is the failure SIPOC was built to stop: a team starts measuring and mapping in detail before agreeing where the process starts and ends, so it measures a stretch that does not contain the problem with great care, or ends up arguing about scope halfway through.</p>
+
+                <p>SIPOC stops it by changing the order of the questions. The boundaries are written down, so anyone who sees them differently has something to point at and object to in the first meeting. And once the lab is named in the supplier column, the question "what does the lab need from us to get it right?" is harder to skip, though not impossible: naming a party and asking that party are two different things. The gap between the two has been counted for the tool closest to SIPOC. In 105 healthcare studies that used process mapping, 91% clearly identified the group of patients or service users of the process, but only 15% reported involving representatives of that group. <sup><a href="#ref-4">[4]</a></sup> SIPOC's own share has not been measured: in a review of lean (lean production) tools in healthcare, SIPOC appears in 10 of 33 projects, always alongside other tools, and the summary of each project reports results for the combination as a whole. <sup><a href="#ref-5">[5]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Are Its Limits</h3>
+                <p>SIPOC deliberately leaves out almost everything a flowchart records, and that is its built-in limit. The five to seven boxes in the process column have no branches, no rework loops, no handoffs and no time. At the clinic, it shows that there is a "try in" step, not how many times that step repeats. The table is also just five lists set side by side: the default template ASQ describes is five blocks, and it does not link any input to a step, or any output to a customer. <sup><a href="#ref-1">[1]</a></sup> A simple link between one input and one step can be added as a note on the sheet itself; branches, rework loops and time need a flowchart or a value stream map.</p>
+
+                <p>Two further weaknesses come from how the template is used, and they can be fixed. First, the five default columns have no place for three different things that are often lumped together: what the customer needs, the constraints on the project, and the measures. ASQ's version adds two blocks, +C for the constraints facing the system and +M for the measures being used or to be used; the Mayo Clinic team in the example below adds an R column that they call the requirements of the project, but what goes in it (finished within a year, no extra staff) is a set of constraints. <sup><a href="#ref-1">[1]</a></sup> <sup><a href="#ref-6">[6]</a></sup> What the customer needs has no ready-made slot in either version, and unless it is written down somewhere, the customer column is no more than a list of names. Second, ASQ describes SIPOC as a way of recording the team's collective knowledge, and collective knowledge only reaches as far as the people in the room. A supplier that nobody in the meeting works with can be missed; that is why the last step in ASQ's procedure is to review the diagram for completeness with the relevant stakeholders and the project's sponsors. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">What the SIPOC in Figure 1 records</th><th scope="col">What it does not answer, and has to be found elsewhere</th></tr></thead>
+                    <tbody>
+                        <tr><td>The dental lab in the supplier column</td><td>How many days the lab takes, how many crowns have to be remade</td></tr>
+                        <tr><td>The finished crown in the input column</td><td>Whether a poor fit comes from the impression, the shade form or the lab</td></tr>
+                        <tr><td>Five steps in the process column</td><td>Which step repeats when the try-in does not fit, and how many times</td></tr>
+                        <tr><td>The patient in the customer column</td><td>What the patient needs most: fewer visits, a natural shade, or price</td></tr>
+                        <tr><td>Five lists side by side</td><td>Which input feeds which step, which output reaches whom</td></tr>
+                        <tr><td>The parties the team has named</td><td>Which party is missing because nobody in the room works with them</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Examples</h2>
+            <p class="intro-text">The first example is a SIPOC filled in to get it done at a project kick-off, and how it led a whole team to fix a part of the process that did not contain the problem. The second is a medical centre in the United States that used a SIPOC with an extra requirements column to frame a project on children's experience of overnight sleep studies, and it shows both where the tool helped and how a customer already named in the table still dropped out of the project.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Fourteen Steps in the P Column, the Customer Only in the C Column</h3>
+                <p>An illustrative scenario: a furniture shop delivers and assembles about 60 orders a month, and in the most recent month 11 orders had to be delivered a second time. The manager gives the delivery team a project to cut the number of repeat deliveries. At the kick-off meeting the team opens a ready-made SIPOC template and fills it in in twenty minutes. The process column copies all fourteen steps of the delivery team's internal procedure, from "receive the dispatch order" to "collect the balance". The customer column says "customer". The supplier column says "warehouse" and "workshop". The boundaries are set to match the team's own work exactly: from receiving the dispatch order to collecting the balance. Within those boundaries, the thing the team can change most is the delivery route, so the project goes into the routes. Six weeks later the routes are shorter, and the number of repeat deliveries each month is still around ten.</p>
+                <p>The head of the assembly crew suggests redoing the SIPOC, this time inviting a salesperson and the person who schedules deliveries, and starting by rereading the 11 repeat-delivery slips from the month before the project. Five times the customer was not at home in the agreed time slot, because the slot was chosen by the scheduler and the customer was told only a day in advance. Three times the lorry could not get in: one narrow alley, and two office buildings that only allow furniture moves after 6 p.m. The other three times the warehouse had sent the order short of fittings. Eight failures out of eleven came from information that only the customer had and that should have been collected when the order was placed, which is before the "receive the dispatch order" point the first SIPOC had chosen as its start. The second version has six steps, starting when the customer pays the deposit and ending when the customer signs the delivery note. The supplier column gains a line nobody had thought of the first time: the customer, who supplies the address, the time slot for delivery and the access conditions. The project turns to the sales team's order form. The delivery routes, which had taken six weeks, were not what needed fixing.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">The Customer Is a Child, and the Parents Answer</h3>
+                <p>At the Mayo Clinic Center for Sleep Medicine in Rochester, Minnesota, a team of sleep specialists, nurses, technologists, clinical assistants, centre leaders and someone from the office of patient experience set out to improve the experience of children having polysomnography, an overnight study with many electrodes attached to the body. The goal was to raise the proportion of top satisfaction scores (5 on a 5-point scale, the "top box") by at least 10% within a year, without adding staff or major expense. To frame the project, the team completed a SIPOC with an extra R column for requirements (SIPOC-R). According to the paper, the suppliers were the paediatric sleep specialists, who order every study; the inputs included the study orders and every step before them, such as pre-appointment communication and scheduling; the process was described as the patient's journey; the outputs were the impressions of patients and their families, together with the impressions of the staff who dealt with them; and the requirements column said that every improvement had to be in place within a year, with no new staff and no substantial outlay. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>The customer column calls for a decision that the five-column template does not make for you. The main customer was the child, but children often cannot fully put their experience into words, so the team took parents or other caregivers as the "voice of the customer"; the centre's staff were also counted as customers of the same process. The team designed its own survey for caregivers, alongside journey mapping, group brainstorming and views gathered from the centre's patient and family advisory council. The changes included training all staff in empathic communication, moving technologists' shifts earlier so children could check in earlier without adding staff, and distraction kits for the time the electrodes are attached. In February 2018, 47 caregivers responded (85% of 55 studies) and the top-box rate was 51%. In February 2019, 50 responded (63% of 79 studies) and the rate was 71%, while the number of studies went up. An educational video for families went live later, in September 2019, and the next survey gave a rate of 64%. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>That rise belongs to a whole package of changes introduced together, and the authors themselves write that doing so made it hard to tell which change had the most effect; the response rate also fell between the two surveys. SIPOC did not raise the scores here. It did two other things, both visible in the paper. The requirements column put the project's constraints in writing from the start, and those are the constraints the team reports having kept: the result came without adding staff. The customer column, on the other hand, teaches the opposite lesson: staff were named as customers and their impressions were listed as an output, yet the team writes that it did not track staff satisfaction, because this was a patient- and family-centred project, even though those data would have been valuable. <sup><a href="#ref-6">[6]</a></sup> A customer named in the table with no measure attached is a customer who is easy to drop from the project.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Some Research on SIPOC Diagrams</h2>
+            <p class="intro-text">This article has not found a study that compares teams using SIPOC with teams that do not, or that measures SIPOC's own contribution to the result of a project. The evidence that does exist is of three kinds: how often the tool appears in published projects, a count from a closely related tool showing how often the step SIPOC aims at gets skipped, and the evidence for the larger method that SIPOC usually opens, namely Six Sigma and lean. All three come from healthcare.</p>
+            <div class="sub-section">
+                <p><strong>The study:</strong> In 2021, de Barros and colleagues at the University of Campinas in Brazil published in the <em>International Journal of Environmental Research and Public Health</em> an integrative review of the lean tools used to evaluate processes in healthcare. They searched five databases (VHL, PubMed, Scopus, CINAHL, Embase) for full-text articles in English, Portuguese or Spanish, published from 2015 to 2019, that actually applied lean tools in health services, and kept 33 articles. For each one they recorded the aim, the tools used and the results reported. <sup><a href="#ref-5">[5]</a></sup> Also in 2021, Antonacci and colleagues at Imperial College London reviewed 105 empirical studies that used process mapping in healthcare and scored each against ten quality criteria; the first criterion has two parts, clearly identifying the people who will use the process (patients, service users, customers) and involving their representatives in the work. <sup><a href="#ref-4">[4]</a></sup> One level up, in 2010, DelliFraine, Langabeer and Nembhard reviewed the articles on Six Sigma and lean in healthcare published over the previous ten years, to see whether any empirical evidence linked the two methods to clinical outcomes, processes of care and financial performance. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p><strong>Findings:</strong> Across the 33 articles in de Barros, the team found 30 different tools. The five used most were DMAIC (Six Sigma's five-step cycle of define, measure, analyse, improve, control; 18 articles), value stream mapping (17), SIPOC (10), the fishbone diagram (9) and 5S (7). According to the review, SIPOC appeared in 30.3% of the studies, and 27.2% of the studies used it together with DMAIC. In the appendix summarising each article, all ten articles with SIPOC used it together with at least two other tools, and the results are reported for the combination: waiting time, length of stay, cost, number of consultations. More than half of the articles (18 of 33) did not clearly describe their study design. The authors did not evaluate the effectiveness of each tool on its own. <sup><a href="#ref-5">[5]</a></sup> In Antonacci's review, 91% of studies clearly identified the group of people using the process, but only 15% reported involving patient representatives; of the seven studies that met eight or nine of the ten criteria, five failed on exactly this point. <sup><a href="#ref-4">[4]</a></sup> DelliFraine and colleagues found 177 articles on Six Sigma and lean, but only 34 reported any outcomes of the projects, and fewer than a third of those tested statistically whether the changes were significant. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p><strong>What it shows:</strong> The de Barros review shows that SIPOC was a familiar tool in the lean healthcare projects published between 2015 and 2019, usually paired with DMAIC: the review reports 27.2% of studies using both, which is about 9 of the 10 articles with SIPOC. It does not show how much SIPOC contributed to the results, because according to the appendix no article in the sample separated out that share, and the authors did not try to. The review's sentence that combining DMAIC with SIPOC "resulted in" more patients seen and shorter times describes the projects that used both, in reports with no control group; it says nothing yet about cause and effect. Antonacci's review is not about SIPOC, but it measures exactly the gap that a SIPOC sheet can fall into as well: the people who use the process are mostly named, and rarely invited in to take part, even in the studies that did best. The authors argue that the shortfall lies in how the work was done as well as in how it was reported. At the level of method, DelliFraine and colleagues concluded that the evidence that Six Sigma and lean improve the quality of healthcare is very weak; that conclusion concerns the period before 2010, and the de Barros review shows that the description of study design was still lacking in later articles. None of the sources here is about SIPOC outside healthcare.</p>
+                <p><strong>The counter-case:</strong> The defenders of SIPOC have a strong argument. SIPOC is a framing step that lasts an hour or two; what it produces is a decision about scope, and the outcomes of the project come from the steps after it. Demanding a trial that proves it improves waiting times or the number of consultations is demanding the wrong thing, because its value, if it has any, shows up as projects that were not aimed at the wrong place, which outcome studies struggle to see. This article accepts the first part: a cheap step does not need evidence as heavy as a costly intervention does, and asking for a randomised trial of a two-hour meeting is out of proportion. But the second part, "its value shows up as projects that did not go wrong", can be partly checked without a trial, in two steps. The first is to leave a trace: what the SIPOC session settled or confirmed, and on what information. The second is to check that trace against later data, because a new boundary is not necessarily better than the old one; at the furniture shop, it was the 11 repeat-delivery slips that showed the second boundary was the better one. The ten articles with SIPOC in the de Barros review, going by the summaries in its appendix, do not leave even the first step behind. <sup><a href="#ref-5">[5]</a></sup> The Mayo Clinic paper, published in 2020 and so outside that sample, gets halfway: it states what each column contained, so a reader can check which columns were put to use and which were not. <sup><a href="#ref-6">[6]</a></sup> The defenders are right that outcome evidence is not the right measure for this tool; they are not right to treat that as meaning no evidence is needed at all.</p>
+                <p><strong>Why this is useful:</strong> When you read an improvement report that says "the team used SIPOC", ask one question: what did the SIPOC session settle or confirm about the project's boundaries, suppliers, customers or measures? If the report cannot answer, the reader has no way of knowing what the tool contributed, even if the meeting was genuinely useful. Then ask a second question, the one Antonacci's review shows is often left blank: was anyone in the customer column actually invited into the room, or do they only have a name on the sheet?</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">How to Apply It</h2>
+            <p class="intro-text">A SIPOC diagram works by making the team settle the two ends of the process and name the parties beyond those ends, the ones who provide the inputs and the ones who receive the outputs, before going into any detail inside, so the effective way to use it is to set the boundaries with events everyone can recognise, take the requirements from the parties at the two ends themselves, and keep the middle coarse enough that the meeting does not slide into detail. It suits projects whose scope is still understood differently by different people, or processes that cross several departments or organisations. For a process that sits entirely within one team, whose scope the team already agrees on, a SIPOC usually just copies down what everyone already knows.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Set the start and end points with an event, not with the name of a department:</strong> "The customer pays the deposit" and "the customer signs the delivery note" are two events anyone can recognise; "the delivery team's part" is a boundary drawn around the very people in the meeting, and it rules out in advance every cause that sits in another department. ASQ puts the definition of start and end points right after drawing the frame, before any column is filled in; if someone wants to move a boundary partway through the session, move it on paper and write down why <sup><a href="#ref-1">[1]</a></sup></li>
+                    <li><strong>Fill in outputs and customers first, then ask the recipients themselves instead of guessing for them:</strong> Starting from the customer column makes the first question what this process is for, and for whom, rather than which steps we carry out. Record each customer's requirements, the project's constraints and the measures as three separate things, whether in an R column, ASQ's +C and +M blocks or an attached sheet, because the five default columns have no place for them and the three are easily merged into one: "the report arrives before the meeting" is a requirement, "no extra staff" is a constraint, "the day the report is sent" is a measure. When a customer cannot speak for themselves, as with a child, write down who speaks for them; and for every customer named without any measure, decide on the spot whether to measure them or to leave them out of scope deliberately, because the staff in the Mayo Clinic project were named in the customer column and their satisfaction was never tracked. Naming without asking is the gap that Antonacci's review counted for process mapping <sup><a href="#ref-4">[4]</a></sup> <sup><a href="#ref-1">[1]</a></sup> <sup><a href="#ref-6">[6]</a></sup></li>
+                    <li><strong>Keep the process column to five to seven steps, and leave the detail to the flowchart:</strong> The obvious approach is to copy the whole internal procedure for completeness, and it fails in two ways. Fourteen steps in the middle pull the meeting into which step comes before which, while the two outer columns get only a few words. And a copied internal procedure brings with it the boundaries of the department that wrote it. ASQ is explicit that this column holds five to seven core activities, and that the detailed steps will be developed in the flowchart <sup><a href="#ref-1">[1]</a></sup></li>
+                    <li><strong>Take the draft to the suppliers and customers, then record what the SIPOC session settled:</strong> The last step in ASQ's procedure is to review the diagram for completeness with stakeholders and sponsors, and it is an easy step to skip, because the sheet looks complete once every box has words in it. Write a few lines at the bottom of the sheet that answer three questions: what the team settled or confirmed (a boundary moved, a party added, a measure chosen, or the original scope confirmed as right); on what information, and who was asked; and what the project's next decision is. Those lines are a trace of what the SIPOC contributed, not proof that the new scope is better; that has to wait for the data from the later steps <sup><a href="#ref-1">[1]</a></sup> <sup><a href="#ref-5">[5]</a></sup></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Applying It to a Scenario</h2>
+            <p class="intro-text">The monthly meeting of the directors of an office equipment distributor takes place on the sixth working day of the month, but the management report for the previous month, produced by the planning department, only reaches the five directors on the ninth working day (the median of the last six months; earliest the eighth, latest the eleventh). The directors give the planning department a project with the solution already chosen: buy software to produce the report automatically. The goal is for the report to arrive before the meeting, that is, by the end of the fifth working day at the latest, for three months in a row. The figures in this scenario are illustrative.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Set the start point, the end point and the measure before filling in any column:</strong> The start point is the first working day after the month ends. The end point is the moment the report lands in the inboxes of all five directors. The measure is the working day on which the report is sent, counted the same way every month. The software is not written in anywhere: it is a solution, not yet part of the process</li>
+                    <li><strong>Fill in outputs and customers first, by asking each recipient:</strong> The report runs to 32 pages, 20 of them an appendix listing stock item by item. The head of planning asks each director which pages they used at the last meeting and what they need by the time of the meeting. The operations director uses stock quantities by product group to decide on orders, and does not use values. The finance director needs the stock value, and accepts a provisional figure for the meeting if it differs from the final value by less than 2%, with the final value recorded in the following month's report. Nobody had used the appendix. These requirements go into a separate column next to the customer column</li>
+                    <li><strong>Keep the process column to five steps:</strong> Receive figures from four departments, reconcile, calculate the indicators, write the commentary, send the report. One analyst wants to list all eleven reconciliation tasks; the head of planning leaves them for a flowchart if one is ever needed, because the question at this stage is who the process involves, not yet in what order the reconciliation runs</li>
+                    <li><strong>Fill in inputs and suppliers, with the day each input arrives, taken from six months of email logs:</strong> The four suppliers are accounts (revenue, costs), sales (orders, receivables), HR (headcount) and the warehouse (stock). The warehouse sends last in all six months, with a median of the seventh working day; from the last figures arriving to the report going out, planning takes one to two days (first table). This check sets the chosen solution against the data itself: even if the software finished the report on the same day the last figures arrived, the report would still have gone out on the seventh day or later in all six months, after the meeting on the sixth. The delay sits in the inputs, outside the part of the work the planning department was asked to fix</li>
+                    <li><strong>Take the draft to the slowest supplier and to the customer whose requirement bears on it:</strong> The warehouse explains that stock quantities are ready by the second working day, but they wait for supplier invoices on goods received in the last three days of the month to value them, and the invoices usually arrive around the sixth day. Set next to the requirement from step 2, a way through appears: the warehouse sends quantities with a provisional value at the latest purchase price on the third working day, sends the final value on the seventh day as before, and the difference is recorded in the following month's report. The finance director agrees, on condition that the difference is tracked against the 2% threshold every month</li>
+                    <li><strong>Settle the scope and record what the SIPOC changed:</strong> The project's scope moves upstream to include the handover of figures from the warehouse to planning. The software is taken out of this project. The stock appendix is no longer sent with the report; anyone who needs it can ask. The measures gain a line: the difference between the provisional and final stock value. The SIPOC sheet now keeps three things apart: customer requirements (the report arrives before the meeting; provisional stock value within 2%), constraints (no extra staff for the planning department), and measures (the day the report is sent, the size of the difference). The last lines of the sheet record those four changes, the information used (six months of email logs, what the warehouse and the finance director said), and the next decision: a three-month trial</li>
+                    <li><strong>Measure the following three months with the same definition, and check whether the two periods are comparable:</strong> Same start point, same end point, same way of counting working days. What stays the same is the way time is measured; the report itself has changed, since it no longer has the appendix and its stock value is provisional, so its quality is watched through the difference threshold rather than treating the two versions as one. The two periods are compared on two variables the new approach does not affect: the share of quarter-end months, when closing the books is heavier (2 of 6 months before, 1 of 3 months after, a third in both), and the number of goods-received notes in the last three working days of the month, which is the number of deliveries waiting for invoices (median 39 before, 41 after). If the later period had far fewer late-month deliveries, the report could have arrived earlier with no change at all (second table)</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Six months before the project</th><th scope="col">Accounts</th><th scope="col">Sales</th><th scope="col">HR</th><th scope="col">Warehouse</th><th scope="col">Report sent</th></tr></thead>
+                    <tbody>
+                        <tr><td>Month 1</td><td>3</td><td>2</td><td>2</td><td>7</td><td>8</td></tr>
+                        <tr><td>Month 2</td><td>3</td><td>2</td><td>2</td><td>7</td><td>9</td></tr>
+                        <tr><td>Month 3 (quarter end)</td><td>4</td><td>2</td><td>3</td><td>8</td><td>10</td></tr>
+                        <tr><td>Month 4</td><td>3</td><td>2</td><td>2</td><td>7</td><td>9</td></tr>
+                        <tr><td>Month 5</td><td>3</td><td>3</td><td>2</td><td>9</td><td>11</td></tr>
+                        <tr><td>Month 6 (quarter end)</td><td>3</td><td>2</td><td>2</td><td>7</td><td>9</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">Each cell is the working day after the month ends on which that department's figures arrived, or on which the report was sent. Six-month medians: warehouse on day 7, report on day 9.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Three months after the change</th><th scope="col">Day all inputs for the provisional report were in</th><th scope="col">Report sent</th><th scope="col">Difference between provisional and final stock value</th><th scope="col">Goods-received notes in the last three days of the month</th></tr></thead>
+                    <tbody>
+                        <tr><td>Month 7</td><td>3</td><td>5</td><td>0.4%</td><td>36</td></tr>
+                        <tr><td>Month 8</td><td>3</td><td>4</td><td>0.7%</td><td>41</td></tr>
+                        <tr><td>Month 9 (quarter end)</td><td>3</td><td>5</td><td>1.1%</td><td>47</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">In the later period the warehouse sends its provisional figures on day 2 or day 3 and no longer arrives after accounts; the official stock value still arrives on day 7 and is recorded in the following month's report. The six months before the project had 35, 38, 44, 37, 40 and 46 goods-received notes in the last three days of the month, a median of 39.</p>
+
+                <p>Three months on, the report arrived on the fifth, fourth and fifth working days, in time for all three meetings, with the provisional stock value within the 2% threshold every month, on a late-month volume of deliveries no smaller than before. The later report is shorter and uses provisional figures, so this result says that the directors had what they had confirmed they needed before the meeting, not that the old report was produced faster. SIPOC did not make the report a single day faster. It moved the project to where the days were being lost, and the conversations with the warehouse and the finance director were where the new way of working came from. Three months is short, there is no control group, and none of those three months saw a sharp swing in purchase prices; the planning department keeps tracking the difference, and in any month it goes over 2%, the warehouse and the finance director revisit how the provisional value is worked out. The conditions behind this result were that the boundaries were set by events everyone recognises, the requirements came from the people who read the report, the solution chosen in advance was set against the arrival day of each input before anyone spent money on anything, and the later period was measured with exactly the same definition as the earlier one.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Summary</h2>
+            <div class="summary-box">
+                <p><strong>Key Point:</strong> The five columns of a SIPOC make a team settle where a process starts and where it ends, and name the parties beyond those two ends, before anything is measured or mapped in detail, so that scope is argued over in the first meeting rather than halfway through the project. The most counter-intuitive point is that a SIPOC sheet can have all five columns filled and still let through exactly what it was built to catch: the parties at the two ends are named but never asked, and a name in the customer column does not turn into a requirement by itself, nor does it come with a measure. The reliable way to use it is to set the boundaries with events, ask the parties at the two ends themselves, record requirements, constraints and measures as three separate things, and write down what the SIPOC session settled and on what information.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">References</h2>
+            <ol class="outline-list">
+                <li id="ref-1">American Society for Quality. <em>SIPOC+CM Diagram</em>. ASQ Quality Resources (accessed October 23, 2026). ASQ's knowledge page, excerpted from Bialek, R., Duffy, G. L., &amp; Moran, J. W. (2009), <em>The Public Health Quality Improvement Handbook</em>, ASQ Quality Press; source for the definition of SIPOC as a data collection tool used by Six Sigma improvement teams, for using it before the flowchart, for defining the start and end points, for suppliers being internal or external, for the process column of five to seven core activities seen from "35,000 feet", for the +C and +M blocks, and for the step of reviewing the diagram with stakeholders. <a href="https://asq.org/quality-resources/sipoc" rel="noopener noreferrer" target="_blank">Read the original page</a>.</li>
+                <li id="ref-2">Wikipedia. <em>SIPOC</em> (accessed October 23, 2026). Cited as the object under discussion, not as a source for facts; source for the observation that the common account of SIPOC's origins in the TQM programmes of the late 1980s rests only on a note comparing it with Philip Crosby and Xerox, and that the entry is flagged as needing more on its history. <a href="https://en.wikipedia.org/wiki/SIPOC" rel="noopener noreferrer" target="_blank">Read the entry</a>.</li>
+                <li id="ref-3">Lean Enterprise Institute. <em>Value-Stream Mapping</em>, Lean Lexicon. LEI's dictionary entry; source for the definition of a value stream map as drawing both the material flow and the information flow from order to delivery, with data boxes for time, used here to distinguish it from SIPOC. <a href="https://www.lean.org/lexicon-terms/value-stream-mapping/" rel="noopener noreferrer" target="_blank">Read the entry</a>.</li>
+                <li id="ref-4">Antonacci, G., Lennox, L., Barlow, J., Evans, L., &amp; Reed, J. (2021). Process mapping in healthcare: a systematic review. <em>BMC Health Services Research</em>, 21, 342. A systematic review of 105 studies that used process mapping in healthcare, scored against ten quality criteria; source for the 91% of studies that clearly identified the group using the process against the 15% that involved patient representatives, for five of the seven best studies failing on this criterion, and for the authors' view that the shortfall lies in how the work was done. The review is not about SIPOC; this article uses it as a count from a closely related tool. <a href="https://doi.org/10.1186/s12913-021-06254-1" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-5">de Barros, L. B., Bassi, L. C., Caldas, L. P., Sarantopoulos, A., Zeferino, E. B. B., Minatogawa, V., &amp; Gasparino, R. C. (2021). Lean healthcare tools for processes evaluation: an integrative review. <em>International Journal of Environmental Research and Public Health</em>, 18(14), 7389. An integrative review of 33 articles on lean tools in healthcare, 2015 to 2019; source for the number of articles using each tool, for the share of studies with SIPOC and with SIPOC alongside DMAIC, for all ten SIPOC articles using it in combination and reporting results for the combination, for 18 of 33 articles not describing their design clearly, and for the review not evaluating tools individually. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8304063/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-6">Baughn, J. M., Lechner, H. G., Herold, D. L., Brown, V. A., Moore, W. R., Harris, C. D., Stehr, H. I., Sorensen, C. M., Cleveland, E. J., Akason, J. D., Morgenthaler, T. I., &amp; Lloyd, R. M. (2020). Enhancing the patient and family experience during pediatric sleep studies. <em>Journal of Clinical Sleep Medicine</em>, 16(7), 1037-1043. Report of an improvement project at the Mayo Clinic Center for Sleep Medicine; source for what each column of the SIPOC-R contained, for taking caregivers as the voice of the customer and counting staff as customers, for the changes made, for the top-box rates of 51% (n = 47) and 71% (n = 50) with the response rates, and for the limitations the authors themselves give, including not tracking staff satisfaction. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7954068/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-7">DelliFraine, J. L., Langabeer, J. R., &amp; Nembhard, I. M. (2010). Assessing the evidence of Six Sigma and Lean in the health care industry. <em>Quality Management in Health Care</em>, 19(3), 211-225. A review of the empirical evidence for Six Sigma and lean in healthcare; source for the 177 articles, the 34 reporting outcomes, the fewer than a third of those with statistical tests, and the conclusion that the evidence is very weak. Read through the abstract only. <a href="https://doi.org/10.1097/QMH.0b013e3181eb140e" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

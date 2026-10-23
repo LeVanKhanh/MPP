@@ -28,14 +28,15 @@ Trả lời đủ ba, theo thứ tự. Dừng ở câu nào cho kết quả "kh�
 | Cụm từ, nhịp câu, dấu hiệu máy hoá | `voice-guide.md` | mục 4 |
 | Đặc điểm riêng của một thể loại | `voice-guide.md` | mục 1, 2 hoặc 3 |
 | Khung section của bài mục lục kiến thức, kể cả biến thể của một loại danh mục | `catalog-series.md` | mục tương ứng, và checklist mục 8 |
-| Quy ước chỉ đúng cho một series (tên gọi, ví dụ đã gỡ, quyết định riêng của tác giả) | `domain-ubiquitous-language.md` của thư mục series | mục Quy ước của series |
+| Thuật ngữ, cách gọi, cách diễn đạt chỉ đúng cho một series | `domain-ubiquitous-language.md` của thư mục series | nhóm tương ứng, theo `ubiquitous-language.md` |
+| Quy ước viết chỉ đúng cho một series, không thuộc ngôn ngữ (cảnh ví dụ đã dùng, tên file, menu, quyết định riêng của tác giả) | `series-conventions.md` | phần của series đó |
 | Template, class, đường dẫn, `page-meta`, menu | `html-menu-rules.md` | mục tương ứng, và checklist mục 8 |
 | Cách chấm, ngưỡng, benchmark | `review-rubric.md` | |
 | Quy trình của một lượt đọc bài | lens tương ứng trong `lenses/` | |
 | Quy trình vòng lặp, luật hỏi, phân loại A/B | `refine-loop.md` | |
 | Việc chỉ thuộc về một mode | `.claude/commands/mpp-writer.md` | mục của mode đó |
 
-**Không tạo file hướng dẫn viết riêng trong thư mục series.** Thư mục series chỉ có `domain-ubiquitous-language.md`; mọi luật viết nằm trong `.claude/mpp-writer/`. Hai nguồn hướng dẫn cho cùng một việc sẽ lệch nhau ngay lượt sửa đầu tiên.
+**Không tạo file hướng dẫn viết riêng trong thư mục series.** Thư mục series chỉ có `domain-ubiquitous-language.md` (từ điển ngôn ngữ); mọi luật viết, kể cả quy ước riêng của một series, nằm trong `.claude/mpp-writer/`. Hai nguồn hướng dẫn cho cùng một việc sẽ lệch nhau ngay lượt sửa đầu tiên.
 
 Nếu một bài học không rơi gọn vào ô nào, đó thường là dấu hiệu nó chưa được diễn đạt đủ cụ thể. Viết lại cho cụ thể hơn trước khi tìm chỗ đặt.
 

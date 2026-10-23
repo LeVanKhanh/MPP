@@ -16,6 +16,7 @@ Yêu cầu người dùng: **$ARGUMENTS**
    - `.claude/mpp-writer/refine-loop.md` - giao thức vòng lặp review → sửa (đọc khi mode là `review`, `refine` hoặc `feedback`)
    - `.claude/mpp-writer/guide-maintenance.md` - luật sửa chính bộ hướng dẫn (đọc khi mode là `feedback`, hoặc khi định đề xuất đổi một file quy tắc)
    - `.claude/mpp-writer/ubiquitous-language.md` - cách dùng và cách nuôi file từ điển của từng series (đọc khi mode là `draft`, `refine`, `feedback` hoặc `translate`, tức mọi mode có ghi file nội dung)
+   - `.claude/mpp-writer/series-conventions.md` - quy ước viết riêng của từng series không thuộc ngôn ngữ: cảnh ví dụ đã dùng, tên file, menu, quyết định của tác giả (đọc phần của series đang viết, cùng các mode như trên)
    - `.claude/mpp-writer/catalog-series.md` - khung trang mục và trang tổng quan của bài mục lục kiến thức, gồm biến thể danh mục lỗi tư duy và danh mục công cụ (đọc khi thể loại ở bước 3 là mục lục, ở mọi mode)
 2. Xác định **mode** từ yêu cầu. Nếu người dùng không nói rõ, tự suy ra:
    - Chỉ có chủ đề, chưa có nội dung → `outline`

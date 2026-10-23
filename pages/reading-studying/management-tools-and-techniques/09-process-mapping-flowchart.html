@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Process Flowchart - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="A process flowchart puts every step, every branch and every handoff of a process on one surface, so that the places where work sits waiting between two people come into view. This article covers the mechanism, the limits of the drawing, the studies that have measured what flowcharts help with, and a worked scenario, step by step."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Process Flowchart</h1>
+            <p class="page-subtitle">Every arrow that crosses between two lanes is a moment the work changes hands, and a flowchart that records only sequence and logic draws it as if it took no time at all</p>
+            <p class="page-meta">Published: <time datetime="2026-10-23">October 23, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Definition</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Is a Process Flowchart</h3>
+                <p>A process flowchart is a common kind of process map: a drawing of a process as a chain of steps joined by arrows, in the order the work actually moves, with each step in a rectangle and each point where a choice must be made in a diamond that has all its exits drawn. <sup><a href="#ref-1">[1]</a></sup> Suppose an online shop wants to know why customers who return an item wait nearly three weeks for their refund, when customer service, the warehouse and accounts each say their own part takes only a day. Drawn out, the process has six steps and two questions. The flowchart does not say straight away why it is slow. What it shows is that a refund form changes hands three times on the smooth path, and twice more every time the goods the warehouse receives do not match the form.</p>
+
+                <p>In 1921, Frank and Lillian Gilbreth presented a paper called "Process Charts" at the annual meeting of the American Society of Mechanical Engineers (ASME), describing a way of recording processes that they said they had already used for many years in many places. The paper opens by defining the process chart as "a device for visualizing a process as a means of improving it". Every detail of a process, they wrote, is more or less affected by every other detail, so the whole process has to be presented in a form that can be seen all at once before any part of it is changed. <sup><a href="#ref-2">[2]</a></sup> A common variant is the swimlane flowchart: each person or department gets a horizontal lane, so any arrow that crosses a lane line is a handoff. This way of drawing is usually associated with Geary Rummler and Alan Brache's 1990 book, whose subtitle is about managing the "white space" on the organisation chart: the gaps between the departmental boxes, where work passes through but the organisation chart draws nothing. <sup><a href="#ref-3">[3]</a></sup></p>
+
+                <p>A process flowchart works by putting every step, every branch and every handoff of a process on one surface. Each person in the process sees only their own stretch. So the slow part may sit where nobody is looking: the gap between two people, a branch the person drawing did not know existed, a loop of rework. Once the whole path is on one sheet of paper, those places have a shape. You can point at one and ask "how long does the file sit here?"</p>
+
+                <p>Flowcharts are easily confused with two neighbouring tools. A standard operating procedure (SOP) is a document that records how to do one task; a flowchart shows who the work passes through, in what order, and where it branches. A value stream map, from lean production, also draws every step, but it draws both the material flow and the information flow from order to delivery, and attaches time figures to each step. <sup><a href="#ref-4">[4]</a></sup> A flowchart can record time when the person drawing it adds it, but its core is sequence and logic.</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Swimlane flowchart of the refund process for returned goods, with three lanes: customer service, warehouse, accounts. Customer service receives the request, asks whether it is eligible, and if so raises a return form. The form goes down to the warehouse, the first handoff. The warehouse receives the goods, checks them against the form and asks whether they match; if not, the form goes back up to customer service to be corrected and sent back to the warehouse, two extra handoffs per loop while the goods stay in the warehouse; if they match, the form goes down to accounts, the second handoff. Accounts approves and pays the refund, then the form crosses two lanes back to customer service, which tells the customer, the third handoff. A note below the chart says this flowchart records only sequence and logic, so it does not show how long the form waits at each handoff."
+                        viewBox="0 0 1120 470">
+                        <defs>
+                            <marker id="pm-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <path class="tick" d="M20 40 H1100"></path>
+                        <path class="tick" d="M20 160 H1100"></path>
+                        <path class="tick" d="M20 280 H1100"></path>
+                        <path class="tick" d="M20 400 H1100"></path>
+
+                        <text class="rowlabel" x="160" y="92">Customer</text>
+                        <text class="rowlabel" x="160" y="110">service</text>
+                        <text class="rowlabel" x="160" y="220">Warehouse</text>
+                        <text class="rowlabel" x="160" y="340">Accounts</text>
+
+                        <rect class="node" x="190" y="75" width="120" height="50" rx="8"></rect>
+                        <text x="250" y="92">Receive</text>
+                        <text class="small" x="250" y="110">customer request</text>
+
+                        <polygon class="node" points="400,70 458,100 400,130 342,100"></polygon>
+                        <text x="400" y="100">Eligible?</text>
+                        <path class="arrow" d="M310 100 H340" marker-end="url(#pm-arrow)"></path>
+                        <path class="arrow" d="M400 70 V54" marker-end="url(#pm-arrow)"></path>
+                        <text class="small note" x="412" y="52">No: send refusal</text>
+
+                        <rect class="node" x="490" y="75" width="120" height="50" rx="8"></rect>
+                        <text x="550" y="92">Raise</text>
+                        <text x="550" y="110">return form</text>
+                        <path class="arrow" d="M458 100 H488" marker-end="url(#pm-arrow)"></path>
+                        <text class="small" x="472" y="88">Yes</text>
+
+                        <rect class="node" x="490" y="195" width="120" height="50" rx="8"></rect>
+                        <text x="550" y="212">Receive goods,</text>
+                        <text x="550" y="230">check form</text>
+                        <path class="arrow" d="M550 125 V193" marker-end="url(#pm-arrow)"></path>
+                        <text class="small alert note" x="560" y="170">handoff 1</text>
+
+                        <polygon class="node" points="700,190 758,220 700,250 642,220"></polygon>
+                        <text x="700" y="213">Match</text>
+                        <text x="700" y="229">form?</text>
+                        <path class="arrow" d="M610 220 H640" marker-end="url(#pm-arrow)"></path>
+
+                        <path class="arrow" d="M700 190 V112 H612" marker-end="url(#pm-arrow)"></path>
+                        <text class="small note" x="712" y="134">No: form back to customer</text>
+                        <text class="small note" x="712" y="150">service to fix, then resent</text>
+                        <text class="small alert note" x="712" y="176">+2 handoffs per loop</text>
+
+                        <rect class="node" x="790" y="315" width="120" height="50" rx="8"></rect>
+                        <text x="850" y="332">Approve</text>
+                        <text x="850" y="350">refund</text>
+                        <path class="arrow" d="M700 250 V340 H788" marker-end="url(#pm-arrow)"></path>
+                        <text class="small" x="716" y="264">Yes</text>
+                        <text class="small alert note" x="710" y="296">handoff 2</text>
+
+                        <rect class="node" x="950" y="315" width="120" height="50" rx="8"></rect>
+                        <text x="1010" y="340">Pay refund</text>
+                        <path class="arrow" d="M910 340 H948" marker-end="url(#pm-arrow)"></path>
+
+                        <rect class="node" x="950" y="75" width="120" height="50" rx="8"></rect>
+                        <text x="1010" y="92">Tell customer</text>
+                        <text x="1010" y="110">refund is paid</text>
+                        <path class="arrow" d="M1010 315 V127" marker-end="url(#pm-arrow)"></path>
+                        <text class="small alert note" x="1020" y="220">handoff 3</text>
+
+                        <text class="small" x="560" y="428">Every arrow that crosses a lane line is a moment the form changes hands. The chart follows the form, not the goods.</text>
+                        <text class="small alert" x="560" y="450">This flowchart records only sequence and logic, so it does not show how long the form waits there.</text>
+                    </svg>
+                    <figcaption><strong>Figure 1.</strong> All six boxes here are correct, and each department does its part in a day. The nearly three weeks the customer waits sit in the places the chart does not measure: three arrows crossing lane lines, and the loop of correcting the form whenever the goods received do not match it, each loop adding two more handoffs.</figcaption>
+                </figure>
+
+                <!-- YouTube Video Container -->
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                    <iframe
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        src="https://www.youtube.com/embed/r7G2uGDw4Q4"
+                        title="Process Map"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Why We Need It</h3>
+                <p>A customer complains that the refund is taking far too long. The customer service team leader asks the warehouse, which says the goods arrived last week; asks accounts, which says it has not seen any form. All three are telling the truth. Nobody is wrong about their own stretch, which is exactly why nobody has a reason to fix anything. This is the spot a flowchart goes after. Once the three stretches are joined into one path, the gap between two of them, which nobody was looking at, becomes an arrow you can point to and ask about. The Gilbreths wanted the process chart to be simple enough for as many people in an organisation as possible to use, so that the knowledge of people in junior positions could be put to work too, before anyone changed anything. <sup><a href="#ref-2">[2]</a></sup></p>
+
+                <p>The decision diamond adds something more. A condition written as a sentence, such as "if it is within the return period and not a sale item, or the customer has the original receipt", is easy to misread; on a flowchart, each condition becomes a question with its own exit. In a 1981 experiment with conditions of this kind, readers who were already used to reading flowcharts followed them about six seconds faster per instruction, and made far fewer errors, than readers working from sentences, on the hardest conditions. <sup><a href="#ref-5">[5]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Are Its Limits</h3>
+                <p>The built-in limit of a flowchart is that it points to suspects without proving causes. Some suspects show up in the structure of the drawing itself: a step repeated in two lanes, a loop of rework, a handoff nobody owns. ASQ lists exactly these, along with bottlenecks and sources of delay, among the things to review once the flowchart is finished. <sup><a href="#ref-1">[1]</a></sup> But the drawing does not say why a file sits at a particular arrow, and a fix inferred from the drawing still has to be measured before anyone knows whether it works. The drawing opens the question; the answer has to be found somewhere else.</p>
+
+                <p>The other two limits lie in how the chart is drawn and how it is used, so they can be fixed. A flowchart that records only sequence and logic does not show waiting time, how many files go down each branch, or how many people work on one step. Those things can be drawn: the set of symbols ASQ lists as commonly used includes one for a delay or wait, and ASQ counts the time taken at each step and process measurements among the things a flowchart can record. <sup><a href="#ref-1">[1]</a></sup> A 2021 systematic review of process mapping in healthcare quality improvement, covering 105 studies, also recommends annotating the map with the duration of each step during analysis. <sup><a href="#ref-6">[6]</a></sup> But if nobody writes it in, an arrow with an eight-day wait looks exactly like an arrow with a five-minute wait.</p>
+
+                <p>The second limit: a flowchart draws what the people drawing it know. Drawn in a meeting room from a manager's description, it gives you the process as everyone believes it runs, and it may miss branches that only people on the front line ever meet. Of the 105 studies in that review, 81% brought in the perspectives of several stakeholder groups, but fewer than half (45%) state clearly that those groups built the map together; in the rest, the maps were drawn by researchers. <sup><a href="#ref-6">[6]</a></sup></p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">What the flowchart in Figure 1 shows</th><th scope="col">What it does not record by itself, and only following real files reveals</th></tr></thead>
+                    <tbody>
+                        <tr><td>The arrow from "Raise return form" to "Receive goods"</td><td>How long the form sits in the warehouse inbox before someone opens it</td></tr>
+                        <tr><td>The "Match form?" diamond has both its exits</td><td>How many forms take the "No" exit, and how many loops they go round</td></tr>
+                        <tr><td>One lane per department</td><td>Who picks up the work when the only person in the lane is on leave</td></tr>
+                        <tr><td>A single "Approve refund" box</td><td>Approved one by one or batched weekly, and how many signatures it needs</td></tr>
+                        <tr><td>The path agreed in the meeting</td><td>The shortcuts people actually take: phoning, messaging, doing the work first and raising the form afterwards</td></tr>
+                        <tr><td>The order of the steps</td><td>Which steps the customer needs, and which only re-check the step before</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Examples</h2>
+            <p class="intro-text">The two examples below show the same tool producing two different things depending on how it is drawn: a university records office draws a flowchart on a whiteboard and ends up with a drawing that is correct but useless, and a hospital in England asks its junior doctors to record every step of the emergency stroke pathway, to find out at which step the time is lost.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Five Boxes on a Whiteboard, Nine Days in Real Life</h3>
+                <p>An illustrative scenario: a university records office receives complaints that getting a stamped transcript takes nearly two weeks, when the rules say three working days. The head of the office calls three staff into a meeting and draws five boxes on the whiteboard: receive the request, check fees, print the transcript, get it signed, hand it to the student. Each person says their part takes about half a day. Not one box on the drawing is wrong. It just cannot explain two weeks.</p>
+                <p>A new member of staff is asked to follow twenty real requests, noting the date and time every time a request changes hands. The median is nine working days, meaning that roughly half the requests take nine days or more, and nearly all of those days fall outside the five boxes. Signing is not a half-day step: a vice-rector signs in a batch on Thursday afternoons, so a request that arrives on a Friday waits almost a week. The "check fees" box has an exit nobody drew: seven of the twenty requests come from students the system still shows as owing fees, who have to carry a paper to the finance office in another building, get it confirmed and submit the request again from the start. Four other requests have to be printed twice because the transcript still shows the old programme name after a programme change. All three of these places sit between two people, or on a branch the people in the meeting room never meet, because they are not the ones carrying the request. The second drawing has two more decision diamonds, a rework loop, and the number of days waited written on three arrows; the meeting that follows is about the signing schedule, which nobody had thought about before.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Junior Doctors Record Every Step, From the Hospital Door to the Needle</h3>
+                <p>At a district general hospital in West Herts NHS Trust, in a semi-rural part of England, the stroke unit gives thrombolysis, a drug that dissolves blood clots, to around 100 patients a year. The service is measured by door-to-needle time; the target outside London is 45 minutes or less, while here the mean was 74.7 minutes, longer at weekends and out of hours, when the stroke specialist was consulted remotely by video (telemedicine). The baseline figures showed a long gap between the CT scan and the injection, a stretch that covers reading the scan, bringing the patient back to A&amp;E, ruling out contraindications and getting consent. To find out where in that stretch the time was going, the junior doctors on the stroke rota were asked to "map the pathway": to write down exactly what steps they took with each patient, how long each step took, and every point where they were blocked or slowed down. The map was then presented at departmental meetings across the hospital to ask the people involved where they thought the biggest barriers lay. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p>From that, the team chose three changes: ambulance crews phoned ahead to the stroke phone during working hours, brought in gradually for some patients; the pathway documents were rewritten to be easier to follow and added to the induction for new junior doctors; and everyone involved was retrained. The drug cupboard in the CT room was also kept stocked so that the drug could be given there. One proposal was turned down: A&amp;E staff would not take on collecting information through a checklist when the ambulance rang in, so the pre-alert was switched to ambulance crews calling the stroke team directly. Over 18 months, the median door-to-needle time, a different measure from the mean given above, fell from 65.5 minutes in 2012 to 49 minutes in 2014, and according to the author the fall came from a general shortening of the time taken to get through the whole pathway. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p>This is an improvement report from a single hospital, with no control group, and the map was only one part of an intervention made up of several changes, so the contribution of the map on its own cannot be separated out. The 49 minutes is still above the 45-minute target. What the example teaches is how a flowchart is used well: the people drawing it are the ones who walk that path every night, each step has a time attached, and the drawing leads to changes aimed at the stretch where time is being lost.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Some Research on Process Flowcharts</h2>
+            <p class="intro-text">Flowcharts are used for two different jobs, and the evidence for each comes from a different kind of study. Used to analyse and improve a process, they have a large systematic review in healthcare, which counts where they are used and how carefully, but does not measure whether they work. Used to guide people through a procedure with many branches, they have experiments that compare them directly with prose, with clearer numbers and one condition attached.</p>
+            <div class="sub-section">
+                <p><strong>The study:</strong> In 2021, Antonacci and colleagues at Imperial College London published in <em>BMC Health Services Research</em> what they describe as the first systematic review of the use of process mapping in healthcare. They searched five databases up to November 2019, selected 105 empirical studies, and scored each one against ten quality criteria spread across five phases: preparation, data gathering, building the map, analysis, and taking it forward. The authors state that assessing the effectiveness of the projects was outside the scope of the review. <sup><a href="#ref-6">[6]</a></sup> From another direction, in 1975 Richard Kammann published in <em>Human Factors</em> an experiment comparing two flowchart formats with standard printed instructions written as paragraphs. <sup><a href="#ref-8">[8]</a></sup> In 1981, Melissa Holland and Andrew Rose at the American Institutes for Research had 54 adults, half of them students and half staff of the institute, each follow 72 complex conditional instructions such as "If you are a parent or a homeowner, and not both under 26 and a veteran, mark Box A". Each instruction appeared in one of three formats: prose, a numbered list with "go to" commands, and a flowchart; each participant was randomly assigned to one order of meeting the three formats. The team measured time and accuracy, both after participants had practised with feedback and in the first trials when they met an unfamiliar format. <sup><a href="#ref-5">[5]</a></sup></p>
+                <p><strong>Findings:</strong> Of Antonacci's 105 studies, none met all ten criteria, and only 7% met eight or nine. 81% brought in the perspectives of several stakeholder groups, but only 45% state clearly that the maps were built by those groups together; in the rest, the maps were drawn by researchers. 15% involved patients, 15% reported training in mapping before the work began, 48% state that the map was checked for accuracy, and 42% report taking action after the map was drawn. 91% mapped the current state. The benefits the studies reported themselves fall into three groups: a better understanding of how the system actually runs, help scoping and designing interventions, and bringing the people involved into the work. <sup><a href="#ref-6">[6]</a></sup> According to Kammann's abstract, earlier studies suggested a rule of thumb that printed instructions are understood correctly only about two-thirds of the time; both flowchart formats were understood more accurately and faster than the paragraphs, and this held up in a subsequent field trial. <sup><a href="#ref-8">[8]</a></sup> In Holland and Rose's experiment, after practice, the flowchart helped most on the hardest conditions: a saving of about six seconds per instruction and about 33% in errors compared with prose; on conditions joined only by "and", it gave almost no benefit. But on first exposure the advantage reversed: in the first two trials, the list and the flowchart took three to five times as long as prose, and participants who met the flowchart first systematically misused it, while prose and the list stayed above 80% accuracy throughout. <sup><a href="#ref-5">[5]</a></sup></p>
+                <p><strong>What it shows:</strong> Antonacci's review shows that process mapping is widely used in healthcare improvement, and that most studies do not record exactly the steps that give it its value: mapping with the people who do the work, checking the map, and acting on it. The authors take the view that this gap lies in how mapping is done as well as in how it is reported. The review does not say how much flowcharts improve outcomes, because it does not measure that, and the authors themselves open by noting that the evidence on the effectiveness of process mapping in healthcare is poor; the benefits in the review are what the teams say about their own projects. The two experiments on format show something narrower but firmer: with conditions that have many branches, readers already used to flowcharts follow them faster and with fewer errors than prose. The "already used to" is not a footnote. People meeting a flowchart for the first time can do worse with the very sheet drawn to help them. None of the three studies is known to have measured flowcharts in an office or on a shop floor: the review covers only healthcare; Holland and Rose used conditional sentences in a laboratory; Kammann adds a field trial, but the abstract does not say where it took place.</p>
+                <p><strong>The counter-case:</strong> Defenders of flowcharts have two strong arguments. First, asking for a trial proving that flowcharts improve outcomes is asking for the wrong thing: a flowchart is a diagnostic step, like an X-ray, whose value lies in showing exactly where treatment is needed, and Antonacci's review itself records that benefit recurring across many projects in many settings. <sup><a href="#ref-6">[6]</a></sup> Second, the greatest value of mapping lies in the conversation between people who each hold one stretch of the process, something no number fully captures. This article accepts the first argument as far as diagnosis goes: at the West Herts hospital, the baseline figures marked out the stretch from CT scan to injection, the junior doctors' map went into each step of that stretch, and the changes targeted the barriers that the map and the departmental meetings brought out. <sup><a href="#ref-7">[7]</a></sup> But the X-ray comparison brings its own condition with it: an X-ray is only worth something if it is accurate, and the accuracy of X-rays is something people measure. For a flowchart, the nearest measure is whether the people involved checked the map, and only 48% of studies record doing so. As for benefits recurring across many projects, they remain the teams' own accounts, in a sample the review's authors themselves acknowledge leans towards successful projects. The second argument is right, but it carries its own condition: the conversation is only worth something when the people holding each stretch genuinely have a say, whether through mapping together, interviews or rounds of checking the map. The review shows that most studies took in several groups' perspectives, while fewer than half state clearly that those groups built the map together; the rest do not say how deep the conversation went. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p><strong>Why this is useful:</strong> When someone brings you a flowchart, three questions are worth more than "is it drawn correctly?": who drew it, has anyone followed a real file to check it, and what changed after it was drawn? And when you are about to pin a flowchart on the wall for new staff to follow, do not assume it explains itself. Add a line on how to read it, and ask someone who has never seen it to walk through it once in front of you.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">How to Apply It</h2>
+            <p class="intro-text">A process flowchart works by putting every step, every branch and every handoff on one surface so that the places where work waits between two people come into view, so using it well means making sure that what is drawn is the real work, drawn with the people who do each stretch, and that each handoff arrow is measured rather than merely drawn. It suits processes that pass through several people or departments and repeat often enough to have real files to follow. For work one person does from start to finish with few branches, a flowchart usually just redraws what that person already knows.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Settle the start point, the end point and the question the drawing has to answer, before drawing the first box:</strong> A flowchart for finding out why a process is slow is not the same as a flowchart for new staff to follow. The first needs every branch, every rework loop and every handoff. The second needs only the questions the person doing the work has to answer, and, as Holland and Rose recommend, a short line explaining how to read it, because people meeting a flowchart for the first time easily misuse it; the authors note that they did not test whether such a line is enough <sup><a href="#ref-5">[5]</a></sup></li>
+                    <li><strong>Draw with the people who do each stretch, then follow a few real files to correct the drawing:</strong> The obvious approach is to ask the head of department to describe the process, or to copy it from the published procedure, and that approach produces the process as everyone believes it runs. The branches only front-line staff meet, the shortcuts by phone, the signatures batched once a week all fall outside that drawing. The Gilbreths wrote that the aim of the chart was to put the knowledge of people in junior positions to use; ASQ advises that the people who do the process should draw it, and that the process should be walked through after the first draft to check it; Antonacci's review adds other ways of gathering data beyond the joint meeting, from interviews to direct observation and video <sup><a href="#ref-2">[2]</a></sup> <sup><a href="#ref-1">[1]</a></sup> <sup><a href="#ref-6">[6]</a></sup></li>
+                    <li><strong>Write waiting times and file counts on the handoff arrows and the branches, then compare slow files with on-time ones:</strong> The wait symbol and the time per step are both optional parts of a flowchart, so they only appear on the drawing when the person drawing it deliberately adds them; Antonacci's review recommends annotating the map with step durations during analysis. The comparison gives clues, not a verdict. Compare both how many files wait at each point and how long they wait, because a wait found in both groups can still be much longer in the slow group; and a wait shared by every file can still be worth fixing if it can be shortened cheaply. When you need to see both the material flow and the information flow, with the time for each stage, the value stream map already has a frame for that <sup><a href="#ref-1">[1]</a></sup> <sup><a href="#ref-6">[6]</a></sup> <sup><a href="#ref-4">[4]</a></sup></li>
+                    <li><strong>Attach each bottleneck on the drawing to an owner and an action, then redraw the current state after the fix:</strong> In an improvement project, the drawing is not yet the product: of the 105 healthcare studies in Antonacci's review, only 42% report taking action after the map was drawn, and although not reporting something is not proof it was not done, the gap between drawing and fixing is the place to watch. An arrow crossing two lanes needs someone responsible for that handoff itself, not just for the boxes at either end. Put the date on the flowchart, because an old flowchart on the wall looks just as trustworthy as it did on the first day <sup><a href="#ref-6">[6]</a></sup></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Applying It to a Scenario</h2>
+            <p class="intro-text">A phone repair shop has one counter assistant, two technicians and one person who looks after the parts store. The shop promises to return phones within two working days of the customer approving the quote, but over the last four weeks it kept that promise on only 70 of 120 repair tickets, about 58%. The owner wants the on-time rate up to at least 85%. The figures in this scenario are illustrative.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Settle the start point, the end point and the definition of on time before drawing:</strong> The start point is when the customer approves the quote; the end point is when the customer is told the phone is ready. "On time" means the customer is told within two working days of the start point, that is, 16 working hours, at eight hours a day. The time the customer takes to consider the quote falls outside the promise, and so outside the measurement, but it is still drawn on the flowchart as a waiting branch</li>
+                    <li><strong>Draw the first current-state map with all four people:</strong> Three lanes: counter, technicians, parts store. The first version has nine boxes and two questions: "Part needed?" and "Part in stock?". Each person says their own stretch is quick: the store orders as soon as it gets a request, the technicians repair the same day, the counter calls the customer as soon as the phone is done</li>
+                    <li><strong>Follow the 30 most recent tickets, logging the time at each handoff, then correct the drawing:</strong> Three things are missing from the first version. The store does not order straight away but batches orders twice a week, on Tuesdays and Fridays, because the supplier delivers free only above a minimum order. There is no arrow at all from the technicians to the counter when a repair is finished: the technician puts the phone on the "repaired" shelf, and the counter only finds out when someone has a spare moment to check the shelf. And the "customer has not replied to the quote" branch is real, even though it falls outside the promise</li>
+                    <li><strong>Compare late tickets with on-time tickets at each waiting point, before choosing what to fix:</strong> Of the 30 tickets, 13 were late and 17 on time. For each ticket, record where it waited more than four working hours and for how long; one ticket can wait at several points (first table). Waiting for parts and waiting for the customer to be told show up far more often in late tickets, and in the tickets recorded the waits are longer; since the on-time group has only one or two tickets in each of these rows, the comparison of lengths is only a hint. Waiting for a repair slot is about the same in both groups, in number of tickets and in length, so these data do not show that it separates the two groups; it is not ruled out. The order of fixes also weighs cost: the other two can be fixed by changing how things are done, a delivery charge and a little money tied up in stock for batteries and screens, with the risk of parts sitting unused for a long time; shortening the repair queue would probably mean another technician, so it waits</li>
+                    <li><strong>Draw the future-state map and give each corrected arrow an owner:</strong> The store keeper owns the parts arrow: a small stock of batteries and screens for the five most frequently repaired models is kept on hand, the list of stocked parts is reviewed every month against how often each is used, so that money does not sit in parts nobody needs, and other parts are ordered the same day, with the shop accepting the delivery charge. A "repair done" arrow is added: the technician moves the ticket to a "done" column on a board at the counter, and the counter assistant is responsible for telling the customer within one hour of the ticket moving into that column</li>
+                    <li><strong>Measure four weeks later using exactly the same definition, and check whether the mix of tickets has changed:</strong> Same start point, same end point, same two-working-day limit. The two periods are compared on the share of tickets needing a replacement part, whether in stock or ordered, and the share of phones from the five most frequently repaired models, because if the later period had fewer difficult jobs, the on-time rate would rise without any change helping (second table). The share of tickets needing a part to be ordered is not used for this comparison, because keeping parts in stock in step 5 is exactly what lowers it</li>
+                    <li><strong>Redraw the new current state, date it, and mark the most frequent cause of lateness now:</strong> The 15 tickets still late in the later period are each assigned one main cause, unlike the first table, where one ticket could appear in several rows: 6 because of waiting for a repair slot, 4 because the part was not on the stocked list, 2 because of waiting for the customer to be told, and 3 because a further fault turned up during the repair. The repair queue, which step 4 could not show separating the two groups, is now the main cause for the largest number of late tickets. The count of tickets does not say which point costs the most hours, so the next round starts by logging the waiting time at each point for those 15 tickets</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Wait of more than four working hours</th><th scope="col">Late tickets (13): number</th><th scope="col">Late tickets: median wait</th><th scope="col">On-time tickets (17): number</th><th scope="col">On-time tickets: median wait</th></tr></thead>
+                    <tbody>
+                        <tr><td>Ordering and receiving parts</td><td>7 (54%)</td><td>20 hours</td><td>2 (12%)</td><td>6 hours</td></tr>
+                        <tr><td>Repair done, waiting for the counter to tell the customer</td><td>6 (46%)</td><td>9 hours</td><td>1 (6%)</td><td>5 hours (one ticket)</td></tr>
+                        <tr><td>Waiting for a repair slot</td><td>3 (23%)</td><td>7 hours</td><td>4 (24%)</td><td>6 hours</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">The median in each row is calculated over the tickets that waited more than four hours at that point, not over the whole group; all times are in working hours. In the on-time group, each row has only one to four tickets, so the figure describes only those tickets.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Four-week period</th><th scope="col">Tickets</th><th scope="col">Needing a replacement part</th><th scope="col">From the five most repaired models</th><th scope="col">On time</th><th scope="col">On-time rate</th></tr></thead>
+                    <tbody>
+                        <tr><td>Before the changes</td><td>120</td><td>72 (60%)</td><td>78 (65%)</td><td>70</td><td>58.3%</td></tr>
+                        <tr><td>After the changes</td><td>116</td><td>69 (59%)</td><td>74 (64%)</td><td>101</td><td>87.1%</td></tr>
+                    </tbody>
+                </table>
+                <p>Four weeks later, the on-time rate was about 87%, above the 85% target, on almost the same number of tickets, with almost the same share of tickets needing a part and almost the same mix of models. The two periods had no control group, fell in consecutive months, and all four people knew they were being measured, so part of the improvement may come from everyone paying more attention; the owner keeps logging times at the two corrected arrows for another two months to see whether the rate holds. The conditions for that result were that the second drawing came from real tickets, that the points to fix were chosen by comparing late tickets with on-time ones, in both frequency and length of wait, and then weighing the cost of fixing, rather than picking the most visible wait, that each corrected arrow had an owner, and that the later period was measured with exactly the same definition as the earlier one.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Summary</h2>
+            <div class="summary-box">
+                <p><strong>Key Point:</strong> A process flowchart puts every step, every branch and every handoff of a process on one surface, so that people who each hold one stretch can see the whole path, and the places where work waits between two people take on a shape you can point to. The most counter-intuitive point is that a flowchart can be correct in every box and still fail to explain why a process is slow: the time can be lost on arrows that a flowchart recording only sequence and logic draws as if they took no time at all, and on branches the people drawing in a meeting room never meet. Using it reliably therefore means drawing it with the people who do each stretch, checking the drawing against real files, writing waiting times on the arrows, and treating whatever the drawing suggests as a clue until the fix has been measured.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">References</h2>
+            <ol class="outline-list">
+                <li id="ref-1">American Society for Quality. <em>Flowchart</em>. ASQ Quality Resources (reviewed June 2025). ASQ's reference page on the tool; source for the flowchart being a common type of process map, for the set of commonly used symbols including one for delay or wait, for time per step and process measurements being among the things a flowchart can record, for the issues to review once it is drawn, and for the advice that the people who do the process should draw it and walk through it after the first draft. <a href="https://asq.org/quality-resources/flowchart" rel="noopener noreferrer" target="_blank">Read the original page</a>.</li>
+                <li id="ref-2">Gilbreth, F. B., &amp; Gilbreth, L. M. (1921). <em>Process Charts: First Steps in Finding the One Best Way to Do Work</em>. Paper presented at the annual meeting of the American Society of Mechanical Engineers, New York, December 5-9, 1921. The original paper introducing the process chart; source for its definition as a device for visualising a process in order to improve it, for the requirement to present the whole process so it can be seen at once before any part is changed, and for the aim of making process information usable by as many people in the organisation as possible. <a href="https://archive.org/details/processcharts00gilb" rel="noopener noreferrer" target="_blank">Read the original scan</a>.</li>
+                <li id="ref-3">Rummler, G. A., &amp; Brache, A. P. (1990). <em>Improving Performance: How to Manage the White Space on the Organization Chart</em>. Jossey-Bass. The book the swimlane style of flowchart is usually associated with; source for the idea of "white space" on the organisation chart, taken from the title itself. This article did not read the full text; the link between the swimlane style and the book rests on secondary descriptions. <a href="https://openlibrary.org/books/OL2217852M" rel="noopener noreferrer" target="_blank">Bibliographic record</a>.</li>
+                <li id="ref-4">Lean Enterprise Institute. <em>Value-Stream Mapping</em>, Lean Lexicon. LEI's dictionary entry; source for the definition of a value stream map as diagramming every step in the material and information flows from order to delivery, with time-based data boxes, used here to distinguish it from a process flowchart. <a href="https://www.lean.org/lexicon-terms/value-stream-mapping/" rel="noopener noreferrer" target="_blank">Read the entry</a>.</li>
+                <li id="ref-5">Holland, V. M., &amp; Rose, A. (1981). <em>A Comparison of Prose and Algorithms for Presenting Complex Instructions</em> (Document Design Project, Technical Report No. 17, AIR-75003-11/81-TR). American Institutes for Research. An experiment with 54 adults comparing prose, step lists and flowcharts for complex conditional instructions; source for the design of the experiment, for the savings of about six seconds and about 33% in errors on the hardest conditions after practice, for the flowchart giving no benefit on conditions joined only by "and", for the advantage reversing on first exposure, and for the recommendation to add a line on how to read the chart. <a href="https://files.eric.ed.gov/fulltext/ED213027.pdf" rel="noopener noreferrer" target="_blank">Read the report on ERIC</a>.</li>
+                <li id="ref-6">Antonacci, G., Lennox, L., Barlow, J., Evans, L., &amp; Reed, J. (2021). Process mapping in healthcare: a systematic review. <em>BMC Health Services Research</em>, 21, 342. A systematic review of 105 studies of process mapping in healthcare quality improvement; source for the framework of ten quality criteria, for the percentages on stakeholder perspectives, mapping with several groups, patient involvement, training, checking the map, mapping the current state and acting after mapping, for the three groups of self-reported benefits, for the recommendation to annotate maps with durations, and for the limitations the authors themselves set out. <a href="https://doi.org/10.1186/s12913-021-06254-1" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-7">Gill, S. (2014). Reducing door to needle time for stroke thrombolysis. <em>BMJ Quality Improvement Reports</em>, 3(1), u204771.w2199. An improvement report from a district general hospital in West Herts NHS Trust; source for the service context, the 45-minute target, the 74.7-minute baseline mean, how the junior doctors mapped the pathway, the three changes and the rejected proposal, and the median falling from 65.5 to 49 minutes. <a href="https://doi.org/10.1136/bmjquality.u204771.w2199" rel="noopener noreferrer" target="_blank">Read the report</a>.</li>
+                <li id="ref-8">Kammann, R. (1975). The comprehensibility of printed instructions and the flowchart alternative. <em>Human Factors</em>, 17(2), 183-191. An experiment comparing two flowchart formats with printed instructions written as paragraphs; source for the two-thirds rule of thumb and for flowcharts being understood more accurately and faster, a result that held in a field trial. Read via the abstract only. <a href="https://doi.org/10.1177/001872087501700209" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

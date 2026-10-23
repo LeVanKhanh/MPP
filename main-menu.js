@@ -557,6 +557,13 @@ var mainMenu = [
                         subItems: [],
                     },
                     {
+                        title: "Process Flowchart",
+                        route: "pages/reading-studying/management-tools-and-techniques/09-process-mapping-flowchart.html",
+                        hash: "#/process-mapping-flowchart",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Gantt Charts",
                         route: "pages/reading-studying/management-tools-and-techniques/12-gantt-charts.html",
                         hash: "#/gantt-charts",

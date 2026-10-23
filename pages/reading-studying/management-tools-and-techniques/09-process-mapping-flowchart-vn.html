@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lưu Đồ Quy Trình - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="Lưu đồ quy trình đặt mọi bước, mọi ngã rẽ và mọi lần chuyển tay của một quy trình lên cùng một mặt phẳng, để chỗ việc nằm chờ giữa hai người hiện ra. Bài phân tích cơ chế, giới hạn của mẫu vẽ, những nghiên cứu đo lưu đồ giúp được gì, và một tình huống áp dụng từng bước."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Lưu Đồ Quy Trình</h1>
+            <p class="page-subtitle">Mỗi mũi tên băng qua hai làn là một lần việc đổi chủ, và một lưu đồ chỉ ghi thứ tự và logic vẽ nó như thể không tốn phút nào</p>
+            <p class="page-meta">Đăng ngày: <time datetime="2026-10-23">23 Tháng 10, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Định Nghĩa</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Lưu Đồ Quy Trình Là Gì</h3>
+                <p>Lưu đồ quy trình (process flowchart) là một dạng bản đồ quy trình (process map) thường gặp: hình vẽ một quy trình thành chuỗi bước nối nhau bằng mũi tên, theo đúng thứ tự công việc đi qua, mỗi bước một ô chữ nhật, mỗi chỗ phải chọn một hình thoi có đủ các lối ra. <sup><a href="#ref-1">[1]</a></sup> Giả sử một cửa hàng bán hàng trực tuyến muốn biết vì sao khách đổi trả phải đợi gần ba tuần mới được hoàn tiền, trong khi chăm sóc khách hàng, kho và kế toán đều nói phần của mình chỉ mất một ngày. Vẽ ra, quy trình ấy có sáu bước và hai câu hỏi. Lưu đồ không trả lời ngay vì sao chậm. Nó cho thấy một phiếu hoàn tiền đổi chủ ba lần trên đường suôn sẻ, và thêm hai lần nữa mỗi khi hàng kho nhận về không khớp với phiếu.</p>
+
+                <p>Năm 1921, Frank và Lillian Gilbreth trình bày bài "Process Charts" tại hội nghị thường niên của Hội Kỹ sư Cơ khí Mỹ (ASME), giới thiệu một cách ghi quy trình mà hai ông bà nói đã dùng nhiều năm ở nhiều nơi. Câu mở đầu của bài định nghĩa biểu đồ quy trình là một phương tiện để nhìn thấy một quy trình, nhằm cải tiến nó. Hai ông bà viết rằng mỗi chi tiết của một quy trình ít nhiều chịu ảnh hưởng của mọi chi tiết khác, nên phải trình bày toàn bộ quy trình sao cho nhìn được tất cả cùng một lúc trước khi đổi bất kỳ phần nào. <sup><a href="#ref-2">[2]</a></sup> Một biến thể hay gặp là lưu đồ chia làn (swimlane): mỗi người hoặc mỗi bộ phận một làn ngang, nên mũi tên nào băng qua vạch làn thì đó là một lần chuyển tay. Cách vẽ này thường được gắn với cuốn sách năm 1990 của Geary Rummler và Alan Brache, có nhan đề phụ là cách quản lý "khoảng trắng" trên sơ đồ tổ chức, tức khoảng trống giữa các ô phòng ban, nơi công việc đi qua mà sơ đồ tổ chức không vẽ. <sup><a href="#ref-3">[3]</a></sup></p>
+
+                <p>Lưu đồ quy trình làm việc bằng cách đặt mọi bước, mọi ngã rẽ và mọi lần chuyển tay của một quy trình lên cùng một mặt phẳng. Mỗi người trong quy trình chỉ thấy đoạn của mình. Chỗ chậm vì vậy có thể nằm ở nơi không ai nhìn: khoảng giữa hai người, một nhánh rẽ mà người vẽ không biết là có, một vòng làm lại. Khi cả đường đi nằm trên một tờ giấy, những chỗ ấy có hình dạng, có thể chỉ tay vào và hỏi "ở đây hồ sơ nằm bao lâu".</p>
+
+                <p>Lưu đồ dễ bị lẫn với hai công cụ gần nó. Quy trình thao tác chuẩn (SOP) là văn bản ghi cách làm một việc; lưu đồ cho thấy việc đi qua những ai, theo thứ tự nào, rẽ ở đâu. Sơ đồ chuỗi giá trị (value stream map) của sản xuất tinh gọn cũng vẽ từng bước, nhưng vẽ cả dòng vật liệu lẫn dòng thông tin từ lúc nhận đơn tới lúc giao hàng, và gắn vào mỗi bước các con số thời gian. <sup><a href="#ref-4">[4]</a></sup> Một lưu đồ ghi được thời gian khi người vẽ thêm vào, nhưng phần cốt lõi của nó là thứ tự và logic.</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Lưu đồ chia làn của quy trình hoàn tiền cho hàng đổi trả, ba làn: chăm sóc khách hàng, kho, kế toán. Chăm sóc khách hàng nhận yêu cầu, hỏi đủ điều kiện hay không, nếu đủ thì tạo phiếu trả hàng. Phiếu chuyển xuống kho, lần chuyển tay thứ nhất. Kho nhận hàng, đối chiếu với phiếu và hỏi hàng có khớp phiếu không; nếu không, phiếu quay ngược lên chăm sóc khách hàng để sửa rồi gửi lại kho, thêm hai lần chuyển tay mỗi vòng, trong khi hàng vẫn nằm ở kho; nếu khớp, phiếu chuyển xuống kế toán, lần chuyển tay thứ hai. Kế toán duyệt rồi chuyển tiền, sau đó phiếu băng qua hai làn để quay về chăm sóc khách hàng báo khách, lần chuyển tay thứ ba. Ghi chú dưới hình nói lưu đồ này chỉ ghi thứ tự và logic, nên không cho biết phiếu nằm chờ bao lâu ở mỗi lần chuyển tay."
+                        viewBox="0 0 1120 470">
+                        <defs>
+                            <marker id="pm-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <path class="tick" d="M20 40 H1100"></path>
+                        <path class="tick" d="M20 160 H1100"></path>
+                        <path class="tick" d="M20 280 H1100"></path>
+                        <path class="tick" d="M20 400 H1100"></path>
+
+                        <text class="rowlabel" x="160" y="92">Chăm sóc</text>
+                        <text class="rowlabel" x="160" y="110">khách hàng</text>
+                        <text class="rowlabel" x="160" y="220">Kho</text>
+                        <text class="rowlabel" x="160" y="340">Kế toán</text>
+
+                        <rect class="node" x="190" y="75" width="120" height="50" rx="8"></rect>
+                        <text x="250" y="92">Nhận yêu cầu</text>
+                        <text class="small" x="250" y="110">của khách</text>
+
+                        <polygon class="node" points="400,70 458,100 400,130 342,100"></polygon>
+                        <text x="400" y="93">Đủ điều</text>
+                        <text x="400" y="109">kiện?</text>
+                        <path class="arrow" d="M310 100 H340" marker-end="url(#pm-arrow)"></path>
+                        <path class="arrow" d="M400 70 V54" marker-end="url(#pm-arrow)"></path>
+                        <text class="small note" x="412" y="52">Không: báo từ chối</text>
+
+                        <rect class="node" x="490" y="75" width="120" height="50" rx="8"></rect>
+                        <text x="550" y="92">Lập phiếu</text>
+                        <text x="550" y="110">trả hàng</text>
+                        <path class="arrow" d="M458 100 H488" marker-end="url(#pm-arrow)"></path>
+                        <text class="small" x="472" y="88">Có</text>
+
+                        <rect class="node" x="490" y="195" width="120" height="50" rx="8"></rect>
+                        <text x="550" y="212">Nhận hàng,</text>
+                        <text x="550" y="230">đối chiếu phiếu</text>
+                        <path class="arrow" d="M550 125 V193" marker-end="url(#pm-arrow)"></path>
+                        <text class="small alert note" x="560" y="170">chuyển tay 1</text>
+
+                        <polygon class="node" points="700,190 758,220 700,250 642,220"></polygon>
+                        <text x="700" y="213">Khớp</text>
+                        <text x="700" y="229">phiếu?</text>
+                        <path class="arrow" d="M610 220 H640" marker-end="url(#pm-arrow)"></path>
+
+                        <path class="arrow" d="M700 190 V112 H612" marker-end="url(#pm-arrow)"></path>
+                        <text class="small note" x="712" y="134">Không: phiếu về chăm sóc khách</text>
+                        <text class="small note" x="712" y="150">hàng sửa, rồi gửi lại kho</text>
+                        <text class="small alert note" x="712" y="176">thêm 2 lần chuyển tay mỗi vòng</text>
+
+                        <rect class="node" x="790" y="315" width="120" height="50" rx="8"></rect>
+                        <text x="850" y="332">Duyệt</text>
+                        <text x="850" y="350">hoàn tiền</text>
+                        <path class="arrow" d="M700 250 V340 H788" marker-end="url(#pm-arrow)"></path>
+                        <text class="small" x="716" y="264">Có</text>
+                        <text class="small alert note" x="710" y="296">chuyển tay 2</text>
+
+                        <rect class="node" x="950" y="315" width="120" height="50" rx="8"></rect>
+                        <text x="1010" y="340">Chuyển tiền</text>
+                        <path class="arrow" d="M910 340 H948" marker-end="url(#pm-arrow)"></path>
+
+                        <rect class="node" x="950" y="75" width="120" height="50" rx="8"></rect>
+                        <text x="1010" y="92">Báo khách</text>
+                        <text x="1010" y="110">đã hoàn tiền</text>
+                        <path class="arrow" d="M1010 315 V127" marker-end="url(#pm-arrow)"></path>
+                        <text class="small alert note" x="1020" y="220">chuyển tay 3</text>
+
+                        <text class="small" x="560" y="428">Mỗi mũi tên băng qua vạch làn là một lần phiếu đổi chủ. Hình theo tờ phiếu, không theo món hàng.</text>
+                        <text class="small alert" x="560" y="450">Lưu đồ này chỉ ghi thứ tự và logic, nên không cho biết phiếu nằm chờ bao lâu ở đó.</text>
+                    </svg>
+                    <figcaption><strong>Hình 1.</strong> Sáu ô ở đây đều đúng, và mỗi bộ phận làm phần mình trong một ngày. Gần ba tuần khách phải đợi nằm ở những chỗ hình không đo: ba mũi tên băng qua vạch làn, và vòng sửa phiếu mỗi khi hàng nhận về không khớp, vòng nào cũng thêm hai lần chuyển tay.</figcaption>
+                </figure>
+
+                <!-- YouTube Video Container -->
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                    <iframe
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        src="https://www.youtube.com/embed/r7G2uGDw4Q4"
+                        title="Process Map"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Tại Sao Ta Cần Dùng Nó</h3>
+                <p>Một khách hàng phàn nàn rằng chờ hoàn tiền quá lâu. Trưởng nhóm chăm sóc khách hàng hỏi kho, kho nói đã nhận hàng từ tuần trước; hỏi kế toán, kế toán nói chưa thấy phiếu nào. Cả ba đều nói thật. Không ai sai trong đoạn của mình, và vì vậy không ai có lý do để sửa gì. Lưu đồ đánh vào đúng chỗ này. Khi ba đoạn bị ghép thành một đường, khoảng giữa hai đoạn, nơi trước đó không ai nhìn, thành một mũi tên có thể chỉ vào mà hỏi. Gilbreth muốn biểu đồ quy trình đơn giản tới mức nhiều người nhất trong tổ chức dùng được, để hiểu biết của cả những người ở vị trí thấp cũng được tận dụng trước khi ai đổi gì. <sup><a href="#ref-2">[2]</a></sup></p>
+
+                <p>Ô quyết định góp thêm một việc: một điều kiện viết bằng câu văn như "nếu còn hạn và không phải hàng khuyến mãi, hoặc khách có hoá đơn gốc" dễ đọc sai, còn trên lưu đồ, mỗi điều kiện là một câu hỏi có lối ra riêng. Trong một thí nghiệm năm 1981 với những điều kiện kiểu ấy, người đọc đã quen cách đọc lưu đồ làm theo nhanh hơn khoảng sáu giây mỗi câu và ít lỗi hơn hẳn so với đọc câu văn ở những điều kiện khó nhất. <sup><a href="#ref-5">[5]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Giới Hạn Của Công Cụ Này Là Gì</h3>
+                <p>Giới hạn vốn có của lưu đồ là nó chỉ ra chỗ đáng nghi mà không tự chứng minh nguyên nhân. Có những chỗ đáng nghi lộ ra ngay từ cấu trúc bản vẽ: một bước lặp lại ở hai làn, một vòng làm lại, một lần chuyển tay không ai nhận; ASQ liệt kê đúng những thứ ấy, cùng chỗ nghẽn và nguồn chậm trễ, trong các việc cần rà sau khi vẽ xong. <sup><a href="#ref-1">[1]</a></sup> Nhưng bản vẽ không nói vì sao hồ sơ nằm lại ở một mũi tên, và một cách sửa suy ra từ bản vẽ vẫn phải được đo lại mới biết có hiệu quả hay không. Bản vẽ mở ra câu hỏi; câu trả lời phải đi tìm ở chỗ khác.</p>
+
+                <p>Hai giới hạn còn lại nằm ở cách vẽ và cách dùng, nên sửa được. Một lưu đồ chỉ ghi thứ tự và logic không cho biết thời gian chờ, số hồ sơ đi vào mỗi nhánh, hay số người cùng làm một bước. Những thứ ấy vẽ được: trong bộ ký hiệu mà ASQ liệt kê là thường dùng có một ký hiệu cho chờ, và ASQ tính cả thời gian từng bước lẫn các phép đo quy trình vào những thứ một lưu đồ có thể ghi. <sup><a href="#ref-1">[1]</a></sup> Một tổng quan hệ thống năm 2021 về lưu đồ quy trình trong cải tiến chất lượng y tế, gồm 105 nghiên cứu, cũng khuyên ghi thời gian từng bước lên bản vẽ khi phân tích. <sup><a href="#ref-6">[6]</a></sup> Nhưng nếu không ai ghi, một mũi tên chờ tám ngày trông giống hệt một mũi tên chờ năm phút.</p>
+
+                <p>Giới hạn thứ hai: lưu đồ vẽ ra thứ người vẽ biết. Vẽ trong phòng họp, theo lời mô tả của người quản lý, thì được quy trình như mọi người tin là đang chạy, và có thể bỏ sót những nhánh chỉ người làm ở tuyến đầu mới gặp. Trong 105 nghiên cứu của tổng quan ấy, 81% có đưa vào góc nhìn của nhiều nhóm liên quan, nhưng chưa tới một nửa (45%) ghi rõ bản vẽ do chính các nhóm ấy cùng dựng; phần còn lại do nhà nghiên cứu vẽ. <sup><a href="#ref-6">[6]</a></sup></p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Điều lưu đồ ở Hình 1 cho thấy</th><th scope="col">Điều nó không tự ghi lại, phải đi theo hồ sơ thật mới thấy</th></tr></thead>
+                    <tbody>
+                        <tr><td>Mũi tên từ "Lập phiếu" tới "Nhận hàng"</td><td>Phiếu nằm trong hộp thư của kho bao lâu trước khi có người mở</td></tr>
+                        <tr><td>Ô "Khớp phiếu?" có đủ hai lối ra</td><td>Bao nhiêu phiếu đi vào lối "Không", và đi mấy vòng</td></tr>
+                        <tr><td>Một làn cho mỗi bộ phận</td><td>Ai nhận việc khi người duy nhất trong làn nghỉ phép</td></tr>
+                        <tr><td>Một ô "Duyệt hoàn tiền"</td><td>Duyệt từng phiếu hay gom theo lô mỗi tuần, cần mấy chữ ký</td></tr>
+                        <tr><td>Đường đi đã thống nhất trong buổi họp</td><td>Đường tắt người ta đi thật: gọi điện, nhắn tin, làm trước rồi tạo phiếu sau</td></tr>
+                        <tr><td>Thứ tự các bước</td><td>Bước nào khách cần, bước nào chỉ kiểm lại bước trước</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Ví Dụ</h2>
+            <p class="intro-text">Hai ví dụ dưới đây cho thấy cùng một công cụ cho ra hai thứ khác nhau tuỳ cách vẽ: một phòng đào tạo vẽ lưu đồ trên bảng trắng và nhận về một bản vẽ đúng mà vô dụng, và một bệnh viện ở Anh nhờ bác sĩ trực ghi lại từng bước của đường đi cấp cứu đột quỵ, để tìm xem thời gian bị mất ở bước nào.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Năm Ô Trên Bảng Trắng, Chín Ngày Ngoài Đời</h3>
+                <p>Tình huống minh hoạ: phòng đào tạo của một trường đại học nhận phàn nàn rằng xin một bảng điểm có đóng dấu mất gần hai tuần, trong khi quy định ghi ba ngày làm việc. Trưởng phòng gọi ba chuyên viên vào họp và vẽ lên bảng trắng năm ô: nhận đơn, kiểm học phí, in bảng điểm, trình ký, trả cho sinh viên. Mỗi người nói phần mình mất chừng nửa ngày. Bản vẽ không sai ô nào. Nó chỉ không giải thích được hai tuần.</p>
+                <p>Một chuyên viên mới được giao đi theo hai mươi đơn thật, ghi lại ngày giờ mỗi lần đơn chuyển tay. Trung vị là chín ngày làm việc, tức khoảng một nửa số đơn mất từ chín ngày trở lên, và gần hết số ngày ấy nằm ngoài năm ô. Trình ký không phải một bước nửa ngày: phó hiệu trưởng ký theo lô vào chiều thứ Năm, nên đơn vào ngày thứ Sáu nằm chờ gần một tuần. Ô "kiểm học phí" có một lối ra không ai vẽ: bảy trong hai mươi đơn thuộc sinh viên còn ghi nợ trên hệ thống, phải tự cầm giấy sang phòng kế toán ở toà nhà khác xin xác nhận rồi nộp lại từ đầu. Bốn đơn khác phải in lần hai vì bảng điểm còn ghi tên ngành cũ sau một lần đổi chương trình. Cả ba chỗ ấy đều nằm giữa hai người, hoặc ở một nhánh rẽ mà người ngồi trong phòng họp không gặp, vì họ không phải người cầm tờ đơn đi qua. Bản vẽ thứ hai có thêm hai ô quyết định, một vòng làm lại, và ghi số ngày chờ lên ba mũi tên; buổi họp sau đó bàn về lịch ký, việc trước đó chưa ai nghĩ tới.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Bác Sĩ Trực Ghi Lại Từng Bước, Từ Cửa Viện Tới Mũi Kim</h3>
+                <p>Ở một bệnh viện đa khoa khu vực thuộc West Herts NHS Trust, vùng bán nông thôn của Anh, đơn vị đột quỵ tiêm thuốc tiêu sợi huyết, loại thuốc làm tan cục máu đông, cho khoảng 100 bệnh nhân mỗi năm. Thước đo của dịch vụ này là thời gian từ cửa viện tới mũi kim; mục tiêu cho các nơi ngoài London là 45 phút trở xuống, còn ở đây thời gian trung bình cộng là 74,7 phút, dài hơn vào cuối tuần và ngoài giờ, khi bác sĩ chuyên khoa hội chẩn từ xa qua video (telemedicine). Số liệu nền cho thấy một quãng dài giữa lúc chụp CT và lúc tiêm, quãng gồm đọc phim, đưa bệnh nhân về khoa cấp cứu, loại trừ chống chỉ định và xin đồng ý. Để biết thời gian mất ở bước nào trong quãng ấy, các bác sĩ trẻ trực đột quỵ được nhờ "vẽ lại đường đi": ghi chính xác các bước mình làm với mỗi bệnh nhân, mỗi bước mất bao lâu, và mọi chỗ bị chặn hay bị chậm. Bản vẽ được đưa ra các cuộc họp khoa trong toàn viện để hỏi người trong cuộc thấy rào cản lớn nhất nằm ở đâu. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p>Từ đó nhóm chọn ba thay đổi: xe cấp cứu gọi báo trước vào máy trực đột quỵ trong giờ hành chính, áp dụng dần cho một phần bệnh nhân; tài liệu quy trình được viết lại cho dễ theo và đưa vào buổi định hướng của bác sĩ mới; mọi người tham gia được đào tạo lại. Tủ thuốc ở phòng CT cũng được giữ đủ thuốc để tiêm ngay tại đó. Một đề xuất bị từ chối: nhân viên khoa cấp cứu không nhận thêm việc thu thập thông tin qua danh sách kiểm khi xe cấp cứu gọi tới, nên việc báo trước chuyển sang xe cấp cứu gọi thẳng cho đội đột quỵ. Trong 18 tháng, trung vị thời gian từ cửa tới kim, một thước đo khác với con số trung bình cộng ở trên, giảm từ 65,5 phút năm 2012 xuống 49 phút năm 2014, và theo tác giả, mức giảm đến từ việc thời gian đi qua cả đường đi ngắn lại nói chung. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p>Đây là báo cáo cải tiến của một bệnh viện, không có nhóm đối chứng, và lưu đồ chỉ là một phần của một can thiệp gồm nhiều thay đổi, nên không tách được phần của riêng bản vẽ. Con số 49 phút vẫn trên mục tiêu 45 phút. Ví dụ này dạy cách một lưu đồ được dùng đúng: người vẽ là người đi đường ấy hằng đêm, mỗi bước có thời gian đi kèm, và bản vẽ dẫn tới những thay đổi nhắm vào đúng quãng mất thời gian.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Một Vài Nghiên Cứu Về Lưu Đồ Quy Trình</h2>
+            <p class="intro-text">Lưu đồ được dùng ở hai việc khác nhau, và bằng chứng cho hai việc ấy đến từ hai loại nghiên cứu khác nhau. Dùng để phân tích và cải tiến một quy trình, nó có một tổng quan hệ thống lớn trong y tế, đếm được nó được dùng ở đâu và được làm kỹ tới đâu, nhưng không đo hiệu quả. Dùng để hướng dẫn người làm theo một quy trình có nhiều ngã rẽ, nó có những thí nghiệm so trực tiếp với câu văn, cho con số rõ ràng hơn, kèm một điều kiện.</p>
+            <div class="sub-section">
+                <p><strong>Nghiên cứu:</strong> Năm 2021, Antonacci và cộng sự ở Imperial College London công bố trên <em>BMC Health Services Research</em> tổng quan hệ thống đầu tiên, theo chính nhóm tác giả, về việc dùng lưu đồ quy trình trong y tế. Họ tìm trong năm cơ sở dữ liệu tới tháng 11 năm 2019, chọn được 105 nghiên cứu thực nghiệm, rồi chấm từng nghiên cứu theo mười tiêu chí chất lượng chia cho năm giai đoạn, từ chuẩn bị, thu thập dữ liệu, dựng bản vẽ, phân tích, tới hành động. Nhóm ghi rõ việc đánh giá hiệu quả của các dự án nằm ngoài mục tiêu của tổng quan. <sup><a href="#ref-6">[6]</a></sup> Ở một hướng khác, năm 1975, Richard Kammann công bố trên <em>Human Factors</em> một thí nghiệm so hai dạng lưu đồ với hướng dẫn in viết thành đoạn văn chuẩn. <sup><a href="#ref-8">[8]</a></sup> Năm 1981, Melissa Holland và Andrew Rose ở Viện Nghiên cứu Hoa Kỳ (American Institutes for Research) cho 54 người lớn, một nửa là sinh viên, một nửa là nhân viên của viện, mỗi người làm theo 72 hướng dẫn có điều kiện phức tạp như "nếu bạn là cha mẹ hoặc chủ nhà, và không đồng thời dưới 26 tuổi và là cựu chiến binh, hãy đánh dấu ô A". Mỗi hướng dẫn được trình bày ở một trong ba dạng: câu văn, danh sách bước có lệnh "đi tới", và lưu đồ; mỗi người được chia ngẫu nhiên vào một thứ tự gặp ba dạng. Nhóm đo thời gian và độ chính xác, cả sau khi người tham gia đã được luyện tập có phản hồi, lẫn ở những lần đầu tiên họ gặp một dạng lạ. <sup><a href="#ref-5">[5]</a></sup></p>
+                <p><strong>Kết quả:</strong> Trong 105 nghiên cứu của Antonacci, không nghiên cứu nào đạt đủ mười tiêu chí, và chỉ 7% đạt tám hoặc chín. 81% có đưa vào góc nhìn của nhiều nhóm liên quan, nhưng chỉ 45% ghi rõ bản vẽ do các nhóm ấy cùng dựng; số còn lại do nhà nghiên cứu vẽ. 15% có người bệnh tham gia, 15% có đào tạo cách vẽ trước khi làm, 48% ghi bản vẽ đã được kiểm lại cho đúng, và 42% báo cáo đã hành động sau khi vẽ. 91% vẽ quy trình hiện trạng. Lợi ích mà các nghiên cứu tự báo cáo gom thành ba nhóm: hiểu đúng hơn cách hệ thống đang chạy, khoanh vùng và thiết kế can thiệp, và kéo những người liên quan vào cùng làm. <sup><a href="#ref-6">[6]</a></sup> Theo phần tóm tắt của Kammann, những nghiên cứu trước đó gợi ra quy tắc rằng hướng dẫn in chỉ được hiểu đúng khoảng hai phần ba số lần; cả hai dạng lưu đồ cho hiểu đúng hơn và nhanh hơn đoạn văn, và kết quả này lặp lại trong một đợt thử thực địa sau đó. <sup><a href="#ref-8">[8]</a></sup> Ở thí nghiệm của Holland và Rose, sau khi đã luyện tập, lưu đồ giúp nhiều nhất ở những điều kiện khó nhất: tiết kiệm khoảng sáu giây mỗi câu và khoảng 33% lỗi so với câu văn; với những điều kiện chỉ nối bằng chữ "và", nó gần như không giúp gì. Nhưng ở những lần gặp đầu tiên, lợi thế đảo ngược: ở hai lần đầu, danh sách bước và lưu đồ mất từ ba tới năm lần thời gian của câu văn, và những người gặp lưu đồ trước tiên dùng sai nó một cách có hệ thống, trong khi câu văn và danh sách luôn giữ độ chính xác trên 80%. <sup><a href="#ref-5">[5]</a></sup></p>
+                <p><strong>Kết luận:</strong> Tổng quan của Antonacci cho thấy lưu đồ được dùng rộng trong cải tiến y tế, và phần lớn các nghiên cứu không ghi lại đúng những bước làm nên giá trị của nó: vẽ cùng người làm, kiểm lại bản vẽ, và hành động sau khi vẽ. Nhóm tác giả cho rằng chỗ hụt này nằm cả ở cách làm, không chỉ ở cách viết báo cáo. Tổng quan không cho biết lưu đồ cải thiện kết cục được bao nhiêu, vì không đo điều đó, và chính nhóm tác giả mở bài bằng nhận định rằng bằng chứng về hiệu quả của lưu đồ trong y tế còn nghèo; các lợi ích trong tổng quan là điều các nhóm tự kể về dự án của mình. Hai thí nghiệm về dạng trình bày cho thấy một điều hẹp hơn nhưng chắc hơn: với điều kiện có nhiều nhánh, người đọc đã quen đọc lưu đồ làm theo nhanh hơn và ít sai hơn đọc câu văn. Điều kiện "đã quen" không phải chi tiết phụ. Người gặp lưu đồ lần đầu có thể làm tệ hơn với chính tờ giấy được vẽ ra để giúp họ. Không nghiên cứu nào trong ba nghiên cứu được biết là đo lưu đồ trong một văn phòng hay một xưởng: tổng quan chỉ gồm y tế; thí nghiệm của Holland và Rose dùng câu điều kiện trong phòng thí nghiệm; Kammann có thêm một đợt thử thực địa, nhưng phần tóm tắt không cho biết bối cảnh của nó.</p>
+                <p><strong>Phản biện:</strong> Người bênh lưu đồ có hai lý lẽ mạnh. Thứ nhất, đòi một thử nghiệm chứng minh lưu đồ cải thiện kết cục là đòi sai thứ: lưu đồ là bước chẩn đoán, giống tấm phim X-quang, giá trị của nó nằm ở chỗ chỉ ra đúng nơi cần chữa, và chính tổng quan Antonacci ghi nhận lợi ích ấy lặp lại qua nhiều dự án ở nhiều môi trường khác nhau. <sup><a href="#ref-6">[6]</a></sup> Thứ hai, giá trị lớn nhất của việc vẽ nằm ở cuộc trò chuyện giữa những người mỗi người giữ một đoạn, thứ không con số nào đo hết được. Bài nhận lý lẽ thứ nhất ở vế chẩn đoán: ở bệnh viện West Herts, số liệu nền khoanh ra quãng từ chụp CT tới lúc tiêm, bản vẽ của các bác sĩ trẻ đi vào từng bước trong quãng ấy, và các thay đổi nhắm vào những rào cản mà bản vẽ cùng các cuộc họp khoa chỉ ra. <sup><a href="#ref-7">[7]</a></sup> Nhưng phép so sánh với phim X-quang kéo theo điều kiện của chính nó: một tấm phim chỉ có giá trị khi nó chụp đúng, và độ chính xác của phim là thứ người ta đo. Với lưu đồ, phép đo gần nhất là bản vẽ có được người trong cuộc kiểm lại hay không, và chỉ 48% nghiên cứu ghi đã làm. Còn lợi ích lặp lại qua nhiều dự án thì vẫn là lời các nhóm tự kể, trong một mẫu mà chính nhóm tác giả thừa nhận nghiêng về dự án thành công. Lý lẽ thứ hai đúng, nhưng kéo theo điều kiện của chính nó: cuộc trò chuyện chỉ có giá trị khi người giữ từng đoạn thật sự góp tiếng, qua buổi vẽ chung, phỏng vấn hay vòng kiểm lại bản vẽ. Tổng quan cho thấy đa số nghiên cứu có lấy góc nhìn của nhiều nhóm, còn chưa tới một nửa ghi rõ các nhóm ấy cùng dựng bản vẽ; số còn lại không cho biết cuộc trò chuyện sâu tới đâu. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p><strong>Vì sao điều này hữu ích:</strong> Khi ai đó mang tới một lưu đồ, ba câu hỏi đáng hỏi hơn câu "vẽ đúng chưa": ai vẽ, có ai đã đi theo một hồ sơ thật để kiểm nó chưa, và sau khi vẽ thì cái gì đã thay đổi. Còn khi bạn định dán một lưu đồ lên tường để người mới làm theo, đừng cho rằng nó tự giải thích được. Thêm một dòng nói cách đọc, và nhờ một người chưa từng thấy nó đi thử một lượt trước mặt bạn.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">Cách Áp Dụng</h2>
+            <p class="intro-text">Lưu đồ quy trình hoạt động bằng cách đặt mọi bước, mọi ngã rẽ và mọi lần chuyển tay lên cùng một mặt phẳng, để chỗ việc nằm chờ giữa hai người hiện ra, nên cách triển khai hiệu quả là bảo đảm thứ được vẽ là việc thật, do người làm từng đoạn cùng vẽ, và mỗi mũi tên chuyển tay được đo chứ không chỉ được vẽ. Nó hợp với quy trình đi qua nhiều người hay nhiều bộ phận, lặp lại đủ nhiều để có hồ sơ thật mà đi theo. Với việc một người làm từ đầu tới cuối và ít ngã rẽ, lưu đồ thường chỉ vẽ lại điều người ấy đã biết.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Chốt điểm đầu, điểm cuối và câu hỏi bản vẽ phải trả lời, trước khi vẽ ô đầu tiên:</strong> Lưu đồ để tìm vì sao một quy trình chậm khác với lưu đồ để người mới làm theo. Cái thứ nhất cần đủ mọi nhánh, mọi vòng làm lại, mọi lần chuyển tay. Cái thứ hai chỉ cần những câu hỏi người làm phải tự trả lời, và theo đề nghị của Holland và Rose, cần thêm một dòng ngắn chỉ cách đọc, vì người gặp lưu đồ lần đầu dễ dùng sai nó; chính nhóm tác giả ghi rằng họ chưa thử xem dòng hướng dẫn ấy có đủ hay không <sup><a href="#ref-5">[5]</a></sup></li>
+                    <li><strong>Vẽ cùng người làm từng đoạn, rồi đi theo vài hồ sơ thật để sửa bản vẽ:</strong> Cách hiển nhiên là nhờ trưởng bộ phận mô tả, hoặc chép từ quy trình đã ban hành, và cách ấy cho ra quy trình như mọi người tin là đang chạy. Những nhánh rẽ chỉ người tuyến đầu gặp, những đường tắt bằng điện thoại, những lô ký mỗi tuần một lần nằm ngoài bản vẽ đó. Gilbreth đã viết rằng mục tiêu của biểu đồ là để hiểu biết của cả những người ở vị trí thấp cũng được dùng tới; ASQ khuyên chính người làm vẽ, và đi lại quy trình sau bản nháp đầu để kiểm; tổng quan Antonacci kể thêm các cách thu thập dữ liệu ngoài buổi họp chung, từ phỏng vấn tới quan sát trực tiếp và quay phim <sup><a href="#ref-2">[2]</a></sup> <sup><a href="#ref-1">[1]</a></sup> <sup><a href="#ref-6">[6]</a></sup></li>
+                    <li><strong>Ghi thời gian chờ và số hồ sơ lên các mũi tên chuyển tay và các nhánh rẽ, rồi so hồ sơ chậm với hồ sơ đúng hạn:</strong> Ký hiệu chờ và thời gian từng bước đều là phần tuỳ chọn của lưu đồ, nên chỉ có trên bản vẽ khi người vẽ chủ động thêm vào; tổng quan Antonacci khuyên ghi thời gian từng bước lên bản vẽ trong lúc phân tích. Phép so cho manh mối, chưa phải phán quyết. So cả số hồ sơ chờ ở mỗi chỗ lẫn chờ bao lâu, vì một chỗ chờ gặp ở cả hai nhóm vẫn có thể dài hơn hẳn ở nhóm chậm; và một chỗ chờ chung cho mọi hồ sơ vẫn đáng sửa nếu rút ngắn được với chi phí thấp. Khi cần nhìn cả dòng vật liệu lẫn dòng thông tin, với thời gian từng khâu, sơ đồ chuỗi giá trị có sẵn khung cho việc đó <sup><a href="#ref-1">[1]</a></sup> <sup><a href="#ref-6">[6]</a></sup> <sup><a href="#ref-4">[4]</a></sup></li>
+                    <li><strong>Gắn mỗi chỗ nghẽn trên bản vẽ với một người chịu trách nhiệm và một hành động, rồi vẽ lại bản hiện trạng sau khi sửa:</strong> Trong một dự án cải tiến, bản vẽ chưa phải sản phẩm: trong 105 nghiên cứu y tế mà tổng quan Antonacci rà, chỉ 42% báo cáo đã hành động sau khi vẽ, và dù không báo cáo chưa chắc là không làm, khoảng cách giữa vẽ và sửa là chỗ đáng canh. Mũi tên băng qua hai làn cần một người chịu trách nhiệm cho chính lần chuyển tay ấy, không chỉ cho hai ô hai đầu. Ghi ngày vẽ lên bản lưu đồ, vì một lưu đồ cũ treo trên tường vẫn trông đáng tin y như ngày đầu <sup><a href="#ref-6">[6]</a></sup></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Tình Huống Áp Dụng</h2>
+            <p class="intro-text">Một cửa hàng sửa điện thoại có một nhân viên quầy, hai kỹ thuật viên và một người giữ kho linh kiện. Cửa hàng hứa trả máy trong hai ngày làm việc kể từ lúc khách đồng ý báo giá, nhưng trong bốn tuần gần nhất chỉ giữ được lời hứa ở 70 trên 120 phiếu sửa, khoảng 58%. Chủ cửa hàng muốn đưa tỷ lệ đúng hẹn lên ít nhất 85%. Các con số trong tình huống này là số minh hoạ.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Chốt điểm đầu, điểm cuối và định nghĩa đúng hẹn trước khi vẽ:</strong> Điểm đầu là lúc khách đồng ý báo giá, điểm cuối là lúc khách được báo máy đã sẵn sàng. "Đúng hẹn" nghĩa là khách được báo trong vòng hai ngày làm việc tính từ điểm đầu, tức 16 giờ làm việc, mỗi ngày tám giờ. Thời gian khách cân nhắc báo giá nằm ngoài lời hứa, nên nằm ngoài phép đo, nhưng vẫn được vẽ vào lưu đồ như một nhánh chờ</li>
+                    <li><strong>Vẽ bản hiện trạng đầu tiên cùng cả bốn người:</strong> Ba làn: quầy, kỹ thuật, kho. Bản đầu có chín ô và hai câu hỏi: "Cần thay linh kiện?" và "Linh kiện có sẵn?". Mỗi người nói đoạn của mình nhanh: kho đặt hàng ngay khi nhận yêu cầu, kỹ thuật viên sửa trong ngày, quầy gọi khách ngay khi máy xong</li>
+                    <li><strong>Đi theo 30 phiếu gần nhất, ghi giờ ở mỗi lần chuyển tay, rồi sửa bản vẽ:</strong> Ba thứ không có trên bản đầu. Kho không đặt hàng ngay mà gom đơn hai lần mỗi tuần, thứ Ba và thứ Sáu, vì nhà cung cấp chỉ giao miễn phí cho đơn đủ lớn. Không có mũi tên nào từ kỹ thuật sang quầy khi máy xong: kỹ thuật viên đặt máy lên kệ "đã sửa", và quầy chỉ biết khi có lúc rảnh ra xem kệ. Và nhánh "khách chưa trả lời báo giá" có thật, dù nằm ngoài lời hứa</li>
+                    <li><strong>So phiếu trễ với phiếu đúng hẹn ở từng chỗ chờ, trước khi chọn chỗ sửa:</strong> Trong 30 phiếu, 13 trễ và 17 đúng hẹn. Với mỗi phiếu, ghi lại những chỗ nào nó nằm chờ quá bốn giờ làm việc và chờ bao lâu; một phiếu có thể chờ ở nhiều chỗ (bảng thứ nhất). Chờ linh kiện và chờ báo khách gặp ở phiếu trễ nhiều hơn hẳn, và ở những phiếu đã ghi được thì chờ lâu hơn; vì nhóm đúng hẹn chỉ có một hai phiếu ở mỗi hàng này, phần so độ dài chỉ là gợi ý. Chờ tới lượt sửa thì gần như ngang nhau ở hai nhóm, cả số phiếu lẫn độ dài, nên dữ liệu này chưa cho thấy nó phân biệt hai nhóm; nó không bị gạch đi. Thứ tự sửa còn tính tới chi phí: hai chỗ kia sửa được bằng đổi cách làm, một khoản phí giao hàng và một ít vốn nằm trong kho cho pin và màn hình, kèm rủi ro linh kiện để lâu không dùng tới; rút ngắn hàng đợi sửa thì nhiều khả năng cần thêm người, nên để sau</li>
+                    <li><strong>Vẽ bản mục tiêu và giao người chịu trách nhiệm cho từng mũi tên vừa sửa:</strong> Người giữ kho chịu trách nhiệm mũi tên linh kiện: pin và màn hình cho năm dòng máy hay sửa nhất được giữ sẵn một ít, danh mục giữ sẵn được rà lại mỗi tháng theo số lần dùng, để vốn không nằm chết ở linh kiện ít ai cần; linh kiện khác đặt ngay trong ngày, cửa hàng chấp nhận trả phí giao. Mũi tên "máy xong" được vẽ thêm: kỹ thuật viên chuyển phiếu sang cột "xong" trên bảng đặt ở quầy, và nhân viên quầy chịu trách nhiệm báo khách trong vòng một giờ kể từ lúc phiếu sang cột</li>
+                    <li><strong>Đo bốn tuần sau bằng đúng định nghĩa cũ, và kiểm xem loại phiếu có đổi không:</strong> Cùng điểm đầu, cùng điểm cuối, cùng mốc hai ngày làm việc. Hai kỳ được so ở tỷ lệ phiếu cần thay linh kiện, tính cả linh kiện có sẵn lẫn phải đặt, và tỷ lệ máy thuộc năm dòng hay sửa nhất, vì nếu kỳ sau có ít ca khó hơn thì tỷ lệ đúng hẹn tự tăng mà không nhờ thay đổi nào (bảng thứ hai). Không dùng tỷ lệ phiếu phải đặt linh kiện để so, vì chính việc giữ sẵn linh kiện ở bước 5 làm tỷ lệ ấy giảm</li>
+                    <li><strong>Vẽ lại bản hiện trạng mới, ghi ngày, và đánh dấu nguyên nhân trễ gặp nhiều nhất lúc này:</strong> 15 phiếu còn trễ ở kỳ sau được xếp mỗi phiếu theo một nguyên nhân chính, khác bảng thứ nhất, nơi một phiếu có thể nằm ở nhiều hàng: 6 phiếu vì chờ tới lượt sửa, 4 vì linh kiện nằm ngoài danh mục giữ sẵn, 2 vì chờ báo khách, và 3 vì máy hỏng thêm chỗ khác phát hiện ra lúc sửa. Hàng đợi sửa, chỗ ở bước 4 chưa phân biệt được hai nhóm, nay là nguyên nhân chính của nhiều phiếu trễ nhất. Số phiếu chưa cho biết chỗ nào tốn nhiều giờ nhất, nên vòng sau bắt đầu bằng việc ghi thời gian chờ ở từng chỗ cho 15 phiếu ấy</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Chỗ chờ quá bốn giờ làm việc</th><th scope="col">Phiếu trễ hẹn (13): số phiếu</th><th scope="col">Phiếu trễ hẹn: trung vị thời gian chờ</th><th scope="col">Phiếu đúng hẹn (17): số phiếu</th><th scope="col">Phiếu đúng hẹn: trung vị thời gian chờ</th></tr></thead>
+                    <tbody>
+                        <tr><td>Chờ đặt và nhận linh kiện</td><td>7 (54%)</td><td>20 giờ</td><td>2 (12%)</td><td>6 giờ</td></tr>
+                        <tr><td>Sửa xong, chờ quầy báo khách</td><td>6 (46%)</td><td>9 giờ</td><td>1 (6%)</td><td>5 giờ (một phiếu)</td></tr>
+                        <tr><td>Chờ tới lượt sửa</td><td>3 (23%)</td><td>7 giờ</td><td>4 (24%)</td><td>6 giờ</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">Trung vị ở mỗi hàng tính trên những phiếu chờ quá bốn giờ ở chỗ đó, không tính trên cả nhóm; mọi thời gian tính bằng giờ làm việc. Ở nhóm đúng hẹn, mỗi hàng chỉ có một tới bốn phiếu, nên con số chỉ tả đúng mấy phiếu ấy.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Kỳ bốn tuần</th><th scope="col">Số phiếu</th><th scope="col">Phiếu cần thay linh kiện</th><th scope="col">Máy thuộc năm dòng hay sửa nhất</th><th scope="col">Phiếu đúng hẹn</th><th scope="col">Tỷ lệ đúng hẹn</th></tr></thead>
+                    <tbody>
+                        <tr><td>Trước khi sửa</td><td>120</td><td>72 (60%)</td><td>78 (65%)</td><td>70</td><td>58,3%</td></tr>
+                        <tr><td>Sau khi sửa</td><td>116</td><td>69 (59%)</td><td>74 (64%)</td><td>101</td><td>87,1%</td></tr>
+                    </tbody>
+                </table>
+                <p>Bốn tuần sau, tỷ lệ đúng hẹn lên khoảng 87%, vượt mục tiêu 85%, trên một lượng phiếu gần như cũ, với tỷ lệ phiếu cần thay linh kiện và cơ cấu dòng máy gần như cũ. Hai kỳ không có nhóm đối chứng, nằm ở hai tháng liền nhau, và cả bốn người đều biết mình đang được đo, nên một phần cải thiện có thể đến từ việc mọi người chú ý hơn; chủ cửa hàng giữ việc ghi giờ ở hai mũi tên đã sửa thêm hai tháng nữa để xem tỷ lệ có giữ được không. Điều kiện để có kết quả ấy là bản vẽ thứ hai lấy từ phiếu thật, chỗ sửa được chọn bằng cách so phiếu trễ với phiếu đúng hẹn, cả số lần lẫn độ dài chờ, rồi cân chi phí sửa, thay vì chọn chỗ chờ dễ thấy nhất, mỗi mũi tên vừa sửa có một người chịu trách nhiệm, và kỳ sau được đo bằng đúng định nghĩa của kỳ trước.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Tóm Tắt</h2>
+            <div class="summary-box">
+                <p><strong>Điểm Chính:</strong> Lưu đồ quy trình đặt mọi bước, mọi ngã rẽ và mọi lần chuyển tay của một quy trình lên cùng một mặt phẳng, để những người mỗi người chỉ giữ một đoạn cùng thấy cả đường đi, và chỗ việc nằm chờ giữa hai người có hình dạng để chỉ vào. Điều phản trực giác nhất là một lưu đồ có thể đúng từng ô mà vẫn không giải thích được vì sao quy trình chậm: thời gian có thể mất ở những mũi tên mà một lưu đồ chỉ ghi thứ tự và logic vẽ như thể không tốn phút nào, và ở những nhánh rẽ mà người vẽ trong phòng họp không gặp. Cách dùng đáng tin vì vậy là để người làm từng đoạn cùng vẽ, kiểm bản vẽ bằng hồ sơ thật, ghi thời gian chờ lên các mũi tên, và coi mọi điều bản vẽ gợi ra là manh mối cho tới khi việc sửa được đo lại.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">Tài Liệu Tham Khảo</h2>
+            <ol class="outline-list">
+                <li id="ref-1">American Society for Quality. <em>Flowchart</em>. ASQ Quality Resources (bản rà soát tháng 6/2025). Trang kiến thức của Hội Chất lượng Hoa Kỳ; nguồn cho việc lưu đồ là một dạng bản đồ quy trình thường gặp, cho bộ ký hiệu thường dùng gồm cả ký hiệu chờ, cho việc thời gian từng bước và các phép đo quy trình nằm trong những thứ một lưu đồ có thể ghi, và cho lời khuyên để chính người làm vẽ rồi đi lại quy trình sau bản nháp đầu. <a href="https://asq.org/quality-resources/flowchart" rel="noopener noreferrer" target="_blank">Đọc trang gốc</a>.</li>
+                <li id="ref-2">Gilbreth, F. B., &amp; Gilbreth, L. M. (1921). <em>Process Charts: First Steps in Finding the One Best Way to Do Work</em>. Bài trình bày tại hội nghị thường niên của American Society of Mechanical Engineers, New York, 5-9 tháng 12, 1921. Bài gốc giới thiệu biểu đồ quy trình; nguồn cho định nghĩa biểu đồ quy trình là phương tiện để nhìn thấy một quy trình nhằm cải tiến nó, cho yêu cầu trình bày toàn bộ quy trình để nhìn được cùng một lúc trước khi đổi bất kỳ phần nào, và cho mục tiêu làm thông tin về quy trình dùng được với nhiều người nhất trong tổ chức. <a href="https://archive.org/details/processcharts00gilb" rel="noopener noreferrer" target="_blank">Đọc bản quét gốc</a>.</li>
+                <li id="ref-3">Rummler, G. A., &amp; Brache, A. P. (1990). <em>Improving Performance: How to Manage the White Space on the Organization Chart</em>. Jossey-Bass. Cuốn sách mà cách vẽ lưu đồ chia làn thường được gắn với; nguồn cho khái niệm "khoảng trắng" trên sơ đồ tổ chức, lấy từ chính nhan đề sách. Bài không đọc toàn văn; việc gắn cách vẽ chia làn với cuốn sách dựa trên các mô tả thứ cấp. <a href="https://openlibrary.org/books/OL2217852M" rel="noopener noreferrer" target="_blank">Thông tin thư mục</a>.</li>
+                <li id="ref-4">Lean Enterprise Institute. <em>Value-Stream Mapping</em>, Lean Lexicon. Mục từ điển của LEI; nguồn cho định nghĩa sơ đồ chuỗi giá trị là vẽ mọi bước của dòng vật liệu và dòng thông tin từ lúc nhận đơn tới lúc giao hàng, có các ô dữ liệu thời gian, dùng để phân biệt với lưu đồ quy trình. <a href="https://www.lean.org/lexicon-terms/value-stream-mapping/" rel="noopener noreferrer" target="_blank">Đọc mục từ</a>.</li>
+                <li id="ref-5">Holland, V. M., &amp; Rose, A. (1981). <em>A Comparison of Prose and Algorithms for Presenting Complex Instructions</em> (Document Design Project, Technical Report No. 17, AIR-75003-11/81-TR). American Institutes for Research. Thí nghiệm trên 54 người lớn so câu văn, danh sách bước và lưu đồ cho hướng dẫn có điều kiện phức tạp; nguồn cho thiết kế thí nghiệm, cho khoảng sáu giây và khoảng 33% lỗi tiết kiệm được ở những điều kiện khó nhất sau khi luyện tập, cho việc lưu đồ không giúp gì với điều kiện chỉ nối bằng "và", cho lợi thế đảo ngược ở những lần gặp đầu tiên, và cho đề nghị thêm dòng chỉ cách đọc. <a href="https://files.eric.ed.gov/fulltext/ED213027.pdf" rel="noopener noreferrer" target="_blank">Đọc báo cáo trên ERIC</a>.</li>
+                <li id="ref-6">Antonacci, G., Lennox, L., Barlow, J., Evans, L., &amp; Reed, J. (2021). Process mapping in healthcare: a systematic review. <em>BMC Health Services Research</em>, 21, 342. Tổng quan hệ thống 105 nghiên cứu về lưu đồ quy trình trong cải tiến chất lượng y tế; nguồn cho khung mười tiêu chí chất lượng, cho các tỷ lệ về góc nhìn của nhiều nhóm, vẽ cùng nhiều nhóm, người bệnh tham gia, đào tạo, kiểm lại bản vẽ, vẽ hiện trạng và hành động sau khi vẽ, cho ba nhóm lợi ích tự báo cáo, cho khuyến nghị ghi thời gian lên bản vẽ, và cho các giới hạn mà chính nhóm tác giả nêu. <a href="https://doi.org/10.1186/s12913-021-06254-1" rel="noopener noreferrer" target="_blank">Đọc bài báo</a>.</li>
+                <li id="ref-7">Gill, S. (2014). Reducing door to needle time for stroke thrombolysis. <em>BMJ Quality Improvement Reports</em>, 3(1), u204771.w2199. Báo cáo cải tiến ở một bệnh viện đa khoa khu vực thuộc West Herts NHS Trust; nguồn cho bối cảnh dịch vụ, mục tiêu 45 phút, thời gian nền 74,7 phút, cách các bác sĩ trẻ vẽ lại đường đi, ba thay đổi và đề xuất bị từ chối, và trung vị giảm từ 65,5 xuống 49 phút. <a href="https://doi.org/10.1136/bmjquality.u204771.w2199" rel="noopener noreferrer" target="_blank">Đọc báo cáo</a>.</li>
+                <li id="ref-8">Kammann, R. (1975). The comprehensibility of printed instructions and the flowchart alternative. <em>Human Factors</em>, 17(2), 183-191. Thí nghiệm so hai dạng lưu đồ với hướng dẫn in viết thành đoạn văn; nguồn cho quy tắc hai phần ba và cho việc lưu đồ được hiểu đúng hơn, nhanh hơn, lặp lại trong thử thực địa. Bài đọc qua phần tóm tắt. <a href="https://doi.org/10.1177/001872087501700209" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

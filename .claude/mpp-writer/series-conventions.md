@@ -33,6 +33,7 @@ Thư mục: `pages/reading-studying/management-tools-and-techniques/`. Khung tra
 | SOP | nồi hấp tiệt trùng ở phòng thí nghiệm; chuỗi cà phê 12 cửa hàng; tiệm bánh hai lò |
 | Lưu Đồ Quy Trình | cửa hàng trực tuyến hoàn tiền hàng đổi trả; phòng đào tạo cấp bảng điểm; cửa hàng sửa điện thoại |
 | Sơ Đồ SIPOC | phòng khám nha khoa làm răng sứ; cửa hàng nội thất giao hàng; báo cáo quản trị tháng |
+| Sơ Đồ Chuỗi Giá Trị | xưởng may áo sơ mi đồng phục cho trường học; chi nhánh ngân hàng giải ngân khoản vay mua nhà; tiệm giặt sấy giao nhận tận nhà |
 
 ### Trang tổng quan, menu, file
 

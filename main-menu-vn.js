@@ -578,6 +578,13 @@ var mainMenuVn = [
                         subItems: [],
                     },
                     {
+                        title: "Sơ Đồ Chuỗi Giá Trị",
+                        route: "pages/reading-studying/management-tools-and-techniques/11-value-stream-mapping-vn.html",
+                        hash: "#/value-stream-mapping",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
                         title: "Biểu Đồ Gantt",
                         route: "pages/reading-studying/management-tools-and-techniques/12-gantt-charts-vn.html",
                         hash: "#/gantt-charts",

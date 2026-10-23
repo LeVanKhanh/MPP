@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sơ Đồ Chuỗi Giá Trị - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="Sơ đồ chuỗi giá trị đặt thời gian một món hàng nằm chờ cạnh thời gian có người làm trên nó, và đặt dòng thông tin ngay trên dòng vật liệu. Bài phân tích cơ chế, giới hạn của một bản đồ, bằng chứng hiện có về công cụ, và một tình huống áp dụng từng bước."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Sơ Đồ Chuỗi Giá Trị</h1>
+            <p class="page-subtitle">Bản hiện trạng chỉ ra hàng nằm chờ ở đâu; việc sẽ làm với chỗ chờ ấy nằm ở bản mục tiêu, bản hay vắng mặt trong các bài đã công bố</p>
+            <p class="page-meta">Đăng ngày: <time datetime="2026-10-23">23 Tháng 10, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Định Nghĩa</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Sơ Đồ Chuỗi Giá Trị Là Gì</h3>
+                <p>Sơ đồ chuỗi giá trị (value stream map, thường viết tắt VSM) vẽ trên một mặt giấy toàn bộ đường đi của một họ sản phẩm, tức một nhóm sản phẩm đi qua những bước gần giống nhau, từ lúc nhận đơn tới lúc giao hàng. Nó vẽ hai dòng: dòng vật liệu cho biết món hàng đi qua những khâu nào, dòng thông tin cho biết mỗi khâu nhận lệnh làm việc tiếp theo bằng cách nào. Dưới đáy bản đồ là một đường thời gian đặt cạnh nhau hai con số: thời gian có người hay máy thật sự làm trên món hàng, và lead time, tức thời gian một món đi hết dòng chảy từ đầu tới cuối. <sup><a href="#ref-1">[1]</a></sup> Con số thứ nhất chưa hẳn là thời gian tạo giá trị, vì kiểm tra hay làm lại cũng là có người làm. Giả sử một xưởng may nhận may áo sơ mi đồng phục cho các trường học, mỗi ngày giao khoảng 300 áo. Ai trong xưởng cũng biết may một chiếc áo mất bao lâu, vì đó là con số dùng để tính lương. Không ai biết một chiếc áo, từ lúc cuộn vải về kho tới lúc lên xe giao, nằm trong xưởng bao nhiêu ngày. Tờ sơ đồ chuỗi giá trị đầu tiên của xưởng cho ra cả hai con số: 24 phút làm, và một con số ước khoảng 21 ngày chờ.</p>
+
+                <p>Cách vẽ này lấy từ Toyota. Ở đó nó được gọi là sơ đồ dòng vật liệu và thông tin (Material and Information Flow Mapping), và người thực hành hệ thống sản xuất Toyota dùng nó để vẽ trạng thái hiện tại và trạng thái tương lai khi lập kế hoạch triển khai. Mike Rother để ý tới nó khi nghiên cứu cách Toyota triển khai sản xuất tinh gọn, chuẩn hoá lại thành một công cụ và dựng một cách dạy quanh nó; cùng John Shook, người từng làm việc với Toyota, ông viết cuốn sách bài tập <em>Learning to See</em> do Lean Enterprise Institute (LEI) xuất bản, lời mở đầu đề tháng 5 năm 1998. <sup><a href="#ref-2">[2]</a></sup> Cuốn sách nhận giải nghiên cứu Shingo năm 1999. <sup><a href="#ref-1">[1]</a></sup> Ngay trong lời mở đầu, hai tác giả nói rõ phần họ lấy và phần họ để lại. Người Toyota học về ba dòng trong sản xuất: dòng vật liệu, dòng thông tin, và dòng người cùng thao tác. Phương pháp trong sách chỉ phủ hai dòng đầu. <sup><a href="#ref-2">[2]</a></sup> Tên tiếng Việt của công cụ trùng chữ với "chuỗi giá trị" (value chain) trong phân tích chiến lược của Michael Porter; đó là hai thứ khác nhau, và trong bài này "chuỗi giá trị" luôn chỉ đường đi của một họ sản phẩm qua các khâu.</p>
+
+                <p>Sơ đồ chuỗi giá trị làm việc bằng cách đặt thời gian chờ cạnh thời gian làm trên cùng một đường, và đặt dòng thông tin ngay phía trên dòng vật liệu, để chỗ hàng nằm chờ và quyết định đứng sau nó hiện ra trên cùng một tờ. Vế thứ nhất lật lại chỗ người ta quen nhìn. Khi mỗi khâu đo phần việc của mình, thứ được đo là những đoạn thấp trên đường thời gian; những đoạn cao, nơi món hàng nằm chờ trước, giữa và sau các khâu, không thuộc về khâu nào. Vế thứ hai là chỗ Rother và Shook nhấn mạnh hơn cả. Theo hai tác giả, bản đồ làm cho những quyết định về dòng chảy hiện ra để người ta bàn được, thay vì cứ thế xảy ra theo mặc định, và nó cho thấy mối nối giữa dòng thông tin với dòng vật liệu, việc mà theo họ không công cụ nào khác làm. <sup><a href="#ref-2">[2]</a></sup> Ở xưởng may, mỗi đống áo bán thành phẩm nằm ngay dưới một mũi tên "lịch sản xuất tuần, gửi riêng cho từng tổ": tổ nào cũng làm đủ phần của cả tuần theo lịch, không đợi tổ sau cần tới, và áo dồn lại giữa các tổ.</p>
+
+                <p>Đặt cạnh lưu đồ quy trình và sơ đồ SIPOC, chỗ khác nằm ở thứ được vẽ. Lưu đồ quy trình vẽ từng bước, từng ngã rẽ và từng lần chuyển tay bên trong một quy trình, và một lưu đồ chỉ ghi thứ tự và logic thì không cho biết món hàng nằm chờ bao lâu giữa hai bước. Sơ đồ SIPOC đứng lùi xa hơn, tóm quy trình trong năm tới bảy ô và nhìn ra hai phía ngoài, về nhà cung cấp và khách hàng. Sơ đồ chuỗi giá trị cũng đi trọn từ lúc nhận đơn tới lúc giao hàng, nhưng ghi thời gian ở từng khâu và giữa các khâu, và vẽ cả cách mỗi khâu nhận lệnh làm. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Sơ đồ chuỗi giá trị hiện trạng của một xưởng may áo sơ mi đồng phục cho trường học. Hàng trên là dòng thông tin: trường học gửi đơn đặt may cho phòng kế hoạch, phòng kế hoạch gửi đơn mua vải mỗi tháng cho nhà cung cấp vải, và gửi lịch sản xuất tuần riêng cho từng tổ trong bốn tổ cắt, may, in logo, kiểm và gấp. Hàng giữa là dòng vật liệu: vải đủ 6 ngày nằm trong kho, tổ cắt 2 phút một áo, 1.800 áo chờ, tổ may 18 phút một áo, 1.200 áo chờ, tổ in logo 1 phút một áo, 600 áo chờ, tổ kiểm và gấp 3 phút một áo, 900 áo thành phẩm chờ giao cho trường. Hàng dưới là đường thời gian: các đoạn chờ 6, 6, 4, 2 và 3 ngày, cộng khoảng 21 ngày; các đoạn làm 2, 18, 1 và 3 phút, cộng 24 phút. Số ngày chờ ước từ lượng tồn đếm được hôm đi dọc xưởng, chia cho 300 áo trường cần mỗi ngày."
+                        viewBox="0 0 1120 460">
+                        <defs>
+                            <marker id="vsm-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <rect class="node" x="20" y="30" width="160" height="50" rx="8"></rect>
+                        <text x="100" y="55">Nhà cung cấp vải</text>
+                        <rect class="node" x="440" y="30" width="240" height="50" rx="8"></rect>
+                        <text x="560" y="55">Phòng kế hoạch</text>
+                        <rect class="node" x="940" y="30" width="160" height="50" rx="8"></rect>
+                        <text x="1020" y="55">Trường học (khách)</text>
+
+                        <path class="edge-ghost" d="M940 55 H684" marker-end="url(#vsm-arrow)"></path>
+                        <text class="small" x="812" y="42">đơn đặt may</text>
+                        <path class="edge-ghost" d="M440 55 H184" marker-end="url(#vsm-arrow)"></path>
+                        <text class="small" x="312" y="42">đơn mua vải mỗi tháng</text>
+
+                        <path class="edge-ghost" d="M560 80 V130"></path>
+                        <path class="edge-ghost" d="M180 130 H840"></path>
+                        <path class="edge-ghost" d="M180 130 V196" marker-end="url(#vsm-arrow)"></path>
+                        <path class="edge-ghost" d="M400 130 V196" marker-end="url(#vsm-arrow)"></path>
+                        <path class="edge-ghost" d="M620 130 V196" marker-end="url(#vsm-arrow)"></path>
+                        <path class="edge-ghost" d="M840 130 V196" marker-end="url(#vsm-arrow)"></path>
+                        <text class="small alert" x="300" y="118">lịch sản xuất tuần, gửi riêng cho từng tổ</text>
+
+                        <path class="arrow" d="M70 80 V200" marker-end="url(#vsm-arrow)"></path>
+                        <text class="small note" x="78" y="150">giao vải</text>
+
+                        <path class="band" d="M70 205 L94 248 L46 248 Z"></path>
+                        <text class="small" x="70" y="268">vải đủ 6 ngày</text>
+                        <path class="arrow" d="M86 230 H118" marker-end="url(#vsm-arrow)"></path>
+
+                        <rect class="node" x="120" y="200" width="120" height="60" rx="8"></rect>
+                        <text x="180" y="222">Cắt</text>
+                        <text class="small" x="180" y="244">2 phút/áo</text>
+                        <path class="arrow" d="M242 230 H274" marker-end="url(#vsm-arrow)"></path>
+
+                        <path class="band" d="M290 205 L314 248 L266 248 Z"></path>
+                        <text class="small alert" x="290" y="268">1.800 áo</text>
+                        <path class="arrow" d="M306 230 H338" marker-end="url(#vsm-arrow)"></path>
+
+                        <rect class="node" x="340" y="200" width="120" height="60" rx="8"></rect>
+                        <text x="400" y="222">May</text>
+                        <text class="small" x="400" y="244">18 phút/áo</text>
+                        <path class="arrow" d="M462 230 H494" marker-end="url(#vsm-arrow)"></path>
+
+                        <path class="band" d="M510 205 L534 248 L486 248 Z"></path>
+                        <text class="small alert" x="510" y="268">1.200 áo</text>
+                        <path class="arrow" d="M526 230 H558" marker-end="url(#vsm-arrow)"></path>
+
+                        <rect class="node" x="560" y="200" width="120" height="60" rx="8"></rect>
+                        <text x="620" y="222">In logo</text>
+                        <text class="small" x="620" y="244">1 phút/áo</text>
+                        <path class="arrow" d="M682 230 H714" marker-end="url(#vsm-arrow)"></path>
+
+                        <path class="band" d="M730 205 L754 248 L706 248 Z"></path>
+                        <text class="small alert" x="730" y="268">600 áo</text>
+                        <path class="arrow" d="M746 230 H778" marker-end="url(#vsm-arrow)"></path>
+
+                        <rect class="node" x="780" y="200" width="120" height="60" rx="8"></rect>
+                        <text x="840" y="222">Kiểm, gấp</text>
+                        <text class="small" x="840" y="244">3 phút/áo</text>
+                        <path class="arrow" d="M902 230 H934" marker-end="url(#vsm-arrow)"></path>
+
+                        <path class="band" d="M950 205 L974 248 L926 248 Z"></path>
+                        <text class="small alert" x="950" y="268">900 áo</text>
+                        <path class="arrow" d="M966 230 H1025 V84" marker-end="url(#vsm-arrow)"></path>
+                        <text class="small note" x="1033" y="160">giao hàng</text>
+
+                        <path class="axis" d="M30 320 H120 V360 H240 V320 H340 V360 H460 V320 H560 V360 H680 V320 H780 V360 H900 V320 H1000"></path>
+                        <text class="small alert" x="75" y="306">6 ngày</text>
+                        <text class="small alert" x="290" y="306">6 ngày</text>
+                        <text class="small alert" x="510" y="306">4 ngày</text>
+                        <text class="small alert" x="730" y="306">2 ngày</text>
+                        <text class="small alert" x="950" y="306">3 ngày</text>
+                        <text class="small" x="180" y="378">2 phút</text>
+                        <text class="small" x="400" y="378">18 phút</text>
+                        <text class="small" x="620" y="378">1 phút</text>
+                        <text class="small" x="840" y="378">3 phút</text>
+                        <text class="alert" x="1060" y="320">≈ 21 ngày</text>
+                        <text x="1060" y="360">24 phút</text>
+
+                        <text class="small alert" x="560" y="414">Cộng các đoạn cao: khoảng 21 ngày một chiếc áo nằm chờ. Cộng các đoạn thấp: 24 phút có người làm trên nó.</text>
+                        <text class="small" x="560" y="438">Số ngày chờ ước từ lượng tồn đếm được hôm đi dọc xưởng, chia cho 300 áo trường cần mỗi ngày.</text>
+                    </svg>
+                    <figcaption><strong>Hình 1.</strong> Năm đống hàng chờ nằm trước, giữa và sau các tổ, không tổ nào tính nó là việc của mình, và cả bốn tổ đều nằm dưới cùng một mũi tên: lịch sản xuất tuần gửi riêng cho từng tổ. Bản đồ chỉ ra chỗ đáng nghi ở dòng thông tin phía trên đống hàng; vì sao phòng kế hoạch chọn lịch tuần thì nhóm vẫn phải đi hỏi.</figcaption>
+                </figure>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Tại Sao Ta Cần Dùng Nó</h3>
+                <p>Trước khi có tờ bản đồ ấy, xưởng may đã định mua thêm máy may lập trình để rút thời gian may một áo từ 18 phút xuống 12. Đặt khoản đầu tư ấy lên Hình 1 thì thấy nó tự rút được 6 phút ở một đoạn thấp, còn chiếc áo vẫn nằm chờ ước khoảng 21 ngày ở các đoạn cao. Máy mới chỉ đụng tới các đoạn cao nếu tổ may là nút thắt về công suất, tức là may không kịp 300 áo mỗi ngày, và Hình 1 chưa có số người, số máy để biết điều đó. Nếu áo dồn lại vì lịch tuần chứ không vì tổ may làm không xuể, khoản đầu tư sẽ ít tác dụng với trường học. Sáu phút tiết kiệm vì vậy chưa đủ để biện minh cho khoản chi; phải kiểm công suất và lý do của từng đống hàng trước.</p>
+
+                <p>Sơ đồ chuỗi giá trị sinh ra để chặn đúng kiểu quyết định này: cải tiến được chọn ở chỗ dễ đo nhất, tức thời gian làm của từng khâu, trong khi ở xưởng này gần như toàn bộ thời gian trường phải đợi nằm ở các đoạn chờ, nơi không trưởng bộ phận nào chịu trách nhiệm. Rother và Shook viết rằng hiếm tới mức đáng kinh ngạc khi vào một nhà máy mà gặp được một người biết toàn bộ dòng vật liệu và dòng thông tin của một sản phẩm, gồm mọi khâu và cách mỗi khâu được xếp lịch; thiếu người đó thì từng khu vực vận hành theo cách tối ưu cho chính nó, không phải cho cả chuỗi. <sup><a href="#ref-2">[2]</a></sup></p>
+
+                <p>Công cụ chặn kiểu hỏng ấy theo hai bước. Đường thời gian buộc phần chờ phải có một con số đặt cạnh phần làm, nên một đề xuất cải tiến phải trả lời được nó rút đoạn cao nào. Dòng thông tin buộc nhóm hỏi vì sao hàng nằm ở đó, và đặt câu hỏi ấy cạnh những quyết định về cách báo việc cho các khâu, thứ mà theo Rother và Shook thường cứ thế xảy ra theo mặc định nếu không ai vẽ ra: một lịch tuần, một danh sách gom cuối ngày, một quy định chờ đủ mẻ. <sup><a href="#ref-2">[2]</a></sup> Bằng chứng rằng cách nhìn này rút được thời gian chờ có, nhưng chưa chắc. Trong một tổng quan có hệ thống về sơ đồ chuỗi giá trị ở các cơ sở chăm sóc y tế, xét riêng các nghiên cứu có kiểm định thống kê, bảy trên tám nghiên cứu đo thời gian không tạo giá trị ghi nhận mức giảm có ý nghĩa thống kê, và mọi nghiên cứu trong tổng quan đều so trước với sau, không có nhóm đối chứng. <sup><a href="#ref-3">[3]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Giới Hạn Của Công Cụ Này Là Gì</h3>
+                <p>Ba giới hạn đến từ chính cách công cụ được định nghĩa. Một bản đồ chỉ vẽ một họ sản phẩm: Rother và Shook nói rõ vẽ mọi dòng sản phẩm lên một bản là quá rối, trừ khi nhà máy chỉ làm một sản phẩm. <sup><a href="#ref-2">[2]</a></sup> Ở xưởng may, quần và váy đồng phục dùng chung tổ may, chen vào cùng hàng chờ, nhưng không có mặt trên Hình 1. Bản đồ cũng là một bức ảnh chụp. Thời gian chờ được ước từ lượng hàng tồn đếm được trong lần đi dọc xưởng, cách mà chính Rother gọi là hữu ích để ước lead time từ cửa tới cửa <sup><a href="#ref-4">[4]</a></sup>, nên con số 21 ngày là ước lượng từ tồn kho của hôm đếm, chưa phải thời gian lưu đã được đo bằng cách theo từng chiếc áo; một lần đếm giữa mùa tựu trường và một lần ngoài mùa có thể cho hai bức ảnh khác hẳn. Và bản đồ chỉ phủ hai trong ba dòng mà người Toyota học. Nó ghi may một áo mất 18 phút, không ghi người may làm những động tác nào, động tác nào thừa; <sup><a href="#ref-2">[2]</a></sup> phần đó thuộc về những công cụ nhìn vào từng chỗ làm.</p>
+
+                <p>Hai chỗ yếu khác đến từ cách dùng, và sửa được. Bản đồ cho thấy một quyết định, như lịch tuần gửi cho bốn tổ, nhưng không tự ghi lý do của quyết định ấy: có thể là chi phí thay khuôn in logo, có thể chỉ là thói quen. Rother dặn đừng để việc đếm hàng tồn quan trọng hơn việc hiểu vì sao hàng nằm đó, vì hàng tồn luôn có lý do. <sup><a href="#ref-4">[4]</a></sup> Chỗ yếu thứ hai là coi bản hiện trạng (current-state map) là sản phẩm cuối cùng. Nó trả lời hàng đang chờ ở đâu, chưa trả lời sẽ làm gì với chỗ chờ ấy. Rother và Shook nói thẳng về chỗ này: một bản hiện trạng không có bản mục tiêu (future-state map) đi kèm thì không mấy hữu ích, và bản mục tiêu mới là bản quan trọng nhất. <sup><a href="#ref-2">[2]</a></sup></p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Điều Hình 1 cho thấy</th><th scope="col">Điều nó không cho thấy</th></tr></thead>
+                    <tbody>
+                        <tr><td>Áo sơ mi, một họ sản phẩm</td><td>Quần và váy dùng chung tổ may, chen vào cùng hàng chờ</td></tr>
+                        <tr><td>1.800 áo chờ giữa tổ cắt và tổ may hôm đi dọc xưởng</td><td>Lượng chờ những ngày khác, giữa mùa tựu trường hay ngoài mùa</td></tr>
+                        <tr><td>18 phút may một áo</td><td>Người may làm những động tác nào, động tác nào thừa</td></tr>
+                        <tr><td>Lịch tuần gửi riêng cho từng tổ</td><td>Vì sao phòng kế hoạch chọn lịch tuần</td></tr>
+                        <tr><td>Dòng chảy từ kho vải tới lúc giao hàng</td><td>Thời gian chờ ở nhà cung cấp vải và ở trường duyệt mẫu</td></tr>
+                        <tr><td>Khoảng 21 ngày chờ (ước) so với 24 phút làm</td><td>Xưởng sẽ đổi gì để rút 21 ngày ấy, phần của bản mục tiêu</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Ví Dụ</h2>
+            <p class="intro-text">Ví dụ thứ nhất là một chi nhánh ngân hàng chia việc vẽ bản đồ cho bốn trưởng phòng rồi ghép các mảnh lại, và vì sao bản ghép không thấy được đoạn hồ sơ nằm chờ lâu nhất. Ví dụ thứ hai là một khoa cấp cứu ở Beirut dùng sơ đồ chuỗi giá trị để rút thời gian đưa bệnh nhân đi chụp X-quang: nó cho thấy sức của việc vẽ dòng thông tin, và vì sao kết quả phải được đo trên một phạm vi rộng hơn đoạn được vẽ.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Bốn Trưởng Phòng, Bốn Mảnh Bản Đồ, Một Đoạn Không Ai Vẽ</h3>
+                <p>Tình huống minh hoạ: một chi nhánh ngân hàng muốn rút thời gian giải ngân khoản vay mua nhà, hiện mất khoảng 14 ngày làm việc tính từ lúc khách nộp đủ hồ sơ. Giám đốc chi nhánh giao mỗi trưởng phòng vẽ phần việc của phòng mình. Phòng khách hàng cá nhân vẽ tiếp nhận và thẩm định, phòng định giá vẽ định giá tài sản, phòng pháp chế vẽ hợp đồng thế chấp, phòng vận hành vẽ giải ngân, và ai cũng đo kỹ thời gian xử lý bên trong phòng mình. Bốn mảnh được ghép thành một bản khổ A0 treo ở phòng họp, đường thời gian dưới đáy ghi 14 ngày làm việc so với khoảng 6 giờ xử lý. Con số ấy gây ấn tượng ở buổi báo cáo. Không ai vẽ bản mục tiêu; mỗi trưởng phòng mang về danh sách lãng phí trong phần của mình. Ba tháng sau, phòng khách hàng cá nhân rút thời gian thẩm định từ bốn ngày xuống hai. Thời gian tới lúc giải ngân vẫn quanh 13 tới 14 ngày.</p>
+                <p>Lần thứ hai, phó giám đốc chi nhánh tự cầm một bộ hồ sơ thật đi từ quầy tiếp nhận tới lúc giải ngân, và ở mỗi chỗ chuyển giao hỏi một câu: phòng sau biết có hồ sơ mới bằng cách nào? Câu trả lời ở chỗ nối giữa thẩm định và định giá không có trên mảnh bản đồ nào. Phòng định giá chỉ nhận hồ sơ qua một danh sách tổng hợp gửi vào chiều thứ Sáu, rồi xếp lịch đi xem tài sản vào tuần sau, nên một hồ sơ thẩm định xong sớm hai ngày vẫn nằm chờ tới chiều thứ Sáu. Hai ngày rút được ở phòng khách hàng cá nhân đã thành hai ngày chờ thêm trước cửa phòng định giá. Đoạn chờ ấy lọt khỏi cả bốn mảnh vì nó nằm giữa hai phòng, còn mỗi trưởng phòng thì vẽ từ lúc hồ sơ tới tay mình.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Bớt 13 Phút Ở Khâu Chuyển, Một Phút Rưỡi Ở Cả Chặng</h3>
+                <p>Khoa cấp cứu của Trung tâm Y khoa Đại học Hoa Kỳ tại Beirut (AUBMC), Liban, nhận khoảng 49.000 lượt khám mỗi năm, có máy chụp X-quang ngay trong khoa và nhân viên chuyên đưa bệnh nhân tới máy. Một nhóm cải tiến, từ trưởng khoa, điều dưỡng, thư ký tới một người quản trị bệnh viện chuyên về quản lý thay đổi, đã vẽ sơ đồ chuỗi giá trị cho quy trình chuyển bệnh nhân đi chụp, để tách hoạt động tạo giá trị khỏi hoạt động không tạo giá trị. Thứ bản đồ lộ ra nằm ở dòng thông tin. Quy trình phụ thuộc gần như hoàn toàn vào thư ký: thư ký nhắn riêng cho người đưa bệnh nhân và cho kỹ thuật viên X-quang, rồi điều phối giữa hai người qua một chuỗi gọi điện qua lại và nhắn đi nhắn lại, xen giữa các việc khác. Kỹ thuật viên không nhìn thấy những ca đang chờ, chỉ biết khi thư ký báo. <sup><a href="#ref-5">[5]</a></sup></p>
+                <p>Nhóm đổi ba thứ, cả ba đều ở cách giao việc. Một màn hình hiện mọi yêu cầu chụp đang chờ cho kỹ thuật viên, thay cho lời báo của thư ký; nhóm tác giả mô tả nó như một hệ thống kéo kiểu kanban, nơi khâu sau tự lấy việc khi sẵn sàng. Một người đưa bệnh nhân chỉ làm đúng việc đó, đứng cùng kỹ thuật viên ở phòng chụp từ 8 giờ sáng tới 11 giờ đêm. Và thư ký ra khỏi quy trình. So sáu tháng trước với sáu tháng sau (6.186 và 4.879 ca chụp), thời gian từ lúc yêu cầu chụp được thu ngân xử lý tới lúc kỹ thuật viên bắt đầu chụp giảm từ trung bình 22,89 phút xuống 9,87 phút, và tỷ lệ bệnh nhân được đưa tới trong vòng 10 phút tăng từ 32,3% lên 71,6%. Thời gian nằm ở khoa cấp cứu giảm từ trung bình 4,57 giờ xuống 3,65 giờ. <sup><a href="#ref-5">[5]</a></sup></p>
+                <p>Một con số khác đi ngược chiều. Thời gian từ lúc chụp xong tới lúc bác sĩ nội trú khoa chẩn đoán hình ảnh trả báo cáo sơ bộ tăng từ trung bình 31,16 phút lên 42,63 phút. Nhóm tác giả cho rằng mức tăng ấy nhiều khả năng là do thay đổi bên trong khoa chẩn đoán hình ảnh, nơi vừa đổi trưởng khoa và giám đốc chương trình nội trú, có thể làm đổi thứ tự ưu tiên đọc phim cấp cứu; họ trình bày đây là phỏng đoán. Nghiên cứu còn đo một chỉ số gộp, từ lúc yêu cầu chụp được xử lý tới lúc có báo cáo sơ bộ: trung bình 54,04 phút trước và 52,50 phút sau, mức giảm có ý nghĩa thống kê nhưng chỉ khoảng một phút rưỡi, và 2,31 phút sau khi hiệu chỉnh. Phần phương pháp của bài báo không định nghĩa riêng chỉ số này, nhưng hai con số khớp với tổng của hai đoạn vừa kể. Cùng giai đoạn, khoa cấp cứu cũng đổi cách vận hành để rút thời gian từ lúc vào cửa tới lúc gặp bác sĩ, thay đổi mà theo nhóm tác giả khó ảnh hưởng tới thời gian chuyển nhưng có thể ảnh hưởng tới các kết quả khác, trong đó có thời gian nằm khoa. <sup><a href="#ref-5">[5]</a></sup> Bản đồ của nhóm được ghi là bản đồ của quy trình chuyển bệnh nhân, trước và sau can thiệp. Mười ba phút bớt được ở đoạn ấy còn khoảng một phút rưỡi khi đo tới lúc có báo cáo, và các số liệu này chưa cho biết phần chờ tăng ở khâu đọc phim có do can thiệp gây ra hay không. Bài học nằm ở việc đo hơn là ở cỡ của bản đồ: kết quả phải được đo trên một phạm vi rộng hơn đoạn được can thiệp, như nhóm này đã làm, và khi hai đoạn chuyển động ngược chiều nhau thì đó là chỗ phải đi điều tra.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Một Vài Nghiên Cứu Về Sơ Đồ Chuỗi Giá Trị</h2>
+            <p class="intro-text">Hai tổng quan dưới đây đo hai thứ khác nhau. Một tổng quan có hệ thống hỏi sơ đồ chuỗi giá trị có cải thiện được chất lượng ở các cơ sở chăm sóc hay không; một tổng quan phạm vi đếm xem các bài đã công bố thật ra vẽ những gì trên bản đồ. Cạnh đó là một phép đếm mức phổ biến của công cụ trong các dự án lean (sản xuất tinh gọn) ở y tế. Cả ba đều đến từ y tế. Trong phạm vi tìm kiếm của bài này, chưa tìm thấy tổng quan nào đo hiệu quả của công cụ trong sản xuất, nơi nó ra đời; một nghiên cứu nhiều ca ở sản xuất được nêu kèm.</p>
+            <div class="sub-section">
+                <p><strong>Nghiên cứu:</strong> Năm 2017, Nowak, Pfaff và Karbach công bố trên <em>Systematic Reviews</em> một tổng quan có hệ thống về tác động của sơ đồ chuỗi giá trị tới chất lượng ở các cơ sở chăm sóc, xếp kết quả theo ba tầng cấu trúc, quy trình và kết cục trong mô hình của Donabedian. Nhóm tìm ở PubMed, EBSCOhost, Web of Knowledge và EMBASE ScienceDirect các bài bình duyệt bằng tiếng Anh hoặc tiếng Đức, công bố từ năm 2000 tới tháng 2 năm 2016, chỉ giữ những nghiên cứu dùng sơ đồ chuỗi giá trị như một phương pháp tự đứng. Từ 903 kết quả, 22 nghiên cứu đạt tiêu chí; chỉ 11 nghiên cứu có kiểm định thống kê được dùng để đánh giá hiệu quả. <sup><a href="#ref-3">[3]</a></sup> Năm 2021, Marin-Garcia, Vidal-Carreras và Garcia-Sabater ở Đại học Bách khoa Valencia công bố trên <em>International Journal of Environmental Research and Public Health</em> một tổng quan phạm vi (loại tổng quan mô tả những gì đã được làm và báo cáo, không chấm hiệu quả), rà 80 bài về sơ đồ chuỗi giá trị trong dịch vụ y tế công bố từ 2015 tới 2019, tìm qua Web of Science, để xem các bài ấy vẽ bản đồ ra sao và đo những chỉ số nào. <sup><a href="#ref-6">[6]</a></sup> Về mức phổ biến, tổng quan tích hợp của de Barros và cộng sự (2021) đếm công cụ được dùng trong 33 bài về lean ở y tế cùng giai đoạn 2015 tới 2019. <sup><a href="#ref-7">[7]</a></sup> Ngoài y tế, năm 2008, Serrano, Ochoa và De Castro công bố trên <em>International Journal of Production Research</em> một nghiên cứu nhiều ca ở sáu công ty công nghiệp, dùng sơ đồ chuỗi giá trị để thiết kế lại những dây chuyền sản xuất rời rạc; bài chỉ đọc được phần tóm tắt. <sup><a href="#ref-8">[8]</a></sup></p>
+                <p><strong>Kết quả:</strong> Ở tổng quan của Nowak, cả 22 nghiên cứu đều so trước với sau, không có nhóm đối chứng, và đều xếp ở mức bằng chứng IV theo thang của Trung tâm Y học Dựa trên Bằng chứng Oxford; điểm chất lượng trung bình theo MINORS, một thang chấm chất lượng cho nghiên cứu không ngẫu nhiên, là 5,59 trên 16, và không nghiên cứu nào đạt đủ mọi tiêu chí. Trong 11 nghiên cứu có kiểm định, tám nghiên cứu đo thời gian không tạo giá trị, như thời gian chờ từ cuộc gọi đầu tiên tới buổi khám, và bảy trong số đó ghi nhận mức giảm có ý nghĩa thống kê. Bảy trên chín nghiên cứu đo thời gian nằm viện ghi nhận mức giảm có ý nghĩa thống kê. Kết quả ở tầng cấu trúc không rõ chiều, còn mức hài lòng của người bệnh và chi phí hiếm khi được đo. <sup><a href="#ref-3">[3]</a></sup> Ở tổng quan của Marin-Garcia, 20 trong 80 bài nói có vẽ bản đồ mà không trình bày bản đồ nào; trong 60 bài còn lại, 40 bài không có bản mục tiêu. Nhóm cũng đếm được 41 bài thiếu ký hiệu cho dòng thông tin. Chỉ số được đo nhiều nhất là thời gian: 24 bài xử lý thời gian chờ, 16 bài xét phần thời gian tạo giá trị và không tạo giá trị. Nhóm tác giả không tìm được bài nào có kết quả âm tính hay cải thiện không đáng kể, và không thấy ứng dụng nào vượt qua ranh giới khoa phòng hay nối sang các mắt xích khác của chuỗi chăm sóc. <sup><a href="#ref-6">[6]</a></sup> Trong 33 bài của de Barros, sơ đồ chuỗi giá trị là công cụ được dùng nhiều thứ hai, có mặt ở 17 bài, chỉ sau DMAIC (chu trình năm bước của Six Sigma, 18 bài). <sup><a href="#ref-7">[7]</a></sup> Ở sáu công ty của Serrano, theo phần tóm tắt, nhóm tác giả xác nhận công cụ dùng được để thiết kế lại, nêu những nguồn lực việc áp dụng đòi hỏi, và phân tích khoảng cách giữa khái niệm của công cụ với cách dùng thật; tóm tắt không nêu con số cải thiện. <sup><a href="#ref-8">[8]</a></sup></p>
+                <p><strong>Kết luận:</strong> Tổng quan của Nowak cho thấy trong y tế, phần lớn các nghiên cứu có kiểm định thống kê, trong số những nghiên cứu dùng sơ đồ chuỗi giá trị như một phương pháp tự đứng, ghi nhận thời gian chờ và thời gian nằm viện ngắn đi sau khi áp dụng. Nó không chứng minh công cụ gây ra mức giảm ấy, vì không nghiên cứu nào có nhóm đối chứng; chính nhóm tác giả viết rằng muốn có kết luận cuối cùng về hiệu quả thì cần thêm nghiên cứu với phương pháp tốt hơn. <sup><a href="#ref-3">[3]</a></sup> Tổng quan của Marin-Garcia không đo hiệu quả. Nó cho thấy phần lớn các bài trong mẫu có trình bày bản đồ không ghi lại hai thứ mà Rother và Shook coi là cốt lõi của công cụ: dòng thông tin và bản mục tiêu. Nó cũng cho thấy một chỗ trống ở phía kết quả: không bài nào báo kết quả âm tính, và nhóm tác giả nói họ không biết đó là vì không có kết quả âm tính hay vì chúng không được công bố. Lời cảnh báo rằng một bản đồ chỉ vẽ trong một khoa có thể chỉ chuyển lãng phí sang đơn vị khác thay vì loại bỏ nó là giả thuyết nhóm tác giả nêu từ các công trình trước; dữ liệu của tổng quan không kiểm nó. <sup><a href="#ref-6">[6]</a></sup> Ở sản xuất, nghiên cứu của Serrano cho thấy công cụ làm được việc thiết kế lại; phần tóm tắt của nó chưa cho biết công cụ cải thiện được bao nhiêu.</p>
+                <p><strong>Phản biện:</strong> Lý lẽ mạnh nhất của phe bênh đến thẳng từ những người viết ra công cụ. Rother và Shook gọi sơ đồ chuỗi giá trị là một công cụ định tính, dùng để mô tả chi tiết một cơ sở sẽ vận hành ra sao; con số, theo họ, hữu ích để tạo cảm giác cấp bách hoặc để đo trước và sau, còn bản đồ mô tả việc sẽ làm để tác động lên những con số ấy. <sup><a href="#ref-2">[2]</a></sup> Từ đó phe bênh suy ra rằng đánh giá công cụ chỉ bằng phép so thời gian trước và sau là đo sai thứ: giá trị của nó, nếu có, nằm ở bản thiết kế, và ở những thay đổi mà không vẽ thì nhóm đã không nghĩ ra. Còn việc bản mục tiêu vắng mặt trong bài báo có thể chỉ là chuyện trình bày, vì tạp chí giới hạn số hình và bản hiện trạng dễ in hơn. Bài nhận vế sau ở đúng mức nguồn cho phép: tổng quan của Marin-Garcia đếm những gì bài báo trình bày, không đếm những gì các nhóm đã làm, nên con số 40 trên 60 không nói rằng 40 nhóm đã không vẽ bản mục tiêu. Bài cũng nhận rằng một công cụ thiết kế không cần một thử nghiệm ngẫu nhiên mới được dùng. Nhưng chính lý lẽ ấy đặt giá trị của công cụ vào bản mục tiêu, nên khi bản mục tiêu không được công bố, người đọc mất đúng chỗ kiểm được công cụ đã góp gì: thấy thời gian giảm, không thấy thay đổi nào trên bản thiết kế làm nó giảm. Và khi không bài nào trong 80 bài báo kết quả âm tính, phép so trước và sau, thứ được công bố nhiều nhất, cũng không tự đứng được. Phe bênh đúng khi nói phép so trước và sau, đứng một mình, không đánh giá được công cụ. Nhưng chính nguồn họ dựa vào đặt con số và bản đồ cạnh nhau chứ không thay nhau: một công cụ thiết kế được đánh giá qua cả bản thiết kế, việc thực hiện nó và kết quả, và trong ba thứ ấy, thứ đang vắng trong các bài đã công bố là bản thiết kế.</p>
+                <p><strong>Vì sao điều này hữu ích:</strong> Lần tới gặp một báo cáo ghi "dùng sơ đồ chuỗi giá trị, thời gian chờ giảm 40%", hỏi trước tiên bản mục tiêu ở đâu, và thay đổi nào trên đó làm thời gian giảm. Rồi hỏi kết quả được đo tới đâu: chỉ trong đoạn đã cải tiến, hay tới chỗ người cần kết quả nhận được nó. Báo cáo của khoa cấp cứu ở Beirut làm được cả hai việc, và chính nhờ vậy người đọc thấy 13 phút ở khâu chuyển còn khoảng một phút rưỡi ở cả chặng.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">Cách Áp Dụng</h2>
+            <p class="intro-text">Sơ đồ chuỗi giá trị hoạt động bằng cách đặt thời gian chờ cạnh thời gian làm trên cùng một đường và đặt dòng thông tin ngay trên dòng vật liệu, để chỗ hàng nằm chờ và quyết định đứng sau nó hiện ra trên cùng một tờ, nên cách triển khai hiệu quả là để một người đi hết dòng chảy của một họ sản phẩm, hỏi ở mỗi khâu nó nhận lệnh làm bằng cách nào, và dùng những gì thấy được để vẽ bản mục tiêu chứ không dừng ở bản hiện trạng. Công cụ đáng bỏ công nhất ở những việc lặp lại đều đặn, đi qua nhiều khâu hay nhiều phòng ban, nơi khách đợi lâu hơn hẳn thời gian thật sự có người làm. Một việc chỉ làm một lần không có dòng chảy lặp lại để vẽ, còn ở một việc nằm gọn trong tay một người, hàng vẫn có thể nằm chờ khi người ấy gom việc theo đợt hay chờ máy, nhưng không có lần chuyển giao nào giữa các bộ phận để bản đồ làm lộ ra.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Chọn một họ sản phẩm, và để một người đi dọc dòng chảy từ đầu tới cuối:</strong> Rother và Shook đề nghị một người dẫn việc vẽ, đi và vẽ các khâu của một họ sản phẩm từ cửa tới cửa, và dặn đừng chia việc vẽ cho từng trưởng khu vực rồi mong ghép các mảnh lại được <sup><a href="#ref-2">[2]</a></sup>. Lần đi đầu nên nhanh: Rother kể ông cho người vẽ đi nhanh hay chậm tuỳ ý nhưng không được dừng lại, để giữ cái nhìn cả dòng trước khi sa vào chi tiết <sup><a href="#ref-4">[4]</a></sup>. Một chỗ dễ sót là chỗ nối giữa hai phòng, như đoạn hồ sơ vay nằm chờ danh sách chiều thứ Sáu</li>
+                    <li><strong>Hỏi mỗi khâu nhận lệnh làm bằng cách nào, và vẽ câu trả lời thành dòng thông tin:</strong> Câu hỏi Rother và Shook đặt ra là làm sao để thông tin chảy sao cho mỗi khâu chỉ làm đúng thứ khâu sau cần, vào lúc khâu sau cần <sup><a href="#ref-2">[2]</a></sup>. Ở khoa cấp cứu Beirut, câu trả lời, một chuỗi điện thoại qua thư ký, chính là chỗ cần đổi <sup><a href="#ref-5">[5]</a></sup>. Đây cũng là phần hay vắng trên các bản đồ được công bố: 41 bài trong tổng quan của Marin-Garcia thiếu ký hiệu cho dòng thông tin <sup><a href="#ref-6">[6]</a></sup>, và một bản đồ chỉ có dòng vật liệu thì mất đúng chỗ thường giữ manh mối cho câu hỏi vì sao hàng nằm chờ</li>
+                    <li><strong>Đổi mỗi đống hàng chờ ra thời gian, rồi đi tìm lý do nó nằm đó:</strong> Con số chờ ước từ một lần đếm là manh mối, chưa phải kết luận; nếu có sổ ghi giờ thì kiểm nó bằng dữ liệu của nhiều ngày, vì một lần đếm chưa phải lượng tồn trung bình khi hàng dâng lên rút xuống theo một lịch hay một danh sách, và lưu lượng đem chia phải tính trên cùng khoảng thời gian, cùng phạm vi với thời gian chờ cần ước. Rother dặn đừng để việc đếm hàng tồn quan trọng hơn câu hỏi vì sao phải giữ nhiều hàng ở chỗ này <sup><a href="#ref-4">[4]</a></sup>. Lý do thường là một quyết định ở dòng thông tin, như một lịch tuần, một danh sách lập mỗi ngày một lần, hay một quy định chờ đủ mẻ</li>
+                    <li><strong>Vẽ bản mục tiêu trước khi coi việc vẽ là xong, và đo lead time của cả dòng trước và sau:</strong> Cách hiển nhiên là treo bản hiện trạng lên tường và để mỗi bộ phận tự sửa phần của mình, và cách ấy có thể hỏng theo đúng kiểu ở chi nhánh ngân hàng: thời gian rút ở một khâu thành thời gian chờ ở khâu sau. Rother và Shook coi bản mục tiêu là bản quan trọng nhất, kèm một kế hoạch thực hiện trên một trang, và cho rằng khoảng hai ngày là đủ để có một bản mục tiêu đủ dùng để bắt đầu <sup><a href="#ref-2">[2]</a></sup>. Thước đo đặt cạnh bản mục tiêu là lead time từ đầu tới cuối dòng, đo trước và sau bằng cùng một định nghĩa, cộng một chỉ số cho khâu ngay sau đoạn được đổi, vì đó là chỗ thời gian chờ có thể dồn sang</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Tình Huống Áp Dụng</h2>
+            <p class="intro-text">Một tiệm giặt sấy nhận và giao đồ tận nhà, trung bình 60 đơn giặt sấy thường mỗi ngày, mở cửa từ 7 giờ tới 19 giờ, cả tuần không nghỉ. Tiệm hứa giao trong 48 giờ, trong khi khách ngày càng hỏi có giao trong ngày hôm sau không. Chủ tiệm đặt mục tiêu: ít nhất 80% đơn giặt sấy thường được giao trong 24 giờ, tính từ lúc nhân viên giao nhận lấy đồ tới lúc giao trả, giữ được bốn tuần liền, không mua thêm máy. Trong hai tuần trước dự án, tiệm giao 836 đơn, chỉ 21% trong 24 giờ, trung vị 30 giờ. Các con số trong tình huống này là số minh hoạ.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Chọn họ sản phẩm và chốt hai đầu:</strong> Họ sản phẩm là đơn giặt sấy thường. Giặt hấp đồ len và vest đi qua máy khác, người khác, nên để ra ngoài bản đồ này. Điểm đầu là lúc nhân viên giao nhận lấy túi đồ ở nhà khách, điểm cuối là lúc giao trả; cả hai đều đã có giờ ghi sẵn trong ứng dụng giao nhận</li>
+                    <li><strong>Một người đi dọc dòng chảy theo túi đồ:</strong> Chủ tiệm theo một túi đồ từ xe giao nhận tới máy giặt, máy sấy, bàn gấp rồi lên xe lần nữa, ghi thời gian xử lý ở từng khâu: phân loại 5 phút, giặt 50 phút, sấy 60 phút, gấp và đóng túi 10 phút, cộng 2 giờ 5 phút. Lúc 14 giờ, chủ tiệm đếm túi đang chờ ở mỗi chỗ: 46 túi chờ vào máy giặt, 4 túi chờ sấy, 17 túi đã gấp chờ chuyến giao lúc 16 giờ</li>
+                    <li><strong>Hỏi mỗi khâu nhận lệnh làm bằng cách nào:</strong> Ba câu trả lời thành ba mũi tên trên dòng thông tin. Nhân viên giặt chỉ giặt đơn có trong danh sách chủ tiệm lập lúc 8 giờ sáng từ sổ đơn, nên đơn về sau 8 giờ chờ tới sáng hôm sau. Nhân viên giặt chờ đủ 10 kg mới chạy máy, một quy định để tiết kiệm điện nước mà không ai ghi ra giấy. Nhân viên giao nhận chạy hai chuyến cố định lúc 9 giờ và 16 giờ, mang theo những túi đã gấp xong lúc xe rời tiệm</li>
+                    <li><strong>Đổi hàng chờ ra thời gian, và biết phép đổi ấy ước được gì:</strong> Chia 46 túi cho 5 đơn mỗi giờ mở cửa thì ra khoảng 9,2 giờ, nhưng phép chia này đặt cạnh nhau hai thứ khác cơ sở. Lưu lượng tính theo 12 giờ mở cửa, trong khi túi đồ nằm chờ cả ban đêm; tính theo giờ đồng hồ, 60 đơn mỗi ngày là 2,5 đơn mỗi giờ, và 46 túi ứng với khoảng 18 giờ. Quan hệ giữa lượng tồn, lưu lượng và thời gian chờ (định luật Little) đúng cho các giá trị trung bình trong một khoảng thời gian, không đòi hàng phải được nhả ra đều đặn <sup><a href="#ref-9">[9]</a></sup>; nhưng một lần đếm lúc 14 giờ chưa phải lượng tồn trung bình, vì số túi chờ lên xuống trong ngày: đếm lại lúc 7 giờ sáng hôm sau thì có 57 túi, gần như toàn bộ đơn của ngày hôm trước. Phạm vi cũng lệch, vì túi đếm được là túi đã về tiệm còn sổ đo từ lúc lấy đồ ở nhà khách; và phép chia cho ra thời gian chờ trung bình, còn sổ báo trung vị. Phép đổi vì vậy chỉ cho một độ lớn ước chừng và một chỗ đáng nghi, chưa phải số đo</li>
+                    <li><strong>Kiểm bằng dấu giờ trong sổ:</strong> Sổ của hai tuần cho trung vị từ lúc lấy đồ tới lúc vào máy giặt là 20 giờ (bảng thứ nhất), đoạn này gồm cả chạy xe, phân loại và nằm chờ. Sổ cũng cho phép so nhóm giao kịp với nhóm giao trễ. Trong 420 đơn lấy ở chuyến 9 giờ, về tiệm sau khi danh sách đã lập, chỉ 16 đơn giao kịp 24 giờ, và cả 16 đều là đơn khách dặn gấp, được chủ tiệm chen vào danh sách ngay trong ngày; những đơn còn lại sớm nhất cũng chỉ được giao ở chuyến 16 giờ hôm sau, khoảng 31 giờ sau lúc lấy. Trong 416 đơn lấy ở chuyến 16 giờ, vào thẳng danh sách sáng hôm sau, 160 đơn giao kịp. Đoạn chờ dài nhất là đoạn qua đêm, và manh mối mạnh nhất cho lý do của nó là danh sách lập mỗi ngày một lần: trong nhóm chuyến 9 giờ, chỉ những đơn được chen vào danh sách mới kịp</li>
+                    <li><strong>Vẽ bản mục tiêu và kế hoạch trên một trang:</strong> Ba thay đổi, cả ba ở dòng thông tin (Hình 2). Túi về tiệm được treo lên giá theo giờ về, và nhân viên giặt lấy túi đầu giá mỗi khi máy trống, thay cho danh sách lúc 8 giờ. Máy chạy khi đủ 10 kg hoặc khi túi đầu giá đã chờ quá một giờ, tuỳ điều nào tới trước. Thêm một chuyến giao lúc 12 giờ bằng cách dời giờ bắt đầu ca chiều của nhân viên giao nhận, không thêm người. Kế hoạch ghi thêm hai thước đo đi kèm: chi phí điện nước trên mỗi kg đồ, vì máy sẽ có lúc chạy chưa đủ mẻ, và số phản ánh trên 100 đơn (lẫn đồ, đồ còn ẩm), vì làm nhanh hơn có thể thành làm ẩu</li>
+                    <li><strong>Đo bốn tuần sau bằng đúng định nghĩa cũ, và kiểm hai kỳ có tương đương không:</strong> Cùng điểm đầu, cùng điểm cuối, cùng mốc 24 giờ, tính trên từng đơn. Hai kỳ được so ở hai biến mà thay đổi không tác động: số đơn mỗi ngày, vì trong bốn tuần này tiệm chưa đổi lời hứa 48 giờ nên chưa có gì kéo thêm khách, và tỷ lệ đơn có chăn mền, loại đồ chiếm trọn một máy (bảng thứ hai). Đoạn từ lúc gấp xong tới lúc giao, khâu ngay sau chỗ đã đổi, cũng được đo, để biết thời gian bớt ở đầu dòng có dồn xuống cuối dòng hay không</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Đoạn</th><th scope="col">Thời gian xử lý</th><th scope="col">Trung vị kỳ trước (836 đơn)</th><th scope="col">Trung vị kỳ sau (1.708 đơn)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Lấy đồ tới lúc vào máy giặt</td><td>5 phút phân loại, cộng chạy xe lấy đồ (sổ không tách riêng)</td><td>20 giờ</td><td>8 giờ</td></tr>
+                        <tr><td>Vào máy giặt tới lúc gấp xong</td><td>2 giờ (giặt, sấy, gấp)</td><td>3 giờ</td><td>2,5 giờ</td></tr>
+                        <tr><td>Gấp xong tới lúc giao</td><td>Chạy xe và bàn giao (sổ không tách riêng)</td><td>6 giờ</td><td>3 giờ</td></tr>
+                        <tr><td>Toàn dòng, lấy đồ tới lúc giao</td><td>2 giờ 5 phút tại tiệm, chưa tính giao nhận</td><td>30 giờ</td><td>16 giờ</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">Kỳ trước là 14 ngày, kỳ sau là 28 ngày. Trung vị từng đoạn không cộng thẳng ra trung vị toàn dòng; trung vị toàn dòng tính riêng từ giờ lấy đồ và giờ giao của từng đơn.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Chỉ số</th><th scope="col">Kỳ trước (14 ngày)</th><th scope="col">Tuần 1</th><th scope="col">Tuần 2</th><th scope="col">Tuần 3</th><th scope="col">Tuần 4</th></tr></thead>
+                    <tbody>
+                        <tr><td>Đơn giao trong 24 giờ</td><td>21%</td><td>81%</td><td>84%</td><td>82%</td><td>85%</td></tr>
+                        <tr><td>Số đơn trung bình mỗi ngày</td><td>60</td><td>60</td><td>62</td><td>61</td><td>61</td></tr>
+                        <tr><td>Tỷ lệ đơn có chăn mền</td><td>8%</td><td>9%</td><td>8%</td><td>10%</td><td>9%</td></tr>
+                        <tr><td>Phản ánh trên 100 đơn</td><td>1,1</td><td>1,4</td><td>1,2</td><td>0,9</td><td>1,2</td></tr>
+                        <tr><td>Điện nước trên mỗi kg (kỳ trước = 100)</td><td>100</td><td>107</td><td>106</td><td>105</td><td>106</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">Bốn tuần sau có lần lượt 420, 434, 427 và 427 đơn, cộng 1.708 đơn; tỷ lệ giao trong 24 giờ của cả kỳ là 83%. Kỳ trước có 836 đơn, trung bình 60 đơn mỗi ngày. Số phản ánh là 9 ở kỳ trước, và 6, 5, 4, 5 ở bốn tuần sau, cộng 20 trên 1.708 đơn.</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Bản hiện trạng và bản mục tiêu của dòng đơn giặt sấy thường ở một tiệm giặt sấy giao nhận tận nhà. Bản hiện trạng: lấy đồ, túi chờ danh sách, giặt, sấy, gấp, túi chờ chuyến giao, giao. Chủ tiệm lập danh sách giặt lúc 8 giờ mỗi ngày một lần; nhân viên giặt chờ đủ 10 kg mới chạy máy; lịch giao gồm chuyến 9 giờ và 16 giờ. Trung vị đo trong hai tuần trước dự án: 20 giờ từ lúc lấy đồ tới lúc vào máy giặt, 3 giờ từ lúc vào máy tới lúc gấp xong, 6 giờ từ lúc gấp xong tới lúc giao, toàn dòng 30 giờ trên 836 đơn. Bản mục tiêu, với mục tiêu ít nhất 80% đơn giao trong 24 giờ: túi về tiệm được treo lên giá theo giờ về, nhân viên giặt lấy túi đầu giá mỗi khi máy trống; máy chạy khi đủ 10 kg hoặc khi túi đầu giá đã chờ quá một giờ; lịch giao thêm chuyến 12 giờ. Những chỗ vẫn còn chờ: túi về cuối ngày chờ qua đêm, túi gấp xong sau 16 giờ chờ chuyến 9 giờ sáng hôm sau. Đo sau bốn tuần chạy thử, trung vị của ba đoạn tương ứng là 8 giờ, 2,5 giờ và 3 giờ, toàn dòng 16 giờ, và 83% trong 1.708 đơn được giao trong 24 giờ."
+                        viewBox="0 0 1120 530">
+                        <defs>
+                            <marker id="laundry-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <text class="note" x="20" y="24">Bản hiện trạng</text>
+                        <rect class="node" x="200" y="40" width="200" height="40" rx="8"></rect>
+                        <text x="300" y="60">Chủ tiệm (sổ đơn)</text>
+                        <rect class="node" x="880" y="40" width="210" height="40" rx="8"></rect>
+                        <text x="985" y="60">Lịch giao: 9 giờ, 16 giờ</text>
+                        <path class="edge-ghost" d="M300 80 V100 H355 V116" marker-end="url(#laundry-arrow)"></path>
+                        <text class="small alert note" x="364" y="104">danh sách lúc 8 giờ, mỗi ngày một lần</text>
+                        <path class="edge-ghost" d="M1015 80 V116" marker-end="url(#laundry-arrow)"></path>
+
+                        <rect class="node" x="30" y="120" width="110" height="50" rx="8"></rect>
+                        <text x="85" y="145">Lấy đồ</text>
+                        <path class="arrow" d="M142 145 H206" marker-end="url(#laundry-arrow)"></path>
+                        <path class="band" d="M220 122 L244 166 L196 166 Z"></path>
+                        <path class="arrow" d="M236 145 H298" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="300" y="120" width="110" height="50" rx="8"></rect>
+                        <text x="355" y="145">Giặt</text>
+                        <path class="arrow" d="M412 145 H438" marker-end="url(#laundry-arrow)"></path>
+                        <path class="band" d="M450 122 L474 166 L426 166 Z"></path>
+                        <path class="arrow" d="M464 145 H488" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="490" y="120" width="110" height="50" rx="8"></rect>
+                        <text x="545" y="145">Sấy</text>
+                        <path class="arrow" d="M602 145 H678" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="680" y="120" width="110" height="50" rx="8"></rect>
+                        <text x="735" y="145">Gấp</text>
+                        <path class="arrow" d="M792 145 H863" marker-end="url(#laundry-arrow)"></path>
+                        <path class="band" d="M875 122 L899 166 L851 166 Z"></path>
+                        <path class="arrow" d="M889 145 H958" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="960" y="120" width="110" height="50" rx="8"></rect>
+                        <text x="1015" y="145">Giao</text>
+
+                        <text class="small alert" x="355" y="188">chờ đủ 10 kg mới chạy</text>
+                        <text class="small alert" x="220" y="212">lấy đồ tới vào máy: 20 giờ</text>
+                        <text class="small" x="545" y="212">vào máy tới gấp xong: 3 giờ</text>
+                        <text class="small alert" x="875" y="212">gấp xong tới giao: 6 giờ</text>
+                        <text class="small" x="560" y="236">Đo trong hai tuần trước dự án, trung vị. Toàn dòng, từ lúc lấy đồ tới lúc giao: 30 giờ (836 đơn)</text>
+
+                        <path class="tick" d="M20 256 H1100"></path>
+
+                        <text class="note" x="20" y="284">Bản mục tiêu (mục tiêu: ít nhất 80% đơn giao trong 24 giờ)</text>
+                        <rect class="node" x="880" y="300" width="210" height="40" rx="8"></rect>
+                        <text x="985" y="320">Lịch giao: 9, 12, 16 giờ</text>
+                        <path class="edge-ghost" d="M1015 340 V376" marker-end="url(#laundry-arrow)"></path>
+                        <path class="edge-ghost" d="M355 378 V352 H220 V380" marker-end="url(#laundry-arrow)"></path>
+                        <text class="small alert" x="288" y="338">máy trống thì lấy túi đầu giá</text>
+
+                        <rect class="node" x="30" y="380" width="110" height="50" rx="8"></rect>
+                        <text x="85" y="405">Lấy đồ</text>
+                        <path class="arrow" d="M142 405 H163" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="band" x="165" y="382" width="110" height="46" rx="6"></rect>
+                        <text class="small" x="220" y="398">giá treo</text>
+                        <text class="small" x="220" y="414">theo giờ về</text>
+                        <path class="arrow" d="M277 405 H298" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="300" y="380" width="110" height="50" rx="8"></rect>
+                        <text x="355" y="405">Giặt</text>
+                        <path class="arrow" d="M412 405 H438" marker-end="url(#laundry-arrow)"></path>
+                        <path class="band" d="M450 382 L474 426 L426 426 Z"></path>
+                        <path class="arrow" d="M464 405 H488" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="490" y="380" width="110" height="50" rx="8"></rect>
+                        <text x="545" y="405">Sấy</text>
+                        <path class="arrow" d="M602 405 H678" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="680" y="380" width="110" height="50" rx="8"></rect>
+                        <text x="735" y="405">Gấp</text>
+                        <path class="arrow" d="M792 405 H863" marker-end="url(#laundry-arrow)"></path>
+                        <path class="band" d="M875 382 L899 426 L851 426 Z"></path>
+                        <path class="arrow" d="M889 405 H958" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="960" y="380" width="110" height="50" rx="8"></rect>
+                        <text x="1015" y="405">Giao</text>
+
+                        <text class="small" x="355" y="448">đủ 10 kg, hoặc túi đầu giá chờ quá 1 giờ</text>
+                        <text class="small alert" x="200" y="470">túi về cuối ngày vẫn chờ qua đêm</text>
+                        <text class="small alert" x="875" y="448">xong sau 16 giờ:</text>
+                        <text class="small alert" x="875" y="464">chờ chuyến 9 giờ hôm sau</text>
+                        <text class="small" x="220" y="492">lấy đồ tới vào máy: 8 giờ</text>
+                        <text class="small" x="545" y="492">vào máy tới gấp xong: 2,5 giờ</text>
+                        <text class="small" x="875" y="492">gấp xong tới giao: 3 giờ</text>
+                        <text class="small" x="560" y="516">Đo sau bốn tuần chạy thử, trung vị. Toàn dòng: 16 giờ; 83% đơn giao trong 24 giờ (1.708 đơn)</text>
+                    </svg>
+                    <figcaption><strong>Hình 2.</strong> Dòng vật liệu ở hai bản gần như giữ nguyên; thứ đổi là cách mỗi khâu nhận lệnh làm. Danh sách lúc 8 giờ nhường chỗ cho tín hiệu lấy việc khi máy trống, quy định chạy mẻ có thêm giới hạn một giờ chờ, và lịch giao có thêm chuyến 12 giờ. Bản mục tiêu cũng ghi những chỗ hàng vẫn còn nằm chờ, để chỗ chờ ấy là một lựa chọn đã cân nhắc chứ không phải một chỗ bị bỏ quên. Số dưới mỗi bản là số đo tính từ mốc tới mốc, gồm cả chạy xe, phân loại và nằm chờ: nửa trên đo trước dự án, nửa dưới đo sau bốn tuần chạy thử để đối chiếu với mục tiêu 80%.</figcaption>
+                </figure>
+
+                <p>Cả bốn tuần đều vượt mốc 80%, và trung vị toàn dòng giảm từ 30 giờ xuống 16 giờ, trên một lượng đơn và một tỷ lệ chăn mền tương đương kỳ trước. Phần lớn thời gian bớt được nằm ở đoạn đầu, đúng chỗ danh sách lập mỗi ngày một lần từng giữ túi đồ qua đêm, từ 20 giờ xuống 8 giờ; đoạn cuối không dài ra mà còn ngắn đi, từ 6 giờ xuống 3 giờ, nhờ chuyến giao lúc 12 giờ. Cái giá có thật: chi phí điện nước trên mỗi kg cao hơn khoảng 6%, vì máy có lúc chạy chưa đủ mẻ, và chủ tiệm phải tự cân mức đó với việc giữ được khách. Số phản ánh trên 100 đơn nhích từ 1,1 lên 1,2, chưa đủ để nói chất lượng tốt lên hay xấu đi. Bốn tuần là ngắn, không có nhóm đối chứng, và chưa tuần nào rơi vào mùa mưa, khi lượng đơn có thể khác. Bốn tuần cũng chưa đủ để biết khách có ở lại nhiều hơn không: giao trong 24 giờ là điều khách hỏi, chưa phải doanh thu của tiệm. Kết quả này dựa vào bốn điều kiện: một người đi hết dòng chảy của một họ sản phẩm, con số chờ ước từ một lần đếm được kiểm lại bằng sổ của nhiều ngày, thay đổi nhắm vào cách các khâu nhận lệnh làm thay vì vào tốc độ của máy, và kỳ sau được đo bằng đúng định nghĩa của kỳ trước, kể cả ở đoạn cuối dòng.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Tóm Tắt</h2>
+            <div class="summary-box">
+                <p><strong>Điểm Chính:</strong> Sơ đồ chuỗi giá trị đặt thời gian một món hàng nằm chờ cạnh thời gian có người làm trên nó, và đặt dòng thông tin ngay trên dòng vật liệu, để chỗ chờ và quyết định đứng sau nó hiện ra trên cùng một tờ. Điều phản trực giác nhất là bản mà chính hai tác giả của công cụ coi là quan trọng nhất, bản mục tiêu, lại là bản hay vắng mặt trong các bài đã công bố: trong tổng quan của Marin-Garcia và cộng sự về các bài ở y tế, 40 trên 60 bài có trình bày bản đồ không có bản mục tiêu. Cách dùng đáng tin vì vậy là để một người đi hết dòng chảy của một họ sản phẩm, hỏi mỗi khâu nhận lệnh làm bằng cách nào, vẽ bản mục tiêu cùng kế hoạch thực hiện, rồi đo lead time của cả dòng trước và sau, kể cả ở khâu ngay sau chỗ đã đổi.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">Tài Liệu Tham Khảo</h2>
+            <ol class="outline-list">
+                <li id="ref-1">Lean Enterprise Institute. <em>Value-Stream Mapping</em>, Lean Lexicon (truy cập ngày 23/10/2026). Mục từ điển của LEI; nguồn cho định nghĩa sơ đồ chuỗi giá trị là vẽ mọi bước của dòng vật liệu và dòng thông tin từ lúc nhận đơn tới lúc giao hàng, cho định nghĩa lead time, cho tên gọi ở Toyota, cho hai loại bản đồ hiện trạng và mục tiêu, và cho việc <em>Learning to See</em> nhận giải nghiên cứu Shingo năm 1999. <a href="https://www.lean.org/lexicon-terms/value-stream-mapping/" rel="noopener noreferrer" target="_blank">Đọc mục từ</a>.</li>
+                <li id="ref-2">Rother, M., &amp; Shook, J. <em>Learning to See: Value-Stream Mapping to Add Value and Eliminate Muda</em>. Lean Enterprise Institute (lời mở đầu đề tháng 5 năm 1998). Bài đọc phần mở đầu và Phần I do LEI đăng công khai; nguồn cho tên gọi Material and Information Flow Mapping ở Toyota và việc phương pháp chỉ phủ hai trong ba dòng, cho cách Rother và Shook đi tới công cụ, cho các lý do hai tác giả nêu (làm các quyết định về dòng chảy hiện ra, nối dòng thông tin với dòng vật liệu, là công cụ định tính, con số hữu ích để tạo cảm giác cấp bách hoặc đo trước và sau còn bản đồ mô tả việc sẽ làm), cho việc vẽ một họ sản phẩm từ cửa tới cửa do một người dẫn và không ghép các mảnh của từng khu vực, cho nhận xét hiếm gặp một người biết toàn bộ dòng chảy, và cho việc bản mục tiêu là bản quan trọng nhất, kèm kế hoạch một trang, vẽ trong khoảng hai ngày. <a href="https://www.lean.org/wp-content/uploads/2021/01/Learning-to-See-introduction.pdf" rel="noopener noreferrer" target="_blank">Đọc lời mở đầu</a>; <a href="https://www.lean.org/wp-content/uploads/2021/01/Learning-to-See-part1.pdf" rel="noopener noreferrer" target="_blank">đọc Phần I</a>.</li>
+                <li id="ref-3">Nowak, M., Pfaff, H., &amp; Karbach, U. (2017). Does Value Stream Mapping affect the structure, process, and outcome quality in care facilities? A systematic review. <em>Systematic Reviews</em>, 6, 170. Tổng quan có hệ thống 22 nghiên cứu dùng sơ đồ chuỗi giá trị như một phương pháp tự đứng ở các cơ sở chăm sóc; nguồn cho thiết kế trước và sau không đối chứng của mọi nghiên cứu, mức bằng chứng IV, điểm MINORS trung bình 5,59 trên 16, bảy trên tám nghiên cứu ghi nhận thời gian không tạo giá trị giảm có ý nghĩa thống kê, bảy trên chín với thời gian nằm viện, và kết luận rằng cần nghiên cứu với phương pháp tốt hơn. <a href="https://doi.org/10.1186/s13643-017-0563-y" rel="noopener noreferrer" target="_blank">Đọc bài báo</a>.</li>
+                <li id="ref-4">Rother, M. <em>Avoiding Common Pitfalls of Value-Stream Mapping</em>. Lean Enterprise Institute (truy cập ngày 23/10/2026). Bài viết của một trong hai tác giả <em>Learning to See</em> về những cách đọc sai cuốn sách; nguồn cho việc dùng lượng hàng tồn đếm được để ước lead time từ cửa tới cửa, cho lời dặn đừng để việc đếm hàng tồn quan trọng hơn câu hỏi vì sao hàng nằm đó, và cho lần đi dọc đầu tiên không được dừng lại. <a href="https://www.lean.org/wp-content/uploads/2020/09/11.pdf" rel="noopener noreferrer" target="_blank">Đọc bài viết</a>.</li>
+                <li id="ref-5">Hitti, E. A., El-Eid, G. R., Tamim, H., Saleh, R., Saliba, M., &amp; Naffaa, L. (2017). Improving Emergency Department radiology transportation time: a successful implementation of lean methodology. <em>BMC Health Services Research</em>, 17, 625. Nghiên cứu trước và sau ở khoa cấp cứu của AUBMC, Beirut; nguồn cho thành phần nhóm, những gì sơ đồ chuỗi giá trị lộ ra ở dòng thông tin, ba thay đổi, các con số về thời gian chuyển, tỷ lệ trong 10 phút, thời gian trả báo cáo sơ bộ, chỉ số gộp từ lúc xử lý yêu cầu tới báo cáo sơ bộ (54,04 xuống 52,50 phút; có trong tóm tắt, phần phương pháp không định nghĩa) và thời gian nằm khoa cùng cỡ mẫu, và cho cách nhóm tác giả giải thích mức tăng ở khâu đọc phim và các thay đổi cùng giai đoạn. <a href="https://doi.org/10.1186/s12913-017-2488-5" rel="noopener noreferrer" target="_blank">Đọc bài báo</a>.</li>
+                <li id="ref-6">Marin-Garcia, J. A., Vidal-Carreras, P. I., &amp; Garcia-Sabater, J. J. (2021). The Role of Value Stream Mapping in Healthcare Services: A Scoping Review. <em>International Journal of Environmental Research and Public Health</em>, 18(3), 951. Tổng quan phạm vi 80 bài về sơ đồ chuỗi giá trị trong dịch vụ y tế, 2015 tới 2019; nguồn cho 20 bài không trình bày bản đồ, 40 trên 60 bài không có bản mục tiêu, 41 bài thiếu ký hiệu dòng thông tin, số bài đo thời gian chờ, việc không tìm được kết quả âm tính, việc không có ứng dụng vượt ranh giới khoa phòng, và giả thuyết về lãng phí bị chuyển sang đơn vị khác. <a href="https://doi.org/10.3390/ijerph18030951" rel="noopener noreferrer" target="_blank">Đọc bài báo</a>.</li>
+                <li id="ref-7">de Barros, L. B., Bassi, L. C., Caldas, L. P., Sarantopoulos, A., Zeferino, E. B. B., Minatogawa, V., &amp; Gasparino, R. C. (2021). Lean healthcare tools for processes evaluation: an integrative review. <em>International Journal of Environmental Research and Public Health</em>, 18(14), 7389. Tổng quan tích hợp 33 bài về công cụ lean trong y tế, 2015 tới 2019; nguồn cho việc sơ đồ chuỗi giá trị có mặt ở 17 bài, đứng thứ hai sau DMAIC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8304063/" rel="noopener noreferrer" target="_blank">Đọc bài báo</a>.</li>
+                <li id="ref-8">Serrano, I., Ochoa, C., &amp; De Castro, R. (2008). Evaluation of value stream mapping in manufacturing system redesign. <em>International Journal of Production Research</em>, 46(16), 4409-4430. Nghiên cứu nhiều ca ở sáu công ty công nghiệp; nguồn cho việc công cụ được đánh giá là dùng được để thiết kế lại dây chuyền rời rạc, kèm nguồn lực cần có và khoảng cách giữa lý thuyết với thực hành. Bài đọc qua phần tóm tắt, toàn văn sau tường phí. <a href="https://doi.org/10.1080/00207540601182302" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-9">Little, J. D. C. (2011). Little's Law as viewed on its 50th anniversary. <em>Operations Research</em>, 59(3), 536-549. Bài tổng kết của chính người chứng minh định luật; nguồn cho việc L = λW liên hệ ba giá trị trung bình (lượng tồn trung bình theo thời gian, lưu lượng trung bình, thời gian chờ trung bình), đúng trong những điều kiện rất rộng và không phụ thuộc thứ tự phục vụ. <a href="https://doi.org/10.1287/opre.1110.0940" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Value Stream Mapping - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="A value stream map puts the time an item spends waiting next to the time someone spends working on it, and draws the information flow directly above the material flow. This article covers the mechanism, the limits of a single map, the evidence that exists on the tool, and a worked scenario, step by step."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Value Stream Mapping</h1>
+            <p class="page-subtitle">The current-state map shows where work sits waiting; what will be done about that waiting lives in the future-state map, the map often missing from published work</p>
+            <p class="page-meta">Published: <time datetime="2026-10-23">October 23, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Definition</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Is a Value Stream Map</h3>
+                <p>A value stream map (VSM) draws, on a single sheet, the whole path of one product family, meaning a group of products that pass through much the same steps, from the moment an order comes in to the moment it is delivered. It draws two flows: the material flow shows which stages the item passes through, and the information flow shows how each stage is told what to work on next. Along the bottom of the map runs a timeline that sets two numbers side by side: the time a person or a machine actually spends working on the item, and the lead time, the time one item takes to get through the whole flow from start to finish. <sup><a href="#ref-1">[1]</a></sup> The first number is not necessarily value-adding time, since inspection and rework are also somebody working. Suppose a garment workshop sews uniform shirts for schools and ships about 300 shirts a day. Everyone in the workshop knows how long it takes to sew one shirt, because that is the number wages are calculated from. Nobody knows how many days a shirt spends in the building between the roll of fabric arriving in the store and the shirt going onto the delivery van. The workshop's first value stream map produced both numbers: 24 minutes of work, and an estimated 21 days or so of waiting.</p>
+
+                <p>The method comes from Toyota. There it is called Material and Information Flow Mapping, and Toyota Production System practitioners use it to draw the current and future states when they plan an implementation. Mike Rother noticed it while studying how Toyota implemented lean production, formalised it into a tool and built a way of teaching around it; together with John Shook, who had worked with Toyota, he wrote the workbook <em>Learning to See</em>, published by the Lean Enterprise Institute (LEI), with an introduction dated May 1998. <sup><a href="#ref-2">[2]</a></sup> The book received a Shingo Research Prize in 1999. <sup><a href="#ref-1">[1]</a></sup> In that same introduction, the two authors say plainly what they took and what they left behind. Toyota people learn about three flows in manufacturing: the flow of material, the flow of information, and the flow of people and process. The method in the book covers only the first two. <sup><a href="#ref-2">[2]</a></sup> The term is easily confused with Michael Porter's "value chain" from strategy analysis, and in Vietnamese the two even share a name; they are different things, and in this article "value stream" always means the path of one product family through its stages.</p>
+
+                <p>A value stream map works by putting waiting time next to working time on a single line, and drawing the information flow directly above the material flow, so that the places where work sits waiting and the decisions behind them show up on the same sheet. The first half reverses where people are used to looking. When each stage measures its own work, what gets measured are the low segments of the timeline; the high segments, where the item sits waiting before, between and after the stages, belong to no stage at all. The second half is the part Rother and Shook stress most. In their account, the map makes decisions about the flow visible so they can be discussed, instead of simply happening by default, and it shows the link between the information flow and the material flow, which, they say, no other tool does. <sup><a href="#ref-2">[2]</a></sup> In the workshop, every pile of half-finished shirts sits directly under one arrow, "weekly production schedule, sent separately to each team": each team makes its whole week's share according to the schedule, without waiting until the next team needs it, and shirts pile up between the teams.</p>
+
+                <p>Set beside a process flowchart and a SIPOC diagram, the difference lies in what gets drawn. A process flowchart draws every step, every branch and every handoff inside a process, and a flowchart that records only sequence and logic does not tell you how long an item sits between two steps. A SIPOC diagram stands further back, condensing the process into five to seven boxes and looking outward at the two ends, towards suppliers and customers. A value stream map also runs all the way from order to delivery, but it records time at each stage and between stages, and it draws how each stage is told what to work on. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Current-state value stream map of a workshop that sews uniform shirts for schools. The top row is the information flow: the schools send uniform orders to the planning department, the planning department sends monthly fabric orders to the fabric supplier, and sends a weekly production schedule separately to each of the four teams, cutting, sewing, logo printing, and inspecting and folding. The middle row is the material flow: 6 days of fabric in the store, cutting at 2 minutes a shirt, 1,800 shirts waiting, sewing at 18 minutes a shirt, 1,200 shirts waiting, logo printing at 1 minute a shirt, 600 shirts waiting, inspecting and folding at 3 minutes a shirt, 900 finished shirts waiting to be delivered to the schools. The bottom row is the timeline: waiting segments of 6, 6, 4, 2 and 3 days, about 21 days in all; working segments of 2, 18, 1 and 3 minutes, 24 minutes in all. Waiting days are estimated from the stock counted on the day of the walk-through, divided by the 300 shirts the schools need each day."
+                        viewBox="0 0 1120 460">
+                        <defs>
+                            <marker id="vsm-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <rect class="node" x="20" y="30" width="160" height="50" rx="8"></rect>
+                        <text x="100" y="55">Fabric supplier</text>
+                        <rect class="node" x="440" y="30" width="240" height="50" rx="8"></rect>
+                        <text x="560" y="55">Planning department</text>
+                        <rect class="node" x="940" y="30" width="160" height="50" rx="8"></rect>
+                        <text x="1020" y="55">Schools (customer)</text>
+
+                        <path class="edge-ghost" d="M940 55 H684" marker-end="url(#vsm-arrow)"></path>
+                        <text class="small" x="812" y="42">uniform orders</text>
+                        <path class="edge-ghost" d="M440 55 H184" marker-end="url(#vsm-arrow)"></path>
+                        <text class="small" x="312" y="42">monthly fabric orders</text>
+
+                        <path class="edge-ghost" d="M560 80 V130"></path>
+                        <path class="edge-ghost" d="M180 130 H840"></path>
+                        <path class="edge-ghost" d="M180 130 V196" marker-end="url(#vsm-arrow)"></path>
+                        <path class="edge-ghost" d="M400 130 V196" marker-end="url(#vsm-arrow)"></path>
+                        <path class="edge-ghost" d="M620 130 V196" marker-end="url(#vsm-arrow)"></path>
+                        <path class="edge-ghost" d="M840 130 V196" marker-end="url(#vsm-arrow)"></path>
+                        <text class="small alert" x="300" y="118">weekly production schedule, sent separately to each team</text>
+
+                        <path class="arrow" d="M70 80 V200" marker-end="url(#vsm-arrow)"></path>
+                        <text class="small note" x="78" y="150">fabric delivery</text>
+
+                        <path class="band" d="M70 205 L94 248 L46 248 Z"></path>
+                        <text class="small" x="70" y="268">6 days of fabric</text>
+                        <path class="arrow" d="M86 230 H118" marker-end="url(#vsm-arrow)"></path>
+
+                        <rect class="node" x="120" y="200" width="120" height="60" rx="8"></rect>
+                        <text x="180" y="222">Cutting</text>
+                        <text class="small" x="180" y="244">2 min/shirt</text>
+                        <path class="arrow" d="M242 230 H274" marker-end="url(#vsm-arrow)"></path>
+
+                        <path class="band" d="M290 205 L314 248 L266 248 Z"></path>
+                        <text class="small alert" x="290" y="268">1,800 shirts</text>
+                        <path class="arrow" d="M306 230 H338" marker-end="url(#vsm-arrow)"></path>
+
+                        <rect class="node" x="340" y="200" width="120" height="60" rx="8"></rect>
+                        <text x="400" y="222">Sewing</text>
+                        <text class="small" x="400" y="244">18 min/shirt</text>
+                        <path class="arrow" d="M462 230 H494" marker-end="url(#vsm-arrow)"></path>
+
+                        <path class="band" d="M510 205 L534 248 L486 248 Z"></path>
+                        <text class="small alert" x="510" y="268">1,200 shirts</text>
+                        <path class="arrow" d="M526 230 H558" marker-end="url(#vsm-arrow)"></path>
+
+                        <rect class="node" x="560" y="200" width="120" height="60" rx="8"></rect>
+                        <text x="620" y="222">Logo printing</text>
+                        <text class="small" x="620" y="244">1 min/shirt</text>
+                        <path class="arrow" d="M682 230 H714" marker-end="url(#vsm-arrow)"></path>
+
+                        <path class="band" d="M730 205 L754 248 L706 248 Z"></path>
+                        <text class="small alert" x="730" y="268">600 shirts</text>
+                        <path class="arrow" d="M746 230 H778" marker-end="url(#vsm-arrow)"></path>
+
+                        <rect class="node" x="780" y="200" width="120" height="60" rx="8"></rect>
+                        <text x="840" y="222">Inspect, fold</text>
+                        <text class="small" x="840" y="244">3 min/shirt</text>
+                        <path class="arrow" d="M902 230 H934" marker-end="url(#vsm-arrow)"></path>
+
+                        <path class="band" d="M950 205 L974 248 L926 248 Z"></path>
+                        <text class="small alert" x="950" y="268">900 shirts</text>
+                        <path class="arrow" d="M966 230 H1025 V84" marker-end="url(#vsm-arrow)"></path>
+                        <text class="small note" x="1033" y="160">delivery</text>
+
+                        <path class="axis" d="M30 320 H120 V360 H240 V320 H340 V360 H460 V320 H560 V360 H680 V320 H780 V360 H900 V320 H1000"></path>
+                        <text class="small alert" x="75" y="306">6 days</text>
+                        <text class="small alert" x="290" y="306">6 days</text>
+                        <text class="small alert" x="510" y="306">4 days</text>
+                        <text class="small alert" x="730" y="306">2 days</text>
+                        <text class="small alert" x="950" y="306">3 days</text>
+                        <text class="small" x="180" y="378">2 min</text>
+                        <text class="small" x="400" y="378">18 min</text>
+                        <text class="small" x="620" y="378">1 min</text>
+                        <text class="small" x="840" y="378">3 min</text>
+                        <text class="alert" x="1060" y="320">≈ 21 days</text>
+                        <text x="1060" y="360">24 min</text>
+
+                        <text class="small alert" x="560" y="414">High segments add up to about 21 days a shirt spends waiting. Low segments add up to 24 minutes of someone working on it.</text>
+                        <text class="small" x="560" y="438">Waiting days estimated from stock counted on the day of the walk-through, divided by the 300 shirts the schools need each day.</text>
+                    </svg>
+                    <figcaption><strong>Figure 1.</strong> The five piles of waiting stock sit before, between and after the teams, none of them counted as any team's work, and all four teams sit under the same arrow: a weekly production schedule sent separately to each team. The map points to a suspect in the information flow above the piles; why the planning department chose a weekly schedule is something the team still has to go and ask.</figcaption>
+                </figure>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Why We Need It</h3>
+                <p>Before that map existed, the workshop was planning to buy programmable sewing machines to cut sewing time from 18 minutes a shirt to 12. Put that investment on Figure 1 and it takes 6 minutes off one of the low segments, while the shirt still waits an estimated 21 days or so in the high ones. The new machines only touch the high segments if the sewing team is a capacity bottleneck, that is, if it cannot keep up with 300 shirts a day, and Figure 1 does not yet show headcount or machine numbers to tell. If shirts pile up because of the weekly schedule rather than because sewing cannot keep pace, the investment will do little for the schools. Six minutes saved is therefore not enough to justify the spend; capacity, and the reason behind each pile, have to be checked first.</p>
+
+                <p>A value stream map exists to catch exactly this kind of decision: an improvement chosen where measuring is easiest, the working time of each stage, while in this workshop almost all the time the schools wait for sits in the waiting segments, which no department head is responsible for. Rother and Shook write that it is astoundingly rare to walk into a plant and find one person who knows the entire material and information flow for a product, every process and how each one is scheduled; without that person, each area runs in the way that is best for itself, not for the stream as a whole. <sup><a href="#ref-2">[2]</a></sup></p>
+
+                <p>The tool catches that failure in two moves. The timeline forces the waiting to carry a number next to the working, so any improvement proposal has to say which high segment it shortens. The information flow forces the team to ask why the work is sitting there, and puts that question next to the decisions about how stages are told what to do, decisions that, in Rother and Shook's account, tend to happen by default unless someone draws them: a weekly schedule, an end-of-day batch list, a rule to wait for a full load. <sup><a href="#ref-2">[2]</a></sup> There is evidence that looking this way shortens waiting, but it is not firm. In a systematic review of value stream mapping in care facilities, among the studies with statistical tests, seven of the eight that measured non-value-added time recorded a statistically significant reduction, and every study in the review compared before with after, without a control group. <sup><a href="#ref-3">[3]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Are Its Limits</h3>
+                <p>Three limits come from the way the tool is defined. One map covers one product family: Rother and Shook say plainly that drawing every product flow on a single map is too complicated unless the plant makes only one product. <sup><a href="#ref-2">[2]</a></sup> In the workshop, uniform trousers and skirts share the sewing team and join the same queue, but they do not appear in Figure 1. The map is also a snapshot. Waiting time is estimated from the stock counted during the walk-through, a practice Rother himself calls useful for estimating dock-to-dock lead time <sup><a href="#ref-4">[4]</a></sup>, so the 21 days is an estimate from the stock on the day of the count, not a time in the system measured by following individual shirts; a count in the middle of the back-to-school season and one outside it could give two very different pictures. And the map covers only two of the three flows Toyota people learn about. It records that sewing a shirt takes 18 minutes, not which motions the sewer makes or which of them are wasted; <sup><a href="#ref-2">[2]</a></sup> that belongs to tools that look at each workstation.</p>
+
+                <p>Two other weaknesses come from how the tool is used, and they can be fixed. The map shows a decision, such as the weekly schedule sent to the four teams, but does not record the reason for it on its own: it might be the cost of changing the logo printing screens, or it might just be habit. Rother warns against letting the tally of inventory become more important than understanding why the inventory is there, because inventory is always there for a reason. <sup><a href="#ref-4">[4]</a></sup> The second weakness is treating the current-state map as the finished product. It answers where work is waiting, not what will be done about that waiting. Rother and Shook are blunt on this point: a current state without a future-state map is not much use, and the future-state map is the most important one. <sup><a href="#ref-2">[2]</a></sup></p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">What Figure 1 shows</th><th scope="col">What it does not show</th></tr></thead>
+                    <tbody>
+                        <tr><td>Shirts, one product family</td><td>Trousers and skirts that share the sewing team and join the same queue</td></tr>
+                        <tr><td>1,800 shirts waiting between cutting and sewing on the day of the walk-through</td><td>The queue on other days, in the back-to-school season or outside it</td></tr>
+                        <tr><td>18 minutes to sew one shirt</td><td>Which motions the sewer makes, and which are wasted</td></tr>
+                        <tr><td>A weekly schedule sent separately to each team</td><td>Why the planning department chose a weekly schedule</td></tr>
+                        <tr><td>The flow from the fabric store to delivery</td><td>Waiting at the fabric supplier and while the schools approve samples</td></tr>
+                        <tr><td>About 21 days of waiting (estimated) against 24 minutes of work</td><td>What the workshop will change to cut those 21 days, the job of the future-state map</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Examples</h2>
+            <p class="intro-text">The first example is a bank branch that splits the mapping between four department heads and then stitches the pieces together, and why the stitched map cannot see the stretch where files wait longest. The second is an emergency department in Beirut that used a value stream map to cut the time it took to get patients to X-ray: it shows the power of drawing the information flow, and why results have to be measured over a wider scope than the part that was drawn.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Four Department Heads, Four Pieces of Map, One Stretch Nobody Drew</h3>
+                <p>An illustrative scenario: a bank branch wants to shorten the time to disburse a mortgage loan, which currently takes about 14 working days from the moment the customer submits a complete file. The branch director asks each department head to map their own department's part. Retail banking maps intake and credit appraisal, the valuation team maps the property valuation, legal maps the mortgage contract, operations maps disbursement, and each of them carefully measures the processing time inside their own department. The four pieces are stitched into one A0 sheet on the meeting-room wall, with a timeline along the bottom reading 14 working days against about 6 hours of processing. The number makes an impression at the presentation. Nobody draws a future-state map; each department head takes away a list of the waste in their own part. Three months later, retail banking has cut appraisal time from four days to two. Time to disbursement is still around 13 to 14 days.</p>
+                <p>On the second attempt, the deputy branch director carries a real file personally from the intake desk to disbursement, and at each handover asks one question: how does the next department find out there is a new file? The answer at the handover between appraisal and valuation is on none of the pieces of map. The valuation team only receives files through a consolidated list sent on Friday afternoons, then schedules property visits for the following week, so a file appraised two days earlier still sits until Friday afternoon. The two days saved in retail banking have turned into two more days of waiting outside the valuation team's door. That wait slipped through all four pieces because it sits between two departments, and each department head drew from the moment the file reached them.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Thirteen Minutes Off the Transport, a Minute and a Half Off the Whole Journey</h3>
+                <p>The emergency department of the American University of Beirut Medical Center (AUBMC), in Lebanon, sees about 49,000 visits a year, has an X-ray machine inside the department and orderlies whose job is to take patients to it. An improvement team, ranging from the department chair, nurses and clerks to a hospital administrator with change-management expertise, drew a value stream map of the process of transporting patients to imaging, to separate value-added from non-value-added activities. What the map exposed lay in the information flow. The process depended almost entirely on the clerk: the clerk paged the orderly and the X-ray technician separately, then coordinated the two through a chain of back-and-forth phone calls and repeat pages, in between other tasks. The technician could not see which cases were waiting, and found out only when the clerk said so. <sup><a href="#ref-5">[5]</a></sup></p>
+                <p>The team changed three things, all of them in how work was handed out. A screen showed the technician every pending imaging request, replacing the clerk's messages; the authors describe it as a kanban-style pull system, where the next stage takes work when it is ready. One orderly did nothing but that job, stationed with the technician in the X-ray room from 8 a.m. to 11 p.m. And the clerk was taken out of the process. Comparing the six months before with the six months after (6,186 and 4,879 radiographs), the time from the cashier processing the request to the technician starting the study fell from a mean of 22.89 minutes to 9.87 minutes, and the share of patients brought in within 10 minutes rose from 32.3% to 71.6%. Length of stay in the emergency department fell from a mean of 4.57 hours to 3.65 hours. <sup><a href="#ref-5">[5]</a></sup></p>
+                <p>One number moved the other way. The time from the end of the study to the radiology resident releasing a preliminary report rose from a mean of 31.16 minutes to 42.63 minutes. The authors think that rise was most likely due to changes inside the radiology department, which had just appointed a new chair and a new residency programme director, possibly changing how emergency images were prioritised for reading; they present this as a conjecture. The study also measured a combined figure, from the processing of the request to the preliminary report: a mean of 54.04 minutes before and 52.50 minutes after, a statistically significant fall but of only about a minute and a half, and 2.31 minutes after adjustment. The paper's methods section does not define this measure separately, but the two figures match the sum of the two segments just described. Over the same period, the emergency department also changed its operations to shorten door-to-doctor time, a change the authors consider unlikely to affect transport time but possibly affecting other outcomes, length of stay among them. <sup><a href="#ref-5">[5]</a></sup> The team's map is labelled as a map of the patient transport process, before and after the intervention. The thirteen minutes saved in that segment shrink to about a minute and a half once the measurement runs to the report, and these figures do not tell us whether the extra waiting at the reading stage was caused by the intervention. The lesson is about measurement more than about the size of the map: results have to be measured over a wider scope than the part that was changed, as this team did, and when two segments move in opposite directions, that is the place to go and investigate.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Some Research on Value Stream Mapping</h2>
+            <p class="intro-text">The two reviews below measure two different things. A systematic review asks whether value stream mapping improves quality in care facilities; a scoping review counts what published papers actually draw on their maps. Alongside them is a count of how often the tool appears in lean projects in healthcare. All three come from healthcare. Within the scope of this article's search, no review measuring the tool's effectiveness in manufacturing, where it was born, has been found; one multiple-case study from manufacturing is included alongside.</p>
+            <div class="sub-section">
+                <p><strong>The study:</strong> In 2017, Nowak, Pfaff and Karbach published in <em>Systematic Reviews</em> a systematic review of how value stream mapping affects quality in care facilities, sorting the results into the three levels of structure, process and outcome in Donabedian's model. They searched PubMed, EBSCOhost, Web of Knowledge and EMBASE ScienceDirect for peer-reviewed papers in English or German published from 2000 to February 2016, keeping only studies that used value stream mapping as a stand-alone method. Of 903 results, 22 studies met the criteria; only the 11 that reported statistical tests were used to assess effectiveness. <sup><a href="#ref-3">[3]</a></sup> In 2021, Marin-Garcia, Vidal-Carreras and Garcia-Sabater at the Universitat Politècnica de València published in the <em>International Journal of Environmental Research and Public Health</em> a scoping review (a kind of review that describes what has been done and reported, without rating effectiveness), going through 80 papers on value stream mapping in healthcare services published from 2015 to 2019, found through Web of Science, to see how those papers drew their maps and which indicators they measured. <sup><a href="#ref-6">[6]</a></sup> On how widespread the tool is, the integrative review by de Barros and colleagues (2021) counted the tools used in 33 papers on lean in healthcare over the same period, 2015 to 2019. <sup><a href="#ref-7">[7]</a></sup> Outside healthcare, in 2008, Serrano, Ochoa and De Castro published in the <em>International Journal of Production Research</em> a multiple-case study in six industrial companies, using value stream mapping to redesign disconnected production lines; this article has read only its abstract. <sup><a href="#ref-8">[8]</a></sup></p>
+                <p><strong>Findings:</strong> In Nowak's review, all 22 studies compared before with after, without a control group, and all were rated at evidence level IV on the scale of the Oxford Centre for Evidence-Based Medicine; the mean quality score on MINORS, a quality scale for non-randomised studies, was 5.59 out of 16, and no study met every criterion. Among the 11 studies with statistical tests, eight measured non-value-added time, such as the wait from first call to consultation, and seven of those recorded a statistically significant reduction. Seven of the nine studies that measured length of stay recorded a statistically significant reduction. Results at the structure level pointed in no clear direction, and patient satisfaction and cost were rarely measured. <sup><a href="#ref-3">[3]</a></sup> In Marin-Garcia's review, 20 of the 80 papers say they drew a map but present none; of the remaining 60, 40 have no future-state map. The team also counted 41 papers lacking symbols for the information flow. The most measured indicator was time: 24 papers deal with waiting times, 16 with the split between value-added and non-value-added time. The authors found no paper with negative results or barely noticeable improvements, and no application that crossed departmental boundaries or linked to other parts of the health chain. <sup><a href="#ref-6">[6]</a></sup> In de Barros's 33 papers, value stream mapping was the second most used tool, appearing in 17, behind only DMAIC (Six Sigma's five-step cycle, 18 papers). <sup><a href="#ref-7">[7]</a></sup> In Serrano's six companies, according to the abstract, the authors confirm the tool works for redesign, set out the resources the application requires, and analyse the gaps between the tool's concepts and how it is used in practice; the abstract gives no improvement figures. <sup><a href="#ref-8">[8]</a></sup></p>
+                <p><strong>What it shows:</strong> Nowak's review shows that in healthcare, among studies that used value stream mapping as a stand-alone method, most of those with statistical tests recorded shorter waiting times and lengths of stay after it was applied. It does not prove the tool caused those reductions, since no study had a control group; the authors themselves write that a final conclusion on effectiveness needs more research with better methods. <sup><a href="#ref-3">[3]</a></sup> Marin-Garcia's review does not measure effectiveness. It shows that most of the papers in its sample that present a map do not record the two things Rother and Shook treat as the core of the tool: the information flow and the future-state map. It also shows a gap on the results side: no paper reports negative results, and the authors say they cannot tell whether that is because there were none or because they were not published. The warning that a map drawn within one department may only shift waste to another unit, rather than remove it, is a hypothesis the authors raise from earlier work; the review's data do not test it. <sup><a href="#ref-6">[6]</a></sup> In manufacturing, Serrano's study shows the tool can do the job of redesign; its abstract does not say how much the tool improves things.</p>
+                <p><strong>The counter-case:</strong> The defenders' strongest argument comes straight from the people who wrote the tool. Rother and Shook call value stream mapping a qualitative tool, used to describe in detail how a facility should operate; numbers, in their view, are good for creating a sense of urgency or as before-and-after measures, while the map describes what you will actually do to affect those numbers. <sup><a href="#ref-2">[2]</a></sup> From this the defenders conclude that judging the tool only by before-and-after times is measuring the wrong thing: its value, if any, lies in the design, and in the changes the team would not have thought of without drawing. As for future-state maps missing from papers, that may just be a matter of presentation, since journals limit the number of figures and a current-state map is easier to print. This article accepts the second point to the extent the source allows: Marin-Garcia's review counts what papers present, not what teams did, so 40 out of 60 does not mean 40 teams failed to draw a future-state map. It also accepts that a design tool does not need a randomised trial before it can be used. But that same argument places the tool's value in the future-state map, so when the future-state map is not published, the reader loses exactly the place where the tool's contribution could be checked: the time is seen to fall, but not which change in the design made it fall. And when none of the 80 papers reports negative results, the before-and-after comparison, the thing most often published, cannot stand on its own either. The defenders are right that a before-and-after comparison, on its own, cannot evaluate the tool. But the very source they rely on puts numbers and maps side by side, not in place of each other: a design tool is evaluated through the design, its implementation and its results together, and of those three, what is missing from published papers is the design.</p>
+                <p><strong>Why this is useful:</strong> The next time you meet a report that says "using value stream mapping, waiting time fell by 40%", ask first where the future-state map is, and which change on it made the time fall. Then ask how far the results were measured: only within the improved segment, or all the way to where the person who needs the result receives it. The Beirut emergency department report does both, and that is exactly why a reader can see 13 minutes in the transport segment shrink to about a minute and a half over the whole journey.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">How to Apply It</h2>
+            <p class="intro-text">A value stream map works by putting waiting time next to working time on a single line and drawing the information flow directly above the material flow, so that the places where work sits waiting and the decisions behind them show up on the same sheet, so the effective way to use it is to have one person walk the whole flow of one product family, ask at every stage how it is told what to work on, and use what they see to draw a future-state map rather than stopping at the current state. The tool repays the effort most in work that repeats regularly and passes through several stages or departments, where customers wait far longer than anyone actually spends working. A one-off job has no repeating flow to draw, and in work that stays entirely in one person's hands, items can still sit waiting while that person batches tasks or waits for a machine, but there is no handover between departments for the map to expose.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Choose one product family, and have one person walk the flow from start to finish:</strong> Rother and Shook recommend that one person lead the mapping, walking and drawing the steps of one product family door to door, and warn against splitting the mapping among area managers and hoping to stitch their segments together <sup><a href="#ref-2">[2]</a></sup>. The first walk should be quick: Rother says he tells mappers they may walk faster or slower but are not allowed to stop moving, to keep sight of the whole flow before getting lost in detail <sup><a href="#ref-4">[4]</a></sup>. One place things slip through is the handover between two departments, like the loan files waiting for the Friday afternoon list</li>
+                    <li><strong>Ask every stage how it is told what to work on, and draw the answers as the information flow:</strong> The question Rother and Shook pose is how to make information flow so that each process makes only what the next process needs, when it needs it <sup><a href="#ref-2">[2]</a></sup>. In the Beirut emergency department, the answer, a chain of phone calls through a clerk, was exactly what needed to change <sup><a href="#ref-5">[5]</a></sup>. It is also a part often missing from published maps: 41 papers in Marin-Garcia's review lack symbols for the information flow <sup><a href="#ref-6">[6]</a></sup>, and a map with only the material flow loses the very place that usually holds the clues to why work sits waiting</li>
+                    <li><strong>Turn each pile of waiting work into time, then go and find out why it is there:</strong> A waiting time estimated from one count is a clue, not a conclusion; if there are time-stamped records, check it against several days of data, because a single count is not average stock when the queue swells and shrinks with a schedule or a list, and the flow rate you divide by has to cover the same period and the same scope as the waiting time you want to estimate. Rother warns against letting the inventory tally matter more than the question of why so much is held at this spot <sup><a href="#ref-4">[4]</a></sup>. The reason is usually a decision in the information flow, such as a weekly schedule, a list drawn up once a day, or a rule to wait for a full batch</li>
+                    <li><strong>Draw the future-state map before calling the mapping done, and measure lead time across the whole flow before and after:</strong> The obvious approach is to pin the current-state map on the wall and let each department fix its own part, and that can fail exactly as it did in the bank branch: time cut at one stage turns into waiting at the next. Rother and Shook treat the future-state map as the most important one, with a one-page implementation plan, and reckon that about two days is enough to get a future-state map good enough to start from <sup><a href="#ref-2">[2]</a></sup>. The measure that goes with the future-state map is lead time from start to end of the flow, measured before and after with the same definition, plus one indicator for the stage immediately after the part being changed, because that is where waiting may pile up instead</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Applying It to a Scenario</h2>
+            <p class="intro-text">A laundry offers collection and home delivery, averaging 60 standard wash-and-dry orders a day, open from 7 a.m. to 7 p.m., seven days a week. It promises delivery within 48 hours, while customers increasingly ask whether they can have their laundry back the next day. The owner sets a target: at least 80% of standard wash-and-dry orders delivered within 24 hours, counted from the moment the rider collects the laundry to the moment it is returned, held for four weeks in a row, without buying more machines. In the two weeks before the project, the laundry delivered 836 orders, only 21% of them within 24 hours, with a median of 30 hours. The numbers in this scenario are illustrative.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Choose the product family and fix the two ends:</strong> The product family is standard wash-and-dry orders. Steam-pressing of wool and suits goes through different machines and different people, so it stays off this map. The start point is when the rider collects the laundry bag from the customer's home, the end point is when it is returned; both already have times logged in the delivery app</li>
+                    <li><strong>One person walks the flow with a laundry bag:</strong> The owner follows one bag from the rider's van to the washer, the dryer and the folding table, then back onto the van, noting the processing time at each stage: sorting 5 minutes, washing 50 minutes, drying 60 minutes, folding and bagging 10 minutes, 2 hours 5 minutes in all. At 2 p.m., the owner counts the bags waiting at each point: 46 bags waiting for a washer, 4 waiting for a dryer, 17 folded and waiting for the 4 p.m. delivery run</li>
+                    <li><strong>Ask each stage how it is told what to work on:</strong> Three answers become three arrows in the information flow. The washing staff wash only the orders on a list the owner draws up from the order book at 8 a.m., so orders that arrive after 8 a.m. wait until the next morning. The washing staff wait for a full 10 kg before running a machine, a rule to save electricity and water that nobody has written down. The riders make two fixed runs at 9 a.m. and 4 p.m., taking whatever bags are folded when the van leaves</li>
+                    <li><strong>Turn the waiting work into time, and know what that conversion estimates:</strong> Dividing 46 bags by 5 orders per opening hour gives about 9.2 hours, but this division sets two things on different bases side by side. The flow rate is based on 12 opening hours, while the bags sit waiting through the night as well; on clock hours, 60 orders a day is 2.5 orders an hour, and 46 bags correspond to about 18 hours. The relation between stock, flow rate and waiting time (Little's law) holds for averages over a period of time, and does not require work to be released evenly <sup><a href="#ref-9">[9]</a></sup>; but a single count at 2 p.m. is not the average stock, because the number of waiting bags rises and falls through the day: a second count at 7 a.m. the next morning finds 57 bags, almost all of the previous day's orders. The scope does not match either, because the bags counted are bags already in the shop while the records measure from collection at the customer's home; and the division gives an average waiting time, while the records report a median. The conversion therefore gives only a rough order of magnitude and a place to look, not a measurement</li>
+                    <li><strong>Check against the time stamps in the records:</strong> Two weeks of records give a median of 20 hours from collection to the washer (first table), a segment that includes the van journey, sorting and waiting. The records also allow the on-time orders to be compared with the late ones. Of the 420 orders collected on the 9 a.m. run, which reach the shop after the list has been drawn up, only 16 were delivered within 24 hours, and all 16 were orders the customer had marked urgent, which the owner squeezed onto that day's list; the rest were delivered at the earliest on the 4 p.m. run the next day, about 31 hours after collection. Of the 416 orders collected on the 4 p.m. run, which go straight onto the next morning's list, 160 were delivered in time. The longest wait is the overnight one, and the strongest clue to its cause is the list drawn up once a day: in the 9 a.m. group, only the orders squeezed onto the list made it in time</li>
+                    <li><strong>Draw the future-state map and a one-page plan:</strong> Three changes, all of them in the information flow (Figure 2). Bags arriving at the shop are hung on a rack in order of arrival, and the washing staff take the bag at the front whenever a machine is free, instead of working from the 8 a.m. list. A machine runs when it has a full 10 kg or when the bag at the front has waited more than an hour, whichever comes first. A delivery run is added at noon by moving the start of the riders' afternoon shift, with no extra staff. The plan also records two accompanying measures: the cost of electricity and water per kilogram of laundry, because machines will sometimes run below a full load, and complaints per 100 orders (mixed-up laundry, items still damp), because going faster can mean going carelessly</li>
+                    <li><strong>Measure four weeks later with exactly the same definition, and check that the two periods are comparable:</strong> The same start point, the same end point, the same 24-hour mark, counted per order. The two periods are compared on two variables the change does not affect: orders per day, since the laundry had not changed its 48-hour promise during those four weeks and nothing was drawing in extra customers, and the share of orders containing duvets and blankets, which take up a whole machine (second table). The segment from folding to delivery, the stage right after the part that changed, is measured too, to see whether time saved at the start of the flow has piled up at the end</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Segment</th><th scope="col">Processing time</th><th scope="col">Median before (836 orders)</th><th scope="col">Median after (1,708 orders)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Collection to washer</td><td>5 minutes sorting, plus the collection run (not recorded separately)</td><td>20 hours</td><td>8 hours</td></tr>
+                        <tr><td>Washer to folded</td><td>2 hours (washing, drying, folding)</td><td>3 hours</td><td>2.5 hours</td></tr>
+                        <tr><td>Folded to delivery</td><td>Delivery run and handover (not recorded separately)</td><td>6 hours</td><td>3 hours</td></tr>
+                        <tr><td>Whole flow, collection to delivery</td><td>2 hours 5 minutes in the shop, excluding collection and delivery</td><td>30 hours</td><td>16 hours</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">The period before is 14 days, the period after 28 days. Segment medians do not add up to the whole-flow median; the whole-flow median is calculated separately from each order's collection and delivery times.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Indicator</th><th scope="col">Before (14 days)</th><th scope="col">Week 1</th><th scope="col">Week 2</th><th scope="col">Week 3</th><th scope="col">Week 4</th></tr></thead>
+                    <tbody>
+                        <tr><td>Orders delivered within 24 hours</td><td>21%</td><td>81%</td><td>84%</td><td>82%</td><td>85%</td></tr>
+                        <tr><td>Average orders per day</td><td>60</td><td>60</td><td>62</td><td>61</td><td>61</td></tr>
+                        <tr><td>Share of orders with duvets or blankets</td><td>8%</td><td>9%</td><td>8%</td><td>10%</td><td>9%</td></tr>
+                        <tr><td>Complaints per 100 orders</td><td>1.1</td><td>1.4</td><td>1.2</td><td>0.9</td><td>1.2</td></tr>
+                        <tr><td>Electricity and water per kg (before = 100)</td><td>100</td><td>107</td><td>106</td><td>105</td><td>106</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">The four weeks after had 420, 434, 427 and 427 orders, 1,708 in all; the share delivered within 24 hours over the whole period is 83%. The period before had 836 orders, an average of 60 a day. Complaints numbered 9 in the period before, and 6, 5, 4 and 5 in the four weeks after, 20 out of 1,708 orders.</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Current-state and future-state maps of the flow of standard wash-and-dry orders at a laundry with collection and home delivery. Current state: collection, bags waiting for the list, washing, drying, folding, bags waiting for a delivery run, delivery. The owner draws up the washing list at 8 a.m., once a day; the washing staff wait for a full 10 kg before running a machine; the delivery runs are at 9 a.m. and 4 p.m. Medians measured over the two weeks before the project: 20 hours from collection to the washer, 3 hours from the washer to folded, 6 hours from folded to delivery, 30 hours for the whole flow across 836 orders. Future state, with a target of at least 80% of orders delivered within 24 hours: bags arriving at the shop are hung on a rack in order of arrival, and the washing staff take the bag at the front whenever a machine is free; a machine runs when it has a full 10 kg or when the front bag has waited more than an hour; a noon delivery run is added. Places where waiting remains: bags arriving late in the day still wait overnight, and bags folded after 4 p.m. wait for the 9 a.m. run the next day. Measured after a four-week trial, the medians of the three segments are 8 hours, 2.5 hours and 3 hours, 16 hours for the whole flow, and 83% of 1,708 orders were delivered within 24 hours."
+                        viewBox="0 0 1120 530">
+                        <defs>
+                            <marker id="laundry-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <text class="note" x="20" y="24">Current-state map</text>
+                        <rect class="node" x="200" y="40" width="200" height="40" rx="8"></rect>
+                        <text x="300" y="60">Owner (order book)</text>
+                        <rect class="node" x="810" y="40" width="280" height="40" rx="8"></rect>
+                        <text x="950" y="60">Delivery runs: 9 a.m., 4 p.m.</text>
+                        <path class="edge-ghost" d="M300 80 V100 H355 V116" marker-end="url(#laundry-arrow)"></path>
+                        <text class="small alert note" x="364" y="104">list at 8 a.m., once a day</text>
+                        <path class="edge-ghost" d="M1015 80 V116" marker-end="url(#laundry-arrow)"></path>
+
+                        <rect class="node" x="30" y="120" width="110" height="50" rx="8"></rect>
+                        <text x="85" y="145">Collection</text>
+                        <path class="arrow" d="M142 145 H206" marker-end="url(#laundry-arrow)"></path>
+                        <path class="band" d="M220 122 L244 166 L196 166 Z"></path>
+                        <path class="arrow" d="M236 145 H298" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="300" y="120" width="110" height="50" rx="8"></rect>
+                        <text x="355" y="145">Wash</text>
+                        <path class="arrow" d="M412 145 H438" marker-end="url(#laundry-arrow)"></path>
+                        <path class="band" d="M450 122 L474 166 L426 166 Z"></path>
+                        <path class="arrow" d="M464 145 H488" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="490" y="120" width="110" height="50" rx="8"></rect>
+                        <text x="545" y="145">Dry</text>
+                        <path class="arrow" d="M602 145 H678" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="680" y="120" width="110" height="50" rx="8"></rect>
+                        <text x="735" y="145">Fold</text>
+                        <path class="arrow" d="M792 145 H863" marker-end="url(#laundry-arrow)"></path>
+                        <path class="band" d="M875 122 L899 166 L851 166 Z"></path>
+                        <path class="arrow" d="M889 145 H958" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="960" y="120" width="110" height="50" rx="8"></rect>
+                        <text x="1015" y="145">Delivery</text>
+
+                        <text class="small alert" x="355" y="188">waits for a full 10 kg</text>
+                        <text class="small alert" x="220" y="212">collection to washer: 20 h</text>
+                        <text class="small" x="545" y="212">washer to folded: 3 h</text>
+                        <text class="small alert" x="875" y="212">folded to delivery: 6 h</text>
+                        <text class="small" x="560" y="236">Measured over two weeks before the project, medians. Whole flow, collection to delivery: 30 h (836 orders)</text>
+
+                        <path class="tick" d="M20 256 H1100"></path>
+
+                        <text class="note" x="20" y="284">Future-state map (target: at least 80% of orders delivered within 24 hours)</text>
+                        <rect class="node" x="810" y="300" width="280" height="40" rx="8"></rect>
+                        <text x="950" y="320">Delivery runs: 9 a.m., noon, 4 p.m.</text>
+                        <path class="edge-ghost" d="M1015 340 V376" marker-end="url(#laundry-arrow)"></path>
+                        <path class="edge-ghost" d="M355 378 V352 H220 V380" marker-end="url(#laundry-arrow)"></path>
+                        <text class="small alert" x="288" y="338">machine free: take the bag at the front</text>
+
+                        <rect class="node" x="30" y="380" width="110" height="50" rx="8"></rect>
+                        <text x="85" y="405">Collection</text>
+                        <path class="arrow" d="M142 405 H163" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="band" x="165" y="382" width="110" height="46" rx="6"></rect>
+                        <text class="small" x="220" y="398">rack, in order</text>
+                        <text class="small" x="220" y="414">of arrival</text>
+                        <path class="arrow" d="M277 405 H298" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="300" y="380" width="110" height="50" rx="8"></rect>
+                        <text x="355" y="405">Wash</text>
+                        <path class="arrow" d="M412 405 H438" marker-end="url(#laundry-arrow)"></path>
+                        <path class="band" d="M450 382 L474 426 L426 426 Z"></path>
+                        <path class="arrow" d="M464 405 H488" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="490" y="380" width="110" height="50" rx="8"></rect>
+                        <text x="545" y="405">Dry</text>
+                        <path class="arrow" d="M602 405 H678" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="680" y="380" width="110" height="50" rx="8"></rect>
+                        <text x="735" y="405">Fold</text>
+                        <path class="arrow" d="M792 405 H863" marker-end="url(#laundry-arrow)"></path>
+                        <path class="band" d="M875 382 L899 426 L851 426 Z"></path>
+                        <path class="arrow" d="M889 405 H958" marker-end="url(#laundry-arrow)"></path>
+                        <rect class="node" x="960" y="380" width="110" height="50" rx="8"></rect>
+                        <text x="1015" y="405">Delivery</text>
+
+                        <text class="small" x="355" y="448">full 10 kg, or front bag waiting over 1 h</text>
+                        <text class="small alert" x="200" y="470">bags arriving late in the day still wait overnight</text>
+                        <text class="small alert" x="875" y="448">folded after 4 p.m.:</text>
+                        <text class="small alert" x="875" y="464">waits for the 9 a.m. run</text>
+                        <text class="small" x="220" y="492">collection to washer: 8 h</text>
+                        <text class="small" x="545" y="492">washer to folded: 2.5 h</text>
+                        <text class="small" x="875" y="492">folded to delivery: 3 h</text>
+                        <text class="small" x="560" y="516">Measured after a four-week trial, medians. Whole flow: 16 h; 83% delivered within 24 hours (1,708 orders)</text>
+                    </svg>
+                    <figcaption><strong>Figure 2.</strong> The material flow is almost the same in both maps; what changes is how each stage is told what to work on. The 8 a.m. list gives way to a signal to take work when a machine is free, the batching rule gains a one-hour waiting limit, and the delivery schedule gains a noon run. The future-state map also records where work still sits waiting, so that this waiting is a considered choice rather than something overlooked. The figures under each map are measurements taken from milestone to milestone, including the van journeys, sorting and waiting: the top half before the project, the bottom half after a four-week trial, to compare against the 80% target.</figcaption>
+                </figure>
+
+                <p>All four weeks cleared the 80% mark, and the whole-flow median fell from 30 hours to 16, with order volume and the share of duvets and blankets comparable to the period before. Most of the time saved came from the start of the flow, exactly where the once-a-day list used to keep bags overnight, from 20 hours to 8; the end of the flow did not get longer but shorter, from 6 hours to 3, thanks to the noon run. The cost is real: electricity and water per kilogram rose by about 6%, because machines sometimes run below a full load, and the owner has to weigh that against keeping customers. Complaints per 100 orders edged up from 1.1 to 1.2, not enough to say quality got better or worse. Four weeks is short, there was no control group, and none of the weeks fell in the rainy season, when order volume may be different. Four weeks is also not enough to know whether more customers stay: delivery within 24 hours is what customers ask for, not the laundry's revenue. The result rests on four conditions: one person walking the whole flow of one product family, a waiting time estimated from a single count being checked against several days of records, changes aimed at how stages are told what to work on rather than at how fast the machines run, and the period after being measured with exactly the same definition as the period before, including at the end of the flow.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Summary</h2>
+            <div class="summary-box">
+                <p><strong>Key Point:</strong> A value stream map puts the time an item spends waiting next to the time someone spends working on it, and draws the information flow directly above the material flow, so that the waiting and the decisions behind it show up on the same sheet. The most counter-intuitive point is that the map the tool's own authors treat as the most important, the future-state map, is often the one missing from published papers: in the review by Marin-Garcia and colleagues of papers in healthcare, 40 of the 60 papers that present a map have no future-state map. The reliable way to use the tool is therefore to have one person walk the whole flow of one product family, ask each stage how it is told what to work on, draw the future-state map with an implementation plan, and then measure lead time across the whole flow before and after, including at the stage right after the part that changed.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">References</h2>
+            <ol class="outline-list">
+                <li id="ref-1">Lean Enterprise Institute. <em>Value-Stream Mapping</em>, Lean Lexicon (accessed October 23, 2026). LEI's dictionary entry; source for the definition of a value stream map as diagramming every step of the material and information flows from order to delivery, for the definition of lead time, for Toyota's name for the method, for the current-state and future-state maps, and for <em>Learning to See</em> receiving a Shingo Research Prize in 1999. <a href="https://www.lean.org/lexicon-terms/value-stream-mapping/" rel="noopener noreferrer" target="_blank">Read the entry</a>.</li>
+                <li id="ref-2">Rother, M., &amp; Shook, J. <em>Learning to See: Value-Stream Mapping to Add Value and Eliminate Muda</em>. Lean Enterprise Institute (introduction dated May 1998). This article read the introduction and Part I, which LEI publishes openly; source for Toyota's name Material and Information Flow Mapping and the method covering two of the three flows, for how Rother and Shook arrived at the tool, for the reasons the two authors give (making decisions about the flow visible, linking the information flow to the material flow, being a qualitative tool in which numbers are good for a sense of urgency or before-and-after measures while the map describes what will be done), for mapping one product family door to door, led by one person, without stitching together the segments of each area, for the observation that it is rare to find one person who knows the whole flow, and for the future-state map being the most important, with a one-page plan, drawn in about two days. <a href="https://www.lean.org/wp-content/uploads/2021/01/Learning-to-See-introduction.pdf" rel="noopener noreferrer" target="_blank">Read the introduction</a>; <a href="https://www.lean.org/wp-content/uploads/2021/01/Learning-to-See-part1.pdf" rel="noopener noreferrer" target="_blank">read Part I</a>.</li>
+                <li id="ref-3">Nowak, M., Pfaff, H., &amp; Karbach, U. (2017). Does Value Stream Mapping affect the structure, process, and outcome quality in care facilities? A systematic review. <em>Systematic Reviews</em>, 6, 170. Systematic review of 22 studies using value stream mapping as a stand-alone method in care facilities; source for every study using a before-and-after design without control, evidence level IV, a mean MINORS score of 5.59 out of 16, seven of eight studies recording a statistically significant fall in non-value-added time, seven of nine for length of stay, and the conclusion that research with better methods is needed. <a href="https://doi.org/10.1186/s13643-017-0563-y" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-4">Rother, M. <em>Avoiding Common Pitfalls of Value-Stream Mapping</em>. Lean Enterprise Institute (accessed October 23, 2026). An article by one of the two authors of <em>Learning to See</em> on common misreadings of the book; source for using counted inventory to estimate dock-to-dock lead time, for the warning not to let the inventory tally matter more than the question of why the inventory is there, and for the first walk-through in which mappers may not stop moving. <a href="https://www.lean.org/wp-content/uploads/2020/09/11.pdf" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-5">Hitti, E. A., El-Eid, G. R., Tamim, H., Saleh, R., Saliba, M., &amp; Naffaa, L. (2017). Improving Emergency Department radiology transportation time: a successful implementation of lean methodology. <em>BMC Health Services Research</em>, 17, 625. Before-and-after study in the emergency department of AUBMC, Beirut; source for the team's make-up, what the value stream map exposed in the information flow, the three changes, the figures for transport time, the share within 10 minutes, preliminary report time, the combined measure from request processing to preliminary report (54.04 to 52.50 minutes; given in the abstract, not defined in the methods) and length of stay with sample sizes, and for how the authors explain the rise at the reading stage and the concurrent changes. <a href="https://doi.org/10.1186/s12913-017-2488-5" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-6">Marin-Garcia, J. A., Vidal-Carreras, P. I., &amp; Garcia-Sabater, J. J. (2021). The Role of Value Stream Mapping in Healthcare Services: A Scoping Review. <em>International Journal of Environmental Research and Public Health</em>, 18(3), 951. Scoping review of 80 papers on value stream mapping in healthcare services, 2015 to 2019; source for 20 papers presenting no map, 40 of 60 without a future-state map, 41 papers lacking information-flow symbols, the number of papers measuring waiting times, the absence of negative results, the absence of applications crossing departmental boundaries, and the hypothesis that waste is shifted to another unit. <a href="https://doi.org/10.3390/ijerph18030951" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-7">de Barros, L. B., Bassi, L. C., Caldas, L. P., Sarantopoulos, A., Zeferino, E. B. B., Minatogawa, V., &amp; Gasparino, R. C. (2021). Lean healthcare tools for processes evaluation: an integrative review. <em>International Journal of Environmental Research and Public Health</em>, 18(14), 7389. Integrative review of 33 papers on lean tools in healthcare, 2015 to 2019; source for value stream mapping appearing in 17 papers, second only to DMAIC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8304063/" rel="noopener noreferrer" target="_blank">Read the article</a>.</li>
+                <li id="ref-8">Serrano, I., Ochoa, C., &amp; De Castro, R. (2008). Evaluation of value stream mapping in manufacturing system redesign. <em>International Journal of Production Research</em>, 46(16), 4409-4430. Multiple-case study in six industrial companies; source for the tool being judged usable for redesigning disconnected flow lines, with the resources it requires and the gaps between theory and practice. Read through its abstract only; the full text is behind a paywall. <a href="https://doi.org/10.1080/00207540601182302" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-9">Little, J. D. C. (2011). Little's Law as viewed on its 50th anniversary. <em>Operations Research</em>, 59(3), 536-549. A retrospective by the author of the original proof; source for L = λW relating three averages (time-average stock, average flow rate, average waiting time), holding under very general conditions and independent of queue discipline. <a href="https://doi.org/10.1287/opre.1110.0940" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

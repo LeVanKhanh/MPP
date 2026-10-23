@@ -2,7 +2,7 @@
 
 Từ điển tra cứu để mọi bài trong series gọi cùng một khái niệm bằng cùng một tên, hiểu nó theo cùng một nghĩa, và tránh cùng những cách diễn đạt sai.
 
-**Phạm vi:** trang tổng quan và mười bài đã viết: 5S, Chu Trình PDCA, Giải Quyết Vấn Đề A3, Sơ Đồ Xương Cá Ishikawa, Phân Tích Pareto, FMEA, Quy Trình Thao Tác Chuẩn (SOP), Lưu Đồ Quy Trình, Sơ Đồ SIPOC, Biểu Đồ Gantt. Thuật ngữ không có trong file này là **chưa được chốt**: grep các bài `.html` cùng thư mục trước khi dùng, rồi bổ sung vào đây.
+**Phạm vi:** trang tổng quan và mười một bài đã viết: 5S, Chu Trình PDCA, Giải Quyết Vấn Đề A3, Sơ Đồ Xương Cá Ishikawa, Phân Tích Pareto, FMEA, Quy Trình Thao Tác Chuẩn (SOP), Lưu Đồ Quy Trình, Sơ Đồ SIPOC, Sơ Đồ Chuỗi Giá Trị, Biểu Đồ Gantt. Thuật ngữ không có trong file này là **chưa được chốt**: grep các bài `.html` cùng thư mục trước khi dùng, rồi bổ sung vào đây.
 
 **Khi file và nguồn nói khác nhau, nguồn thắng**; sửa mục trong file.
 
@@ -94,7 +94,6 @@ Cột **Gọi là** ghi cách gọi trong bản tiếng Việt, sau dấu `·` l
 | swimlane / cross-functional process map | lưu đồ chia làn; mỗi người hoặc bộ phận một làn · *swimlane flowchart*; *lane* | Mỗi mũi tên băng qua vạch làn là một lần chuyển tay. Cách vẽ "thường được gắn với" Rummler & Brache (1990). "Khoảng trắng" (nhan đề sách) là khoảng giữa các ô phòng ban nơi công việc đi qua mà sơ đồ tổ chức không vẽ | Rummler và Brache "phát minh" ra lưu đồ chia làn; "khoảng trắng là nơi không ai chịu trách nhiệm" như lời của sách | Rummler & Brache (1990) |
 | handoff | lần chuyển tay · *handoff* | Một lần công việc đổi người hoặc đổi bộ phận phụ trách | — | ASQ; chính bài |
 | current state / future state | bản hiện trạng / bản mục tiêu (bài A3: "sơ đồ hiện trạng", "sơ đồ quy trình mục tiêu") · *current-state map / future-state map* | Bản vẽ quy trình như đang chạy / như sẽ chạy sau cải tiến | "bản lý tưởng" | Bài A3; bài Lưu Đồ Quy Trình |
-| value stream map (VSM) | sơ đồ chuỗi giá trị | Vẽ cả dòng vật liệu lẫn dòng thông tin, có ô dữ liệu thời gian từng khâu | gộp với lưu đồ quy trình | LEI, *Lean Lexicon* |
 | decision diamond | ô quyết định (hình thoi) · *decision diamond* | Câu hỏi phải có đủ các lối ra | — | ASQ |
 
 ### Sơ đồ SIPOC
@@ -105,6 +104,18 @@ Cột **Gọi là** ghi cách gọi trong bản tiếng Việt, sau dấu `·` l
 | process boundaries / scope | ranh giới (điểm bắt đầu, điểm kết thúc) / phạm vi · *boundaries (start point / end point) / scope* | Ranh giới là hai đầu của quy trình, đặt bằng **một sự kiện ai cũng nhận ra** ("khách đặt cọc"), không bằng tên một bộ phận. Phạm vi là phần dự án được phép đụng tới | dùng "ranh giới" và "phạm vi" như từ đồng nghĩa; ranh giới là "phạm vi trách nhiệm của bộ phận" | ASQ, *SIPOC+CM Diagram* |
 | SIPOC+CM / SIPOC-R | giữ nguyên tên; +C = ràng buộc của hệ thống, +M = thước đo đang hoặc sẽ dùng, R = yêu cầu (cách gọi của Baughn) | Biến thể thêm cột, đều là phần tuỳ chọn. Cột R của Baughn thật ra chứa ràng buộc của dự án, gần +C hơn +M | +C, +M hay R là phần bắt buộc của SIPOC; +M và R là hai tên của cùng một thứ; nội dung cột R của Mayo là yêu cầu của khách hàng | ASQ; Baughn và cộng sự (2020) |
 | yêu cầu / ràng buộc / thước đo | yêu cầu của khách hàng / ràng buộc của dự án / thước đo · *requirements / constraints / measures* | Ba thứ tách bạch. Không khối nào trong năm cột hay +CM giữ chỗ sẵn cho yêu cầu của khách hàng | gộp ba thứ làm một | Bài Sơ Đồ SIPOC |
+
+### Sơ đồ chuỗi giá trị
+
+| Thuật ngữ | Gọi là | Nghĩa chốt | Không viết | Nguồn |
+|---|---|---|---|---|
+| value stream map (VSM) / value-stream mapping | sơ đồ chuỗi giá trị; tên bài `Sơ Đồ Chuỗi Giá Trị` · *value stream map*; tên bài EN theo mục lục `Value Stream Mapping` | Bản vẽ trên một mặt giấy đường đi của **một họ sản phẩm** từ lúc nhận đơn tới lúc giao, gồm dòng vật liệu, dòng thông tin và đường thời gian. Cơ chế: đặt thời gian chờ cạnh thời gian làm trên cùng một đường và đặt dòng thông tin ngay trên dòng vật liệu, để chỗ hàng nằm chờ và quyết định đứng sau nó hiện ra trên cùng một tờ. Chỉ phủ hai trong ba dòng mà người Toyota học (không phủ dòng người và thao tác). Khác lưu đồ (bước, ngã rẽ, chuyển tay bên trong) và SIPOC (năm tới bảy ô, nhìn ra hai phía ngoài) ở chỗ ghi thời gian trong và giữa các khâu và vẽ cách mỗi khâu nhận lệnh làm | gộp với lưu đồ quy trình; bản đồ "đo" lead time (thời gian chờ được **ước** từ lượng tồn đếm được trong một lần đi, là một bức ảnh chụp); Rother và Shook "phát minh" ra công cụ (họ chuẩn hoá cách vẽ Toyota gọi là *Material and Information Flow Mapping*); "chuỗi giá trị" của công cụ là *value chain* của Porter (trong bài, "chuỗi giá trị" chỉ đường đi của một họ sản phẩm qua các khâu) | LEI, *Lean Lexicon*; Rother & Shook, *Learning to See*; Rother, *Avoiding Common Pitfalls* |
+| current-state map / future-state map (trong VSM) | bản hiện trạng / bản mục tiêu · *current-state map / future-state map* | Theo Rother & Shook, bản mục tiêu là bản quan trọng nhất; bản hiện trạng không có bản mục tiêu đi kèm thì "không mấy hữu ích". Marin-Garcia gọi bản mục tiêu là *ideal state map* | "bản lý tưởng", "bản đồ tương lai"; coi bản hiện trạng là sản phẩm của công cụ | Rother & Shook, *Learning to See*, Phần I |
+| lead time | "lead time" (giữ tiếng Anh), lần đầu giải thích là thời gian một món đi hết dòng chảy từ đầu tới cuối · *lead time* | Định nghĩa của LEI. Đặt cạnh **thời gian xử lý** (thời gian có người hay máy thật sự làm trên món hàng) trên đường thời gian dưới đáy bản đồ. Thời gian xử lý chưa hẳn là thời gian tạo giá trị (kiểm tra, làm lại cũng là có người làm). Lead time trên bản đồ là con số **ước** từ tồn kho một lần đếm | dịch là "thời gian sản xuất"; lẫn với *cycle time*; gọi thời gian xử lý là "thời gian tạo giá trị"; con số ước "đúng cho hôm đếm" như số đo | LEI, *Lean Lexicon* |
+| Little's law | định luật Little (L = λW) | Lượng tồn trung bình = lưu lượng trung bình × thời gian chờ trung bình, trên cùng phạm vi và cùng đơn vị thời gian. Đổi hàng tồn ra thời gian chờ dựa vào nó | định luật đòi hàng nhả đều; chia một lần đếm cho lưu lượng tính theo giờ mở cửa rồi so với thời gian chờ tính theo giờ đồng hồ | Little (2011) |
+| product family | họ sản phẩm · *product family* | Nhóm sản phẩm đi qua những bước gần giống nhau, xác định từ phía khách hàng; mỗi bản đồ một họ | vẽ mọi sản phẩm của nhà máy lên một bản | Rother & Shook, *Learning to See*, Phần I |
+| information flow | dòng thông tin · *information flow* | Cách mỗi khâu biết phải làm gì tiếp: lịch, danh sách, lời báo, tín hiệu kéo. Rother & Shook coi nó quan trọng ngang dòng vật liệu | "dòng giấy tờ"; vẽ dòng vật liệu rồi coi là đủ | Rother & Shook, *Learning to See*, Phần I |
+| door-to-door | từ cửa tới cửa · *door-to-door* | Phạm vi khởi đầu trong *Learning to See*: dòng chảy trong một nhà máy, gồm cả giao cho khách và nhận vật tư; mở rộng dần ra ngoài | — | Rother & Shook, *Learning to See*, Phần I |
 
 ### Biểu đồ Gantt
 
@@ -158,6 +169,7 @@ Những khẳng định về lịch sử và nguồn gốc mà các bài đã ch
 | Cục Quân nhu Lục quân Mỹ 1917 | hệ biểu đồ đặt lời hứa cạnh kết quả; tướng Crozier bị thay tháng 12/1917, giữa chiến tranh | "sau chiến tranh" | Gantt (1919), *Organizing for Work*, tr. 78-82 |
 | Nguồn gốc FMEA | MIL-P-1629 của quân đội Mỹ, ngày 9/11/1949; NASA dùng trong chương trình Apollo thập niên 1960; công nghiệp ô tô tiếp nhận về sau | năm Ford hay ngành ô tô bắt đầu dùng | ASEMS Online |
 | Nguồn gốc SIPOC | không nêu | năm ra đời, người đặt ra; nhắc sơ đồ "Production Viewed as a System" (1950) của Deming | — |
+| Nguồn gốc sơ đồ chuỗi giá trị | Toyota gọi là *Material and Information Flow Mapping*, dùng để vẽ trạng thái hiện tại và tương lai khi lập kế hoạch triển khai; Rother để ý tới nó khi nghiên cứu Toyota và chuẩn hoá thành công cụ cùng Shook trong *Learning to See* (LEI), lời mở đầu đề tháng 5/1998; sách nhận giải nghiên cứu Shingo năm 1999 | "ra đời năm 1998" cho chính công cụ; "năm 1997" (Rother tự viết như vậy ở bài *Pitfalls*, chọi với ngày đề ở lời mở đầu; dùng ngày ở lời mở đầu) | Rother & Shook, *Learning to See*, lời mở đầu; LEI, *Lean Lexicon* |
 | Lưu đồ và Gilbreth | Gilbreth & Gilbreth trình bày "Process Charts" tại hội nghị ASME, New York, 12/1921 | Gilbreth phát minh ra lưu đồ | Gilbreth & Gilbreth (1921) |
 | Six Sigma | khởi nguồn ở Motorola năm 1986, phổ biến trong doanh nghiệp thập niên 1990 sau khi GE dùng | — | Hindo (2007) |
 | Taylorism ở Mỹ | đình công Watertown 8/1911; Taylor điều trần trước uỷ ban đặc biệt Hạ viện 25/01/1912; từ 1914-15 các điều khoản kèm trong đạo luật chuẩn chi cấm đồng hồ bấm giây và cấm trả tiền thưởng hoặc tiền phụ trội (*"any premium or bonus or cash reward"*) trong cơ sở của chính phủ liên bang. Gọn thành "một điều khoản trong Đạo luật Chuẩn chi Quân đội" là chấp nhận được | "chế độ trả thưởng theo định mức"; nước Mỹ "cấm quản lý khoa học" | Aitken, *Scientific Management in Action* |
@@ -272,6 +284,18 @@ Mỗi nguồn được mô tả cùng một cách ở mọi bài. Cột **Không
 | ASQ, *SIPOC+CM Diagram* | trích Bialek, Duffy & Moran (2009) | — |
 | Wikipedia, mục SIPOC | đối tượng bàn tới, không phải nguồn | dẫn câu "SIPOC có từ TQM cuối thập niên 1980" như sự kiện |
 
+### Sơ đồ chuỗi giá trị
+
+| Nguồn | Gọi là | Không viết |
+|---|---|---|
+| Rother & Shook, *Learning to See* (LEI) | sách bài tập; series đọc phần mở đầu và Phần I do LEI đăng công khai | trình bày như đã đọc toàn văn; số liệu ca Acme Stamping (chưa đọc, chỉ thấy qua nguồn thứ cấp) |
+| Rother, *Avoiding Common Pitfalls of Value-Stream Mapping* (LEI) | bài viết của đồng tác giả; nguồn cho việc ước lead time từ lượng tồn đếm được | — |
+| Nowak, Pfaff & Karbach (2017), *Systematic Reviews* 6:170 | tổng quan có hệ thống 22 nghiên cứu dùng VSM như phương pháp tự đứng ở cơ sở chăm sóc; tất cả trước-sau không đối chứng, mức bằng chứng IV; 11 nghiên cứu có kiểm định được dùng để đánh giá | bằng chứng nhân quả; "VSM giảm thời gian nằm viện" trơn (viết "bảy trên chín nghiên cứu đo … ghi nhận mức giảm có ý nghĩa thống kê") |
+| Marin-Garcia, Vidal-Carreras & Garcia-Sabater (2021), *IJERPH* 18(3):951 | tổng quan phạm vi 80 bài VSM trong dịch vụ y tế, 2015-2019, chỉ tìm qua Web of Science; **không đo hiệu quả**; đếm cái bài báo trình bày: 20 bài không trình bày bản đồ, 40 trên 60 không có bản mục tiêu, 41 bài thiếu ký hiệu dòng thông tin | "40 nhóm không vẽ bản mục tiêu" (viết "không trình bày"); lãng phí "bị chuyển" sang đơn vị khác như phát hiện (đó là giả thuyết tác giả nêu từ công trình trước); câu kết "seems to lead to major improvements" như bằng chứng hiệu quả |
+| Serrano, Ochoa & De Castro (2008), *IJPR* 46(16) | nghiên cứu nhiều ca ở sáu công ty công nghiệp, thiết kế lại dây chuyền rời rạc; series chỉ đọc tóm tắt (qua OpenAlex), toàn văn sau tường phí; tóm tắt không nêu con số cải thiện | bằng chứng định lượng về hiệu quả; tổng quan về sản xuất |
+| Hitti và cộng sự (2017), *BMC Health Serv Res* 17:625 | AUBMC, Beirut; trước-sau, một trung tâm; VSM của **quy trình chuyển bệnh nhân** (chú thích hình 2), lộ ra dòng thông tin phụ thuộc thư ký; thời gian chuyển 22,89 → 9,87 phút; báo cáo sơ bộ 31,16 → 42,63 phút, tác giả cho là "nhiều khả năng" do thay đổi lãnh đạo khoa chẩn đoán hình ảnh; chỉ số gộp từ lúc yêu cầu được xử lý tới báo cáo sơ bộ 54,04 → 52,50 phút (p = 0,02; hiệu chỉnh −2,31 phút). Chỉ số gộp có trong tóm tắt (*"from order processing to preliminary report"*), phần phương pháp không định nghĩa, nhưng khớp tổng hai đoạn; khi dẫn phải nói cả hai điều đó | thời gian bị "dồn sang" khâu đọc phim như kết luận của bài báo; mức giảm thời gian nằm khoa thuộc riêng can thiệp (khoa cùng lúc đổi quy trình vào cửa tới gặp bác sĩ); kể 13 phút ở khâu chuyển mà bỏ chỉ số gộp |
+| Little (2011), *Operations Research* 59(3) | bài tổng kết của chính Little; L = λW liên hệ ba giá trị **trung bình**, đúng trong điều kiện rất rộng, không phụ thuộc thứ tự phục vụ | định luật "đòi hàng được nhả đều"; dùng một lần đếm như lượng tồn trung bình; so kết quả của phép chia (trung bình) với trung vị |
+
 ### Biểu đồ Gantt
 
 | Nguồn | Gọi là | Không viết |
@@ -295,7 +319,10 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | bản hiện trạng / bản mục tiêu | *current-state map* / *future-state map* |
 | báo cáo quản trị | *management report* |
 | biên bản nhận hàng | *delivery note* |
-| cấp cứu, khoa cấp cứu | *A&E* |
+| bản hiện trạng / bản mục tiêu (trong sơ đồ chuỗi giá trị) | *current-state map* / *future-state map* |
+| cấp cứu, khoa cấp cứu | *A&E* (bài VSM, ca Beirut: *emergency department*, theo tên khoa trong nguồn) |
+| chăn mền | *duvets and blankets* |
+| chuyến giao | *delivery run* |
 | chụp mô phỏng | *simulation* |
 | chuyển tay | *handoff* |
 | công việc chuẩn | *standardised work* |
@@ -307,10 +334,15 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | đêm phòng | *room-nights* |
 | điểm bắt đầu / điểm kết thúc | *start point* / *end point* |
 | đo đa ký giấc ngủ | *polysomnography* |
+| dòng thông tin / dòng vật liệu | *information flow* / *material flow* |
+| đường thời gian (đáy sơ đồ chuỗi giá trị) | *timeline* |
 | duyệt chi | *spending approval* |
 | giá trị tồn kho tạm tính | *provisional stock value* |
+| giải ngân / thẩm định / định giá tài sản | *disbursement* / *credit appraisal* / *property valuation* |
+| giặt sấy thường / giặt hấp | *standard wash-and-dry* / *steam-pressing* |
 | giờ làm việc | *working hours* |
 | hạn hợp đồng (thuê) | *lease deadline* |
+| họ sản phẩm | *product family* |
 | khả năng phát hiện / khả năng xảy ra / mức nghiêm trọng | *detection* / *occurrence* / *severity* |
 | khoảng dư | *slack* |
 | khoa tiệt khuẩn | *sterile processing department* |
@@ -325,8 +357,11 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | mức tuân thủ / chất lượng thao tác / kết cục | *compliance* / *the quality of the task* / *outcome* |
 | mức ưu tiên hành động | *Action Priority* |
 | người chăm sóc | *caregivers* |
+| nhân viên giao nhận | *rider* |
 | ô quyết định | *decision diamond* |
 | phạm vi / ranh giới | *scope* / *boundaries* |
+| phản ánh (của khách) | *complaints* |
+| phe bênh | *defenders* |
 | phiếu hoàn tiền | *return form* |
 | phiếu nhập kho | *goods-received notes* |
 | phiếu sửa | *repair ticket* |
@@ -340,6 +375,10 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | tiền (đồng) | *million dong* |
 | tiêu sợi huyết | *thrombolysis* |
 | thời gian từ cửa tới kim | *door-to-needle time* |
+| thời gian xử lý | *processing time* |
+| từ cửa tới cửa | *door-to-door* |
+| xưởng may | *garment workshop* |
+| tiệm giặt sấy giao nhận tận nhà | *laundry with collection and home delivery* |
 | tiếng nói của khách hàng | *voice of the customer* |
 | trung vị / trung bình cộng | *median* / *mean* |
 | vi phạm cần thiết | *"necessary violations"* |
@@ -374,6 +413,7 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | `Quy Trình Thao Tác Chuẩn (SOP)` | `Standard Operating Procedure (SOP)` | `What Is a Standard Operating Procedure` |
 | `Lưu Đồ Quy Trình` | `Process Flowchart` | `What Is a Process Flowchart` |
 | `Sơ Đồ SIPOC` | `SIPOC Diagram` | `What Is a SIPOC Diagram` |
+| `Sơ Đồ Chuỗi Giá Trị` | `Value Stream Mapping` | `What Is a Value Stream Map`; section 3 là `Some Research on Value Stream Mapping` |
 | `Giải Quyết Vấn Đề A3` | `A3 Problem Solving` | — |
 
 Tên bài bản EN khớp tên trong mục lục trang tổng quan EN.
@@ -409,4 +449,5 @@ Những khái niệm các nguồn hoặc các bài đang nói khác nhau mà ch�
 - **Vai trò của Henry Gantt.** Weaver (2012) nói Gantt không dính dáng gì tới biểu đồ thanh; Geraldi & Lechter (2012) dựng một mạch liên tục hơn từ công việc điều phối quân nhu năm 1914. Bài nào chạm tới lịch sử công cụ này phải nêu cả hai, không chọn bên.
 - **Ma trận rủi ro.** Bài FMEA phân biệt mình với ma trận rủi ro bằng câu "công cụ chấm những rủi ro đã được gọi tên theo hai trục khả năng và hậu quả", chưa có nguồn. Khi viết bài Ma Trận Rủi Ro, chốt định nghĩa có nguồn rồi sửa câu ở bài FMEA cho khớp.
 - **Đường găng.** Bài Gantt dùng "việc găng" và "khoảng dư"; tên "đường găng" (*critical path*) để bài CPM chốt.
+- **"Chuỗi giá trị" hai nghĩa.** Bài Sơ Đồ Chuỗi Giá Trị dùng "chuỗi giá trị" cho *value stream* (đường đi của một họ sản phẩm qua các khâu); cụm này trùng chữ với *value chain* của Porter. Khi bài Năm Lực Lượng Cạnh Tranh Của Porter hay một bài chiến lược khác cần nhắc tới *value chain*, chốt cách gọi cho nó (có nguồn) và kiểm hai bài không gọi lẫn.
 - **Chồng lấn với series Scrum.** Bài Agile / Scrum / Kanban của series này trùng chủ đề với `pages/information-technology/agile-software-development/scrum-agile-and-more/`. Khi viết, đối chiếu từ điển của series đó để hai series dùng cùng thuật ngữ.

@@ -584,6 +584,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Work Breakdown Structure (WBS)",
+                        route: "pages/reading-studying/management-tools-and-techniques/13-wbs-work-breakdown-structure.html",
+                        hash: "#/work-breakdown-structure",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

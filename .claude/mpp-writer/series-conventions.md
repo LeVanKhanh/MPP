@@ -34,6 +34,7 @@ Thư mục: `pages/reading-studying/management-tools-and-techniques/`. Khung tra
 | Lưu Đồ Quy Trình | cửa hàng trực tuyến hoàn tiền hàng đổi trả; phòng đào tạo cấp bảng điểm; cửa hàng sửa điện thoại |
 | Sơ Đồ SIPOC | phòng khám nha khoa làm răng sứ; cửa hàng nội thất giao hàng; báo cáo quản trị tháng |
 | Sơ Đồ Chuỗi Giá Trị | xưởng may áo sơ mi đồng phục cho trường học; chi nhánh ngân hàng giải ngân khoản vay mua nhà; tiệm giặt sấy giao nhận tận nhà |
+| Cấu Trúc Phân Rã Công Việc (WBS) | trường mầm non mở cơ sở thứ hai (Hình 1); công ty bảo hiểm ra mắt ứng dụng nộp hồ sơ bồi thường; gia đình cải tạo căn hộ cũ 70 m² |
 
 ### Trang tổng quan, menu, file
 

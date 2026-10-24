@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work Breakdown Structure (WBS) - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="A work breakdown structure (WBS) forces the whole scope of a project to have a place on a tree of deliverables. This piece looks at the 100% rule, why figures that add up do not prove the tree covers the scope, the real evidence behind the tool, how to use it, and a step-by-step scenario."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Work Breakdown Structure (WBS)</h1>
+            <p class="page-subtitle">Branches that add up to the last dong still do not prove the tree covers the scope</p>
+            <p class="page-meta">Published: <time datetime="2026-10-24">October 24, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Definition</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Is a Work Breakdown Structure</h3>
+                <p>The whole scope of a project can be drawn as a tree that splits into smaller and smaller pieces, each branch something that has to be produced and handed over. That tree is called a work breakdown structure, or WBS. The top of the tree is the final result. The level below holds the components that make up that result, and each component is split again, until the smallest pieces are small enough to estimate and to assign to a single accountable owner, even when a whole team does the work; those smallest pieces are called work packages. A work package is still a deliverable. The steps that produce it are activities, defined inside the package and put on the schedule; they are not one more level of the tree. <sup><a href="#ref-1">[1]</a></sup> Suppose a private kindergarten is opening a second campus that has to start classes in September, and the school's leadership has agreed that the project includes enrolling a full intake for the first year. The top of the tree is "campus 2 opens". The second level holds the renovated premises, classroom and kitchen equipment, a teaching team hired and trained, an operating licence, and project management. The premises branch splits again into six classrooms, a one-way-flow kitchen, a playground, and a fire protection system. "One-way-flow kitchen installed and signed off" is a work package; laying the pipes, fitting the equipment and running the test are activities inside it.</p>
+
+                <p>There are no dates on the tree, and no order. Which job happens when, and after what, belongs to the Gantt chart and the critical path method; who answers for which part is usually recorded in a responsibility matrix kept beside the tree. The tree answers one question only: what does this project consist of.</p>
+
+                <p>According to Gregory Haugan, the phrase <em>work breakdown structure</em> was already in common use by around 1961, was described fairly fully in the guide to the PERT/COST system (the PERT scheduling method extended to cover cost) that the US Department of Defense produced with NASA in 1962, and was standardised by the Department of Defense in 1968 through the MIL-STD-881 standard. <sup><a href="#ref-2">[2]</a></sup> NASA's WBS handbook today defines it as a "product-oriented family tree" of the hardware, software, services and every other deliverable needed to achieve the project's objective, and adds that work not contained in the WBS should not be considered part of the project. That sentence is a rule for managing scope, not an escape hatch for forgotten work. A job that belongs to the agreed scope but is missing from the tree means the tree is wrong, and the tree has to be fixed. A new request outside the scope has to go through change control and be approved first; only then does it go on the tree. <sup><a href="#ref-3">[3]</a></sup></p>
+
+                <p>The tool's mechanism has two halves. The first is the 100% rule: the WBS contains exactly 100% of the work in the project's scope, project management included, no more and no less, and at every level the children must cover exactly 100% of the work of their parent. <sup><a href="#ref-4">[4]</a></sup> <sup><a href="#ref-5">[5]</a></sup> The rule is about work, not about figures. The US Government Accountability Office (GAO) states it through addition, the children summing to the parent and each element relating to only one piece of work, because in a cost estimate the costs are rolled up along that very tree. <sup><a href="#ref-1">[1]</a></sup> That gives two different checks. The arithmetic check asks whether the figures are aggregated consistently. The scope check asks whether the branches cover all the work that has to be done, and that question cannot be answered from inside the tree: the tree has to be laid next to the contract, the requirements, or the list kept by whoever will receive the product. Adding up is a necessary condition of the 100% rule, not proof that the tree meets it. The second half is decomposition: breaking a block of work into smaller pieces brings out components that people tend to miss when they look at the whole block, but only the ones the person doing the breaking thinks of. A job that has been mentioned but has no branch to sit on is either a gap in the scope or a request that lies outside it; a job that has a branch but no one looking after it is a different problem, a problem of assignment.</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="A hypothetical WBS for a kindergarten's second campus, in which enrolment has been agreed as part of the project; figures are an illustrative budget in millions of dong. The top of the tree is campus 2 opening in September, 1,200 million. The second level has five branches: premises 600, equipment 250, teachers 150, licence 50, project management 150, adding up to exactly 1,200. The premises branch splits into six classrooms 300, a one-way-flow kitchen 120, a playground 100 and fire protection 80, adding up to exactly 600. On the right is a dashed branch for enrolment, in scope but left off the tree, with a note that the sum cannot catch this gap because the other five branches still add up to 1,200."
+                        viewBox="0 0 1120 440">
+                        <rect class="node" x="400" y="24" width="320" height="62" rx="10"></rect>
+                        <text x="560" y="46">Campus 2 opens in September</text>
+                        <text class="small" x="560" y="68">1,200 million, summed from five branches</text>
+
+                        <path class="arrow" d="M560 86 V118"></path>
+                        <path class="arrow" d="M112 118 H829"></path>
+                        <path class="arrow" d="M112 118 V150"></path>
+                        <path class="arrow" d="M291 118 V150"></path>
+                        <path class="arrow" d="M470 118 V150"></path>
+                        <path class="arrow" d="M649 118 V150"></path>
+                        <path class="arrow" d="M829 118 V150"></path>
+                        <path class="edge-ghost" d="M829 118 H1008 V150"></path>
+
+                        <rect class="node" x="30" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="112" y="172">Premises</text>
+                        <text class="small" x="112" y="192">renovated</text>
+                        <text class="small" x="112" y="210">600</text>
+
+                        <rect class="node" x="209" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="291" y="172">Equipment</text>
+                        <text class="small" x="291" y="192">classrooms and kitchen</text>
+                        <text class="small" x="291" y="210">250</text>
+
+                        <rect class="node" x="388" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="470" y="172">Teachers</text>
+                        <text class="small" x="470" y="192">hired and trained</text>
+                        <text class="small" x="470" y="210">150</text>
+
+                        <rect class="node" x="567" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="649" y="172">Licence</text>
+                        <text class="small" x="649" y="192">to operate</text>
+                        <text class="small" x="649" y="210">50</text>
+
+                        <rect class="node" x="746" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="829" y="172">Project mgmt</text>
+                        <text class="small" x="829" y="192">coordination, reports</text>
+                        <text class="small" x="829" y="210">150</text>
+
+                        <rect class="ghost" x="925" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="1008" y="172">Enrolment</text>
+                        <text class="small" x="1008" y="192">120 children enrolled</text>
+                        <text class="small alert" x="1008" y="210">in scope, left out</text>
+                        <text class="small alert" x="1008" y="252">the sum cannot catch it:</text>
+                        <text class="small alert" x="1008" y="270">a whole branch is missing,</text>
+                        <text class="small alert" x="1008" y="288">yet the other five</text>
+                        <text class="small alert" x="1008" y="306">still add up to 1,200</text>
+
+                        <path class="arrow" d="M48 224 V410"></path>
+                        <path class="arrow" d="M48 260 H66"></path>
+                        <path class="arrow" d="M48 310 H66"></path>
+                        <path class="arrow" d="M48 360 H66"></path>
+                        <path class="arrow" d="M48 410 H66"></path>
+
+                        <rect class="node" x="66" y="240" width="220" height="40" rx="8"></rect>
+                        <text x="176" y="260">Six classrooms · 300</text>
+                        <rect class="node" x="66" y="290" width="220" height="40" rx="8"></rect>
+                        <text x="176" y="310">One-way kitchen · 120</text>
+                        <rect class="node" x="66" y="340" width="220" height="40" rx="8"></rect>
+                        <text x="176" y="360">Playground · 100</text>
+                        <rect class="node" x="66" y="390" width="220" height="40" rx="8"></rect>
+                        <text x="176" y="410">Fire protection · 80</text>
+
+                        <text class="small note" x="306" y="350">four packages sum to 600,</text>
+                        <text class="small note" x="306" y="368">matching the Premises branch</text>
+                        <text class="small note" x="306" y="398">splitting stops here because</text>
+                        <text class="small note" x="306" y="416">each package can be quoted</text>
+                    </svg>
+                    <figcaption>
+                        <strong>Figure 1.</strong> A hypothetical WBS for a kindergarten's second campus, with figures as an
+                        illustrative budget in millions of dong. At every level the children add up exactly to the parent,
+                        so the arithmetic check passes. The tree still fails the 100% rule, because enrolment was agreed as
+                        part of the project and has no branch; and because the 1,200 at the top is summed from those same
+                        five branches, the addition raises no alarm. Had enrolment been handed to a different project, this
+                        tree would be missing nothing.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Why We Need It</h3>
+                <p>When each department lists its own share of the work, the usual result is a set of lists that look complete on their own, still look complete side by side, and are still incomplete. What is missing is the work that sits between two departments: moving data from the old system to the new one, training the people who will use the product, integrating two pieces built by two teams, getting a signature from a unit that was not in the kick-off meeting. No list mentions these jobs, because no department regards them as its own, and sometimes they only surface when the handover date is close. GAO puts it plainly: failing to include all work for all deliverables can lead to schedule delays, cost increases, and confusion within the team. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <p>A WBS goes straight at that gap by changing the unit of the list. The unit becomes the thing to be produced, in place of the department or the trade. "Who produces the migrated customer data?" is much harder to shrug off than "does IT have anything left?". GAO adds a management reason: in a tree divided by product, a cost overrun points to the item that caused it, say the framing of a house, whereas in a tree divided by function, say "the carpenters", the manager lacks the information to find the root of the problem. <sup><a href="#ref-1">[1]</a></sup> The effect of decomposition on estimates can be measured in the laboratory. People asked to list the parts of a task themselves give longer estimates, and in two of Kruger and Evans's experiments those estimates came closer to the real time taken. <sup><a href="#ref-6">[6]</a></sup> In another experiment with 152 students, naming the slow part of a task pushed the average estimate from 8.48 to 12.73 minutes. <sup><a href="#ref-7">[7]</a></sup> The second figure only shows the estimate moving, not that it became more accurate; the details are in the research section below.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">What Are Its Limits</h3>
+                <p>The first built-in limit: nothing inside the tree proves by itself that the tree covers the whole scope. The addition only has a chance of flagging a discrepancy when the figure at the top comes from an independent source, such as a budget ceiling or a top-down estimate, and even then the gap may be an estimating error rather than a missing branch. Decomposition does not go looking for things that have no name yet; naming a part can even pull an estimate the other way, since when the part named is a quick one, the total estimate shrinks. <sup><a href="#ref-7">[7]</a></sup> NASA's handbook notes a related source of failure: using an earlier project's tree as the frame for a new one tends to carry the old tree's mistakes along with it. <sup><a href="#ref-3">[3]</a></sup></p>
+
+                <p>The second built-in limit is that the tree only says what the project consists of. Sequence, timing, who does the work and how firm each estimate is all have to live somewhere else: the schedule, the responsibility matrix, or the WBS dictionary, the companion document that describes in words what work each element of the tree contains. <sup><a href="#ref-3">[3]</a></sup> <sup><a href="#ref-1">[1]</a></sup> And because every element has only one parent, work that runs through the whole project, such as management, integration, system testing and user training, has no natural place in a tree divided by product. GAO treats these as common elements to be added from the outset, with programme management always at the second level. <sup><a href="#ref-1">[1]</a></sup> Choosing the axis for the second level, by product, by phase or by department, is a matter of use, covered under How to Apply It.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">What a WBS shows</th><th scope="col">What it does not show by itself</th></tr></thead>
+                    <tbody>
+                        <tr><td>The figures of five child branches add up exactly to the parent</td><td>Whether those five branches cover the whole scope, or a sixth is missing</td></tr>
+                        <tr><td>The "floor waterproofed" package sits under the Bathroom branch</td><td>When it happens, after what, and who does it</td></tr>
+                        <tr><td>The packages add up to a budget of 1,200 million</td><td>How firm that figure is</td></tr>
+                        <tr><td>Two packages sit next to each other on the same branch</td><td>Whether the work at the boundary between them belongs to either</td></tr>
+                        <tr><td>Every package has a name on the tree</td><td>Which packages have an accountable owner</td></tr>
+                        <tr><td>The tree has five levels and eighty work packages</td><td>Which parts are well understood and which were only split to fill the boxes</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Examples</h2>
+            <p class="intro-text">An app launch whose tree is detailed and adds up but is divided by department, set beside the US Census Bureau, where a cost estimate was drawn up before there was any tree, leaving the auditors unable to tell whether it was complete.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Four Departments, Four Branches, Three Jobs With No Branch</h3>
+                <p>An illustrative scenario: an insurance company is building a phone app for customers to file their own claims. The project manager sets up a WBS and divides the second level by the four departments working on the project: Design, Development, Testing, Marketing. Each head breaks their own branch down to work packages, every branch is detailed and adds up, and the project total is the sum of the four branches. As far as the arithmetic goes, the tree has no faults.</p>
+                <p>Two weeks before launch, three jobs surface at once. The app has to read the policies of existing customers, which sit in the old policy administration system, and nobody has been assigned to move that data across. The call centre has not been briefed on questions about the app, while the first calls will come in on release day. And the app store submission needs a privacy policy approved by the legal department, which has no branch on the tree. None of the three belongs to any of the four departments, so a tree divided by department has nowhere for them to appear. All three are also needed for the agreed launch goal, so this tree never met the 100% rule, even though every sum checked out. Writing those three lines now is easy; we already know how it ended. A second level divided by deliverable does not guarantee they appear either; what it changes is the question asked while the tree is being built. "What must the app do for customers who already hold a policy?" leads fairly directly to the old policy data, and "who answers customers when the app fails?" leads to the call centre. The privacy policy only comes to light when someone reads the app store's requirements, a list the project team did not write. NASA's handbook describes the pull that produces trees like this one: managers and contractors want to see their own area of responsibility on the tree, so a project team easily approves a WBS divided by function or organisation, and the handbook calls this an error to avoid. <sup><a href="#ref-3">[3]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">The 2020 US Census: A Cost Estimate Without a Tree</h3>
+                <p>For the 2020 census, the US Census Bureau planned to let households respond over the Internet, which meant building and buying the IT systems to receive and process those responses. The preliminary estimate for this option was about 73 million dollars. A GAO report in early 2015 concluded that the estimate was not reliable, partly because it had not been updated since 2011 even though the programme had changed significantly. <sup><a href="#ref-8">[8]</a></sup> In its cost estimating guide, GAO uses this very case to illustrate the step of building a WBS. The estimate was organised around a few high-level elements, such as researching, testing and deploying the Internet option, but those elements were not defined, so nobody could tell whether every related cost had been included. Bureau officials explained that the estimate was not built on a WBS with defined elements because, when it was prepared, the programme was not mature enough to have such a structure, and that it would be updated to the WBS once a preliminary design decision had been made. GAO's answer was that a WBS should have been set up when the programme was established and then detailed progressively as more became known. Later, in August 2017, the Bureau finalised a cost analysis requirements description for its data collection and processing systems; in December 2017 it finalised an updated life-cycle cost estimate that used it as an input; and in April 2018 GAO found that the Bureau's cost estimating had improved significantly across all four characteristics of a reliable estimate. <sup><a href="#ref-1">[1]</a></sup></p>
+                <p>What this case shows is the WBS seen from the auditor's side: when the elements of an estimate are not defined, no outsider can confirm that the estimate is complete. It does not show how much the missing WBS raised costs, and the 2018 improvement came from a whole estimating process done over, so the tree's share cannot be separated out. The Bureau's explanation is worth hearing again, because it is a serious objection: how do you divide what you do not yet fully know? GAO does not demand that everything be divided from day one; it asks for a coarse tree with defined elements, split further as more becomes known.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Some Research on Work Breakdown Structures</h2>
+            <p class="intro-text">The WBS sits in every major project management standard, but that standing rests mostly on the guidance of the agencies that use it; measurement is much thinner. What follows combines two lines of evidence: a large survey asking project managers how far they used a WBS and how their projects ended, and psychology experiments that test the mechanism the tool relies on, breaking a block of work into parts before estimating it.</p>
+            <div class="sub-section">
+                <p><strong>The study:</strong> Zwikael and Globerson sent questionnaires to project managers in about 50 organisations in Israel; 282 people responded, and 202 questionnaires with enough data went into the analysis. Each respondent rated how far 16 planning products had been used in their project, on a scale of 1 to 5, and reported the project's outcome on four measures: percentage cost overrun, percentage schedule overrun, technical performance, and customer satisfaction. In this model, the product of the scope definition process is the WBS chart. The two authors used regression to rank the impact of each process. <sup><a href="#ref-9">[9]</a></sup> On the experimental side, Kruger and Evans in 2004 asked people to estimate how long a multi-part task would take, such as their Christmas shopping, either in the usual way or after listing the parts of the task themselves; this piece read that study through its abstract and through descriptions in later studies. <sup><a href="#ref-6">[6]</a></sup> Hadjichristidis and colleagues turned the design around: the experimenters named the parts, deliberately choosing either quick or slow ones. In their first study, 152 students estimated how many minutes it would take to reformat a dictionary entry to match a model, randomly split into three groups: no part mentioned, quick parts mentioned (italics, bold), slow parts mentioned (inserting special phonetic characters). <sup><a href="#ref-7">[7]</a></sup> And Connolly and Dean in 1997 had students in advanced programming classes estimate how long they would take on whole software projects and on the subtasks within them, then compared the estimates with the actual times. <sup><a href="#ref-10">[10]</a></sup></p>
+                <p><strong>Findings:</strong> In Zwikael and Globerson's survey, the scope definition process, the one that produces the WBS, ranked between 8th and 13th of 16 processes on all four measures, with none statistically significant. The process ranked first was defining the project's activities: first on three of the four measures, and significant on all three. The regression models explained roughly 15% to 25% of the variation in outcomes. <sup><a href="#ref-9">[9]</a></sup> According to Kruger and Evans's abstract, people asked to list the parts gave longer estimates, and in experiments 3 and 4 these were less biased relative to the actual time; experiment 5 showed that the effect depends on how complex the task is. <sup><a href="#ref-6">[6]</a></sup> In the study by Hadjichristidis and colleagues, the group with no part mentioned estimated 8.48 minutes on average, the group shown the quick parts 6.24 minutes, and the group shown the slow parts 12.73 minutes. <sup><a href="#ref-7">[7]</a></sup> For Connolly and Dean, participants' ranges were so narrow that nearly half the actual results fell outside even the bounds they themselves gave only a 1% chance of being exceeded. Breaking the work into smaller parts did not widen those ranges; nor did question wording, question order, or estimation training. The only thing that clearly helped was making people think about a generous upper and lower bound. <sup><a href="#ref-10">[10]</a></sup></p>
+                <p><strong>What it shows:</strong> Zwikael and Globerson's survey is a correlation on self-reported data: tool use and project outcomes come from the same questionnaire, and what it measures is how far a tool was used, not how good the tree was. It does not license the claim that a WBS matters little. The two authors themselves write that doing the top-ranked process well, defining activities, requires the project manager to have a WBS in hand and then break its work packages down into activities. What it shows is narrower: in this sample, the extent of WBS use, taken on its own, did not go clearly with better project outcomes. The experiments show that decomposition shifts estimates according to the parts that get named. When estimators list the parts themselves, estimates get longer and, in two of Kruger and Evans's experiments, closer to reality; when the parts named are quick ones, estimates get shorter; and decomposition does not make people any less overconfident about their margin of error. All three groups of experiments worked on tasks far smaller than a project, mostly with students, so they speak to the mechanism, not to how well a WBS works on a real project.</p>
+                <p><strong>The counter-case:</strong> The defenders have three arguments. First, the WBS was standardised by the US Department of Defense in 1968, is a mandatory part of the baseline plan used to manage every NASA project, has its own handbook at the US Department of Energy, and GAO calls it the cornerstone of every programme; <sup><a href="#ref-2">[2]</a></sup> <sup><a href="#ref-3">[3]</a></sup> <sup><a href="#ref-1">[1]</a></sup> those standards distil decades of running very large programmes, and accumulated experience of that kind is evidence too. Second, Zwikael and Globerson's survey measures how often a tool was used, not how well, and the process at the top of their table is itself built on a WBS. Third, a tree on a real project is built by a team, checked by someone else and accompanied by a dictionary, which is a long way from a list one person jots down in a laboratory. This piece accepts the second and third points in full: nothing here is enough to say that a good tree does not help, and nothing licenses a jump from a few minutes in a lab to a project lasting months. It accepts half of the first. Practitioners' experience has value, but guidance is not measurement; within the scope of this piece's search, no study was found that compares the outcomes of projects with and without a WBS while controlling for the other differences between them. GAO's cases, like the census case above, show a different kind of value altogether from reducing overruns: when a tree has defined elements, an outsider can check whether an estimate is complete. That value is real, and it does not need the claim that a WBS makes projects cheaper in order to stand.</p>
+                <p><strong>Why this is useful:</strong> It changes the question you ask when shown a WBS in which every branch adds up neatly. A sum that checks out has settled the arithmetic question; the scope question is still open. The question worth asking is: what list, not written by the person who built this tree, has its second level been laid against, such as the requirements in the contract, the tree of a similar project, or the list kept by whoever will receive and run the product? And when the tree is used to add up an estimate, ask for a low and a high figure for a few of the largest packages, because in Connolly and Dean's experiments, breaking the work down did not make estimate ranges any less narrow.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">How to Apply It</h2>
+            <p class="intro-text">A WBS works by forcing the whole scope of a project to have a place on a tree of deliverables, each level covering exactly 100% of the work of the level above, so the effective way to put it in place is to choose a dividing axis that lets every branch name a deliverable, then check the tree's coverage against things outside it, because the addition inside the tree can only check the figures. The tool fits best on projects whose deliverables can be named from the start. The closer the work gets to research or discovery, where the list of products itself is still taking shape, the more the tree should stay coarse and be split further as more becomes known. <sup><a href="#ref-1">[1]</a></sup></p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Choose an axis for the second level that lets every branch name a deliverable:</strong> This piece follows NASA and GAO and divides by product. Branches named after departments, functions or trades (design, engineering, manufacturing, the carpenters) say who does the work, not what gets produced; NASA calls that an error, and GAO shows that a tree divided by function cannot trace a cost overrun back to the item that caused it. <sup><a href="#ref-3">[3]</a></sup> <sup><a href="#ref-1">[1]</a></sup> Phases are a different case. NASA also counts a second level divided by phase among the structures not to use, because such a tree does not show clearly which products will be produced, but PMI's PMBOK Guide presents placing life-cycle phases at the second level and deliverables at the third as a valid structure. <sup><a href="#ref-11">[11]</a></sup> That structure keeps the products directly under each phase, so the check stays the same: read each element and ask "when it is done, what can I hold in my hand?". Any element that can only be answered with the name of a department or a trade is not yet a deliverable. Add the common elements as well, such as project management, integration, system testing and user training: GAO notes they must be there from the outset for the tree to contain all the work <sup><a href="#ref-1">[1]</a></sup></li>
+                    <li><strong>Check the top of the tree against at least one list its builder did not write:</strong> The obvious move is to add up each branch, and that only checks that the figures agree; it cannot catch a branch that is missing. The list to check against can be the requirements in the contract, the rules of a third party that will issue a permit or sign the work off, a standard tree for the industry or one from a similar project, or the list kept by whoever will receive and run the product. When reusing an earlier project's tree, go through it branch by branch, because an old tree carries its mistakes along with it <sup><a href="#ref-3">[3]</a></sup></li>
+                    <li><strong>Write a dictionary entry for each work package, stating what it includes and what it does not:</strong> The 100% rule asks for two things, nothing missing and nothing counted twice, and both tend to fail at the boundary between two neighbouring packages. One line saying "does not include replacing the floor drain pipe, which belongs to the plumbing package" settles in advance an argument that could break out once the floor has already been broken up. Each package also records its done criteria and an accountable owner, because having a name on the tree does not mean someone has taken it on; GAO notes that with minor changes and additions, the WBS dictionary can be turned into a statement of work for a contract <sup><a href="#ref-1">[1]</a></sup></li>
+                    <li><strong>Stop splitting once a work package can be estimated and assigned, and split unevenly:</strong> Parts that are high-risk, costly or complex get split further, familiar parts stop early; NASA states plainly that the branches do not all need to go down to the same level. <sup><a href="#ref-3">[3]</a></sup> Do not break a work package into the steps of doing it: steps are activities, and they belong to the schedule. Leave a part that is not yet understood as one large package with a note that it will be split later, rather than splitting it by guesswork to fill the boxes. Do not treat the number of levels or packages as a measure of the tree's quality: a tree with eighty packages is no more complete than one with thirty if both are missing the same branch. When the packages are added up into a total estimate, record a low and a high figure for the large ones, because breaking work down does not cure the habit of setting estimate ranges too narrow <sup><a href="#ref-10">[10]</a></sup></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Applying It to a Scenario</h2>
+            <p class="intro-text">A family of four has just bought an old 70 m² flat that has to be renovated within ten weeks so they can move in. The contractor's first quote is divided by trade: electrical, plumbing, masonry, painting, carpentry. The family wants to sign a fixed-price contract with one main contractor on a scope complete enough that, by handover, extra costs caused by omitted items stay below 2% of the contract price. Before starting, both sides agree three types of extra cost, so there is no argument later about how to count them: change requests (the owners change their minds or add work), concealed conditions (only revealed once things are opened up), and omitted items (work needed for the result written at the top of the tree, visible when surveying the flat before signing, but left out of the scope). The figures in this scenario are illustrative, in millions of dong.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Write the top of the tree as a result that can be signed off:</strong> "The flat is liveable: power and water working, the kitchen usable for cooking, both bathrooms usable, the family moved in by the end of week ten". This sentence is the yardstick for every branch below it: anything it needs must have a place on the tree</li>
+                    <li><strong>Divide the second level by deliverable instead of by trade:</strong> Kitchen, two bathrooms, two bedrooms, living room, electrical system, plumbing system, plus two common elements, permits and site management, and clean-up and handover. The reason for the change shows up straight away in the bathroom: in the quote divided by trade, floor waterproofing looked like work for the mason and like work for the plumber, and no line listed it</li>
+                    <li><strong>Split down to work packages, deep where the risk is, shallow where it is familiar:</strong> The bathroom branch splits into three packages: floor waterproofed and signed off, walls and floor tiled, sanitary fittings installed and tested. Breaking up the floor, applying the waterproofing and the flood test are activities inside the waterproofing package, on the contractor's schedule rather than branches of the tree. The bedroom branch stops at "walls and ceilings repainted" and "wooden floor replaced", because the contractor could already quote those two packages without splitting them further. Each package records an accountable owner and its done criteria</li>
+                    <li><strong>Write dictionary entries for the boundary packages:</strong> "Bathroom floor waterproofed: includes cleaning the surface, two coats and a 24-hour flood test; belongs to the bathroom branch; done by the mason; does not include replacing the floor drain pipe, which belongs to the plumbing branch". The same for the wiring run inside the kitchen walls, whether the kitchen cabinets come with lighting, and who removes the old doors</li>
+                    <li><strong>Add up each branch, then check coverage against three lists the family did not write:</strong> The eight branches add up to exactly 415, and every child branch adds up to its parent: the arithmetic check passes, and it says nothing about coverage. The family lays the second level next to the building management's renovation rules, the item list of a second contractor who also quoted, and the account of a household in the same building that renovated the year before. Three things missing from the tree come to light: registering the works with building management, with a lift protection fee, 5; removing debris by service lift within the permitted hours, 12; replacing the main distribution board with residual-current protection, as the building requires, 18. All three are needed for the result at the top of the tree, so they are within scope rather than new requests, and they are added to their proper branches, as the table after these steps shows</li>
+                    <li><strong>Sign the contract against the tree and log every extra cost with its package code and type:</strong> The contract price is 450. Each time new work comes up, the contractor and the owners record which package it belongs to, which of the three agreed types it is, and how much it costs</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Second-level branch</th><th scope="col">Before the check</th><th scope="col">Added after the check</th><th scope="col">At contract signing</th></tr></thead>
+                    <tbody>
+                        <tr><td>Kitchen</td><td>95</td><td></td><td>95</td></tr>
+                        <tr><td>Two bathrooms</td><td>80</td><td></td><td>80</td></tr>
+                        <tr><td>Two bedrooms</td><td>60</td><td></td><td>60</td></tr>
+                        <tr><td>Living room</td><td>45</td><td></td><td>45</td></tr>
+                        <tr><td>Electrical system</td><td>55</td><td>18, main board with residual-current protection</td><td>73</td></tr>
+                        <tr><td>Plumbing system</td><td>40</td><td></td><td>40</td></tr>
+                        <tr><td>Permits and site management</td><td>25</td><td>5, works registration, lift protection</td><td>30</td></tr>
+                        <tr><td>Clean-up and handover</td><td>15</td><td>12, debris removal in permitted hours</td><td>27</td></tr>
+                        <tr><td>Total</td><td>415</td><td>35</td><td>450</td></tr>
+                    </tbody>
+                </table>
+
+                <p>By handover, extra costs came to 27, split by the three types agreed at the start: 15 in change requests (different tiles in the living room, a row of wall cabinets added in the kitchen), 9 in concealed conditions (a cracked old floor drain pipe, only visible once the bathroom floor was broken up), and 3 in omitted items (taking down and refitting two air conditioners to paint the walls, visible during the survey but never put on the tree). The omitted items come to 3 out of 450, about 0.7% of the contract price, below the 2% threshold that was set, and the family moved in at the end of week ten as planned. The tree did not make the builders work any faster, and it did not stop the pipe from cracking; for that kind of extra cost, what helps is a contingency reserve, something a scope tree cannot replace. What the tree and the check against outside lists did achieve was getting three items worth 35 into the contract before signing, and giving every later extra cost a place on the tree to be recorded against. The conditions for that result were a second level divided by deliverable, a top level checked against outside sources rather than merely added up, boundary packages with what they include and exclude written down, and a classification of extra costs agreed before the first one appeared.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Summary</h2>
+            <div class="summary-box">
+                <p><strong>Key Point:</strong> The mechanism of a WBS is to force the whole scope of a project to have a place on a tree of deliverables, each level covering exactly 100% of the work of the level above, so a job that has been mentioned but has no branch shows up at once: either as a gap in the scope or as a request that lies outside it. The most counter-intuitive point is that figures which add up do not prove the tree meets the 100% rule, because the rule is about coverage of work while the addition only checks figures; and the experiments on decomposition show that estimates shift with the parts that get named, longer or shorter depending on which parts those are. The dependable way to use it is therefore to choose a dividing axis that lets every branch name a deliverable, check coverage against a list the tree's builder did not write, record the boundaries and the accountable owner of every package, and keep what is not yet understood coarse until more is known.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">References</h2>
+            <ol class="outline-list">
+                <li id="ref-1">GAO (2020). <em>Cost Estimating and Assessment Guide: Best Practices for Developing and Managing Program Costs</em>, GAO-20-195G, March 2020, chapter 7. Guidance from the US Government Accountability Office; the source for the work package as the lowest level, within which activities are defined and scheduled (pp. 56, 65), for the rule that the children sum to the parent (p. 58), for the argument for a product-oriented over a functional tree (pp. 59-60), for common elements (table 6), for the WBS dictionary and for the tree being detailed progressively over time (pp. 63-64), and for the 2020 census case (case study 9, p. 68). <a href="https://www.gao.gov/products/gao-20-195g" rel="noopener noreferrer" target="_blank">Document page</a>.</li>
+                <li id="ref-2">Haugan, G. T. (2008). <em>Work Breakdown Structures for Projects, Programs, and Enterprises</em>. Management Concepts, Vienna, Virginia. A book by a long-standing writer on the WBS for US government project managers; the source for the 1961 date, the June 1962 PERT/COST document, NASA's October 1962 document, and the 1968 directive 5010.20 and MIL-STD-881 standard. This piece read the history section of the first chapter in an electronic edition. <a href="https://iread.qq.com/read/1025738826/11" rel="noopener noreferrer" target="_blank">Read the history section</a>.</li>
+                <li id="ref-3">NASA (2018). <em>NASA Work Breakdown Structure (WBS) Handbook</em>, NASA/SP-2016-3404/REV1, January 2018. The official guidance of an agency that has used the WBS since the 1960s; the source for the WBS and WBS dictionary being mandatory parts of a project's management baseline (chapter 1), for the "product-oriented family tree" definition, for the statement that work outside the WBS is not part of the project (p. 1), for the guidance that branches need not be split to the same depth and that the tree is revised only through formally approved scope changes (section 2.3, p. 9), for common errors such as reusing an old tree and dividing the second level by function, organisation or phase, as NASA sees it (section 3.5, pp. 29-30), and for the point that the organisational structure should not drive how the tree is divided (section 4.2). <a href="https://ntrs.nasa.gov/citations/20180000844" rel="noopener noreferrer" target="_blank">Document page on NTRS</a>.</li>
+                <li id="ref-4">Brotherton, S. A., Fried, R. T., &amp; Norman, E. S. (2008). Applying the work breakdown structure to the project management lifecycle. Paper presented at PMI Global Congress 2008, North America, Denver. Project Management Institute. A paper by authors of the second edition of PMI's WBS practice standard; the source for the statement of the 100% rule, quoted from Haugan (2002, p. 17): the WBS includes 100% of the work defined by the project scope, project management included, the rule applies at every level, and the tree must not include work outside the scope. <a href="https://www.pmi.org/learning/library/applying-work-breakdown-structure-project-lifecycle-6979" rel="noopener noreferrer" target="_blank">Read in the PMI library</a>.</li>
+                <li id="ref-5">U.S. Department of Energy (2012). <em>Work Breakdown Structure Handbook</em>, August 16, 2012. The US Department of Energy's handbook; the source for its statement of the 100% rule, that the child level must represent 100% of the work of the parent, with the note that an "other" category should stay below 10% of the work value at that level (section 3.2). <a href="https://www.energy.gov/projectmanagement/articles/department-energy-work-breakdown-structure-handbook" rel="noopener noreferrer" target="_blank">Document page</a>.</li>
+                <li id="ref-6">Kruger, J., &amp; Evans, M. (2004). If you don't want to be late, enumerate: Unpacking reduces the planning fallacy. <em>Journal of Experimental Social Psychology</em>, 40(5), 586-598. Five experiments on listing a task's parts before estimating it; this piece read it through the abstract and through the description in [7], so it cites the direction of the results only, not figures. <a href="https://doi.org/10.1016/j.jesp.2003.11.001" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-7">Hadjichristidis, C., Summers, B., &amp; Thomas, K. (2014). Unpacking estimates of task duration: The role of typicality and temporality. <em>Journal of Experimental Social Psychology</em>, 51, 45-50. Three studies showing that naming the parts of a task can lengthen, shorten or leave estimates unchanged, depending on which parts are named; the study 1 figures are taken from table 1 of the pre-print held by Bournemouth University. <a href="https://eprints.bournemouth.ac.uk/21338/" rel="noopener noreferrer" target="_blank">Pre-print in the Bournemouth repository</a>.</li>
+                <li id="ref-8">GAO (2015). <em>2020 Census: Key Challenges Need to Be Addressed to Successfully Enable Internet Response</em>, GAO-15-225, February 5, 2015. The source for the preliminary estimate of about 73 million dollars for the Internet response option, for the conclusion that the estimate was not reliable, and for the fact that it had not been updated since 2011. <a href="https://www.gao.gov/products/gao-15-225" rel="noopener noreferrer" target="_blank">Report page</a>.</li>
+                <li id="ref-9">Zwikael, O., &amp; Globerson, S. (2006). From critical success factors to critical success processes. <em>International Journal of Production Research</em>, 44(17), 3433-3449. A survey of project managers in about 50 organisations in Israel; the source for the WBS chart being the product of the scope definition process, for that process's impact ranking, and for the authors' remark that defining activities requires a WBS first. Figures are taken from the submitted manuscript held by the Australian National University. <a href="https://openresearch-repository.anu.edu.au/bitstream/1885/52118/8/01%20Zwikael%20and%20Globerson%20From%20critical%20success%202006.pdf" rel="noopener noreferrer" target="_blank">Read the manuscript</a>.</li>
+                <li id="ref-10">Connolly, T., &amp; Dean, D. (1997). Decomposed versus holistic estimates of effort required for software writing tasks. <em>Management Science</em>, 43(7), 1029-1045. Two experiments with students in advanced programming classes; the source for decomposition not widening over-narrow estimate ranges, while prompting people to consider generous upper and lower bounds did; this piece read it through the abstract. <a href="https://doi.org/10.1287/mnsc.43.7.1029" rel="noopener noreferrer" target="_blank">Article page</a>.</li>
+                <li id="ref-11">Project Management Institute (2013). <em>A Guide to the Project Management Body of Knowledge (PMBOK Guide)</em>, 5th edition, section 5.4 Create WBS, figure 5-12 "Sample WBS Organized by Phase". The source for PMI accepting life-cycle phases at the second level with deliverables at the third. This piece did not read the book directly, only excerpts of this section; the book has no public edition.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

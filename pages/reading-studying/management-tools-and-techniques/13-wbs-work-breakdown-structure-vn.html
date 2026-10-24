@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu Trúc Phân Rã Công Việc (WBS) - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="Cấu trúc phân rã công việc (WBS) buộc toàn bộ phạm vi dự án phải có một chỗ trên một cây sản phẩm bàn giao. Bài phân tích luật 100%, chỗ cộng khớp các con số chưa chứng minh cây đã phủ đủ phạm vi, bằng chứng thật đứng sau công cụ, cách dùng và một tình huống áp dụng từng bước."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Cấu Trúc Phân Rã Công Việc (WBS)</h1>
+            <p class="page-subtitle">Các nhánh cộng khớp từng đồng chưa chứng minh cây đã phủ đủ phạm vi</p>
+            <p class="page-meta">Cập nhật: <time datetime="2026-10-24">24 Tháng 10, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Định Nghĩa</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Cấu Trúc Phân Rã Công Việc Là Gì</h3>
+                <p>Toàn bộ phạm vi của một dự án có thể vẽ thành một cái cây chia nhỏ dần, mỗi nhánh là một thứ phải làm ra và bàn giao được. Cái cây ấy gọi là cấu trúc phân rã công việc, thường gọi tắt theo tên tiếng Anh là WBS (<em>work breakdown structure</em>). Đỉnh cây là kết quả cuối cùng. Tầng kế tiếp là những thành phần làm nên kết quả ấy, rồi mỗi thành phần lại chia tiếp, cho tới khi phần nhỏ nhất đủ nhỏ để ước lượng và giao cho một đầu mối chịu trách nhiệm, còn người làm có thể là cả một nhóm; phần nhỏ nhất đó gọi là gói việc (<em>work package</em>). Gói việc vẫn là một thứ bàn giao. Các bước để làm ra nó là hoạt động, được định nghĩa bên trong gói và đưa vào lịch, không thành thêm một tầng của cây. <sup><a href="#ref-1">[1]</a></sup> Giả sử một trường mầm non tư thục mở cơ sở thứ hai, phải khai giảng vào tháng 9, và ban giám hiệu đã chốt rằng dự án gồm cả việc tuyển đủ trẻ cho khoá đầu. Đỉnh cây là "cơ sở 2 khai giảng". Tầng hai gồm mặt bằng đã cải tạo, thiết bị lớp học và bếp, đội giáo viên đã tuyển và đào tạo, giấy phép hoạt động, và phần quản lý dự án. Nhánh mặt bằng chia tiếp thành sáu phòng học, một bếp một chiều, sân chơi, hệ thống phòng cháy chữa cháy. "Bếp một chiều đã lắp xong và được nghiệm thu" là một gói việc; đi đường ống, lắp thiết bị, chạy thử là các hoạt động bên trong nó.</p>
+
+                <p>Trên cây không có ngày tháng, không có thứ tự trước sau. Việc nào làm lúc nào, sau việc nào, là phần của biểu đồ Gantt và phương pháp đường găng; ai chịu trách nhiệm phần nào thì thường ghi ở ma trận trách nhiệm đặt cạnh cây. Cây chỉ trả lời một câu: dự án này gồm những gì.</p>
+
+                <p>Theo Gregory Haugan, cụm từ <em>work breakdown structure</em> đã thông dụng từ khoảng năm 1961, được mô tả khá đầy đủ trong tài liệu hướng dẫn hệ thống PERT/COST (phương pháp lập lịch PERT mở rộng thêm phần chi phí) mà Bộ Quốc phòng Mỹ soạn cùng NASA năm 1962, và được Bộ Quốc phòng chuẩn hoá năm 1968 bằng tiêu chuẩn MIL-STD-881. <sup><a href="#ref-2">[2]</a></sup> Sổ tay WBS của NASA hôm nay định nghĩa nó là một "cây phả hệ hướng theo sản phẩm" gồm phần cứng, phần mềm, dịch vụ và mọi thứ khác phải bàn giao để đạt mục tiêu của dự án, và viết thêm rằng phần việc không nằm trong WBS thì không được coi là một phần của dự án. Câu ấy là một quy tắc quản lý phạm vi, không phải một lối thoát cho việc bị quên. Một việc thuộc phạm vi đã thống nhất mà không có trên cây thì cây sai, và phải sửa cây. Một yêu cầu mới nằm ngoài phạm vi thì phải được duyệt qua quy trình kiểm soát thay đổi trước, rồi mới được thêm vào cây. <sup><a href="#ref-3">[3]</a></sup></p>
+
+                <p>Cơ chế của công cụ có hai vế. Vế thứ nhất là luật 100%: WBS chứa đúng 100% công việc thuộc phạm vi dự án, kể cả phần quản lý dự án, không hơn không kém, và ở mọi tầng, các phần con phải phủ đúng 100% công việc của phần cha. <sup><a href="#ref-4">[4]</a></sup> <sup><a href="#ref-5">[5]</a></sup> Luật này nói về công việc, không nói về con số. GAO, Văn phòng Kiểm toán Chính phủ Mỹ, diễn đạt nó qua phép cộng, tổng các con bằng cha và mỗi phần tử chỉ gắn với một phần công việc, vì trong dự toán, chi phí được cộng lên theo đúng cây ấy. <sup><a href="#ref-1">[1]</a></sup> Từ đó có hai phép kiểm khác nhau. Kiểm số học hỏi các con số có được tổng hợp nhất quán không. Kiểm phạm vi hỏi các nhánh có phủ hết việc phải làm không, và câu này không trả lời được từ bên trong cây: phải đặt cây cạnh hợp đồng, yêu cầu, hay danh sách của người sẽ nhận sản phẩm. Cộng khớp là điều kiện cần của luật 100%, chưa phải bằng chứng cây đã đạt nó. Vế thứ hai là phép phân rã: chia một khối việc thành phần nhỏ làm hiện ra những thành phần mà khi nhìn cả khối người ta hay bỏ qua, nhưng chỉ những gì người phân rã nghĩ tới. Một việc đã được nhắc tới mà không tìm được nhánh để đặt vào thì hoặc là phần sót của phạm vi, hoặc là một yêu cầu nằm ngoài nó; còn một việc đã có nhánh mà chưa ai phụ trách là chuyện khác, chuyện phân công.</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Cây WBS giả định cho cơ sở thứ hai của một trường mầm non, trong đó tuyển sinh đã được chốt là một phần của dự án; số là ngân sách minh hoạ tính bằng triệu đồng. Đỉnh cây là cơ sở 2 khai giảng tháng 9, 1.200 triệu. Tầng hai có năm nhánh: mặt bằng 600, thiết bị 250, giáo viên 150, giấy phép 50, quản lý dự án 150, cộng lại đúng 1.200. Nhánh mặt bằng chia thành sáu phòng học 300, bếp một chiều 120, sân chơi 100, phòng cháy chữa cháy 80, cộng lại đúng 600. Ở bên phải là một nhánh viền đứt ghi tuyển sinh, thuộc phạm vi nhưng bị sót khỏi cây, kèm ghi chú rằng phép cộng không bắt được chỗ sót này vì năm nhánh còn lại vẫn cộng đúng 1.200."
+                        viewBox="0 0 1120 440">
+                        <rect class="node" x="400" y="24" width="320" height="62" rx="10"></rect>
+                        <text x="560" y="46">Cơ sở 2 khai giảng tháng 9</text>
+                        <text class="small" x="560" y="68">1.200 triệu, cộng lên từ năm nhánh</text>
+
+                        <path class="arrow" d="M560 86 V118"></path>
+                        <path class="arrow" d="M112 118 H829"></path>
+                        <path class="arrow" d="M112 118 V150"></path>
+                        <path class="arrow" d="M291 118 V150"></path>
+                        <path class="arrow" d="M470 118 V150"></path>
+                        <path class="arrow" d="M649 118 V150"></path>
+                        <path class="arrow" d="M829 118 V150"></path>
+                        <path class="edge-ghost" d="M829 118 H1008 V150"></path>
+
+                        <rect class="node" x="30" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="112" y="172">Mặt bằng</text>
+                        <text class="small" x="112" y="192">đã cải tạo</text>
+                        <text class="small" x="112" y="210">600</text>
+
+                        <rect class="node" x="209" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="291" y="172">Thiết bị</text>
+                        <text class="small" x="291" y="192">lớp học và bếp</text>
+                        <text class="small" x="291" y="210">250</text>
+
+                        <rect class="node" x="388" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="470" y="172">Giáo viên</text>
+                        <text class="small" x="470" y="192">đã tuyển, đã đào tạo</text>
+                        <text class="small" x="470" y="210">150</text>
+
+                        <rect class="node" x="567" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="649" y="172">Giấy phép</text>
+                        <text class="small" x="649" y="192">hoạt động</text>
+                        <text class="small" x="649" y="210">50</text>
+
+                        <rect class="node" x="746" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="829" y="172">Quản lý dự án</text>
+                        <text class="small" x="829" y="192">điều phối, báo cáo</text>
+                        <text class="small" x="829" y="210">150</text>
+
+                        <rect class="ghost" x="925" y="150" width="165" height="74" rx="10"></rect>
+                        <text x="1008" y="172">Tuyển sinh</text>
+                        <text class="small" x="1008" y="192">120 trẻ đã đăng ký</text>
+                        <text class="small alert" x="1008" y="210">thuộc phạm vi, bị sót</text>
+                        <text class="small alert" x="1008" y="252">phép cộng không bắt được:</text>
+                        <text class="small alert" x="1008" y="270">thiếu cả một nhánh,</text>
+                        <text class="small alert" x="1008" y="288">năm nhánh còn lại</text>
+                        <text class="small alert" x="1008" y="306">vẫn cộng đúng 1.200</text>
+
+                        <path class="arrow" d="M48 224 V410"></path>
+                        <path class="arrow" d="M48 260 H66"></path>
+                        <path class="arrow" d="M48 310 H66"></path>
+                        <path class="arrow" d="M48 360 H66"></path>
+                        <path class="arrow" d="M48 410 H66"></path>
+
+                        <rect class="node" x="66" y="240" width="220" height="40" rx="8"></rect>
+                        <text x="176" y="260">Sáu phòng học · 300</text>
+                        <rect class="node" x="66" y="290" width="220" height="40" rx="8"></rect>
+                        <text x="176" y="310">Bếp một chiều · 120</text>
+                        <rect class="node" x="66" y="340" width="220" height="40" rx="8"></rect>
+                        <text x="176" y="360">Sân chơi · 100</text>
+                        <rect class="node" x="66" y="390" width="220" height="40" rx="8"></rect>
+                        <text x="176" y="410">Phòng cháy chữa cháy · 80</text>
+
+                        <text class="small note" x="306" y="350">bốn gói cộng lại 600,</text>
+                        <text class="small note" x="306" y="368">khớp nhánh Mặt bằng</text>
+                        <text class="small note" x="306" y="398">dừng chia ở đây vì</text>
+                        <text class="small note" x="306" y="416">mỗi gói đã báo giá được</text>
+                    </svg>
+                    <figcaption>
+                        <strong>Hình 1.</strong> Cây WBS giả định cho cơ sở thứ hai của một trường mầm non, số là ngân
+                        sách minh hoạ tính bằng triệu đồng. Ở mỗi tầng, các con cộng lại đúng bằng cha, nên phép kiểm số học
+                        đạt. Cây vẫn chưa đạt luật 100%, vì tuyển sinh đã được chốt là một phần của dự án mà không có nhánh
+                        nào; và vì con số 1.200 được cộng lên từ chính năm nhánh, phép cộng không báo gì. Nếu tuyển sinh
+                        được giao cho một dự án khác, cây này không thiếu gì.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Tại Sao Ta Cần Dùng Nó</h3>
+                <p>Khi mỗi phòng ban tự liệt kê phần việc của mình, kết quả thường là những danh sách đọc riêng thì đủ, đặt cạnh nhau vẫn đủ, và vẫn thiếu. Thiếu ở những việc nằm giữa hai phòng: chuyển dữ liệu từ hệ thống cũ sang hệ thống mới, đào tạo người sẽ dùng sản phẩm, tích hợp hai phần do hai nhóm làm, xin một chữ ký của bộ phận không ngồi trong cuộc họp khởi động. Không danh sách nào ghi những việc ấy, vì không phòng nào coi chúng là của mình, và có khi chúng chỉ lộ ra lúc đã sát ngày bàn giao. GAO viết thẳng rằng bỏ sót công việc của bất kỳ thứ gì phải bàn giao có thể dẫn tới trễ tiến độ, đội chi phí, và nhầm lẫn trong nhóm. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <p>WBS chữa đúng chỗ đó bằng cách đổi đơn vị của danh sách. Đơn vị của danh sách giờ là thứ phải làm ra, thay cho phòng ban hay loại thợ. Hỏi "ai làm ra bản dữ liệu khách hàng đã chuyển" khó lờ đi hơn hỏi "phòng IT còn việc gì không". GAO đưa thêm một lý do quản trị: khi cây chia theo sản phẩm, một khoản vượt chi chỉ đích danh được hạng mục gây ra nó, chẳng hạn phần khung nhà, còn khi cây chia theo chức năng, kiểu "đội thợ mộc", người quản lý không có đủ thông tin để tìm ra gốc của vấn đề. <sup><a href="#ref-1">[1]</a></sup> Tác động của phép phân rã lên ước lượng thì đo được trong phòng thí nghiệm. Người được yêu cầu tự liệt kê các phần của một việc đưa ra ước lượng dài hơn, và ở hai thí nghiệm của Kruger và Evans thì sát thời gian thật hơn. <sup><a href="#ref-6">[6]</a></sup> Trong một thí nghiệm khác với 152 sinh viên, nhắc tên phần chậm của việc đẩy ước lượng trung bình từ 8,48 lên 12,73 phút. <sup><a href="#ref-7">[7]</a></sup> Con số thứ hai chỉ cho thấy ước lượng dịch chuyển, chưa cho biết nó đúng hơn; chi tiết ở phần nghiên cứu bên dưới.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Giới Hạn Của Công Cụ Này Là Gì</h3>
+                <p>Giới hạn vốn có thứ nhất: không có gì bên trong cây tự chứng minh cây đã phủ đủ phạm vi. Phép cộng chỉ có cơ hội báo lệch khi con số ở đỉnh đến từ một nguồn độc lập, như một trần ngân sách hay một bản ước tính từ trên xuống, và ngay cả khi ấy, chỗ lệch có thể do ước lượng sai chứ chưa chắc do thiếu nhánh. Phép phân rã cũng không đi tìm thứ chưa có tên; gọi tên một phần còn có thể kéo ước lượng đi ngược chiều, vì khi phần được nêu là phần làm nhanh, ước lượng tổng ngắn đi. <sup><a href="#ref-7">[7]</a></sup> Sổ tay của NASA ghi thêm một nguồn hỏng cùng họ: lấy cây của dự án cũ làm khung cho dự án mới thì dễ mang theo luôn những lỗi của cây cũ. <sup><a href="#ref-3">[3]</a></sup></p>
+
+                <p>Giới hạn vốn có thứ hai là cây chỉ nói dự án gồm những gì. Thứ tự, thời điểm, người làm, mức chắc chắn của từng ước lượng đều phải đặt ở chỗ khác: lịch, ma trận trách nhiệm, hoặc từ điển WBS, tức tài liệu đi kèm mô tả bằng lời từng phần tử của cây gồm những việc gì. <sup><a href="#ref-3">[3]</a></sup> <sup><a href="#ref-1">[1]</a></sup> Cũng vì mỗi phần tử chỉ có một cha, những việc chạy xuyên suốt dự án như quản lý, tích hợp, kiểm thử toàn hệ thống, đào tạo người dùng không tự có chỗ trong một cây chia theo sản phẩm. GAO xếp chúng thành các phần tử chung phải thêm vào ngay từ đầu, với quản lý chương trình luôn nằm ở tầng hai. <sup><a href="#ref-1">[1]</a></sup> Còn chọn trục chia ở tầng hai, theo sản phẩm, theo giai đoạn hay theo phòng ban, là chuyện của cách dùng, bàn ở phần Cách Áp Dụng.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Điều cây WBS cho thấy</th><th scope="col">Điều nó không tự cho thấy</th></tr></thead>
+                    <tbody>
+                        <tr><td>Con số của năm nhánh con cộng đúng bằng nhánh cha</td><td>Năm nhánh ấy đã phủ hết phạm vi chưa, hay thiếu một nhánh thứ sáu</td></tr>
+                        <tr><td>Gói "sàn đã chống thấm" nằm dưới nhánh Phòng tắm</td><td>Làm lúc nào, sau việc gì, ai làm</td></tr>
+                        <tr><td>Tổng ngân sách cộng từ các gói là 1.200 triệu</td><td>Con số đó chắc tới đâu</td></tr>
+                        <tr><td>Hai gói nằm cạnh nhau trên cùng một nhánh</td><td>Việc ở chỗ giáp ranh giữa hai gói đã có gói nào nhận chưa</td></tr>
+                        <tr><td>Gói nào cũng có tên trên cây</td><td>Gói nào đã có đầu mối chịu trách nhiệm</td></tr>
+                        <tr><td>Cây có năm tầng và tám mươi gói việc</td><td>Phần nào đã hiểu rõ, phần nào chỉ được chia ra cho đủ ô</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Ví Dụ</h2>
+            <p class="intro-text">Một dự án ra mắt ứng dụng, nơi cây chi tiết và cộng khớp nhưng được chia theo phòng ban, đứng cạnh Cục Điều tra Dân số Mỹ, nơi một khoản dự toán được lập trước khi có cây, khiến cơ quan kiểm toán không thể biết nó đã đủ hay chưa.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Bốn Phòng Ban, Bốn Nhánh, Ba Việc Không Thuộc Nhánh Nào</h3>
+                <p>Tình huống minh hoạ: một công ty bảo hiểm làm ứng dụng điện thoại để khách tự nộp hồ sơ bồi thường. Người quản lý dự án dựng WBS và chia tầng hai theo bốn phòng đang làm dự án: Thiết kế, Lập trình, Kiểm thử, Marketing. Mỗi trưởng phòng tự chia nhánh của mình xuống tới gói việc, nhánh nào cũng chi tiết và cộng đủ, và tổng dự án là tổng của bốn nhánh. Xét theo phép cộng, cây không có lỗi nào.</p>
+                <p>Hai tuần trước ngày ra mắt, ba việc hiện ra cùng lúc. Ứng dụng phải đọc được hợp đồng của khách hàng hiện có, nằm trong hệ thống quản lý hợp đồng cũ, và chưa ai được giao chuyển dữ liệu ấy sang. Tổng đài chưa được hướng dẫn trả lời câu hỏi về ứng dụng, trong khi số cuộc gọi đầu tiên sẽ tới ngay hôm phát hành. Và hồ sơ nộp lên kho ứng dụng cần một chính sách quyền riêng tư do phòng pháp chế duyệt, phòng không có nhánh nào trên cây. Cả ba đều không phải việc của một phòng nào trong bốn phòng, nên cây chia theo phòng ban không có chỗ để chúng xuất hiện. Cả ba cũng đều cần cho mục tiêu ra mắt đã chốt, nên cây này chưa bao giờ đạt luật 100%, dù mọi phép cộng đều khớp. Viết ra ba dòng ấy lúc này thì dễ, vì kết cục đã biết. Một tầng hai chia theo thứ phải bàn giao cũng không tự bảo đảm chúng có mặt; nó đổi câu hỏi được đặt ra lúc dựng cây. Câu "ứng dụng phải làm được gì cho khách đang có hợp đồng" dẫn khá thẳng tới dữ liệu hợp đồng cũ, và câu "ai trả lời khách khi ứng dụng lỗi" dẫn tới tổng đài. Riêng chính sách quyền riêng tư thì chỉ hiện ra khi có người đọc yêu cầu của kho ứng dụng, tức một danh sách không do nhóm dự án viết. Sổ tay của NASA mô tả đúng sức hút dẫn tới cái cây kia: người quản lý và nhà thầu muốn nhìn thấy phần trách nhiệm của mình trên cây, nên nhóm dự án dễ duyệt một WBS chia theo chức năng hay tổ chức, và sổ tay gọi đó là một lỗi cần tránh. <sup><a href="#ref-3">[3]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Tổng Điều Tra Dân Số Mỹ 2020: Một Khoản Dự Toán Chưa Có Cây</h3>
+                <p>Cho cuộc tổng điều tra dân số năm 2020, Cục Điều tra Dân số Mỹ lên kế hoạch cho phép các hộ gia đình trả lời qua Internet, kéo theo việc xây và mua các hệ thống công nghệ để nhận và xử lý dữ liệu trả lời. Dự toán sơ bộ cho phương án này khoảng 73 triệu đô la. Báo cáo của GAO đầu năm 2015 kết luận dự toán đó không đáng tin cậy, một phần vì nó chưa được cập nhật từ năm 2011 dù chương trình đã thay đổi đáng kể. <sup><a href="#ref-8">[8]</a></sup> Trong hướng dẫn ước tính chi phí, GAO dùng chính vụ này làm ca minh hoạ cho bước dựng WBS. Dự toán có chia theo vài khoản lớn, như nghiên cứu, thử nghiệm và triển khai phương án Internet, nhưng các khoản ấy không được định nghĩa, nên không ai biết mọi chi phí liên quan đã nằm trong đó chưa. Cán bộ của Cục giải thích rằng dự toán không dựng trên một WBS có định nghĩa vì lúc lập nó, chương trình chưa đủ chín để có một cấu trúc như vậy, và sẽ cập nhật theo WBS sau khi có quyết định thiết kế sơ bộ. GAO trả lời rằng WBS lẽ ra phải được dựng ngay khi chương trình được lập, rồi chi tiết dần khi biết thêm. Về sau, tháng 8 năm 2017 Cục hoàn tất bản mô tả căn cứ ước tính chi phí cho hệ thống thu thập và xử lý dữ liệu, tháng 12 năm 2017 hoàn tất bản dự toán vòng đời cập nhật dùng nó làm đầu vào, và tháng 4 năm 2018 GAO đánh giá rằng quy trình dự toán của Cục đã cải thiện đáng kể trên cả bốn tiêu chí của một dự toán đáng tin cậy. <sup><a href="#ref-1">[1]</a></sup></p>
+                <p>Ca này cho thấy WBS nhìn từ phía người kiểm tra: khi các khoản của dự toán không có định nghĩa, người ngoài không có cách nào xác nhận dự toán đã đủ. Nó không cho thấy thiếu WBS làm chi phí tăng bao nhiêu, và phần cải thiện năm 2018 đến từ cả một quy trình dự toán làm lại, không tách riêng được phần của cái cây. Lời giải thích của Cục cũng đáng nghe lại, vì nó là một phản đối nghiêm túc: chưa biết hết thì chia sao cho đúng. GAO không đòi chia hết ngay từ đầu; họ đòi một cây thô với các phần tử được định nghĩa, rồi chia tiếp khi biết thêm.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Một Vài Nghiên Cứu Về Cấu Trúc Phân Rã Công Việc</h2>
+            <p class="intro-text">WBS nằm trong mọi chuẩn quản lý dự án lớn, nhưng chỗ đứng ấy chủ yếu dựa vào tài liệu hướng dẫn của chính các cơ quan dùng nó; phép đo thì ít hơn nhiều. Phần dưới đây ghép hai dòng bằng chứng: một khảo sát lớn hỏi người quản lý dự án đã dùng WBS tới đâu và dự án của họ kết thúc ra sao, và các thí nghiệm tâm lý học kiểm tra chính cơ chế mà công cụ dựa vào, tức việc chia nhỏ một khối việc trước khi ước lượng nó.</p>
+            <div class="sub-section">
+                <p><strong>Nghiên cứu:</strong> Zwikael và Globerson phát bảng hỏi cho người quản lý dự án ở khoảng 50 tổ chức tại Israel; 282 người trả lời, 202 bảng đủ dữ liệu được đưa vào phân tích. Mỗi người chấm mức độ đã dùng 16 sản phẩm lập kế hoạch trong dự án của mình, theo thang 1 tới 5, và báo kết quả dự án theo bốn thước đo: phần trăm vượt chi phí, phần trăm trễ tiến độ, kết quả kỹ thuật và mức hài lòng của khách hàng. Sản phẩm của quá trình xác định phạm vi trong mô hình này chính là sơ đồ WBS. Hai tác giả dùng hồi quy để xếp hạng tác động của từng quá trình. <sup><a href="#ref-9">[9]</a></sup> Ở dòng thí nghiệm, Kruger và Evans năm 2004 cho người tham gia ước lượng thời gian làm một việc nhiều phần, như đi mua quà dịp Giáng sinh, theo cách thường hoặc sau khi tự liệt kê các phần của việc ấy; bài đọc nghiên cứu này qua tóm tắt và qua mô tả của các nghiên cứu sau. <sup><a href="#ref-6">[6]</a></sup> Hadjichristidis và cộng sự đảo thiết kế ấy: chính người làm thí nghiệm gọi tên các phần, và chọn có chủ ý phần nhanh hoặc phần chậm. Trong nghiên cứu thứ nhất của họ, 152 sinh viên ước lượng số phút cần để định dạng lại một mục từ điển cho giống bản mẫu, chia ngẫu nhiên vào ba nhóm: không nhắc phần nào, nhắc phần nhanh (in nghiêng, in đậm), nhắc phần chậm (chèn ký tự phiên âm đặc biệt). <sup><a href="#ref-7">[7]</a></sup> Còn Connolly và Dean năm 1997 cho sinh viên các lớp lập trình nâng cao ước lượng thời gian họ sẽ mất cho cả dự án phần mềm lẫn cho từng phần nhỏ của nó, rồi so với thời gian thật. <sup><a href="#ref-10">[10]</a></sup></p>
+                <p><strong>Kết quả:</strong> Trong khảo sát của Zwikael và Globerson, quá trình xác định phạm vi, nơi sinh ra WBS, xếp từ thứ 8 tới thứ 13 trên 16 quá trình ở cả bốn thước đo, không thước đo nào có ý nghĩa thống kê. Quá trình xếp đầu là xác định các hoạt động của dự án: hạng nhất với ba trong bốn thước đo, có ý nghĩa thống kê ở cả ba. Các mô hình hồi quy giải thích khoảng 15% tới 25% mức biến thiên của kết quả. <sup><a href="#ref-9">[9]</a></sup> Theo tóm tắt của Kruger và Evans, người được yêu cầu liệt kê các phần đưa ra ước lượng dài hơn, và ở thí nghiệm 3 và 4 thì ít lệch hơn so với thời gian thật; thí nghiệm 5 cho thấy tác dụng ấy mạnh hay yếu tuỳ độ phức tạp của việc. <sup><a href="#ref-6">[6]</a></sup> Ở nghiên cứu của Hadjichristidis và cộng sự, nhóm không được nhắc phần nào ước lượng trung bình 8,48 phút, nhóm được nhắc phần nhanh 6,24 phút, nhóm được nhắc phần chậm 12,73 phút. <sup><a href="#ref-7">[7]</a></sup> Với Connolly và Dean, khoảng ước lượng của người tham gia hẹp tới mức gần một nửa kết quả thật rơi ra ngoài cả những mốc mà chính họ cho là chỉ có 1% khả năng bị vượt qua. Chia việc thành phần nhỏ không làm khoảng đó rộng ra; cách đặt câu hỏi, thứ tự câu hỏi hay việc đào tạo ước lượng cũng không. Thứ duy nhất có tác dụng rõ là bắt người ta nghĩ tới một cận trên và một cận dưới rộng rãi. <sup><a href="#ref-10">[10]</a></sup></p>
+                <p><strong>Kết luận:</strong> Khảo sát của Zwikael và Globerson là tương quan trên số liệu tự báo cáo: mức dùng công cụ và kết quả dự án đến từ cùng một bảng hỏi, và thứ được đo là mức dùng chứ chưa phải chất lượng của cái cây. Nó không cho phép nói WBS ít quan trọng. Chính hai tác giả viết rằng muốn làm tốt quá trình xếp hạng nhất, xác định hoạt động, người quản lý dự án phải có trong tay một WBS rồi chia tiếp các gói việc thành hoạt động. Điều nó cho thấy hẹp hơn: trong mẫu này, mức độ đã dùng WBS, tách riêng ra, không đi cùng kết quả dự án tốt hơn một cách rõ ràng. Các thí nghiệm thì cho thấy phân rã đổi ước lượng theo đúng những phần được gọi tên. Khi người ước lượng tự liệt kê các phần, ước lượng dài ra và, ở hai thí nghiệm của Kruger và Evans, sát thực tế hơn; khi phần được gọi tên là phần nhanh, ước lượng ngắn đi; và phân rã không làm người ta bớt tự tin quá mức về khoảng sai số của mình. Cả ba nhóm thí nghiệm đều làm trên những việc nhỏ hơn nhiều so với một dự án, phần lớn người tham gia là sinh viên, nên chúng nói về cơ chế, không nói về hiệu quả của WBS trong một dự án thật.</p>
+                <p><strong>Phản biện:</strong> Phe bênh có ba lý lẽ. Thứ nhất, WBS được Bộ Quốc phòng Mỹ chuẩn hoá từ năm 1968, là phần bắt buộc trong bộ kế hoạch gốc dùng để quản lý mọi dự án NASA, có sổ tay riêng ở Bộ Năng lượng Mỹ, và GAO gọi nó là nền móng của mọi chương trình; <sup><a href="#ref-2">[2]</a></sup> <sup><a href="#ref-3">[3]</a></sup> <sup><a href="#ref-1">[1]</a></sup> những chuẩn ấy được đúc kết từ hàng chục năm vận hành các chương trình rất lớn, và kinh nghiệm tích luỹ như vậy cũng là một loại bằng chứng. Thứ hai, khảo sát của Zwikael và Globerson đo tần suất dùng chứ không đo chất lượng, và quá trình đứng đầu bảng của họ lại dựng trên WBS. Thứ ba, cây trong một dự án thật được cả nhóm dựng, có người khác soát và có từ điển đi kèm, khác xa một danh sách một người viết vội trong phòng thí nghiệm. Bài nhận trọn vế thứ hai và thứ ba: không nghiên cứu nào ở đây đủ để nói một cây tốt không giúp gì, và không được suy từ thí nghiệm vài phút ra dự án nhiều tháng. Vế thứ nhất bài nhận một nửa. Kinh nghiệm của người trong nghề có giá trị, nhưng tài liệu hướng dẫn không phải phép đo; trong phạm vi tìm kiếm của bài này, chưa tìm thấy nghiên cứu nào so kết quả của những dự án có và không có WBS mà kiểm soát được các khác biệt khác giữa chúng. Còn các ca của GAO, như ca tổng điều tra ở trên, cho thấy một giá trị khác hẳn chuyện giảm vượt chi: khi có cây với các phần tử được định nghĩa, người ngoài kiểm được dự toán đã đủ chưa. Giá trị đó có thật, và nó không cần tới tuyên bố rằng WBS làm dự án rẻ hơn mới đứng được.</p>
+                <p><strong>Vì sao điều này hữu ích:</strong> Nó đổi câu bạn hỏi khi được đưa cho xem một WBS mà mọi nhánh đều cộng tròn trịa. Phép cộng khớp đã trả lời xong câu hỏi số học; câu hỏi về phạm vi thì còn nguyên. Câu đáng hỏi là: tầng hai của cây này đã được đặt cạnh danh sách nào không do chính người lập cây viết ra, chẳng hạn yêu cầu trong hợp đồng, cây của một dự án tương tự, hay danh sách của người sẽ nhận và vận hành sản phẩm. Và khi cây được dùng để cộng ra một con số ước lượng, hỏi thêm cận dưới và cận trên của vài gói lớn nhất, vì theo thí nghiệm của Connolly và Dean, chia nhỏ không làm khoảng ước lượng bớt hẹp.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">Cách Áp Dụng</h2>
+            <p class="intro-text">WBS hoạt động bằng cách buộc toàn bộ phạm vi dự án phải có một chỗ trên một cây các thứ phải bàn giao, mỗi tầng phủ đúng 100% công việc của tầng trên, nên cách triển khai hiệu quả là chọn trục chia sao cho mỗi nhánh gọi tên được một thứ bàn giao, rồi kiểm độ phủ của cây bằng những thứ nằm ngoài nó, vì phép cộng bên trong chỉ kiểm được các con số. Công cụ hợp nhất với dự án có kết quả bàn giao gọi tên được từ đầu. Càng gần công việc nghiên cứu hay khám phá, nơi chính danh sách sản phẩm còn đang hình thành, càng nên giữ cây ở mức thô và chia tiếp khi biết thêm. <sup><a href="#ref-1">[1]</a></sup></p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Chọn trục chia ở tầng hai sao cho mỗi nhánh gọi tên được một thứ bàn giao:</strong> Bài này theo cách NASA và GAO khuyên, chia theo sản phẩm. Nhánh mang tên phòng ban, chức năng hay loại thợ (thiết kế, kỹ thuật, chế tạo, đội thợ mộc) nói ai làm chứ không nói làm ra cái gì; NASA gọi đó là lỗi, và GAO chỉ ra rằng cây chia theo chức năng không truy được một khoản vượt chi về hạng mục gây ra nó. <sup><a href="#ref-3">[3]</a></sup> <sup><a href="#ref-1">[1]</a></sup> Giai đoạn là trường hợp khác. NASA cũng xếp tầng hai chia theo giai đoạn vào loại không nên dùng, vì cây như vậy không cho thấy rõ sản phẩm nào sẽ được làm ra, nhưng Hướng dẫn PMBOK của PMI nêu cách đặt các giai đoạn của vòng đời dự án ở tầng hai và sản phẩm bàn giao ở tầng ba như một cách dựng hợp lệ. <sup><a href="#ref-11">[11]</a></sup> Cách dựng ấy giữ sản phẩm ngay dưới mỗi giai đoạn, nên phép kiểm không đổi: đọc từng phần tử và hỏi "xong thì cầm được cái gì trên tay". Phần tử nào chỉ trả lời được bằng tên một phòng hay một loại thợ thì chưa phải thứ bàn giao. Thêm luôn các phần tử chung như quản lý dự án, tích hợp, kiểm thử toàn hệ thống, đào tạo người dùng: GAO lưu ý chúng phải có mặt ngay từ đầu thì cây mới chứa đủ toàn bộ công việc <sup><a href="#ref-1">[1]</a></sup></li>
+                    <li><strong>Đối chiếu tầng trên cùng với ít nhất một danh sách không do người lập cây viết ra:</strong> Cách hiển nhiên là cộng lại từng nhánh, và cách đó chỉ kiểm được các con số khớp nhau, không bắt được nhánh vắng mặt. Nguồn đối chiếu có thể là yêu cầu trong hợp đồng, quy định của bên thứ ba sẽ cấp phép hay nghiệm thu, cây chuẩn của ngành hay của một dự án tương tự, hoặc danh sách của người sẽ nhận và vận hành sản phẩm. Dùng cây của dự án cũ thì soát lại từng nhánh, vì cây cũ mang theo cả những lỗi của nó <sup><a href="#ref-3">[3]</a></sup></li>
+                    <li><strong>Viết từ điển cho từng gói việc, ghi rõ gồm gì và không gồm gì:</strong> Luật 100% đòi hai điều, không thiếu và không trùng, và chỗ hai điều ấy hay hỏng nhất là đường ranh giữa hai gói nằm cạnh nhau. Một dòng "không gồm thay ống thoát sàn, thuộc gói cấp thoát nước" giải quyết trước một cuộc cãi nhau có thể nổ ra lúc đã đục xong sàn. Mỗi gói cũng ghi tiêu chí coi là xong và một đầu mối chịu trách nhiệm, vì có tên trên cây chưa có nghĩa là đã có người nhận; GAO lưu ý rằng chỉnh sửa thêm chút ít, từ điển WBS có thể thành bản mô tả công việc cho hợp đồng <sup><a href="#ref-1">[1]</a></sup></li>
+                    <li><strong>Dừng chia khi gói việc đã ước lượng và giao được, và chia sâu không đều:</strong> Phần rủi ro cao, tốn kém hay phức tạp thì chia sâu hơn, phần quen thuộc thì dừng sớm; NASA ghi rõ các nhánh không cần chia tới cùng một mức. <sup><a href="#ref-3">[3]</a></sup> Đừng chia tiếp gói việc thành các bước làm: bước làm là hoạt động, thuộc về lịch. Phần chưa hiểu rõ thì để thành một gói lớn có ghi chú sẽ chia sau, thay vì chia đoán cho đủ ô. Đừng lấy số tầng hay số gói làm thước đo chất lượng của cây: một cây tám mươi gói không đầy đủ hơn một cây ba mươi gói nếu cả hai cùng thiếu một nhánh. Khi cộng các gói thành một con số ước lượng tổng, ghi kèm cận dưới và cận trên cho những gói lớn, vì chia nhỏ không chữa được thói quen đặt khoảng ước lượng quá hẹp <sup><a href="#ref-10">[10]</a></sup></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Tình Huống Áp Dụng</h2>
+            <p class="intro-text">Căn hộ cũ 70 m² mà một gia đình bốn người vừa mua lại cần cải tạo xong trong mười tuần để kịp dọn vào. Bảng báo giá đầu tiên của nhà thầu chia theo thợ: điện, nước, nề, sơn, mộc. Gia đình muốn ký hợp đồng trọn gói với một nhà thầu chính theo một bản phạm vi đủ tới mức, tính tới ngày bàn giao, chi phí phát sinh vì sót hạng mục không vượt 2% giá hợp đồng. Trước khi bắt đầu, hai bên thống nhất ba loại phát sinh để sau này không cãi nhau về cách đếm: đổi yêu cầu (chủ nhà đổi ý hoặc thêm việc), điều kiện ẩn (chỉ lộ ra khi đục phá), và sót hạng mục (việc cần cho kết quả đã ghi ở đỉnh cây, nhìn thấy được khi khảo sát căn hộ trước lúc ký, mà không nằm trong phạm vi). Các con số trong tình huống này là số minh hoạ, tính bằng triệu đồng.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Viết đỉnh cây thành một kết quả nghiệm thu được:</strong> "Căn hộ ở được: điện nước chạy, bếp nấu được, hai phòng tắm dùng được, cả nhà dọn vào cuối tuần thứ mười". Câu này là thước để đo mọi nhánh bên dưới: thứ gì cần cho nó thì phải có chỗ trên cây</li>
+                    <li><strong>Chia tầng hai theo thứ bàn giao thay vì theo thợ:</strong> Bếp, hai phòng tắm, hai phòng ngủ, phòng khách, hệ thống điện, hệ thống cấp thoát nước, cộng hai phần tử chung là thủ tục và quản lý thi công, dọn dẹp và bàn giao. Lý do đổi lộ ra ngay ở phòng tắm: trong bảng chia theo thợ, chống thấm sàn vừa giống việc của thợ nề vừa giống việc của thợ nước, và không dòng nào ghi nó</li>
+                    <li><strong>Chia tới gói việc, sâu ở chỗ rủi ro, nông ở chỗ quen:</strong> Nhánh phòng tắm chia thành ba gói: sàn đã chống thấm và nghiệm thu, tường và sàn đã ốp lát, thiết bị vệ sinh đã lắp và chạy thử. Đục sàn, quét chống thấm, ngâm nước thử là hoạt động bên trong gói chống thấm, nằm trong lịch của nhà thầu chứ không thành nhánh của cây. Nhánh phòng ngủ dừng ở "tường trần đã sơn lại" và "sàn gỗ đã thay", vì nhà thầu đã báo giá được hai gói này mà không cần chia thêm. Mỗi gói ghi một đầu mối chịu trách nhiệm và một tiêu chí coi là xong</li>
+                    <li><strong>Viết từ điển cho các gói giáp ranh:</strong> "Sàn phòng tắm đã chống thấm: gồm làm sạch bề mặt, quét hai lớp và ngâm nước thử 24 giờ; thuộc nhánh phòng tắm; thợ nề làm; không gồm thay ống thoát sàn, thuộc nhánh cấp thoát nước". Tương tự cho đường điện đi trong tường bếp, tủ bếp có kèm đèn hay không, ai tháo cửa cũ</li>
+                    <li><strong>Cộng thử từng nhánh, rồi kiểm độ phủ bằng ba danh sách không do gia đình viết:</strong> Tám nhánh cộng lại đúng 415, mọi nhánh con cũng cộng đủ nhánh cha: phép kiểm số học đạt, và nó không nói gì về độ phủ. Gia đình đặt tầng hai cạnh quy định thi công của ban quản lý toà nhà, bảng hạng mục của một nhà thầu thứ hai cùng báo giá, và lời kể của một hộ cùng toà đã cải tạo năm ngoái. Ba thứ không có trên cây hiện ra: đăng ký thi công với ban quản lý kèm phí bảo vệ thang máy, 5; chở phế thải bằng thang hàng trong khung giờ quy định, 12; thay tủ điện tổng có thiết bị chống giật theo quy định của toà nhà, 18. Cả ba đều cần cho kết quả ở đỉnh cây, tức thuộc phạm vi chứ không phải yêu cầu mới, nên được thêm vào đúng nhánh của chúng, như bảng ngay sau các bước</li>
+                    <li><strong>Ký hợp đồng theo cây và ghi mỗi phát sinh kèm mã gói và loại:</strong> Giá hợp đồng là 450. Mỗi lần có việc mới, nhà thầu và chủ nhà ghi việc ấy thuộc gói nào, thuộc loại nào trong ba loại đã thống nhất, và bao nhiêu tiền</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Nhánh tầng hai</th><th scope="col">Trước khi đối chiếu</th><th scope="col">Thêm sau khi đối chiếu</th><th scope="col">Khi ký hợp đồng</th></tr></thead>
+                    <tbody>
+                        <tr><td>Bếp</td><td>95</td><td></td><td>95</td></tr>
+                        <tr><td>Hai phòng tắm</td><td>80</td><td></td><td>80</td></tr>
+                        <tr><td>Hai phòng ngủ</td><td>60</td><td></td><td>60</td></tr>
+                        <tr><td>Phòng khách</td><td>45</td><td></td><td>45</td></tr>
+                        <tr><td>Hệ thống điện</td><td>55</td><td>18, tủ điện tổng chống giật</td><td>73</td></tr>
+                        <tr><td>Hệ thống cấp thoát nước</td><td>40</td><td></td><td>40</td></tr>
+                        <tr><td>Thủ tục và quản lý thi công</td><td>25</td><td>5, đăng ký thi công, bảo vệ thang máy</td><td>30</td></tr>
+                        <tr><td>Dọn dẹp và bàn giao</td><td>15</td><td>12, chở phế thải theo giờ quy định</td><td>27</td></tr>
+                        <tr><td>Tổng</td><td>415</td><td>35</td><td>450</td></tr>
+                    </tbody>
+                </table>
+
+                <p>Tới ngày bàn giao, tổng phát sinh là 27, chia theo ba loại đã thống nhất từ đầu: 15 đổi yêu cầu (đổi gạch phòng khách, thêm hàng tủ bếp trên), 9 điều kiện ẩn (ống thoát sàn cũ bị nứt, chỉ thấy khi đục sàn phòng tắm), và 3 sót hạng mục (tháo rồi lắp lại hai máy điều hoà để sơn tường, việc nhìn thấy được lúc khảo sát nhưng không ai đưa vào cây). Phần sót hạng mục bằng 3 trên 450, khoảng 0,7% giá hợp đồng, dưới ngưỡng 2% đã đặt, và cả nhà dọn vào đúng cuối tuần thứ mười. Cây không làm thợ làm nhanh hơn, cũng không ngăn được cái ống nứt; với loại phát sinh ấy, thứ giúp được là một khoản dự phòng, việc mà cây phạm vi không thay được. Thứ cây cùng bước đối chiếu làm được là đưa ba hạng mục tổng cộng 35 vào hợp đồng trước khi ký, và cho mỗi khoản phát sinh về sau một chỗ trên cây để ghi vào. Điều kiện để có kết quả ấy là tầng hai chia theo thứ bàn giao, tầng trên được đối chiếu với nguồn bên ngoài chứ không chỉ cộng cho khớp, các gói giáp ranh có ghi gồm gì và không gồm gì, và cách phân loại phát sinh được chốt trước khi có khoản phát sinh đầu tiên.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Tóm Tắt</h2>
+            <div class="summary-box">
+                <p><strong>Điểm Chính:</strong> Cơ chế của WBS là buộc toàn bộ phạm vi dự án phải có một chỗ trên một cây các thứ phải bàn giao, mỗi tầng phủ đúng 100% công việc của tầng trên, nên một việc đã được nhắc tới mà không tìm được nhánh lộ ra ngay: hoặc là phần sót của phạm vi, hoặc là một yêu cầu nằm ngoài nó. Điều phản trực giác nhất là các con số cộng khớp chưa chứng minh cây đạt luật 100%, vì luật nói về độ phủ công việc còn phép cộng chỉ kiểm con số; và các thí nghiệm về phân rã cho thấy ước lượng dịch theo những phần được gọi tên, dài ra hay ngắn đi tuỳ phần nào được nêu. Cách dùng đáng tin vì vậy là chọn trục chia sao cho mỗi nhánh gọi tên được một thứ bàn giao, kiểm độ phủ bằng một danh sách không do người lập cây viết, ghi rõ ranh giới và đầu mối của từng gói, và giữ phần chưa hiểu ở mức thô cho tới khi hiểu thêm.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">Tài Liệu Tham Khảo</h2>
+            <ol class="outline-list">
+                <li id="ref-1">GAO (2020). <em>Cost Estimating and Assessment Guide: Best Practices for Developing and Managing Program Costs</em>, GAO-20-195G, tháng 3 năm 2020, chương 7. Hướng dẫn của Văn phòng Kiểm toán Chính phủ Mỹ; nguồn cho gói việc là tầng thấp nhất, bên trong đó các hoạt động được định nghĩa và xếp lịch (tr. 56, 65), cho quy tắc tổng các con bằng cha (tr. 58), cho lập luận cây theo sản phẩm so với cây theo chức năng (tr. 59-60), cho các phần tử chung (bảng 6), cho từ điển WBS và việc cây chi tiết dần theo thời gian (tr. 63-64), và cho ca tổng điều tra dân số 2020 (ca 9, tr. 68). <a href="https://www.gao.gov/products/gao-20-195g" rel="noopener noreferrer" target="_blank">Trang tài liệu</a>.</li>
+                <li id="ref-2">Haugan, G. T. (2008). <em>Work Breakdown Structures for Projects, Programs, and Enterprises</em>. Management Concepts, Vienna, Virginia. Sách của một người viết lâu năm về WBS cho giới quản lý dự án chính phủ Mỹ; nguồn cho mốc 1961, tài liệu PERT/COST tháng 6 năm 1962, tài liệu của NASA tháng 10 năm 1962, chỉ thị 5010.20 và tiêu chuẩn MIL-STD-881 năm 1968. Bài đọc mục lịch sử ở chương đầu qua bản điện tử. <a href="https://iread.qq.com/read/1025738826/11" rel="noopener noreferrer" target="_blank">Đọc mục lịch sử</a>.</li>
+                <li id="ref-3">NASA (2018). <em>NASA Work Breakdown Structure (WBS) Handbook</em>, NASA/SP-2016-3404/REV1, tháng 1 năm 2018. Tài liệu chính thức của cơ quan dùng WBS từ thập niên 1960; nguồn cho việc WBS và từ điển WBS là phần bắt buộc trong đường cơ sở quản lý của dự án (chương 1), cho định nghĩa "cây phả hệ hướng theo sản phẩm", cho câu phần việc ngoài WBS không thuộc dự án (tr. 1), cho hướng dẫn chia sâu không đều giữa các nhánh và cho việc cây chỉ được sửa theo những thay đổi phạm vi đã được duyệt (mục 2.3, tr. 9), cho các lỗi hay gặp như dùng lại cây cũ và chia tầng hai theo chức năng, tổ chức hay giai đoạn, theo cách nhìn của NASA (mục 3.5, tr. 29-30), và cho việc cơ cấu tổ chức không nên quyết định cách chia cây (mục 4.2). <a href="https://ntrs.nasa.gov/citations/20180000844" rel="noopener noreferrer" target="_blank">Trang tài liệu trên NTRS</a>.</li>
+                <li id="ref-4">Brotherton, S. A., Fried, R. T., &amp; Norman, E. S. (2008). Applying the work breakdown structure to the project management lifecycle. Bài trình bày tại PMI Global Congress 2008, North America, Denver. Project Management Institute. Bài của các tác giả bản thứ hai tiêu chuẩn thực hành WBS của PMI; nguồn cho cách phát biểu luật 100%, dẫn từ Haugan (2002, tr. 17): WBS chứa 100% công việc thuộc phạm vi dự án, kể cả quản lý dự án, luật áp dụng ở mọi tầng, và cây không được chứa việc nằm ngoài phạm vi. <a href="https://www.pmi.org/learning/library/applying-work-breakdown-structure-project-lifecycle-6979" rel="noopener noreferrer" target="_blank">Đọc trên thư viện PMI</a>.</li>
+                <li id="ref-5">U.S. Department of Energy (2012). <em>Work Breakdown Structure Handbook</em>, ngày 16 tháng 8 năm 2012. Sổ tay của Bộ Năng lượng Mỹ; nguồn cho cách phát biểu luật 100%: tầng con phải chiếm đúng 100% công việc của tầng cha, kèm lưu ý nhóm "khác" nên dưới 10% giá trị công việc của tầng ấy (mục 3.2). <a href="https://www.energy.gov/projectmanagement/articles/department-energy-work-breakdown-structure-handbook" rel="noopener noreferrer" target="_blank">Trang tài liệu</a>.</li>
+                <li id="ref-6">Kruger, J., &amp; Evans, M. (2004). If you don't want to be late, enumerate: Unpacking reduces the planning fallacy. <em>Journal of Experimental Social Psychology</em>, 40(5), 586-598. Năm thí nghiệm về việc liệt kê các phần trước khi ước lượng; bài đọc qua tóm tắt và qua mô tả trong [7], nên chỉ dẫn chiều hướng kết quả, không dẫn số liệu. <a href="https://doi.org/10.1016/j.jesp.2003.11.001" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-7">Hadjichristidis, C., Summers, B., &amp; Thomas, K. (2014). Unpacking estimates of task duration: The role of typicality and temporality. <em>Journal of Experimental Social Psychology</em>, 51, 45-50. Ba nghiên cứu cho thấy gọi tên các phần có thể làm ước lượng dài ra, ngắn đi hay không đổi, tuỳ phần nào được gọi tên; số liệu nghiên cứu 1 lấy từ bảng 1 của bản thảo trước khi in do trường Bournemouth lưu. <a href="https://eprints.bournemouth.ac.uk/21338/" rel="noopener noreferrer" target="_blank">Bản thảo trên kho Bournemouth</a>.</li>
+                <li id="ref-8">GAO (2015). <em>2020 Census: Key Challenges Need to Be Addressed to Successfully Enable Internet Response</em>, GAO-15-225, ngày 5 tháng 2 năm 2015. Nguồn cho dự toán sơ bộ khoảng 73 triệu đô la của phương án trả lời qua Internet, cho kết luận dự toán không đáng tin cậy, và cho việc nó chưa được cập nhật từ năm 2011. <a href="https://www.gao.gov/products/gao-15-225" rel="noopener noreferrer" target="_blank">Trang báo cáo</a>.</li>
+                <li id="ref-9">Zwikael, O., &amp; Globerson, S. (2006). From critical success factors to critical success processes. <em>International Journal of Production Research</em>, 44(17), 3433-3449. Khảo sát người quản lý dự án ở khoảng 50 tổ chức tại Israel; nguồn cho việc sơ đồ WBS là sản phẩm của quá trình xác định phạm vi, cho thứ hạng tác động và mức dùng của quá trình ấy, và cho nhận xét của hai tác giả rằng xác định hoạt động cần có WBS trước. Số liệu lấy từ bản thảo đã nộp do Đại học Quốc gia Úc lưu. <a href="https://openresearch-repository.anu.edu.au/bitstream/1885/52118/8/01%20Zwikael%20and%20Globerson%20From%20critical%20success%202006.pdf" rel="noopener noreferrer" target="_blank">Đọc bản thảo</a>.</li>
+                <li id="ref-10">Connolly, T., &amp; Dean, D. (1997). Decomposed versus holistic estimates of effort required for software writing tasks. <em>Management Science</em>, 43(7), 1029-1045. Hai thí nghiệm với sinh viên các lớp lập trình nâng cao; nguồn cho việc phân rã không làm khoảng ước lượng quá hẹp rộng ra, còn việc bắt nghĩ tới cận trên và cận dưới rộng rãi thì có; bài đọc qua tóm tắt. <a href="https://doi.org/10.1287/mnsc.43.7.1029" rel="noopener noreferrer" target="_blank">Trang bài báo</a>.</li>
+                <li id="ref-11">Project Management Institute (2013). <em>A Guide to the Project Management Body of Knowledge (PMBOK Guide)</em>, ấn bản thứ 5, phần 5.4 Create WBS, hình 5-12 "Sample WBS Organized by Phase". Nguồn cho việc PMI chấp nhận cách đặt các giai đoạn của vòng đời ở tầng hai và sản phẩm bàn giao ở tầng ba. Bài chưa đọc trực tiếp sách, chỉ đối chiếu qua các bản trích nội dung phần này; sách không có bản công khai.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

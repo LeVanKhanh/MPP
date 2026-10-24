@@ -591,6 +591,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Cấu Trúc Phân Rã Công Việc (WBS)",
+                        route: "pages/reading-studying/management-tools-and-techniques/13-wbs-work-breakdown-structure-vn.html",
+                        hash: "#/work-breakdown-structure",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

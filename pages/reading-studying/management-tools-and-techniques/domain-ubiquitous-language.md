@@ -2,7 +2,7 @@
 
 Từ điển tra cứu để mọi bài trong series gọi cùng một khái niệm bằng cùng một tên, hiểu nó theo cùng một nghĩa, và tránh cùng những cách diễn đạt sai.
 
-**Phạm vi:** trang tổng quan và mười một bài đã viết: 5S, Chu Trình PDCA, Giải Quyết Vấn Đề A3, Sơ Đồ Xương Cá Ishikawa, Phân Tích Pareto, FMEA, Quy Trình Thao Tác Chuẩn (SOP), Lưu Đồ Quy Trình, Sơ Đồ SIPOC, Sơ Đồ Chuỗi Giá Trị, Biểu Đồ Gantt. Thuật ngữ không có trong file này là **chưa được chốt**: grep các bài `.html` cùng thư mục trước khi dùng, rồi bổ sung vào đây.
+**Phạm vi:** trang tổng quan và mười hai bài đã viết: 5S, Chu Trình PDCA, Giải Quyết Vấn Đề A3, Sơ Đồ Xương Cá Ishikawa, Phân Tích Pareto, FMEA, Quy Trình Thao Tác Chuẩn (SOP), Lưu Đồ Quy Trình, Sơ Đồ SIPOC, Sơ Đồ Chuỗi Giá Trị, Biểu Đồ Gantt, Cấu Trúc Phân Rã Công Việc (WBS). Thuật ngữ không có trong file này là **chưa được chốt**: grep các bài `.html` cùng thư mục trước khi dùng, rồi bổ sung vào đây.
 
 **Khi file và nguồn nói khác nhau, nguồn thắng**; sửa mục trong file.
 
@@ -128,6 +128,17 @@ Cột **Gọi là** ghi cách gọi trong bản tiếng Việt, sau dấu `·` l
 | slack, total slack | khoảng dư · *slack* | Khoảng một chuỗi việc chậm được trước khi ngày kết thúc bị ảnh hưởng; việc găng là việc không có khoảng dư | "chậm trên chuỗi dài nhất là đẩy thẳng ngày kết thúc" khi chuỗi còn khoảng dư (chậm trước hết ăn vào khoảng dư) | Microsoft, *Manage your project's critical path* |
 | baseline | lịch gốc · *baseline* | Bản kế hoạch chốt lúc đầu, giữ lại để so với lịch cập nhật và thực tế | coi lịch đã cập nhật là lịch gốc (thanh chỉ dịch chỗ thì tổng mức lệch mất dấu) | Bài Biểu Đồ Gantt |
 
+### Cấu trúc phân rã công việc (WBS)
+
+| Thuật ngữ | Gọi là | Nghĩa chốt | Không viết | Nguồn |
+|---|---|---|---|---|
+| work breakdown structure (WBS) | cấu trúc phân rã công việc, gọi tắt WBS; tên bài `Cấu Trúc Phân Rã Công Việc (WBS)` · *Work Breakdown Structure (WBS)* | Cây chia toàn bộ phạm vi dự án thành những thứ phải bàn giao, nhỏ dần tới gói việc. NASA: "cây phả hệ hướng theo sản phẩm"; phần việc không nằm trong WBS không được coi là một phần của dự án, và đây là quy tắc quản lý phạm vi: việc thuộc phạm vi mà bị sót thì sửa cây, yêu cầu mới thì qua kiểm soát thay đổi rồi mới thêm vào cây. Cơ chế hai vế: (1) luật 100%; (2) phép phân rã làm hiện ra thành phần hay bị bỏ qua, nhưng chỉ những gì người lập cây nghĩ tới. Cây chỉ trả lời "dự án gồm những gì": thứ tự và thời điểm thuộc biểu đồ Gantt và CPM, người chịu trách nhiệm ghi ở ma trận trách nhiệm đặt cạnh cây | WBS là một lịch hay chứa thứ tự trước sau; "việc không có trên cây thì không thuộc dự án" như một lối thoát cho việc bị quên; "không tìm được nhánh nghĩa là chưa ai nhận" (thiếu trong phạm vi và thiếu người phụ trách là hai chuyện); gộp phòng ban, giai đoạn và loại thợ thành một nhóm cách chia sai (xem mục WBS chia theo sản phẩm) | NASA (2018); GAO-20-195G, ch. 7 |
+| 100% rule | luật 100% · *100% rule* | Luật về **độ phủ công việc**, không về con số: WBS chứa đúng 100% công việc thuộc phạm vi dự án, kể cả quản lý dự án, không chứa việc ngoài phạm vi; ở mọi tầng, các con phủ đúng 100% công việc của cha (Haugan 2002, qua Brotherton và cộng sự 2008; DOE). GAO diễn đạt qua phép cộng (tổng các con bằng cha) vì trong dự toán chi phí được cộng theo cây. Phân biệt hai phép kiểm: kiểm số học (các con số tổng hợp nhất quán) và kiểm phạm vi (các nhánh phủ hết việc phải làm, chỉ kiểm được bằng cách đối chiếu với hợp đồng, yêu cầu, người nhận sản phẩm). Cộng khớp là điều kiện cần, chưa phải bằng chứng đạt luật. Nhóm "khác" nếu có nên dưới 10% (DOE) | đồng nhất luật 100% với việc cộng khớp ngân sách; "cộng khớp nên cây đạt luật 100%"; "luật 100% chỉ kiểm cây khớp với chính nó" hay "luật của phép cộng, không phải của phép đếm" (thu hẹp nghĩa của nguồn) | Brotherton, Fried & Norman (2008); DOE (2012), mục 3.2; GAO-20-195G, tr. 58 |
+| work package | gói việc · *work package* | Tầng thấp nhất của WBS (GAO), vẫn là một thứ bàn giao ("sàn đã chống thấm và nghiệm thu"); đủ nhỏ để ước lượng và giao cho **một đầu mối chịu trách nhiệm**, người làm có thể là cả một nhóm. Hoạt động (bước làm: làm sạch, quét, ngâm thử) được định nghĩa bên trong gói và đưa vào lịch, không thành thêm một tầng của cây | gọi gói việc là "hoạt động" hay "đầu việc trong lịch"; "giao cho một người nhận" (đọc thành một cá nhân phải tự làm); liệt kê bước làm (đục sàn, ốp lát) như gói việc | GAO-20-195G, tr. 56, 65 |
+| WBS dictionary | từ điển WBS · *WBS dictionary* | Tài liệu đi kèm mô tả bằng lời mỗi phần tử gồm những việc gì; chỉnh thêm chút ít thì thành bản mô tả công việc cho hợp đồng. Ghi thêm "không gồm gì", tiêu chí xong và đầu mối chịu trách nhiệm là cách dùng bài khuyên, không phải định nghĩa của nguồn | — | GAO-20-195G, tr. 61, 64; NASA (2018) |
+| product-oriented / functional WBS / phase-based | WBS chia theo sản phẩm (theo thứ bàn giao) / chia theo chức năng / chia theo giai đoạn · *product-oriented / functional / phase-based WBS* | Bài chọn cách chia theo sản phẩm theo NASA và GAO. Chia theo phòng ban, chức năng hay loại thợ nói ai làm chứ không nói làm ra cái gì: NASA gọi là lỗi, GAO chỉ ra cây chức năng không truy được vượt chi về hạng mục. Chia theo giai đoạn là trường hợp khác: NASA xếp vào loại không nên dùng, còn PMBOK (ấn bản 5, hình 5-12) chấp nhận giai đoạn ở tầng hai với sản phẩm bàn giao ở tầng ba. Phép kiểm chung: mỗi phần tử trả lời được "xong thì cầm được cái gì" | chia theo giai đoạn "là lỗi" như nguyên tắc chung; gộp phòng ban, giai đoạn và loại thợ thành một nhóm sai | GAO-20-195G, tr. 59-60; NASA (2018), mục 3.5.2; PMBOK ấn bản 5 (qua bản trích) |
+| common elements | phần tử chung · *common elements* | Việc xuyên suốt không thuộc riêng một sản phẩm: quản lý chương trình (luôn ở tầng hai), tích hợp, kỹ thuật hệ thống, kiểm thử toàn hệ thống, đào tạo, dữ liệu; phải có mặt ngay từ đầu thì cây mới đủ toàn bộ công việc | gộp "chuyển dữ liệu" vào phần tử *Data* của GAO (phần tử ấy là dữ liệu phải bàn giao: tài liệu kỹ thuật, dữ liệu quản lý) | GAO-20-195G, bảng 6 |
+
 ---
 
 ## 2. Nguyên tắc diễn đạt chung
@@ -179,6 +190,8 @@ Những khẳng định về lịch sử và nguồn gốc mà các bài đã ch
 | Khảo sát Besner & Hobbs | trang tổng quan viết "hơn 750"; bài Gantt viết "750" (dẫn qua Geraldi & Lechter); số gốc là 753 | sửa một bài về 753 mà bỏ bài kia | Besner & Hobbs (2008) |
 | Phạm vi trang tổng quan | bằng chứng chỉ phủ Taylorism, tái lập quy trình, Six Sigma và TQM | khái quát cho cả 30 công cụ | Chính trang tổng quan |
 | Phạm vi bài PDCA | toàn bộ bằng chứng thực nghiệm đến từ y tế; tóm tắt và phần kết phải mang giới hạn đó | nói chung về PDCA ở mọi ngành | Chính bài PDCA |
+| Lịch sử WBS | theo Haugan: cụm từ đã thông dụng từ khoảng năm 1961; tài liệu hướng dẫn thiết kế hệ thống PERT/COST do Bộ Quốc phòng Mỹ soạn cùng NASA và giới công nghiệp, tháng 6/1962, mô tả WBS khá đầy đủ; tháng 10/1962 NASA nhấn mạnh dựng cây từ trên xuống; chỉ thị 5010.20 (31/7/1968) và MIL-STD-881 (1/11/1968) chuẩn hoá công cụ | "Bộ Quốc phòng và NASA đặt ra WBS năm 1962"; "định nghĩa chính thức đầu tiên năm 1962" (cách nói của Wikipedia; Haugan không nói vậy) | Haugan (2008), chương 1 |
+| Phạm vi bằng chứng bài WBS | trong phạm vi tìm kiếm của bài, chưa tìm thấy nghiên cứu so kết quả dự án có và không có WBS; bằng chứng gồm một khảo sát tự báo cáo, các thí nghiệm về phân rã khi ước lượng, và đánh giá của kiểm toán | WBS "làm giảm vượt chi" như kết quả đã đo | Chính bài WBS |
 
 ---
 
@@ -305,6 +318,20 @@ Mỗi nguồn được mô tả cùng một cách ở mọi bài. Cột **Không
 | MacNeice (1951) | thí nghiệm 300 sinh viên quản trị, dẫn lại hai lần (qua Wilson 2003 rồi Geraldi & Lechter) | — |
 | Gantt (1919), *Organizing for Work* | sách của người trong cuộc, không có số liệu sản lượng; chỉ dùng cho phần mô tả cách dùng | — |
 
+### Cấu trúc phân rã công việc (WBS)
+
+| Nguồn | Gọi là | Không viết |
+|---|---|---|
+| NASA (2018), *WBS Handbook*, SP-2016-3404/REV1; DOE (2012), *WBS Handbook*; GAO-20-195G, ch. 7 | tài liệu hướng dẫn của các cơ quan dùng WBS; nguồn cho định nghĩa, luật 100% và các lỗi hay gặp. Cách nhìn của NASA về chia theo giai đoạn là lựa chọn của NASA | dẫn như bằng chứng hiệu quả; dẫn NASA như chuẩn chung cho mọi cách chia |
+| Brotherton, Fried & Norman (2008), PMI Global Congress North America | bài hội thảo của PMI, nguồn cho phát biểu luật 100% (dẫn Haugan 2002, tr. 17) | — |
+| PMI (2013), *PMBOK Guide*, ấn bản 5, phần 5.4, hình 5-12 | chấp nhận WBS chia theo giai đoạn ở tầng hai, sản phẩm ở tầng ba; series đối chiếu qua bản trích, chưa đọc sách | dẫn số trang (chưa kiểm) |
+| Haugan (2008), *Work Breakdown Structures for Projects, Programs, and Enterprises*, Management Concepts | nguồn lịch sử; bài đọc mục lịch sử chương 1 qua bản điện tử | — |
+| Zwikael & Globerson (2006), *IJPR* 44(17) | khảo sát tự báo cáo ở khoảng 50 tổ chức tại Israel, 282 người trả lời, 202 bảng được phân tích; sơ đồ WBS là sản phẩm của quá trình "xác định phạm vi", xếp 12, 8, 11, 13 trên 16 về tác động lên bốn thước đo, không có ý nghĩa thống kê; mức dùng 3,6/5, thứ chín; "xác định hoạt động" đứng đầu, và theo hai tác giả cần có WBS trước; R² khoảng 0,15 tới 0,25. Số liệu từ bản thảo đã nộp | "WBS không ảnh hưởng tới thành công dự án"; khảo sát đo chất lượng cây; quan hệ nhân quả |
+| Kruger & Evans (2004), *JESP* 40(5) | năm thí nghiệm, người tham gia tự liệt kê các phần trước khi ước lượng; ước lượng dài hơn, ở thí nghiệm 3-4 ít lệch hơn; thí nghiệm 5: tuỳ độ phức tạp. Đọc qua tóm tắt và mô tả của Hadjichristidis và cộng sự | số liệu cụ thể (chưa đọc toàn văn) |
+| Hadjichristidis, Summers & Thomas (2014), *JESP* 51 | người làm thí nghiệm gọi tên phần; nghiên cứu 1: 152 sinh viên Trento, định dạng một mục từ điển, 8,48 phút (không nhắc) / 6,24 (nhắc phần nhanh) / 12,73 (nhắc phần chậm); số từ bảng 1 bản thảo trước khi in | "phân rã luôn làm ước lượng dài ra" |
+| Connolly & Dean (1997), *Management Science* 43(7) | hai thí nghiệm với sinh viên các lớp lập trình nâng cao (*advanced programming students*); gần một nửa kết quả thật nằm ngoài đuôi 1%; phân rã không làm khoảng rộng ra, gợi cận trên và dưới rộng rãi thì có; đọc qua tóm tắt | "sinh viên năm cuối"; phân rã làm ước lượng kém đi |
+| GAO-15-225 (2015); GAO-20-195G, ca 9 | tổng điều tra dân số 2020: dự toán sơ bộ khoảng 73 triệu đô cho phương án trả lời qua Internet, không đáng tin cậy, chưa cập nhật từ 2011, không dựng trên WBS có định nghĩa; GAO tháng 4/2018 ghi nhận cải thiện đáng kể. Là đánh giá của kiểm toán về độ đầy đủ của dự toán | thiếu WBS "làm tăng" chi phí; cải thiện năm 2018 là nhờ riêng WBS |
+
 ---
 
 ## 5. Bảng dịch Việt - Anh
@@ -326,6 +353,9 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | chụp mô phỏng | *simulation* |
 | chuyển tay | *handoff* |
 | công việc chuẩn | *standardised work* |
+| Cục Điều tra Dân số Mỹ | *US Census Bureau* |
+| căn hộ (bài WBS) | *flat* |
+| cộng khớp từng đồng | *add up to the last dong* |
 | Cục Quân nhu Lục quân Mỹ | *US Army Ordnance Department* |
 | danh sách kiểm | *checklist* |
 | dạng hỏng / tác động | *failure mode* / *effect* |
@@ -333,12 +363,17 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | đặt ống thành công ngay lần đầu | *first-attempt intubation success* |
 | đêm phòng | *room-nights* |
 | điểm bắt đầu / điểm kết thúc | *start point* / *end point* |
+| đổi yêu cầu / điều kiện ẩn / sót hạng mục (ba loại phát sinh, bài WBS) | *change requests* / *concealed conditions* / *omitted items* |
 | đo đa ký giấc ngủ | *polysomnography* |
 | dòng thông tin / dòng vật liệu | *information flow* / *material flow* |
 | đường thời gian (đáy sơ đồ chuỗi giá trị) | *timeline* |
 | duyệt chi | *spending approval* |
 | giá trị tồn kho tạm tính | *provisional stock value* |
 | giải ngân / thẩm định / định giá tài sản | *disbursement* / *credit appraisal* / *property valuation* |
+| gói việc | *work package* |
+| đầu mối chịu trách nhiệm | *accountable owner* |
+| kiểm số học / kiểm phạm vi (độ phủ) | *arithmetic check* / *scope check* (*coverage*) |
+| kiểm soát thay đổi | *change control* |
 | giặt sấy thường / giặt hấp | *standard wash-and-dry* / *steam-pressing* |
 | giờ làm việc | *working hours* |
 | hạn hợp đồng (thuê) | *lease deadline* |
@@ -349,6 +384,7 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | kho quân giới Frankford | *Frankford Arsenal* |
 | khớp tay | *manual matching* |
 | làm khác (quy trình) | *deviation*, *departure* |
+| luật 100% | *100% rule* |
 | làn | *lane* |
 | lệnh xuất kho | *dispatch order* |
 | lịch gốc | *baseline* |
@@ -362,6 +398,8 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | phạm vi / ranh giới | *scope* / *boundaries* |
 | phản ánh (của khách) | *complaints* |
 | phe bênh | *defenders* |
+| phần tử chung | *common elements* |
+| phí bảo vệ thang máy / thang hàng | *lift protection fee* / *service lift* |
 | phiếu hoàn tiền | *return form* |
 | phiếu nhập kho | *goods-received notes* |
 | phiếu sửa | *repair ticket* |
@@ -377,6 +415,9 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | thời gian từ cửa tới kim | *door-to-needle time* |
 | thời gian xử lý | *processing time* |
 | từ cửa tới cửa | *door-to-door* |
+| từ điển WBS | *WBS dictionary* |
+| trường mầm non / tuyển sinh / bếp một chiều | *kindergarten* / *enrolment* / *one-way-flow kitchen* |
+| tủ điện tổng có thiết bị chống giật | *main distribution board with residual-current protection* |
 | xưởng may | *garment workshop* |
 | tiệm giặt sấy giao nhận tận nhà | *laundry with collection and home delivery* |
 | tiếng nói của khách hàng | *voice of the customer* |
@@ -414,6 +455,7 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | `Lưu Đồ Quy Trình` | `Process Flowchart` | `What Is a Process Flowchart` |
 | `Sơ Đồ SIPOC` | `SIPOC Diagram` | `What Is a SIPOC Diagram` |
 | `Sơ Đồ Chuỗi Giá Trị` | `Value Stream Mapping` | `What Is a Value Stream Map`; section 3 là `Some Research on Value Stream Mapping` |
+| `Cấu Trúc Phân Rã Công Việc (WBS)` | `Work Breakdown Structure (WBS)` | `What Is a Work Breakdown Structure`; sub-section 1 bản VN là `Cấu Trúc Phân Rã Công Việc Là Gì`; section 3 là `Some Research on Work Breakdown Structures` |
 | `Giải Quyết Vấn Đề A3` | `A3 Problem Solving` | — |
 
 Tên bài bản EN khớp tên trong mục lục trang tổng quan EN.

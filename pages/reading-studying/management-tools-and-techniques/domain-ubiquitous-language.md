@@ -2,7 +2,7 @@
 
 Từ điển tra cứu để mọi bài trong series gọi cùng một khái niệm bằng cùng một tên, hiểu nó theo cùng một nghĩa, và tránh cùng những cách diễn đạt sai.
 
-**Phạm vi:** trang tổng quan và mười hai bài đã viết: 5S, Chu Trình PDCA, Giải Quyết Vấn Đề A3, Sơ Đồ Xương Cá Ishikawa, Phân Tích Pareto, FMEA, Quy Trình Thao Tác Chuẩn (SOP), Lưu Đồ Quy Trình, Sơ Đồ SIPOC, Sơ Đồ Chuỗi Giá Trị, Biểu Đồ Gantt, Cấu Trúc Phân Rã Công Việc (WBS). Thuật ngữ không có trong file này là **chưa được chốt**: grep các bài `.html` cùng thư mục trước khi dùng, rồi bổ sung vào đây.
+**Phạm vi:** trang tổng quan và mười hai bài đã viết: 5S, Chu Trình PDCA, Giải Quyết Vấn Đề A3, Sơ Đồ Xương Cá Ishikawa, Phân Tích Pareto, FMEA, Quy Trình Thao Tác Chuẩn (SOP), Lưu Đồ Quy Trình, Sơ Đồ SIPOC, Sơ Đồ Chuỗi Giá Trị, Biểu Đồ Gantt, Cấu Trúc Phân Rã Công Việc (WBS), Phương Pháp Đường Găng (CPM). Thuật ngữ không có trong file này là **chưa được chốt**: grep các bài `.html` cùng thư mục trước khi dùng, rồi bổ sung vào đây.
 
 **Khi file và nguồn nói khác nhau, nguồn thắng**; sửa mục trong file.
 
@@ -125,7 +125,7 @@ Cột **Gọi là** ghi cách gọi trong bản tiếng Việt, sau dấu `·` l
 | tên gọi "Gantt chart" | — | Ba mệnh đề tách bạch: (1) Gantt không phát minh ra biểu đồ thanh; (2) ông có dựng một hệ biểu đồ quản trị sản xuất riêng, được Wallace Clark đặt theo tên ông trong sách đầu thập niên 1920, sau khi Gantt mất (1919); (3) biểu đồ thanh theo trục thời gian hôm nay khác khá xa hệ đó, và mãi tới thập niên 1930 mới bị gọi bằng tên ấy. Chỉ mệnh đề (3) là chỗ cái tên lạc địa chỉ | "cái tên gắn nhầm người" | Weaver (2012) |
 | Gantt chart bản Clark | — | Bản trong sách của Clark đầu thập niên 1920, có cột ghi lý do mỗi lần lệch kế hoạch (W chờ máy, M thiếu vật tư, H thiếu người). Đây là chỗ bản hiện đại nghèo hơn bản gốc | mô tả bản hiện đại như thể vẫn còn cột lý do | Clark (1922/1923); Geraldi & Lechter (2012) |
 | harmonogram | "harmonogram" | Sơ đồ Karol Adamiecki dựng năm 1896, mỗi việc là một dải giấy có tỷ lệ, phần tiêu đề ghi danh sách việc phải làm trước nó | "biểu đồ Gantt của người Ba Lan"; Gantt lấy cảm hứng từ nó | Weaver (2012), dẫn Morris (1994) |
-| slack, total slack | khoảng dư · *slack* | Khoảng một chuỗi việc chậm được trước khi ngày kết thúc bị ảnh hưởng; việc găng là việc không có khoảng dư | "chậm trên chuỗi dài nhất là đẩy thẳng ngày kết thúc" khi chuỗi còn khoảng dư (chậm trước hết ăn vào khoảng dư) | Microsoft, *Manage your project's critical path* |
+| slack, total slack, total float | khoảng dư · *slack* (bài CPM ghi tên gốc *total float*) | Khoảng một chuỗi việc chậm được trước khi ngày kết thúc bị ảnh hưởng; việc găng là việc có khoảng dư nhỏ nhất, bằng không khi hạn trùng ngày xong sớm nhất (xem nhóm CPM) | "chậm trên chuỗi dài nhất là đẩy thẳng ngày kết thúc" khi chuỗi còn khoảng dư (chậm trước hết ăn vào khoảng dư) | Microsoft, *Manage your project's critical path* |
 | baseline | lịch gốc · *baseline* | Bản kế hoạch chốt lúc đầu, giữ lại để so với lịch cập nhật và thực tế | coi lịch đã cập nhật là lịch gốc (thanh chỉ dịch chỗ thì tổng mức lệch mất dấu) | Bài Biểu Đồ Gantt |
 
 ### Cấu trúc phân rã công việc (WBS)
@@ -138,6 +138,21 @@ Cột **Gọi là** ghi cách gọi trong bản tiếng Việt, sau dấu `·` l
 | WBS dictionary | từ điển WBS · *WBS dictionary* | Tài liệu đi kèm mô tả bằng lời mỗi phần tử gồm những việc gì; chỉnh thêm chút ít thì thành bản mô tả công việc cho hợp đồng. Ghi thêm "không gồm gì", tiêu chí xong và đầu mối chịu trách nhiệm là cách dùng bài khuyên, không phải định nghĩa của nguồn | — | GAO-20-195G, tr. 61, 64; NASA (2018) |
 | product-oriented / functional WBS / phase-based | WBS chia theo sản phẩm (theo thứ bàn giao) / chia theo chức năng / chia theo giai đoạn · *product-oriented / functional / phase-based WBS* | Bài chọn cách chia theo sản phẩm theo NASA và GAO. Chia theo phòng ban, chức năng hay loại thợ nói ai làm chứ không nói làm ra cái gì: NASA gọi là lỗi, GAO chỉ ra cây chức năng không truy được vượt chi về hạng mục. Chia theo giai đoạn là trường hợp khác: NASA xếp vào loại không nên dùng, còn PMBOK (ấn bản 5, hình 5-12) chấp nhận giai đoạn ở tầng hai với sản phẩm bàn giao ở tầng ba. Phép kiểm chung: mỗi phần tử trả lời được "xong thì cầm được cái gì" | chia theo giai đoạn "là lỗi" như nguyên tắc chung; gộp phòng ban, giai đoạn và loại thợ thành một nhóm sai | GAO-20-195G, tr. 59-60; NASA (2018), mục 3.5.2; PMBOK ấn bản 5 (qua bản trích) |
 | common elements | phần tử chung · *common elements* | Việc xuyên suốt không thuộc riêng một sản phẩm: quản lý chương trình (luôn ở tầng hai), tích hợp, kỹ thuật hệ thống, kiểm thử toàn hệ thống, đào tạo, dữ liệu; phải có mặt ngay từ đầu thì cây mới đủ toàn bộ công việc | gộp "chuyển dữ liệu" vào phần tử *Data* của GAO (phần tử ấy là dữ liệu phải bàn giao: tài liệu kỹ thuật, dữ liệu quản lý) | GAO-20-195G, bảng 6 |
+
+### Phương pháp đường găng (CPM)
+
+| Thuật ngữ | Gọi là | Nghĩa chốt | Không viết | Nguồn |
+|---|---|---|---|---|
+| critical path method (CPM) | phương pháp đường găng, gọi tắt CPM; tên bài `Phương Pháp Đường Găng (CPM)` | Phép tính: từ logic trước sau và thời lượng, cộng dọc mọi chuỗi việc, chỉ ra chuỗi quyết định ngày xong sớm nhất và khoảng dư của mọi việc khác. Cơ chế: phân bổ sự chú ý, phân biệt những việc đang quyết định ngày xong với những việc còn khoảng dư; ở dự án nhiều việc song song nhóm thứ nhất thường là số ít, ở dự án gần như nối đuôi thì gần hết số việc đều găng (GAO coi tỷ lệ gần 100% là dấu hiệu lịch nối tiếp quá mức hoặc bị giới hạn nguồn lực). Phép tính đúng tuyệt đối với đầu vào; đầu vào (mũi tên, thời lượng) là mô hình, nên đường găng là tính chất của mô hình, chưa chắc của dự án. Khác biểu đồ Gantt (cách bày lịch, có thể vẽ tay không qua phép tính) và WBS (dự án gồm những gì). Bản gốc 1959 là phương pháp cân thời gian với chi phí, vẽ mỗi việc thành một mũi tên | CPM "chỉ là tìm chuỗi dài nhất" khi nói về bản gốc; đồng nhất CPM với biểu đồ Gantt; CPM "chứng minh" ngày xong (ngày xong là kết quả tất định của các ước lượng); CPM "tách số ít việc găng" như tính chất luôn đúng | Kelley & Walker (1959); GAO-16-89G |
+| critical path | đường găng · *critical path* | Quy ước của bài CPM: chuỗi dài nhất, quyết định ngày xong sớm nhất; khi hạn chót muộn hơn ngày xong sớm nhất, nó thường cũng là chuỗi có khoảng dư nhỏ nhất. Hai cách nhận diện có thể lệch nhau khi lịch có ràng buộc ngày cứng hoặc nhiều lịch làm việc; GAO: chuỗi dài nhất là cách duy nhất chắc chắn khi dùng nhiều lịch làm việc. Không cố định: đổi khi việc chậm, xong sớm hay làm sai thứ tự | "đường găng là chuỗi có khoảng dư bằng không" như định nghĩa chung (chỉ đúng khi hạn trùng ngày xong sớm nhất và không có ràng buộc ngày cứng); "đường găng" cho một chuỗi chọn tay; "đường tới hạn", "đường then chốt" | Kelley & Walker (1959), tr. 163; GAO-16-89G, thực hành 6 |
+| critical activity / near-critical | việc găng / việc (chuỗi) gần găng | Việc găng: thời gian có sẵn đúng bằng thời lượng (Kelley & Walker). Gần găng: khoảng dư trong một ngưỡng hẹp so với đường găng; ngưỡng đặt theo quy mô (GAO: 5 ngày cho lịch ngắn, 2-3 tháng cho chương trình nhiều năm) | gọi việc quan trọng, tốn kém hay kéo dài là "việc găng" | Kelley & Walker (1959); GAO-16-89G |
+| forward pass / backward pass | lượt tính xuôi / lượt tính ngược | Xuôi: ngày bắt đầu và xong sớm nhất; ngược, từ hạn chót: ngày bắt đầu và xong muộn nhất. Hiệu hai lượt là khoảng dư, nên khoảng dư đo theo mốc lượt ngược xuất phát: từ ngày xong sớm nhất thì là số ngày chậm được mà ngày xong sớm nhất chưa lùi; từ một hạn cam kết muộn hơn thì gồm cả phần đệm tới hạn | định nghĩa khoảng dư là "số ngày chậm được trước khi ngày xong bị ảnh hưởng" rồi tính ngược từ một hạn muộn hơn (ngày xong sớm nhất lùi mà hạn chưa lỡ) | Kelley & Walker (1959); GAO-16-89G |
+| normal / crash duration | thời lượng bình thường / thời lượng rút ngắn tối đa (*crash*) | Bình thường: ứng với chi phí trực tiếp thấp nhất. Rút ngắn tối đa: giới hạn nhanh nhất có thể, chi phí cao hơn. Rút ngắn đúng cách: chọn phương án có chi phí thấp nhất cho mỗi ngày **cả dự án** sớm lên; khi có nhiều đường găng song song, nhóm việc được đẩy nhanh phải cắt ngang mọi đường (Kelley & Walker: *cut set*); rồi tính lại vì có thêm đường găng mới | "rút ở việc găng rẻ nhất" trơn (sai khi có nhiều đường găng); đẩy nhanh đồng loạt; rút ngắn mà không tính lại | Kelley & Walker (1959), tr. 164-165, 173 |
+| merge point / merge bias | điểm hợp lưu / thiên lệch hợp lưu (*merge bias*) | Điểm hợp lưu: một việc có nhiều chuỗi song song dồn vào. Xác suất nó bắt đầu đúng hẹn là xác suất mọi chuỗi cùng về đúng hẹn: luôn không cao hơn xác suất của chuỗi kém chắc nhất, bằng tích khi các chuỗi độc lập; ví dụ GAO: 60% × 60% = 36%, ba chuỗi còn 22%. Các chuỗi chung một việc phía trước không độc lập nếu việc ấy bất định. Xác suất ở điểm hợp lưu chưa phải xác suất cả dự án kịp hạn | phép nhân xác suất mà không nêu giả định độc lập; "thấp hơn" nghiêm ngặt (viết "không cao hơn, thường thấp hơn"); "thiên lệch hợp lưu làm mọi dự án trễ" (GAO: ngày xong "có xu hướng" muộn hơn) | GAO-16-89G, thực hành 2 và 8 |
+| criticality index | chỉ số độ găng · *criticality index* | Xác suất một việc nằm trên đường găng, tính bằng mô phỏng Monte Carlo | — | Van Slyke (1963), qua tóm tắt |
+| dangling logic / date constraint / lag | việc treo (thiếu việc trước hoặc việc sau) / ràng buộc ngày cứng / độ trễ (*lag*) | Ba lỗi cách lập lịch làm đường găng sai: việc treo hiện ra với khoảng dư lớn hơn thật; ràng buộc ngày cứng làm mỗi ràng buộc sinh một chuỗi găng riêng; độ trễ che phần việc thật đang gây găng, nên viết khoảng chờ thành một việc có tên | gọi đó là giới hạn vốn có của CPM (giới hạn vốn có là phép tính không tự biết mình thiếu mũi tên) | GAO-16-89G, thực hành 6 |
+| resource critical path | đường găng theo nguồn lực | Chuỗi quyết định ngày xong khi tính cả logic lẫn nguồn lực; GAO gọi là *resource critical path*, *resource constrained critical path* hoặc *critical chain*. CPM giả định nguồn lực vô hạn | CPM "tính" nguồn lực vì lịch đã gán người | GAO-16-89G; Kelley & Walker (1959), tr. 166 |
+| PERT | "PERT" (Program Evaluation and Review Technique) | Hệ thống song song do Văn phòng Dự án Đặc biệt của Hải quân Mỹ (chương trình Polaris) dựng cùng Booz, Allen & Hamilton và Lockheed từ đầu năm 1958; cùng kiểu sơ đồ, mỗi việc ba ước lượng | PERT và CPM là một; PERT "làm Polaris xong sớm" (chưa kiểm; có tranh luận lịch sử ở Sapolsky 1972 và Engwall 2012, series chưa đọc) | Kelley & Walker (1959), tr. 171 |
 
 ---
 
@@ -191,6 +206,8 @@ Những khẳng định về lịch sử và nguồn gốc mà các bài đã ch
 | Phạm vi trang tổng quan | bằng chứng chỉ phủ Taylorism, tái lập quy trình, Six Sigma và TQM | khái quát cho cả 30 công cụ | Chính trang tổng quan |
 | Phạm vi bài PDCA | toàn bộ bằng chứng thực nghiệm đến từ y tế; tóm tắt và phần kết phải mang giới hạn đó | nói chung về PDCA ở mọi ngành | Chính bài PDCA |
 | Lịch sử WBS | theo Haugan: cụm từ đã thông dụng từ khoảng năm 1961; tài liệu hướng dẫn thiết kế hệ thống PERT/COST do Bộ Quốc phòng Mỹ soạn cùng NASA và giới công nghiệp, tháng 6/1962, mô tả WBS khá đầy đủ; tháng 10/1962 NASA nhấn mạnh dựng cây từ trên xuống; chỉ thị 5010.20 (31/7/1968) và MIL-STD-881 (1/11/1968) chuẩn hoá công cụ | "Bộ Quốc phòng và NASA đặt ra WBS năm 1962"; "định nghĩa chính thức đầu tiên năm 1962" (cách nói của Wikipedia; Haugan không nói vậy) | Haugan (2008), chương 1 |
+| Lịch sử CPM | cuối năm 1956, nhóm kiểm soát kỹ thuật (Integrated Engineering Control Group) của DuPont khảo sát việc dùng máy tính lập kế hoạch công trình; Remington Rand UNIVAC cử Kelley, Walker đại diện DuPont; Dự án A (khu nhà máy hoá chất 10 triệu đô la) bắt đầu cuối năm 1957, thử nghiệm Louisville xong tháng 3/1959; công bố ở *Proceedings of the Eastern Joint Computer Conference* 1959 | "DuPont phát minh CPM năm 1957" như mốc chốt; Louisville "giảm từ 125 xuống 78 giờ" (93 giờ là đã đạt, 78 giờ là dự kiến) | Kelley & Walker (1959) |
+| Phạm vi bằng chứng bài CPM | trong phạm vi tìm kiếm của bài, chưa tìm thấy nghiên cứu so kết quả dự án có và không có phân tích đường găng; bằng chứng gồm báo cáo của chính người tạo ra công cụ (không đối chứng), một nghiên cứu trên lịch xây dựng thật về đường lan của chậm trễ, một khảo sát cảm nhận bốn nước, và đánh giá của kiểm toán | CPM "làm dự án nhanh hơn" như kết quả đã đo | Chính bài CPM |
 | Phạm vi bằng chứng bài WBS | trong phạm vi tìm kiếm của bài, chưa tìm thấy nghiên cứu so kết quả dự án có và không có WBS; bằng chứng gồm một khảo sát tự báo cáo, các thí nghiệm về phân rã khi ước lượng, và đánh giá của kiểm toán | WBS "làm giảm vượt chi" như kết quả đã đo | Chính bài WBS |
 
 ---
@@ -332,6 +349,17 @@ Mỗi nguồn được mô tả cùng một cách ở mọi bài. Cột **Không
 | Connolly & Dean (1997), *Management Science* 43(7) | hai thí nghiệm với sinh viên các lớp lập trình nâng cao (*advanced programming students*); gần một nửa kết quả thật nằm ngoài đuôi 1%; phân rã không làm khoảng rộng ra, gợi cận trên và dưới rộng rãi thì có; đọc qua tóm tắt | "sinh viên năm cuối"; phân rã làm ước lượng kém đi |
 | GAO-15-225 (2015); GAO-20-195G, ca 9 | tổng điều tra dân số 2020: dự toán sơ bộ khoảng 73 triệu đô cho phương án trả lời qua Internet, không đáng tin cậy, chưa cập nhật từ 2011, không dựng trên WBS có định nghĩa; GAO tháng 4/2018 ghi nhận cải thiện đáng kể. Là đánh giá của kiểm toán về độ đầy đủ của dự toán | thiếu WBS "làm tăng" chi phí; cải thiện năm 2018 là nhờ riêng WBS |
 
+### Phương pháp đường găng (CPM)
+
+| Nguồn | Gọi là | Không viết |
+|---|---|---|
+| Kelley & Walker (1959), *Proceedings of the Eastern Joint Computer Conference*, tr. 160-173 | bài công bố của chính hai người tạo ra phương pháp; báo cáo không đối chứng. Dự án A: lịch chạy song song, **không dùng để điều hành dự án**; 7 trên 156 đợt giao hàng găng, 3 không có trong danh sách của bộ phận lập lịch thường lệ; khoảng 10% việc găng; rút hai tháng không tốn thêm và hai tháng nữa với 1% chi phí trực tiếp biến đổi là **kết quả tính**. Louisville: dừng máy trung bình 125 → 93 giờ (đã đạt, "chủ yếu nhờ phân tích tốt hơn"), 78 giờ là dự kiến; cùng lúc có đào tạo, thư viện lịch mẫu, dữ liệu mới | Dự án A "rút được bốn tháng" như kết quả đã đạt; Louisville là bằng chứng tách riêng phần của phép tính; con số 10% là quy luật chung |
+| GAO-16-89G (2015), *Schedule Assessment Guide* | hướng dẫn của kiểm toán, nguồn cho định nghĩa và các lỗi lập lịch; bản trực tuyến guides.gaoinnovations.gov. Các ca: USCIS (ca 12, từ GAO-12-66), NSC 3 của Tuần duyên (ca 14, từ GAO-11-743: 3.920 việc còn lại, mốc chậm 5 ngày, 57 việc dồn vào) | dẫn như bằng chứng hiệu quả |
+| GAO-12-66 (2011), USCIS Transformation Program | 18 lịch dự án riêng, không có lịch tổng; hai lịch được đánh giá không có đường găng hợp lệ (thiếu hoặc treo logic ở hơn 60% và 40% số việc còn lại, hai con số lấy từ ca 12 của GAO-16-89G); lịch tổng nộp cuối năm 2015 được GAO ghi nhận cải thiện. Bài đọc trang tóm tắt và phần theo dõi khuyến nghị | thiếu đường găng "làm chương trình chậm" như kết quả đo |
+| Olivieri và cộng sự (2019), *J Constr Eng Manag* 145(12), 04019077 | khảo sát cảm nhận ở Brazil, Trung Quốc, Phần Lan, Mỹ, 532 bảng hợp lệ; CPM 71%, theo vị trí 40%, Last Planner 28%; 20% người dùng CPM nêu yêu cầu hợp đồng là lý do chính; 79% phân tích đường găng "thường xuyên hoặc ở mức vừa phải"; phân tích ràng buộc chạy tốt hoặc rất tốt: CPM 46%, Last Planner 65%. Galloway (2006): 63%, dẫn lại qua bài này | bằng chứng về kết cục dự án; 79% "thường xuyên" |
+| Vazquez, Pozzana, Kalogridis & Ellinas (2023), *Scientific Reports* 13:509 | 323 lịch Primavera P6 của 77 công trình xây dựng (hơn 10 tỷ đô la, 100 tới 16.000 việc) cộng một mô hình mạng; phần việc trên đường găng nhỏ dần theo kích thước lịch (c/n ~ n^-0,79, "xấp xỉ"); mức lan chậm trễ = tỷ lệ việc chậm quá khoảng dư của chính nó, dưới 1% hoặc tới 15% tuỳ khả năng truyền chậm trễ; không liên hệ có ý nghĩa với chỉ báo dựng từ kích thước đường găng (Pearson −0,1, mức ý nghĩa 0,7); kết luận của nhóm tác giả: vượt một mức phức tạp, vượt hạn chủ yếu đến từ việc ngoài đường găng. Chỉ xây dựng, dữ liệu không công khai | "đường găng vô dụng"; tương quan với "kích thước đường găng" trơn (chỉ báo là p × c); khái quát ra ngoài xây dựng |
+| Van Slyke (1963), *Operations Research* 11(5) | mô phỏng Monte Carlo cho mạng PERT, đề xuất chỉ số độ găng; đọc qua tóm tắt | số liệu cụ thể của bài |
+
 ---
 
 ## 5. Bảng dịch Việt - Anh
@@ -351,10 +379,12 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | chăn mền | *duvets and blankets* |
 | chuyến giao | *delivery run* |
 | chụp mô phỏng | *simulation* |
+| chuỗi nhà thuốc / dược sĩ bán hàng / phần mềm bán hàng | *chain of pharmacies* / *counter pharmacists* / *point-of-sale software* |
 | chuyển tay | *handoff* |
 | công việc chuẩn | *standardised work* |
 | Cục Điều tra Dân số Mỹ | *US Census Bureau* |
 | căn hộ (bài WBS) | *flat* |
+| chạy thử song song / chuyển đổi tám cửa hàng (bài CPM) | *parallel trial* / *switch over eight shops* |
 | cộng khớp từng đồng | *add up to the last dong* |
 | Cục Quân nhu Lục quân Mỹ | *US Army Ordnance Department* |
 | danh sách kiểm | *checklist* |
@@ -363,6 +393,9 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | đặt ống thành công ngay lần đầu | *first-attempt intubation success* |
 | đêm phòng | *room-nights* |
 | điểm bắt đầu / điểm kết thúc | *start point* / *end point* |
+| điểm hợp lưu / thiên lệch hợp lưu | *merge point* / *merge bias* |
+| đường găng / việc găng / gần găng | *critical path* / *critical activity* / *near-critical* |
+| đường găng theo nguồn lực | *resource critical path* |
 | đổi yêu cầu / điều kiện ẩn / sót hạng mục (ba loại phát sinh, bài WBS) | *change requests* / *concealed conditions* / *omitted items* |
 | đo đa ký giấc ngủ | *polysomnography* |
 | dòng thông tin / dòng vật liệu | *information flow* / *material flow* |
@@ -377,17 +410,20 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | giặt sấy thường / giặt hấp | *standard wash-and-dry* / *steam-pressing* |
 | giờ làm việc | *working hours* |
 | hạn hợp đồng (thuê) | *lease deadline* |
+| hạn cam kết / ngày xong sớm nhất | *committed deadline* / *earliest finish* |
 | họ sản phẩm | *product family* |
 | khả năng phát hiện / khả năng xảy ra / mức nghiêm trọng | *detection* / *occurrence* / *severity* |
-| khoảng dư | *slack* |
+| khoảng dư | *slack*; bài CPM: *float* (lần đầu *total float, also called total slack*) |
 | khoa tiệt khuẩn | *sterile processing department* |
 | kho quân giới Frankford | *Frankford Arsenal* |
 | khớp tay | *manual matching* |
 | làm khác (quy trình) | *deviation*, *departure* |
 | luật 100% | *100% rule* |
 | làn | *lane* |
+| lượt tính xuôi / lượt tính ngược | *forward pass* / *backward pass* |
 | lệnh xuất kho | *dispatch order* |
 | lịch gốc | *baseline* |
+| kỷ yếu (bài CPM) / ban liên lạc lớp | *yearbook* / *class committee* |
 | lỗi (không) ảnh hưởng tới vô khuẩn | *defects that do (not) affect sterility* |
 | lưu đồ chia làn | *swimlane flowchart* |
 | mức tuân thủ / chất lượng thao tác / kết cục | *compliance* / *the quality of the task* / *outcome* |
@@ -409,6 +445,7 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | quỹ NHS | *NHS trust* |
 | sổ sự cố | *incident records*, *incident log* |
 | tâm lý "đánh dấu cho xong" | *"check-the-box" mentality* |
+| thời lượng bình thường / rút ngắn tối đa | *normal duration* / *crash duration* |
 | tài khoản học | *learning account* |
 | tiền (đồng) | *million dong* |
 | tiêu sợi huyết | *thrombolysis* |
@@ -418,6 +455,7 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | từ điển WBS | *WBS dictionary* |
 | trường mầm non / tuyển sinh / bếp một chiều | *kindergarten* / *enrolment* / *one-way-flow kitchen* |
 | tủ điện tổng có thiết bị chống giật | *main distribution board with residual-current protection* |
+| việc treo / ràng buộc ngày cứng / độ trễ | *dangling activity* / *hard date constraint* / *lag* |
 | xưởng may | *garment workshop* |
 | tiệm giặt sấy giao nhận tận nhà | *laundry with collection and home delivery* |
 | tiếng nói của khách hàng | *voice of the customer* |
@@ -455,6 +493,7 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | `Lưu Đồ Quy Trình` | `Process Flowchart` | `What Is a Process Flowchart` |
 | `Sơ Đồ SIPOC` | `SIPOC Diagram` | `What Is a SIPOC Diagram` |
 | `Sơ Đồ Chuỗi Giá Trị` | `Value Stream Mapping` | `What Is a Value Stream Map`; section 3 là `Some Research on Value Stream Mapping` |
+| `Phương Pháp Đường Găng (CPM)` | `Critical Path Method (CPM)` | `What Is the Critical Path Method`; section 3 là `Some Research on the Critical Path Method` |
 | `Cấu Trúc Phân Rã Công Việc (WBS)` | `Work Breakdown Structure (WBS)` | `What Is a Work Breakdown Structure`; sub-section 1 bản VN là `Cấu Trúc Phân Rã Công Việc Là Gì`; section 3 là `Some Research on Work Breakdown Structures` |
 | `Giải Quyết Vấn Đề A3` | `A3 Problem Solving` | — |
 
@@ -490,6 +529,5 @@ Những khái niệm các nguồn hoặc các bài đang nói khác nhau mà ch�
 
 - **Vai trò của Henry Gantt.** Weaver (2012) nói Gantt không dính dáng gì tới biểu đồ thanh; Geraldi & Lechter (2012) dựng một mạch liên tục hơn từ công việc điều phối quân nhu năm 1914. Bài nào chạm tới lịch sử công cụ này phải nêu cả hai, không chọn bên.
 - **Ma trận rủi ro.** Bài FMEA phân biệt mình với ma trận rủi ro bằng câu "công cụ chấm những rủi ro đã được gọi tên theo hai trục khả năng và hậu quả", chưa có nguồn. Khi viết bài Ma Trận Rủi Ro, chốt định nghĩa có nguồn rồi sửa câu ở bài FMEA cho khớp.
-- **Đường găng.** Bài Gantt dùng "việc găng" và "khoảng dư"; tên "đường găng" (*critical path*) để bài CPM chốt.
 - **"Chuỗi giá trị" hai nghĩa.** Bài Sơ Đồ Chuỗi Giá Trị dùng "chuỗi giá trị" cho *value stream* (đường đi của một họ sản phẩm qua các khâu); cụm này trùng chữ với *value chain* của Porter. Khi bài Năm Lực Lượng Cạnh Tranh Của Porter hay một bài chiến lược khác cần nhắc tới *value chain*, chốt cách gọi cho nó (có nguồn) và kiểm hai bài không gọi lẫn.
 - **Chồng lấn với series Scrum.** Bài Agile / Scrum / Kanban của series này trùng chủ đề với `pages/information-technology/agile-software-development/scrum-agile-and-more/`. Khi viết, đối chiếu từ điển của series đó để hai series dùng cùng thuật ngữ.

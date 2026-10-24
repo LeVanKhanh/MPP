@@ -126,6 +126,20 @@ body.dark-theme {
     stroke-width: 1.8;
 }
 
+/* Khối và đường nhấn màu cảnh báo: một chuỗi cần người đọc lần theo,
+   ví dụ các việc và mũi tên nằm trên đường găng */
+.tool-diagram .node-alert {
+    fill: var(--diagram-bar-bg);
+    stroke: var(--diagram-alert);
+    stroke-width: 2.8;
+}
+
+.tool-diagram path.arrow-alert {
+    fill: none;
+    stroke: var(--diagram-alert);
+    stroke-width: 2.8;
+}
+
 /* --- Chữ trong hình ----------------------------------------------------- */
 
 .tool-diagram text {

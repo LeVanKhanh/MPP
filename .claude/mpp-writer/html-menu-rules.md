@@ -136,6 +136,7 @@ Class có sẵn trong `diagram-styles.css`:
 | `edge`, `edge-ghost` | Vạch nhấn hai đầu của một khối |
 | `today` | Vạch mốc cần chú ý, màu cảnh báo |
 | `arrow` | Đường nối, dùng kèm `marker-end` |
+| `node-alert`, `arrow-alert` | Khối và đường viền màu cảnh báo: một chuỗi cần lần theo, như đường găng |
 | `small` | Chữ phụ, nhỏ và nhạt hơn |
 | `rowlabel` | Nhãn cột trái, canh phải |
 | `note` | Ghi chú bên phải một khối, canh trái |

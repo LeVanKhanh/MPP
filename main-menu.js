@@ -591,6 +591,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Critical Path Method (CPM)",
+                        route: "pages/reading-studying/management-tools-and-techniques/14-cpm-critical-path-method.html",
+                        hash: "#/critical-path-method",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

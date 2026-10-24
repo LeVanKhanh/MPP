@@ -598,6 +598,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Phương Pháp Đường Găng (CPM)",
+                        route: "pages/reading-studying/management-tools-and-techniques/14-cpm-critical-path-method-vn.html",
+                        hash: "#/critical-path-method",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

@@ -88,7 +88,7 @@ Phần **"Chưa chốt"** cũng bắt buộc, kể cả khi rỗng. Chỗ hai b�
 - **Khi sửa nghĩa một mục đã có, ghi đè** mục đó bằng nghĩa mới; không giữ song song nghĩa cũ. Kiểm luôn các bài đang dùng nghĩa cũ: đổi từ điển mà không đổi bài là tạo ra mâu thuẫn thay vì gỡ nó.
 - **Khi một thuật ngữ hay một nguồn không còn bài nào dùng, xoá mục đó.**
 - **Khi phát hiện bài cũ sai**, không tự sửa bài cũ. Ghi vào mục "Chưa chốt", báo tác giả, để tác giả quyết sửa bài nào.
-- File này là nội dung của series, không phải file quy tắc, nên **không chịu giới hạn hai chỗ sửa mỗi lượt** của `guide-maintenance.md`.
+- File này là nội dung của series, không phải file quy tắc, nên **sửa không cần hỏi trước** như `guide-maintenance.md` mục 4 đòi với file quy tắc.
 
 ## 5. Khi series chưa có file
 

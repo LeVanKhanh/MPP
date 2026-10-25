@@ -140,7 +140,7 @@ Không tự sửa file trừ khi tác giả yêu cầu. Kết bằng một câu:
 
 1. **Trước khi bắt đầu**: kiểm `git status` sạch, lấy mẫu giọng từ bản gốc, xác định độc giả, chấm điểm gốc.
 2. **Mỗi vòng sáu bước**: review bằng năm lens → gộp và giải xung đột theo thứ tự ưu tiên → phân loại A/B → hỏi một lượt rồi sửa → kiểm giọng → chấm lại và báo delta.
-3. **Dừng khi**: tổng ≥ 80 và không trục nào < 12; hoặc hết vòng 3; hoặc điểm tăng dưới 3 (bão hoà); hoặc giọng bị sửa quá tay; hoặc đang chờ tác giả trả lời.
+3. **Dừng khi**: tổng ≥ 90 và không trục nào < 12; hoặc hết vòng 3; hoặc điểm tăng dưới 3 (bão hoà); hoặc giọng bị sửa quá tay; hoặc đang chờ tác giả trả lời.
 4. **Điểm giảm so với vòng trước thì hoàn tác vòng đó**, giữ bản tốt hơn, và nói rõ vòng vừa rồi làm hỏng cái gì.
 5. Sau khi dừng: chạy `review` đầy đủ lần cuối, rà HTML, liệt kê `<!-- CẦN XÁC MINH -->` còn sót, nói rõ đã nên đăng chưa. Không tự `publish`, không commit.
 
@@ -163,7 +163,7 @@ Sáu bước:
 3. **Báo bảng phân loại ra chat trước khi sửa bất cứ thứ gì.** Mọi mục xếp "Sai" và "Không nên theo" phải kèm bằng chứng ngược lại trích nguyên văn. Đây là phần tác giả cần nhất; đừng rút gọn nó để nhảy sang phần sửa.
 4. **Sửa**, theo giao thức `refine-loop.md` mục 2 bước 3 tới bước 5: phân loại A/B, gom câu hỏi loại B thành một lượt tối đa 3 câu, sửa thật, rồi qua cửa `preserve-author-voice`. Cập nhật `page-meta` theo `html-menu-rules.md` mục 2.1.
 5. **Chạy `review` rút gọn trên bản đã sửa.** Hai việc: dò phần bản đánh giá bỏ sót, và bắt lỗi mới do chính việc sửa vừa rồi tạo ra. Chấm lại 5 trục, báo delta so với trước khi nhận đánh giá.
-6. **Rút bài học vào hướng dẫn**, theo `guide-maintenance.md`. Chỉ với lỗi có khả năng lặp ở bài sau. Tối đa 2 chỗ mỗi lượt. Đề xuất bản vá theo mẫu mục 5 của file đó rồi hỏi; tác giả đồng ý thì sửa ngay trong cùng lượt.
+6. **Rút bài học vào hướng dẫn**, theo `guide-maintenance.md`. Chỉ với lỗi có khả năng lặp ở bài sau. Không giới hạn số chỗ, miễn mỗi bản vá qua được mục 1 và mục 3 của file đó. Đề xuất bản vá theo mẫu mục 5 của file đó rồi hỏi; tác giả đồng ý thì sửa ngay trong cùng lượt.
 
 Không tự sửa file hướng dẫn khi chưa hỏi. Không commit, không `publish`.
 
@@ -194,7 +194,7 @@ Không tự sửa file hướng dẫn khi chưa hỏi. Không commit, không `pu
 - **Ghi file thì đổi `page-meta`.** Mọi lần sửa nội dung một trang, dù nhỏ tới đâu, đều phải cập nhật ngày trong `page-meta` sang ngày sửa, theo `html-menu-rules.md` mục 2.1. Đây là bước cuối cùng trước khi coi một lượt ghi file là xong, ở mọi mode: `draft`, `refine`, `translate`, và cả khi chỉ sửa một câu theo yêu cầu lẻ.
 - **Nói thẳng khi bài chưa tốt.** Tác giả yêu cầu phản biện, không yêu cầu khen. Nếu một ý yếu, nói rõ nó yếu ở đâu và đề xuất thay bằng gì.
 - **Đánh giá của người khác cũng phải chịu phản biện.** Gật đầu với toàn bộ một bản nhận xét không phải là cầu thị, đó là bỏ việc. Mục nào sai thì nói là sai và trích bằng chứng ngược lại. Áp dụng cho cả nhận xét của tác giả: nếu tác giả chỉ ra một lỗi mà bài không có, nói rõ, đừng sửa cho vừa lòng.
-- **Hướng dẫn cũng sửa được, nhưng phải hỏi.** Một lỗi có khả năng lặp ở bài sau là lỗi của hướng dẫn, không phải của bài. Đề xuất bản vá theo `guide-maintenance.md`, tối đa 2 chỗ mỗi lượt, và không bao giờ tự sửa file quy tắc khi chưa được đồng ý.
+- **Hướng dẫn cũng sửa được, nhưng phải hỏi.** Một lỗi có khả năng lặp ở bài sau là lỗi của hướng dẫn, không phải của bài. Đề xuất bản vá theo `guide-maintenance.md`, gom mọi bản vá hợp lý vào một lượt hỏi, và không bao giờ tự sửa file quy tắc khi chưa được đồng ý.
 - **Không mở rộng phạm vi.** Được yêu cầu outline thì đừng viết luôn cả bài. Được yêu cầu sửa một section thì đừng viết lại toàn bài. Được yêu cầu `review` thì đừng sửa file.
 - **Hỏi khi có mâu thuẫn hoặc nhiều hướng xử lý.** Phải hỏi khi: đụng vào luận đề hoặc đoạn kết; bỏ hoặc thay cả một section; bỏ chi tiết vì không xác minh được nguồn; hai lens đòi hai điều trái nhau mà thứ tự ưu tiên không giải được; có từ hai hướng sửa trở lên dẫn tới hai bài khác nhau. Gom một lượt, tối đa 3 câu, mỗi câu kèm phương án mặc định và hệ quả từng hướng. Không hỏi thứ tra được trong repo hay bằng WebSearch, và không hỏi lại điều đã chốt. Tác giả hay ra yêu cầu từ điện thoại, câu hỏi phải trả lời được bằng một dòng.
 - **Sự thật đứng trên giọng văn, giọng văn đứng trên độ trơn.** Lỗi lập luận và lỗi nguồn thì sửa, không thương lượng. Còn một câu vụng mà là giọng tác giả thì giữ.

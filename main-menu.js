@@ -598,6 +598,20 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Earned Value Management (EVM)",
+                        route: "pages/reading-studying/management-tools-and-techniques/15-earned-value-management.html",
+                        hash: "#/earned-value-management",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "SMART Framework",
+                        route: "pages/reading-studying/management-tools-and-techniques/16-smart-framework.html",
+                        hash: "#/smart-framework",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

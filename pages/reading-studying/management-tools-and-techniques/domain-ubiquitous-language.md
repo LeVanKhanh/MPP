@@ -2,7 +2,7 @@
 
 Từ điển tra cứu để mọi bài trong series gọi cùng một khái niệm bằng cùng một tên, hiểu nó theo cùng một nghĩa, và tránh cùng những cách diễn đạt sai.
 
-**Phạm vi:** trang tổng quan và mười hai bài đã viết: 5S, Chu Trình PDCA, Giải Quyết Vấn Đề A3, Sơ Đồ Xương Cá Ishikawa, Phân Tích Pareto, FMEA, Quy Trình Thao Tác Chuẩn (SOP), Lưu Đồ Quy Trình, Sơ Đồ SIPOC, Sơ Đồ Chuỗi Giá Trị, Biểu Đồ Gantt, Cấu Trúc Phân Rã Công Việc (WBS), Phương Pháp Đường Găng (CPM). Thuật ngữ không có trong file này là **chưa được chốt**: grep các bài `.html` cùng thư mục trước khi dùng, rồi bổ sung vào đây.
+**Phạm vi:** trang tổng quan và mười lăm bài đã viết: 5S, Chu Trình PDCA, Giải Quyết Vấn Đề A3, Sơ Đồ Xương Cá Ishikawa, Phân Tích Pareto, FMEA, Quy Trình Thao Tác Chuẩn (SOP), Lưu Đồ Quy Trình, Sơ Đồ SIPOC, Sơ Đồ Chuỗi Giá Trị, Biểu Đồ Gantt, Cấu Trúc Phân Rã Công Việc (WBS), Phương Pháp Đường Găng (CPM), Quản Lý Giá Trị Thu Được (EVM), Khung Mục Tiêu SMART. Thuật ngữ không có trong file này là **chưa được chốt**: grep các bài `.html` cùng thư mục trước khi dùng, rồi bổ sung vào đây.
 
 **Khi file và nguồn nói khác nhau, nguồn thắng**; sửa mục trong file.
 
@@ -154,6 +154,37 @@ Cột **Gọi là** ghi cách gọi trong bản tiếng Việt, sau dấu `·` l
 | resource critical path | đường găng theo nguồn lực | Chuỗi quyết định ngày xong khi tính cả logic lẫn nguồn lực; GAO gọi là *resource critical path*, *resource constrained critical path* hoặc *critical chain*. CPM giả định nguồn lực vô hạn | CPM "tính" nguồn lực vì lịch đã gán người | GAO-16-89G; Kelley & Walker (1959), tr. 166 |
 | PERT | "PERT" (Program Evaluation and Review Technique) | Hệ thống song song do Văn phòng Dự án Đặc biệt của Hải quân Mỹ (chương trình Polaris) dựng cùng Booz, Allen & Hamilton và Lockheed từ đầu năm 1958; cùng kiểu sơ đồ, mỗi việc ba ước lượng | PERT và CPM là một; PERT "làm Polaris xong sớm" (chưa kiểm; có tranh luận lịch sử ở Sapolsky 1972 và Engwall 2012, series chưa đọc) | Kelley & Walker (1959), tr. 171 |
 
+### Quản lý giá trị thu được (EVM)
+
+| Thuật ngữ | Gọi là | Nghĩa chốt | Không viết | Nguồn |
+|---|---|---|---|---|
+| earned value management (EVM) | quản lý giá trị thu được, gọi tắt EVM; tên bài `Quản Lý Giá Trị Thu Được (EVM)` · *Earned Value Management (EVM)* | Đặt ngân sách của phần việc đã xong (EV) cạnh kế hoạch (PV) và chi phí thực tế (AC). Cơ chế: quy tiến độ vật lý về cùng đơn vị với ngân sách để một phép so tách được làm chậm (SV) khỏi làm đắt (CV), và gộp được những loại việc khác nhau vào một bức tranh. Mọi thứ phụ thuộc vào cách tính EV. Đứng trên WBS (danh sách gói việc để gắn ngân sách) và lịch (hình dạng đường PV); không tự biết việc nào găng | EVM tự "phát hiện" vấn đề (A-12: chỉ số báo đúng, người quản lý không dùng); EVM chỉ là báo cáo cho chính phủ; "EVM làm dự án thành công hơn" như kết quả đã đo (chưa có nghiên cứu so có/không có EVM) | GAO-20-195G, mục "What EVM Is" |
+| planned value / earned value / actual cost (PV / EV / AC) | giá trị kế hoạch (PV) / giá trị thu được (EV) / chi phí thực tế (AC); tên cũ trong tài liệu Bộ Quốc phòng Mỹ và GAO: BCWS / BCWP / ACWP | PV: ngân sách của phần việc lẽ ra đã xong tới ngày báo cáo. EV: ngân sách của phần việc đã xong, theo dự toán của nó. AC: chi phí đã phát sinh và được ghi nhận cho chính phần việc ấy (GAO: *costs actually incurred and recorded*); hoá đơn chưa trả vẫn là chi phí đã phát sinh; CV đẹp có thể chỉ là chi phí chưa kịp ghi nhận | EV là "tiền đã chi" hay "giá trị kinh doanh tạo ra" (không đo doanh thu, lợi ích kinh doanh); AC là "tiền đã chi" hay "tiền đã thanh toán"; giữ tiền thanh toán làm AC thấp đi; so AC với PV rồi gọi là phân tích giá trị thu được | GAO-20-195G, glossary; mục "Analyze Performance" |
+| CV, SV, CPI, SPI | chênh lệch chi phí (CV) / chênh lệch tiến độ (SV) / chỉ số hiệu suất chi phí (CPI) / chỉ số hiệu suất tiến độ (SPI) | CV = EV − AC; CPI = EV / AC; SV = EV − PV; SPI = EV / PV. Chỉ số dưới 1 và chênh lệch âm là xấu. CPI không phụ thuộc PV: kéo PV xuống chỉ làm SV đẹp | CPI đổi khi sửa PV; SV "đo bằng thời gian" (SV đo bằng tiền; độ chậm bằng thời gian là SV(t)) | GAO-20-195G |
+| BAC / EAC / TCPI | ngân sách hoàn thành (BAC) / dự báo chi phí khi hoàn thành (EAC) / chỉ số hiệu suất cần đạt (TCPI) | BAC: tổng ngân sách của mọi phần việc đã lên kế hoạch, điểm cuối đường PV; không gồm dự phòng quản lý (đường cơ sở + dự phòng quản lý = ngân sách hợp đồng, *contract budget base*). EAC = AC + (BAC − EV) / hệ số hiệu suất; không hệ số nào luôn tốt nhất. BAC / CPI thường là kịch bản tốt nhất; CPI × SPI "thường được gọi là" dự báo xấu nhất (GAO). TCPI: ngân sách của phần việc còn lại chia cho số tiền còn được tiêu; TCPI cao hơn CPI nghĩa là dự báo giả định hiệu suất tốt lên, cần bằng chứng; quy tắc kinh nghiệm GAO dẫn: cao hơn quá 5 điểm phần trăm thì dự báo quá lạc quan | BAC là "tổng ngân sách được duyệt" khi có dự phòng; BAC / CPI là "mức sàn chắc chắn" (Henderson & Zwikael có dự án CPI tốt dần tới cuối); báo EAC một con số; nhãn "kịch bản xấu" cho CPI × SPI trong bảng (gọi theo giả định: phần còn lại chịu cả CPI lẫn SPI); TCPI > CPI "chứng minh" mục tiêu bất khả (nó cho thấy mục tiêu đòi hiệu suất tốt hơn quá khứ) | GAO-20-195G, mục "Project Future Performance" |
+| SPI quay về 1 | — | SV và SPI tính bằng tiền: tới cuối dự án PV dừng ở BAC, EV lên tới BAC, nên dự án trễ bao lâu cũng kết thúc với SV = 0, SPI = 1. Lipke: thường mất giá trị trong một phần ba cuối, hỏng hẳn khi quá ngày kết thúc kế hoạch | SPI cuối bằng 1 nghĩa là đúng hạn | Lipke (2003); GAO-20-195G |
+| earned schedule (ES), SPI(t), SV(t) | tiến độ thu được (ES) · *earned schedule* | Chiếu EV hiện tại lên đường PV để tìm thời điểm kế hoạch lẽ ra đạt giá trị ấy; ES = số kỳ đã trọn + phần nội suy tuyến tính của kỳ dở dang; SV(t) = ES − AT, SPI(t) = ES / AT (AT: thời gian thực tế đã trôi qua). Lipke đề xuất làm chỉ số năm 2003 và tự ghi phép chiếu không mới | Lipke "phát minh" phép chiếu | Lipke (2003) |
+| performance measurement baseline (PMB) | đường cơ sở đo lường, gọi gọn là đường cơ sở · *performance measurement baseline* | Kế hoạch ngân sách rải theo thời gian để đo mọi hiệu suất thực tế (đường PV). Khác "lịch gốc" của bài Gantt (một lịch). Chỉ đổi qua kiểm soát thay đổi đã được duyệt và ghi lại mọi thay đổi; lý do hợp lệ gồm cả phạm vi, lịch, dòng tiền, đơn giá, quyết định của lãnh đạo, phân bổ dự phòng | đồng nhất với lịch gốc; sửa PV cho khớp thực tế mỗi lần chậm; "chỉ đổi khi phạm vi đổi" | GAO-20-195G, mục "EVM Process", bước 13 |
+| management reserve | dự phòng quản lý · *management reserve* | Khoản người quản lý để riêng cho rủi ro chưa biết lúc khởi đầu, nằm ngoài đường cơ sở; phần được phân bổ cho một việc cụ thể thì vào đường cơ sở; chỉ dùng cho việc trong phạm vi, không dùng để bù hay thu nhỏ CV đã có; khi tiêu hết, rủi ro xảy ra thêm chỉ còn hiện ra thành CV xấu đi | "dùng dự phòng" để trả cho vượt chi đã xảy ra; gộp dự phòng quản lý với tiền được duyệt nói chung (tiền để trả vượt chi có thể nằm trong tổng được duyệt mà không phải dự phòng đã phân bổ) | GAO-20-195G, mục "EVM Process", "Analyze Performance" |
+| over-target baseline (OTB) | dựng lại đường cơ sở vượt ngân sách gốc · *over-target baseline* | Đường cơ sở được dựng lại vượt ngân sách gốc, mọi số luỹ kế khởi động lại. Petter và cộng sự loại nhóm này (khoảng 20% số hợp đồng khả dụng) và viết rằng các nghiên cứu quốc phòng trước cũng làm vậy; bản gốc Christensen & Heise (1993) không nhắc tới việc loại này và vẫn giữ các hợp đồng có "đường cơ sở không ổn định" (thêm việc mới làm phần trăm hoàn thành giảm) | "mọi nghiên cứu quốc phòng đều loại" như sự kiện đã kiểm | Petter, Ritschel & White (2015) |
+| cách tính EV | quy tắc cố định 0/100, 50/50, 25/75 / mốc có trọng số / đo vật lý / phần trăm hoàn thành / việc tính theo thời gian (*level of effort*) | 0/100: gói nằm gọn trong một kỳ báo cáo; quy tắc cố định khác: trong hai kỳ; mốc có trọng số: gói dài, mỗi kỳ ít nhất một mốc; phần trăm hoàn thành phải dựa trên thứ định lượng được; việc tính theo thời gian dành cho việc không có sản phẩm hay sản phẩm bàn giao xác định (ví dụ của GAO: quản lý chương trình), luôn thu được bằng kế hoạch, trên khoảng 15% ngân sách thì xem lại (ngưỡng tham khảo, GAO nói rõ không cứng) | gọi ngưỡng 15% là luật cứng; "dưới 15% nên chấp nhận được" (dưới ngưỡng không chứng minh cách đo hợp; lý do là việc không có sản phẩm đếm được); phần trăm tự báo là "khách quan"; mốc nghiệm thu "không thể" bị đẩy lên (vẫn hỏng khi hạ tiêu chí hay nghiệm thu cho có) | GAO-20-195G, mục "EVM Process", bảng 21 |
+| CPI stability rule | quy tắc CPI ổn định (từ mốc 20%) | Ba định nghĩa, luôn nói rõ đang dùng định nghĩa nào: (1) khoảng biến thiên: max − min của CPI luỹ kế từ mốc X tới cuối < 0,2 (Payne 1990 và Christensen & Payne 1991, theo Christensen & Heise; Christensen & Heise 1993); (2) khoảng tuyệt đối: CPI cuối lệch ≤ 0,10 so với CPI ở mốc X, và ở mọi mốc sau (Petter và cộng sự kiểm cứ 5% một lần tới mốc 85%; Henderson & Zwikael lấy mốc mà mọi quan sát sau đều trong giới hạn 0,10) (Christensen & Templin 2002; Henderson & Zwikael 2008); (3) khoảng tương đối: lệch ≤ 10% của CPI ở mốc X (GAO). Christensen & Heise tự giải thích độ ổn định đến phần lớn từ tính luỹ kế của chỉ số; họ tự nhận đã khái quát kết quả cho các quân chủng, chương trình, loại hợp đồng quốc phòng (Petter và cộng sự đọc khác, xem mục 7); không nói gì về dự án ngoài quốc phòng | "CPI ổn định từ 20%" như sự thật chung; trộn ba định nghĩa; tả định nghĩa khoảng chỉ bằng phép so CPI ở mốc X với CPI cuối (thiếu điều kiện mọi mốc sau; 56% của Petter và cộng sự đo theo điều kiện chặt ấy); gọi mẫu 2015 là "dữ liệu quốc phòng tốt nhất hiện có" (viết "trong mẫu 209 hợp đồng của nghiên cứu năm 2015"); "Christensen & Heise chưa từng khái quát" (bản gốc tự nhận khái quát trong quốc phòng); độ ổn định là tính chất của dự án mà bỏ qua tính luỹ kế | Petter, Ritschel & White (2015) |
+
+### Khung mục tiêu SMART
+
+| Thuật ngữ | Gọi là | Nghĩa chốt | Không viết | Nguồn |
+|---|---|---|---|---|
+| SMART | khung mục tiêu SMART; tên bài `Khung Mục Tiêu SMART` · *SMART framework* | Danh sách kiểm năm tiêu chí cho **một** câu mục tiêu: kiểm câu ấy đã rõ và làm nổi chưa (chữ R của Doran, chữ A khả thi của bản thông dụng là đánh giá nội dung, không chỉ cách viết), không hỏi đủ khó chưa hay đo đúng chưa. Cơ chế: ép một ý định mơ hồ thành một câu người ngoài chấm được là đạt hay trượt (việc gì, đo bằng gì, ai làm, tới bao giờ). Không chọn mục tiêu, không nối mục tiêu giữa các cấp (OKR), không theo dõi liên tục (KPI). Bài SMART kiểm mọi câu mục tiêu bằng năm chữ của Doran và nói ra điều đó ngay ở đoạn mở | SMART "chỉ kiểm cách viết"; SMART là "lý thuyết đặt mục tiêu" hay "rút ra từ nghiên cứu của Locke và Latham"; SMART "không sinh ra từ nghiên cứu" (điều đã kiểm chỉ là bài của Doran không dẫn nghiên cứu và không trình bày phép thử nào; nguồn gốc tư tưởng của Doran chưa kiểm); "mục tiêu SMART hiệu quả hơn cố hết sức" như kết quả đã đo trên chính SMART; trộn câu hỏi của hai bản (ví dụ "ai chịu trách nhiệm" đặt ngay sau bản thông dụng) | Doran (1981) |
+| năm chữ gốc của Doran | cụ thể / đo được / giao được việc / thực tế / gắn với thời gian · *Specific / Measurable / Assignable / Realistic / Time-related* | S: nhắm một vùng cụ thể cần cải thiện; M: định lượng hoặc ít nhất gợi ra chỉ báo tiến độ; A: nói rõ ai làm; R: kết quả đạt được một cách thực tế với nguồn lực hiện có; T: nói rõ khi nào đạt. Doran: không phải mục tiêu nào cũng cần đủ năm tiêu chí; không đòi mọi mục tiêu ở mọi cấp phải định lượng | chữ A của Doran là "khả thi" (*achievable*); bản gốc có chữ "phù hợp" (*relevant*) | Doran (1981) |
+| bản thông dụng | cụ thể / đo được / khả thi / phù hợp / có thời hạn · *Specific / Measurable / Attainable (Achievable) / Relevant / Time-bound* | Một bản hay gặp; ở cuộc rà 40 trang web của Rubin, là bản phổ biến nhất (khoảng 10 trang). Chữ A và chữ R có nhiều cách đọc | gọi là bản "chuẩn" hay "chính thức"; "bản phổ biến nhất hiện nay" (số liệu năm 2002, rà không hệ thống) | Rubin (2002) |
+| trôi nghĩa của từ viết tắt | trôi nghĩa · *acronym drift* | Từ của Rubin: năm chữ cái giữ nguyên, nghĩa từng chữ tản ra qua các lần truyền lại | — | Rubin (2002) |
+| hệ số ảnh hưởng | hệ số ảnh hưởng (*d*) · *effect size (d)* | Khoảng cách giữa hai nhóm tính theo độ lệch chuẩn; giải thích ở lần đầu xuất hiện trong bài | — | Bài SMART |
+| lời dặn cố hết sức | lời dặn cố hết sức, nhóm cố hết sức · *do-your-best goal* | Mục tiêu không có điểm tham chiếu bên ngoài, mỗi người tự định nghĩa | "mục tiêu chung chung" như tên thuật ngữ | Locke & Latham (2002) |
+| mục tiêu kết quả / mục tiêu học | mục tiêu kết quả / mục tiêu học · *performance (outcome) goal / learning goal* | Mục tiêu kết quả: mức thành tích cần đạt. Mục tiêu học: số cách làm hay chiến lược cần tìm ra. Với việc mới, phức tạp, mục tiêu kết quả có thể cản việc học; mục tiêu học cụ thể cho thành tích cao hơn cố hết sức | mục tiêu học "luôn tốt hơn"; ví dụ mục tiêu học viết bằng hoạt động ("thử ba cách") thay vì thứ tìm ra ("tìm ra ba cách, mỗi cách chạy với ai, bằng chứng gì") | Locke & Latham (2002), dẫn Kanfer & Ackerman (1989), Winters & Latham (1996) |
+| mục tiêu gần | mục tiêu gần, từng chặng · *proximal goal* | Mục tiêu cho chặng ngắn, đặt thêm bên cạnh mục tiêu xa | — | Locke & Latham (2002), dẫn Latham & Seijts (1999) |
+| mục tiêu mở | mục tiêu mở · *open goal* | Lời dặn kiểu "xem bạn đi được bao xa"; khái niệm của nhóm Swann | đồng nhất với cố hết sức (hai điều kiện riêng trong thí nghiệm) | Swann và cộng sự (2020) |
+| chỉ số chặn | chỉ số chặn · *guardrail metric* | Chỉ số viết ngay dưới mục tiêu để bắt chỗ đạt con số mà hỏng kết quả (bài SMART: tỷ lệ nghỉ trước ngày 60, tỷ lệ gia hạn của hội viên cũ). Thuật ngữ của bài, chưa có nguồn chuẩn | trình bày như thuật ngữ của Doran hay của Locke và Latham | Bài SMART |
+
 ---
 
 ## 2. Nguyên tắc diễn đạt chung
@@ -208,7 +239,12 @@ Những khẳng định về lịch sử và nguồn gốc mà các bài đã ch
 | Lịch sử WBS | theo Haugan: cụm từ đã thông dụng từ khoảng năm 1961; tài liệu hướng dẫn thiết kế hệ thống PERT/COST do Bộ Quốc phòng Mỹ soạn cùng NASA và giới công nghiệp, tháng 6/1962, mô tả WBS khá đầy đủ; tháng 10/1962 NASA nhấn mạnh dựng cây từ trên xuống; chỉ thị 5010.20 (31/7/1968) và MIL-STD-881 (1/11/1968) chuẩn hoá công cụ | "Bộ Quốc phòng và NASA đặt ra WBS năm 1962"; "định nghĩa chính thức đầu tiên năm 1962" (cách nói của Wikipedia; Haugan không nói vậy) | Haugan (2008), chương 1 |
 | Lịch sử CPM | cuối năm 1956, nhóm kiểm soát kỹ thuật (Integrated Engineering Control Group) của DuPont khảo sát việc dùng máy tính lập kế hoạch công trình; Remington Rand UNIVAC cử Kelley, Walker đại diện DuPont; Dự án A (khu nhà máy hoá chất 10 triệu đô la) bắt đầu cuối năm 1957, thử nghiệm Louisville xong tháng 3/1959; công bố ở *Proceedings of the Eastern Joint Computer Conference* 1959 | "DuPont phát minh CPM năm 1957" như mốc chốt; Louisville "giảm từ 125 xuống 78 giờ" (93 giờ là đã đạt, 78 giờ là dự kiến) | Kelley & Walker (1959) |
 | Phạm vi bằng chứng bài CPM | trong phạm vi tìm kiếm của bài, chưa tìm thấy nghiên cứu so kết quả dự án có và không có phân tích đường găng; bằng chứng gồm báo cáo của chính người tạo ra công cụ (không đối chứng), một nghiên cứu trên lịch xây dựng thật về đường lan của chậm trễ, một khảo sát cảm nhận bốn nước, và đánh giá của kiểm toán | CPM "làm dự án nhanh hơn" như kết quả đã đo | Chính bài CPM |
+| Lịch sử EVM | trong quy định quản lý tài chính năm 1967, Bộ Quốc phòng Mỹ ban hành 35 tiêu chí C/SCSC, lõi là khái niệm giá trị thu được, áp cho phần lớn các chương trình mua sắm vũ khí lớn; tháng 8/1996 các hiệp hội công nghiệp ban hành bộ hướng dẫn hệ thống EVM 32 tiêu chí, Bộ Quốc phòng công nhận tháng 12/1996 (GAO 1997); năm 1998 ANSI và EIA cùng ban hành tiêu chuẩn quốc gia, bản gần nhất EIA-748-D sửa tháng 1/2019; OMB buộc dùng cho mọi dự án đầu tư lớn từ năm 2006 (GAO 2020) | "một người phát minh EVM"; "Bộ Quốc phòng phát minh EVM năm 1967"; tiêu chuẩn 1998 "dựng từ bộ 1996" (GAO 2020 không nói vậy) | GAO/NSIAD-97-108; GAO-20-195G |
+| Chương trình A-12 | A-12 Avenger II, máy bay tấn công tàng hình của Hải quân Mỹ; hợp đồng bị chấm dứt vì lỗi nhà thầu ngày 7/1/1991, khi chi phí cuối dự báo vượt giá hợp đồng 1 tỷ đô la và trễ ít nhất một năm; ở mốc 48% khối lượng CPI 0,76, TCPI theo ngân sách 1,22 (nguồn viết "gần gấp đôi", tỷ số thật khoảng 1,6); dự báo độc lập của chính phủ cao hơn của nhà thầu tới 1 tỷ đô la; Beach phê phán dùng EAC theo CPI luỹ kế làm trần thay vì sàn; sau A-12, OUSD(A) buộc giải trình mọi EAC thấp hơn mức tính theo CPI luỹ kế (Christensen & Heise 1993); điều tra hành chính năm 1990 cho Bộ trưởng Hải quân (Chester Paul Beach Jr.): báo cáo hiệu suất chi phí của nhà thầu đã cho thấy rõ vấn đề; một lần rà soát giám sát dự báo vượt trần khoảng 1 tỷ đô la; nhà thầu và người quản lý chương trình dựa vào kế hoạch phục hồi quá lạc quan, thiếu khách quan, gạt đi các nhà phân tích tài chính (GAO 1997, tóm tắt). Theo báo cáo Beach (28/11/1990, đọc toàn văn bản chép lại): hợp đồng giá cố định có thưởng ký 13/1/1988 với liên danh McDonnell Douglas và General Dynamics, chi phí mục tiêu 3,981 tỷ, giá trần 4,777 tỷ; nhà thầu chịu sức ép giữ dòng tiền vì tiền tạm ứng theo tiến độ bị cắt khi có ước tính vượt chi; chuyên viên phân tích chi phí của NAVAIR chỉ ghi dự báo theo CPI luỹ kế (con số thấp nhất) theo thông lệ văn phòng, chú thích tháng 7/1989 rằng "CPI có trọng số" cho vượt trần khoảng 200 triệu; người quản lý chương trình dùng con số ấy làm trần và hạ thêm trong DAES tháng 11/1989 và 2/1990; phó giám đốc quản lý chi phí OUSD(A) ngày 27/3/1990 kết luận vượt trần khoảng 1 tỷ, báo cho người quản lý ngày 29/3, không có trong slide ngày 24/4; dự báo cân bằng CPI với SPI cao hơn nhưng sát kết cục nhất. Câu "hơn 400 chương trình từ năm 1977", CPI luỹ kế "không có ngoại lệ" nào cải thiện đáng kể trong khoảng 15% tới 85% (bản Christensen & Heise ghi "15% and 18%", lỗi gõ) | EVM "thất bại" ở A-12; giá trị hợp đồng (chưa kiểm); tin số liệu sớm thì "cứu được" chương trình; "gần gấp đôi" cho TCPI 1,22 so với CPI 0,76; người quản lý chương trình "muốn giữ chương trình" như động cơ (Beach không nói vậy; GAO 1997 tóm tắt là thiếu khách quan) | Beach (1990); GAO/NSIAD-97-108; Christensen & Heise (1993) |
+| Phạm vi bằng chứng bài EVM | trong phạm vi tìm kiếm của bài, chưa tìm thấy nghiên cứu so kết cục dự án có và không có EVM; GAO viết lợi ích khó đo thành con số và chỉ dẫn ý kiến chuyên gia rằng lợi tức đầu tư hợp lý. Bằng chứng của bài là về độ ổn định của chỉ số (giá trị cảnh báo sớm): hợp đồng quốc phòng Mỹ chưa dựng lại đường cơ sở, và 26 dự án ngoài quốc phòng | EVM "làm giảm vượt chi" như kết quả đã đo; khái quát kết quả quốc phòng ra mọi dự án | Chính bài EVM |
 | Phạm vi bằng chứng bài WBS | trong phạm vi tìm kiếm của bài, chưa tìm thấy nghiên cứu so kết quả dự án có và không có WBS; bằng chứng gồm một khảo sát tự báo cáo, các thí nghiệm về phân rã khi ước lượng, và đánh giá của kiểm toán | WBS "làm giảm vượt chi" như kết quả đã đo | Chính bài WBS |
+| Nguồn gốc SMART | chữ SMART cho mục tiêu xuất hiện trong bài hai trang của George T. Doran, *Management Review* số tháng 11/1981, tr. 35-36; Doran khi đó là chủ tịch Management Assistance Programs (Coeur d'Alene, Idaho), trước là giám đốc kế hoạch của Washington Water Power Company; bài không dẫn nghiên cứu nào và không trình bày phép thử nào cho năm tiêu chí (một lời khuyên thực hành); viết "trong phạm vi tìm kiếm của bài, văn bản sớm nhất" | "Doran phát minh SMART" như sự kiện đã chốt; SMART "không sinh ra từ nghiên cứu" (chưa kiểm được nguồn gốc tư tưởng); nối SMART với Drucker hay quản trị theo mục tiêu (chưa kiểm); số tập, số kỳ của *Management Review* (chưa kiểm từ bản quét) | Doran (1981) |
+| Phạm vi bằng chứng bài SMART | trong phạm vi tìm kiếm của bài, chưa tìm thấy nghiên cứu so kết quả của tổ chức có và không có SMART; các thí nghiệm gọi đích danh SMART tập trung ở vận động thể chất (bài đi bộ sáu phút, mẫu dưới 80 người) cộng một thử nghiệm có SMART trong gói can thiệp; bằng chứng mạnh hơn là của lý thuyết đặt mục tiêu (mục tiêu cụ thể **và khó**), không phải của SMART | SMART "làm tăng thành tích" như kết quả đã đo; gán hệ số ảnh hưởng của Locke và Latham cho SMART | Chính bài SMART |
 
 ---
 
@@ -360,6 +396,31 @@ Mỗi nguồn được mô tả cùng một cách ở mọi bài. Cột **Không
 | Vazquez, Pozzana, Kalogridis & Ellinas (2023), *Scientific Reports* 13:509 | 323 lịch Primavera P6 của 77 công trình xây dựng (hơn 10 tỷ đô la, 100 tới 16.000 việc) cộng một mô hình mạng; phần việc trên đường găng nhỏ dần theo kích thước lịch (c/n ~ n^-0,79, "xấp xỉ"); mức lan chậm trễ = tỷ lệ việc chậm quá khoảng dư của chính nó, dưới 1% hoặc tới 15% tuỳ khả năng truyền chậm trễ; không liên hệ có ý nghĩa với chỉ báo dựng từ kích thước đường găng (Pearson −0,1, mức ý nghĩa 0,7); kết luận của nhóm tác giả: vượt một mức phức tạp, vượt hạn chủ yếu đến từ việc ngoài đường găng. Chỉ xây dựng, dữ liệu không công khai | "đường găng vô dụng"; tương quan với "kích thước đường găng" trơn (chỉ báo là p × c); khái quát ra ngoài xây dựng |
 | Van Slyke (1963), *Operations Research* 11(5) | mô phỏng Monte Carlo cho mạng PERT, đề xuất chỉ số độ găng; đọc qua tóm tắt | số liệu cụ thể của bài |
 
+### Quản lý giá trị thu được (EVM)
+
+| Nguồn | Gọi là | Không viết |
+|---|---|---|
+| GAO-20-195G (2020), chương 17-20, bản trực tuyến guides.gaoinnovations.gov/cost-guide | hướng dẫn của kiểm toán; nguồn cho định nghĩa, ví dụ 4 dặm đường ray, cách tính EV, công thức dự báo, TCPI, chi phí dựng hệ thống. Vẫn viết câu "CPI không đổi quá 10% sau mốc 20%" (định nghĩa khoảng tương đối) | dẫn như bằng chứng hiệu quả; dẫn câu 20% của GAO như kết quả đã kiểm |
+| GAO/NSIAD-97-108 (1997) | báo cáo của GAO về thay đổi trong quy trình EVM của Bộ Quốc phòng; nguồn lịch sử 1967/1996, tóm tắt ca A-12 (người quản lý hai phía thiếu khách quan) và lý do số liệu phải ra ngoài văn phòng chương trình | — |
+| Beach (1990), *A-12 Administrative Inquiry*, ghi nhớ gửi Bộ trưởng Hải quân, 28/11/1990 | đọc toàn văn qua bản chép lại do Christensen soạn cho bài giảng tình huống (ghi chú của bản ấy: không quét, có thể còn lỗi gõ), bản lưu Internet Archive năm 2010 của suu.edu; nguồn chi tiết A-12 và câu về 400 chương trình | trình bày như bản gốc của Hải quân (là bản chép lại) |
+| Christensen & Heise (1993), *National Contract Management Journal* 25, 7-15 | đọc toàn văn qua bản lưu Internet Archive của trang suu.edu. 155 hợp đồng của 44 chương trình trong DAES, 6/1971 tới 2/1991, mẫu chọn theo phán đoán; định nghĩa khoảng biến thiên < 0,2; ổn định ở mốc 20%: 134/155 (86%), mốc 50%: 153/155; CPI luỹ kế thường đi xuống (bình phương nhỏ nhất); CPI ba tháng ổn định từ mốc 50% chỉ 6%; độ ổn định "phần lớn vì là chỉ số luỹ kế"; gọi EAC theo CPI luỹ kế là "mức sàn hợp lý"; tự nhận khái quát cho quân chủng, chương trình, loại hợp đồng quốc phòng khác; nguồn chi tiết A-12 | "loại các hợp đồng dựng lại đường cơ sở" (bản gốc không nói vậy); "chưa từng khái quát"; dẫn tỷ lệ CPI sáu tháng (văn bản và bảng lệch nhau: 19% và 29%) |
+| Henderson & Zwikael (2008), *CrossTalk* 21(4), 7-13 | 26 dự án kiểm CPI (12 công nghệ cao Israel, 10 xây dựng Anh, 4 công nghệ thông tin Úc), 37 dự án kiểm SPI(t), chỉ nhân công trực tiếp; định nghĩa ±0,10; phép kiểm dấu, mức 0,05; 3/26 ổn định từ mốc 20%; ổn định sớm không đi cùng kết cục tốt hơn. Bị Abba (2008) phản bác (qua Petter và cộng sự). Bài đọc bản của tác giả | "45 dự án" như cỡ mẫu kiểm CPI (45 là số dự án thô trước khi loại, con số Petter và cộng sự dùng); kết luận về quốc phòng chỉ từ mẫu này (phần quốc phòng dựa vào nhìn biểu đồ của báo cáo Popp) |
+| Petter, Ritschel & White (2015), *Journal of Public Procurement* 15(3), 341-364 | Viết rằng Christensen & Heise không gọi kết quả là quy tắc và không khái quát ra ngoài dữ liệu (chọi với bản gốc, xem mục 7). 209 hợp đồng ACAT I 1987-2012, loại hợp đồng dựng lại đường cơ sở vượt ngân sách (khoảng 20% số khả dụng); CPI ổn định từ mốc 20%: 83% (khoảng biến thiên), 56% (±0,10), 55% (±10%); 81% ở mốc 55% theo ±0,10; SPI(t) theo định nghĩa khoảng đạt từ 80% ở mốc 75%; kết quả chỉ áp cho ACAT I | khái quát ra ngoài quốc phòng; "44% hợp đồng có CPI cuối lệch hơn 0,10" (định nghĩa đòi ổn định ở mọi mốc sau, nên viết "đạt mức ổn định từ mốc 20%") |
+| Lipke (2003), *The Measurable News*, tháng 3, tr. 10-15 | bài đề xuất tiến độ thu được, của bộ phận phần mềm Trung tâm Hậu cần Không quân Oklahoma City; ví dụ dự án dự kiến xong 1/2002, xong 4/2002 | trình bày số kỳ, số trang như đã kiểm từ bản in (lấy từ danh mục của Henderson & Zwikael) |
+
+### Khung mục tiêu SMART
+
+| Nguồn | Gọi là | Không viết |
+|---|---|---|
+| Doran (1981), *Management Review*, tháng 11/1981, tr. 35-36 | bài báo hai trang, đọc qua bản quét trên decisionskills.com; nguồn cho năm chữ gốc, câu mẫu về hệ thống tồn kho (không ghi ai làm), cảnh báo về ép định lượng, mục tiêu đi cùng kế hoạch hành động | trình bày như một nghiên cứu |
+| Locke & Latham (2002), *American Psychologist* 57(9), 705-717 | tổng kết lý thuyết đặt mục tiêu của chính hai tác giả; hơn 100 nhiệm vụ, hơn 40.000 người, ít nhất tám nước; cụ thể và khó so với cố hết sức *d* 0,42-0,80; độ khó *d* 0,52-0,82; nhiệm vụ phức tạp nhất 0,41 so với 0,77 (Wood, Mento & Locke 1987); tính cụ thể tự nó không nhất thiết cho thành tích cao vì mục tiêu cụ thể có thể dễ, nó chủ yếu thu hẹp độ phân tán; phần thân bài không nhắc tới SMART; các nghiên cứu về việc phức tạp dẫn lại qua bài này | kiểm định độc lập (là tổng kết của chính người dựng lý thuyết); gán các hệ số cho SMART |
+| Rubin (2002), *The Industrial-Organizational Psychologist* 39(4), 26-27 | bài ngắn trên bản tin SIOP; rà 40 trang web đầu tiên cho "SMART goals", tự nhận không hệ thống; bản phổ biến nhất ở khoảng 10 trang; chữ A có chín cách đọc ngoài *attainable*; trong mọi cách đọc ông gặp, chỉ "cụ thể kèm độ vươn" (*specific with a stretch*) chạm tới độ khó | "khảo sát", "nghiên cứu" như có phương pháp |
+| Takahashi và cộng sự (2019), *SAGE Open Medicine* 7 | phân tích thứ cấp một thử nghiệm ngẫu nhiên 130 bệnh nhân; SMART nằm trong gói (cùng huấn luyện hành vi, máy đếm bước); đọc qua tóm tắt | dùng như phép thử riêng của SMART |
+| Swann và cộng sự (2023), *Health Psychology Review* 17(2), 211-226 | tổng quan tường thuật và phê bình, trong vận động thể chất; đọc qua tóm tắt; tám nhận định phê phán, liệt kê đủ cả tám khi dẫn: không dựa trên lý thuyết, không nhất quán với bằng chứng, không xét loại mục tiêu, áp dụng không nhất quán, thiếu hướng dẫn chi tiết, tiêu chí trùng lặp, không dùng như ý định ban đầu, nguy cơ gây hại | "phân tích gộp", "tổng quan hệ thống"; khái quát ra ngoài vận động thể chất |
+| Swann và cộng sự (2020), *Psychology of Sport and Exercise* 47, 101475 | thí nghiệm 78 người, phân ngẫu nhiên bốn nhóm, bài đi bộ sáu phút; đọc qua tóm tắt và phần mô tả lại của Hawkins và cộng sự | "SMART đi xa hơn cố hết sức" hay "không khác" (tóm tắt không báo so sánh giữa ba nhóm có mục tiêu) |
+| Hawkins và cộng sự (2020), *Psychology of Sport and Exercise* 48, 101661 | 36 người (18 vận động đủ, 18 chưa đủ), mỗi người qua cả bốn điều kiện; mục tiêu SMART là lần đo nền cộng 16,67%, rồi cộng 8,33%; tác dụng đổi chiều theo mức vận động (p < 0,001); đọc bản thảo trên figshare | — |
+| Schweitzer, Ordóñez & Douma (2004), *Academy of Management Journal* 47(3), 422-432 | thí nghiệm 154 sinh viên ghép từ; mục tiêu chín từ "khó nhưng thực tế" (nguyên văn *difficult, but realistic*); nhóm có thưởng nhận 2 đô la mỗi vòng đạt; khai sai ít nhất một lần 10,5% / 22,7% / 30,2% số người; mỗi nhóm có mục tiêu khác nhóm cố hết sức có ý nghĩa (kiểm một phía, *p* = 0,005 và 0,048), có thưởng so với không thưởng thì không (*p* = 0,20 với tỷ lệ người, 0,17 với điểm khai sai); ở vòng hụt đúng một từ 14,81% / 34,48% / 48,48% **số lượt**; năng suất khác biệt không có ý nghĩa thống kê; không gọi tên SMART; đọc toàn văn | "gần một nửa số người" (là số lượt); dùng làm ví dụ về SMART; "thưởng làm tăng khai sai" như kết quả đã đo; "đừng gắn thưởng lớn vào ngưỡng" như điều thí nghiệm chứng minh (là suy luận quản trị; thí nghiệm không so mức thưởng) |
+
 ---
 
 ## 5. Bảng dịch Việt - Anh
@@ -375,11 +436,19 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | báo cáo quản trị | *management report* |
 | biên bản nhận hàng | *delivery note* |
 | bản hiện trạng / bản mục tiêu (trong sơ đồ chuỗi giá trị) | *current-state map* / *future-state map* |
+| chênh lệch chi phí / chênh lệch tiến độ | *cost variance* / *schedule variance* |
+| chỉ số hiệu suất chi phí / tiến độ / cần đạt | *cost performance index* / *schedule performance index* / *to-complete performance index* |
+| chi phí thực tế | *actual cost* |
+| chi phí đã phát sinh và được ghi nhận (định nghĩa AC) | *cost incurred and recorded* |
+| kiểm soát thay đổi đã được duyệt / phân bổ từ dự phòng (bài EVM) | *approved change control* / *allocated from the reserve* |
+| quy tắc kinh nghiệm (TCPI cao hơn CPI quá 5 điểm phần trăm) | *rule of thumb* (*more than 5 percentage points above CPI*) |
+| dự báo xấu nhất (CPI × SPI, theo GAO) | *often referred to as the worst-case forecast* |
 | cấp cứu, khoa cấp cứu | *A&E* (bài VSM, ca Beirut: *emergency department*, theo tên khoa trong nguồn) |
 | chăn mền | *duvets and blankets* |
 | chuyến giao | *delivery run* |
 | chụp mô phỏng | *simulation* |
 | chuỗi nhà thuốc / dược sĩ bán hàng / phần mềm bán hàng | *chain of pharmacies* / *counter pharmacists* / *point-of-sale software* |
+| chỉ số chặn | *guardrail metric* |
 | chuyển tay | *handoff* |
 | công việc chuẩn | *standardised work* |
 | Cục Điều tra Dân số Mỹ | *US Census Bureau* |
@@ -388,6 +457,12 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | cộng khớp từng đồng | *add up to the last dong* |
 | Cục Quân nhu Lục quân Mỹ | *US Army Ordnance Department* |
 | danh sách kiểm | *checklist* |
+| câu lạc bộ thể hình / buổi hướng dẫn riêng / quẹt thẻ (bài SMART) | *gym* / *one-to-one induction session* / *check-in* |
+| trưởng nhóm huấn luyện viên / kế toán xuất số (bài SMART) | *head trainer* / *exported by accounts* |
+| chuỗi điện máy / buổi bán thử / ba tỉnh miền Tây (bài SMART) | *electronics retail chain* / *trial selling shift* / *three Mekong Delta provinces* |
+| khai sai / vòng hụt sát nút / người tự chọn (bài SMART) | *overstate*, *overstatement* / *near miss* / *self-selection* |
+| kịch bản tham chiếu / quyết định quản lý / suy luận quản trị | *reference scenario* / *management decision* / *management inference* |
+| rõ và làm nổi (phụ đề bài SMART) | *clear and doable* (không dùng *achievable*, để khỏi lẫn với chữ A của bản thông dụng) |
 | dạng hỏng / tác động | *failure mode* / *effect* |
 | đặt cọc | *pays the deposit* |
 | đặt ống thành công ngay lần đầu | *first-attempt intubation success* |
@@ -401,6 +476,11 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | dòng thông tin / dòng vật liệu | *information flow* / *material flow* |
 | đường thời gian (đáy sơ đồ chuỗi giá trị) | *timeline* |
 | duyệt chi | *spending approval* |
+| dự báo chi phí khi hoàn thành | *estimate at completion* |
+| dự phòng quản lý | *management reserve* |
+| đường cơ sở (đo lường) | *(performance measurement) baseline* |
+| dựng lại đường cơ sở vượt ngân sách gốc | *over-target baseline* |
+| giao được việc (chữ A của Doran) | *assignable* |
 | giá trị tồn kho tạm tính | *provisional stock value* |
 | giải ngân / thẩm định / định giá tài sản | *disbursement* / *credit appraisal* / *property valuation* |
 | gói việc | *work package* |
@@ -409,6 +489,8 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | kiểm soát thay đổi | *change control* |
 | giặt sấy thường / giặt hấp | *standard wash-and-dry* / *steam-pressing* |
 | giờ làm việc | *working hours* |
+| giá trị kế hoạch / giá trị thu được | *planned value* / *earned value* |
+| gói việc tính theo thời gian | *level-of-effort work package* |
 | hạn hợp đồng (thuê) | *lease deadline* |
 | hạn cam kết / ngày xong sớm nhất | *committed deadline* / *earliest finish* |
 | họ sản phẩm | *product family* |
@@ -426,8 +508,11 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | kỷ yếu (bài CPM) / ban liên lạc lớp | *yearbook* / *class committee* |
 | lỗi (không) ảnh hưởng tới vô khuẩn | *defects that do (not) affect sterility* |
 | lưu đồ chia làn | *swimlane flowchart* |
+| lời dặn cố hết sức | *do-your-best goal* |
+| mục tiêu kết quả / mục tiêu học / mục tiêu gần / mục tiêu mở | *performance goal* / *learning goal* / *proximal goal* / *open goal* |
 | mức tuân thủ / chất lượng thao tác / kết cục | *compliance* / *the quality of the task* / *outcome* |
 | mức ưu tiên hành động | *Action Priority* |
+| ngân sách hoàn thành | *budget at completion* |
 | người chăm sóc | *caregivers* |
 | nhân viên giao nhận | *rider* |
 | ô quyết định | *decision diamond* |
@@ -435,6 +520,7 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | phản ánh (của khách) | *complaints* |
 | phe bênh | *defenders* |
 | phần tử chung | *common elements* |
+| pallet / kho mới / phần mềm quản lý kho (bài EVM) | *pallet* / *new warehouse* / *warehouse management system* |
 | phí bảo vệ thang máy / thang hàng | *lift protection fee* / *service lift* |
 | phiếu hoàn tiền | *return form* |
 | phiếu nhập kho | *goods-received notes* |
@@ -442,11 +528,15 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | phó hiệu trưởng | *vice-rector* |
 | phòng đào tạo (cấp bảng điểm) | *university records office* |
 | phòng kế hoạch | *planning department* |
+| quản lý giá trị thu được | *earned value management* |
+| quy tắc CPI ổn định | *CPI stability rule* |
 | quỹ NHS | *NHS trust* |
 | sổ sự cố | *incident records*, *incident log* |
 | tâm lý "đánh dấu cho xong" | *"check-the-box" mentality* |
 | thời lượng bình thường / rút ngắn tối đa | *normal duration* / *crash duration* |
 | tài khoản học | *learning account* |
+| tiến độ thu được | *earned schedule* |
+| tính năng / nghiệm thu (bài EVM, ví dụ phần mềm) | *feature* / *acceptance* |
 | tiền (đồng) | *million dong* |
 | tiêu sợi huyết | *thrombolysis* |
 | thời gian từ cửa tới kim | *door-to-needle time* |
@@ -459,6 +549,7 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | xưởng may | *garment workshop* |
 | tiệm giặt sấy giao nhận tận nhà | *laundry with collection and home delivery* |
 | tiếng nói của khách hàng | *voice of the customer* |
+| trôi nghĩa của từ viết tắt | *acronym drift* |
 | trung vị / trung bình cộng | *median* / *mean* |
 | vi phạm cần thiết | *"necessary violations"* |
 | xạ trị chùm ngoài | *external beam radiotherapy* |
@@ -494,7 +585,9 @@ Cách gọi đã chốt khi dịch. Bản dịch sau dùng lại, không tự ch
 | `Sơ Đồ SIPOC` | `SIPOC Diagram` | `What Is a SIPOC Diagram` |
 | `Sơ Đồ Chuỗi Giá Trị` | `Value Stream Mapping` | `What Is a Value Stream Map`; section 3 là `Some Research on Value Stream Mapping` |
 | `Phương Pháp Đường Găng (CPM)` | `Critical Path Method (CPM)` | `What Is the Critical Path Method`; section 3 là `Some Research on the Critical Path Method` |
+| `Quản Lý Giá Trị Thu Được (EVM)` | `Earned Value Management (EVM)` | `What Is Earned Value Management`; sub-section 1 bản VN là `Quản Lý Giá Trị Thu Được Là Gì`; section 3 là `Some Research on Earned Value Management` |
 | `Cấu Trúc Phân Rã Công Việc (WBS)` | `Work Breakdown Structure (WBS)` | `What Is a Work Breakdown Structure`; sub-section 1 bản VN là `Cấu Trúc Phân Rã Công Việc Là Gì`; section 3 là `Some Research on Work Breakdown Structures` |
+| `Khung Mục Tiêu SMART` | `SMART Framework` | `What Is the SMART Framework`; sub-section 1 bản VN là `Khung Mục Tiêu SMART Là Gì`; section 3 là `Some Research on the SMART Framework` |
 | `Giải Quyết Vấn Đề A3` | `A3 Problem Solving` | — |
 
 Tên bài bản EN khớp tên trong mục lục trang tổng quan EN.
@@ -530,4 +623,6 @@ Những khái niệm các nguồn hoặc các bài đang nói khác nhau mà ch�
 - **Vai trò của Henry Gantt.** Weaver (2012) nói Gantt không dính dáng gì tới biểu đồ thanh; Geraldi & Lechter (2012) dựng một mạch liên tục hơn từ công việc điều phối quân nhu năm 1914. Bài nào chạm tới lịch sử công cụ này phải nêu cả hai, không chọn bên.
 - **Ma trận rủi ro.** Bài FMEA phân biệt mình với ma trận rủi ro bằng câu "công cụ chấm những rủi ro đã được gọi tên theo hai trục khả năng và hậu quả", chưa có nguồn. Khi viết bài Ma Trận Rủi Ro, chốt định nghĩa có nguồn rồi sửa câu ở bài FMEA cho khớp.
 - **"Chuỗi giá trị" hai nghĩa.** Bài Sơ Đồ Chuỗi Giá Trị dùng "chuỗi giá trị" cho *value stream* (đường đi của một họ sản phẩm qua các khâu); cụm này trùng chữ với *value chain* của Porter. Khi bài Năm Lực Lượng Cạnh Tranh Của Porter hay một bài chiến lược khác cần nhắc tới *value chain*, chốt cách gọi cho nó (có nguồn) và kiểm hai bài không gọi lẫn.
+- **Christensen & Heise có khái quát kết quả hay không.** Bản gốc (1993) tự viết đã xác lập tính khái quát cho các quân chủng, chương trình và loại hợp đồng quốc phòng khác; Petter, Ritschel & White (2015) viết rằng hai tác giả không khái quát ra ngoài dữ liệu. Bài EVM nêu cả hai và chỉ khẳng định phần hai bên cùng nhận: bản 1993 không nói gì về dự án ngoài quốc phòng. Bài sau dẫn lại thì giữ cách nêu này.
+- **Ranh giới SMART với OKR và KPI.** Bài SMART phân biệt mình bằng câu: OKR nối mục tiêu của các cấp, mỗi mục tiêu đi kèm vài kết quả then chốt đo được; KPI theo dõi liên tục một mặt của hoạt động. Câu này chưa có nguồn. Khi viết bài OKR và bài KPI, chốt định nghĩa có nguồn rồi sửa câu ở bài SMART cho khớp.
 - **Chồng lấn với series Scrum.** Bài Agile / Scrum / Kanban của series này trùng chủ đề với `pages/information-technology/agile-software-development/scrum-agile-and-more/`. Khi viết, đối chiếu từ điển của series đó để hai series dùng cùng thuật ngữ.

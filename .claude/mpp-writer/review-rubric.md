@@ -134,9 +134,9 @@ Không tự sửa file trừ khi được yêu cầu.
 
 Rubric này vừa là thang chấm, vừa là đồng hồ đo của vòng lặp review → sửa. Giao thức đầy đủ nằm ở `refine-loop.md`, phần dưới chỉ là các con số.
 
-**Đạt, dừng thành công:** tổng ≥ 80 **và** không trục nào < 12.
+**Đạt, dừng thành công:** tổng ≥ 90 **và** không trục nào < 12.
 
-Hai điều kiện phải đúng cùng lúc. Tổng 82 mà trục 3 được 7 điểm không phải là bài L4, đó là bài một chiều được cứu bởi bốn trục kia.
+Hai điều kiện phải đúng cùng lúc. Tổng 91 mà trục 3 được 7 điểm không phải là bài L4, đó là bài một chiều được cứu bởi bốn trục kia.
 
 **Dừng dù chưa đạt:**
 

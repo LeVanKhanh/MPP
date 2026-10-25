@@ -92,7 +92,7 @@ Chấm lại 5 trục. Báo cáo theo mẫu ở mục 5.
 
 Kiểm theo thứ tự, gặp cái nào trước thì dừng ở đó:
 
-1. **Đạt ngưỡng:** tổng ≥ 80 **và** không trục nào < 12. Dừng, báo đạt L4.
+1. **Đạt ngưỡng:** tổng ≥ 90 **và** không trục nào < 12. Dừng, báo cấp đạt được (L4 từ 90 tới 91, L5 từ 92).
 2. **Hết trần:** đã xong vòng 3. Dừng dù chưa đạt ngưỡng.
 3. **Bão hoà:** tổng điểm tăng dưới 3 so với vòng trước. Dừng và nói rõ bài đang kẹt ở đâu, cần tác giả làm gì (thường là: cần một quan sát riêng, một nguồn gốc, hoặc một luận đề khác, ba thứ trợ lý không tạo ra thay tác giả được).
 4. **Giọng trôi:** `preserve-author-voice` báo vượt ngưỡng 20% hai vòng liên tiếp. Dừng, hoàn tác phần tuỳ chọn về bản giữ được giọng tốt nhất, giữ nguyên mọi sửa lỗi thuộc ưu tiên 1-2, báo tác giả.

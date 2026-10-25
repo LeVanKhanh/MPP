@@ -54,7 +54,7 @@ Luật không kiểm được thì không bắt được lỗi nào, nhưng vẫ
 
 ## 4. Giới hạn cứng
 
-- **Tối đa 2 chỗ sửa hướng dẫn mỗi lượt.** Nhiều hơn thì chọn 2 chỗ đắt nhất.
+- **Không giới hạn số chỗ sửa mỗi lượt.** Mọi bản vá qua được ba câu hỏi ở mục 1 và viết được ở dạng kiểm được theo mục 3 đều đề xuất trong cùng một lượt, để không phải chạy thêm lượt chỉ vì hết suất. Bản vá không qua hai mục ấy thì bỏ, dù chỉ có một.
 - **Ưu tiên siết một luật đã có hơn thêm một luật mới.** Trước khi thêm, đọc lại file đích xem có luật nào gần đúng chỉ cần bổ sung một mệnh đề.
 - **Ưu tiên đổi một dòng trong checklist hơn thêm một đoạn văn.** Checklist là thứ thật sự được chạy qua trước khi ghi file.
 - **Ngưỡng phồng:** nếu một file tăng quá 20% số dòng trong ba lượt liên tiếp, dừng thêm vào file đó và đề xuất rút gọn nó trước.
@@ -78,4 +78,4 @@ Dòng mới:     (nguyên văn)
 Áp hay bỏ qua?
 ```
 
-Không gộp nhiều bản vá vào một câu hỏi. Hai bản vá thì hai khối, vẫn trong một lượt hỏi.
+Không gộp nhiều bản vá vào một câu hỏi. Nhiều bản vá thì mỗi bản một khối, đánh số, vẫn trong một lượt hỏi, để tác giả trả lời được bằng một dòng kiểu "áp 1, 3; bỏ 2".

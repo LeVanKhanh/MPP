@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Giá Trị Thu Được (EVM) - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="Quản lý giá trị thu được (EVM) đặt ngân sách của phần việc đã xong cạnh kế hoạch và chi phí thực tế, để tách làm chậm khỏi làm đắt. Bài phân tích cơ chế, chỗ chỉ số tiến độ tự trôi về 1 ở cuối dự án, ca máy bay A-12, ba nghiên cứu về quy tắc chỉ số chi phí ổn định từ mốc 20%, cách dùng và một tình huống áp dụng từng bước."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Quản Lý Giá Trị Thu Được (EVM)</h1>
+            <p class="page-subtitle">Giá trị thu được chỉ trung thực bằng cách người ta đo phần việc đã xong</p>
+            <p class="page-meta">Cập nhật: <time datetime="2026-10-25">25 Tháng 10, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Định Nghĩa</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Quản Lý Giá Trị Thu Được Là Gì</h3>
+                <p>Báo cáo ngân sách thông thường đặt hai con số cạnh nhau: tiền lẽ ra đã chi tới hôm nay và tiền đã chi thật. Quản lý giá trị thu được, gọi tắt theo tên tiếng Anh là EVM (<em>earned value management</em>), thêm con số thứ ba: ngân sách của phần việc đã thật sự làm xong, gọi là giá trị thu được. Ba con số cùng tính bằng tiền, nên đặt chúng cạnh nhau thì tách được hai câu hỏi mà báo cáo thông thường trộn làm một: làm có kịp không, và làm có đắt hơn dự toán không. <sup><a href="#ref-1">[1]</a></sup> Giả sử một công ty nhận lắp điện mặt trời áp mái cho 10 nhà xưởng trong một khu công nghiệp, ngân sách 2 tỷ đồng, mỗi xưởng 200 triệu, kế hoạch mỗi tuần xong một xưởng. Cuối tuần 6, công ty đã chi 1,1 tỷ, ít hơn 1,2 tỷ của kế hoạch, và nếu chỉ nhìn hai con số ấy thì dự án đang tiết kiệm. Nhưng mới có 4 xưởng được nghiệm thu, tức giá trị thu được là 0,8 tỷ: phần việc lẽ ra xong từ cuối tuần 4, và mỗi đồng chi ra mới làm ra khoảng 0,73 đồng việc theo dự toán.</p>
+
+                <p>Ba con số có tên riêng. Giá trị kế hoạch (PV, <em>planned value</em>) là ngân sách của phần việc lẽ ra đã xong tới ngày báo cáo; giá trị thu được (EV, <em>earned value</em>) là ngân sách của phần việc đã xong, tức phần việc tính theo dự toán của nó, không phải doanh thu hay lợi ích kinh doanh mà phần việc ấy mang lại; chi phí thực tế (AC, <em>actual cost</em>) là chi phí đã phát sinh và được ghi nhận cho chính phần việc ấy, không phải số tiền đã thanh toán, vì một hoá đơn chưa trả vẫn là chi phí đã phát sinh. GAO lưu ý một chênh lệch chi phí đẹp có thể chỉ là chi phí chưa kịp ghi nhận. Tài liệu của Bộ Quốc phòng Mỹ và GAO, Văn phòng Kiểm toán Chính phủ Mỹ, dùng tên cũ cho cùng ba thứ: BCWS, BCWP và ACWP. Từ đó ra hai chênh lệch và hai chỉ số. Chênh lệch chi phí CV = EV − AC, chỉ số hiệu suất chi phí CPI = EV / AC; chênh lệch tiến độ SV = EV − PV, chỉ số hiệu suất tiến độ SPI = EV / PV. Chỉ số nhỏ hơn 1 là xấu, chênh lệch âm là xấu. Tổng ngân sách của mọi phần việc đã lên kế hoạch, tức điểm cuối của đường PV, gọi là BAC (<em>budget at completion</em>); nó không gồm khoản dự phòng quản lý để riêng bên ngoài kế hoạch, nên có thể nhỏ hơn tổng số tiền được duyệt cho dự án. Còn dự báo chi phí khi hoàn thành gọi là EAC (<em>estimate at completion</em>). Cách dự báo đơn giản nhất giả định phần việc còn lại sẽ làm với đúng hiệu suất chi phí đã có: EAC = BAC / CPI. <sup><a href="#ref-1">[1]</a></sup> Ở dự án điện mặt trời, CV là −0,3 tỷ, CPI khoảng 0,73, SV là −0,4 tỷ, SPI khoảng 0,67, và nếu hiệu suất giữ nguyên thì cả dự án sẽ tốn khoảng 2,75 tỷ.</p>
+
+                <p>Cơ chế của công cụ là quy tiến độ vật lý về cùng một đơn vị với ngân sách. Một mét cáp, một tấn thép, một tuần thiết kế không cộng được với nhau, nhưng ngân sách dự toán cho từng thứ thì cộng được, và GAO coi đây là lý do EVM gộp được những loại việc khác hẳn nhau vào một bức tranh, miễn là dự án đã được chia thành những phần việc xác định rõ. <sup><a href="#ref-1">[1]</a></sup> Khi phần việc đã xong được đo bằng ngân sách của chính nó, một phép trừ với kế hoạch cho ra độ chậm, một phép trừ với chi phí thực tế cho ra độ đắt, và hai thứ không còn che nhau. Cái giá của cơ chế này nằm ở chỗ mọi thứ phụ thuộc vào cách người ta quyết định một phần việc đã "thu được" bao nhiêu. Hình dưới vẽ ba đường của dự án điện mặt trời tới cuối tuần 6.</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Biểu đồ ba đường của dự án lắp điện mặt trời cho 10 nhà xưởng, trục ngang là tuần từ 0 tới 10, trục đứng là tỷ đồng từ 0 tới 2. Đường giá trị kế hoạch nét đứt đi thẳng từ 0 lên 2 tỷ ở tuần 10, mỗi tuần 0,2 tỷ. Đường chi phí thực tế màu cam đi sát dưới đường kế hoạch và tới 1,1 tỷ ở cuối tuần 6, trong khi kế hoạch là 1,2 tỷ. Đường giá trị thu được nét liền đi thấp hơn cả hai, tới 0,8 tỷ ở cuối tuần 6. Hai vạch nhỏ ở cuối tuần 6 đánh dấu chênh lệch tiến độ âm 0,4 tỷ và chênh lệch chi phí âm 0,3 tỷ. Một mũi tên ngang chiếu giá trị thu được 0,8 tỷ sang đường kế hoạch, chạm đường ấy ở tuần 4, cho thấy dự án chậm 2 tuần. Ghi chú bên phải: CPI 0,73, SPI 0,67, dự báo chi phí khi hoàn thành khoảng 2,75 tỷ."
+                        viewBox="0 0 1120 460">
+                        <defs>
+                            <marker id="evm-arrow" markerWidth="10" markerHeight="10" markerUnits="strokeWidth"
+                                orient="auto" refX="9" refY="3">
+                                <path d="M0,0 L0,6 L9,3 z" fill="currentColor"></path>
+                            </marker>
+                        </defs>
+
+                        <path class="edge-ghost" d="M140 46 H180"></path>
+                        <text class="small note" x="192" y="46">PV, giá trị kế hoạch: ngân sách của phần việc lẽ ra đã xong</text>
+                        <path class="edge" d="M140 72 H180"></path>
+                        <text class="small note" x="192" y="72">EV, giá trị thu được: ngân sách của các xưởng đã nghiệm thu</text>
+                        <path class="arrow-alert" d="M140 98 H180"></path>
+                        <text class="small note" x="192" y="98">AC, chi phí thực tế đã phát sinh</text>
+
+                        <path class="axis" d="M110 90 V400 H930"></path>
+                        <text class="small" x="110" y="76">tỷ đồng</text>
+                        <path class="tick" d="M104 400 H110 M104 325 H110 M104 250 H110 M104 175 H110 M104 100 H110"></path>
+                        <text class="rowlabel" x="98" y="400">0</text>
+                        <text class="rowlabel" x="98" y="325">0,5</text>
+                        <text class="rowlabel" x="98" y="250">1,0</text>
+                        <text class="rowlabel" x="98" y="175">1,5</text>
+                        <text class="rowlabel" x="98" y="100">2,0</text>
+                        <path class="tick"
+                            d="M110 400 V406 M190 400 V406 M270 400 V406 M350 400 V406 M430 400 V406 M510 400 V406 M590 400 V406 M670 400 V406 M750 400 V406 M830 400 V406 M910 400 V406">
+                        </path>
+                        <text class="small" x="110" y="420">0</text>
+                        <text class="small" x="190" y="420">1</text>
+                        <text class="small" x="270" y="420">2</text>
+                        <text class="small" x="350" y="420">3</text>
+                        <text class="small" x="430" y="420">4</text>
+                        <text class="small" x="510" y="420">5</text>
+                        <text class="small" x="590" y="420">6</text>
+                        <text class="small" x="670" y="420">7</text>
+                        <text class="small" x="750" y="420">8</text>
+                        <text class="small" x="830" y="420">9</text>
+                        <text class="small" x="910" y="420">10</text>
+                        <text class="small note" x="940" y="420">tuần</text>
+
+                        <path class="edge-ghost" d="M110 400 L910 100"></path>
+                        <text class="small note" x="920" y="100">BAC = 2 tỷ</text>
+
+                        <path class="today" d="M590 410 V128"></path>
+                        <text class="small alert" x="590" y="118">cuối tuần 6</text>
+
+                        <path class="arrow-alert" d="M110 400 L190 367 L270 332.5 L350 307 L430 280 L510 257.5 L590 235"></path>
+                        <path class="edge" d="M110 400 L190 370 L270 340 L350 340 L430 310 L510 310 L590 280"></path>
+
+                        <path class="arrow" d="M586 280 H436" marker-end="url(#evm-arrow)"></path>
+                        <path class="tick" d="M430 284 V400"></path>
+                        <text class="small alert" x="430" y="442">tiến độ thu được: tuần 4</text>
+
+                        <path class="tick" d="M600 220 H612 M606 220 V280 M600 280 H612"></path>
+                        <text class="small note" x="616" y="250">SV</text>
+                        <path class="tick" d="M644 235 H656 M650 235 V280 M644 280 H656"></path>
+                        <text class="small note" x="660" y="258">CV</text>
+
+                        <text class="note" x="720" y="262">Cuối tuần 6, 4 trên 10 xưởng đã nghiệm thu</text>
+                        <text class="small note" x="720" y="288">PV = 1,2 tỷ · EV = 0,8 tỷ · AC = 1,1 tỷ</text>
+                        <text class="small note" x="720" y="312">CV = EV − AC = −0,3 tỷ · CPI ≈ 0,73</text>
+                        <text class="small note" x="720" y="336">SV = EV − PV = −0,4 tỷ · SPI ≈ 0,67</text>
+                        <text class="small note" x="720" y="360">Chậm 2 tuần theo tiến độ thu được</text>
+                        <text class="small alert note" x="720" y="384">EAC = 2 tỷ / 0,73 ≈ 2,75 tỷ</text>
+                    </svg>
+                    <figcaption>
+                        <strong>Hình 1.</strong> Ba đường của một dự án giả định lắp điện mặt trời cho 10 nhà xưởng. Nếu chỉ
+                        so đường chi phí thực tế với đường kế hoạch, cuối tuần 6 dự án tiêu ít hơn 0,1 tỷ và trông như đang
+                        tiết kiệm. Đường giá trị thu được nằm dưới cả hai, và cho thấy chuyện ngược lại: dự án vừa chậm vừa
+                        đắt. Mũi tên ngang đọc độ chậm bằng thời gian: phần việc đã xong lẽ ra phải xong vào cuối tuần 4.
+                        Dự báo 2,75 tỷ giả định 6 xưởng còn lại làm với đúng hiệu suất của 4 xưởng đầu, giả định mà phần
+                        nghiên cứu bên dưới cho thấy không phải lúc nào cũng đứng.
+                    </figcaption>
+                </figure>
+
+                <p>Không có một người đặt ra EVM. Trong quy định quản lý tài chính năm 1967, Bộ Quốc phòng Mỹ ban hành 35 tiêu chí về hệ thống kiểm soát chi phí và tiến độ, gọi tắt C/SCSC, áp cho phần lớn các chương trình mua sắm vũ khí lớn, và lõi của bộ tiêu chí là khái niệm giá trị thu được. Tháng 8 năm 1996, các hiệp hội công nghiệp ban hành bộ hướng dẫn về hệ thống EVM gồm 32 tiêu chí, giống bộ cũ về nguyên tắc, và Bộ Quốc phòng chính thức công nhận nó vào tháng 12 năm ấy. <sup><a href="#ref-2">[2]</a></sup> Năm 1998, ANSI và EIA cùng ban hành một tiêu chuẩn quốc gia cho hệ thống EVM; bản gần nhất, EIA-748-D, được sửa vào tháng 1 năm 2019. Từ năm 2006, Văn phòng Quản lý và Ngân sách Mỹ buộc mọi dự án đầu tư lớn của chính phủ liên bang dùng EVM. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <p>EVM đứng trên hai công cụ khác chứ không thay chúng. Cấu trúc phân rã công việc cho nó danh sách các gói việc để gắn ngân sách; GAO gọi cây phân rã là thành phần không thể thiếu của EVM. <sup><a href="#ref-1">[1]</a></sup> Lịch và phương pháp đường găng cho nó thời điểm mỗi gói lẽ ra phải xong, tức là hình dạng của đường giá trị kế hoạch. Thứ EVM thêm vào là phép đo: biểu đồ Gantt cho thấy kế hoạch và đường găng cho thấy việc nào quyết định ngày xong, còn EVM cho biết tới hôm nay dự án đã đổi bao nhiêu tiền lấy bao nhiêu phần việc.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Tại Sao Ta Cần Dùng Nó</h3>
+                <p>GAO minh hoạ bằng một hợp đồng đặt 4 dặm đường ray trong 4 tuần với giá 4 triệu đô la. Sau 3 tuần mới chi 2 triệu, và bảng so tiền kế hoạch với tiền thực chi cho thấy dự án đang tiêu ít hơn dự toán. Nhưng mới có 1 dặm được đặt xong, tức 25% hợp đồng. Với nhịp ấy, cả hợp đồng sẽ tốn 8 triệu và mất 12 tuần. <sup><a href="#ref-1">[1]</a></sup> Báo cáo so tiền với tiền thiếu đúng một con số, ngân sách của phần việc đã xong, và thiếu nó thì tiêu ít có thể là tiết kiệm mà cũng có thể là làm chậm. Tiêu sát kế hoạch còn có thể che cả hai lỗi cùng lúc, như ở dự án điện mặt trời phía trên.</p>
+
+                <p>EVM chữa chỗ đó bằng cách cho một tín hiệu sớm, khi phần lớn ngân sách còn chưa chi. Theo GAO, các nghiên cứu trên hơn 700 chương trình quốc phòng cho thấy cơ hội kéo một chương trình về đúng hướng rất hạn chế một khi nó đã qua mốc 15% tới 20% khối lượng. <sup><a href="#ref-1">[1]</a></sup> Để báo động thì tín hiệu ấy dùng được ngay: một CPI 0,8 ở mốc 20% là một khoản vượt chi đã xảy ra. Để dự báo chi phí cuối thì cần thêm một điều kiện, chỉ số đo ở mốc sớm phải đi gần với kết cục. Điều kiện ấy đã được đo trên hợp đồng quốc phòng: ở mốc 20% khối lượng, CPI luỹ kế của từ khoảng một nửa tới hơn bốn phần năm số hợp đồng đã nằm trong một dải hẹp quanh giá trị cuối cùng, tuỳ cách định nghĩa "hẹp". Chi tiết nằm ở phần nghiên cứu bên dưới. <sup><a href="#ref-3">[3]</a></sup> <sup><a href="#ref-4">[4]</a></sup></p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Giới Hạn Của Công Cụ Này Là Gì</h3>
+                <p>Chỉ số tiến độ của EVM đo thời gian bằng tiền, và đó là giới hạn vốn có đầu tiên. SV là EV trừ PV, SPI là EV chia PV. Tới cuối dự án, PV dừng ở BAC, còn EV thì sớm muộn cũng lên tới BAC khi mọi việc xong, nên một dự án trễ bao lâu cũng kết thúc với SV bằng 0 và SPI bằng 1. Walt Lipke, ở bộ phận phần mềm của Trung tâm Hậu cần Không quân Oklahoma City, đưa ra một dự án dự kiến xong tháng 1 năm 2002 mà tháng 4 mới xong: đường SPI của nó leo dần lên và chạm 1,0 đúng tháng giao hàng trễ. Ông viết rằng các chỉ số tiến độ thường mất giá trị trong khoảng một phần ba cuối dự án, và hỏng hẳn khi dự án chạy quá ngày kết thúc theo kế hoạch. <sup><a href="#ref-5">[5]</a></sup> GAO cũng ghi rằng SPI mất dần giá trị dự báo và quay về 1,0 khi chương trình hoàn tất. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <p>Cách sửa Lipke đề xuất năm 2003 là tiến độ thu được (ES, <em>earned schedule</em>): chiếu EV hiện tại lên đường PV để tìm thời điểm mà kế hoạch lẽ ra đạt được đúng giá trị ấy, rồi so thời điểm đó với thời gian thực tế đã trôi qua (AT). Từ đó có SV(t) = ES − AT, tính bằng tuần hay tháng, và SPI(t) = ES / AT; nếu EV rơi vào giữa hai kỳ, ES bằng số kỳ đã trọn cộng phần nội suy tuyến tính của kỳ dở dang. Lipke tự ghi rằng phép chiếu này không mới, nhiều sách về EVM đã vẽ nó; thứ ông thêm là dùng nó làm chỉ số tiến độ có hành vi giống chỉ số chi phí. <sup><a href="#ref-5">[5]</a></sup> Mũi tên ngang ở Hình 1 chính là phép chiếu ấy.</p>
+
+                <p>Giới hạn thứ hai đến từ chỗ EVM cộng gộp. SV của cả dự án là tổng của mọi gói việc, nên làm vượt ở những việc còn khoảng dư có thể bù lên con số ở một việc găng đang trễ. Theo GAO, tiền chuyển được giữa các tài khoản chi phí, còn thời gian thì không: một tài khoản sớm 3 tháng không bù được cho một tài khoản chậm 3 tháng, và một chênh lệch tiến độ âm có thể không làm lùi ngày xong nếu nó không nằm trên đường găng. <sup><a href="#ref-1">[1]</a></sup> Bản thân EVM không biết việc nào găng; câu trả lời phải lấy từ lịch.</p>
+
+                <p>Giới hạn thứ ba: mọi chỉ số đều đo theo đường cơ sở, tức kế hoạch ngân sách rải theo thời gian mà PV vẽ ra. CPI 0,73 nói dự án đắt hơn dự toán, không nói dự toán đúng hay sai, và EV đo khối lượng đã làm theo dự toán chứ không đo phần việc ấy đạt yêu cầu kỹ thuật tới đâu. GAO viết rằng nếu đường cơ sở không dựng trên một dự toán đáng tin hoặc không phản ánh đúng phần việc được duyệt thì chương trình có nguy cơ vượt chi và trễ hạn, và khuyên gắn các thước đo giá trị thu được với thước đo hiệu năng kỹ thuật. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <p>Phần còn lại không phải giới hạn vốn có: một nửa là lỗi của cách dùng, nửa kia là cái giá của công cụ. EV đo theo phần trăm do người làm tự báo thì đo độ lạc quan của người báo; GAO đòi phần trăm hoàn thành phải dựa trên mức hoàn thành khách quan, định lượng được. Phần việc tính theo thời gian (<em>level of effort</em>), như quản lý dự án, luôn "thu được" đúng bằng kế hoạch, nên khi nó chiếm hơn khoảng 15% ngân sách thì GAO khuyên xem lại, vì số liệu đã không còn khách quan. Một hệ thống EVM đầy đủ cũng tốn kém: GAO dẫn mức 1 tới 2 triệu đô la mà vài công ty bỏ ra để dựng nó từ đầu, và lưu ý một dự án dưới sáu tháng báo cáo hằng tháng thì đã đi nửa chặng trước khi có đủ ba điểm dữ liệu để thấy xu hướng. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Điều EVM cho thấy</th><th scope="col">Điều nó không tự cho thấy</th></tr></thead>
+                    <tbody>
+                        <tr><td>Tiêu 1,1 tỷ, ít hơn kế hoạch 0,1 tỷ</td><td>Ít hơn vì tiết kiệm hay vì làm chậm, nếu thiếu EV</td></tr>
+                        <tr><td>CPI 0,73: mỗi đồng chi ra làm được 0,73 đồng việc theo dự toán</td><td>Vì sao: giá tấm pin tăng, đội thợ làm lại, hay dự toán 200 triệu mỗi xưởng vốn đã thấp</td></tr>
+                        <tr><td>Chậm 2 tuần theo tiến độ thu được</td><td>Phần chậm có nằm trên đường găng không, chẳng hạn ở khâu đấu nối với lưới điện</td></tr>
+                        <tr><td>4 xưởng đã nghiệm thu, EV 0,8 tỷ</td><td>Hệ thống trên 4 xưởng ấy có đạt công suất cam kết không</td></tr>
+                        <tr><td>EAC khoảng 2,75 tỷ nếu hiệu suất giữ nguyên</td><td>Hiệu suất có giữ nguyên không</td></tr>
+                        <tr><td>SPI cuối dự án bằng 1</td><td>Dự án có xong đúng hạn không</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Ví Dụ</h2>
+            <p class="intro-text">Một công ty phần mềm đo cùng một tiến độ bằng hai cách tính giá trị thu được và nhận về hai bức tranh ngược nhau, đứng cạnh chương trình máy bay A-12 của Hải quân Mỹ, nơi số liệu giá trị thu được đã báo đúng nhưng chỉ con số dự báo thấp nhất được đưa lên.</p>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Năm Tính Năng Cùng Báo 85%, Ứng Dụng Xong Muộn Bốn Tuần</h3>
+                <p>Tình huống minh hoạ: một công ty phần mềm nhận làm ứng dụng đặt lịch khám cho một phòng khám đa khoa, ngân sách 500 triệu đồng cho mười tính năng, mỗi tính năng 50 triệu và dự kiến làm trong hai tuần, cả dự án mười tuần, báo cáo mỗi tuần. Ngân sách rải đều, nên tới cuối tuần 6 giá trị kế hoạch là 300 triệu. Thực tế có 3 tính năng đã qua nghiệm thu với phòng khám, 5 tính năng đang làm, 2 chưa bắt đầu, và chi phí thực tế là 320 triệu. Nhóm dự án tính giá trị thu được bằng cách hỏi trưởng nhóm từng tính năng đã xong bao nhiêu phần trăm. Cả năm tính năng đang làm đều được báo khoảng 85%, nên EV là 150 cộng 5 × 42,5, tức 362,5 triệu: CPI 1,13, SPI 1,21, dự án trông vừa rẻ hơn vừa nhanh hơn kế hoạch. Phòng tài chính, nơi đã chốt từ đầu quy tắc 50/50 cho mọi tính năng, tính lại theo quy tắc ấy: tính năng được ghi một nửa giá trị khi bắt đầu và nửa còn lại khi qua nghiệm thu. Năm tính năng đang làm chỉ được ghi 25 triệu mỗi cái, EV là 275 triệu: CPI 0,86, SPI 0,92. Tới tuần 9, khi phòng khám chạy thử, cả năm tính năng đều vướng lỗi ở chỗ nối với phần mềm quản lý hồ sơ bệnh nhân mà phòng khám đang dùng, phần việc chưa ai tính vào con số 85%. Ứng dụng xong ở tuần 14 với tổng chi 680 triệu.</p>
+                <p>Hai bản báo cáo dùng cùng công thức, cùng PV, cùng AC. Chỗ khác duy nhất là ai quyết định một phần việc đã "thu được" bao nhiêu và quyết định lúc nào. GAO xếp quy tắc cố định như 0/100 hay 50/50 vào nhóm dành cho các gói việc ngắn, bắt đầu và kết thúc trong một hoặc hai kỳ báo cáo, đúng như mỗi tính năng ở đây, và đòi phương pháp phần trăm hoàn thành phải dựa trên thứ định lượng được. <sup><a href="#ref-1">[1]</a></sup> Con số 85% không dựa trên thứ gì như vậy. Con số 50/50 cũng chưa phải sự thật: dự báo đơn giản nhất từ nó, 500 chia 0,86, khoảng 582 triệu, vẫn thấp hơn 680 triệu cuối cùng. Nhưng nó không lớn lên theo độ tự tin của người báo cáo, và nó báo động từ tuần 6 thay vì tuần 9.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Máy Bay A-12: Dự Báo Thấp Nhất Thành Dự Báo Duy Nhất</h3>
+                <p>A-12 Avenger II là máy bay tấn công tàng hình mà Hải quân Mỹ giao cho liên danh McDonnell Douglas và General Dynamics phát triển, theo một hợp đồng giá cố định có thưởng ký ngày 13 tháng 1 năm 1988, chi phí mục tiêu 3,981 tỷ đô la, giá trần 4,777 tỷ. Báo cáo hiệu suất chi phí, tức báo cáo giá trị thu được hằng tháng của nhà thầu, cho thấy chênh lệch chi phí và tiến độ xấu đi đều đặn, vậy mà liên danh vẫn đưa ra những dự báo chi phí cuối theo kịch bản tốt nhất. Cuộc điều tra hành chính do Chester Paul Beach Jr. làm cho Bộ trưởng Hải quân, báo cáo ngày 28 tháng 11 năm 1990, tìm ra một lý do: nhà thầu chịu sức ép từ cấp trên phải giữ dòng tiền, mà tiền tạm ứng theo tiến độ sẽ bị cắt nếu nhà thầu hay chính phủ ước tính ra một khoản vượt chi. <sup><a href="#ref-6">[6]</a></sup></p>
+                <p>Phía chính phủ có người đọc đúng số liệu. Một chuyên viên phân tích chi phí của Bộ Tư lệnh Hệ thống Hàng không Hải quân phân tích từng báo cáo, nhưng theo thông lệ của văn phòng, bản tóm tắt viết của bà chỉ ghi một con số, dự báo tính theo CPI luỹ kế, tức con số thấp nhất bà có thể đưa ra; cấp trên của bà giải thích thông lệ ấy là để người quản lý chương trình "linh hoạt tối đa" khi trình bày chương trình. Bà vẫn báo miệng những dự báo cao hơn, và trong bản tóm tắt tháng 7 năm 1989 có chú thích rằng một "CPI có trọng số" cho dự báo vượt trần khoảng 200 triệu đô la. Người quản lý chương trình dùng con số tính theo CPI luỹ kế làm mức trần chứ không phải mức sàn, và trong báo cáo DAES tháng 11 năm 1989 và tháng 2 năm 1990 còn hạ nó thấp thêm, vì tin rằng hiệu suất của nhà thầu sẽ khá lên. Ngày 27 tháng 3 năm 1990, một phó giám đốc quản lý chi phí của văn phòng Thứ trưởng Quốc phòng phụ trách mua sắm phân tích các báo cáo DAES và kết luận hợp đồng nhiều khả năng vượt trần 1 tỷ đô la; con số ấy được báo cho người quản lý chương trình hai ngày sau, nhưng không có mặt trong bộ slide trình lên cấp trên ngày 24 tháng 4. <sup><a href="#ref-6">[6]</a></sup> Theo một chuyên viên của văn phòng ấy, ở mốc 48% khối lượng, CPI luỹ kế của A-12 là 0,76 còn TCPI tính theo ngân sách là 1,22: muốn không vượt chi, phần việc còn lại phải làm với hiệu suất cao hơn khoảng 60% so với phần đã làm. Ngày 7 tháng 1 năm 1991, hợp đồng bị chấm dứt vì lỗi của nhà thầu. <sup><a href="#ref-3">[3]</a></sup></p>
+                <p>Ví dụ trước hỏng ở phép đo; ca này thì không. Chỉ số tính ra đúng và có người đọc đúng nó. Cái hỏng nằm ở hai chỗ khác: báo cáo đưa lên một con số thay vì một khoảng, và hai bên chọn con số, nhà thầu đang cần dòng tiền và người quản lý chương trình mà cuộc điều tra kết luận là thiếu khách quan <sup><a href="#ref-2">[2]</a></sup>, đều nghiêng về con số thấp. Beach ghi rằng theo kinh nghiệm của Bộ Quốc phòng, dự báo cân bằng CPI với SPI thường cao hơn dự báo theo CPI luỹ kế nhưng lại sát kết cục nhất. <sup><a href="#ref-6">[6]</a></sup> Sau vụ A-12, mọi dự báo thấp hơn mức tính theo CPI luỹ kế phải được văn phòng chương trình giải trình riêng <sup><a href="#ref-3">[3]</a></sup>, và GAO dẫn ca này năm 1997 như lý do để số liệu giá trị thu được phải tới được tay người đứng ngoài văn phòng chương trình. <sup><a href="#ref-2">[2]</a></sup></p>
+                <p>Cũng trong báo cáo Beach có câu: kinh nghiệm của Bộ Quốc phòng trên hơn 400 chương trình từ năm 1977 cho thấy "không có ngoại lệ", CPI luỹ kế không cải thiện đáng kể trong khoảng từ 15% tới 85% khối lượng hợp đồng, mà thường còn giảm. <sup><a href="#ref-6">[6]</a></sup> Câu ấy là gốc của một niềm tin mà phần nghiên cứu bên dưới kiểm lại. Đây là kết luận của một cuộc điều tra hành chính, không phải một nghiên cứu, và nó không cho biết nếu tin số liệu sớm hơn thì chương trình có cứu được hay không.</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Một Vài Nghiên Cứu Về Quản Lý Giá Trị Thu Được</h2>
+            <p class="intro-text">EVM là yêu cầu bắt buộc cho các dự án đầu tư lớn của chính phủ liên bang Mỹ, và theo GAO, các hướng dẫn về EVM đã được các cơ quan chính phủ ở Úc, Canada, Nhật Bản, Thuỵ Điển và Anh tiếp nhận. <sup><a href="#ref-1">[1]</a></sup> Giá trị nó hứa hẹn là cảnh báo sớm, và phần dự báo của giá trị ấy dựa trên một giả định đo được: chỉ số chi phí ở một mốc sớm nói được nhiều về chỉ số lúc kết thúc. Ba nghiên cứu dưới đây đo đúng giả định đó, trên hợp đồng quốc phòng Mỹ và trên dự án ngoài quốc phòng, và chúng ra ba kết quả trông như mâu thuẫn cho tới khi đặt cạnh nhau. Không nghiên cứu nào trong ba so dự án có EVM với dự án không có EVM. Chính GAO viết rằng khó đo lợi ích của một hệ thống EVM tốt thành con số, và chỉ dẫn ý kiến của chuyên gia rằng lợi tức đầu tư là hợp lý. <sup><a href="#ref-1">[1]</a></sup> Trong phạm vi tìm kiếm của bài này, chưa tìm thấy nghiên cứu nào so kết cục của dự án có và không có EVM mà kiểm soát được các khác biệt khác giữa chúng.</p>
+            <div class="sub-section">
+                <p><strong>Nghiên cứu:</strong> Năm 1993, Christensen và Heise lấy từ cơ sở dữ liệu báo cáo tóm tắt mua sắm quốc phòng (DAES) của Bộ Quốc phòng Mỹ 155 hợp đồng của 44 chương trình, từ máy bay, tên lửa, vệ tinh tới phần mềm và tàu ngầm, thực hiện trong khoảng tháng 6 năm 1971 tới tháng 2 năm 1991; mẫu được chọn theo phán đoán của người nghiên cứu chứ không ngẫu nhiên. Họ gọi CPI luỹ kế là ổn định từ một mốc khối lượng nếu từ mốc ấy tới cuối hợp đồng, khoảng cách giữa giá trị cao nhất và thấp nhất của nó nhỏ hơn 0,2, và dùng phương pháp bình phương nhỏ nhất để xem CPI đi lên hay đi xuống về cuối. <sup><a href="#ref-3">[3]</a></sup> Năm 2008, Henderson và Zwikael kiểm lại trên dữ liệu ngoài quốc phòng: 12 dự án công nghệ cao ở Israel, 10 công trình xây dựng ở Anh và 4 dự án công nghệ thông tin ở Úc đủ dữ liệu để kiểm CPI, chỉ tính chi phí nhân công trực tiếp. Câu hỏi của họ là câu mà sách vở hay chép: CPI cuối cùng có nằm trong khoảng ±0,10 quanh CPI ở mốc 20% không, kiểm bằng phép kiểm dấu, một phép kiểm thống kê không đòi dữ liệu có phân phối chuẩn, ở mức ý nghĩa 0,05; mốc ổn định của mỗi dự án là mốc mà mọi giá trị CPI sau đó đều nằm trong giới hạn 0,10. <sup><a href="#ref-7">[7]</a></sup> Năm 2015, Petter, Ritschel và White lấy 209 hợp đồng phát triển và sản xuất của các chương trình mua sắm lớn nhất (ACAT I) của Không quân, Hải quân và Lục quân Mỹ, giai đoạn 1987 tới 2012, sau khi loại các hợp đồng đã phải dựng lại đường cơ sở vượt mức ngân sách gốc, và kiểm cùng một tập dữ liệu bằng cả ba định nghĩa "ổn định" đã xuất hiện trong tài liệu: khoảng biến thiên dưới 0,2; CPI cuối lệch không quá 0,10 so với CPI ở mốc đang xét; và lệch không quá 10% của CPI ở mốc ấy. Với hai định nghĩa sau, một hợp đồng chỉ được tính là ổn định từ một mốc khi điều kiện còn đúng ở mọi mốc được kiểm sau đó, cứ 5% khối lượng một lần tới mốc 85%; so riêng CPI ở một mốc với CPI cuối là chưa đủ. <sup><a href="#ref-4">[4]</a></sup></p>
+                <p><strong>Kết quả:</strong> Ở mốc 20%, 134 trong 155 hợp đồng của Christensen và Heise có CPI luỹ kế ổn định, tức 86%; ở mốc 50% là 153 trong 155. Đường xu hướng cho thấy CPI luỹ kế thường đi xuống chứ không đi lên khi hợp đồng tiến về cuối. Hai tác giả tự giải thích độ ổn định ấy: nó đến phần lớn từ chỗ CPI là chỉ số luỹ kế, càng về sau thì số liệu của từng tháng mới càng ít khả năng kéo lệch con số cộng dồn của quá khứ. CPI tính trên vài tháng gần nhất thì không ổn định: từ mốc 50%, chỉ 6% hợp đồng có CPI ba tháng ổn định. <sup><a href="#ref-3">[3]</a></sup> Ở dữ liệu ngoài quốc phòng, không phép kiểm nào của Henderson và Zwikael bác được giả thuyết không, ở từng nhóm lẫn khi gộp: chỉ 3 trong 26 dự án có CPI ổn định từ mốc 20% trở về trước, 23 dự án còn lại ổn định muộn hơn, nhiều dự án sau cả mốc 80%. Phân tích thêm của hai tác giả cũng không thấy ổn định sớm đi cùng kết cục tốt hơn; vài dự án xong dưới ngân sách chính là những dự án có CPI tốt dần lên tới cuối. <sup><a href="#ref-7">[7]</a></sup> Trên 209 hợp đồng quốc phòng, Petter và cộng sự thấy 83% có CPI ổn định từ mốc 20% theo định nghĩa khoảng biến thiên, gần với con số của Christensen và Heise. Theo định nghĩa lệch không quá 0,10, con số ở mốc 20% chỉ còn 56%, và phải tới mốc 55% khối lượng mới có 81% hợp đồng ổn định. Chỉ số tiến độ thu được SPI(t) còn ổn định muộn hơn: theo định nghĩa lệch không quá 0,10, phải tới mốc 75% mới có từ 80% số hợp đồng trở lên ổn định. <sup><a href="#ref-4">[4]</a></sup></p>
+                <p><strong>Kết luận:</strong> Ba nghiên cứu đo cùng một thứ: chỉ số ở mốc sớm nói được bao nhiêu về chỉ số lúc kết thúc. Đó đúng là chỗ đặt giá trị dự báo của EVM. Nghiên cứu năm 2015 gỡ phần lớn mâu thuẫn. Với định nghĩa của Christensen và Heise, kết quả lặp lại, 83% so với 86%. Với định nghĩa ±0,10 mà người ta hay chép, đo theo cách của nghiên cứu năm 2015, tức CPI ở mốc 20% và ở mọi mốc sau đó đều không lệch quá 0,10 so với CPI cuối, chỉ khoảng một nửa số hợp đồng đạt. Lời giải thích của chính Christensen và Heise cho thấy vì sao hai con số xa nhau: chỉ số luỹ kế tự nó dao động ít dần, nên giữ nó trong một dải rộng 0,2 đặt ở đâu cũng được dễ hơn nhiều so với giữ nó trong ±0,10 quanh đúng con số cuối. Theo cách đọc của bài, một phần độ ổn định được báo cáo là tính chất của phép cộng dồn, chưa hẳn của dự án. Về phạm vi, bản năm 1993 tự nhận đã khái quát được kết quả cho các quân chủng, chương trình và loại hợp đồng quốc phòng khác <sup><a href="#ref-3">[3]</a></sup>, còn Petter và cộng sự cho rằng hai tác giả không khái quát nó ra ngoài dữ liệu <sup><a href="#ref-4">[4]</a></sup>; hai bên chỉ gặp nhau ở chỗ bản năm 1993 không nói gì về dự án ngoài quốc phòng. Hướng dẫn năm 2020 của GAO vẫn viết như thể quy tắc đã được chứng minh: khi chương trình xong 20%, CPI luỹ kế không đổi quá 10%. <sup><a href="#ref-1">[1]</a></sup> Ba giới hạn đi kèm. Mẫu năm 1993 chọn theo phán đoán. Mẫu năm 2015 để ra ngoài các hợp đồng đã dựng lại đường cơ sở vượt ngân sách, khoảng 20% số hợp đồng khả dụng, mà theo nhóm tác giả thì không đoán trước được hợp đồng nào sẽ rơi vào nhóm ấy; kết quả của họ chỉ áp cho hợp đồng ACAT I. <sup><a href="#ref-4">[4]</a></sup> Mẫu năm 2008 nhỏ, 26 dự án, chỉ tính nhân công trực tiếp.</p>
+                <p><strong>Phản biện:</strong> Phe bênh có ba lý lẽ. Một, quy tắc đứng vững đúng nơi nó được đo: với định nghĩa gốc, dữ liệu năm 2015 lặp lại kết quả năm 1993 gần như từng điểm phần trăm, và bản gốc chỉ khái quát trong phạm vi hợp đồng quốc phòng. Hai, 26 dự án thương mại nhỏ của nghiên cứu năm 2008 không cho biết hệ thống EVM ở đó dựng chặt tới đâu, và Wayne Abba đã phản bác nghiên cứu này; một CPI chao đảo có thể chỉ là dấu hiệu của đường cơ sở dựng kém. Ba, giá trị thực hành của CPI nằm ở báo động chứ không ở dự báo chính xác: GAO coi BAC chia CPI thường là kịch bản tốt nhất, nên khi ngay kịch bản ấy đã vượt ngân sách thì kết luận đứng vững, CPI có ổn định hay không cũng vậy. Bài nhận trọn vế một, với một lưu ý: định nghĩa gốc cũng là định nghĩa dễ đạt nhất, như lời giải thích về chỉ số luỹ kế của chính hai tác giả. Vế hai bài nhận một nửa. Mẫu năm 2008 nhỏ và chất lượng hệ thống EVM ở đó không rõ là thật; lời phản bác của Abba bài chỉ đọc qua Petter và cộng sự. Nhưng dữ liệu quốc phòng năm 2015, đúng loại hợp đồng đã sinh ra quy tắc, cũng chỉ cho 56% theo định nghĩa ±0,10. Khoảng cách với 3 trên 26 dự án ngoài quốc phòng là có thật, có điều ổn định muộn không riêng gì dự án thương mại. Vế ba mạnh nhất, và bài nhận nó ở dạng hẹp: dự báo lạc quan nhất mà đã vượt ngân sách thì đáng hành động ngay. Bài không nhận chiều ngược lại, rằng BAC chia CPI là mức sàn chắc chắn. Ở hợp đồng quốc phòng, đọc nó như mức sàn có cơ sở, vì Christensen và Heise thấy CPI luỹ kế thường đi xuống về cuối <sup><a href="#ref-3">[3]</a></sup> và GAO ghi điều tương tự <sup><a href="#ref-1">[1]</a></sup>. Ngoài quốc phòng, Henderson và Zwikael ghi lại những dự án có CPI tốt dần tới cuối, nơi dự báo giữa chừng hoá ra bi quan hơn kết cục. <sup><a href="#ref-7">[7]</a></sup></p>
+                <p><strong>Vì sao điều này hữu ích:</strong> Nó đổi cách bạn đọc câu "CPI đã ổn định, nên chi phí cuối là ngân sách chia CPI". Hỏi ba điều. Ổn định theo định nghĩa nào: nếu là ±0,10 và phải đúng từ mốc 20% trở đi, thì trong mẫu 209 hợp đồng quốc phòng của nghiên cứu năm 2015 chỉ khoảng một nửa đạt. Dự án này đã từng phải dựng lại đường cơ sở chưa, vì các con số của nghiên cứu năm 2015 đều đo trên những hợp đồng chưa từng phải làm việc đó. Và phần việc còn lại có cùng loại với phần đã làm không, vì CPI của phần đổ móng chưa chắc nói được gì về phần lắp thiết bị. Thói quen đi kèm: báo cáo chi phí cuối như một khoảng, với BAC chia CPI là một đầu chứ không phải câu trả lời.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">Cách Áp Dụng</h2>
+            <p class="intro-text">Quản lý giá trị thu được hoạt động bằng cách quy phần việc đã xong về cùng đơn vị với ngân sách để một phép so tách được làm chậm khỏi làm đắt, nên cách triển khai hiệu quả là giữ cho ba con số cùng đo một thứ: EV tính theo tiêu chí kiểm được đặt từ trước, PV giữ cố định làm thước, AC ghi theo đúng gói việc; rồi đọc kết quả như một khoảng dự báo chứ không như một con số đã chốt. Công cụ hợp nhất với dự án có phạm vi đã chia được thành gói việc và có ngân sách cho từng gói. Với dự án ngắn, báo cáo hằng tháng cho quá ít điểm dữ liệu để thấy xu hướng kịp lúc <sup><a href="#ref-1">[1]</a></sup>, nên hoặc rút kỳ báo cáo xuống hằng tuần, hoặc chỉ giữ phần lõi: gói việc, ngân sách từng gói, và một quy tắc tính EV.</p>
+
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Chốt cách tính giá trị thu được cho từng gói việc trước khi gói đó bắt đầu:</strong> Gói nằm gọn trong một kỳ báo cáo dùng 0/100, gói trải qua hai kỳ dùng 50/50 hay 25/75, gói dài chia thành các mốc có trọng số với ít nhất một mốc mỗi kỳ, còn việc đếm được như mét cáp hay số kệ thì đếm. Phần trăm hoàn thành chỉ dùng khi nó dựa trên thứ định lượng được, và khi phần việc tính theo thời gian vượt khoảng 15% ngân sách thì xem lại <sup><a href="#ref-1">[1]</a></sup>. Cách hiển nhiên là hỏi người làm đã xong bao nhiêu phần trăm, và theo suy luận của bài, nó hỏng nặng nhất đúng lúc CPI bắt đầu được dùng để chấm chính người báo cáo: khi đó con số phần trăm có lý do để lớn lên. Một mốc nghiệm thu khó bị đẩy lên hơn, nhưng vẫn hỏng được nếu tiêu chí nghiệm thu bị hạ hoặc nghiệm thu chỉ cho có, nên người ký nghiệm thu không nên là người đang được chấm bằng chính CPI ấy</li>
+                    <li><strong>Giữ đường cơ sở cố định làm thước, để dự phòng ra ngoài nó, và chỉ đổi nó qua kiểm soát thay đổi đã được duyệt:</strong> GAO định nghĩa đường cơ sở đo lường là kế hoạch ngân sách rải theo thời gian để đo mọi hiệu suất thực tế, và mô tả khoản dự phòng quản lý mà người quản lý để riêng cho những rủi ro chưa biết lúc khởi đầu. Phần dự phòng được phân bổ cho một việc cụ thể sẽ vào đường cơ sở, nhưng chỉ được dùng cho việc nằm trong phạm vi, không được dùng để bù hay thu nhỏ một chênh lệch chi phí đã có. Phạm vi đổi chỉ là một trong nhiều lý do hợp lệ để đổi đường cơ sở; điều bắt buộc là mọi thay đổi đều được ghi lại. Khi khoản dự phòng tiêu hết, mọi rủi ro xảy ra thêm chỉ còn hiện ra thành chênh lệch chi phí xấu đi <sup><a href="#ref-1">[1]</a></sup>. Kéo PV xuống cho khớp mỗi lần chậm thì SV sẽ luôn gần 0 và không còn đo gì; lặng lẽ chuyển dự phòng vào ngân sách của gói đang vượt chi cũng làm CPI của gói ấy đẹp lên theo cách tương tự</li>
+                    <li><strong>Đọc chênh lệch tiến độ bằng tuần, và đặt nó cạnh đường găng trước khi kết luận về ngày xong:</strong> SV tính bằng tiền gộp mọi gói việc, và trong khoảng một phần ba cuối dự án nó trôi dần về 0 bất kể dự án trễ bao lâu <sup><a href="#ref-5">[5]</a></sup>. Tính thêm tiến độ thu được để có số tuần chậm, rồi hỏi phần chậm nằm ở gói nào và gói ấy có trên đường găng không; một SV âm ở việc còn khoảng dư có thể không làm lùi ngày xong <sup><a href="#ref-1">[1]</a></sup>, còn một SV dương nhờ làm vượt ở việc không găng có thể che một việc găng đang trễ</li>
+                    <li><strong>Dự báo chi phí cuối bằng một khoảng tính từ từng gói, và đòi bằng chứng khi dự báo cần hiệu suất tốt hơn quá khứ:</strong> GAO coi BAC chia CPI thường là kịch bản tốt nhất, ghi rằng công thức nhân CPI với SPI thường được gọi là dự báo xấu nhất, và khuyên tính dự báo ở cả các tầng thấp của cây phân rã để gói làm tốt không che gói làm kém. Khi dự báo của nhóm dự án thấp hơn các dự báo từ chỉ số, so chỉ số hiệu suất cần đạt (TCPI), tức ngân sách của phần việc còn lại chia cho số tiền còn được tiêu, với CPI: TCPI cao hơn CPI nghĩa là dự báo đang giả định từ nay sẽ làm hiệu quả hơn trước, và giả định ấy cần bằng chứng; theo quy tắc kinh nghiệm GAO dẫn, TCPI cao hơn CPI quá 5 điểm phần trăm thì dự báo nhiều khả năng quá lạc quan <sup><a href="#ref-1">[1]</a></sup>. Đừng coi CPI ở mốc 20% là đã chốt, vì theo định nghĩa ±0,10, chỉ khoảng 56% hợp đồng quốc phòng trong nghiên cứu năm 2015 đạt mức ổn định ấy từ mốc 20% <sup><a href="#ref-4">[4]</a></sup>. Báo cả khoảng, đừng chỉ báo một đầu, và đưa nó tới tay một người không phụ trách dự án: ở A-12, bản tóm tắt viết chỉ ghi dự báo thấp nhất, và người quản lý chương trình đã dùng chính con số ấy làm mức trần <sup><a href="#ref-6">[6]</a></sup>; sau đó Bộ Quốc phòng Mỹ buộc mọi dự báo thấp hơn mức tính theo CPI luỹ kế phải được giải trình riêng <sup><a href="#ref-3">[3]</a></sup></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Tình Huống Áp Dụng</h2>
+            <p class="intro-text">Một công ty phân phối hàng tiêu dùng chuyển kho sang một kho mới thuê ở tỉnh bên cạnh, vì hợp đồng thuê kho cũ hết hạn cuối tuần 12. Mục tiêu đo được: toàn bộ 4.000 pallet hàng nằm trong kho mới và được nhập xuất bằng phần mềm quản lý kho mới trước cuối tuần 12, trong tổng ngân sách được duyệt 3,2 tỷ đồng, gồm 3 tỷ cho phần việc đã lên kế hoạch và 200 triệu dự phòng quản lý. Tiền tính bằng triệu đồng, "tuần 6" là cuối tuần làm việc thứ sáu, và mọi con số là số minh hoạ.</p>
+
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Chia phạm vi thành gói việc và chốt cách tính giá trị thu được cho từng gói:</strong> Cây phân rã cho sáu gói việc. Sửa sàn và sơn vạch kho mới (A) chia thành hai mốc: sàn được nghiệm thu, rồi vạch sơn xong. Lắp 1.200 vị trí kệ (B) thì đếm, mỗi vị trí đã lắp và nghiệm thu được ghi 0,5 triệu. Cài đặt phần mềm quản lý kho (C) chia thành ba mốc, và mốc cuối là chạy thử được nghiệm thu, không phải "nhà cung cấp báo đã xong". Chuyển 4.000 pallet (D) thì đếm số pallet đã vào vị trí trong kho mới và hiện trên phần mềm, ghi 0,29 triệu mỗi pallet theo hợp đồng giá cố định với công ty vận tải. Đào tạo nhân viên kho (E) dùng 50/50. Quản lý dự án (F) không làm ra sản phẩm nào đếm hay nghiệm thu được, đúng loại việc GAO lấy làm ví dụ cho cách tính theo thời gian <sup><a href="#ref-1">[1]</a></sup>, nên ghi 20 triệu mỗi tuần; nó chiếm 8% ngân sách, dưới mức 15% mà từ đó GAO khuyên soi lại</li>
+                    <li><strong>Rải ngân sách theo tuần thành đường giá trị kế hoạch và chốt nó trước khi bắt đầu:</strong> Theo bảng ngay dưới, PV luỹ kế là 20 triệu ở cuối tuần 1, 430 ở tuần 2, 760 ở tuần 3, 1.080 ở tuần 4, 1.250 ở tuần 5, 1.620 ở tuần 6, và lên tới 3.000 ở tuần 12. Gói D chỉ bắt đầu được khi cả kệ (B) lẫn phần mềm (C) đã xong, và theo kế hoạch nó xong cuối tuần 11, nên cả dự án có đúng một tuần đệm trước ngày trả kho. Khoản 200 triệu dự phòng nằm ngoài đường PV</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Gói việc</th><th scope="col">Ngân sách</th><th scope="col">Tuần theo kế hoạch</th><th scope="col">Cách tính giá trị thu được</th></tr></thead>
+                    <tbody>
+                        <tr><td>A. Sửa sàn, sơn vạch</td><td>400</td><td>1-3</td><td>Mốc: sàn nghiệm thu cuối tuần 2 (240), vạch sơn xong cuối tuần 3 (160)</td></tr>
+                        <tr><td>B. Lắp 1.200 vị trí kệ</td><td>600</td><td>3-6</td><td>Đếm: 0,5 mỗi vị trí đã nghiệm thu, 300 vị trí mỗi tuần; cần sàn xong</td></tr>
+                        <tr><td>C. Phần mềm quản lý kho</td><td>500</td><td>1-6</td><td>Mốc: cấu hình, cuối tuần 2 (150); chuyển dữ liệu thử, cuối tuần 4 (150); chạy thử nghiệm thu, cuối tuần 6 (200)</td></tr>
+                        <tr><td>D. Chuyển 4.000 pallet</td><td>1.160</td><td>7-11</td><td>Đếm: 0,29 mỗi pallet đã vào vị trí, 800 pallet mỗi tuần; cần B và C xong</td></tr>
+                        <tr><td>E. Đào tạo nhân viên kho</td><td>100</td><td>7</td><td>50/50</td></tr>
+                        <tr><td>F. Quản lý dự án</td><td>240</td><td>1-12</td><td>Theo thời gian: 20 mỗi tuần</td></tr>
+                        <tr><td>Tổng (BAC)</td><td>3.000</td><td></td><td>Dự phòng quản lý 200, ngoài đường cơ sở</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">Đường cơ sở chốt trước tuần 1. Đơn vị: triệu đồng.</p>
+
+                <ol class="outline-list" start="3">
+                    <li><strong>Cuối tuần 6, ghi chi phí thực tế theo gói và tính giá trị thu được đúng như đã chốt:</strong> Sàn được nghiệm thu muộn một tuần, cuối tuần 3, vạch sơn xong cuối tuần 4, nên A thu được đủ 400. Vì đợi sàn, B bắt đầu từ tuần 4 và tới cuối tuần 6 có 900 vị trí kệ được nghiệm thu, thu được 450; đội lắp phải tăng ca. Ở C, cấu hình xong đúng tuần 2, dữ liệu thử chuyển xong tuần 5, muộn một tuần, còn lần chạy thử vướng lỗi mã hàng trùng nên chưa được nghiệm thu. Nhà cung cấp báo phần mềm "đã xong 90%", nhưng mốc cuối chưa đạt nên C chỉ thu được 300. Bảng dưới ghi đủ ba con số của từng gói</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Gói việc</th><th scope="col">PV</th><th scope="col">EV</th><th scope="col">AC</th><th scope="col">CV</th><th scope="col">CPI</th><th scope="col">SV</th></tr></thead>
+                    <tbody>
+                        <tr><td>A. Sửa sàn, sơn vạch</td><td>400</td><td>400</td><td>410</td><td>−10</td><td>0,98</td><td>0</td></tr>
+                        <tr><td>B. Lắp kệ</td><td>600</td><td>450</td><td>470</td><td>−20</td><td>0,96</td><td>−150</td></tr>
+                        <tr><td>C. Phần mềm</td><td>500</td><td>300</td><td>360</td><td>−60</td><td>0,83</td><td>−200</td></tr>
+                        <tr><td>F. Quản lý dự án</td><td>120</td><td>120</td><td>120</td><td>0</td><td>1,00</td><td>0</td></tr>
+                        <tr><td>Cả dự án</td><td>1.620</td><td>1.270</td><td>1.360</td><td>−90</td><td>0,93</td><td>−350</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">Tình trạng cuối tuần 6. D và E chưa tới lượt nên chưa có trong bảng. Đơn vị: triệu đồng.</p>
+
+                <ol class="outline-list" start="4">
+                    <li><strong>Đọc chỉ số theo từng gói chứ không chỉ con số tổng:</strong> CPI của cả dự án là 0,93, nghe như một độ lệch nhỏ chia đều. Bảng theo gói cho thấy hai phần ba khoản vượt chi, 60 trong 90 triệu, nằm ở một gói, phần mềm, với CPI 0,83. Chênh lệch tiến độ −350 triệu nằm cả ở B lẫn C</li>
+                    <li><strong>Đổi chênh lệch tiến độ sang tuần và đặt nó lên đường găng:</strong> EV 1.270 nằm giữa PV tuần 5 (1.250) và PV tuần 6 (1.620), nên tiến độ thu được là 5 + (1.270 − 1.250) / (1.620 − 1.250), khoảng 5,05 tuần, và SPI(t) là 5,05 chia 6, khoảng 0,84: theo tiến độ thu được, dự án chậm gần đúng một tuần. Con số ấy chỉ có nghĩa khi biết nó nằm đâu. B còn 300 vị trí kệ, tức một tuần; C cần thêm một tuần để sửa mã trùng và chạy thử lại; cả hai đều đứng trước D, gói lớn nhất. Nếu D bắt đầu tuần 8 với 800 pallet mỗi tuần, nó xong cuối tuần 12, đúng ngày trả kho, và tuần đệm duy nhất đã mất</li>
+                    <li><strong>Dự báo chi phí cuối bằng một khoảng và so chỉ số hiệu suất cần đạt:</strong> Bảng ngay dưới đặt bốn cách dự báo cạnh nhau. Ba cách đầu dùng một hệ số chung cho cả 1.730 triệu dự toán của phần việc còn lại, và cho từ 3.090 tới khoảng 3.723. Cách thứ tư tính từng gói: B và C chia cho CPI của chính chúng, còn D có hợp đồng giá cố định nên giữ nguyên 1.160, không nhân với CPI của gói khác; kết quả khoảng 3.137. Để giữ trong 3 tỷ, TCPI là 1.730 / (3.000 − 1.360), khoảng 1,05: phần việc còn lại phải làm rẻ hơn chính dự toán của nó, trong khi CPI đã có là 0,93, cách nhau khoảng 12 điểm phần trăm, xa hơn nhiều so với mức 5 điểm của quy tắc kinh nghiệm ở GAO <sup><a href="#ref-1">[1]</a></sup>. Gói D làm khoảng cách ấy rộng thêm: giá cố định thì không đắt lên mà cũng không rẻ đi, nên phần không thuộc D phải gánh hết, 570 triệu dự toán trong 480 triệu còn lại, TCPI khoảng 1,19. Các phép tính ấy không chứng minh 3 tỷ là bất khả. Chúng cho thấy cả bốn dự báo đều vượt mức ấy, kể cả dự báo cho phần còn lại đi đúng dự toán, và nhóm chưa có phương án nào làm phần còn lại rẻ hơn dự toán, nên nhóm báo ngay cho ban giám đốc rằng dự án nhiều khả năng vượt đường cơ sở. Với ngân sách 3,2 tỷ gồm cả dự phòng, TCPI là 1.730 / 1.840, khoảng 0,94, gần với hiệu suất hiện có; thứ đỡ cho con số ấy là hợp đồng giá cố định của D, gói chiếm hai phần ba ngân sách còn lại</li>
+                </ol>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Cách dự báo</th><th scope="col">Phép tính</th><th scope="col">EAC</th></tr></thead>
+                    <tbody>
+                        <tr><td>Phần còn lại đi đúng dự toán</td><td>1.360 + 1.730</td><td>3.090</td></tr>
+                        <tr><td>Phần còn lại đi với CPI hiện tại</td><td>3.000 / CPI</td><td>khoảng 3.213</td></tr>
+                        <tr><td>Phần còn lại chịu cả CPI lẫn SPI hiện tại</td><td>1.360 + 1.730 / (CPI × SPI)</td><td>khoảng 3.723</td></tr>
+                        <tr><td>Tính từ từng gói</td><td>1.360 + 150 / 0,96 (B) + 200 / 0,83 (C) + 1.160 (D) + 100 (E) + 120 (F)</td><td>khoảng 3.137</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">Dự báo cuối tuần 6, chưa tính 40 triệu thuê xe ở bước 7. CPI và SPI dùng giá trị chưa làm tròn: 1.270 / 1.360 và 1.270 / 1.620. Đơn vị: triệu đồng.</p>
+
+                <ol class="outline-list" start="7">
+                    <li><strong>Hành động ở đúng gói gây lệch, rồi theo dõi bằng chỉ số không tự trôi:</strong> Để lấy lại tuần đệm, nhóm xin phân bổ 40 triệu từ dự phòng để thuê thêm xe, nâng D lên 1.000 pallet mỗi tuần, xong trong bốn tuần. Việc thuê xe là phần việc mới nằm trong phạm vi, nên khoản này đi qua kiểm soát thay đổi và vào ngân sách của D, BAC thành 3.040, còn báo cáo giữ thêm một dòng so với đường cơ sở gốc 3.000; nó không được dùng để xoá 90 triệu vượt chi đã có. EAC theo gói thành khoảng 3.177, còn dưới 3,2 tỷ nếu D giữ đúng giá hợp đồng và C không trễ thêm. Với C, công ty giữ khoản thanh toán của mốc cuối tới khi chạy thử được nghiệm thu. Từ tuần 9, cuộc họp giao ban theo dõi SPI(t) thay cho SPI, vì khi D đi gần hết, SPI tính bằng tiền sẽ tự trôi về 1</li>
+                </ol>
+
+                <p>C được nghiệm thu cuối tuần 7, cùng tuần B lắp xong vị trí kệ cuối cùng và E đào tạo xong. D chạy từ tuần 8 tới hết tuần 11, 1.000 pallet mỗi tuần, và kho cũ được trả trước hạn một tuần. Tổng chi là 3.185 triệu, vượt 3 tỷ của đường cơ sở gốc 185 triệu và nằm trong 3,2 tỷ đã duyệt. Trong 185 triệu ấy, 40 là khoản dự phòng đã phân bổ cho xe thuê; 145 còn lại là vượt chi của chính phần việc đã lên kế hoạch. Tiền để trả khoản ấy nằm trong 3,2 tỷ đã duyệt, nhưng trên báo cáo nó không được ghi thành dự phòng đã phân bổ, nên vẫn hiện nguyên trong chênh lệch chi phí. EVM không làm nhà cung cấp phần mềm sửa lỗi nhanh hơn. Thứ nó làm được là ba việc cụ thể: giữ con số "90%" ra khỏi báo cáo, chỉ ra rằng khoản vượt chi nằm ở một gói chứ không chia đều, và cho ban giám đốc biết từ tuần 6, khi còn hơn một nửa ngân sách chưa chi, rằng dự án nhiều khả năng vượt 3 tỷ và cần bao nhiêu để giữ ngày trả kho. Điều kiện để có kết quả ấy là cách tính giá trị thu được được chốt trước khi làm, gói lớn nhất còn lại có giá cố định nên dự báo cho nó không phải dựa vào CPI của gói khác, và độ chậm được đổi ra tuần rồi đặt lên đường găng trước khi quyết định chi thêm. Một lần về đích đúng hạn không chứng minh lần sau cũng vậy.</p>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Tóm Tắt</h2>
+            <div class="summary-box">
+                <p><strong>Điểm Chính:</strong> Cơ chế của quản lý giá trị thu được là quy phần việc đã xong về cùng đơn vị với ngân sách, để một phép so với kế hoạch cho ra độ chậm và một phép so với chi phí thực tế cho ra độ đắt, thay vì để tiền đã tiêu che cả hai. Điều phản trực giác nhất là quy tắc nổi tiếng "CPI ổn định từ mốc 20%" chỉ đứng vững với một định nghĩa ổn định: trên 209 hợp đồng quốc phòng mà Petter và cộng sự phân tích năm 2015, theo định nghĩa ±0,10 mà người ta hay chép, chỉ 56% hợp đồng đạt mức ổn định ấy từ mốc 20%. Cùng lúc, chỉ số tiến độ tính bằng tiền luôn quay về 1 khi dự án kết thúc, kể cả dự án trễ. Vì vậy, chỉ tin giá trị thu được khi cách tính nó được chốt trước khi làm, đọc độ chậm bằng tuần cạnh đường găng, và báo chi phí cuối như một khoảng tính từ từng gói việc.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">Tài Liệu Tham Khảo</h2>
+            <ol class="outline-list">
+                <li id="ref-1">GAO (2020). <em>Cost Estimating and Assessment Guide: Best Practices for Developing and Managing Program Costs</em>, GAO-20-195G, ngày 12 tháng 3 năm 2020, bản trực tuyến kiểm ngày 24 tháng 10 năm 2026. Hướng dẫn của Văn phòng Kiểm toán Chính phủ Mỹ; nguồn cho định nghĩa ba con số và các chỉ số, ví dụ 4 dặm đường ray, cây phân rã là thành phần không thể thiếu của EVM, các lợi ích kể cả nhận định về hơn 700 chương trình quốc phòng (mục "What EVM Is"), tiêu chuẩn ANSI/EIA năm 1998, bản EIA-748-D và yêu cầu của OMB từ năm 2006 (mục "Federal and Industry Guidelines for Implementing EVM"), chi phí dựng hệ thống, giới hạn với dự án dưới sáu tháng và nhận định rằng khó đo lợi ích thành con số (mục "Obstacles to EVM"), các cách tính giá trị thu được, quản lý chương trình là ví dụ của phần việc tính theo thời gian và ngưỡng 15%, luật dùng dự phòng quản lý và các lý do đổi đường cơ sở (mục "EVM Process"), đường cơ sở, dự phòng quản lý, chênh lệch chi phí đẹp do chi phí chưa ghi nhận, chênh lệch tiến độ và đường găng, TCPI và quy tắc kinh nghiệm 5 điểm phần trăm (mục "Analyze Performance"), các công thức dự báo, SPI quay về 1,0 và câu về CPI ở mốc 20% (mục "Project Future Performance"), định nghĩa chi phí thực tế (mục "Glossary"). <a href="https://www.gao.gov/products/gao-20-195g" rel="noopener noreferrer" target="_blank">Trang tài liệu</a>; <a href="https://guides.gaoinnovations.gov/cost-guide/what-evm-is.html" rel="noopener noreferrer" target="_blank">bản trực tuyến, mục "What EVM Is"</a>.</li>
+                <li id="ref-2">GAO (1997). <em>Major Acquisitions: Significant Changes Underway in DOD's Earned Value Management Process</em>, GAO/NSIAD-97-108, ngày 5 tháng 5 năm 1997. Báo cáo gửi tiểu ban Mua sắm và Công nghệ của Uỷ ban Quân vụ Thượng viện Mỹ; nguồn cho 35 tiêu chí năm 1967, bộ hướng dẫn công nghiệp 32 tiêu chí năm 1996, và phần tóm tắt cuộc điều tra hành chính năm 1990 về chương trình A-12. <a href="https://www.govinfo.gov/content/pkg/GAOREPORTS-NSIAD-97-108/html/GAOREPORTS-NSIAD-97-108.htm" rel="noopener noreferrer" target="_blank">Đọc báo cáo</a>.</li>
+                <li id="ref-3">Christensen, D. S., &amp; Heise, S. R. (1993). Cost performance index stability. <em>National Contract Management Journal</em>, 25, 7-15. Nghiên cứu 155 hợp đồng quốc phòng trong cơ sở dữ liệu DAES; nguồn cho định nghĩa ổn định theo khoảng biến thiên, các tỷ lệ 134 trên 155 và 153 trên 155, xu hướng CPI luỹ kế đi xuống, lời giải thích rằng độ ổn định đến phần lớn từ tính luỹ kế, câu tự nhận tính khái quát trong quốc phòng, và cho ba chi tiết về A-12: ngày chấm dứt hợp đồng 7 tháng 1 năm 1991, CPI 0,76 và TCPI 1,22 ở mốc 48% (nguồn viết hiệu suất phải đạt "gần gấp đôi"; tỷ số 1,22 / 0,76 là khoảng 1,6, bài dùng con số tính lại), và yêu cầu giải trình của văn phòng Thứ trưởng Quốc phòng phụ trách mua sắm sau vụ A-12. Bài đọc toàn văn qua bản lưu trên Internet Archive. <a href="https://web.archive.org/web/20130922220528/http://www.suu.edu/faculty/christensend/evms/CPIstabilityNCMJ.pdf" rel="noopener noreferrer" target="_blank">Đọc bản lưu</a>.</li>
+                <li id="ref-4">Petter, J. L., Ritschel, J. D., &amp; White, E. D. (2015). Stability properties in Department of Defense contracts: Answering the controversy. <em>Journal of Public Procurement</em>, 15(3), 341-364. Phân tích 209 hợp đồng ACAT I giai đoạn 1987 tới 2012 bằng ba định nghĩa ổn định; nguồn cho các tỷ lệ 83%, 56% và 81%, cho kết quả về SPI(t), cho việc loại các hợp đồng dựng lại đường cơ sở vượt ngân sách, cho cách đọc của nhóm tác giả về phạm vi của Christensen và Heise, và là nơi bài dẫn lại lời phản bác của Abba (2008) với Henderson và Zwikael. <a href="https://www.ippa.org/images/JOPP/vol15/issue-3/Article_4_Dan-Ritschel.pdf" rel="noopener noreferrer" target="_blank">Đọc toàn văn</a>.</li>
+                <li id="ref-5">Lipke, W. (2003). Schedule is different. <em>The Measurable News</em>, tháng 3 năm 2003, tr. 10-15. Bài đề xuất tiến độ thu được, của một người làm ở bộ phận phần mềm Trung tâm Hậu cần Không quân Oklahoma City; nguồn cho việc SV và SPI quay về 0 và 1 ở cuối dự án, ví dụ dự án dự kiến xong tháng 1 năm 2002 mà tháng 4 mới xong, nhận định về một phần ba cuối dự án, cách tính ES, SV(t) và SPI(t), và lời tác giả rằng phép chiếu không phải ý mới. Số kỳ và số trang lấy từ danh mục tham khảo của Henderson và Zwikael. <a href="https://www.earnedschedule.com/Docs/Schedule%20is%20Different.pdf" rel="noopener noreferrer" target="_blank">Đọc bản PDF</a>.</li>
+                <li id="ref-6">Beach, C. P., Jr. (1990). <em>A-12 Administrative Inquiry</em>. Bản ghi nhớ gửi Bộ trưởng Hải quân Mỹ, ngày 28 tháng 11 năm 1990. Báo cáo của cuộc điều tra hành chính về chương trình A-12; nguồn cho hợp đồng ngày 13 tháng 1 năm 1988 với chi phí mục tiêu và giá trần, sức ép dòng tiền của nhà thầu, thông lệ chỉ ghi dự báo theo CPI luỹ kế và chú thích về "CPI có trọng số" tháng 7 năm 1989, việc người quản lý chương trình dùng dự báo ấy làm trần và hạ thấp nó trong báo cáo DAES, phân tích ngày 27 tháng 3 năm 1990 về khoản vượt trần 1 tỷ đô la, nhận định về dự báo cân bằng CPI với SPI, và câu về hơn 400 chương trình. Bài đọc bản chép lại do David Christensen soạn cho một bài giảng tình huống, theo ghi chú của chính bản ấy là không quét từ bản gốc và có thể còn lỗi gõ, qua bản lưu năm 2010 trên Internet Archive. Bản trích câu về 400 chương trình trong bài của Christensen và Heise [3] ghi khoảng "15% and 18%", còn bản này và Henderson và Zwikael [7] ghi "15% and 85%"; bài theo con số sau. <a href="https://web.archive.org/web/20100531194606/http://www.suu.edu/faculty/christensend/evms/beacha-1.pdf" rel="noopener noreferrer" target="_blank">Đọc bản lưu</a>.</li>
+                <li id="ref-7">Henderson, K., &amp; Zwikael, O. (2008). Does project performance stability exist? A re-examination of CPI and evaluation of SPI(t) stability. <em>CrossTalk</em>, 21(4), 7-13. Kiểm lại quy tắc CPI ổn định trên 26 dự án ở Israel, Anh và Úc; nguồn cho kết quả 3 trên 26, cho việc ổn định sớm không đi cùng kết cục tốt hơn, và cho những dự án có CPI tốt dần tới cuối. Bài đọc bản của tác giả đăng trên trang Earned Schedule. <a href="https://www.earnedschedule.com/Docs/Does%20Project%20Performance%20Stability%20Exist%20%20Henderson%20Zwikael.pdf" rel="noopener noreferrer" target="_blank">Đọc bản PDF</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

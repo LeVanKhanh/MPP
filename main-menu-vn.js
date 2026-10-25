@@ -605,6 +605,20 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Quản Lý Giá Trị Thu Được (EVM)",
+                        route: "pages/reading-studying/management-tools-and-techniques/15-earned-value-management-vn.html",
+                        hash: "#/earned-value-management",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                    {
+                        title: "Khung Mục Tiêu SMART",
+                        route: "pages/reading-studying/management-tools-and-techniques/16-smart-framework-vn.html",
+                        hash: "#/smart-framework",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

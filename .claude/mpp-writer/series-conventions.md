@@ -36,6 +36,8 @@ Thư mục: `pages/reading-studying/management-tools-and-techniques/`. Khung tra
 | Sơ Đồ Chuỗi Giá Trị | xưởng may áo sơ mi đồng phục cho trường học; chi nhánh ngân hàng giải ngân khoản vay mua nhà; tiệm giặt sấy giao nhận tận nhà |
 | Cấu Trúc Phân Rã Công Việc (WBS) | trường mầm non mở cơ sở thứ hai (Hình 1); công ty bảo hiểm ra mắt ứng dụng nộp hồ sơ bồi thường; gia đình cải tạo căn hộ cũ 70 m² |
 | Phương Pháp Đường Găng (CPM) | kỷ yếu của một lớp tốt nghiệp (Hình 1); nhà hàng khai trương muộn vì nghiệm thu phòng cháy; chuỗi nhà thuốc tám cửa hàng chuyển phần mềm bán hàng |
+| Quản Lý Giá Trị Thu Được (EVM) | lắp điện mặt trời áp mái cho 10 nhà xưởng (Hình 1); công ty phần mềm làm ứng dụng đặt lịch khám, năm tính năng cùng báo 85%; công ty phân phối chuyển kho, 4.000 pallet |
+| Khung Mục Tiêu SMART | trưởng phòng kinh doanh thiết bị y tế, máy đo huyết áp ở ba tỉnh miền Tây; chuỗi điện máy 18 cửa hàng tuyển nhân viên bán hàng trong 20 ngày; câu lạc bộ thể hình giữ hội viên mới tới tuần 8 |
 
 ### Trang tổng quan, menu, file
 

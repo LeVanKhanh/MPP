@@ -12,6 +12,13 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["C:/Users/levan/AppData/Local/Temp/claude/D--Work-Projects-Me-GitHub-MPP/19ec573f-44fd-46e5-8c44-411afc9e5352/scratchpad/nocache_server.py", "8766"],
       "port": 8766
+    },
+    {
+      "name": "mpp-static-alt",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8767"],
+      "port": 8767,
+      "autoPort": false
     }
   ]
 }

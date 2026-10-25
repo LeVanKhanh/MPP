@@ -619,6 +619,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Mục Tiêu Và Kết Quả Then Chốt (OKR)",
+                        route: "pages/reading-studying/management-tools-and-techniques/17-okr-objectives-and-key-results-vn.html",
+                        hash: "#/okr-objectives-and-key-results",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

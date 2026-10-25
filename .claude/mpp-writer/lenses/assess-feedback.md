@@ -57,7 +57,7 @@ Mỗi loại tuyên bố cần một cách kiểm khác nhau. Dùng sai cách ki
 - **Về giọng văn** - hai đường ngược nhau, đừng gộp:
   - Họ chỉ ra một dấu hiệu có tên trong `voice-guide.md` mục 4 (em dash, cụm từ cấm, bộ ba, nhịp đều, bullet đồng dạng) thì gần như luôn **Đúng**. Sửa.
   - Họ đề nghị viết "mượt hơn", "chuyên nghiệp hơn", "khách quan hơn", "bớt chủ quan", "thêm phần tóm tắt cho dễ đọc" thì gần như luôn **Đúng nhưng không nên theo**. Đó là hướng kéo bài về giọng trung tính, tức là kéo trục 4 xuống trong khi nghe như đang nâng nó lên.
-- **Về độ dài** - "bài dài quá" hầu như luôn là triệu chứng của "có đoạn không làm việc gì". Đi tìm đoạn đó bằng `developmental-edit` thay vì cắt đều mỗi section một ít.
+- **Về độ dài** - "bài dài quá" hầu như luôn là triệu chứng của "có đoạn không làm việc gì". Đi tìm đoạn đó bằng `developmental-edit` thay vì cắt đều mỗi section một ít. Mục nào đòi đổi thứ mà `catalog-series.md`, `series-conventions.md` hay từ điển series đã chốt (bố cục Tóm tắt, cách gọi, dời con số khỏi `Kết quả:`) thì xếp **Không nên theo**, trích dòng luật đang chặn; muốn đổi luật thì đề xuất theo `guide-maintenance.md`.
 - **Về HTML và kỹ thuật** - kiểm thẳng bằng `html-menu-rules.md` mục 8. Loại này đúng sai rõ ràng, không cần bàn.
 
 ## 5. Tự kiểm trước khi báo cáo

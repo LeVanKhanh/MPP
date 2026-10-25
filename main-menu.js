@@ -612,6 +612,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Objectives and Key Results (OKR)",
+                        route: "pages/reading-studying/management-tools-and-techniques/17-okr-objectives-and-key-results.html",
+                        hash: "#/okr-objectives-and-key-results",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

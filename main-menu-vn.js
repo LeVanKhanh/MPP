@@ -633,6 +633,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Thẻ Điểm Cân Bằng",
+                        route: "pages/reading-studying/management-tools-and-techniques/19-balanced-scorecard-vn.html",
+                        hash: "#/balanced-scorecard",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

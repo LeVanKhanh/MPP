@@ -626,6 +626,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Balanced Scorecard",
+                        route: "pages/reading-studying/management-tools-and-techniques/19-balanced-scorecard.html",
+                        hash: "#/balanced-scorecard",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

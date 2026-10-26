@@ -640,6 +640,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Tỷ Suất Hoàn Vốn (ROI)",
+                        route: "pages/reading-studying/management-tools-and-techniques/20-roi-vn.html",
+                        hash: "#/roi",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

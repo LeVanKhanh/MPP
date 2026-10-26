@@ -633,6 +633,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "ROI (Return on Investment)",
+                        route: "pages/reading-studying/management-tools-and-techniques/20-roi.html",
+                        hash: "#/roi",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

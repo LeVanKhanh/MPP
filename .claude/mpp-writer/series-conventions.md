@@ -39,6 +39,7 @@ Thư mục: `pages/reading-studying/management-tools-and-techniques/`. Khung tra
 | Quản Lý Giá Trị Thu Được (EVM) | lắp điện mặt trời áp mái cho 10 nhà xưởng (Hình 1); công ty phần mềm làm ứng dụng đặt lịch khám, năm tính năng cùng báo 85%; công ty phân phối chuyển kho, 4.000 pallet |
 | Khung Mục Tiêu SMART | trưởng phòng kinh doanh thiết bị y tế, máy đo huyết áp ở ba tỉnh miền Tây; chuỗi điện máy 18 cửa hàng tuyển nhân viên bán hàng trong 20 ngày; câu lạc bộ thể hình giữ hội viên mới tới tuần 8 |
 | Mục Tiêu Và Kết Quả Then Chốt (OKR) | công ty ứng dụng học tiếng Anh cho trẻ em, "phụ huynh thấy con học đều mỗi tuần"; chuỗi nhà sách chín cửa hàng, điểm OKR trong 40% thưởng quý; nhà xe khách giường nằm tuyến TP.HCM - Đà Lạt, 24 chuyến mỗi ngày, thời gian quay đầu của xe |
+| Chỉ Số Hiệu Suất Then Chốt (KPI) | công ty cấp nước chọn ba KPI trong hơn hai trăm con số; trung tâm đào tạo lái xe hạng B, 120 học viên, KPI tỷ lệ đỗ lần đầu và mẫu số co từ 120 xuống 90; công ty xây dựng sáu công trình, KPI chung của quy trình cung ứng: tỷ lệ phiếu đề nghị vật tư về kịp ngày cần, phần của phòng mua và phần của chỉ huy trưởng đo riêng |
 
 ### Trang tổng quan, menu, file
 

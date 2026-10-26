@@ -619,6 +619,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Key Performance Indicators (KPI)",
+                        route: "pages/reading-studying/management-tools-and-techniques/18-kpi-key-performance-indicators.html",
+                        hash: "#/kpi-key-performance-indicators",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

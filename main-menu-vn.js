@@ -626,6 +626,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Chỉ Số Hiệu Suất Then Chốt (KPI)",
+                        route: "pages/reading-studying/management-tools-and-techniques/18-kpi-key-performance-indicators-vn.html",
+                        hash: "#/kpi-key-performance-indicators",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

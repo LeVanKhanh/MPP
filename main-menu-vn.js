@@ -647,6 +647,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Phân Tích SWOT",
+                        route: "pages/reading-studying/management-tools-and-techniques/21-swot-analysis-vn.html",
+                        hash: "#/swot-analysis",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

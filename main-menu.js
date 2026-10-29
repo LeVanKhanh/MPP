@@ -640,6 +640,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "SWOT Analysis",
+                        route: "pages/reading-studying/management-tools-and-techniques/21-swot-analysis.html",
+                        hash: "#/swot-analysis",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

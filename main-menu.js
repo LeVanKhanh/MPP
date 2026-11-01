@@ -682,6 +682,19 @@ var mainMenu = [
                     },
                 ],
             },
+            {
+                title: "Studying English",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Pre A1 Starters Wordlist",
+                        route: "pages/studying-en/starter/words-list-cambridge.html",
+                        hash: "#/starters-wordlist",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
         ],
     },
     {

@@ -689,6 +689,19 @@ var mainMenuVn = [
                     },
                 ],
             },
+            {
+                title: "Học Tiếng Anh",
+                icon: "fas fa-folder",
+                subItems: [
+                    {
+                        title: "Từ Vựng Pre A1 Starters",
+                        route: "pages/studying-en/starter/words-list-cambridge.html",
+                        hash: "#/starters-wordlist",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
+                ],
+            },
         ],
     },
     {

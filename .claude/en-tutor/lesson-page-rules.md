@@ -1,6 +1,6 @@
 # Lesson page rules - one topic, one page
 
-The canonical example is `pages/studying-en/starter/words-list-cambridge.html` (ten topics on one page). A lesson page is **one** topic from that pattern, built from `pages/studying-en/template-lesson.html`. Read the template before writing; do not invent a new structure.
+The canonical example is `pages/studying-en/pre-a1/words-list-cambridge.html` (ten topics on one page). A lesson page is **one** topic from that pattern, built from `pages/studying-en/template-lesson.html`. Read the template before writing; do not invent a new structure.
 
 ## 1. Files and paths
 
@@ -70,7 +70,7 @@ Register in **both** `main-menu.js` and `main-menu-vn.js`, under Reading and Stu
 ```js
 {
     title: "Animals",                                   // VN menu: Vietnamese title, e.g. "Động Vật"
-    route: "pages/studying-en/starter/animals.html",   // same English page in both menus
+    route: "pages/studying-en/pre-a1/animals.html",   // same English page in both menus
     hash: "#/starters-animals",                         // #/<level>-<file name>, unique in the menu
     icon: "fas fa-file-alt",
     subItems: [],

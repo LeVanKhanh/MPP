@@ -59,8 +59,8 @@ Write the answers into the profile and confirm in two or three lines what you wi
 
 Read `starters-syllabus.md`, `lesson-page-rules.md` and `video-rules.md`.
 
-1. Map the request to a topic and a file. The starter folder already has empty placeholder pages (`pages/studying-en/starter/*.html`); the syllabus file says which placeholder fits which topic. Fill the placeholder; do not create a duplicate. If no placeholder fits, propose a file name and use it.
-2. Choose the words: the Starters words for the topic first (check every word against the A–Z list in `pages/studying-en/starter/words-list-cambridge.html`, section `#a-z`). Words above Starters go only in a labelled "Bonus words" group, as the rules say.
+1. Map the request to a topic and a file. The pre-a1 folder already has empty placeholder pages (`pages/studying-en/pre-a1/*.html`); the syllabus file says which placeholder fits which topic. Fill the placeholder; do not create a duplicate. If no placeholder fits, propose a file name and use it.
+2. Choose the words: the Starters words for the topic first (check every word against the A–Z list in `pages/studying-en/pre-a1/words-list-cambridge.html`, section `#a-z`). Words above Starters go only in a labelled "Bonus words" group, as the rules say.
 3. Write the sentences under the sentence rules: four patterns, Q&A pairs, only Starters words plus the page's own topic words.
 4. Find the videos with the tools in `.claude/en-tutor/tools/`, exactly as `video-rules.md` says. Every video ID on the page must come from a search result **and** pass the oEmbed check in this same session. Never write a video ID from memory.
 5. Build the page from `pages/studying-en/template-lesson.html`. Reuse the classes in `pages/studying-en/studying-en-styles.css`; add CSS only when a new topic colour is needed.
@@ -73,7 +73,7 @@ Read `starters-syllabus.md`, `lesson-page-rules.md` and `video-rules.md`.
 Read `starters-syllabus.md`, `weekly-plan-rules.md` and `teaching-coach.md`, plus the profile's progress log.
 
 1. Work out the week number and the topic(s) from the progress log and the order in `weekly-plan-rules.md` §2: the profile's school course first (private course map in `.claude/en-tutor/private/courses/`), otherwise the syllabus. If the topic's lesson page does not exist yet, say so and offer to run `lesson` first (the plan links into that page).
-2. Build **one page per lesson** from `pages/studying-en/template-plan-lesson.html`, named `pages/studying-en/starter/plans/<course>/week-NN-<topic>-lesson-NN.html` (one folder per course book, e.g. `amanda-1`, `amanda-2`; week numbers restart at 01 in each). The pages are public and shared with other families: no child name, no age, no personal details.
+2. Build **one page per lesson** from `pages/studying-en/template-plan-lesson.html`, named `pages/studying-en/pre-a1/plans/<course>/week-NN-<topic>-lesson-NN.html` (one folder per course book, e.g. `amanda-1`, `amanda-2`; week numbers restart at 01 in each). The pages are public and shared with other families: no child name, no age, no personal details.
 3. Size every session to the profile (days per week × minutes). Recycle words from earlier weeks as the spacing rules say, and reuse the profile's notes on weak words.
 4. Update the profile: "Current plan: week NN - <topic>".
 5. Reply with a short summary of the week (one line per day) and the file path. Ask before adding the plan to the menu.

@@ -4,14 +4,14 @@
 
 | Level | Cambridge exam | Folder | Status |
 |---|---|---|---|
-| Pre A1 | Starters | `pages/studying-en/starter/` | **Current** |
+| Pre A1 | Starters | `pages/studying-en/pre-a1/` | **Current** |
 | A1 | Movers | `pages/studying-en/movers/` (create when needed) | Later |
 | A2 | Flyers | `pages/studying-en/flyers/` (create when needed) | Later |
 
-Source of truth for Starters vocabulary: the A–Z list in `pages/studying-en/starter/words-list-cambridge.html` (section `#a-z`), copied from the official *Pre A1 Starters Wordlist Picture Book* (Cambridge, 2025). Check a word with:
+Source of truth for Starters vocabulary: the A–Z list in `pages/studying-en/pre-a1/words-list-cambridge.html` (section `#a-z`), copied from the official *Pre A1 Starters Wordlist Picture Book* (Cambridge, 2025). Check a word with:
 
 ```bash
-grep -io '<li>WORD[^<]*<i>[^<]*</i>' pages/studying-en/starter/words-list-cambridge.html
+grep -io '<li>WORD[^<]*<i>[^<]*</i>' pages/studying-en/pre-a1/words-list-cambridge.html
 ```
 
 For Movers and Flyers, find the official wordlist picture book PDF on cambridgeenglish.org and verify each word there; do not rely on memory for which level a word belongs to. When a level is added, copy its A–Z list into a `words-list-cambridge.html` page in that level's folder, the same way as Starters.
@@ -40,7 +40,7 @@ A working summary for planning sentences. When exact exam detail matters, check 
 
 ## 3. Placeholder pages and the suggested order
 
-The parent created these empty files in `pages/studying-en/starter/`. Fill them in this order unless the profile or the parent says otherwise. The first ten follow the ten picture topics of the official book; `words-list-cambridge.html` already has the word lists and sentences for those ten, so a lesson page goes **deeper** (more sentences, a parent tips box, a review section) instead of copying that page.
+The parent created these empty files in `pages/studying-en/pre-a1/`. Fill them in this order unless the profile or the parent says otherwise. The first ten follow the ten picture topics of the official book; `words-list-cambridge.html` already has the word lists and sentences for those ten, so a lesson page goes **deeper** (more sentences, a parent tips box, a review section) instead of copying that page.
 
 | Order | File | Topic | Level fit |
 |---|---|---|---|

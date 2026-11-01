@@ -4,12 +4,14 @@ A plan is a set of public pages the parent opens on a phone, **one page per less
 
 ## 1. Files and names
 
-- One file per lesson: `pages/studying-en/<level>/plans/week-<NN>-<topic>-lesson-<NN>.html`
+- One file per lesson: `pages/studying-en/<level>/plans/<course>/week-<NN>-<topic>-lesson-<NN>.html`
+  - `<course>`: one folder per course book, and week numbers **restart at 01 in each folder**, so a family whose child starts at book 2 begins at "Week 1": `amanda-1`, `amanda-2`, … For plans that follow no course, use `general`.
   - `<NN>`: two digits (`week-01`, `lesson-03`).
   - `<topic>`: one lowercase English word or a hyphenated pair, from the course unit when the profile follows a course (`hello`, `school`, `family`, `toys`, `body`, `pets`, `food`, `christmas`), otherwise from the syllabus topic.
   - If a week has only one lesson, drop the suffix: `week-07-christmas.html`.
 - Built from `pages/studying-en/template-plan-lesson.html`.
-- Styles and scripts are one folder deeper than lesson pages: `../../../pages-styles.css`, `../../studying-en-styles.css`, and the same depth for the scripts.
+- Styles and scripts are two folders deeper than lesson pages: `../../../../pages-styles.css`, `../../../studying-en-styles.css`, the same depth for the scripts, and lesson pages are `../../<page>.html`.
+- `page-meta` starts with the course and week: `Amanda and Friends 2 · Week 1: Hello | Lesson 1 of 3 | …`.
 - Public and shared: no child name, age, school, photos or progress. Write "your child". The audience line is generic: "30 minutes for very young beginners (3–5)", adjusted to the profile's session length and age band.
 - When the profile follows a school course, the subtitle names the matching unit ("Goes with Amanda and Friends 1 – Unit 5: Pets"). Name the unit only; never copy the course's own pages, stories, characters or activities.
 
@@ -62,4 +64,4 @@ The `topic t-<colour>` classes go on the `<article>`, so the lesson nav uses the
 
 1. Update the private profile's "Current plan" line.
 2. Reply with one line per lesson and the file paths.
-3. Ask before adding to the menu. When the parent agrees, add in both menus inside the level folder → **Weekly Plans** (VN: **Kế Hoạch Tuần**) → a week folder `Week N: Topic` (VN: `Tuần N: <Chủ đề>`) → one entry per lesson `Lesson N: Title` (VN: `Buổi N: …`). Hash: `#/<level>-week-NN-<topic>-lesson-NN`. Weeks in number order. Lesson pages (`hello.html`, `animals.html`…) stay in the level folder itself, before Weekly Plans.
+3. Ask before adding to the menu. When the parent agrees, add in both menus inside the level folder → the course's plans folder (`Amanda and Friends 1 · Weekly Plans`, VN `Amanda and Friends 1 · Kế Hoạch Tuần`; one folder per course, in course order) → a week folder `Week N: Topic` (VN: `Tuần N: <Chủ đề>`) → one entry per lesson `Lesson N: Title` (VN: `Buổi N: …`). Hash: `#/<level>-<course>-week-NN-<topic>-lesson-NN` (e.g. `#/starters-amanda-2-week-01-hello-lesson-01`). Weeks in number order. Lesson pages (`hello.html`, `animals.html`…) stay in the level folder itself, before the plans folders.

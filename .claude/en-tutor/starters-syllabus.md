@@ -101,6 +101,21 @@ When the profile names a **School course**, plans follow that course's unit orde
 | 7 | Unit 6: Food (+ number 3, orange) | `vegetables.html` (Fruit and Vegetables), `colors.html` |
 | by date | Festivals: Halloween, Christmas, Easter | one festival page each (create when needed) |
 
+Plans: `plans/amanda-1/`.
+
+**Amanda and Friends 2** (the following year; plans in `plans/amanda-2/`, weeks restart at 01):
+
+| Week | Course unit | Our lesson page(s) |
+|---|---|---|
+| 1 | Welcome: Hello (review colours, numbers 1–3, apple, ball, book) | `hello.html`, `colors.html`, `vegetables.html` |
+| 2 | Unit 1: School (+ chair, door, table, window, flower; brown, pink, purple) | `school.html` (add the furniture words), `colors.html` |
+| 3 | Unit 2: Family (+ grandparents, aunt, cousin; numbers 4–5) | `family.html`, a numbers page (`abc-number.html`) |
+| 4 | Unit 3: Body (+ arms, hands, head, legs; black, white; square) | `body.html`, `colors.html` |
+| 5 | Unit 4: Clothes (+ hot and cold) | `clothes-things.html` |
+| 6 | Unit 5: Animals (farm animals; number 6) | `animals.html` |
+| 7 | Unit 6: Transport (+ happy, sad) | `town-city.html` (transport part) |
+| by date | Festivals: Halloween, Christmas, Easter | festival pages |
+
 ## 5. Pace
 
 - A Starters topic usually needs one week at 4–5 short sessions (10–20 minutes for a 5–8 year old).

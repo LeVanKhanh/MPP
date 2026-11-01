@@ -647,6 +647,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "PESTEL Analysis",
+                        route: "pages/reading-studying/management-tools-and-techniques/22-pestel-analysis.html",
+                        hash: "#/pestel-analysis",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

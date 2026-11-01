@@ -654,6 +654,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Phân Tích PESTEL",
+                        route: "pages/reading-studying/management-tools-and-techniques/22-pestel-analysis-vn.html",
+                        hash: "#/pestel-analysis",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

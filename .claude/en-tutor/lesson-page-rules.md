@@ -4,9 +4,9 @@ The canonical example is `pages/studying-en/pre-a1/words-list-cambridge-starters
 
 ## 1. Files and paths
 
-- Page: `pages/studying-en/<level>/<topic>.html` (fill the existing placeholder when there is one, see `starters-syllabus.md` §3).
+- Page: `pages/studying-en/topics/<topic>.html`. Topic pages are **shared by every level** (Starters, Movers, Flyers): Starters words first, higher-level words tagged on the chip (`<i>Movers</i>`, `<i>Flyers</i>`). Moved here from `pre-a1/` on 2026-11-02, together with the parent's empty placeholder pages: fill the existing placeholder in `topics/` when there is one (see `starters-syllabus.md` §3); do not create a duplicate.
 - Styles: `../../pages-styles.css` then `../studying-en-styles.css`. Scripts at the end of `<body>`: `../../pages-scripts.js` then `../studying-en-scripts.js`. Same depth for every level folder.
-- `<html lang="en">`. Title: `<Topic> - Pre A1 Starters - My Personal Planet`.
+- `<html lang="en">`. Title: `<Topic> - English Topics - My Personal Planet`. Page meta: `Level: Starters and up (higher-level words are tagged)`.
 - No inline `<style>` and no hard-coded colours in the page. Everything comes from the two stylesheets.
 
 ## 2. Page structure (in this order)
@@ -70,8 +70,8 @@ Register in **both** `main-menu.js` and `main-menu-vn.js`, under Reading and Stu
 ```js
 {
     title: "Animals",                                   // VN menu: Vietnamese title, e.g. "Động Vật"
-    route: "pages/studying-en/pre-a1/animals.html",   // same English page in both menus
-    hash: "#/starters-animals",                         // #/<level>-<file name>, unique in the menu
+    route: "pages/studying-en/topics/animals.html",   // same English page in both menus
+    hash: "#/starters-animals",                         // keep the old #/starters-<file name> hashes (shared links); new topics: #/topics-<file name>
     icon: "fas fa-file-alt",
     subItems: [],
 },

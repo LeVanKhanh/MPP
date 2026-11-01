@@ -10,7 +10,7 @@ A plan is a set of public pages the parent opens on a phone, **one page per less
   - `<topic>`: one lowercase English word or a hyphenated pair, from the course unit when the profile follows a course (`hello`, `school`, `family`, `toys`, `body`, `pets`, `food`, `christmas`), otherwise from the syllabus topic.
   - If a week has only one lesson, drop the suffix: `week-07-christmas.html`.
 - Built from `pages/studying-en/template-plan-lesson.html`.
-- Styles and scripts are two folders deeper than lesson pages: `../../../../pages-styles.css`, `../../../studying-en-styles.css`, the same depth for the scripts, and lesson pages are `../../<page>.html`.
+- Styles and scripts are two folders deeper than lesson pages: `../../../../pages-styles.css`, `../../../studying-en-styles.css`, the same depth for the scripts, and lesson (topic) pages are `../../../topics/<page>.html` (the wordlist stays `../../words-list-cambridge-starters.html`).
 - `page-meta` starts with the course and week: `Amanda and Friends 2 · Week 1: Hello | Lesson 1 of 3 | …`.
 - Public and shared: no child name, age, school, photos or progress. Write "your child". The audience line is generic: "30 minutes for very young beginners (3–5)", adjusted to the profile's session length and age band.
 - When the profile follows a school course, the subtitle names the matching unit ("Goes with Amanda and Friends 1 – Unit 5: Pets"). Name the unit only; never copy the course's own pages, stories, characters or activities.

@@ -4,7 +4,8 @@
 
 | Level | Cambridge exam | Folder | Status |
 |---|---|---|---|
-| Pre A1 | Starters | `pages/studying-en/pre-a1/` | **Current** |
+| Pre A1 | Starters | `pages/studying-en/pre-a1/` (wordlist + plans) | **Current** |
+| All | Shared topic pages | `pages/studying-en/topics/` | Used by every level |
 | A1 | Movers | `pages/studying-en/a1/` | Later |
 | A2 | Flyers | `pages/studying-en/a2/` | Later |
 
@@ -44,7 +45,7 @@ A working summary for planning sentences. When exact exam detail matters, check 
 
 ## 3. Placeholder pages and the suggested order
 
-The parent created these empty files in `pages/studying-en/pre-a1/`. Fill them in this order unless the profile or the parent says otherwise. The first ten follow the ten picture topics of the official book; `words-list-cambridge-starters.html` already has the word lists and sentences for those ten, so a lesson page goes **deeper** (more sentences, a parent tips box, a review section) instead of copying that page.
+The parent created these empty files; since 2026-11-02 they live in `pages/studying-en/topics/` together with the built pages, shared by every level. Fill each one in place. Fill them in this order unless the profile or the parent says otherwise. The first ten follow the ten picture topics of the official book; `words-list-cambridge-starters.html` already has the word lists and sentences for those ten, so a lesson page goes **deeper** (more sentences, a parent tips box, a review section) instead of copying that page.
 
 | Order | File | Topic | Level fit |
 |---|---|---|---|

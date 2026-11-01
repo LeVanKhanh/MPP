@@ -59,7 +59,7 @@ Write the answers into the profile and confirm in two or three lines what you wi
 
 Read `starters-syllabus.md`, `lesson-page-rules.md` and `video-rules.md`.
 
-1. Map the request to a topic and a file. The pre-a1 folder already has empty placeholder pages (`pages/studying-en/pre-a1/*.html`); the syllabus file says which placeholder fits which topic. Fill the placeholder; do not create a duplicate. If no placeholder fits, propose a file name and use it.
+1. Map the request to a topic and a file. Topic pages live in `pages/studying-en/topics/` and are shared by every level. That folder also holds the parent's empty placeholder pages (0-byte `.html` files); the syllabus file says which placeholder fits which topic. Fill the placeholder in place; do not create a duplicate. If no placeholder fits, propose a file name and use it.
 2. Choose the words: the Starters words for the topic first (check every word against the A–Z list in `pages/studying-en/pre-a1/words-list-cambridge-starters.html`, section `#a-z`). Words above Starters go only in a labelled "Bonus words" group, as the rules say.
 3. Write the sentences under the sentence rules: four patterns, Q&A pairs, only Starters words plus the page's own topic words.
 4. Find the videos with the tools in `.claude/en-tutor/tools/`, exactly as `video-rules.md` says. Every video ID on the page must come from a search result **and** pass the oEmbed check in this same session. Never write a video ID from memory.

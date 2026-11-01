@@ -5,8 +5,8 @@
 | Level | Cambridge exam | Folder | Status |
 |---|---|---|---|
 | Pre A1 | Starters | `pages/studying-en/pre-a1/` | **Current** |
-| A1 | Movers | `pages/studying-en/movers/` (create when needed) | Later |
-| A2 | Flyers | `pages/studying-en/flyers/` (create when needed) | Later |
+| A1 | Movers | `pages/studying-en/a1/` | Later |
+| A2 | Flyers | `pages/studying-en/a2/` | Later |
 
 Source of truth for Starters vocabulary: the A–Z list in `pages/studying-en/pre-a1/words-list-cambridge-starters.html` (section `#a-z`), copied from the official *Pre A1 Starters Wordlist Picture Book* (Cambridge, 2025). Check a word with:
 
@@ -14,10 +14,10 @@ Source of truth for Starters vocabulary: the A–Z list in `pages/studying-en/pr
 grep -io '<li>WORD[^<]*<i>[^<]*</i>' pages/studying-en/pre-a1/words-list-cambridge-starters.html
 ```
 
-For Movers and Flyers, the A–Z lists (section `#a-z`) and topic lists of the new words at each level are in `pages/studying-en/pre-a1/words-list-cambridge-movers.html` and `words-list-cambridge-flyers.html`, copied from the official *Pre A1 Starters, A1 Movers and A2 Flyers Wordlists* (Cambridge, 2025). Each level lists only its new words, so a Flyers learner also needs every Starters and Movers word. Check a word in all three with:
+For Movers and Flyers, the A–Z lists (section `#a-z`) and topic lists of the new words at each level are in `pages/studying-en/a1/words-list-cambridge-movers.html` and `pages/studying-en/a2/words-list-cambridge-flyers.html`, copied from the official *Pre A1 Starters, A1 Movers and A2 Flyers Wordlists* (Cambridge, 2025). Each level lists only its new words, so a Flyers learner also needs every Starters and Movers word. Check a word in all three with:
 
 ```bash
-grep -io '<li>WORD[^<]*<i>[^<]*</i>' pages/studying-en/pre-a1/words-list-cambridge-*.html
+grep -io '<li>WORD[^<]*<i>[^<]*</i>' pages/studying-en/*/words-list-cambridge-*.html
 ```
 
 ## 2. Starters grammar and sentence patterns
@@ -74,7 +74,7 @@ The parent created these empty files in `pages/studying-en/pre-a1/`. Fill them i
 | 24 | `daily-activities.html` | morning, go to bed, eat breakfast | Mostly Movers |
 | 25 | `shopping.html` | shop/store, would like, colours and clothes | Starters + bonus |
 | 26 | `story.html` | Short picture stories using known words | Starters review |
-| 27 | `shapes.html` | Shapes | Check: shape words are not in the Starters list |
+| 27 | `shapes.html` | Shapes (built: circle, square, star, shape are Movers bonus words; triangle is a course word) | Starters + Movers bonus |
 | 28 | `days-time.html` | Days, time | Movers |
 | 29 | `weather-seasons.html` | Weather, seasons | Movers |
 | 30 | `health.html` | Feeling ill, body problems | Movers |

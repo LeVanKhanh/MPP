@@ -692,8 +692,22 @@ var mainMenu = [
                         subItems: [
                             {
                                 title: "Pre A1 Starters Wordlist",
-                                route: "pages/studying-en/pre-a1/words-list-cambridge.html",
+                                route: "pages/studying-en/pre-a1/words-list-cambridge-starters.html",
                                 hash: "#/starters-wordlist",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
+                                title: "A1 Movers Wordlist",
+                                route: "pages/studying-en/pre-a1/words-list-cambridge-movers.html",
+                                hash: "#/movers-wordlist",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
+                                title: "A2 Flyers Wordlist",
+                                route: "pages/studying-en/pre-a1/words-list-cambridge-flyers.html",
+                                hash: "#/flyers-wordlist",
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },

@@ -699,8 +699,22 @@ var mainMenuVn = [
                         subItems: [
                             {
                                 title: "Từ Vựng Pre A1 Starters",
-                                route: "pages/studying-en/pre-a1/words-list-cambridge.html",
+                                route: "pages/studying-en/pre-a1/words-list-cambridge-starters.html",
                                 hash: "#/starters-wordlist",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
+                                title: "Từ Vựng A1 Movers",
+                                route: "pages/studying-en/pre-a1/words-list-cambridge-movers.html",
+                                hash: "#/movers-wordlist",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
+                                title: "Từ Vựng A2 Flyers",
+                                route: "pages/studying-en/pre-a1/words-list-cambridge-flyers.html",
+                                hash: "#/flyers-wordlist",
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },

@@ -1,6 +1,6 @@
 # Lesson page rules - one topic, one page
 
-The canonical example is `pages/studying-en/pre-a1/words-list-cambridge.html` (ten topics on one page). A lesson page is **one** topic from that pattern, built from `pages/studying-en/template-lesson.html`. Read the template before writing; do not invent a new structure.
+The canonical example is `pages/studying-en/pre-a1/words-list-cambridge-starters.html` (ten topics on one page). A lesson page is **one** topic from that pattern, built from `pages/studying-en/template-lesson.html`. Read the template before writing; do not invent a new structure.
 
 ## 1. Files and paths
 

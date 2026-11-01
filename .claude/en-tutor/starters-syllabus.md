@@ -133,6 +133,8 @@ Plans: `plans/amanda-1/`.
 | 7 | Unit 6: Food (food and drinks; hungry, thirsty) | `food-drink.html` |
 | by date | Festivals: Halloween, Christmas, Easter | festival pages |
 
+**Fun for Starters** (Cambridge exam-practice book, about ages 5–8; plans in `plans/fun-for-starters/`). It has 45 short units, so **one unit = one week** (three lessons) and the book fills about a school year. The public contents page `plans/fun-for-starters/toc.html` lists every unit and links each one to its home week once written; update its "Home plan" cell when a week is added. Unit notes are in `.claude/en-tutor/private/courses/fun-for-starters.md`. Because the book is exam practice, lessons here may include short spelling and writing tasks (names, short words), which the preschool courses do not.
+
 ## 5. Pace
 
 - A Starters topic usually needs one week at 4–5 short sessions (10–20 minutes for a 5–8 year old).

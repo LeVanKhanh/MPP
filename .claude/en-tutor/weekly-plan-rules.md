@@ -5,7 +5,7 @@ A plan is a set of public pages the parent opens on a phone, **one page per less
 ## 1. Files and names
 
 - One file per lesson: `pages/studying-en/<level>/plans/<course>/week-<NN>-<topic>-lesson-<NN>.html`
-  - `<course>`: one folder per course book, and week numbers **restart at 01 in each folder**, so a family whose child starts at book 2 begins at "Week 1": `amanda-1`, `amanda-2`, … For plans that follow no course, use `general`.
+  - `<course>`: one folder per course book, and week numbers **restart at 01 in each folder**, so a family whose child starts at book 2 begins at "Week 1": `amanda-1`, `amanda-2`, `amanda-3`, `fun-for-starters` (one unit per week), … For plans that follow no course, use `general`. A course folder may have a `toc.html` contents page; when you add a week, link it there too.
   - `<NN>`: two digits (`week-01`, `lesson-03`).
   - `<topic>`: one lowercase English word or a hyphenated pair, from the course unit when the profile follows a course (`hello`, `school`, `family`, `toys`, `body`, `pets`, `food`, `christmas`), otherwise from the syllabus topic.
   - If a week has only one lesson, drop the suffix: `week-07-christmas.html`.

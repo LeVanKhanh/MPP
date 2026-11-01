@@ -636,6 +636,17 @@ body.dark-theme .say {
     .topic h3.sub-point-1 {
         flex-wrap: wrap;
     }
+
+    /* Bảng mục lục khoá học: cho tên bài xuống dòng và ẩn cột số trang,
+       để cột "Home plan" (có link) không bị đẩy ra ngoài màn hình */
+    .toc-table {
+        white-space: normal;
+    }
+
+    .toc-table th:nth-child(3),
+    .toc-table td:nth-child(3) {
+        display: none;
+    }
 }
 
 @media (max-width: 420px) {

@@ -72,8 +72,8 @@ Read `starters-syllabus.md`, `lesson-page-rules.md` and `video-rules.md`.
 
 Read `starters-syllabus.md`, `weekly-plan-rules.md` and `teaching-coach.md`, plus the profile's progress log.
 
-1. Work out the week number and the topic(s) from the progress log and the suggested order in the syllabus. If the topic's lesson page does not exist yet, say so and offer to run `lesson` first (the plan links into that page).
-2. Build the plan from `pages/studying-en/template-weekly-plan.html` and save it as `pages/studying-en/starter/plans/week-NN.html`. The page is public: no child name, no age, no personal details.
+1. Work out the week number and the topic(s) from the progress log and the order in `weekly-plan-rules.md` §2: the profile's school course first (private course map in `.claude/en-tutor/private/courses/`), otherwise the syllabus. If the topic's lesson page does not exist yet, say so and offer to run `lesson` first (the plan links into that page).
+2. Build **one page per lesson** from `pages/studying-en/template-plan-lesson.html`, named `pages/studying-en/starter/plans/week-NN-<topic>-lesson-NN.html`. The pages are public and shared with other families: no child name, no age, no personal details.
 3. Size every session to the profile (days per week × minutes). Recycle words from earlier weeks as the spacing rules say, and reuse the profile's notes on weak words.
 4. Update the profile: "Current plan: week NN - <topic>".
 5. Reply with a short summary of the week (one line per day) and the file path. Ask before adding the plan to the menu.

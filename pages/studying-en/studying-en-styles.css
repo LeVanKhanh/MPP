@@ -94,6 +94,45 @@ body.dark-theme .topic {
     font-size: 0.8em;
 }
 
+/* ---- Chuyển buổi trong một tuần (Lesson 1 · 2 · 3) --------------------- */
+.lesson-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.lesson-nav a {
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--topic-line, var(--border-color));
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-color);
+    font-size: 0.9em;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.lesson-nav a:hover {
+    background: var(--topic-soft, var(--accent-light));
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.lesson-nav a[aria-current="page"] {
+    background: var(--topic, var(--accent-color));
+    border-color: var(--topic, var(--accent-color));
+    color: #fff;
+}
+
+.lesson-next {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
 /* ---- Bốn bước học ------------------------------------------------------ */
 .study-steps {
     display: grid;

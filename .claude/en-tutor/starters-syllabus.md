@@ -84,7 +84,24 @@ The parent created these empty files in `pages/studying-en/starter/`. Fill them 
 
 "Level fit" is a planning guess from the topic; confirm every word against the wordlist when building the page. A Movers or Flyers topic can still get a page while the child is at Starters, but keep it for later in the plan unless the parent asks.
 
-## 4. Pace
+## 4. Following a school course
+
+When the profile names a **School course**, plans follow that course's unit order (see `weekly-plan-rules.md` §2) and each unit is matched to our Starters lesson pages. The detailed course map (key words, patterns, words outside Starters) lives in `.claude/en-tutor/private/courses/`, because publishers' contents pages are copyrighted; only the unit order and the page mapping are kept here.
+
+**Amanda and Friends 1** (Richmond, preschool):
+
+| Week | Course unit | Our lesson page(s) |
+|---|---|---|
+| 1 | Welcome: Hello | `hello.html` |
+| 2 | Unit 1: School (+ red, yellow) | `school.html`, `colors.html` |
+| 3 | Unit 2: Family (+ number 1) | `family.html` |
+| 4 | Unit 3: Toys (+ blue, green) | `toys.html` (added; not in the original placeholder list), `colors.html` |
+| 5 | Unit 4: Body (+ number 2) | `body.html` |
+| 6 | Unit 5: Pets (+ big/little) | `animals.html` |
+| 7 | Unit 6: Food (+ number 3, orange) | `vegetables.html` (Fruit and Vegetables), `colors.html` |
+| by date | Festivals: Halloween, Christmas, Easter | one festival page each (create when needed) |
+
+## 5. Pace
 
 - A Starters topic usually needs one week at 4–5 short sessions (10–20 minutes for a 5–8 year old).
 - After every 3 new topics, give one review week (games, songs, "Let's talk", a mini speaking test like the Cambridge videos).

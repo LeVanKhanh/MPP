@@ -1,51 +1,65 @@
 # Weekly plan rules
 
-A plan is a public page the parent opens on a phone or prints for the fridge. It tells the parent exactly what to do in each session, and links into the lesson page so nothing has to be searched for.
+A plan is a set of public pages the parent opens on a phone, **one page per lesson (session)**. Each page says exactly what to do in that session and links into the lesson page, so nothing has to be searched for. The parent shares these pages with other families, so they must work for any child.
 
-## 1. File
+## 1. Files and names
 
-- `pages/studying-en/<level>/plans/week-NN.html` (two-digit week number), built from `pages/studying-en/template-weekly-plan.html`.
+- One file per lesson: `pages/studying-en/<level>/plans/week-<NN>-<topic>-lesson-<NN>.html`
+  - `<NN>`: two digits (`week-01`, `lesson-03`).
+  - `<topic>`: one lowercase English word or a hyphenated pair, from the course unit when the profile follows a course (`hello`, `school`, `family`, `toys`, `body`, `pets`, `food`, `christmas`), otherwise from the syllabus topic.
+  - If a week has only one lesson, drop the suffix: `week-07-christmas.html`.
+- Built from `pages/studying-en/template-plan-lesson.html`.
 - Styles and scripts are one folder deeper than lesson pages: `../../../pages-styles.css`, `../../studying-en-styles.css`, and the same depth for the scripts.
-- Public page: no child name, age, school, photos or progress. Write "your child".
+- Public and shared: no child name, age, school, photos or progress. Write "your child". The audience line is generic: "30 minutes for very young beginners (3–5)", adjusted to the profile's session length and age band.
+- When the profile follows a school course, the subtitle names the matching unit ("Goes with Amanda and Friends 1 – Unit 5: Pets"). Name the unit only; never copy the course's own pages, stories, characters or activities.
 
-## 2. Shape of a week
+## 2. Order of weeks
 
-Sessions = the profile's days per week (default 5). Minutes = the profile's session length (default 15). Each session uses the same four-part rhythm, so the child knows what comes next:
+- If the profile has a **School course**, weeks follow that course's unit order from the private course map (`private/courses/<course>.md`): one home week per unit by default. The parent can repeat a week while the class is still on that unit; the next plan then gets the next free week number with new games for the same topic.
+- Festival units (Christmas, Easter, Halloween…) become their own week in the calendar week before the festival; number weeks in the order they are actually taught, so later weeks shift by one.
+- Plans for future weeks may be written early (as for week 6). If a festival week is inserted before them, rename the files and menu entries in the same change.
+- Without a course, follow `starters-syllabus.md` §3.
 
-| Part | Share of the session | What happens |
-|---|---|---|
-| Warm-up | ~15% | A song or chant from the lesson page, or last session's words with flashcards |
-| New / practise | ~40% | New words (session 1–2) or new sentence patterns (session 3–4) |
-| Play | ~30% | One game from `teaching-coach.md`, using today's words |
-| Talk & close | ~15% | One or two "Let's talk" questions, then praise and a sticker or tick |
+## 3. Shape of a lesson
 
-Across a 5-session week:
+Sessions per week and minutes per session come from the profile (default 3 × 30 min). For very young children (3–5) every lesson is **6–8 micro-activities of 2–6 minutes**, alternating sitting and moving:
 
-1. **Words 1**: first half of the word groups. Word video 1.
-2. **Words 2**: second half, plus a quick review of session 1. Word video 2.
-3. **Sentences 1**: two patterns. Sentence video 1.
-4. **Sentences 2**: the other two patterns and the Q&A pattern as a role-play. Sentence video 2.
-5. **Review & play**: the page's Review questions, a game with every word, and a mini speaking test (the parent asks, the child answers, like the Cambridge speaking test videos).
+1. **Hello**: the same hello song every lesson (from `hello.html`).
+2. **New / review**: words with real toys or pictures; listen → point → say.
+3. **Watch**: one video from the lesson page, with a job (point, wave, count).
+4. **Move**: an action game.
+5. **Game**: one game from `teaching-coach.md` with today's words.
+6. **Quiet**: draw, colour, sort.
+7. **Talk**: one or two easy questions.
+8. **Goodbye**: the same goodbye song every lesson.
 
-For 3–4 sessions, merge 1+2 and 3+4. For 6–7, add a "free play" day (sing the week's songs, draw and label a picture) and keep it light.
+Total video per lesson: at most 10 minutes, including the hello and goodbye songs.
 
-## 3. Spacing and recycling
+Across a 3-lesson week: lesson 1 = first words, lesson 2 = more words + one sentence pattern, lesson 3 = review, counting or the "can" pattern, and a mini speaking check using the lesson page's Review questions. For 4–5 lessons a week, split the words across more lessons; never add more words.
 
-- Every session starts with words from **earlier** sessions, not only today's.
-- Every week includes 3–5 words from previous weeks, picked from the profile's "hard words" first.
-- After every 3 topic weeks, the next week is a **review week**: no new words, one game per session across the three topics, and an exam-style speaking practice on session 5.
+## 4. Spacing and recycling
 
-## 4. Each session in the page
+- Every lesson starts with words from earlier lessons, not only today's.
+- Every week includes 2–4 words from previous weeks, picked from the profile's "hard words" first.
+- For very young children, repeating the same songs and games across the week is good, not boring.
 
-For each day, a `sub-section` with:
+## 5. Each lesson page
 
-- a heading `Day N - <focus>` and the minutes,
-- the four parts as a short `ol.numbered-outline`, each line saying exactly what to do and linking to the anchor on the lesson page (`../animals.html#words`, `#watch-words`, `#sentences`, `#watch-sentences`, `#parents`, `#review`),
-- one "Say this" line: the exact English sentence(s) the parent uses to start the activity, in Starters English,
-- a tick box line for the parent (plain text "☐ Done"); the page does not store progress.
+Follow the template:
 
-At the top: a `content-table` overview (Day / Focus / Video / Game). At the bottom: a `summary-box` with the week's target ("By Friday your child can…" in 2–3 concrete can-do statements).
+- header with `Week N · Lesson N: Title`, the audience line, the lesson page link, and the course unit if any;
+- `lesson-nav` with all lessons of the week (current one `aria-current="page"`);
+- **You Need** (lesson 1 also carries the "short activities, stop early, video minutes" note);
+- **Today's Lesson**: the micro-activities as `ol.numbered-outline`, minutes in brackets, each with the exact action and a link to the lesson page anchor (`#words`, `#watch-words`, `#sentences`, `#watch-sentences`, `#parents`, `#review`);
+- one **Say this** blockquote with the exact English lines (Starters words only);
+- `☐ Done`;
+- lesson 3 only: a `summary-box` "By the end of this week your child can…" with three concrete can-do lines;
+- `lesson-next` links (previous / next lesson, or the lesson page at either end).
 
-## 5. After writing
+The `topic t-<colour>` classes go on the `<article>`, so the lesson nav uses the topic colour.
 
-Update the private profile's "Current plan" line. Reply with the one-line-per-day summary. Ask before adding the plan to the menu; when the parent agrees, add it in both menus inside the level folder's **Weekly Plans** sub-folder (VN menu: **Kế Hoạch Tuần**), newest week last, titled `Week N: <Topic>` / `Tuần N: <Chủ đề>`, with the hash `#/<level>-plan-week-NN`. Lesson pages go in the level folder itself, before the Weekly Plans sub-folder, in syllabus order.
+## 6. After writing
+
+1. Update the private profile's "Current plan" line.
+2. Reply with one line per lesson and the file paths.
+3. Ask before adding to the menu. When the parent agrees, add in both menus inside the level folder → **Weekly Plans** (VN: **Kế Hoạch Tuần**) → a week folder `Week N: Topic` (VN: `Tuần N: <Chủ đề>`) → one entry per lesson `Lesson N: Title` (VN: `Buổi N: …`). Hash: `#/<level>-week-NN-<topic>-lesson-NN`. Weeks in number order. Lesson pages (`hello.html`, `animals.html`…) stay in the level folder itself, before Weekly Plans.

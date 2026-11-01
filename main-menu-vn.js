@@ -704,6 +704,26 @@ var mainMenuVn = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "Động Vật",
+                                route: "pages/studying-en/starter/animals.html",
+                                hash: "#/starters-animals",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
+                                title: "Kế Hoạch Tuần",
+                                icon: "fas fa-folder",
+                                subItems: [
+                                    {
+                                        title: "Tuần 1: Động Vật",
+                                        route: "pages/studying-en/starter/plans/week-01.html",
+                                        hash: "#/starters-plan-week-01",
+                                        icon: "fas fa-file-alt",
+                                        subItems: [],
+                                    },
+                                ],
+                            },
                         ],
                     },
                 ],

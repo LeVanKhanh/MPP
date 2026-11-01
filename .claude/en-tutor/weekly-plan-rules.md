@@ -48,4 +48,4 @@ At the top: a `content-table` overview (Day / Focus / Video / Game). At the bott
 
 ## 5. After writing
 
-Update the private profile's "Current plan" line. Reply with the one-line-per-day summary. Ask before adding the plan to the menu; when the parent agrees, add it under the level folder in both menus with the hash `#/<level>-plan-week-NN`.
+Update the private profile's "Current plan" line. Reply with the one-line-per-day summary. Ask before adding the plan to the menu; when the parent agrees, add it in both menus inside the level folder's **Weekly Plans** sub-folder (VN menu: **Kế Hoạch Tuần**), newest week last, titled `Week N: <Topic>` / `Tuần N: <Chủ đề>`, with the hash `#/<level>-plan-week-NN`. Lesson pages go in the level folder itself, before the Weekly Plans sub-folder, in syllabus order.

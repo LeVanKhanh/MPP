@@ -697,6 +697,26 @@ var mainMenu = [
                                 icon: "fas fa-file-alt",
                                 subItems: [],
                             },
+                            {
+                                title: "Animals",
+                                route: "pages/studying-en/starter/animals.html",
+                                hash: "#/starters-animals",
+                                icon: "fas fa-file-alt",
+                                subItems: [],
+                            },
+                            {
+                                title: "Weekly Plans",
+                                icon: "fas fa-folder",
+                                subItems: [
+                                    {
+                                        title: "Week 1: Animals",
+                                        route: "pages/studying-en/starter/plans/week-01.html",
+                                        hash: "#/starters-plan-week-01",
+                                        icon: "fas fa-file-alt",
+                                        subItems: [],
+                                    },
+                                ],
+                            },
                         ],
                     },
                 ],

@@ -54,13 +54,13 @@ The parent created these empty files in `pages/studying-en/pre-a1/`. Fill them i
 | 4 | `colors.html` | Colours | Starters core |
 | 5 | `clothes-things.html` | Clothes | Starters core |
 | 6 | `family.html` | Family and people (birthday picture) | Starters core |
-| 7 | `food-drink.html` | Food and drinks | Starters core |
+| 7 | `food-drink.html` | Food and drinks (built: "Food and Drinks") | Starters core |
 | 8 | `vegetables.html` | Fruit and vegetables | Starters core |
 | 9 | `home.html` | House and rooms | Starters core |
 | 10 | `kitchen.html` | Things in the kitchen | Starters + bonus |
 | 11 | `school.html` | Classroom and school things | Starters core |
-| 12 | `position.html` | in, on, under, next to, behind, in front of, between | Starters core |
-| 13 | `opposites.html` | big/small, long/short, clean/dirty, old/new/young | Starters core |
+| 12 | `position.html` | in, on, under, next to, behind, in front of, between (built: "In, On, Under") | Starters core |
+| 13 | `opposites.html` | big/small, long/short, clean/dirty, old/new/young (built; Movers/Flyers bonus words tagged) | Starters core |
 | 14 | `sport.html` | Sports and beach games | Starters core |
 | 15 | `doing-action.html` | Action verbs (run, jump, swim, throw, catch…) | Starters core |
 | 16 | `hobbies.html` | Hobbies, music, drawing, likes | Starters core |
@@ -118,6 +118,19 @@ Plans: `plans/amanda-1/`.
 | 5 | Unit 4: Clothes (+ hot and cold) | `clothes-things.html` |
 | 6 | Unit 5: Animals (farm animals; number 6) | `animals.html` |
 | 7 | Unit 6: Transport (+ happy, sad) | `town-city.html` (transport part) |
+| by date | Festivals: Halloween, Christmas, Easter | festival pages |
+
+**Amanda and Friends 3** (the year after book 2; plans in `plans/amanda-3/`, weeks restart at 01). This book goes further beyond Starters (Movers words such as up/down, teeth, lion, hungry; Flyers words such as fast, finger, swing), so label those as bonus words on the pages.
+
+| Week | Course unit | Our lesson page(s) |
+|---|---|---|
+| 1 | Welcome: Hello (review 10 colours, circle/square/triangle, numbers 1–6) | `colors.html`, `shapes.html`, `abc-number.html`, `family.html` |
+| 2 | Unit 1: Home (rooms; numbers 7–10) | `home.html`, `abc-number.html` |
+| 3 | Unit 2: Toys (in the park: slide, swing…; up, down) | `toys.html` (add a park group) |
+| 4 | Unit 3: Body (feet, fingers, hair, teeth; long, short) | `body.html`, `opposites.html` |
+| 5 | Unit 4: Clothes (dressing up; in, on, under) | `clothes-things.html`, `position.html` |
+| 6 | Unit 5: Animals (elephant, lion, monkey, snake; fast, slow) | `animals.html` |
+| 7 | Unit 6: Food (food and drinks; hungry, thirsty) | `food-drink.html` |
 | by date | Festivals: Halloween, Christmas, Easter | festival pages |
 
 ## 5. Pace

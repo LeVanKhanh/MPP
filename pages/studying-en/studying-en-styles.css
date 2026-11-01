@@ -27,6 +27,19 @@ body.dark-theme .topic {
     --topic-line: color-mix(in srgb, var(--topic) 55%, var(--border-color));
 }
 
+/* Dòng meta ở đầu trang dài hơn trang thường (ngày, cấp độ, nguồn): cho xuống dòng như chữ
+   thay vì để inline-flex chia thành từng cột hẹp trên điện thoại */
+.page-meta {
+    display: inline-block;
+    border-radius: 12px;
+}
+
+.page-meta::before {
+    display: inline-block;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+}
+
 /* ---- Mục lục chủ đề --------------------------------------------------- */
 .topic-nav {
     display: grid;

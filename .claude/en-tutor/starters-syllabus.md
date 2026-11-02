@@ -6,7 +6,7 @@
 |---|---|---|---|
 | Pre A1 | Starters | `pages/studying-en/pre-a1/` (wordlist + plans) | **Current** |
 | All | Shared topic pages | `pages/studying-en/topics/` | Used by every level |
-| A1 | Movers | `pages/studying-en/a1/` | Later |
+| A1 | Movers | `pages/studying-en/a1/` | Fun for Movers plans started 2026-11-02 (`a1/plans/fun-for-movers/`) |
 | A2 | Flyers | `pages/studying-en/a2/` | Later |
 
 Source of truth for Starters vocabulary: the A–Z list in `pages/studying-en/pre-a1/words-list-cambridge-starters.html` (section `#a-z`), copied from the official *Pre A1 Starters Wordlist Picture Book* (Cambridge, 2025). Check a word with:
@@ -63,24 +63,24 @@ The parent created these empty files; since 2026-11-02 they live in `pages/study
 | 12 | `position.html` | in, on, under, next to, behind, in front of, between (built: "In, On, Under") | Starters core |
 | 13 | `opposites.html` | big/small, long/short, clean/dirty, old/new/young (built; Movers/Flyers bonus words tagged) | Starters core |
 | 14 | `sport.html` | Sports and beach games | Starters core |
-| 15 | `doing-action.html` | Action verbs (run, jump, swim, throw, catch…) | Starters core |
+| 15 | `doing-action.html` | Action verbs (built as "Actions" on 2026-11-02: run, jump, swim, throw, catch…; hop, skip, climb, dance, skate are tagged Movers) | Starters core |
 | 16 | `hobbies.html` | Hobbies, music, drawing, likes | Starters core |
 | 17 | `town-city.html` | My street, transport, shops | Starters + bonus |
 | 18 | `plurals.html` | Plurals, including mice/feet/men/women/children | Starters grammar |
 | 19 | `questions.html` | Question words and short answers | Starters grammar |
 | 20 | `favourites.html` | My favourite… (review page across topics) | Starters review |
 | 21 | `food-beverage.html` | Overlaps `food-drink.html` - ask the parent whether to merge or use it for a café role-play | Ask |
-| 22 | `describing-people.html` | hair, eyes, long/short, beautiful, young/old | Starters + Movers bonus |
+| 22 | `describing-people.html` | hair, eyes, long/short, beautiful, young/old (built as "Describing People" on 2026-11-02; curly, straight, fair, beard, moustache, tall, thin, fat, surprised tagged Movers) | Starters + Movers bonus |
 | 23 | `emotions.html` | happy, sad, angry, scary, funny | Starters + Movers bonus |
 | 24 | `daily-activities.html` | morning, go to bed, eat breakfast | Mostly Movers |
 | 25 | `shopping.html` | shop/store, would like, colours and clothes | Starters + bonus |
 | 26 | `story.html` | Short picture stories using known words | Starters review |
 | 27 | `shapes.html` | Shapes (built: circle, square, star, shape are Movers bonus words; triangle is a course word) | Starters + Movers bonus |
 | 28 | `days-time.html` | Days, time | Movers |
-| 29 | `weather-seasons.html` | Weather, seasons | Movers |
+| 29 | `weather-seasons.html` | Weather, seasons (built as "Weather and Seasons" on 2026-11-02; seasons are Flyers bonus words) | Movers |
 | 30 | `health.html` | Feeling ill, body problems | Movers |
 | 31 | `jobs.html` | Jobs | Movers / Flyers |
-| 32 | `countryside.html` | Farm, countryside | Movers |
+| 32 | `countryside.html` | Farm, countryside (built as "Farm and Countryside" on 2026-11-02; Starters farm animals first, Movers words tagged) | Movers |
 | 33 | `restaurant.html` | Ordering food | Movers |
 | 34 | `hangout.html` | Going out with friends, places | Movers / Flyers |
 | 35 | `travel.html` | Travel | Flyers |

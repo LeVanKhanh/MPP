@@ -62,9 +62,9 @@ The parent created these empty files; since 2026-11-02 they live in `pages/study
 | 11 | `school.html` | Classroom and school things | Starters core |
 | 12 | `position.html` | in, on, under, next to, behind, in front of, between (built: "In, On, Under") | Starters core |
 | 13 | `opposites.html` | big/small, long/short, clean/dirty, old/new/young (built; Movers/Flyers bonus words tagged) | Starters core |
-| 14 | `sport.html` | Sports and beach games | Starters core |
+| 14 | `sport.html` | Sports and beach games (built as "Sport" on 2026-11-02: Starters sports first, Movers words tagged; play vs go; -ed past) | Starters core |
 | 15 | `doing-action.html` | Action verbs (built as "Actions" on 2026-11-02: run, jump, swim, throw, catch…; hop, skip, climb, dance, skate are tagged Movers) | Starters core |
-| 16 | `hobbies.html` | Hobbies, music, drawing, likes | Starters core |
+| 16 | `hobbies.html` | Hobbies, music, drawing, likes (built as "Hobbies" on 2026-11-02: Starters hobbies first, Movers words tagged; like + -ing; play the + instrument) | Starters core |
 | 17 | `town-city.html` | My street, transport, shops | Starters + bonus |
 | 18 | `plurals.html` | Plurals, including mice/feet/men/women/children | Starters grammar |
 | 19 | `questions.html` | Question words and short answers | Starters grammar |
@@ -78,11 +78,11 @@ The parent created these empty files; since 2026-11-02 they live in `pages/study
 | 27 | `shapes.html` | Shapes (built: circle, square, star, shape are Movers bonus words; triangle is a course word) | Starters + Movers bonus |
 | 28 | `days-time.html` | Days, time | Movers |
 | 29 | `weather-seasons.html` | Weather, seasons (built as "Weather and Seasons" on 2026-11-02; seasons are Flyers bonus words) | Movers |
-| 30 | `health.html` | Feeling ill, body problems | Movers |
+| 30 | `health.html` | Feeling ill, body problems (built as "Health" on 2026-11-02: people who help us, What's the matter?, must / mustn't) | Movers |
 | 31 | `jobs.html` | Jobs | Movers / Flyers |
 | 32 | `countryside.html` | Farm, countryside (built as "Farm and Countryside" on 2026-11-02; Starters farm animals first, Movers words tagged) | Movers |
 | 33 | `restaurant.html` | Ordering food | Movers |
-| 34 | `hangout.html` | Going out with friends, places | Movers / Flyers |
+| 34 | `hangout.html` | Going out with friends, places (built as "Parties and Going Out" on 2026-11-02: birthday party words, must, invitations, picnic, cinema, café) | Movers / Flyers |
 | 35 | `travel.html` | Travel | Flyers |
 | 36 | `materials.html` | What things are made of | Flyers |
 | 37 | `around-the-word.html` | Around the world (the file name has a typo: "word" for "world"; ask before renaming) | Flyers |

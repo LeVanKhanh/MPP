@@ -71,15 +71,15 @@ The parent created these empty files; since 2026-11-02 they live in `pages/study
 | 20 | `favourites.html` | My favourite… (review page across topics) | Starters review |
 | 21 | `food-beverage.html` | Overlaps `food-drink.html` - ask the parent whether to merge or use it for a café role-play | Ask |
 | 22 | `describing-people.html` | hair, eyes, long/short, beautiful, young/old (built as "Describing People" on 2026-11-02; curly, straight, fair, beard, moustache, tall, thin, fat, surprised tagged Movers) | Starters + Movers bonus |
-| 23 | `emotions.html` | happy, sad, angry, scary, funny | Starters + Movers bonus |
-| 24 | `daily-activities.html` | morning, go to bed, eat breakfast | Mostly Movers |
-| 25 | `shopping.html` | shop/store, would like, colours and clothes | Starters + bonus |
-| 26 | `story.html` | Short picture stories using known words | Starters review |
+| 23 | `emotions.html` | happy, sad, angry, scary, funny (built as "Feelings" on 2026-11-03: Starters feelings + Movers tired, hungry, thirsty, afraid, frightened, surprised, cry, laugh, what's the matter, why/because; menu hash #/topics-emotions) | Starters + Movers bonus |
+| 24 | `daily-activities.html` | morning, go to bed, eat breakfast (built as "Daily Routines" on 2026-11-03: wake up, get up, get dressed, have a shower, clean my teeth, catch the bus, towel, toothbrush, at … o'clock, did/didn't; after-school and evening words added for Movers unit 39; menu hash #/topics-daily-activities) | Mostly Movers |
+| 25 | `shopping.html` | shop/store, would like, colours and clothes (built as "Shopping" on 2026-11-03: shop, Movers supermarket/market/buy, kitchen foods, some/any/lots of/only, can I have / we need; menu hash #/topics-shopping) | Starters + bonus |
+| 26 | `story.html` | Short picture stories using known words (built as "Telling Stories" on 2026-11-03: Movers past forms went/saw/took/had/ate/bought/came/got/was, yesterday/last weekend, how was it – great/boring/exciting; regular -ed verbs added for Movers unit 34; could/couldn't added for unit 36; menu hash #/topics-story) | Starters review |
 | 27 | `shapes.html` | Shapes (built: circle, square, star, shape are Movers bonus words; triangle is a course word) | Starters + Movers bonus |
 | 28 | `days-time.html` | Days, time (built as "Days and Time" on 2026-11-03: parts of the day, days of the week, o'clock, always/often/sometimes/never; menu hash #/topics-days-time) | Movers |
 | 29 | `weather-seasons.html` | Weather, seasons (built as "Weather and Seasons" on 2026-11-02; seasons are Flyers bonus words) | Movers |
 | 30 | `health.html` | Feeling ill, body problems (built as "Health" on 2026-11-02: people who help us, What's the matter?, must / mustn't) | Movers |
-| 31 | `jobs.html` | Jobs | Movers / Flyers |
+| 31 | `jobs.html` | Jobs (built as "Jobs" on 2026-11-03: teacher, doctor, nurse, dentist, farmer, driver, cook, clown, pop star; places of work; I like… / I have to… / had to; "job" itself is Flyers, so say "work"; helping-at-home words added for Movers unit 38; "What's the matter?" pattern for unit 40; menu hash #/topics-jobs) | Movers / Flyers |
 | 32 | `countryside.html` | Farm, countryside (built as "Farm and Countryside" on 2026-11-02; Starters farm animals first, Movers words tagged) | Movers |
 | 33 | `restaurant.html` | Ordering food | Movers |
 | 34 | `hangout.html` | Going out with friends, places (built as "Parties and Going Out" on 2026-11-02: birthday party words, must, invitations, picnic, cinema, café) | Movers / Flyers |

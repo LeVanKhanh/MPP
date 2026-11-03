@@ -49,7 +49,7 @@ The parent created these empty files; since 2026-11-02 they live in `pages/study
 
 | Order | File | Topic | Level fit |
 |---|---|---|---|
-| 1 | `abc-number.html` | Alphabet, spelling names, numbers 1–20 | Starters core |
+| 1 | `abc-number.html` | Alphabet, spelling names, numbers 1–20 (Movers units 44, 47, 50 added same-sound pairs, UK–USA word pairs and rhyming words) | Starters core |
 | 2 | `body.html` | My body and face | Starters core |
 | 3 | `animals.html` | At the zoo, pets | Starters core |
 | 4 | `colors.html` | Colours | Starters core |
@@ -60,14 +60,14 @@ The parent created these empty files; since 2026-11-02 they live in `pages/study
 | 9 | `home.html` | House and rooms | Starters core |
 | 10 | `kitchen.html` | Things in the kitchen | Starters + bonus |
 | 11 | `school.html` | Classroom and school things | Starters core |
-| 12 | `position.html` | in, on, under, next to, behind, in front of, between (built: "In, On, Under") | Starters core |
-| 13 | `opposites.html` | big/small, long/short, clean/dirty, old/new/young (built; Movers/Flyers bonus words tagged) | Starters core |
+| 12 | `position.html` | in, on, under, next to, behind, in front of, between (built: "In, On, Under"; above/below/opposite added for Movers unit 49) | Starters core |
+| 13 | `opposites.html` | big/small, long/short, clean/dirty, old/new/young (built; Movers/Flyers bonus words tagged; good/better/best and more Movers opposites added for units 42 and 50) | Starters core |
 | 14 | `sport.html` | Sports and beach games (built as "Sport" on 2026-11-02: Starters sports first, Movers words tagged; play vs go; -ed past) | Starters core |
-| 15 | `doing-action.html` | Action verbs (built as "Actions" on 2026-11-02: run, jump, swim, throw, catch…; hop, skip, climb, dance, skate are tagged Movers) | Starters core |
-| 16 | `hobbies.html` | Hobbies, music, drawing, likes (built as "Hobbies" on 2026-11-02: Starters hobbies first, Movers words tagged; like + -ing; play the + instrument) | Starters core |
+| 15 | `doing-action.html` | Action verbs (built as "Actions" on 2026-11-02: run, jump, swim, throw, catch…; hop, skip, climb, dance, skate are tagged Movers; "things we do" phrases added for Movers unit 47) | Starters core |
+| 16 | `hobbies.html` | Hobbies, music, drawing, likes (built as "Hobbies" on 2026-11-02: Starters hobbies first, Movers words tagged; like + -ing; play the + instrument; "One day… / Would you like to…?" added for Movers unit 48) | Starters core |
 | 17 | `town-city.html` | My street, transport, shops | Starters + bonus |
 | 18 | `plurals.html` | Plurals, including mice/feet/men/women/children (built as "Plurals" on 2026-11-03: -s, -es, -ies, special plurals, always-plural words; Movers tooth/teeth, leaf/leaves tagged; menu hash #/topics-plurals) | Starters grammar |
-| 19 | `questions.html` | Question words and short answers (built as "Questions" on 2026-11-03: who/what/where/how/which/whose, Movers when/why/how often/how much, short answers, speaking-test tip; menu hash #/topics-questions) | Starters grammar |
+| 19 | `questions.html` | Question words and short answers (built as "Questions" on 2026-11-03: who/what/where/how/which/whose, Movers when/why/how often/how much, short answers, speaking-test tip; menu hash #/topics-questions) Movers units 46 and 49 added yes/no guessing and help-in-class sentences. | Starters grammar |
 | 20 | `favourites.html` | My favourite… (review page across topics) | Starters review |
 | 21 | `food-beverage.html` | Overlaps `food-drink.html` - ask the parent whether to merge or use it for a café role-play | Ask |
 | 22 | `describing-people.html` | hair, eyes, long/short, beautiful, young/old (built as "Describing People" on 2026-11-02; curly, straight, fair, beard, moustache, tall, thin, fat, surprised tagged Movers) | Starters + Movers bonus |
@@ -82,8 +82,8 @@ The parent created these empty files; since 2026-11-02 they live in `pages/study
 | 31 | `jobs.html` | Jobs (built as "Jobs" on 2026-11-03: teacher, doctor, nurse, dentist, farmer, driver, cook, clown, pop star; places of work; I like… / I have to… / had to; "job" itself is Flyers, so say "work"; helping-at-home words added for Movers unit 38; "What's the matter?" pattern for unit 40; menu hash #/topics-jobs) | Movers / Flyers |
 | 32 | `countryside.html` | Farm, countryside (built as "Farm and Countryside" on 2026-11-02; Starters farm animals first, Movers words tagged) | Movers |
 | 33 | `restaurant.html` | Ordering food | Movers |
-| 34 | `hangout.html` | Going out with friends, places (built as "Parties and Going Out" on 2026-11-02: birthday party words, must, invitations, picnic, cinema, café) | Movers / Flyers |
-| 35 | `travel.html` | Travel (built as "Travel" on 2026-11-02: transport, trips, keeping in touch – texts, emails, phone calls) | Movers / Flyers |
+| 34 | `hangout.html` | Going out with friends, places (built as "Parties and Going Out" on 2026-11-02: birthday party words, must, invitations, picnic, cinema, café; presents and party talk added for Movers unit 41) | Movers / Flyers |
+| 35 | `travel.html` | Travel (built as "Travel" on 2026-11-02: transport, trips, keeping in touch – texts, emails, phone calls; holiday words and "I'd love to…" added for Movers units 43–44) | Movers / Flyers |
 | 36 | `materials.html` | What things are made of | Flyers |
 | 37 | `around-the-world.html` | Around the world (built as "The World Around Us" on 2026-11-02: nature, land and water, sky; renamed from the misspelled placeholder `around-the-word.html` at the parent's request on 2026-11-02; menu hash #/topics-around-the-world) | Movers / Flyers |
 

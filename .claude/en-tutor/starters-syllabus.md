@@ -84,7 +84,7 @@ The parent created these empty files; since 2026-11-02 they live in `pages/study
 | 33 | `restaurant.html` | Ordering food | Movers |
 | 34 | `hangout.html` | Going out with friends, places (built as "Parties and Going Out" on 2026-11-02: birthday party words, must, invitations, picnic, cinema, café; presents and party talk added for Movers unit 41) | Movers / Flyers |
 | 35 | `travel.html` | Travel (built as "Travel" on 2026-11-02: transport, trips, keeping in touch – texts, emails, phone calls; holiday words and "I'd love to…" added for Movers units 43–44) | Movers / Flyers |
-| 36 | `materials.html` | What things are made of | Flyers |
+| 36 | `materials.html` | What things are made of (built as "Materials" on 2026-11-03 for Fun for Flyers unit 35: wood, metal, glass, plastic, paper, wool, gold, silver; made of; menu hash #/topics-materials) | Flyers |
 | 37 | `around-the-world.html` | Around the world (built as "The World Around Us" on 2026-11-02: nature, land and water, sky; renamed from the misspelled placeholder `around-the-word.html` at the parent's request on 2026-11-02; menu hash #/topics-around-the-world) | Movers / Flyers |
 
 "Level fit" is a planning guess from the topic; confirm every word against the wordlist when building the page. A Movers or Flyers topic can still get a page while the child is at Starters, but keep it for later in the plan unless the parent asks.

@@ -66,8 +66,8 @@ The parent created these empty files; since 2026-11-02 they live in `pages/study
 | 15 | `doing-action.html` | Action verbs (built as "Actions" on 2026-11-02: run, jump, swim, throw, catch…; hop, skip, climb, dance, skate are tagged Movers) | Starters core |
 | 16 | `hobbies.html` | Hobbies, music, drawing, likes (built as "Hobbies" on 2026-11-02: Starters hobbies first, Movers words tagged; like + -ing; play the + instrument) | Starters core |
 | 17 | `town-city.html` | My street, transport, shops | Starters + bonus |
-| 18 | `plurals.html` | Plurals, including mice/feet/men/women/children | Starters grammar |
-| 19 | `questions.html` | Question words and short answers | Starters grammar |
+| 18 | `plurals.html` | Plurals, including mice/feet/men/women/children (built as "Plurals" on 2026-11-03: -s, -es, -ies, special plurals, always-plural words; Movers tooth/teeth, leaf/leaves tagged; menu hash #/topics-plurals) | Starters grammar |
+| 19 | `questions.html` | Question words and short answers (built as "Questions" on 2026-11-03: who/what/where/how/which/whose, Movers when/why/how often/how much, short answers, speaking-test tip; menu hash #/topics-questions) | Starters grammar |
 | 20 | `favourites.html` | My favourite… (review page across topics) | Starters review |
 | 21 | `food-beverage.html` | Overlaps `food-drink.html` - ask the parent whether to merge or use it for a café role-play | Ask |
 | 22 | `describing-people.html` | hair, eyes, long/short, beautiful, young/old (built as "Describing People" on 2026-11-02; curly, straight, fair, beard, moustache, tall, thin, fat, surprised tagged Movers) | Starters + Movers bonus |
@@ -76,16 +76,16 @@ The parent created these empty files; since 2026-11-02 they live in `pages/study
 | 25 | `shopping.html` | shop/store, would like, colours and clothes | Starters + bonus |
 | 26 | `story.html` | Short picture stories using known words | Starters review |
 | 27 | `shapes.html` | Shapes (built: circle, square, star, shape are Movers bonus words; triangle is a course word) | Starters + Movers bonus |
-| 28 | `days-time.html` | Days, time | Movers |
+| 28 | `days-time.html` | Days, time (built as "Days and Time" on 2026-11-03: parts of the day, days of the week, o'clock, always/often/sometimes/never; menu hash #/topics-days-time) | Movers |
 | 29 | `weather-seasons.html` | Weather, seasons (built as "Weather and Seasons" on 2026-11-02; seasons are Flyers bonus words) | Movers |
 | 30 | `health.html` | Feeling ill, body problems (built as "Health" on 2026-11-02: people who help us, What's the matter?, must / mustn't) | Movers |
 | 31 | `jobs.html` | Jobs | Movers / Flyers |
 | 32 | `countryside.html` | Farm, countryside (built as "Farm and Countryside" on 2026-11-02; Starters farm animals first, Movers words tagged) | Movers |
 | 33 | `restaurant.html` | Ordering food | Movers |
 | 34 | `hangout.html` | Going out with friends, places (built as "Parties and Going Out" on 2026-11-02: birthday party words, must, invitations, picnic, cinema, café) | Movers / Flyers |
-| 35 | `travel.html` | Travel | Flyers |
+| 35 | `travel.html` | Travel (built as "Travel" on 2026-11-02: transport, trips, keeping in touch – texts, emails, phone calls) | Movers / Flyers |
 | 36 | `materials.html` | What things are made of | Flyers |
-| 37 | `around-the-word.html` | Around the world (the file name has a typo: "word" for "world"; ask before renaming) | Flyers |
+| 37 | `around-the-world.html` | Around the world (built as "The World Around Us" on 2026-11-02: nature, land and water, sky; renamed from the misspelled placeholder `around-the-word.html` at the parent's request on 2026-11-02; menu hash #/topics-around-the-world) | Movers / Flyers |
 
 "Level fit" is a planning guess from the topic; confirm every word against the wordlist when building the page. A Movers or Flyers topic can still get a page while the child is at Starters, but keep it for later in the plan unless the parent asks.
 

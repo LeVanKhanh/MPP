@@ -17,7 +17,7 @@ A plan is a set of public pages the parent opens on a phone, **one page per less
 
 ## 2. Order of weeks
 
-- If the profile has a **School course**, weeks follow that course's unit order from the private course map (`private/courses/<course>.md`): one home week per unit by default. The parent can repeat a week while the class is still on that unit; the next plan then gets the next free week number with new games for the same topic.
+- If the profile has a **School course**, weeks follow that course's unit order from the private course map (`../second-brain/20-areas/nuoi-day-con/courses/<course>.md`): one home week per unit by default. The parent can repeat a week while the class is still on that unit; the next plan then gets the next free week number with new games for the same topic.
 - Festival units (Christmas, Easter, Halloween…) become their own week in the calendar week before the festival; number weeks in the order they are actually taught, so later weeks shift by one.
 - Plans for future weeks may be written early (as for week 6). If a festival week is inserted before them, rename the files and menu entries in the same change.
 - Without a course, follow `starters-syllabus.md` §3.

@@ -9,9 +9,10 @@ Request: **$ARGUMENTS**
 
 ## Step 0 - always do this first
 
-1. Read the learner profile: `.claude/en-tutor/private/learner-profile.md`.
-   - If it does not exist, copy `.claude/en-tutor/learner-profile.template.md` to that path and run mode `setup` before anything else (unless the parent only wants `check`).
-   - The `private/` folder is git-ignored because this repo is public. Never copy the child's name, age, photo or progress into anything under `pages/` or into any committed file.
+1. Read the learner profile: `../second-brain/20-areas/nuoi-day-con/learner-profile.md` (the parent's private vault, cloned next to this repo).
+   - If the `../second-brain/` folder is missing or cannot be read, stop and tell the parent. Do not create a new profile anywhere (unless the parent only wants `check`, which needs no profile).
+   - If the folder exists but the profile does not, copy `.claude/en-tutor/learner-profile.template.md` to that path and run mode `setup` before anything else (unless the parent only wants `check`).
+   - The profile and course maps live in the private vault because this repo is public. Never copy the child's name, age, photo or progress into anything under `pages/` or into any file committed to this repo.
 2. Work out the **mode**. If the parent does not name one, infer it:
    - "set up", "my child is…", changing age/level/time → `setup`
    - a topic name ("animals", "body", "at the zoo") or "make a lesson / document / page" → `lesson`
@@ -72,7 +73,7 @@ Read `starters-syllabus.md`, `lesson-page-rules.md` and `video-rules.md`.
 
 Read `starters-syllabus.md`, `weekly-plan-rules.md` and `teaching-coach.md`, plus the profile's progress log.
 
-1. Work out the week number and the topic(s) from the progress log and the order in `weekly-plan-rules.md` §2: the profile's school course first (private course map in `.claude/en-tutor/private/courses/`), otherwise the syllabus. If the topic's lesson page does not exist yet, say so and offer to run `lesson` first (the plan links into that page).
+1. Work out the week number and the topic(s) from the progress log and the order in `weekly-plan-rules.md` §2: the profile's school course first (private course map in `../second-brain/20-areas/nuoi-day-con/courses/`), otherwise the syllabus. If the topic's lesson page does not exist yet, say so and offer to run `lesson` first (the plan links into that page).
 2. Build **one page per lesson** from `pages/studying-en/template-plan-lesson.html`, named `pages/studying-en/pre-a1/plans/<course>/week-NN-<topic>-lesson-NN.html` (one folder per course book, e.g. `amanda-1`, `amanda-2`; week numbers restart at 01 in each). The pages are public and shared with other families: no child name, no age, no personal details.
 3. Size every session to the profile (days per week × minutes). Recycle words from earlier weeks as the spacing rules say, and reuse the profile's notes on weak words.
 4. Update the profile: "Current plan: week NN - <topic>".
@@ -94,7 +95,7 @@ Read `english-check.md` and follow it fully. The parent may paste what they plan
 
 ## Mode: log - record progress
 
-Append one dated entry (today's date) to the profile's progress log: topic, what went well, words or patterns the child found hard, and the child's mood/energy if mentioned. Then reply in two or three lines: what to repeat next session, and whether the weekly plan still fits. Never write progress anywhere outside `private/`.
+Append one dated entry (today's date) to the profile's progress log: topic, what went well, words or patterns the child found hard, and the child's mood/energy if mentioned. Then reply in two or three lines: what to repeat next session, and whether the weekly plan still fits. Never write progress anywhere outside the private profile.
 
 ## General rules for every mode
 

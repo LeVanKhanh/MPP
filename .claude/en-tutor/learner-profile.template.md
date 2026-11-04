@@ -1,7 +1,7 @@
 # Learner profile (private)
 
-The en-tutor agent copies this template to `.claude/en-tutor/private/learner-profile.md` on first use.
-The `private/` folder is git-ignored: this repo is public, so personal details live only on this computer.
+The en-tutor agent copies this template to `../second-brain/20-areas/nuoi-day-con/learner-profile.md` on first use.
+That folder is in the parent's private vault because MPP is public. Never copy personal details into MPP.
 
 ## Child
 

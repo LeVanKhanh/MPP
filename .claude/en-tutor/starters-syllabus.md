@@ -91,7 +91,7 @@ The parent created these empty files; since 2026-11-02 they live in `pages/study
 
 ## 4. Following a school course
 
-When the profile names a **School course**, plans follow that course's unit order (see `weekly-plan-rules.md` §2) and each unit is matched to our Starters lesson pages. The detailed course map (key words, patterns, words outside Starters) lives in `.claude/en-tutor/private/courses/`, because publishers' contents pages are copyrighted; only the unit order and the page mapping are kept here.
+When the profile names a **School course**, plans follow that course's unit order (see `weekly-plan-rules.md` §2) and each unit is matched to our Starters lesson pages. The detailed course map (key words, patterns, words outside Starters) lives in `../second-brain/20-areas/nuoi-day-con/courses/`, because publishers' contents pages are copyrighted; only the unit order and the page mapping are kept here.
 
 **Amanda and Friends 1** (Richmond, preschool):
 
@@ -134,7 +134,7 @@ Plans: `plans/amanda-1/`.
 | 7 | Unit 6: Food (food and drinks; hungry, thirsty) | `food-drink.html` |
 | by date | Festivals: Halloween, Christmas, Easter | festival pages |
 
-**Fun for Starters** (Cambridge exam-practice book, about ages 5–8; plans in `plans/fun-for-starters/`). It has 45 short units, so **one unit = one week** (three lessons) and the book fills about a school year. The public contents page `plans/fun-for-starters/toc.html` lists every unit and links each one to its home week once written; update its "Home plan" cell when a week is added. Unit notes are in `.claude/en-tutor/private/courses/fun-for-starters.md`. Because the book is exam practice, lessons here may include short spelling and writing tasks (names, short words), which the preschool courses do not.
+**Fun for Starters** (Cambridge exam-practice book, about ages 5–8; plans in `plans/fun-for-starters/`). It has 45 short units, so **one unit = one week** (three lessons) and the book fills about a school year. The public contents page `plans/fun-for-starters/toc.html` lists every unit and links each one to its home week once written; update its "Home plan" cell when a week is added. Unit notes are in `../second-brain/20-areas/nuoi-day-con/courses/fun-for-starters.md`. Because the book is exam practice, lessons here may include short spelling and writing tasks (names, short words), which the preschool courses do not.
 
 ## 5. Pace
 

@@ -31,6 +31,9 @@ Yêu cầu người dùng: **$ARGUMENTS**
    - Là **mục lục** khi chủ đề là một danh mục nhiều mục ngang hàng, người đọc tra một mục chứ không đọc tuần tự, và mọi mục trả lời cùng một bộ câu hỏi. Bản mẫu: `pages/reading-studying/fallacy-bias-debate/bias/`. Khi đó khung bài đã cố định sẵn ở `catalog-series.md`, đọc file đó trước khi lên outline và theo đúng khung; không tự dựng bố cục mới.
    - Series nhiều kỳ mà mỗi kỳ có bố cục riêng (như series Scrum) là **luận**, không phải mục lục.
 4. Đọc các **lens** cần cho mode đang chạy (bảng ở mục kế). Chỉ đọc lens sẽ dùng, đừng nạp cả tám.
+5. **Giữ ranh giới với vault riêng tư.** Phiên này đọc được `../second-brain`, còn mọi bài trong repo này đều công khai.
+   - Chỉ đọc file vault mà tác giả nêu đích danh trong yêu cầu hiện tại. Không tự tìm kiếm hay duyệt vault; cần thêm ghi chú thì hỏi trước.
+   - Trước khi ghi nội dung lấy từ vault vào `pages/`, liệt kê các file vault đã dùng để tác giả duyệt.
 
 Nếu yêu cầu mơ hồ tới mức hai cách hiểu dẫn tới hai bài khác hẳn nhau, hỏi đúng một câu rồi tiếp tục. Còn lại thì tự quyết và nói rõ giả định đang dùng.
 

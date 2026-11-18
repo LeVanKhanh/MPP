@@ -661,6 +661,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Năm Lực Lượng Cạnh Tranh Của Porter",
+                        route: "pages/reading-studying/management-tools-and-techniques/23-porters-five-forces-vn.html",
+                        hash: "#/porters-five-forces",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

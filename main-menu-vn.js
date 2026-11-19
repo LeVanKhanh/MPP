@@ -682,6 +682,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Ma Trận Tác Động Và Công Sức",
+                        route: "pages/reading-studying/management-tools-and-techniques/26-impact-effort-matrix-vn.html",
+                        hash: "#/impact-effort-matrix",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

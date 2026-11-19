@@ -675,6 +675,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Impact/Effort Matrix",
+                        route: "pages/reading-studying/management-tools-and-techniques/26-impact-effort-matrix.html",
+                        hash: "#/impact-effort-matrix",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

@@ -668,6 +668,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Decision Matrix",
+                        route: "pages/reading-studying/management-tools-and-techniques/25-decision-matrix.html",
+                        hash: "#/decision-matrix",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

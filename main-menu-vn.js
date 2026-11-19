@@ -675,6 +675,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Ma Trận Quyết Định",
+                        route: "pages/reading-studying/management-tools-and-techniques/25-decision-matrix-vn.html",
+                        hash: "#/decision-matrix",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

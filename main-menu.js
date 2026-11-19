@@ -661,6 +661,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "STP Framework",
+                        route: "pages/reading-studying/management-tools-and-techniques/24-stp-framework.html",
+                        hash: "#/stp-framework",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

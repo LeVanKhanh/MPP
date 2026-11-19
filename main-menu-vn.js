@@ -668,6 +668,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Khung STP",
+                        route: "pages/reading-studying/management-tools-and-techniques/24-stp-framework-vn.html",
+                        hash: "#/stp-framework",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

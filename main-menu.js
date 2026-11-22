@@ -689,6 +689,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Skill/Will Matrix",
+                        route: "pages/reading-studying/management-tools-and-techniques/28-skill-will-matrix.html",
+                        hash: "#/skill-will-matrix",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

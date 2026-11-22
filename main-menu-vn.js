@@ -696,6 +696,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Ma Trận Năng Lực Và Ý Chí",
+                        route: "pages/reading-studying/management-tools-and-techniques/28-skill-will-matrix-vn.html",
+                        hash: "#/skill-will-matrix",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Ma Trận RACI - My Personal Planet</title>
+    <link rel="stylesheet" href="../../pages-styles.css">
+    <link rel="stylesheet" href="../../diagram-styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta
+        content="Ma trận RACI đặt các việc lên một lưới với các vai trò và buộc mỗi ô nhận một chữ: người làm, người chịu trách nhiệm, người được hỏi ý kiến, người được báo. Bài phân tích cơ chế, chỗ bảng chỉ ghi tên mà không ghi quyền hay thế nào là xong, một phân tích gộp về sự mơ hồ vai trò và thành tích công việc, cách dùng và một tình huống áp dụng từng bước."
+        name="description">
+</head>
+<body>
+    <!-- Page Title -->
+    <article class="content-article">
+        <header class="article-header">
+            <h1 class="page-title">Ma Trận RACI</h1>
+            <p class="page-subtitle">Mỗi dòng của RACI cần đúng một chữ A, và chính quy tắc ấy làm lộ việc không ai nhận hay hai người cùng quyết; nhưng bảng chỉ ghi ai, không ghi quyền của người ấy hay thế nào là xong</p>
+            <p class="page-meta">Đăng ngày: <time datetime="2026-11-22">22 Tháng 11, 2026</time></p>
+        </header>
+
+        <!-- Definition -->
+        <section class="content-section">
+            <h2 class="main-point">Định Nghĩa</h2>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Ma Trận RACI Là Gì</h3>
+                <p>Giả sử một nhà xuất bản sách thiếu nhi 15 người chuẩn bị in một đầu sách mới, và trong buổi họp ai cũng gật đầu khi nghe "phần này anh chị lo nhé". Hai tuần sau, sách in xong với một lỗi chính tả trên bìa sau: biên tập viên và hoạ sĩ đều đã đọc bản in thử, và mỗi người nghĩ người kia là người ký cho in. <strong>Ma trận RACI</strong> (RACI matrix) là cách viết những cái gật đầu ấy ra giấy. Các việc xếp thành dòng, các vai trò xếp thành cột, và mỗi ô nhận một chữ cho biết vai trò ấy đứng ở đâu với việc ấy. R (Responsible) là <strong>người làm</strong>; một việc có thể có vài người làm. A (Accountable) là <strong>người chịu trách nhiệm</strong>, người ký duyệt và là nơi trách nhiệm dừng lại; mỗi việc có đúng một người như vậy. C (Consulted) là <strong>người được hỏi ý kiến</strong>, đóng góp trước khi việc được duyệt. I (Informed) là <strong>người được báo</strong>, nhận thông tin về việc mà không góp vào nó. Hai quy tắc dòng đi kèm: mỗi dòng phải có đúng một A và ít nhất một R; C và I thì có hay không tuỳ việc. <sup><a href="#ref-1">[1]</a></sup></p>
+
+                <p>Trong tiếng Việt, cả "responsible" lẫn "accountable" thường được dịch chung là "chịu trách nhiệm", và đó đúng là chỗ nhập nhằng mà ma trận muốn tách: người làm việc ấy và người phải trả lời cho kết quả của nó có thể là hai người khác nhau. Bài dùng "người làm" cho R, "người chịu trách nhiệm" cho A, và ghi A/R ở ô mà một người vừa làm vừa chịu trách nhiệm. Trong phạm vi tìm kiếm của bài, chưa tìm thấy nguồn sơ cấp nào cho biết ai đặt ra ma trận và năm nào. Điều kiểm được là nó đã có mặt lâu trong tài liệu nghề. Bài giới thiệu của Mind Tools ghi nguồn tài liệu của <em>PMBOK Guide</em> bản thứ năm (2013) của Viện Quản lý Dự án (PMI). <sup><a href="#ref-1">[1]</a></sup> ISACA, tổ chức soạn bộ khung quản trị công nghệ thông tin COBIT, viết rằng người làm công nghệ thông tin đã dùng biểu đồ RACI hàng chục năm và COBIT đã có biểu đồ RACI qua nhiều phiên bản. <sup><a href="#ref-2">[2]</a></sup> <sup><a href="#ref-3">[3]</a></sup> Bài dùng định nghĩa bốn chữ và hai quy tắc dòng của Mind Tools cho Hình 1 và mọi câu hỏi kiểm.</p>
+
+                <p>Ma trận gần với hai công cụ khác trong loạt bài. Cấu trúc phân rã công việc trả lời "dự án gồm những gì", và các gói việc của nó có thể làm nguồn cho các dòng của RACI; RACI thêm câu "ai đứng ở đâu với từng gói". Ma trận năng lực và ý chí cũng làm việc trên từng việc một, nhưng hỏi một câu khác: người đã được giao việc cần được quản lý ra sao. Đặt năm việc chuẩn bị in đầu sách của nhà xuất bản lên lưới thì ra Hình 1.</p>
+
+                <figure class="tool-diagram">
+                    <svg role="img"
+                        aria-label="Ma trận RACI của một nhà xuất bản cho năm việc trước khi in một đầu sách. Cột là năm vai trò: tổng biên tập, biên tập viên, hoạ sĩ, phát hành, giám đốc. Dòng biên tập bản thảo: tổng biên tập A, biên tập viên R. Dòng duyệt bìa: tổng biên tập A, biên tập viên C, hoạ sĩ R, phát hành C, giám đốc I. Dòng chốt số lượng in: tổng biên tập C, phát hành A/R, giám đốc A; dòng này được tô cảnh báo vì có hai người giữ chữ A. Dòng đọc bản in thử lần cuối: biên tập viên R, hoạ sĩ R; dòng này được tô cảnh báo vì không ai giữ chữ A. Dòng báo nhà sách ngày giao: biên tập viên I, phát hành A/R, giám đốc I."
+                        viewBox="0 0 1000 420">
+                        <rect class="node-alert" x="340" y="200" width="500" height="60"></rect>
+                        <rect class="node-alert" x="340" y="260" width="500" height="60"></rect>
+
+                        <path class="axis" d="M340 80 H840 V380 H340 Z"></path>
+                        <path class="tick" d="M340 140 H840 M340 200 H840 M340 260 H840 M340 320 H840"></path>
+                        <path class="tick" d="M440 80 V380 M540 80 V380 M640 80 V380 M740 80 V380"></path>
+
+                        <text class="small" x="390" y="60">Tổng biên tập</text>
+                        <text class="small" x="490" y="60">Biên tập viên</text>
+                        <text class="small" x="590" y="60">Hoạ sĩ</text>
+                        <text class="small" x="690" y="60">Phát hành</text>
+                        <text class="small" x="790" y="60">Giám đốc</text>
+
+                        <text class="rowlabel" x="325" y="110">Biên tập bản thảo</text>
+                        <text class="rowlabel" x="325" y="170">Duyệt bìa</text>
+                        <text class="rowlabel" x="325" y="230">Chốt số lượng in</text>
+                        <text class="rowlabel" x="325" y="290">Đọc bản in thử lần cuối</text>
+                        <text class="rowlabel" x="325" y="350">Báo nhà sách ngày giao</text>
+
+                        <text x="390" y="110">A</text>
+                        <text x="490" y="110">R</text>
+
+                        <text x="390" y="170">A</text>
+                        <text x="490" y="170">C</text>
+                        <text x="590" y="170">R</text>
+                        <text x="690" y="170">C</text>
+                        <text x="790" y="170">I</text>
+
+                        <text x="390" y="230">C</text>
+                        <text class="alert" x="690" y="230">A/R</text>
+                        <text class="alert" x="790" y="230">A</text>
+
+                        <text x="490" y="290">R</text>
+                        <text x="590" y="290">R</text>
+
+                        <text x="490" y="350">I</text>
+                        <text x="690" y="350">A/R</text>
+                        <text x="790" y="350">I</text>
+
+                        <text class="small note alert" x="852" y="230">hai người giữ chữ A</text>
+                        <text class="small note alert" x="852" y="290">không ai giữ chữ A</text>
+
+                        <text class="small" x="590" y="405">R người làm · A người chịu trách nhiệm · C người được hỏi ý kiến · I người được báo</text>
+                    </svg>
+                    <figcaption>
+                        <strong>Hình 1.</strong> Hai lỗi chỉ hiện ra khi phải điền từng ô: dòng chốt số lượng in có hai người cùng nghĩ mình quyết, dòng đọc bản in thử có hai người làm mà không ai ký cho in.
+                        Trong buổi họp, cả hai việc đều đã được "giao".
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Tại Sao Ta Cần Dùng Nó</h3>
+                <p>Một việc cần nhiều người góp tay dễ rơi vào một trong hai chỗ hỏng. Chỗ thứ nhất là khoảng trống: ai cũng nghĩ có người khác đang lo, như lỗi trên bìa sau của nhà xuất bản. Chỗ thứ hai là chỗ trùng: hai người cùng nghĩ quyết định thuộc về mình, như giám đốc và phòng phát hành cùng chốt một số lượng in, và người làm nhận hai mệnh lệnh khác nhau. Cả hai thường không lộ ra trong cuộc họp giao việc, vì câu "phần này anh chị lo nhé" nghe rõ với người nói và nghe rõ theo một nghĩa khác với từng người nghe.</p>
+
+                <p>Cơ chế của công cụ là buộc mỗi ô của lưới việc và vai trò phải nhận một chữ, hoặc để trống một cách có chủ ý. Khi phải viết ra, giả định nằm trong đầu từng người trở thành thứ người khác đọc được và cãi được. Quy tắc một chữ A mỗi dòng biến khoảng trống và chỗ trùng thành hai lỗi nhìn thấy được: dòng không có A, dòng có hai A. Đọc theo cột thì thấy thêm một loại lỗi thứ ba: một người giữ quá nhiều chữ A để có thể trông được hết, hay một người có mặt ở mọi dòng. <sup><a href="#ref-1">[1]</a></sup> Việc tách C khỏi I cũng có lý do: C là trao đổi hai chiều và việc phải chờ người ấy, I là một chiều và việc không chờ ai.</p>
+
+                <p>Lý do để làm rõ vai trò có một con số đỡ ở tầng trên một bậc. Trong phân tích gộp của Gilboa và cộng sự ở phần Nghiên Cứu, gộp 114 mẫu với 22.258 người, sự mơ hồ vai trò mà nhân viên cảm nhận có hệ số tương quan −0,24 với thành tích công việc sau khi hiệu chỉnh sai số đo lường (0 là không liên hệ, −1 là liên hệ nghịch hoàn toàn), và là một trong hai yếu tố gây áp lực có liên hệ mạnh nhất với thành tích trong bảy yếu tố được xét. <sup><a href="#ref-4">[4]</a></sup> Một dòng nghiên cứu khác, về sự ỷ lại trong nhóm, cho thấy người ta thường bỏ ít công sức hơn khi phần góp của mình gộp chung vào sản phẩm của cả nhóm, và khả năng phần góp của từng người được đánh giá riêng là một trong những yếu tố ảnh hưởng mạnh nhất tới mức ỷ lại. <sup><a href="#ref-5">[5]</a></sup> Theo cách đọc của bài, một lưới ghi tên người làm và một người chịu trách nhiệm cho từng việc đụng tới cả hai cơ chế, với một ngoại lệ: dòng có nhiều chữ R lại gộp phần góp của những người ấy vào một ô, đúng điều kiện mà các nghiên cứu về sự ỷ lại mô tả. Cả hai con số đều không đo chính ma trận.</p>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-point-1">Giới Hạn Của Công Cụ Này Là Gì</h3>
+                <p>Theo định nghĩa, người giữ chữ A là người ký duyệt, nhưng chữ A trên giấy không trao cho họ quyền chi tiền, quyền điều người hay quyền nói "chưa được". Đây là giới hạn vốn có: ma trận ghi tên, và không có bước nào kiểm người được ghi tên có những quyền mà chữ cái giả định hay không. Khi chữ A rơi vào người không có những quyền ấy, bảng không kiểm ra, và chữ A trở thành chỗ để quy lỗi về sau thay vì chỗ để ra quyết định.</p>
+
+                <p>Mẫu mặc định cũng không có cột cho hai thứ khác. Thứ nhất là thời gian: bảng không nói việc nào làm trước, hạn khi nào; thứ tự và hạn thuộc về lịch, như biểu đồ Gantt. Thứ hai là tiêu chí xong: chữ R cho biết ai làm, không cho biết làm tới đâu thì được coi là xong và ai chấm. Người dùng có thể thêm cột cho cả hai, nhưng đó là phần thêm vào, không có trong bốn chữ. Chỗ thiếu thứ hai đáng kể hơn nó trông: sự mơ hồ vai trò mà phân tích gộp của Gilboa và cộng sự đo không chỉ là không biết ai làm, mà cả không biết mình được kỳ vọng gì, và nhóm tác giả khuyên giảm nó bằng mục tiêu, kỳ vọng và tiêu chí đánh giá rõ hơn. <sup><a href="#ref-4">[4]</a></sup> Một bảng RACI đầy đủ chữ có thể trả lời "ai" mà vẫn để nguyên câu "thế nào là đạt".</p>
+
+                <p>Thứ ba, cũng vốn có: bảng là ảnh chụp tại lúc lập. Người đổi việc, cơ cấu đổi, dự án sang giai đoạn khác, còn bảng vẫn ghi theo lúc đầu. Mind Tools coi việc truyền đạt và cập nhật bảng là bước cuối của cách dựng <sup><a href="#ref-1">[1]</a></sup>, tức là bước cập nhật có trong cách dùng chuẩn, nhưng không có gì trong bảng tự nhắc ai làm bước ấy.</p>
+
+                <p>Phần còn lại là lỗi của cách dùng. Chữ C dễ bị rải cho mọi người có liên quan, vì ghi thêm một chữ C trông như cẩn thận, trong khi mỗi C là một người việc phải chờ; Mind Tools gọi thẳng đây là chuyện lắm thầy nhiều ma, kể cả khi người thừa chỉ mang chữ C hay I. <sup><a href="#ref-1">[1]</a></sup> Chữ C cũng có thể bị hiểu thành quyền phủ quyết, trong khi định nghĩa chỉ nói người ấy được hỏi trước khi việc được duyệt. Và bảng có thể chỉ do một người điền, khi đó nó ghi lại giả định của đúng người ấy và bỏ lỡ chính chỗ nó có ích nhất: những chỗ các giả định lệch nhau. Cách giảm từng lỗi nằm ở phần Cách Áp Dụng.</p>
+
+                <table class="content-table">
+                    <thead><tr><th scope="col">Điều được nhìn thấy</th><th scope="col">Điều bị bỏ sót</th></tr></thead>
+                    <tbody>
+                        <tr><td>Mỗi dòng có đúng một chữ A</td><td>Người giữ chữ A có thứ quyền mà việc ấy đòi, duyệt, điều người hay chi tiền, hay chỉ có quyền báo lên</td></tr>
+                        <tr><td>Chữ R cạnh tên người làm</td><td>Làm tới đâu thì được coi là xong, và ai chấm</td></tr>
+                        <tr><td>Bảng đủ chữ cho mọi dòng</td><td>Việc nào trước, hạn khi nào</td></tr>
+                        <tr><td>Năm chữ C ở một dòng</td><td>Năm người việc phải chờ, và không ai trong số đó có quyền phủ quyết theo định nghĩa</td></tr>
+                        <tr><td>Bảng do trưởng nhóm điền</td><td>Những người trong bảng có thể hiểu khác, và chỗ hiểu khác là thứ cần tìm</td></tr>
+                        <tr><td>Bảng lập lúc khởi động dự án</td><td>Người và việc đã đổi từ đó</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="content-section">
+            <h2 class="main-point">Ví Dụ</h2>
+            <p class="intro-text">Cả hai ví dụ dưới đây đều là tình huống dựng lên, và cả hai đều bắt đầu từ một bảng trông đúng luật: chữ C rải cho mọi bộ phận rồi được đọc thành quyền phủ quyết, và chữ A đặt vào người không có quyền với việc ấy. Trong phạm vi tìm kiếm của bài, chưa tìm thấy một ca thật có nguồn ghi rõ ma trận RACI đã được dùng và ra kết quả đo được.</p>
+            <div class="sub-section">
+                <h3 class="sub-point-1">Chín Chữ C Cho Một Phần Mềm Quản Lý Đội Xe</h3>
+                <p>Tình huống minh hoạ: một công ty vận tải container ở Hải Phòng, khoảng 200 xe, cần chọn phần mềm quản lý đội xe trong bốn tuần để kịp ký hợp đồng trước mùa cao điểm. Phó giám đốc vận hành lập bảng RACI cho việc chọn phần mềm: phòng công nghệ là R, chính ông là A, và để không ai phật lòng, chín trưởng bộ phận còn lại đều là C, từ điều độ, bảo dưỡng, kế toán, nhân sự tới pháp chế. Mỗi bản so sánh ba nhà cung cấp phải đi qua chín người. Ba vòng góp ý kéo dài bảy tuần, nhiều góp ý trái nhau, và phòng công nghệ dành phần lớn thời gian để tổng hợp ý kiến thay vì thử phần mềm. Tuần thứ mười một, phó giám đốc chốt nhà cung cấp mà điều độ và bảo dưỡng chọn. Trưởng phòng kế toán phản đối bằng văn bản, viết rằng mình "có tên trong bảng" nhưng ý kiến về chi phí bản quyền không được nghe, và việc ký hợp đồng chậm thêm hai tuần.</p>
+                <p>Bảng đủ chữ, mỗi dòng một A, nhưng chữ C đã được dùng như một cách ghi danh. Chín người được hỏi nghĩa là việc phải chờ chín người, và không ai trong bảng viết ra rằng C là được hỏi trước khi duyệt; trưởng phòng kế toán đọc chữ C của mình như một lá phiếu. Hai bộ phận dùng phần mềm hằng ngày là điều độ và bảo dưỡng thì cần ở chữ C; kế toán cần ở chữ C cho đúng một phần, chi phí; pháp chế cần ở chữ C nếu quy chế công ty bắt mọi hợp đồng phải qua pháp chế; các bộ phận khác chỉ cần chữ I. Chính COBIT, bộ khung có biểu đồ RACI cho từng thực hành, chỉ gợi ý R và A, còn C và I thì để tổ chức tự đặt <sup><a href="#ref-2">[2]</a></sup>; bài đọc đó là dấu hiệu rằng hai chữ ấy phụ thuộc vào hoàn cảnh của từng nơi nhiều hơn. Câu kiểm cho bảng của bạn: với từng chữ C, nếu bỏ người ấy ra, quyết định có thể sai ở chỗ nào? Không chỉ ra được chỗ nào, và không có quy chế, hợp đồng hay luật nào bắt phải hỏi người ấy, thì người ấy là I.</p>
+            </div>
+            <div class="sub-section">
+                <h3 class="sub-point-1">Chữ A Của Một Cửa Hàng Trưởng</h3>
+                <p>Tình huống minh hoạ: một chuỗi 20 cửa hàng trà sữa ở TP.HCM lập bảng RACI cho các việc vận hành cửa hàng, và cửa hàng trưởng là A cho dòng "an toàn thực phẩm tại cửa hàng". Tháng 6, tủ mát giữ sữa tươi của một cửa hàng ở quận 3 chạy không đủ lạnh. Cửa hàng trưởng gửi email báo phòng kỹ thuật bốn lần trong ba tuần; theo quy chế của chuỗi, mọi lần sửa thiết bị trên 2 triệu đồng phải do phòng kỹ thuật duyệt và phòng mua hàng đặt thợ. Trong tuần thứ tư, đoàn kiểm tra của quận lập biên bản về nhiệt độ bảo quản. Công ty kỷ luật cửa hàng trưởng, với lý do người ấy giữ chữ A.</p>
+                <p>Chữ A đã được đặt theo nơi xảy ra sự việc, không theo nơi có quyền quyết. Kết quả của dòng ấy phụ thuộc vào việc sửa tủ kịp, mà cửa hàng trưởng không có quyền chi tiền sửa tủ, không có quyền đặt thợ, và không có cách nào khác ngoài báo lên. Bốn lần báo lên cho thấy con đường leo thang có tồn tại; thứ thiếu là một người nhận báo có hạn phải xử lý. Bảng không có ô nào để ghi chỗ lệch ấy: nó chỉ ghi tên. Một cách điền khớp với quyền là tách dòng: cửa hàng trưởng giữ chữ A cho việc kiểm nhiệt độ và báo hỏng trong ngày, phòng kỹ thuật giữ chữ A cho việc sửa thiết bị trong một thời hạn đã ghi. Câu kiểm: kết quả của dòng ấy đòi những quyết định nào, và người giữ chữ A có tự ra được những quyết định ấy không, hay chỉ có thể xin người khác?</p>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="content-section">
+            <h2 class="main-point">Một Vài Nghiên Cứu Về Ma Trận RACI</h2>
+            <p class="intro-text">Ma trận RACI được dùng rộng hơn nhiều so với lượng bằng chứng về nó: trong phạm vi tìm kiếm của bài, chưa tìm thấy nghiên cứu nào đo chính ma trận, dù là phép so kết quả giữa những nhóm dùng và không dùng nó, hay khảo sát về mức độ phổ biến. Dấu hiệu về tầm ảnh hưởng là sự có mặt của nó trong các bộ khung nghề nghiệp: biểu đồ RACI có trong COBIT qua nhiều phiên bản; ở COBIT 2019, bộ công cụ kèm theo có một bảng tính RACI cho từng thực hành trong 231 thực hành thuộc 40 mục tiêu quản trị và quản lý, và ISACA mô tả các biểu đồ ấy là một góc nhìn ban đầu để mỗi tổ chức tự điều chỉnh. <sup><a href="#ref-2">[2]</a></sup> <sup><a href="#ref-3">[3]</a></sup> Bằng chứng gần nhất nằm ở tầng trên một bậc và chia làm hai dòng. Dòng thứ nhất là các phân tích gộp về sự ỷ lại trong nhóm, cho thấy công sức giảm khi phần góp của từng người không được nhìn riêng; bài đọc phân tích gộp của Karau và Williams qua phần tóm tắt. <sup><a href="#ref-5">[5]</a></sup> Dòng thứ hai là nghiên cứu về sự mơ hồ vai trò, thứ ma trận được dựng ra để giảm. Nghiên cứu dưới đây thuộc dòng thứ hai, và là nghiên cứu duy nhất trong bài được đọc toàn văn.</p>
+            <div class="sub-section">
+                <p><strong>Nghiên cứu:</strong> Simona Gilboa, Arie Shirom, Yitzhak Fried và Cary Cooper gộp các nghiên cứu về quan hệ giữa bảy yếu tố gây áp lực trong công việc và thành tích: mơ hồ vai trò, xung đột vai trò, quá tải vai trò, bất an về việc làm, xung đột giữa công việc và gia đình, môi trường bất định, và trở ngại tình huống. Họ tìm trong các cơ sở dữ liệu từ năm 1975 tới 2002, và thu được 169 mẫu với 35.265 nhân viên, 374 hệ số ảnh hưởng từ 104 nghiên cứu đã công bố và 33 luận án tiến sĩ chưa công bố. Cỡ mẫu trung bình là 209 người, và 88% số mẫu ở các nước nói tiếng Anh. Mơ hồ vai trò, theo định nghĩa gốc của Kahn và cộng sự (1964), là việc không đoán được hành động của mình sẽ dẫn tới kết quả gì; thước đo phổ biến nhất, của Rizzo, House và Lirtzman (1970), tính thêm cả việc thiếu chỉ dẫn từ bên ngoài. Thành tích được tách theo nguồn: tự đánh giá, cấp trên chấm, và đánh giá khách quan. Hệ số tương quan được hiệu chỉnh theo sai số lấy mẫu và độ tin cậy của thước đo theo phương pháp của Hunter và Schmidt. <sup><a href="#ref-4">[4]</a></sup></p>
+                <p><strong>Kết quả:</strong> Với thành tích chung, mơ hồ vai trò có hệ số tương quan quan sát −0,20 và đã hiệu chỉnh −0,24, trên 114 mẫu và 22.258 người. Hệ số đã hiệu chỉnh là −0,30 với thành tích tự đánh giá (55 mẫu, 10.948 người), −0,19 với thành tích do cấp trên chấm (51 mẫu, 9.001 người), và −0,17 với đánh giá khách quan (11 mẫu, 2.458 người); nếu hiệu chỉnh thêm cho việc các cấp trên chấm cùng một người thường không khớp nhau, con số là −0,24. Xung đột vai trò, tức nhận những đòi hỏi trái nhau, liên hệ yếu hơn nhiều: từ −0,08 tới −0,12 với thành tích chung, tự đánh giá và cấp trên chấm. Quá tải vai trò liên hệ thấp và không có ý nghĩa thống kê ở ba loại thành tích ấy. Mơ hồ vai trò và trở ngại tình huống có liên hệ mạnh hơn mọi yếu tố còn lại, ở từng loại thành tích. Khi đo bằng thang của Rizzo và cộng sự, liên hệ của mơ hồ vai trò với thành tích chung yếu hơn so với các thang khác, −0,18 so với −0,23 (hệ số quan sát). Với hầu hết các hệ số, kiểm định cho thấy kết quả không đồng nhất giữa các nghiên cứu và khoảng ước lượng cho hệ số thật ở các bối cảnh khác nhau (credibility interval) rộng, chứa cả số 0, nghĩa là còn những yếu tố chưa được đo làm quan hệ mạnh lên hay yếu đi. <sup><a href="#ref-4">[4]</a></sup></p>
+                <p><strong>Kết luận:</strong> Nhân viên càng thấy vai trò của mình mơ hồ thì thành tích càng có xu hướng thấp hơn, ở mức vừa phải, và xu hướng ấy hiện ra ở mọi nguồn đo thành tích, kể cả đánh giá khách quan. Nhóm tác giả tự ghi rằng phần lớn các nghiên cứu được gộp là nghiên cứu cắt ngang, đo mọi thứ ở cùng một thời điểm, nên không thể biết chiều nhân quả: thấy vai trò mơ hồ có thể làm thành tích giảm, và làm kém cũng có thể khiến người ta thấy vai trò mơ hồ hơn. Trong ba nguồn đo chính, con số mạnh nhất, −0,30, đến từ thành tích tự đánh giá, khi cùng một người trả lời cả hai câu hỏi. Nghiên cứu không kiểm ma trận RACI. Nó đo cảm nhận của nhân viên về vai trò của chính mình, gồm cả việc biết mình được kỳ vọng gì và đoán được việc mình làm sẽ dẫn tới kết quả gì, không phải việc có hay không một bảng ghi ai làm gì.</p>
+                <p><strong>Phản biện:</strong> Phe bênh không cần một phép đo trực tiếp để có hai lý lẽ đáng nghe. Vế thứ nhất: RACI rẻ. Một buổi điền bảng tốn vài giờ, và khi một yếu tố liên hệ với thành tích ở mức −0,24 trên hai mươi hai nghìn người, chỉ cần bảng giảm được một phần nhỏ sự mơ hồ là đã đáng. Vế thứ hai: một công cụ được người trong nghề dùng hàng chục năm và được đưa vào các bộ khung như COBIT thì đã qua một kiểu sàng lọc của thực tế. Bài nhận một phần vế thứ nhất: chi phí lập bảng thấp, và tiền đề rằng vai trò rõ đi cùng thành tích tốt hơn có bằng chứng tương quan vững. Nhưng chi phí không chỉ là buổi điền bảng, mà còn là mỗi chữ C thêm vào việc phải chờ, như ví dụ chín chữ C ở trên. Và con số −0,24 nói về cảm nhận mơ hồ nói chung, gồm cả chuyện được kỳ vọng gì, trong khi bảng chỉ đụng trực tiếp tới câu "ai"; trong phạm vi tìm kiếm của bài, chưa tìm thấy phép đo nào cho biết bảng làm giảm cảm nhận ấy được bao nhiêu. Vế thứ hai bài không nhận: được dùng rộng rãi là bằng chứng về độ phổ biến, không phải về hiệu quả, và chính ISACA gọi các biểu đồ RACI của COBIT là một góc nhìn ban đầu, để từng tổ chức tự đặt phần C và I. <sup><a href="#ref-3">[3]</a></sup> Có một điểm trong dữ liệu đáng để cả hai phía cùng cân: xung đột vai trò liên hệ với thành tích yếu hơn nhiều so với mơ hồ vai trò. Có thể đặt giả thuyết rằng lỗi không có chữ A gần với mơ hồ vai trò, còn lỗi hai chữ A gần với xung đột vai trò, nhưng dữ liệu này không đủ để nói lỗi nào đắt hơn: hai cấu trúc trong nghiên cứu rộng hơn nhiều so với một dòng trên bảng, hai chữ A cũng để người làm không biết ai quyết, và một hệ số tương quan với thành tích không đo được thiệt hại của từng loại lỗi. Điều dữ liệu đỡ được là một điểm hẹp hơn: sự mơ hồ, một trong hai yếu tố có liên hệ rõ nhất với thành tích trong bảy yếu tố được xét, gồm cả chuyện được kỳ vọng gì, nên việc mỗi người làm biết rõ thế nào là xong đáng được chăm chút ngang với quy tắc một chữ A.</p>
+                <p><strong>Vì sao điều này hữu ích:</strong> Khi phát bảng, hỏi từng người mang chữ R một câu: bạn sẽ biết việc này xong khi nào, và ai là người nói nó đạt? Nếu câu trả lời khác với điều người giữ chữ A nghĩ, ghi tiêu chí xong ngay cạnh dòng ấy. Và vì trong ba nguồn đo chính, con số mạnh nhất đến từ tự đánh giá, đừng đo hiệu quả của bảng bằng một khảo sát hỏi mọi người có thấy vai trò rõ hơn không; đếm những việc thật: việc trễ vì chờ một người được hỏi ý kiến, việc rơi giữa hai người, việc phải làm lại vì hiểu khác nhau về thế nào là xong.</p>
+            </div>
+        </section>
+
+        <!-- Application -->
+        <section class="content-section">
+            <h2 class="main-point">Cách Áp Dụng</h2>
+            <p class="intro-text">Ma trận RACI hoạt động bằng cách buộc mỗi ô của lưới việc và vai trò nhận một chữ, nên những khoảng trống, chỗ trùng và chỗ quá tải vốn nằm trong đầu từng người hiện ra trên giấy; vì vậy cách dùng hiệu quả là giữ cho các chữ ấy khớp với thực tế: để nhiều người cùng ghi để giả định lệch nhau lộ ra, đặt chữ A ở người có thứ quyền mà việc ấy đòi, giữ chữ C ít, và ghi kèm thứ bốn chữ không ghi được, tức thế nào là xong. Công cụ hợp nhất với việc nhiều bộ phận cùng góp tay và hay chuyển tay; kém hợp với việc một người làm trọn từ đầu tới cuối, nơi bảng chỉ ghi lại điều ai cũng đã biết.</p>
+            <div class="sub-section">
+                <ul class="outline-list">
+                    <li><strong>Để từng người tự điền riêng, rồi đọc theo dòng và theo cột:</strong> Mỗi người trong bảng điền chữ cho mọi dòng trên phiếu của mình trước khi họp, rồi đặt các phiếu cạnh nhau; dòng nào hai người cùng ghi A cho mình, hay không ai ghi A, là dòng cần bàn. Sau khi chốt, kiểm từng dòng có đúng một A và ít nhất một R, và kiểm từng cột xem có ai giữ quá nhiều chữ A để trông được hết hay có mặt ở mọi dòng <sup><a href="#ref-1">[1]</a></sup>. Một bảng do một người điền thì luôn sạch lỗi, và đó chính là vấn đề: nó không có giả định nào để lệch nhau</li>
+                    <li><strong>Đặt chữ A ở người có thứ quyền mà kết quả của dòng ấy đòi:</strong> Với mỗi chữ A, hỏi: để dòng này ra kết quả cần những quyết định nào, và người này có tự đưa ra được không? Dòng đọc bản in thử cần quyền ký cho in, không cần quyền chi tiền; dòng giữ tủ mát đủ lạnh thì cần quyền gọi thợ sửa. Nếu người giữ chữ A chỉ có quyền báo lên, đổi chữ A hoặc tách dòng theo quyền, như tách việc kiểm nhiệt độ khỏi việc sửa tủ mát. Khi hai người cùng giành chữ A, một cách gỡ là tách dòng theo một ngưỡng đã có trong quy chế phân quyền, như theo số tiền, thay vì để hai chữ A hay chọn đại một người</li>
+                    <li><strong>Giữ chữ C cho người mà thiếu họ thì quyết định có thể sai, hoặc người mà quy định bắt phải hỏi:</strong> Với từng chữ C, viết ra quyết định có thể sai ở đâu nếu bỏ người ấy, hoặc quy chế, hợp đồng hay luật nào bắt phải hỏi họ; không viết được cả hai thì đổi thành I. Ai mà quy chế cho quyền duyệt thì không phải chữ C: đó là chữ A của một dòng duyệt riêng. Ghi rõ trên bảng rằng C được hỏi trước khi duyệt và không có quyền phủ quyết. COBIT cũng chỉ gợi ý R và A cho từng thực hành và để tổ chức tự đặt C và I <sup><a href="#ref-2">[2]</a></sup></li>
+                    <li><strong>Ghi tiêu chí xong cạnh mỗi dòng, và đo bảng bằng việc thật thay vì bằng số ô đã điền:</strong> Thêm một cột "xong khi" và một cột hạn, vì sự mơ hồ vai trò trong nghiên cứu gồm cả việc không biết mình được kỳ vọng gì, và nhóm tác giả khuyên giảm nó bằng tiêu chí đánh giá rõ hơn <sup><a href="#ref-4">[4]</a></sup>. Đếm tỷ lệ dòng có đủ một A thì hỏng theo cách quen thuộc của nhiều chỉ tiêu đếm: bảng nào cũng đạt 100% sau một buổi họp mà việc vẫn trễ. Đo chỉ số kết quả của chính quy trình, trước và sau, bằng cùng một định nghĩa, và đặt sẵn ngày rà lại bảng mỗi khi người hay cơ cấu đổi</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section class="content-section">
+            <h2 class="main-point">Tình Huống Áp Dụng</h2>
+            <p class="intro-text">Một nhà máy chế biến cá tra xuất khẩu ở Cần Thơ nhận khiếu nại chất lượng từ khách nhập khẩu, như sai trọng lượng tịnh hay có xương trong phi lê. Theo hợp đồng với các khách lớn, nhà máy cần gửi phương án xử lý bằng văn bản trong 10 ngày làm việc kể từ ngày nhận khiếu nại. Trong quý 1 năm 2027, từ ngày 1 tháng 1 tới ngày 31 tháng 3, nhà máy nhận 30 khiếu nại và chỉ 12 khiếu nại, tức 40%, được gửi phương án trong 10 ngày làm việc. Giám đốc nhà máy giao trưởng phòng quản lý chất lượng (QA) mục tiêu: trong quý 3, từ ngày 1 tháng 7 tới ngày 30 tháng 9, ít nhất 80% khiếu nại được gửi phương án trong 10 ngày làm việc, và báo cáo kết quả trước ngày 15 tháng 10. Sáu vai trò tham gia xử lý khiếu nại: nhân viên kinh doanh phụ trách khách, trưởng phòng kinh doanh xuất khẩu, trưởng phòng QA, quản đốc sản xuất, trưởng kho lạnh và giám đốc nhà máy. Mọi con số và mốc thời gian là số minh hoạ.</p>
+            <div class="sub-section">
+                <ol class="outline-list">
+                    <li><strong>Tìm chỗ khiếu nại bị giữ lại trước khi lập bảng:</strong> Trưởng phòng QA lần lại 18 khiếu nại trễ hạn của quý 1, ghi khiếu nại nằm chờ lâu nhất ở việc nào. 11 khiếu nại chờ lâu nhất ở việc truy nguyên lô hàng, 5 ở việc quyết định đền bù, 2 ở việc chờ kết quả xét nghiệm lại mẫu lưu, do một phòng xét nghiệm bên ngoài làm theo hợp đồng dịch vụ cam kết trả kết quả trong 4 ngày làm việc. Hai chỗ đầu là chỗ chuyển tay giữa các bộ phận, đúng loại vấn đề RACI xử lý; chỗ thứ ba là thời gian của một nhà cung cấp, thứ bảng không rút ngắn được</li>
+                    <li><strong>Liệt kê việc theo đúng trình tự xử lý, rồi để sáu người tự điền riêng:</strong> Bảng nháp có sáu dòng, từ tiếp nhận khiếu nại tới gửi phương án cho khách. Mỗi người điền chữ trên phiếu của mình trước buổi họp ngày 12 tháng 4. Đặt sáu phiếu cạnh nhau, hai dòng lệch hẳn. Ở dòng truy nguyên lô hàng, trưởng kho ghi A cho trưởng phòng QA và trưởng phòng QA ghi A cho trưởng kho: không ai ghi A cho mình, đúng chỗ 11 khiếu nại đã chờ. Ở dòng quyết định đền bù, cả trưởng phòng kinh doanh lẫn giám đốc đều ghi A cho mình. Gộp các phiếu lại, bảng nháp có 11 chữ C</li>
+                    <li><strong>Đặt mỗi chữ A theo quyền, tách dòng khi quyền chia theo ngưỡng:</strong> Chữ A của việc truy nguyên lô hàng về trưởng phòng QA, người giữ hồ sơ lô và có quyền yêu cầu kho mở nhật ký nhiệt độ; trưởng kho là R. Dòng quyết định đền bù được tách làm hai theo quy chế phân quyền sẵn có của nhà máy: từ chối khiếu nại hoặc đền bù tới 5.000 USD do trưởng phòng kinh doanh quyết, trên 5.000 USD do giám đốc ký. Ở dòng xét nghiệm, trưởng phòng QA giữ A/R cho việc gửi mẫu, theo dõi và nhận kết quả; việc xét nghiệm do phòng xét nghiệm bên ngoài làm, nằm ngoài bảng, và ràng buộc bằng hợp đồng dịch vụ. Bảng có bảy dòng, mỗi dòng một chữ A</li>
+                    <li><strong>Hỏi từng chữ C, bỏ người ấy thì phương án sai ở đâu:</strong> Quản đốc sản xuất ở chữ C cho việc đền bù, nhưng không chỉ ra được phương án đền bù sai ở đâu nếu thiếu mình, nên rời khỏi dòng ấy; quản đốc đã có mặt ở dòng khắc phục, nơi nguyên nhân được quyết. Trưởng kho giữ chữ C ở dòng khắc phục, vì một nửa số nguyên nhân sai trọng lượng của quý 1 liên quan tới khâu mạ băng và bảo quản. Sau khi hỏi, bảng còn 3 chữ C</li>
+                    <li><strong>Ghi tiêu chí xong và hạn cho từng dòng:</strong> Mỗi dòng có một cột "xong khi" và một hạn tính bằng ngày làm việc, như bảng dưới. Các dòng chạy nối tiếp, dòng sau bắt đầu ngay trong ngày dòng trước xong, nên tổng các hạn là 6 ngày khi không cần xét nghiệm lại và 10 ngày khi cần; khiếu nại có xét nghiệm không còn ngày dư nào, và chỉ cần phòng xét nghiệm trễ hạn cam kết là khiếu nại trễ theo. Định nghĩa "gửi phương án trong 10 ngày làm việc" giữ nguyên cho cả kỳ cơ sở lẫn kỳ đo: tính từ ngày nhận email khiếu nại tới ngày gửi email phương án, không tính thứ Bảy, Chủ nhật và ngày lễ</li>
+                    <li><strong>Dùng bảng từ ngày 1 tháng 7, đo quý 3 bằng cùng định nghĩa, rồi kiểm hai kỳ có tương đương không:</strong> Trong quý 3, nhà máy nhận 28 khiếu nại, 24 được gửi phương án trong 10 ngày làm việc, 85,7%. Tỷ lệ khiếu nại cần xét nghiệm lại mẫu lưu là 9 trên 30 ở quý 1 và 9 trên 28 ở quý 3, 30% và 32,1%; tỷ lệ khiếu nại có đền bù trên 5.000 USD là 6 trên 30 và 5 trên 28, 20% và 17,9%. Hai biến này không do bảng làm đổi và gần nhau giữa hai quý, nên chúng không cho thấy quý 3 gặp khiếu nại dễ hơn; chúng chưa loại trừ được những thay đổi khác giữa hai quý, như người xử lý, khách hàng hay loại lỗi</li>
+                    <li><strong>Đọc bốn khiếu nại trễ, rồi gửi báo cáo:</strong> Ba khiếu nại trễ là khiếu nại cần xét nghiệm lại, khi phòng xét nghiệm bên ngoài trả kết quả sau hơn 4 ngày làm việc, tức trễ so với hạn cam kết trong hợp đồng; khiếu nại thứ tư thuộc dòng đền bù trên 5.000 USD, chờ 3 ngày vì giám đốc đi công tác nước ngoài. Chữ A duy nhất của dòng ấy vắng mặt và bảng không ghi ai thay, nên trưởng phòng QA đề xuất ghi thêm người được uỷ quyền khi giám đốc vắng. Báo cáo gồm bảng dưới đây được gửi giám đốc ngày 8 tháng 10</li>
+                </ol>
+                <table class="content-table">
+                    <thead><tr><th scope="col">Việc</th><th scope="col">NV kinh doanh</th><th scope="col">TP kinh doanh</th><th scope="col">TP QA</th><th scope="col">Quản đốc SX</th><th scope="col">Trưởng kho</th><th scope="col">Giám đốc</th><th scope="col">Xong khi</th><th scope="col">Hạn (ngày làm việc)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Tiếp nhận, ghi phiếu, xác nhận với khách</td><td>R</td><td>A</td><td>I</td><td></td><td></td><td></td><td>Khách nhận email xác nhận có số phiếu</td><td>1</td></tr>
+                        <tr><td>Truy nguyên lô hàng</td><td></td><td></td><td>A</td><td></td><td>R</td><td></td><td>Có mã lô, ngày sản xuất, nhật ký nhiệt độ kho của lô</td><td>2</td></tr>
+                        <tr><td>Gửi mẫu lưu xét nghiệm lại và theo dõi kết quả (khi cần)</td><td></td><td></td><td>A/R</td><td></td><td></td><td></td><td>Có kết quả xét nghiệm của mẫu lưu</td><td>4 (bằng hạn cam kết của phòng xét nghiệm)</td></tr>
+                        <tr><td>Xác định nguyên nhân và hành động khắc phục</td><td></td><td></td><td>A</td><td>R</td><td>C</td><td></td><td>Có nguyên nhân, hành động, người làm, ngày xong</td><td>2</td></tr>
+                        <tr><td>Quyết định từ chối hoặc đền bù tới 5.000 USD</td><td></td><td>A/R</td><td>C</td><td></td><td></td><td>I</td><td>Phương án ghi lý do từ chối, hoặc số tiền hay số hàng bù</td><td>1</td></tr>
+                        <tr><td>Quyết định đền bù trên 5.000 USD</td><td></td><td>R</td><td>C</td><td></td><td></td><td>A</td><td>Giám đốc ký phương án</td><td>1</td></tr>
+                        <tr><td>Gửi phương án cho khách</td><td>R</td><td>A</td><td>I</td><td></td><td></td><td>I</td><td>Khách nhận email phương án</td><td>cùng ngày quyết định phương án</td></tr>
+                    </tbody>
+                </table>
+                <p class="helper-text">Quý 1: 12 / 30 = 40%; số khiếu nại trễ: 30 − 12 = 18 = 11 + 5 + 2. Quý 3: 24 / 28 ≈ 85,7%; số khiếu nại trễ: 28 − 24 = 4 = 3 + 1. Xét nghiệm lại: 9 / 30 = 30%; 9 / 28 ≈ 32,1%; trong quý 3, 9 − 3 = 6 khiếu nại có xét nghiệm và 28 − 9 − 1 = 18 khiếu nại không có xét nghiệm đúng hạn, 6 + 18 = 24. Đền bù trên 5.000 USD: 6 / 30 = 20%; 5 / 28 ≈ 17,9%. Tổng hạn không xét nghiệm: 1 + 2 + 2 + 1 = 6 ngày (việc gửi phương án cùng ngày quyết định phương án); có xét nghiệm: 1 + 2 + 4 + 2 + 1 = 10 ngày. Chữ C: bảng nháp 11, bảng chốt 3 (dòng khắc phục, hai dòng đền bù). Mỗi dòng của bảng chốt có đúng một A và ít nhất một R (A/R tính là cả hai).</p>
+            </div>
+            <p>Mục tiêu đạt: trong quý 3, 85,7% khiếu nại được gửi phương án trong 10 ngày làm việc, trên mức 80%, và báo cáo gửi ngày 8 tháng 10, trước hạn ngày 15 tháng 10. Kết quả đạt được với hai điều kiện: quy chế phân quyền theo số tiền đã có sẵn để tách dòng đền bù, và trưởng phòng QA thật sự có quyền yêu cầu kho mở nhật ký nhiệt độ, nên chữ A mới của dòng truy nguyên đi kèm một quyền có thật. Phần đóng góp của riêng bảng RACI không tách ra được: chữ A cho dòng truy nguyên, việc tách dòng đền bù và các hạn ghi cạnh từng dòng đi vào cùng một lúc, nên tình huống không cho biết thay đổi nào làm tỷ lệ tăng bao nhiêu. Số khiếu nại mỗi quý chỉ khoảng ba mươi, nên một quý đạt mới là một lần đo. Bảng cũng không đụng tới chỗ chờ thứ ba: ba trong bốn khiếu nại trễ của quý 3 nằm ở phòng xét nghiệm bên ngoài, đúng loại chờ đã thấy ở bước đầu; việc cần làm ở đó thuộc về hợp đồng với nhà cung cấp hay một phòng xét nghiệm dự phòng, không thuộc về một chữ cái nào trên bảng. Còn khiếu nại trễ vì giám đốc vắng thì cho thấy chính quy tắc một chữ A: một người duy nhất chịu trách nhiệm cũng là một người duy nhất mà việc phải chờ.</p>
+        </section>
+
+        <!-- Summary -->
+        <section class="content-section">
+            <h2 class="main-point">Tóm Tắt</h2>
+            <div class="summary-box">
+                <p><strong>Điểm Chính:</strong> Ma trận RACI buộc mỗi ô của lưới việc và vai trò nhận một chữ, người làm, người chịu trách nhiệm, người được hỏi ý kiến hay người được báo, và quy tắc mỗi dòng đúng một chữ A biến khoảng trống và chỗ trùng thành lỗi nhìn thấy được. Điều phản trực giác nhất là bằng chứng gần nhất đứng sau công cụ lại chỉ đỡ được một phần của nó: trong phân tích gộp của Gilboa và cộng sự trên dữ liệu tương quan, sự mơ hồ vai trò mà nhân viên cảm nhận liên hệ với thành tích thấp hơn ở mức vừa phải, nhưng sự mơ hồ ấy gồm cả việc không biết mình được kỳ vọng gì, thứ bốn chữ cái không ghi. Trong phạm vi tìm kiếm của bài, chưa tìm thấy nghiên cứu nào đo chính ma trận. Cách dùng rút ra: để từng người tự điền rồi so, đặt chữ A ở người có thứ quyền mà kết quả của dòng ấy đòi, giữ chữ C cho người mà thiếu họ thì quyết định có thể sai hoặc quy định bắt phải hỏi, và ghi tiêu chí xong cạnh từng dòng, đo bảng bằng việc trễ và việc rơi chứ không bằng số ô đã điền.</p>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2 class="main-point">Tài Liệu Tham Khảo</h2>
+            <ol class="outline-list">
+                <li id="ref-1">Mind Tools. <em>The RACI Matrix</em>. Bài giới thiệu công cụ, ngày 17 tháng 5 năm 2024. Nguồn cho định nghĩa bốn chữ R, A, C, I; quy tắc mỗi việc đúng một người chịu trách nhiệm và ít nhất một người làm, C và I tuỳ việc; các bước dựng bảng, gồm kiểm theo dòng, phân tích theo cột (quá nhiều chữ A, một người ở mọi dòng) và truyền đạt, cập nhật bảng; lời cảnh báo về việc có quá nhiều người trong bảng, kể cả ở chữ C hay I; và dòng ghi nguồn tài liệu <em>PMBOK Guide</em> bản thứ năm (2013) của PMI. <a href="https://www.mindtools.com/agn584l/the-raci-matrix" rel="noopener noreferrer" target="_blank">Xem bài</a>.</li>
+                <li id="ref-2">Tessin, P. C. (2020, 4 tháng 5). <em>COBIT Tool Kit Enhancements</em>. ISACA, Industry News. Nguồn cho việc COBIT đã có biểu đồ RACI qua nhiều phiên bản và tiếp tục dùng ở COBIT 2019; bảng tính RACI mới trong bộ công cụ COBIT 2019 tách từng thực hành trong 231 thực hành, thuộc 40 mục tiêu; bảng gợi ý vai trò R và A, còn C và I do tổ chức tự đặt. <a href="https://www.isaca.org/resources/news-and-trends/industry-news/2020/cobit-tool-kit-enhancements" rel="noopener noreferrer" target="_blank">Xem bài</a>.</li>
+                <li id="ref-3">Tessin, P. C. (2020, 21 tháng 5). <em>RA(CI) Light</em>. ISACA Now Blog. Nguồn cho lời ghi rằng người làm công nghệ thông tin đã dùng biểu đồ RACI hàng chục năm, rằng COBIT 5 đưa hướng dẫn RACI ở cấp quy trình còn COBIT 2019 đưa xuống cấp từng thực hành, và rằng các ma trận RACI của COBIT 2019 là một góc nhìn ban đầu để tổ chức tự định nghĩa việc phân vai. <a href="https://www.isaca.org/resources/news-and-trends/isaca-now-blog/2020/raci-light" rel="noopener noreferrer" target="_blank">Xem bài</a>.</li>
+                <li id="ref-4">Gilboa, S., Shirom, A., Fried, Y., &amp; Cooper, C. (2008). A meta-analysis of work demand stressors and job performance: Examining main and moderating effects. <em>Personnel Psychology</em>, 61(2), 227-271. Đọc toàn văn, bản lưu ở kho tài liệu của Đại học Lancaster. Nguồn cho nghiên cứu chính: bảy yếu tố gây áp lực, phạm vi tìm kiếm 1975-2002, 169 mẫu với 35.265 nhân viên, 374 hệ số ảnh hưởng từ 104 nghiên cứu công bố và 33 luận án; định nghĩa mơ hồ vai trò theo Kahn và cộng sự (1964) và thước đo của Rizzo và cộng sự (1970); các hệ số của mơ hồ vai trò với thành tích chung (−0,20 quan sát, −0,24 hiệu chỉnh, 114 mẫu, 22.258 người), tự đánh giá (−0,30), cấp trên chấm (−0,19, và −0,24 khi hiệu chỉnh theo độ tin cậy giữa người chấm), đánh giá khách quan (−0,17); xung đột vai trò từ −0,08 tới −0,12; thang Rizzo −0,18 so với −0,23; độ không đồng nhất giữa các nghiên cứu; lời khuyên giảm mơ hồ bằng mục tiêu, kỳ vọng và tiêu chí đánh giá rõ hơn; và giới hạn tự ghi về thiết kế cắt ngang. <a href="https://eprints.lancs.ac.uk/id/eprint/45119/" rel="noopener noreferrer" target="_blank">Xem bản lưu</a>.</li>
+                <li id="ref-5">Karau, S. J., &amp; Williams, K. D. (1993). Social loafing: A meta-analytic review and theoretical integration. <em>Journal of Personality and Social Psychology</em>, 65(4), 681-706. Đọc qua phần tóm tắt. Nguồn cho định nghĩa sự ỷ lại trong nhóm là xu hướng bỏ ít công sức hơn khi làm chung so với khi làm riêng, phân tích gộp 78 nghiên cứu cho thấy hiện tượng này vững qua nhiều loại việc và nhóm người, và việc khả năng được đánh giá phần góp là một trong những yếu tố ảnh hưởng mạnh nhất. <a href="https://doi.org/10.1037/0022-3514.65.4.681" rel="noopener noreferrer" target="_blank">Xem bài báo</a>.</li>
+            </ol>
+        </section>
+    </article>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../../pages-scripts.js"></script>
+</body>
+</html>

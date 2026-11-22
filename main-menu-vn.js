@@ -703,6 +703,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Ma Trận RACI",
+                        route: "pages/reading-studying/management-tools-and-techniques/29-raci-matrix-vn.html",
+                        hash: "#/raci-matrix",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

@@ -696,6 +696,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "RACI Matrix",
+                        route: "pages/reading-studying/management-tools-and-techniques/29-raci-matrix.html",
+                        hash: "#/raci-matrix",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

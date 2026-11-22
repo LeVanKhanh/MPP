@@ -682,6 +682,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Risk Matrix",
+                        route: "pages/reading-studying/management-tools-and-techniques/27-risk-matrix.html",
+                        hash: "#/risk-matrix",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

@@ -717,6 +717,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Đánh Giá Tác Động Thay Đổi",
+                        route: "pages/reading-studying/management-tools-and-techniques/31-change-impact-assessment-vn.html",
+                        hash: "#/change-impact-assessment",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

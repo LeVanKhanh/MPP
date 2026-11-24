@@ -710,6 +710,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Change Impact Assessment",
+                        route: "pages/reading-studying/management-tools-and-techniques/31-change-impact-assessment.html",
+                        hash: "#/change-impact-assessment",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

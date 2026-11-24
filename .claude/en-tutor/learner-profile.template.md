@@ -1,6 +1,6 @@
 # Learner profile (private)
 
-The en-tutor agent copies this template to `../second-brain/20-areas/nuoi-day-con/learner-profile.md` on first use.
+The en-tutor agent copies this template to `../second-brain/20-areas/parenting/learner-profile.md` on first use.
 That folder is in the parent's private vault because MPP is public. Never copy personal details into MPP.
 
 ## Child

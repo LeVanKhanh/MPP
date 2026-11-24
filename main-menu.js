@@ -703,6 +703,13 @@ var mainMenu = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Stakeholder Analysis",
+                        route: "pages/reading-studying/management-tools-and-techniques/30-stakeholder-analysis.html",
+                        hash: "#/stakeholder-analysis",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {

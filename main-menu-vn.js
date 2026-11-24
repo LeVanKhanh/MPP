@@ -710,6 +710,13 @@ var mainMenuVn = [
                         icon: "fas fa-file-alt",
                         subItems: [],
                     },
+                    {
+                        title: "Phân Tích Các Bên Liên Quan",
+                        route: "pages/reading-studying/management-tools-and-techniques/30-stakeholder-analysis-vn.html",
+                        hash: "#/stakeholder-analysis",
+                        icon: "fas fa-file-alt",
+                        subItems: [],
+                    },
                 ],
             },
             {
